@@ -5,7 +5,8 @@
   "description": "Production-ready modern NGO platform for Sarva Samarpit Sewa Sansthan, Prayagraj",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "echo Assets ready in public/",
+    "build:next": "next build",
     "start": "next start",
     "server": "ts-node --transpile-only server/server.ts",
     "lint": "next lint",

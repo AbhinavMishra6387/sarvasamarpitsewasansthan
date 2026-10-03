@@ -119,13 +119,25 @@ public class HighPerformanceServer
                         string req = Encoding.UTF8.GetString(buffer, 0, read);
                         string targetFile = _htmlPath;
                         string mime = "text/html; charset=utf-8";
-                        if (req.Contains("GET /logo.jpg") || req.Contains("GET /public/logo.jpg") || req.Contains("GET /assets/logo.jpg"))
+                        string[] reqLines = req.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+                        if (reqLines.Length > 0)
                         {
-                            string lf = Path.Combine(Path.GetDirectoryName(_htmlPath), "logo.jpg");
-                            if (File.Exists(lf))
+                            string[] parts = reqLines[0].Split(' ');
+                            if (parts.Length > 1)
                             {
-                                targetFile = lf;
-                                mime = "image/jpeg";
+                                string rel = parts[1].TrimStart('/').Split('?')[0];
+                                string lf = Path.Combine(Path.GetDirectoryName(_htmlPath), rel.Replace('/', Path.DirectorySeparatorChar));
+                                if (!string.IsNullOrEmpty(rel) && File.Exists(lf))
+                                {
+                                    targetFile = lf;
+                                    string ext = Path.GetExtension(lf).ToLower();
+                                    if (ext == ".jpg" || ext == ".jpeg") mime = "image/jpeg";
+                                    else if (ext == ".png") mime = "image/png";
+                                    else if (ext == ".svg") mime = "image/svg+xml";
+                                    else if (ext == ".css") mime = "text/css";
+                                    else if (ext == ".js") mime = "application/javascript";
+                                    else if (ext == ".mp4") mime = "video/mp4";
+                                }
                             }
                         }
                         byte[] body = File.ReadAllBytes(targetFile);
