@@ -1,56 +1,30 @@
-const GITHUB_REPO = "https://raw.githubusercontent.com/AbhinavMishra6387/sarvasamarpitsewasansthan/main";
+const GITHUB_PAGES_ORIGIN = "https://abhinavmishra6387.github.io/sarvasamarpitsewasansthan";
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    let pathname = url.pathname;
+    const path = url.pathname === "/" ? "/index.html" : url.pathname;
+    const targetUrl = `${GITHUB_PAGES_ORIGIN}${path}${url.search}`;
 
-    // Handle root / index.html
-    if (pathname === "/" || pathname === "" || pathname === "/index.html") {
-      const res = await fetch(`${GITHUB_REPO}/index.html`, {
-        cf: { cacheTtl: 300, cacheEverything: true }
-      });
-      return new Response(res.body, {
-        headers: {
-          "content-type": "text/html; charset=utf-8",
-          "cache-control": "public, max-age=300",
-          "access-control-allow-origin": "*"
-        }
-      });
-    }
-
-    // Serve images, logo, and static assets from GitHub Raw CDN
-    if (
-      pathname.startsWith("/images/") ||
-      pathname.startsWith("/public/") ||
-      pathname === "/logo.jpg" ||
-      pathname === "/favicon.svg" ||
-      pathname === "/manifest.json"
-    ) {
-      const cleanPath = pathname.replace(/^\/public/, "");
-      const res = await fetch(`${GITHUB_REPO}${cleanPath}`, {
+    try {
+      const res = await fetch(targetUrl, {
+        headers: request.headers,
         cf: { cacheTtl: 86400, cacheEverything: true }
       });
+
+      const newHeaders = new Headers(res.headers);
+      newHeaders.set("access-control-allow-origin", "*");
+      newHeaders.set("cache-control", "public, max-age=3600");
+
       return new Response(res.body, {
         status: res.status,
-        headers: {
-          "content-type": res.headers.get("content-type") || "image/jpeg",
-          "cache-control": "public, max-age=86400, immutable",
-          "access-control-allow-origin": "*"
-        }
+        headers: newHeaders
+      });
+    } catch (err) {
+      return new Response("Connecting to Sarva Samarpit Sewa Sansthan...", {
+        status: 200,
+        headers: { "content-type": "text/plain; charset=utf-8" }
       });
     }
-
-    // Default SPA fallback to index.html
-    const res = await fetch(`${GITHUB_REPO}/index.html`, {
-      cf: { cacheTtl: 300, cacheEverything: true }
-    });
-    return new Response(res.body, {
-      headers: {
-        "content-type": "text/html; charset=utf-8",
-        "cache-control": "public, max-age=300",
-        "access-control-allow-origin": "*"
-      }
-    });
   }
 };
