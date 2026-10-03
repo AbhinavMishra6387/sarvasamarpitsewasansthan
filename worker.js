@@ -7,29 +7,37 @@ export default {
     if (path === "/" || path === "") {
       path = "/index.html";
     }
-    const targetUrl = `${GITHUB_PAGES_ORIGIN}${path}${url.search}`;
 
     const isHtml = path.endsWith(".html") || path === "/index.html";
-    const cacheTtl = isHtml ? 60 : 86400;
+    const freshParam = `_edgeFresh=${Date.now()}`;
+    const sep = url.search ? "&" : "?";
+    const targetUrl = isHtml
+      ? `${GITHUB_PAGES_ORIGIN}${path}${url.search}${sep}${freshParam}`
+      : `${GITHUB_PAGES_ORIGIN}${path}${url.search}`;
 
     try {
       const reqHeaders = new Headers(request.headers);
-      reqHeaders.set("User-Agent", "Cloudflare-Worker-SarvaSamarpit/1.0");
+      reqHeaders.set("User-Agent", "Cloudflare-Worker-SarvaSamarpit/2.0");
 
       const res = await fetch(targetUrl, {
         headers: reqHeaders,
-        cf: { cacheTtl: cacheTtl, cacheEverything: !isHtml }
+        cf: {
+          cacheTtl: isHtml ? 0 : 86400,
+          cacheEverything: !isHtml
+        }
       });
 
       if (!res.ok && res.status === 404 && !path.includes(".")) {
         // SPA Fallback: Route clean URLs to index.html
-        const fallbackRes = await fetch(`${GITHUB_PAGES_ORIGIN}/index.html`, {
+        const fallbackRes = await fetch(`${GITHUB_PAGES_ORIGIN}/index.html?_edgeFresh=${Date.now()}`, {
           headers: reqHeaders,
-          cf: { cacheTtl: 60, cacheEverything: false }
+          cf: { cacheTtl: 0, cacheEverything: false }
         });
         const fallbackHeaders = new Headers(fallbackRes.headers);
         fallbackHeaders.set("access-control-allow-origin", "*");
-        fallbackHeaders.set("cache-control", "public, max-age=60, must-revalidate");
+        fallbackHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
+        fallbackHeaders.set("pragma", "no-cache");
+        fallbackHeaders.set("expires", "0");
         return new Response(fallbackRes.body, {
           status: 200,
           headers: fallbackHeaders
@@ -38,7 +46,13 @@ export default {
 
       const newHeaders = new Headers(res.headers);
       newHeaders.set("access-control-allow-origin", "*");
-      newHeaders.set("cache-control", isHtml ? "public, max-age=60, must-revalidate" : "public, max-age=86400");
+      if (isHtml) {
+        newHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
+        newHeaders.set("pragma", "no-cache");
+        newHeaders.set("expires", "0");
+      } else {
+        newHeaders.set("cache-control", "public, max-age=86400");
+      }
 
       return new Response(res.body, {
         status: res.status,
