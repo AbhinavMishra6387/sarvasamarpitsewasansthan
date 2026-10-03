@@ -6,15 +6,18 @@ export default {
     const path = url.pathname === "/" ? "/index.html" : url.pathname;
     const targetUrl = `${GITHUB_PAGES_ORIGIN}${path}${url.search}`;
 
+    const isHtml = path.endsWith(".html") || path === "/index.html";
+    const cacheTtl = isHtml ? 60 : 86400;
+
     try {
       const res = await fetch(targetUrl, {
         headers: request.headers,
-        cf: { cacheTtl: 86400, cacheEverything: true }
+        cf: { cacheTtl: cacheTtl, cacheEverything: !isHtml }
       });
 
       const newHeaders = new Headers(res.headers);
       newHeaders.set("access-control-allow-origin", "*");
-      newHeaders.set("cache-control", "public, max-age=3600");
+      newHeaders.set("cache-control", isHtml ? "public, max-age=60, must-revalidate" : "public, max-age=86400");
 
       return new Response(res.body, {
         status: res.status,
