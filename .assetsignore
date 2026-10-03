@@ -1,0 +1,15 @@
+.git
+.github
+.next
+.vscode
+node_modules
+src
+server
+prisma
+Dockerfile
+docker-compose.yml
+*.ts
+*.bat
+*.ps1
+package-lock.json
+tsconfig.json
