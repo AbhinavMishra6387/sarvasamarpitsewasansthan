@@ -46,7 +46,7 @@
       "logo": "https://sarva-samarpit-sewa-sansthan.in/logo.jpg",
       "image": "https://sarva-samarpit-sewa-sansthan.in/images/founder.jpg",
       "telephone": "+919450858514",
-      "email": "info@sarvasamarpit.org",
+      "email": "contact@sarva-samarpit-sewa-sansthan.in",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Shree Bade Hanuman Ji Temple, Sangam Marg",
@@ -2504,9 +2504,14 @@
           Submit Volunteer Registration
         </button>
 
-        <div id="volSuccessBox" class="hidden p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl text-center space-y-1">
-          <strong class="block text-sm">🎉 Welcome, Sevadar!</strong>
-          <p class="text-xs">Your registration is received under Volunteer Code: <strong id="volCodeDisp" class="font-mono text-orange-600"></strong>. Our coordinator will contact you via WhatsApp.</p>
+        <div id="volSuccessBox" class="hidden p-5 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl text-center space-y-2">
+          <strong class="block text-sm sm:text-base">🎉 Registration Approved &amp; ID Card Issued!</strong>
+          <p class="text-xs">You are officially registered under NGO ID: <strong id="volCodeDisp" class="font-mono text-orange-600 font-bold"></strong>.</p>
+          <div class="pt-1">
+            <button onclick="switchTab('membership')" class="px-5 py-2.5 bg-neutral-900 hover:bg-black text-white font-bold text-xs rounded-xl shadow transition-all">
+              🪪 View &amp; Download My Official Digital ID Card &rarr;
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -2533,12 +2538,12 @@
         <div class="w-full md:w-auto flex-1">
           <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Select Profile to View / Generate Card:</label>
           <select id="idCardSelector" onchange="onIdCardSelect(this.value)" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs sm:text-sm font-semibold text-gray-900 focus:outline-none focus:border-orange-500">
-            <option value="pt_harsh_tiwari">Pt. Harsh Tiwari (Founder & Chief Managing Trustee • SSSS-TRU-000001)</option>
-            <option value="navin_mishra" selected>Navin Mishra (Treasurer & Finance Head • SSSS-TRU-000002)</option>
-            <option value="santosh_mishra">Santosh Mishra (Patron & Chief Advisor • SSSS-TRU-000003)</option>
-            <option value="ravindra_tiwari">Ravindra Nath Tiwari (Education Minister / Director • SSSS-EMP-000001)</option>
-            <option value="atharva_upadhyay">Adv. Atharva Upadhyay (Legal Advisor • SSSS-EMP-000002)</option>
-            <option value="custom">Create New Custom Volunteer / Member Card...</option>
+            <option value="pt_harsh_tiwari">Pt. Harsh Tiwari (Founder &amp; Chief Managing Trustee • SSSS-TRU-000001)</option>
+            <option value="navin_mishra" selected>Navin Mishra (Treasurer &amp; Finance Controller • SSSS-TRU-000002)</option>
+            <option value="santosh_mishra">Santosh Mishra (Patron &amp; Chief Advisor • SSSS-TRU-000003)</option>
+            <option value="ravindra_tiwari">Ravindra Nath Tiwari (Education Minister &amp; Director • SSSS-EMP-000001)</option>
+            <option value="atharva_upadhyay">Adv. Atharva Upadhyay (Chief Legal Counsel • SSSS-EMP-000002)</option>
+            <option value="custom">+ Register New Member / Issue Official ID Card...</option>
           </select>
         </div>
 
@@ -2564,12 +2569,19 @@
             <div class="w-20 h-2 bg-stone-300 rounded-full"></div>
           </div>
 
-          <!-- Card Header Banner -->
-          <div class="bg-gradient-to-r from-slate-900 via-neutral-900 to-orange-900 text-white px-5 py-4 text-center relative border-b-4 border-orange-500">
-            <p class="font-bold text-xs text-amber-300 tracking-wide">सर्व समर्पित सेवा संस्थान</p>
-            <h3 class="font-extrabold text-sm sm:text-base text-white tracking-wider leading-tight">SARVA SAMARPIT SEWA SANSTHAN</h3>
-            <p class="text-[10px] text-gray-300 font-medium mt-0.5">Regd. Public Charitable Trust • Indian Trusts Act, 1882 • Reg: UP/2018/0192847</p>
-            <p class="text-[9px] text-amber-200 mt-0.5">Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, UP – 211005</p>
+          <!-- Card Header Banner with Official NGO Logo & Tagline -->
+          <div class="bg-gradient-to-r from-slate-950 via-neutral-900 to-orange-950 text-white px-5 py-4 relative border-b-4 border-orange-500">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md shrink-0">
+                <img src="logo.jpg" alt="Official NGO Logo" class="w-full h-full object-cover rounded-full" />
+              </div>
+              <div class="flex-1 text-center pr-2">
+                <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider">॥ मानव सेवा ही माधव सेवा ॥</p>
+                <p class="font-extrabold text-xs text-amber-400 tracking-wide">सर्व समर्पित सेवा संस्थान</p>
+                <h3 class="font-black text-xs sm:text-sm text-white tracking-wider leading-tight">SARVA SAMARPIT SEWA SANSTHAN</h3>
+                <p class="text-[8.5px] text-stone-300 font-medium mt-0.5">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP - 211005</p>
+              </div>
+            </div>
           </div>
 
           <!-- Body: Photo & Identity Grid -->
@@ -2583,7 +2595,7 @@
                 </div>
                 <div class="absolute -bottom-2.5 inset-x-0 flex justify-center">
                   <span id="cardRoleBadge" class="bg-gradient-to-r from-orange-600 to-amber-600 text-white text-[10px] font-black uppercase px-3 py-0.5 rounded-full shadow tracking-wider">
-                    TREASURER & FINANCE HEAD
+                    TREASURER & FINANCE CONTROLLER
                   </span>
                 </div>
               </div>
@@ -2591,7 +2603,8 @@
               <!-- Name & Unique NGO ID -->
               <div class="text-center mt-4">
                 <h4 id="cardFullName" class="font-black text-xl text-gray-900 tracking-tight">NAVIN MISHRA</h4>
-                <p id="cardNgoId" class="font-mono font-extrabold text-sm text-orange-600 tracking-wider">SSSS-TRU-000002</p>
+                <p id="cardHindiName" class="text-xs text-orange-600 font-bold">नवीन मिश्रा (कोषाध्यक्ष)</p>
+                <p id="cardNgoId" class="font-mono font-extrabold text-sm text-orange-600 tracking-wider mt-0.5">SSSS-TRU-000002</p>
               </div>
             </div>
 
@@ -2599,16 +2612,26 @@
             <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 text-xs space-y-2">
               <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                 <span class="text-gray-500 font-bold uppercase text-[10px]">Department:</span>
-                <span id="cardDept" class="font-bold text-gray-900 text-right">Finance, Audit & 80G Compliances</span>
+                <span id="cardDept" class="font-bold text-gray-900 text-right">Finance, Audit &amp; 80G Compliances</span>
               </div>
               <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1.5">
                 <div>
-                  <span class="text-gray-500 font-bold uppercase text-[10px] block">Joined:</span>
+                  <span class="text-gray-500 font-bold uppercase text-[10px] block">Official Email:</span>
+                  <span id="cardEmail" class="font-bold text-gray-900 text-[10px] truncate block">treasurer@sarva-samarpit-sewa-sansthan.in</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-gray-500 font-bold uppercase text-[10px] block">Contact No:</span>
+                  <span id="cardPhone" class="font-bold text-gray-900 font-mono text-[11px]">+91 83030 64007</span>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1.5">
+                <div>
+                  <span class="text-gray-500 font-bold uppercase text-[10px] block">Date Joined:</span>
                   <span id="cardJoinDate" class="font-bold text-gray-900">01-May-2018</span>
                 </div>
                 <div class="text-right">
                   <span class="text-gray-500 font-bold uppercase text-[10px] block">Validity:</span>
-                  <span id="cardValidUntil" class="font-bold text-emerald-700">Permanent (Life)</span>
+                  <span id="cardValidUntil" class="font-bold text-emerald-700">Permanent (Life Trustee)</span>
                 </div>
               </div>
               <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1.5">
@@ -2617,32 +2640,35 @@
                   <span id="cardBloodGroup" class="font-black text-red-600">O+</span>
                 </div>
                 <div class="text-right">
-                  <span class="text-gray-500 font-bold uppercase text-[10px] block">Status:</span>
+                  <span class="text-gray-500 font-bold uppercase text-[10px] block">Card Status:</span>
                   <span id="cardStatusBadge" class="font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">ACTIVE</span>
                 </div>
               </div>
               <div class="flex justify-between items-center">
-                <span class="text-gray-500 font-bold uppercase text-[10px]">Emergency No:</span>
-                <span id="cardEmergency" class="font-bold text-gray-900">09450858514</span>
+                <span class="text-gray-500 font-bold uppercase text-[10px]">Emergency Helpdesk:</span>
+                <span id="cardEmergency" class="font-bold text-gray-900 font-mono">09450858514</span>
               </div>
             </div>
 
-            <!-- Verification & Security Seal Section -->
+            <!-- Verification & Official Seal Section -->
             <div class="pt-2 border-t border-stone-200 flex items-center justify-between gap-3">
-              <!-- Live QR Code -->
+              <!-- Live Dynamic QR Code -->
               <div class="flex flex-col items-center">
                 <div id="cardQrCodeWrapper" class="bg-white p-1.5 rounded-xl border border-stone-300 shadow-sm"></div>
-                <span class="text-[9px] font-bold text-gray-500 mt-1">Scan to Verify</span>
+                <span class="text-[9px] font-bold text-gray-500 mt-1">Scan for Live Status</span>
               </div>
 
-              <!-- Official Signatory & Seal -->
+              <!-- Official Signatory & Trust Seal -->
               <div class="flex-1 text-right space-y-1">
                 <div class="inline-block border-b border-stone-400 pb-0.5">
-                  <p class="font-serif italic font-bold text-sm text-slate-800">Pt. Harsh Tiwari</p>
+                  <p id="cardSignatoryName" class="font-serif italic font-bold text-sm text-slate-800">Pt. Harsh Tiwari</p>
                 </div>
                 <p class="text-[9px] text-gray-500 font-semibold leading-tight">Authorized Signatory<br>Chief Managing Trustee</p>
-                <div class="inline-flex items-center gap-1 bg-amber-50 border border-amber-300 px-2 py-0.5 rounded-full text-[9px] font-bold text-amber-800 mt-1">
-                  <span>🏵️</span> TRUST SEAL VERIFIED
+                <div class="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-2.5 py-1 rounded-full text-[9px] font-extrabold text-amber-900 mt-1 shadow-xs">
+                  <svg class="w-3.5 h-3.5 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>OFFICIAL TRUST SEAL</span>
                 </div>
               </div>
             </div>
@@ -2650,7 +2676,7 @@
           </div>
 
           <!-- Bottom Security Strip -->
-          <div class="bg-neutral-900 text-white text-[10px] py-2 px-4 flex justify-between items-center font-medium">
+          <div class="bg-neutral-900 text-white text-[10px] py-2 px-4 flex justify-between items-center font-medium border-t border-neutral-800">
             <span>www.sarva-samarpit-sewa-sansthan.in</span>
             <span class="text-amber-400 font-bold">Helpline: 09450858514</span>
           </div>
@@ -2705,7 +2731,7 @@
           <div class="space-y-4 text-xs sm:text-sm text-gray-600">
             <p>📍 <strong>Head Office:</strong> Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, Uttar Pradesh – 211005</p>
             <p>📞 <strong>24/7 Helpline:</strong> <a href="tel:+919450858514" class="font-bold text-orange-600">09450858514</a></p>
-            <p>✉️ <strong>Official Email:</strong> info@sarvasamarpit.org</p>
+            <p>✉️ <strong>Official Email:</strong> contact@sarva-samarpit-sewa-sansthan.in</p>
             <p>⏰ <strong>Office Hours:</strong> Open 24 hours, all 7 days</p>
           </div>
           <div class="flex gap-3 pt-2">
@@ -2848,7 +2874,7 @@
             <div class="space-y-3.5">
               <div>
                 <label class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1">Email / Unique NGO ID</label>
-                <input id="loginPageEmail" type="email" value="founder@sarvasamarpit.org" placeholder="admin@sarvasamarpit.org or SSSS-TRU-000001" class="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-xl text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-orange-500 font-medium" />
+                <input id="loginPageEmail" type="email" value="founder@sarva-samarpit-sewa-sansthan.in" placeholder="founder@sarva-samarpit-sewa-sansthan.in or SSSS-TRU-000001" class="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-xl text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-orange-500 font-medium" />
               </div>
               <div>
                 <div class="flex justify-between items-center mb-1">
@@ -2877,57 +2903,90 @@
             </button>
           </div>
 
-          <!-- VIEW 2: 1-Click Super Admin Access (Full System Control) -->
+          <!-- VIEW 2: 1-Click Super Admin & Officer Master Access -->
           <div id="loginViewOneClick" class="hidden space-y-4">
             <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-2xl text-xs text-amber-900">
               <strong class="block font-bold mb-1">👑 Instant Administrative Master Access</strong>
-              Click either master persona below to automatically authenticate with full control over the Live Website CMS, Staff Roster, Donation Ledger, and Firebase Configuration:
+              Click any verified trust officer or staff persona below to automatically authenticate with full role permissions over the Live Website CMS, Staff Roster, 80G Donation Ledger, and ID Card Studio:
             </div>
 
-            <div class="space-y-3">
-              <!-- Super Admin Pt. Harsh Tiwari -->
-              <button onclick="loginWithMasterPersona('superadmin')" class="w-full p-4 bg-stone-50 hover:bg-orange-50/80 border-2 border-stone-200 hover:border-orange-500 rounded-2xl text-left flex items-center justify-between group transition-all shadow-sm">
+            <div class="space-y-2.5 max-h-[460px] overflow-y-auto pr-1">
+              <!-- 1. Super Admin: Pt. Harsh Tiwari -->
+              <button onclick="loginWithMasterPersona('superadmin')" class="w-full p-3.5 bg-stone-50 hover:bg-orange-50/80 border-2 border-stone-200 hover:border-orange-500 rounded-2xl text-left flex items-center justify-between group transition-all shadow-xs">
                 <div class="flex items-center gap-3">
                   <img src="images/founder.jpg" class="w-12 h-14 rounded-xl object-cover border-2 border-orange-500 shrink-0" alt="Founder" />
                   <div>
                     <div class="flex items-center gap-2">
-                      <h4 class="font-black text-sm text-gray-900 group-hover:text-orange-600">Pt. Harsh Tiwari</h4>
-                      <span class="px-2 py-0.5 bg-red-100 text-red-800 text-[10px] font-black rounded-md">SUPER ADMIN</span>
+                      <h4 class="font-black text-xs sm:text-sm text-gray-900 group-hover:text-orange-600">Pt. Harsh Tiwari</h4>
+                      <span class="px-2 py-0.5 bg-red-100 text-red-800 text-[9px] font-black rounded-md">SUPER ADMIN</span>
                     </div>
-                    <p class="text-xs text-gray-600 font-medium">Founder &amp; Chief Managing Trustee &bull; SSSS-TRU-000001</p>
-                    <span class="text-[11px] text-emerald-700 font-bold">✓ Full CMS, Analytics, Roster, Security &amp; Ledger Access</span>
+                    <p class="text-[11px] text-gray-600 font-medium">Founder &amp; Chief Managing Trustee &bull; SSSS-TRU-000001</p>
+                    <span class="text-[10px] text-emerald-700 font-bold">✓ Full CMS, Analytics, Roster, Security &amp; Ledger Access</span>
                   </div>
                 </div>
                 <span class="px-3 py-1.5 bg-orange-600 group-hover:bg-orange-700 text-white font-bold text-xs rounded-xl shadow shrink-0">
-                  Login Now &rarr;
+                  Login &rarr;
                 </span>
               </button>
 
-              <!-- Treasurer Navin Mishra -->
-              <button onclick="loginWithMasterPersona('treasurer')" class="w-full p-4 bg-stone-50 hover:bg-orange-50/80 border-2 border-stone-200 hover:border-orange-500 rounded-2xl text-left flex items-center justify-between group transition-all shadow-sm">
+              <!-- 2. Treasurer: Navin Mishra -->
+              <button onclick="loginWithMasterPersona('treasurer')" class="w-full p-3.5 bg-stone-50 hover:bg-orange-50/80 border-2 border-stone-200 hover:border-orange-500 rounded-2xl text-left flex items-center justify-between group transition-all shadow-xs">
                 <div class="flex items-center gap-3">
                   <img src="images/treasurer.jpg" class="w-12 h-14 rounded-xl object-cover border-2 border-orange-500 shrink-0" alt="Treasurer" />
                   <div>
                     <div class="flex items-center gap-2">
-                      <h4 class="font-black text-sm text-gray-900 group-hover:text-orange-600">Navin Mishra</h4>
-                      <span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-[10px] font-black rounded-md">TRUSTEE</span>
+                      <h4 class="font-black text-xs sm:text-sm text-gray-900 group-hover:text-orange-600">Navin Mishra</h4>
+                      <span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-[9px] font-black rounded-md">TRUSTEE</span>
                     </div>
-                    <p class="text-xs text-gray-600 font-medium">Treasurer &amp; Finance Controller &bull; SSSS-TRU-000002</p>
-                    <span class="text-[11px] text-amber-700 font-bold">✓ Full 80G Tax Certificates, Donation Ledger &amp; Audit Access</span>
+                    <p class="text-[11px] text-gray-600 font-medium">Treasurer &amp; Finance Controller &bull; SSSS-TRU-000002</p>
+                    <span class="text-[10px] text-amber-700 font-bold">✓ Full 80G Tax Certificates, Donation Ledger &amp; Audit Access</span>
                   </div>
                 </div>
                 <span class="px-3 py-1.5 bg-neutral-900 group-hover:bg-black text-white font-bold text-xs rounded-xl shadow shrink-0">
-                  Login Now &rarr;
+                  Login &rarr;
                 </span>
               </button>
 
-              <!-- Education Director -->
-              <button onclick="loginWithMasterPersona('education')" class="w-full p-3.5 bg-stone-50 hover:bg-blue-50 border border-stone-200 hover:border-blue-400 rounded-2xl text-left flex items-center justify-between group transition-all">
+              <!-- 3. Patron: Santosh Mishra -->
+              <button onclick="loginWithMasterPersona('patron')" class="w-full p-3 bg-stone-50 hover:bg-purple-50 border border-stone-200 hover:border-purple-400 rounded-2xl text-left flex items-center justify-between group transition-all">
                 <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg shrink-0">🎓</div>
+                  <img src="images/social-2.jpg" class="w-11 h-12 rounded-xl object-cover border border-purple-400 shrink-0" alt="Patron" />
                   <div>
-                    <h4 class="font-bold text-xs text-gray-900 group-hover:text-blue-600">Ravindra Nath Tiwari</h4>
-                    <p class="text-[11px] text-gray-500">Education Minister &bull; SSSS-EMP-000001</p>
+                    <div class="flex items-center gap-2">
+                      <h4 class="font-bold text-xs text-gray-900 group-hover:text-purple-600">Santosh Mishra</h4>
+                      <span class="px-2 py-0.5 bg-purple-100 text-purple-800 text-[9px] font-bold rounded">PATRON</span>
+                    </div>
+                    <p class="text-[10px] text-gray-500">Chief Advisor &bull; SSSS-TRU-000003</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 bg-stone-200 text-stone-800 font-bold text-xs rounded-lg">Login &rarr;</span>
+              </button>
+
+              <!-- 4. Education Director: Ravindra Nath Tiwari -->
+              <button onclick="loginWithMasterPersona('education')" class="w-full p-3 bg-stone-50 hover:bg-blue-50 border border-stone-200 hover:border-blue-400 rounded-2xl text-left flex items-center justify-between group transition-all">
+                <div class="flex items-center gap-3">
+                  <img src="images/education-2.jpg" class="w-11 h-12 rounded-xl object-cover border border-blue-400 shrink-0" alt="Education Director" />
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4 class="font-bold text-xs text-gray-900 group-hover:text-blue-600">Ravindra Nath Tiwari</h4>
+                      <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-[9px] font-bold rounded">STAFF</span>
+                    </div>
+                    <p class="text-[10px] text-gray-500">Education Minister &bull; SSSS-EMP-000001</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 bg-stone-200 text-stone-800 font-bold text-xs rounded-lg">Login &rarr;</span>
+              </button>
+
+              <!-- 5. Legal Advisor: Adv. Atharva Upadhyay -->
+              <button onclick="loginWithMasterPersona('legal')" class="w-full p-3 bg-stone-50 hover:bg-slate-100 border border-stone-200 hover:border-slate-400 rounded-2xl text-left flex items-center justify-between group transition-all">
+                <div class="flex items-center gap-3">
+                  <img src="images/social-3.jpg" class="w-11 h-12 rounded-xl object-cover border border-slate-400 shrink-0" alt="Legal Advisor" />
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4 class="font-bold text-xs text-gray-900 group-hover:text-slate-800">Adv. Atharva Upadhyay</h4>
+                      <span class="px-2 py-0.5 bg-slate-200 text-slate-800 text-[9px] font-bold rounded">LEGAL</span>
+                    </div>
+                    <p class="text-[10px] text-gray-500">Chief Legal Advisor &bull; SSSS-EMP-000002</p>
                   </div>
                 </div>
                 <span class="px-2.5 py-1 bg-stone-200 text-stone-800 font-bold text-xs rounded-lg">Login &rarr;</span>
@@ -2991,6 +3050,36 @@
           </button>
           <button onclick="switchTab('home')" class="px-3.5 py-2 bg-white text-gray-900 hover:bg-gray-100 text-xs font-bold rounded-xl shadow transition-all">
             View Live Site ↗
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Operator / User Profile Bar -->
+      <div id="adminOperatorProfileBar" class="bg-white p-5 rounded-3xl border border-stone-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <img id="adminOperatorPhoto" src="images/treasurer.jpg" alt="Active User" class="w-14 h-14 rounded-2xl object-cover border-2 border-orange-500 shadow-sm" />
+            <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 id="adminOperatorName" class="text-base font-black text-gray-900">Navin Mishra</h3>
+              <span id="adminOperatorRoleBadge" class="px-2.5 py-0.5 bg-amber-100 text-amber-800 text-[10px] font-black rounded-md uppercase">TRUSTEE &amp; TREASURER</span>
+            </div>
+            <p class="text-xs text-gray-500 flex items-center gap-2 mt-0.5">
+              <span>NGO ID: <strong id="adminOperatorId" class="font-mono text-orange-600 font-bold">SSSS-TRU-000002</strong></span>
+              <span>&bull;</span>
+              <span id="adminOperatorDept" class="text-gray-600">Finance, Audit &amp; 80G Statutory Compliances</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <button onclick="switchTab('membership')" class="px-4 py-2 bg-stone-100 hover:bg-stone-200 text-gray-800 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5">
+            <span>🪪</span> My Official ID Card
+          </button>
+          <button onclick="switchTab('login')" class="px-3.5 py-2 bg-stone-50 hover:bg-red-50 text-stone-600 hover:text-red-700 text-xs font-bold rounded-xl border border-stone-200 transition-all">
+            Switch Persona
           </button>
         </div>
       </div>
@@ -3203,10 +3292,15 @@
                 <!-- Row 1: Founder -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-TRU-000001</td>
-                  <td class="p-3.5 font-bold text-gray-900">Pt. Harsh Tiwari</td>
+                  <td class="p-3.5 font-bold text-gray-900">
+                    <div class="flex items-center gap-2.5">
+                      <img src="images/founder.jpg" class="w-8 h-8 rounded-full object-cover border border-orange-400 shrink-0" alt="Founder" />
+                      <span>Pt. Harsh Tiwari</span>
+                    </div>
+                  </td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-orange-100 text-orange-800 rounded font-black text-[10px]">CHIEF TRUSTEE</span></td>
                   <td class="p-3.5 text-gray-600">Governing Board</td>
-                  <td class="p-3.5 font-mono">09450858514</td>
+                  <td class="p-3.5 font-mono text-gray-700">+91 94508 58514</td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
                   <td class="p-3.5 text-right">
                     <button onclick="previewMemberId('pt_harsh_tiwari')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
@@ -3215,10 +3309,15 @@
                 <!-- Row 2: Treasurer -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-TRU-000002</td>
-                  <td class="p-3.5 font-bold text-gray-900">Navin Mishra</td>
+                  <td class="p-3.5 font-bold text-gray-900">
+                    <div class="flex items-center gap-2.5">
+                      <img src="images/treasurer.jpg" class="w-8 h-8 rounded-full object-cover border border-orange-400 shrink-0" alt="Treasurer" />
+                      <span>Navin Mishra</span>
+                    </div>
+                  </td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-black text-[10px]">TREASURER</span></td>
                   <td class="p-3.5 text-gray-600">Finance &amp; 80G Audit</td>
-                  <td class="p-3.5 font-mono">09450858514</td>
+                  <td class="p-3.5 font-mono text-gray-700">+91 83030 64007</td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
                   <td class="p-3.5 text-right">
                     <button onclick="previewMemberId('navin_mishra')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
@@ -3227,10 +3326,15 @@
                 <!-- Row 3: Patron -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-TRU-000003</td>
-                  <td class="p-3.5 font-bold text-gray-900">Santosh Mishra</td>
+                  <td class="p-3.5 font-bold text-gray-900">
+                    <div class="flex items-center gap-2.5">
+                      <img src="images/social-2.jpg" class="w-8 h-8 rounded-full object-cover border border-purple-400 shrink-0" alt="Patron" />
+                      <span>Santosh Mishra</span>
+                    </div>
+                  </td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-purple-100 text-purple-800 rounded font-black text-[10px]">PATRON</span></td>
                   <td class="p-3.5 text-gray-600">Advisory Council</td>
-                  <td class="p-3.5 font-mono">09450858514</td>
+                  <td class="p-3.5 font-mono text-gray-700">+91 94508 58514</td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
                   <td class="p-3.5 text-right">
                     <button onclick="previewMemberId('santosh_mishra')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
@@ -3239,10 +3343,15 @@
                 <!-- Row 4: Education Minister -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-EMP-000001</td>
-                  <td class="p-3.5 font-bold text-gray-900">Ravindra Nath Tiwari</td>
+                  <td class="p-3.5 font-bold text-gray-900">
+                    <div class="flex items-center gap-2.5">
+                      <img src="images/education-2.jpg" class="w-8 h-8 rounded-full object-cover border border-blue-400 shrink-0" alt="Education" />
+                      <span>Ravindra Nath Tiwari</span>
+                    </div>
+                  </td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-blue-100 text-blue-800 rounded font-black text-[10px]">EDUCATION MIN</span></td>
                   <td class="p-3.5 text-gray-600">Free Pathshala Seva</td>
-                  <td class="p-3.5 font-mono">09450858514</td>
+                  <td class="p-3.5 font-mono text-gray-700">+91 94508 58514</td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
                   <td class="p-3.5 text-right">
                     <button onclick="previewMemberId('ravindra_tiwari')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
@@ -3251,10 +3360,15 @@
                 <!-- Row 5: Legal Advisor -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-EMP-000002</td>
-                  <td class="p-3.5 font-bold text-gray-900">Adv. Atharva Upadhyay</td>
+                  <td class="p-3.5 font-bold text-gray-900">
+                    <div class="flex items-center gap-2.5">
+                      <img src="images/social-3.jpg" class="w-8 h-8 rounded-full object-cover border border-slate-400 shrink-0" alt="Legal" />
+                      <span>Adv. Atharva Upadhyay</span>
+                    </div>
+                  </td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-slate-100 text-slate-800 rounded font-black text-[10px]">LEGAL ADVISOR</span></td>
                   <td class="p-3.5 text-gray-600">Trust Compliances</td>
-                  <td class="p-3.5 font-mono">09450858514</td>
+                  <td class="p-3.5 font-mono text-gray-700">+91 83030 64007</td>
                   <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
                   <td class="p-3.5 text-right">
                     <button onclick="previewMemberId('atharva_upadhyay')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
@@ -3785,7 +3899,7 @@
             Sign In
           </button>
           <button id="tabBtnQuickRoles" onclick="switchAuthTab('roles')" class="flex-1 pb-2.5 text-center border-b-2 border-transparent text-stone-500 hover:text-stone-900">
-            Demo Role Access
+            1-Click Officer Access
           </button>
           <button id="tabBtnSignUp" onclick="switchAuthTab('signup')" class="flex-1 pb-2.5 text-center border-b-2 border-transparent text-stone-500 hover:text-stone-900">
             New Sevadar
@@ -3814,7 +3928,7 @@
           <div class="space-y-3">
             <div>
               <label class="block text-[11px] font-bold text-stone-600 uppercase mb-1">Email / NGO User ID</label>
-              <input id="authEmailInput" type="email" placeholder="name@sarvasamarpit.org" value="treasurer@sarvasamarpit.org" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-orange-500" />
+              <input id="authEmailInput" type="email" placeholder="name@sarva-samarpit-sewa-sansthan.in" value="treasurer@sarva-samarpit-sewa-sansthan.in" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-orange-500" />
             </div>
             <div>
               <div class="flex justify-between items-center mb-1">
@@ -3830,9 +3944,9 @@
           </button>
         </div>
 
-        <!-- 2. Demo Instant Role Switcher -->
+        <!-- 2. Instant Officer Access -->
         <div id="authViewQuickRoles" class="hidden space-y-3">
-          <p class="text-xs text-stone-600">Select any official persona to test role-based permissions, digital identity card, and dashboard controls:</p>
+          <p class="text-xs text-stone-600">Select any official trustee or officer persona to access role-based permissions, digital identity card, and dashboard controls:</p>
           <div class="grid grid-cols-1 gap-2.5 max-h-64 overflow-y-auto pr-1">
             <button onclick="simulateRoleLogin('superadmin')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
               <div class="flex items-center gap-3">
@@ -3856,20 +3970,42 @@
               <span class="px-2 py-1 bg-amber-100 text-amber-800 text-[10px] font-black rounded-lg">Trustee</span>
             </button>
 
+            <button onclick="simulateRoleLogin('patron')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
+              <div class="flex items-center gap-3">
+                <img src="images/social-2.jpg" class="w-9 h-9 rounded-xl object-cover border border-purple-400" />
+                <div>
+                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Santosh Mishra</h5>
+                  <span class="text-[10px] text-stone-500">Patron &amp; Chief Advisor &bull; SSSS-TRU-000003</span>
+                </div>
+              </div>
+              <span class="px-2 py-1 bg-purple-100 text-purple-800 text-[10px] font-black rounded-lg">Patron</span>
+            </button>
+
             <button onclick="simulateRoleLogin('education')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
               <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm">🎓</div>
+                <img src="images/education-2.jpg" class="w-9 h-9 rounded-xl object-cover border border-blue-400" />
                 <div>
                   <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Ravindra Nath Tiwari</h5>
                   <span class="text-[10px] text-stone-500">Education Director &bull; SSSS-EMP-000001</span>
                 </div>
               </div>
-              <span class="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-black rounded-lg">Employee</span>
+              <span class="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-black rounded-lg">Staff</span>
+            </button>
+
+            <button onclick="simulateRoleLogin('legal')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
+              <div class="flex items-center gap-3">
+                <img src="images/social-3.jpg" class="w-9 h-9 rounded-xl object-cover border border-slate-400" />
+                <div>
+                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Adv. Atharva Upadhyay</h5>
+                  <span class="text-[10px] text-stone-500">Chief Legal Advisor &bull; SSSS-EMP-000002</span>
+                </div>
+              </div>
+              <span class="px-2 py-1 bg-slate-100 text-slate-800 text-[10px] font-black rounded-lg">Legal</span>
             </button>
 
             <button onclick="simulateRoleLogin('volunteer')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
               <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">🤝</div>
+                <img src="images/education-4.jpg" class="w-9 h-9 rounded-xl object-cover border border-emerald-400" />
                 <div>
                   <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Prayagraj Sevadar</h5>
                   <span class="text-[10px] text-stone-500">Field Operations &bull; SSSS-VOL-000001</span>
@@ -4195,6 +4331,11 @@
         }, 80);
         return;
       }
+      if (tabId === 'projects') tabId = 'food-distribution';
+      if (tabId === 'csr') tabId = 'donate';
+      if (tabId === 'events' || tabId === 'blogs') tabId = 'gallery';
+      if (tabId === 'testimonials') tabId = 'about';
+
       document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
       const active = document.getElementById('tab-' + tabId);
       if (active) {
@@ -4281,28 +4422,59 @@
       document.getElementById('recAmount').innerText = '₹ ' + currentAmount.toLocaleString('en-IN') + '/- INR';
       document.getElementById('recDateDisp').innerText = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 
-      const tbody = document.getElementById('adminDonationsTableBody');
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td class="p-3 font-mono font-bold text-orange-600">${recNum}</td>
-        <td class="p-3 font-bold text-gray-900">${name}</td>
-        <td class="p-3">${cause}</td>
-        <td class="p-3 font-bold">₹ ${currentAmount.toLocaleString('en-IN')}</td>
-        <td class="p-3">${currentGateway}</td>
-        <td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">SUCCESS</span></td>
-      `;
-      tbody.prepend(tr);
+      const tbody = document.getElementById('adminFullDonationsTableBody') || document.getElementById('adminDonationsTableBody');
+      if (tbody) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="p-3.5 font-mono font-bold text-orange-600">${recNum}</td>
+          <td class="p-3.5 font-bold text-gray-900">${name}</td>
+          <td class="p-3.5 font-mono">${pan}</td>
+          <td class="p-3.5">${cause}</td>
+          <td class="p-3.5 font-bold text-gray-900">₹ ${currentAmount.toLocaleString('en-IN')}</td>
+          <td class="p-3.5 font-semibold text-gray-600">${currentGateway}</td>
+          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">VERIFIED</span></td>
+          <td class="p-3.5 text-right">
+            <button onclick="openReceiptModal('${recNum}', '${name}', ${currentAmount}, '${pan}', '${cause}')" class="px-2.5 py-1 bg-orange-50 text-orange-700 hover:bg-orange-100 font-bold rounded-lg border border-orange-200">
+              📄 Print 80G
+            </button>
+          </td>
+        `;
+        tbody.prepend(tr);
+      }
 
-      document.getElementById('receiptModal').classList.remove('hidden');
+      const modal = document.getElementById('receiptModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function openReceiptModal(recNo, name, amount, pan, cause) {
+      const rNo = document.getElementById('recNoDisp');
+      const rName = document.getElementById('recDonorName');
+      const rPan = document.getElementById('recDonorPan');
+      const rCause = document.getElementById('recCause');
+      const rAmt = document.getElementById('recAmount');
+      const rDate = document.getElementById('recDateDisp');
+
+      if (rNo) rNo.innerText = recNo || 'SSSS-80G-2026-0184';
+      if (rName) rName.innerText = name || 'Devotee';
+      if (rPan) rPan.innerText = pan || 'ABCPS1234D';
+      if (rCause) rCause.innerText = cause || 'Annapurna Bhandara Daily Meals';
+      if (rAmt) rAmt.innerText = '₹ ' + (Number(amount) || 2100).toLocaleString('en-IN') + '/- INR';
+      if (rDate) rDate.innerText = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+
+      const modal = document.getElementById('receiptModal');
+      if (modal) modal.classList.remove('hidden');
     }
 
     function closeReceiptModal() {
-      document.getElementById('receiptModal').classList.add('hidden');
+      const modal = document.getElementById('receiptModal');
+      if (modal) modal.classList.add('hidden');
     }
 
     function submitVolunteerForm() {
-      const name = document.getElementById('volName').value || 'Volunteer';
-      const code = 'VOL-PRG-' + Math.floor(1000 + Math.random() * 9000);
+      const name = document.getElementById('volName')?.value || 'Dedicated Sevadar';
+      const phone = document.getElementById('volPhone')?.value || '+91 94508 58514';
+      const email = document.getElementById('volEmail')?.value || 'volunteer@sarva-samarpit-sewa-sansthan.in';
+      const code = registerNewMemberRecord(name, email, phone, 'Volunteer');
       document.getElementById('volCodeDisp').innerText = code;
       document.getElementById('volSuccessBox').classList.remove('hidden');
     }
@@ -4659,77 +4831,87 @@
     const idCardProfiles = {
       pt_harsh_tiwari: {
         name: "Pt. Harsh Tiwari",
-        hindiName: "पं. हर्ष तिवारी",
+        hindiName: "पं. हर्ष तिवारी (संस्थापक)",
         id: "SSSS-TRU-000001",
         role: "FOUNDER & CHIEF MANAGING TRUSTEE",
-        dept: "Trust Administration & Annapurna Seva",
-        joinDate: "01-Jan-2018",
-        validity: "Permanent (Life)",
+        dept: "Trust Governing Board & Annapurna Seva",
+        email: "founder@sarva-samarpit-sewa-sansthan.in",
+        phone: "+91 94508 58514",
+        joinDate: "14-Apr-2018",
+        validity: "Permanent (Life Trustee)",
         bloodGroup: "B+",
         status: "ACTIVE",
         emergency: "09450858514",
         photo: "images/founder.jpg",
-        fallbackPhoto: ".user_uploaded/media_1790965204209.jpg",
+        fallbackPhoto: "images/founder.jpg",
         signatory: "Pt. Harsh Tiwari"
       },
       navin_mishra: {
         name: "Navin Mishra",
-        hindiName: "नवीन मिश्रा",
+        hindiName: "नवीन मिश्रा (कोषाध्यक्ष)",
         id: "SSSS-TRU-000002",
-        role: "TREASURER & FINANCE HEAD",
-        dept: "Finance, Audit & 80G Compliances",
+        role: "TREASURER & FINANCE CONTROLLER",
+        dept: "Finance, Audit & 80G Statutory Compliances",
+        email: "treasurer@sarva-samarpit-sewa-sansthan.in",
+        phone: "+91 83030 64007",
         joinDate: "01-May-2018",
-        validity: "Permanent (Life)",
+        validity: "Permanent (Life Trustee)",
         bloodGroup: "O+",
         status: "ACTIVE",
         emergency: "09450858514",
         photo: "images/treasurer.jpg",
-        fallbackPhoto: ".user_uploaded/media_1790965758327.jpg",
+        fallbackPhoto: "images/treasurer.jpg",
         signatory: "Pt. Harsh Tiwari"
       },
       santosh_mishra: {
         name: "Santosh Mishra",
-        hindiName: "संतोष मिश्रा",
+        hindiName: "संतोष मिश्रा (मुख्य संरक्षक)",
         id: "SSSS-TRU-000003",
         role: "PATRON & CHIEF ADVISOR",
         dept: "Advisory Council & Ethics Supervision",
+        email: "advisor@sarva-samarpit-sewa-sansthan.in",
+        phone: "+91 94508 58514",
         joinDate: "15-Mar-2018",
-        validity: "Permanent (Life)",
+        validity: "Permanent (Life Trustee)",
         bloodGroup: "A+",
         status: "ACTIVE",
-        emergency: "09450858514",
-        photo: "logo.jpg",
-        fallbackPhoto: "logo.jpg",
+        emergency: "08303064007",
+        photo: "images/social-2.jpg",
+        fallbackPhoto: "images/social-2.jpg",
         signatory: "Pt. Harsh Tiwari"
       },
       ravindra_tiwari: {
         name: "Ravindra Nath Tiwari",
-        hindiName: "रवींद्र नाथ तिवारी",
+        hindiName: "रवींद्र नाथ तिवारी (शिक्षा मंत्री)",
         id: "SSSS-EMP-000001",
-        role: "EDUCATION MINISTER / DIRECTOR",
-        dept: "Free Evening Pathshala & Vidya Daan",
+        role: "EDUCATION MINISTER & DIRECTOR",
+        dept: "Free Rural Pathshala & Vidya Daan Mission",
+        email: "education@sarva-samarpit-sewa-sansthan.in",
+        phone: "+91 94508 58514",
         joinDate: "10-Jul-2019",
-        validity: "31-Dec-2027",
+        validity: "31-Mar-2028",
         bloodGroup: "AB+",
         status: "ACTIVE",
         emergency: "09450858514",
-        photo: "logo.jpg",
-        fallbackPhoto: "logo.jpg",
+        photo: "images/education-2.jpg",
+        fallbackPhoto: "images/education-2.jpg",
         signatory: "Pt. Harsh Tiwari"
       },
       atharva_upadhyay: {
         name: "Adv. Atharva Upadhyay",
-        hindiName: "अथर्व उपाध्याय",
+        hindiName: "अथर्व उपाध्याय (विधिक सलाहकार)",
         id: "SSSS-EMP-000002",
-        role: "CHIEF LEGAL ADVISOR",
-        dept: "Legal Compliances & Trust Regulatory Affairs",
+        role: "CHIEF LEGAL COUNSEL & COMPLIANCE",
+        dept: "Legal Affairs & Trust Regulatory Commission",
+        email: "legal@sarva-samarpit-sewa-sansthan.in",
+        phone: "+91 94508 58514",
         joinDate: "20-Aug-2020",
-        validity: "31-Dec-2027",
+        validity: "31-Mar-2028",
         bloodGroup: "O+",
         status: "ACTIVE",
-        emergency: "09450858514",
-        photo: "logo.jpg",
-        fallbackPhoto: "logo.jpg",
+        emergency: "08303064007",
+        photo: "images/social-3.jpg",
+        fallbackPhoto: "images/social-3.jpg",
         signatory: "Pt. Harsh Tiwari"
       }
     };
@@ -4754,18 +4936,28 @@
       if (role) role.innerText = p.role;
       const name = document.getElementById('cardFullName');
       if (name) name.innerText = p.name.toUpperCase();
+      const hindi = document.getElementById('cardHindiName');
+      if (hindi) hindi.innerText = p.hindiName || '';
       const idEl = document.getElementById('cardNgoId');
       if (idEl) idEl.innerText = p.id;
       const dept = document.getElementById('cardDept');
       if (dept) dept.innerText = p.dept;
+      const email = document.getElementById('cardEmail');
+      if (email) email.innerText = p.email || 'office@sarva-samarpit-sewa-sansthan.in';
+      const phone = document.getElementById('cardPhone');
+      if (phone) phone.innerText = p.phone || '09450858514';
       const join = document.getElementById('cardJoinDate');
       if (join) join.innerText = p.joinDate;
       const valid = document.getElementById('cardValidUntil');
       if (valid) valid.innerText = p.validity;
       const bg = document.getElementById('cardBloodGroup');
       if (bg) bg.innerText = p.bloodGroup;
+      const statusBadge = document.getElementById('cardStatusBadge');
+      if (statusBadge) statusBadge.innerText = p.status || 'ACTIVE';
       const em = document.getElementById('cardEmergency');
       if (em) em.innerText = p.emergency;
+      const sig = document.getElementById('cardSignatoryName');
+      if (sig) sig.innerText = p.signatory || 'Pt. Harsh Tiwari';
       renderIdCardQr(p.id);
     }
 
@@ -4873,7 +5065,7 @@
             role: "DEDICATED VOLUNTEER (SEVADAR)",
             dept: "Field Operations & Prayagraj Seva",
             validity: "Active Regular Term",
-            photo: "logo.jpg"
+            photo: "images/education-4.jpg"
           };
         } else {
           matched = idCardProfiles.pt_harsh_tiwari;
@@ -5001,14 +5193,23 @@
             simulateRoleLogin('superadmin');
             showAuthFeedback('Welcome, ' + name + '! Authenticated as Super Admin via Google.');
             if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Super Admin via Google!');
-          } else if (userEmail.includes('navin') || userEmail.includes('treasurer')) {
+          } else if (userEmail.includes('navin') || userEmail.includes('treasurer') || userEmail === 'navinmishra6387@gmail.com') {
             simulateRoleLogin('treasurer');
-            showAuthFeedback('Welcome, ' + name + '! Authenticated as Treasurer via Google.');
+            showAuthFeedback('Welcome, ' + name + '! Authenticated as Treasurer (Navin Mishra) via Google.');
             if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Treasurer via Google!');
           } else {
+            const gCode = registerNewMemberRecord(name, userEmail, user.phoneNumber || '09450858514', 'Volunteer');
+            if (user.photoURL) {
+              const lastKey = document.getElementById('idCardSelector')?.value;
+              if (lastKey && idCardProfiles[lastKey]) {
+                idCardProfiles[lastKey].photo = user.photoURL;
+                const imgEl = document.getElementById('cardPhotoImg');
+                if (imgEl) imgEl.src = user.photoURL;
+              }
+            }
             simulateRoleLogin('volunteer');
-            showAuthFeedback('Welcome, ' + name + '! Authenticated as Volunteer via Google.');
-            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Volunteer via Google!');
+            showAuthFeedback('Welcome, ' + name + '! Profile & ID card synced with Google.');
+            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Welcome, ' + name + '! Synced with Google.');
           }
           return;
         } catch (err) {
@@ -5047,7 +5248,7 @@
     }
 
     function handleForgotPassword() {
-      const email = document.getElementById('authEmailInput').value || 'treasurer@sarvasamarpit.org';
+      const email = document.getElementById('authEmailInput')?.value || 'treasurer@sarva-samarpit-sewa-sansthan.in';
       alert('Password reset link sent via Firebase Auth to ' + email);
     }
 
@@ -5055,6 +5256,33 @@
       const roleDisp = document.getElementById('authCurrentRoleDisp');
       const idDisp = document.getElementById('authCurrentIdDisp');
       const navLabel = document.getElementById('navAuthLabel');
+      const opPhoto = document.getElementById('adminOperatorPhoto');
+      const opName = document.getElementById('adminOperatorName');
+      const opBadge = document.getElementById('adminOperatorRoleBadge');
+      const opId = document.getElementById('adminOperatorId');
+      const opDept = document.getElementById('adminOperatorDept');
+
+      const profileMap = {
+        superadmin: idCardProfiles.pt_harsh_tiwari,
+        treasurer: idCardProfiles.navin_mishra,
+        patron: idCardProfiles.santosh_mishra,
+        education: idCardProfiles.ravindra_tiwari,
+        legal: idCardProfiles.atharva_upadhyay,
+        volunteer: {
+          name: "Approved Sevadar",
+          photo: "images/education-4.jpg",
+          role: "CERTIFIED VOLUNTEER (SEVADAR)",
+          id: "SSSS-VOL-000001",
+          dept: "Prayagraj Seva Mission"
+        }
+      };
+
+      const prof = profileMap[role] || profileMap.superadmin;
+      if (opPhoto && prof) opPhoto.src = prof.photo;
+      if (opName && prof) opName.innerText = prof.name;
+      if (opBadge && prof) opBadge.innerText = prof.role;
+      if (opId && prof) opId.innerText = prof.id;
+      if (opDept && prof) opDept.innerText = prof.dept;
 
       if (role === 'superadmin') {
         if (roleDisp) roleDisp.innerText = 'Super Admin (Pt. Harsh Tiwari)';
@@ -5070,6 +5298,13 @@
         onIdCardSelect('navin_mishra');
         showAuthFeedback('Signed in as Navin Mishra (Treasurer). 80G and Finance modules enabled.');
         setTimeout(() => { closeAuthModal(); switchTab('admin'); }, 800);
+      } else if (role === 'patron') {
+        if (roleDisp) roleDisp.innerText = 'Patron & Chief Advisor (Santosh Mishra)';
+        if (idDisp) idDisp.innerText = 'SSSS-TRU-000003';
+        if (navLabel) navLabel.innerText = 'Santosh Mishra (Patron)';
+        onIdCardSelect('santosh_mishra');
+        showAuthFeedback('Signed in as Santosh Mishra (Patron). Advisory portal active.');
+        setTimeout(() => { closeAuthModal(); switchTab('admin'); }, 800);
       } else if (role === 'education') {
         if (roleDisp) roleDisp.innerText = 'Education Director (R. N. Tiwari)';
         if (idDisp) idDisp.innerText = 'SSSS-EMP-000001';
@@ -5077,6 +5312,13 @@
         onIdCardSelect('ravindra_tiwari');
         showAuthFeedback('Signed in as Ravindra Nath Tiwari. Free Pathshala portal open.');
         setTimeout(() => { closeAuthModal(); switchTab('membership'); }, 800);
+      } else if (role === 'legal') {
+        if (roleDisp) roleDisp.innerText = 'Legal Counsel (Adv. Atharva Upadhyay)';
+        if (idDisp) idDisp.innerText = 'SSSS-EMP-000002';
+        if (navLabel) navLabel.innerText = 'Adv. Upadhyay (Legal)';
+        onIdCardSelect('atharva_upadhyay');
+        showAuthFeedback('Signed in as Adv. Atharva Upadhyay. Regulatory portal active.');
+        setTimeout(() => { closeAuthModal(); switchTab('admin'); }, 800);
       } else if (role === 'volunteer') {
         if (roleDisp) roleDisp.innerText = 'Approved Sevadar / Volunteer';
         if (idDisp) idDisp.innerText = 'SSSS-VOL-000001';
@@ -5095,10 +5337,63 @@
       }
     }
 
+    function registerNewMemberRecord(name, email, phone, role) {
+      const randomCode = 'SSSS-VOL-' + Math.floor(100000 + Math.random() * 900000);
+      const profileKey = 'vol_' + Date.now();
+      idCardProfiles[profileKey] = {
+        name: name,
+        hindiName: "(प्रमाणित स्वयंसेवक)",
+        id: randomCode,
+        role: role ? role.toUpperCase() : "DEDICATED SEVADAR (VOLUNTEER)",
+        dept: "Prayagraj Seva Mission & Outreach",
+        email: email || "volunteer@sarva-samarpit-sewa-sansthan.in",
+        phone: phone || "+91 94508 58514",
+        joinDate: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
+        validity: "31-Mar-2028",
+        bloodGroup: "B+",
+        status: "ACTIVE",
+        emergency: "09450858514",
+        photo: "images/education-4.jpg",
+        fallbackPhoto: "logo.jpg",
+        signatory: "Pt. Harsh Tiwari"
+      };
+
+      const selector = document.getElementById('idCardSelector');
+      if (selector) {
+        const opt = document.createElement('option');
+        opt.value = profileKey;
+        opt.innerText = `${name} (${randomCode}) - Newly Issued`;
+        selector.appendChild(opt);
+        selector.value = profileKey;
+      }
+
+      const vTable = document.getElementById('adminVolunteerTableBody');
+      if (vTable) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="p-3.5 font-mono font-bold text-orange-600">${randomCode}</td>
+          <td class="p-3.5 font-bold text-gray-900">${name}</td>
+          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-black text-[10px]">${role ? role.toUpperCase() : 'SEVADAR'}</span></td>
+          <td class="p-3.5 text-gray-600">Prayagraj Seva Mission</td>
+          <td class="p-3.5 font-mono">${phone || '09450858514'}</td>
+          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
+          <td class="p-3.5 text-right">
+            <button onclick="previewMemberId('${profileKey}')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
+          </td>
+        `;
+        vTable.prepend(tr);
+      }
+
+      onIdCardSelect(profileKey);
+      return randomCode;
+    }
+
     function handleNewRegistrationSubmit() {
       const name = document.getElementById('regFullName').value || 'Devoted Volunteer';
-      const code = 'SSSS-VOL-00' + Math.floor(1000 + Math.random() * 9000);
-      showAuthFeedback('Registration submitted! Assigned NGO ID: ' + code + '. Generating ID card profile.');
+      const email = document.getElementById('regEmail').value || '';
+      const phone = document.getElementById('regPhone').value || '';
+      const code = registerNewMemberRecord(name, email, phone, 'Volunteer');
+      showAuthFeedback('Registration submitted! Issued NGO ID: ' + code + '. Generating ID card profile.');
       setTimeout(() => {
         closeAuthModal();
         switchTab('membership');
@@ -5170,7 +5465,7 @@
     function executeRazorpayPayment() {
       const name = document.getElementById('rzpDonorName').value || 'Generous Devotee';
       const phone = document.getElementById('rzpDonorPhone').value || '09450858514';
-      const email = document.getElementById('rzpDonorEmail').value || 'donor@example.com';
+      const email = document.getElementById('rzpDonorEmail').value || 'donor@sarva-samarpit-sewa-sansthan.in';
       const pan = (document.getElementById('rzpDonorPan').value || 'NOT PROVIDED').toUpperCase();
       const cause = document.getElementById('rzpCause').value;
 
@@ -5197,16 +5492,22 @@
       document.getElementById('recAmount').innerText = '₹ ' + rzpAmount.toLocaleString('en-IN') + '/- INR';
       document.getElementById('recDateDisp').innerText = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 
-      const tbody = document.getElementById('adminDonationsTableBody');
+      const tbody = document.getElementById('adminFullDonationsTableBody') || document.getElementById('adminDonationsTableBody');
       if (tbody) {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td class="p-3 font-mono font-bold text-orange-600">${recNum}</td>
-          <td class="p-3 font-bold text-gray-900">${name}</td>
-          <td class="p-3">${cause}</td>
-          <td class="p-3 font-bold">₹ ${rzpAmount.toLocaleString('en-IN')}</td>
-          <td class="p-3">RAZORPAY_SECURE</td>
-          <td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">SUCCESS</span></td>
+          <td class="p-3.5 font-mono font-bold text-orange-600">${recNum}</td>
+          <td class="p-3.5 font-bold text-gray-900">${name}</td>
+          <td class="p-3.5 font-mono">${pan}</td>
+          <td class="p-3.5">${cause}</td>
+          <td class="p-3.5 font-bold text-gray-900">₹ ${rzpAmount.toLocaleString('en-IN')}</td>
+          <td class="p-3.5 font-semibold text-gray-600">RAZORPAY_SECURE</td>
+          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">VERIFIED</span></td>
+          <td class="p-3.5 text-right">
+            <button onclick="openReceiptModal('${recNum}', '${name}', ${rzpAmount}, '${pan}', '${cause}')" class="px-2.5 py-1 bg-orange-50 text-orange-700 hover:bg-orange-100 font-bold rounded-lg border border-orange-200">
+              📄 Print 80G
+            </button>
+          </td>
         `;
         tbody.prepend(tr);
       }
@@ -5571,7 +5872,14 @@
 
     function loginWithMasterPersona(persona) {
       simulateRoleLogin(persona);
-      showLoginPageAlert('success', 'Logged in successfully as ' + (persona === 'superadmin' ? 'Pt. Harsh Tiwari (Super Admin)' : (persona === 'treasurer' ? 'Navin Mishra (Treasurer)' : 'R. N. Tiwari')) + '. Redirecting to Enterprise Dashboard...');
+      const personaNames = {
+        superadmin: 'Pt. Harsh Tiwari (Super Admin)',
+        treasurer: 'Navin Mishra (Treasurer)',
+        patron: 'Santosh Mishra (Patron & Chief Advisor)',
+        education: 'Ravindra Nath Tiwari (Education Director)',
+        legal: 'Adv. Atharva Upadhyay (Chief Legal Counsel)'
+      };
+      showLoginPageAlert('success', 'Logged in successfully as ' + (personaNames[persona] || persona) + '. Redirecting to Enterprise Dashboard...');
       setTimeout(() => {
         switchTab('admin');
       }, 700);
@@ -5601,10 +5909,18 @@
           simulateRoleLogin('treasurer');
           showLoginPageAlert('success', 'Authentication Successful! Signed in as Treasurer (Navin Mishra).');
           setTimeout(() => switchTab('admin'), 600);
+        } else if (email.includes('patron') || email.includes('santosh')) {
+          simulateRoleLogin('patron');
+          showLoginPageAlert('success', 'Authentication Successful! Signed in as Patron & Chief Advisor.');
+          setTimeout(() => switchTab('admin'), 600);
         } else if (email.includes('education') || email.includes('tiwari')) {
           simulateRoleLogin('education');
           showLoginPageAlert('success', 'Authentication Successful! Signed in as Education Director.');
           setTimeout(() => switchTab('membership'), 600);
+        } else if (email.includes('legal') || email.includes('upadhyay')) {
+          simulateRoleLogin('legal');
+          showLoginPageAlert('success', 'Authentication Successful! Signed in as Chief Legal Counsel.');
+          setTimeout(() => switchTab('admin'), 600);
         } else {
           simulateRoleLogin('volunteer');
           showLoginPageAlert('success', 'Authentication Successful! Welcome to Sarva Samarpit Sewa Sansthan Portal.');
@@ -5617,17 +5933,18 @@
       const name = (document.getElementById('loginRegName')?.value || '').trim();
       const email = (document.getElementById('loginRegEmail')?.value || '').trim();
       const phone = (document.getElementById('loginRegPhone')?.value || '').trim();
+      const role = document.getElementById('loginRegRole')?.value || 'Volunteer';
 
       if (!name || !email || !phone) {
         showLoginPageAlert('error', 'Please fill all required registration fields (Full Name, Email, Phone).');
         return;
       }
 
-      const randomId = 'SSSS-VOL-' + Math.floor(100000 + Math.random() * 900000);
-      showLoginPageAlert('success', 'Registration Approved! Created Profile for ' + name + ' with ID: ' + randomId + '. Digital ID Card generated.');
+      const randomId = registerNewMemberRecord(name, email, phone, role);
+      showLoginPageAlert('success', 'Registration Approved! Profile & Digital ID Card issued for ' + name + ' (ID: ' + randomId + '). Loading ID Card Studio...');
       setTimeout(() => {
         switchTab('membership');
-      }, 1200);
+      }, 1000);
     }
 
     function showLoginPageAlert(type, message) {
