@@ -9,9 +9,10 @@ export default {
     }
 
     const isHtml = path.endsWith(".html") || path === "/index.html";
+    const isDynamicDoc = isHtml || path.endsWith(".xml") || path.endsWith(".txt");
     const freshParam = `_edgeFresh=${Date.now()}`;
     const sep = url.search ? "&" : "?";
-    const targetUrl = isHtml
+    const targetUrl = isDynamicDoc
       ? `${GITHUB_PAGES_ORIGIN}${path}${url.search}${sep}${freshParam}`
       : `${GITHUB_PAGES_ORIGIN}${path}${url.search}`;
 
@@ -22,8 +23,8 @@ export default {
       const res = await fetch(targetUrl, {
         headers: reqHeaders,
         cf: {
-          cacheTtl: isHtml ? 0 : 86400,
-          cacheEverything: !isHtml
+          cacheTtl: isDynamicDoc ? 0 : 86400,
+          cacheEverything: !isDynamicDoc
         }
       });
 
@@ -46,7 +47,7 @@ export default {
 
       const newHeaders = new Headers(res.headers);
       newHeaders.set("access-control-allow-origin", "*");
-      if (isHtml) {
+      if (isDynamicDoc) {
         newHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
         newHeaders.set("pragma", "no-cache");
         newHeaders.set("expires", "0");
