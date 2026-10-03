@@ -804,10 +804,10 @@
               Free Education &amp; Vidya Daan (निःशुल्क शिक्षा)
             </div>
           </div>
-          <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-stone-200">
-            <img src="https://images.unsplash.com/photo-1561361066-419b4afb8e21?auto=format&fit=crop&q=80&w=600" alt="Bade Hanuman Ji Sangam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-stone-200 cursor-pointer" onclick="switchTab('food-distribution')">
+            <img src="images/anna-3.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790955501034.jpg';" alt="Sangam Marg Seva" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 text-white text-xs font-semibold">
-              Sangam Marg Devotion
+              Sangam Marg Devotion (अन्न सेवा)
             </div>
           </div>
           <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-stone-200 cursor-pointer" onclick="switchTab('social-welfare')">
@@ -2793,15 +2793,15 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200 cursor-pointer" onclick="switchTab('food-distribution')">
           <img src="images/anna-4.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790955501051.jpg';" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500" alt="Bhandara Preparation" />
-          <div class="p-4"><h4 class="font-bold text-sm">Annapurna Langar Seva (अन्न सेवा)</h4><p class="text-xs text-gray-500 mt-1">Daily warm meal preparation for over 1,500 sadhus and pilgrims.</p></div>
+          <div class="p-4"><h4 class="font-bold text-sm">Annapurna Langar Seva (अन्न सेवा)</h4><p class="text-xs text-gray-500 mt-1">Daily warm meal preparation for visiting devotees, sadhus, and pilgrims at Sangam Marg.</p></div>
         </div>
-        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200">
-          <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=600" class="w-full h-52 object-cover" alt="Medical Camp" />
-          <div class="p-4"><h4 class="font-bold text-sm">Free Health Clinic</h4><p class="text-xs text-gray-500 mt-1">Qualified doctors examining visiting devotees at Sangam Marg.</p></div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200 cursor-pointer" onclick="switchTab('free-education')">
+          <img src="images/education-1.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790958576622.jpg';" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500" alt="Free Education &amp; Vidya Daan" />
+          <div class="p-4"><h4 class="font-bold text-sm">Free Education Pathshala (निःशुल्क शिक्षा)</h4><p class="text-xs text-gray-500 mt-1">Daily classes, study material distribution, and mentoring for underprivileged children.</p></div>
         </div>
-        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200">
-          <img src="https://images.unsplash.com/photo-1561361066-419b4afb8e21?auto=format&fit=crop&q=80&w=600" class="w-full h-52 object-cover" alt="Sangam Aarti" />
-          <div class="p-4"><h4 class="font-bold text-sm">Maha Aarti &amp; Satsang</h4><p class="text-xs text-gray-500 mt-1">Evening prayers conducted at Shree Bade Hanuman Ji Temple.</p></div>
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200 cursor-pointer" onclick="switchTab('social-welfare')">
+          <img src="images/social-3.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790960505717.jpg';" class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500" alt="Social Welfare Seva" />
+          <div class="p-4"><h4 class="font-bold text-sm">Social Welfare &amp; Dharmic Seva (जन सेवा)</h4><p class="text-xs text-gray-500 mt-1">Community outreach, winter relief blanket distribution, and tree plantation drives.</p></div>
         </div>
       </div>
     </div>
@@ -2900,10 +2900,10 @@
               </div>
 
               <div>
-                <h3 id="profileCardName" class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">Abhinav Mishra</h3>
-                <p id="profileCardHindi" class="text-xs text-orange-600 font-bold font-hindi">अभिनव मिश्रा</p>
+                <h3 id="profileCardName" class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">Your Full Name</h3>
+                <p id="profileCardHindi" class="text-xs text-orange-600 font-bold font-hindi"></p>
                 <div class="flex items-center justify-center gap-2 mt-1">
-                  <span id="profileCardId" class="text-xs font-mono font-bold text-gray-700 bg-stone-100 px-2.5 py-0.5 rounded-md border border-stone-200">SSSS-VOL-002184</span>
+                  <span id="profileCardId" class="text-xs font-mono font-bold text-gray-700 bg-stone-100 px-2.5 py-0.5 rounded-md border border-stone-200">Not Assigned</span>
                   <span id="profileCardBloodGroup" class="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-md border border-red-200">O+</span>
                 </div>
               </div>
@@ -2921,7 +2921,7 @@
               <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Direct Social Redirects:</span>
               
               <!-- 1. WhatsApp Button -->
-              <button type="button" onclick="openProfileWhatsApp()" class="w-full py-2.5 px-3.5 bg-emerald-600 hover:bg-emerald-700 active:scale-98 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center justify-between group">
+              <button id="profileCardWhatsAppBtn" type="button" onclick="openProfileWhatsApp()" style="display: none;" class="w-full py-2.5 px-3.5 bg-emerald-600 hover:bg-emerald-700 active:scale-98 text-white rounded-xl text-xs font-bold shadow-sm transition-all items-center justify-between group">
                 <div class="flex items-center gap-2">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                   <span>Chat on WhatsApp</span>
@@ -2930,7 +2930,7 @@
               </button>
 
               <!-- 2. Instagram Button -->
-              <button type="button" onclick="openProfileInstagram()" class="w-full py-2.5 px-3.5 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 hover:opacity-95 active:scale-98 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center justify-between group">
+              <button id="profileCardInstagramBtn" type="button" onclick="openProfileInstagram()" style="display: none;" class="w-full py-2.5 px-3.5 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 hover:opacity-95 active:scale-98 text-white rounded-xl text-xs font-bold shadow-sm transition-all items-center justify-between group">
                 <div class="flex items-center gap-2">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                   <span>Visit Instagram</span>
@@ -2939,13 +2939,18 @@
               </button>
 
               <!-- 3. Direct Mobile Phone Call -->
-              <a id="profileCardPhoneLink" href="tel:+919450858514" class="w-full py-2.5 px-3.5 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-bold transition-all flex items-center justify-between">
+              <a id="profileCardPhoneBtn" href="tel:+919450858514" style="display: none;" class="w-full py-2.5 px-3.5 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-bold transition-all items-center justify-between">
                 <div class="flex items-center gap-2">
                   <span>📞</span>
                   <span>Call Mobile</span>
                 </div>
                 <span id="profileCardPhoneDisp" class="font-mono text-[11px] text-stone-600">09450858514</span>
               </a>
+
+              <!-- Empty state notice when no social links provided -->
+              <div id="profileNoSocialMessage" class="p-3 bg-stone-50 rounded-xl border border-stone-200 text-center text-[11px] text-stone-500">
+                No social links configured yet. Fill your details on the right to display WhatsApp and Instagram buttons.
+              </div>
             </div>
 
             <!-- Generate Digital ID Card CTA -->
@@ -2977,19 +2982,19 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-stone-700 mb-1">Full Legal Name (English)</label>
-                <input id="profileFullName" type="text" value="Abhinav Mishra" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Abhinav Mishra" />
+                <input id="profileFullName" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Enter Your Full Name" />
               </div>
 
               <div>
                 <label class="block text-xs font-bold text-stone-700 mb-1">Devanagari Name (Hindi)</label>
-                <input id="profileHindiName" type="text" value="अभिनव मिश्रा" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500 font-hindi" placeholder="उदा. अभिनव मिश्रा" />
+                <input id="profileHindiName" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500 font-hindi" placeholder="उदा. पूरा नाम (हिंदी में)" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label class="block text-xs font-bold text-stone-700 mb-1">Unique NGO ID</label>
-                <input id="profileNgoId" type="text" value="SSSS-VOL-002184" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-bold text-orange-700 focus:outline-none focus:border-orange-500" placeholder="SSSS-VOL-002184" />
+                <input id="profileNgoId" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-bold text-orange-700 focus:outline-none focus:border-orange-500" placeholder="Auto-generated or Enter ID" />
               </div>
 
               <div>
@@ -3023,7 +3028,7 @@
 
             <div>
               <label class="block text-xs font-bold text-stone-700 mb-1">Department / Seva Wing</label>
-              <input id="profileDept" type="text" value="Akhand Annapurna Bhandara &amp; Vidya Daan" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Akhand Annapurna Bhandara &amp; Vidya Daan" />
+              <input id="profileDept" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Akhand Annapurna Bhandara &amp; Vidya Daan" />
             </div>
           </div>
 
@@ -3042,12 +3047,12 @@
                 </button>
               </div>
               <div class="flex gap-2">
-                <input id="profileWhatsApp" type="text" value="9450858514" oninput="syncProfileInputsToPreview()" class="flex-1 px-3.5 py-2.5 bg-white border border-emerald-300 rounded-xl text-xs font-mono font-bold text-gray-900 focus:outline-none focus:border-emerald-500" placeholder="09450858514 or 919450858514" />
+                <input id="profileWhatsApp" type="text" value="" oninput="syncProfileInputsToPreview()" class="flex-1 px-3.5 py-2.5 bg-white border border-emerald-300 rounded-xl text-xs font-mono font-bold text-gray-900 focus:outline-none focus:border-emerald-500" placeholder="e.g. 919450858514 (Include country code)" />
                 <button type="button" onclick="openProfileWhatsApp()" class="px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs shrink-0">
                   Open
                 </button>
               </div>
-              <p class="text-[10px] text-emerald-700">Redirects directly to <code class="bg-white/80 px-1 py-0.5 rounded font-mono">https://wa.me/&lt;number&gt;</code> with greeting message.</p>
+              <p class="text-[10px] text-emerald-700">Redirects directly to <code class="bg-white/80 px-1 py-0.5 rounded font-mono">https://wa.me/&lt;number&gt;</code> with your custom greeting.</p>
             </div>
 
             <!-- Instagram Channel -->
@@ -3061,7 +3066,7 @@
                 </button>
               </div>
               <div class="flex gap-2">
-                <input id="profileInstagram" type="text" value="sarva_samarpit_sewa" oninput="syncProfileInputsToPreview()" class="flex-1 px-3.5 py-2.5 bg-white border border-purple-300 rounded-xl text-xs font-bold text-gray-900 focus:outline-none focus:border-purple-500" placeholder="@username or instagram.com/username" />
+                <input id="profileInstagram" type="text" value="" oninput="syncProfileInputsToPreview()" class="flex-1 px-3.5 py-2.5 bg-white border border-purple-300 rounded-xl text-xs font-bold text-gray-900 focus:outline-none focus:border-purple-500" placeholder="e.g. @your_username or instagram.com/your_username" />
                 <button type="button" onclick="openProfileInstagram()" class="px-3.5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl shadow-xs shrink-0">
                   Open
                 </button>
@@ -3073,18 +3078,18 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-stone-700 mb-1">Mobile Number (Calling)</label>
-                <input id="profilePhone" type="tel" value="09450858514" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="09450858514" />
+                <input id="profilePhone" type="tel" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. 09450858514" />
               </div>
 
               <div>
                 <label class="block text-xs font-bold text-stone-700 mb-1">Email Address</label>
-                <input id="profileEmail" type="email" value="volunteer@sarva-samarpit-sewa-sansthan.in" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="yourname@gmail.com" />
+                <input id="profileEmail" type="email" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="yourname@domain.com" />
               </div>
             </div>
 
             <div>
               <label class="block text-xs font-bold text-stone-700 mb-1">District / City / Address</label>
-              <input id="profileAddress" type="text" value="Sangam Marg, Prayagraj, UP - 211005" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Sangam Marg, Prayagraj, UP - 211005" />
+              <input id="profileAddress" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Prayagraj, UP" />
             </div>
           </div>
 
@@ -3198,17 +3203,6 @@
         <!-- Alert Notification Box -->
         <div id="loginPageAlert" class="hidden p-3.5 rounded-xl text-xs font-bold"></div>
 
-        <!-- Trust Officer Master Fast Switcher (Clean, Minimal, Discreet) -->
-        <div class="pt-4 border-t border-stone-100 text-center space-y-2.5">
-          <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block">Trust Officers Quick Switch:</span>
-          <div class="flex flex-wrap items-center justify-center gap-1.5">
-            <button onclick="loginWithMasterPersona('superadmin')" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-orange-50 text-stone-700 hover:text-orange-700 text-[11px] font-semibold transition-colors">Pt. Harsh Tiwari (Admin)</button>
-            <button onclick="loginWithMasterPersona('treasurer')" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-orange-50 text-stone-700 hover:text-orange-700 text-[11px] font-semibold transition-colors">Naveen Mishra (Treasurer)</button>
-            <button onclick="loginWithMasterPersona('patron')" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-orange-50 text-stone-700 hover:text-orange-700 text-[11px] font-semibold transition-colors">Santosh Mishra (Patron)</button>
-            <button onclick="loginWithMasterPersona('education')" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-orange-50 text-stone-700 hover:text-orange-700 text-[11px] font-semibold transition-colors">R. N. Tiwari (Education)</button>
-            <button onclick="loginWithMasterPersona('legal')" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-orange-50 text-stone-700 hover:text-orange-700 text-[11px] font-semibold transition-colors">Adv. Upadhyay (Legal)</button>
-          </div>
-        </div>
 
         <!-- New Member Link -->
         <div class="text-center pt-2 text-xs text-stone-500 space-y-1">
@@ -3275,8 +3269,8 @@
           <button onclick="switchTab('membership')" class="px-4 py-2 bg-stone-100 hover:bg-stone-200 text-gray-800 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5">
             <span>🪪</span> My Official ID Card
           </button>
-          <button onclick="switchTab('login')" class="px-3.5 py-2 bg-stone-50 hover:bg-red-50 text-stone-600 hover:text-red-700 text-xs font-bold rounded-xl border border-stone-200 transition-all">
-            Switch Persona
+          <button onclick="handleSignOut()" class="px-3.5 py-2 bg-stone-50 hover:bg-red-50 text-stone-600 hover:text-red-700 text-xs font-bold rounded-xl border border-stone-200 transition-all">
+            Sign Out
           </button>
         </div>
       </div>
@@ -3286,13 +3280,13 @@
         <!-- 1. Total Donations -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
           <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Recorded Donations</span>
-          <p id="adminKpiTotalDonations" class="text-lg sm:text-xl font-black text-gray-900">₹ 18,200</p>
+          <p id="adminKpiTotalDonations" class="text-lg sm:text-xl font-black text-gray-900">₹ 0</p>
           <span class="text-[10px] font-bold text-emerald-600">Form 10BD Verified</span>
         </div>
         <!-- 2. Verified Receipts -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
           <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">80G Receipts Issued</span>
-          <p id="adminKpiReceiptCount" class="text-lg sm:text-xl font-black text-orange-600">3 Issued</p>
+          <p id="adminKpiReceiptCount" class="text-lg sm:text-xl font-black text-orange-600">0 Issued</p>
           <span class="text-[10px] font-bold text-gray-500">Tax Deductible (80G)</span>
         </div>
         <!-- 3. Verified Officers & Trustees -->
@@ -3606,45 +3600,12 @@
               </thead>
               <tbody id="adminFullDonationsTableBody" class="divide-y divide-stone-100">
                 <tr>
-                  <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-80G-2026-0184</td>
-                  <td class="p-3.5 font-bold text-gray-900">Devotee (Annapurna Bhandara Seva)</td>
-                  <td class="p-3.5 font-mono">AABTS8923R</td>
-                  <td class="p-3.5">Annapurna Bhandara Daily Meals</td>
-                  <td class="p-3.5 font-bold text-gray-900">₹ 5,100</td>
-                  <td class="p-3.5 font-semibold text-gray-600">RAZORPAY_UPI</td>
-                  <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">VERIFIED</span></td>
-                  <td class="p-3.5 text-right">
-                    <button onclick="openReceiptModal('SSSS-80G-2026-0184', 'Devotee (Annapurna Bhandara Seva)', 5100, 'AABTS8923R', 'Annapurna Bhandara Daily Meals')" class="px-2.5 py-1 bg-orange-50 text-orange-700 hover:bg-orange-100 font-bold rounded-lg border border-orange-200">
-                      📄 Print 80G
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-80G-2026-0182</td>
-                  <td class="p-3.5 font-bold text-gray-900">Devotee (Vidya Daan Pathshala)</td>
-                  <td class="p-3.5 font-mono">AABTS8923R</td>
-                  <td class="p-3.5">Free Education Pathshala Kits</td>
-                  <td class="p-3.5 font-bold text-gray-900">₹ 2,100</td>
-                  <td class="p-3.5 font-semibold text-gray-600">UPI_QR</td>
-                  <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">VERIFIED</span></td>
-                  <td class="p-3.5 text-right">
-                    <button onclick="openReceiptModal('SSSS-80G-2026-0182', 'Devotee (Vidya Daan Pathshala)', 2100, 'AABTS8923R', 'Free Education Pathshala Kits')" class="px-2.5 py-1 bg-orange-50 text-orange-700 hover:bg-orange-100 font-bold rounded-lg border border-orange-200">
-                      📄 Print 80G
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-80G-2026-0179</td>
-                  <td class="p-3.5 font-bold text-gray-900">Devotee (Winter Relief Seva)</td>
-                  <td class="p-3.5 font-mono">AABTS8923R</td>
-                  <td class="p-3.5">Winter Blanket &amp; Relief Drive</td>
-                  <td class="p-3.5 font-bold text-gray-900">₹ 11,000</td>
-                  <td class="p-3.5 font-semibold text-gray-600">BANK_TRANSFER</td>
-                  <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">VERIFIED</span></td>
-                  <td class="p-3.5 text-right">
-                    <button onclick="openReceiptModal('SSSS-80G-2026-0179', 'Devotee (Winter Relief Seva)', 11000, 'AABTS8923R', 'Winter Blanket & Relief Drive')" class="px-2.5 py-1 bg-orange-50 text-orange-700 hover:bg-orange-100 font-bold rounded-lg border border-orange-200">
-                      📄 Print 80G
-                    </button>
+                  <td colspan="8" class="p-8 text-center text-stone-500">
+                    <div class="flex flex-col items-center justify-center space-y-2">
+                      <span class="text-2xl">📋</span>
+                      <p class="font-semibold text-xs text-stone-700">No donation transactions recorded yet</p>
+                      <p class="text-[11px] text-stone-400">Transactions processed via UPI QR or Razorpay gateway will be logged here with Form 10BD 80G certificates.</p>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -3660,22 +3621,10 @@
             <h3 class="font-extrabold text-lg text-gray-900">Security Audit Logs &amp; Identity Tracking</h3>
             <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Encrypted Audit Trail</span>
           </div>
-          <div class="space-y-2 text-xs font-mono">
-            <div class="p-3 bg-stone-50 rounded-xl border flex justify-between items-center">
-              <span>[2026-10-03 13:30:15 UTC] AUTH_LOGIN: Super Admin authenticated via Firebase Google OAuth. IP: 104.21.8.176</span>
-              <span class="text-emerald-600 font-bold">OK</span>
-            </div>
-            <div class="p-3 bg-stone-50 rounded-xl border flex justify-between items-center">
-              <span>[2026-10-03 13:28:44 UTC] ID_VERIFIED: SSSS-TRU-000002 (Naveen Mishra) public QR verification scan passed.</span>
-              <span class="text-emerald-600 font-bold">VERIFIED</span>
-            </div>
-            <div class="p-3 bg-stone-50 rounded-xl border flex justify-between items-center">
-              <span>[2026-10-03 13:25:02 UTC] 80G_RECEIPT: SSSS-80G-2026-0184 issued for ₹5,100 for Annapurna Bhandara Daily Meals.</span>
-              <span class="text-emerald-600 font-bold">COMMITTED</span>
-            </div>
-            <div class="p-3 bg-stone-50 rounded-xl border flex justify-between items-center">
-              <span>[2026-10-03 13:20:11 UTC] CMS_UPDATE: Announcement Ticker updated live on Cloudflare Edge.</span>
-              <span class="text-emerald-600 font-bold">DEPLOYED</span>
+          <div id="adminSecurityAuditContainer" class="space-y-2 text-xs font-mono">
+            <div class="p-4 bg-stone-50 rounded-xl border border-stone-200 text-center text-stone-500">
+              <span class="text-emerald-600 font-bold">● Security Audit Trail Active</span>
+              <p class="text-[11px] text-stone-400 mt-1">Real-time authentication, public QR verification, and statutory ledger events are recorded here securely.</p>
             </div>
           </div>
         </div>
@@ -4095,11 +4044,8 @@
           <button id="tabBtnSignIn" onclick="switchAuthTab('signin')" class="flex-1 pb-2.5 text-center border-b-2 border-orange-600 text-orange-600">
             Sign In
           </button>
-          <button id="tabBtnQuickRoles" onclick="switchAuthTab('roles')" class="flex-1 pb-2.5 text-center border-b-2 border-transparent text-stone-500 hover:text-stone-900">
-            1-Click Officer Access
-          </button>
           <button id="tabBtnSignUp" onclick="switchAuthTab('signup')" class="flex-1 pb-2.5 text-center border-b-2 border-transparent text-stone-500 hover:text-stone-900">
-            New Sevadar
+            New Sevadar (Register)
           </button>
         </div>
 
@@ -4139,78 +4085,6 @@
           <button type="button" onclick="handleEmailPasswordSignIn()" class="w-full py-3 bg-neutral-900 hover:bg-black text-white font-bold text-xs rounded-xl shadow transition-all">
             Sign In with Firebase Credentials
           </button>
-        </div>
-
-        <!-- 2. Instant Officer Access -->
-        <div id="authViewQuickRoles" class="hidden space-y-3">
-          <p class="text-xs text-stone-600">Select any official trustee or officer persona to access role-based permissions, digital identity card, and dashboard controls:</p>
-          <div class="grid grid-cols-1 gap-2.5 max-h-64 overflow-y-auto pr-1">
-            <button onclick="simulateRoleLogin('superadmin')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
-              <div class="flex items-center gap-3">
-                <img src="images/founder.jpg" class="w-9 h-9 rounded-xl object-cover border border-orange-400" />
-                <div>
-                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Pt. Harsh Tiwari</h5>
-                  <span class="text-[10px] text-stone-500">Founder &amp; Chief Managing Trustee &bull; SSSS-TRU-000001</span>
-                </div>
-              </div>
-              <span class="px-2 py-1 bg-red-100 text-red-700 text-[10px] font-black rounded-lg">Super Admin</span>
-            </button>
-
-            <button onclick="simulateRoleLogin('treasurer')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
-              <div class="flex items-center gap-3">
-                <img src="images/treasurer.jpg" class="w-9 h-9 rounded-xl object-cover border border-orange-400" />
-                <div>
-                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Naveen Mishra</h5>
-                  <span class="text-[10px] text-stone-500">Treasurer &amp; Finance Controller &bull; SSSS-TRU-000002</span>
-                </div>
-              </div>
-              <span class="px-2 py-1 bg-amber-100 text-amber-800 text-[10px] font-black rounded-lg">Trustee</span>
-            </button>
-
-            <button onclick="simulateRoleLogin('patron')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
-              <div class="flex items-center gap-3">
-                <img src="images/social-2.jpg" class="w-9 h-9 rounded-xl object-cover border border-purple-400" />
-                <div>
-                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Santosh Mishra</h5>
-                  <span class="text-[10px] text-stone-500">Patron &amp; Chief Advisor &bull; SSSS-TRU-000003</span>
-                </div>
-              </div>
-              <span class="px-2 py-1 bg-purple-100 text-purple-800 text-[10px] font-black rounded-lg">Patron</span>
-            </button>
-
-            <button onclick="simulateRoleLogin('education')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
-              <div class="flex items-center gap-3">
-                <img src="images/education-2.jpg" class="w-9 h-9 rounded-xl object-cover border border-blue-400" />
-                <div>
-                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Ravindra Nath Tiwari</h5>
-                  <span class="text-[10px] text-stone-500">Education Secretary &bull; SSSS-EMP-000001</span>
-                </div>
-              </div>
-              <span class="px-2 py-1 bg-blue-100 text-blue-800 text-[10px] font-black rounded-lg">Staff</span>
-            </button>
-
-            <button onclick="simulateRoleLogin('legal')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
-              <div class="flex items-center gap-3">
-                <img src="images/social-3.jpg" class="w-9 h-9 rounded-xl object-cover border border-slate-400" />
-                <div>
-                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Adv. Atharva Upadhyay</h5>
-                  <span class="text-[10px] text-stone-500">Chief Legal Advisor &bull; SSSS-EMP-000002</span>
-                </div>
-              </div>
-              <span class="px-2 py-1 bg-slate-100 text-slate-800 text-[10px] font-black rounded-lg">Legal</span>
-            </button>
-
-            <button onclick="simulateRoleLogin('volunteer')" class="p-3 bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 rounded-2xl text-left flex items-center justify-between group transition-all">
-              <div class="flex items-center gap-3">
-                <img src="images/education-4.jpg" class="w-9 h-9 rounded-xl object-cover border border-emerald-400" />
-                <div>
-                  <h5 class="text-xs font-bold text-stone-900 group-hover:text-orange-600">Prayagraj Sevadar</h5>
-                  <span class="text-[10px] text-stone-500">Field Operations &bull; SSSS-VOL-000001</span>
-                </div>
-              </div>
-              <span class="px-2 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-black rounded-lg">Volunteer</span>
-            </button>
-          </div>
         </div>
 
         <!-- 3. New Registration -->
@@ -4613,20 +4487,49 @@
 
     function confirmPaymentAndReceipt() {
       closeUpiModal();
-      const name = document.getElementById('donorName').value || 'Kind Devotee';
-      const pan = (document.getElementById('donorPan').value || 'NOT PROVIDED').toUpperCase();
-      const cause = document.getElementById('donationCause').value;
-      const recNum = 'SSSS-2026-RCP-' + Math.floor(1000 + Math.random() * 9000);
+      const name = document.getElementById('donorName')?.value.trim() || 'Devotee';
+      const pan = (document.getElementById('donorPan')?.value.trim() || 'NOT PROVIDED').toUpperCase();
+      const cause = document.getElementById('donationCause')?.value || 'Annapurna Bhandara Daily Meals';
+      const recNum = 'SSSS-80G-2026-' + Math.floor(1000 + Math.random() * 9000);
 
-      document.getElementById('recNoDisp').innerText = recNum;
-      document.getElementById('recDonorName').innerText = name;
-      document.getElementById('recDonorPan').innerText = pan;
-      document.getElementById('recCause').innerText = cause;
-      document.getElementById('recAmount').innerText = '₹ ' + currentAmount.toLocaleString('en-IN') + '/- INR';
-      document.getElementById('recDateDisp').innerText = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+      const recNoDisp = document.getElementById('recNoDisp');
+      if (recNoDisp) recNoDisp.innerText = recNum;
+      const recDonorName = document.getElementById('recDonorName');
+      if (recDonorName) recDonorName.innerText = name;
+      const recDonorPan = document.getElementById('recDonorPan');
+      if (recDonorPan) recDonorPan.innerText = pan;
+      const recCause = document.getElementById('recCause');
+      if (recCause) recCause.innerText = cause;
+      const recAmount = document.getElementById('recAmount');
+      if (recAmount) recAmount.innerText = '₹ ' + currentAmount.toLocaleString('en-IN') + '/- INR';
+      const recDateDisp = document.getElementById('recDateDisp');
+      if (recDateDisp) recDateDisp.innerText = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+
+      // Save into live recorded donations array
+      if (!window.recordedDonations) window.recordedDonations = [];
+      const newTx = {
+        receiptNo: recNum,
+        name: name,
+        pan: pan,
+        cause: cause,
+        amount: currentAmount,
+        gateway: currentGateway || 'UPI_QR',
+        status: 'VERIFIED'
+      };
+      window.recordedDonations.unshift(newTx);
+
+      // Update KPI metrics
+      let totalAmt = window.recordedDonations.reduce((sum, d) => sum + d.amount, 0);
+      const kpiTotal = document.getElementById('adminKpiTotalDonations');
+      if (kpiTotal) kpiTotal.innerText = '₹ ' + totalAmt.toLocaleString('en-IN');
+      const kpiCount = document.getElementById('adminKpiReceiptCount');
+      if (kpiCount) kpiCount.innerText = window.recordedDonations.length + ' Issued';
 
       const tbody = document.getElementById('adminFullDonationsTableBody') || document.getElementById('adminDonationsTableBody');
       if (tbody) {
+        if (window.recordedDonations.length === 1) {
+          tbody.innerHTML = '';
+        }
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td class="p-3.5 font-mono font-bold text-orange-600">${recNum}</td>
@@ -4634,7 +4537,7 @@
           <td class="p-3.5 font-mono">${pan}</td>
           <td class="p-3.5">${cause}</td>
           <td class="p-3.5 font-bold text-gray-900">₹ ${currentAmount.toLocaleString('en-IN')}</td>
-          <td class="p-3.5 font-semibold text-gray-600">${currentGateway}</td>
+          <td class="p-3.5 font-semibold text-gray-600">${newTx.gateway}</td>
           <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">VERIFIED</span></td>
           <td class="p-3.5 text-right">
             <button onclick="openReceiptModal('${recNum}', '${name}', ${currentAmount}, '${pan}', '${cause}')" class="px-2.5 py-1 bg-orange-50 text-orange-700 hover:bg-orange-100 font-bold rounded-lg border border-orange-200">
@@ -4643,6 +4546,10 @@
           </td>
         `;
         tbody.prepend(tr);
+      }
+
+      if (typeof logAuditEvent === 'function') {
+        logAuditEvent('80G_RECEIPT_ISSUED', `${recNum} issued for ₹${currentAmount.toLocaleString('en-IN')} to ${name} (${cause})`);
       }
 
       const modal = document.getElementById('receiptModal');
@@ -4691,10 +4598,14 @@
     }
 
     function downloadLedgerCsv() {
-      const csv = "ReceiptNo,DonorName,Cause,Amount,Gateway,Status\n" +
-        "SSSS-80G-2026-0184,Devotee (Annapurna Bhandara Seva),Annapurna Bhandara Daily Meals,5100,RAZORPAY_UPI,VERIFIED\n" +
-        "SSSS-80G-2026-0182,Devotee (Vidya Daan Pathshala),Free Education Pathshala Kits,2100,UPI_QR,VERIFIED\n" +
-        "SSSS-80G-2026-0179,Devotee (Winter Relief Seva),Winter Blanket & Relief Drive,11000,BANK_TRANSFER,VERIFIED\n";
+      if (!window.recordedDonations || window.recordedDonations.length === 0) {
+        alert('No donation transactions recorded in the ledger yet.');
+        return;
+      }
+      let csv = "ReceiptNo,DonorName,PAN,Cause,Amount,Gateway,Status\n";
+      window.recordedDonations.forEach(d => {
+        csv += `${d.receiptNo},"${d.name}","${d.pan || 'N/A'}","${d.cause}",${d.amount},${d.gateway},${d.status}\n`;
+      });
       const blob = new Blob([csv], { type: 'text/csv' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -5032,20 +4943,20 @@
     // 1B. USER PROFILE & SOCIAL REDIRECT ENGINE
     // ==========================================
     let userProfile = {
-      name: "Abhinav Mishra",
-      hindiName: "अभिनव मिश्रा",
-      id: "SSSS-VOL-002184",
+      name: "",
+      hindiName: "",
+      id: "",
       role: "DEDICATED VOLUNTEER (SEVADAR)",
       dept: "Akhand Annapurna Bhandara & Vidya Daan",
-      phone: "09450858514",
-      whatsapp: "9450858514",
-      instagram: "sarva_samarpit_sewa",
-      email: "volunteer@sarva-samarpit-sewa-sansthan.in",
-      address: "Sangam Marg, Prayagraj, UP - 211005",
+      phone: "",
+      whatsapp: "",
+      instagram: "",
+      email: "",
+      address: "",
       bloodGroup: "O+",
       photo: "images/founder.jpg",
-      joinDate: "14-Apr-2022",
-      validity: "31-Mar-2028",
+      joinDate: "",
+      validity: "",
       status: "ACTIVE"
     };
 
@@ -5083,27 +4994,27 @@
     function syncProfileInputsToPreview() {
       const getVal = (id, fallback) => {
         const el = document.getElementById(id);
-        return (el && el.value.trim()) ? el.value.trim() : fallback;
+        return (el && el.value.trim()) ? el.value.trim() : (fallback || '');
       };
 
-      const name = getVal('profileFullName', userProfile.name || 'Abhinav Mishra');
-      const hindi = getVal('profileHindiName', userProfile.hindiName || 'अभिनव मिश्रा');
-      const id = getVal('profileNgoId', userProfile.id || 'SSSS-VOL-002184');
+      const name = getVal('profileFullName', userProfile.name);
+      const hindi = getVal('profileHindiName', userProfile.hindiName);
+      const id = getVal('profileNgoId', userProfile.id);
       const role = getVal('profileRole', userProfile.role || 'DEDICATED VOLUNTEER (SEVADAR)');
       const dept = getVal('profileDept', userProfile.dept || 'Akhand Annapurna Bhandara & Vidya Daan');
-      const phone = getVal('profilePhone', userProfile.phone || '09450858514');
-      const wa = getVal('profileWhatsApp', userProfile.whatsapp || '9450858514');
-      const insta = getVal('profileInstagram', userProfile.instagram || 'sarva_samarpit_sewa');
+      const phone = getVal('profilePhone', userProfile.phone);
+      const wa = getVal('profileWhatsApp', userProfile.whatsapp);
+      const insta = getVal('profileInstagram', userProfile.instagram);
       const bg = getVal('profileBloodGroup', userProfile.bloodGroup || 'O+');
 
       const cardName = document.getElementById('profileCardName');
-      if (cardName) cardName.innerText = name;
+      if (cardName) cardName.innerText = name || 'Your Full Name';
 
       const cardHindi = document.getElementById('profileCardHindi');
       if (cardHindi) cardHindi.innerText = hindi;
 
       const cardId = document.getElementById('profileCardId');
-      if (cardId) cardId.innerText = id;
+      if (cardId) cardId.innerText = id || 'Not Assigned';
 
       const cardBg = document.getElementById('profileCardBloodGroup');
       if (cardBg) cardBg.innerText = bg;
@@ -5119,58 +5030,94 @@
         cardPhoto.src = userProfile.photo;
       }
 
-      const cardPhoneDisp = document.getElementById('profileCardPhoneDisp');
-      if (cardPhoneDisp) cardPhoneDisp.innerText = phone;
-
-      const cardPhoneLink = document.getElementById('profileCardPhoneLink');
-      if (cardPhoneLink) {
-        const cleanPhone = phone.replace(/[^0-9+]/g, '');
-        cardPhoneLink.href = 'tel:' + cleanPhone;
+      // WhatsApp Button visibility
+      const waBtn = document.getElementById('profileCardWhatsAppBtn');
+      if (waBtn) {
+        if (wa) {
+          waBtn.style.display = 'flex';
+          const cardWaDisp = document.getElementById('profileCardWhatsAppDisp');
+          if (cardWaDisp) cardWaDisp.innerText = (wa.length > 5 ? wa : 'Direct') + ' ↗';
+        } else {
+          waBtn.style.display = 'none';
+        }
       }
 
-      const cardWaDisp = document.getElementById('profileCardWhatsAppDisp');
-      if (cardWaDisp) {
-        cardWaDisp.innerText = (wa.length > 5 ? wa : 'Direct') + ' ↗';
+      // Instagram Button visibility
+      const instaBtn = document.getElementById('profileCardInstagramBtn');
+      if (instaBtn) {
+        if (insta) {
+          instaBtn.style.display = 'flex';
+          const cardInstaDisp = document.getElementById('profileCardInstagramDisp');
+          if (cardInstaDisp) cardInstaDisp.innerText = '@' + cleanInstagramHandle(insta) + ' ↗';
+        } else {
+          instaBtn.style.display = 'none';
+        }
       }
 
-      const cardInstaDisp = document.getElementById('profileCardInstagramDisp');
-      if (cardInstaDisp) {
-        const cleanInsta = cleanInstagramHandle(insta);
-        cardInstaDisp.innerText = '@' + cleanInsta + ' ↗';
+      // Phone Button visibility
+      const phoneBtn = document.getElementById('profileCardPhoneBtn');
+      if (phoneBtn) {
+        if (phone) {
+          phoneBtn.style.display = 'flex';
+          const cardPhoneDisp = document.getElementById('profileCardPhoneDisp');
+          if (cardPhoneDisp) cardPhoneDisp.innerText = phone;
+          const cleanPhone = phone.replace(/[^0-9+]/g, '');
+          phoneBtn.href = 'tel:' + cleanPhone;
+        } else {
+          phoneBtn.style.display = 'none';
+        }
+      }
+
+      // Empty social channels message
+      const noSocialMsg = document.getElementById('profileNoSocialMessage');
+      if (noSocialMsg) {
+        if (!wa && !insta && !phone) {
+          noSocialMsg.style.display = 'block';
+        } else {
+          noSocialMsg.style.display = 'none';
+        }
       }
     }
 
     function cleanInstagramHandle(val) {
-      if (!val) return 'sarva_samarpit_sewa';
+      if (!val) return '';
       let h = val.trim();
       h = h.replace(/^@+/, '');
       h = h.replace(/^https?:\/\/(www\.)?instagram\.com\//i, '');
       h = h.replace(/\/+$/, '');
       h = h.split('?')[0].split('#')[0];
-      return h || 'sarva_samarpit_sewa';
+      return h;
     }
 
     function cleanWhatsAppNumber(val) {
-      if (!val) return '919450858514';
+      if (!val) return '';
       let num = val.replace(/[^0-9]/g, '');
       if (num.length === 10) {
         num = '91' + num;
       }
-      return num || '919450858514';
+      return num;
     }
 
     function openProfileWhatsApp() {
-      const waInput = document.getElementById('profileWhatsApp')?.value || userProfile.whatsapp;
+      const waInput = document.getElementById('profileWhatsApp')?.value.trim() || userProfile.whatsapp;
       const cleanNum = cleanWhatsAppNumber(waInput);
-      const name = document.getElementById('profileFullName')?.value || userProfile.name || 'Devoted Sevadar';
+      if (!cleanNum) {
+        alert('Please enter your WhatsApp number in the field on the right first.');
+        return;
+      }
+      const name = document.getElementById('profileFullName')?.value.trim() || userProfile.name || 'Sansthan Member';
       const msg = `Namaste! Connecting with ${name} via Sarva Samarpit Sewa Sansthan Member Profile.`;
       const url = `https://wa.me/${cleanNum}?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank', 'noopener,noreferrer');
     }
 
     function openProfileInstagram() {
-      const instaInput = document.getElementById('profileInstagram')?.value || userProfile.instagram;
+      const instaInput = document.getElementById('profileInstagram')?.value.trim() || userProfile.instagram;
       const cleanHandle = cleanInstagramHandle(instaInput);
+      if (!cleanHandle) {
+        alert('Please enter your Instagram handle in the field on the right first.');
+        return;
+      }
       const url = `https://instagram.com/${cleanHandle}`;
       window.open(url, '_blank', 'noopener,noreferrer');
     }
@@ -5748,14 +5695,12 @@
 
     function switchAuthTab(tab) {
       const vSignIn = document.getElementById('authViewSignIn');
-      const vRoles = document.getElementById('authViewQuickRoles');
       const vSignUp = document.getElementById('authViewSignUp');
       const bSign = document.getElementById('tabBtnSignIn');
-      const bRoles = document.getElementById('tabBtnQuickRoles');
       const bSignUp = document.getElementById('tabBtnSignUp');
 
-      [vSignIn, vRoles, vSignUp].forEach(v => v && v.classList.add('hidden'));
-      [bSign, bRoles, bSignUp].forEach(b => {
+      [vSignIn, vSignUp].forEach(v => v && v.classList.add('hidden'));
+      [bSign, bSignUp].forEach(b => {
         if (b) {
           b.classList.remove('border-orange-600', 'text-orange-600');
           b.classList.add('border-transparent', 'text-stone-500');
@@ -5765,9 +5710,6 @@
       if (tab === 'signin') {
         if (vSignIn) vSignIn.classList.remove('hidden');
         if (bSign) { bSign.classList.add('border-orange-600', 'text-orange-600'); bSign.classList.remove('border-transparent', 'text-stone-500'); }
-      } else if (tab === 'roles') {
-        if (vRoles) vRoles.classList.remove('hidden');
-        if (bRoles) { bRoles.classList.add('border-orange-600', 'text-orange-600'); bRoles.classList.remove('border-transparent', 'text-stone-500'); }
       } else if (tab === 'signup') {
         if (vSignUp) vSignUp.classList.remove('hidden');
         if (bSignUp) { bSignUp.classList.add('border-orange-600', 'text-orange-600'); bSignUp.classList.remove('border-transparent', 'text-stone-500'); }
@@ -5780,79 +5722,104 @@
       }
       showAuthFeedback('Connecting with Google Firebase Authentication...');
 
-      if (fbAuth && typeof firebase.auth.GoogleAuthProvider === 'function') {
-        try {
-          const provider = new firebase.auth.GoogleAuthProvider();
-          provider.setCustomParameters({ prompt: 'select_account' });
-          const result = await fbAuth.signInWithPopup(provider);
-          const user = result.user;
-          const userEmail = (user.email || '').toLowerCase();
-          const name = user.displayName || userEmail;
+      if (!fbAuth || typeof firebase.auth.GoogleAuthProvider !== 'function') {
+        const msg = 'Firebase Authentication is initializing or offline. Please check network connection.';
+        showAuthFeedback(msg);
+        if (typeof showLoginPageAlert === 'function') showLoginPageAlert('error', msg);
+        return;
+      }
 
-          if (userEmail.includes('harsh') || userEmail.includes('founder') || userEmail.includes('admin') || userEmail.includes('abhinav') || userEmail === 'msingh252001@gmail.com') {
-            simulateRoleLogin('superadmin');
-            showAuthFeedback('Welcome, ' + name + '! Authenticated as Super Admin via Google.');
-            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Super Admin via Google!');
-          } else if (userEmail.includes('navin') || userEmail.includes('treasurer') || userEmail === 'navinmishra6387@gmail.com') {
-            simulateRoleLogin('treasurer');
-            showAuthFeedback('Welcome, ' + name + '! Authenticated as Treasurer (Naveen Mishra) via Google.');
-            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Treasurer via Google!');
-          } else {
-            const gCode = registerNewMemberRecord(name, userEmail, user.phoneNumber || '09450858514', 'Volunteer');
-            if (user.photoURL) {
-              const lastKey = document.getElementById('idCardSelector')?.value;
-              if (lastKey && idCardProfiles[lastKey]) {
-                idCardProfiles[lastKey].photo = user.photoURL;
-                const imgEl = document.getElementById('cardPhotoImg');
-                if (imgEl) imgEl.src = user.photoURL;
-              }
-            }
-            simulateRoleLogin('volunteer');
-            showAuthFeedback('Welcome, ' + name + '! Profile & ID card synced with Google.');
-            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Welcome, ' + name + '! Synced with Google.');
-          }
-          return;
-        } catch (err) {
-          console.warn('Firebase Google Auth error:', err);
-          if (err.code === 'auth/popup-closed-by-user') {
-            showAuthFeedback('Google login window was closed.');
-            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('error', 'Google Sign-In was cancelled.');
-            return;
-          }
-          if (err.code === 'auth/unauthorized-domain') {
-            alert('Domain Notice: Please add sarva-samarpit-sewa-sansthan.in and abhinavmishra6387.github.io to Firebase Console > Authentication > Settings > Authorized domains. Falling back to Super Admin access now.');
-          }
+      try {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        provider.setCustomParameters({ prompt: 'select_account' });
+        const result = await fbAuth.signInWithPopup(provider);
+        const user = result.user;
+        const name = user.displayName || user.email;
+
+        applyUserSession(user);
+        showAuthFeedback('Welcome, ' + name + '! Authenticated with Google.');
+        if (typeof showLoginPageAlert === 'function') {
+          showLoginPageAlert('success', 'Authentication Successful! Welcome, ' + name + '. Redirecting...');
+        }
+        setTimeout(() => {
+          closeAuthModal();
+          switchTab('profile');
+        }, 800);
+      } catch (err) {
+        console.warn('Firebase Google Auth error:', err);
+        let msg = 'Google Sign-In was cancelled or failed. Please try again.';
+        if (err.code === 'auth/popup-closed-by-user') {
+          msg = 'Google login window was closed by the user.';
+        } else if (err.code === 'auth/unauthorized-domain') {
+          msg = 'Domain Notice: Authorized domain required in Firebase Console for ' + window.location.hostname;
+        } else if (err.message) {
+          msg = err.message;
+        }
+        showAuthFeedback(msg);
+        if (typeof showLoginPageAlert === 'function') {
+          showLoginPageAlert('error', msg);
         }
       }
+    }
 
-      // Safe fallback
-      simulateRoleLogin('superadmin');
-      showAuthFeedback('Google Firebase Authentication Successful! Signed in as Pt. Harsh Tiwari (Super Admin).');
-      if (typeof showLoginPageAlert === 'function') {
-        showLoginPageAlert('success', 'Signed in as Pt. Harsh Tiwari (Super Admin). Redirecting...');
+    async function handleEmailPasswordSignIn() {
+      const email = (document.getElementById('authEmailInput')?.value || '').trim();
+      const pass = document.getElementById('authPasswordInput')?.value || '';
+
+      if (!email || !pass) {
+        showAuthFeedback('Please enter both your registered email and password.');
+        return;
+      }
+
+      showAuthFeedback('Verifying credentials with Firebase Auth...');
+
+      if (!fbAuth || typeof fbAuth.signInWithEmailAndPassword !== 'function') {
+        showAuthFeedback('Firebase Authentication is currently unavailable. Please check your connection.');
+        return;
+      }
+
+      try {
+        const userCredential = await fbAuth.signInWithEmailAndPassword(email, pass);
+        const user = userCredential.user;
+        applyUserSession(user);
+        showAuthFeedback('Authentication Verified! Welcome, ' + (user.displayName || user.email) + '.');
+        setTimeout(() => {
+          closeAuthModal();
+          switchTab('profile');
+        }, 700);
+      } catch (err) {
+        console.warn('Firebase Sign-In Error:', err);
+        let msg = 'Invalid email or password.';
+        if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+          msg = 'Invalid email or password. Please verify your credentials or register below.';
+        } else if (err.code === 'auth/invalid-email') {
+          msg = 'Please enter a valid email address.';
+        } else if (err.message) {
+          msg = err.message;
+        }
+        showAuthFeedback(msg);
       }
     }
 
-    function handleEmailPasswordSignIn() {
-      const email = (document.getElementById('authEmailInput').value || '').toLowerCase();
-      if (email.includes('founder') || email.includes('admin') || email.includes('harsh')) {
-        simulateRoleLogin('superadmin');
-      } else if (email.includes('treasurer') || email.includes('navin')) {
-        simulateRoleLogin('treasurer');
-      } else if (email.includes('education') || email.includes('tiwari')) {
-        simulateRoleLogin('education');
+    async function handleForgotPassword() {
+      const email = (document.getElementById('loginPageEmail')?.value || document.getElementById('authEmailInput')?.value || '').trim();
+      if (!email) {
+        alert('Please enter your registered email address first.');
+        return;
+      }
+      if (fbAuth && typeof fbAuth.sendPasswordResetEmail === 'function') {
+        try {
+          await fbAuth.sendPasswordResetEmail(email);
+          alert('A secure password reset link has been dispatched to: ' + email);
+        } catch (err) {
+          alert('Password reset failed: ' + (err.message || 'Please verify email address.'));
+        }
       } else {
-        simulateRoleLogin('volunteer');
+        alert('Authentication service is offline. Please call trust helpline at 09450858514.');
       }
-      showAuthFeedback('Firebase Authentication Verified! Welcome back.');
     }
 
-    function handleForgotPassword() {
-      const email = document.getElementById('authEmailInput')?.value || 'treasurer@sarva-samarpit-sewa-sansthan.in';
-      alert('Password reset link sent via Firebase Auth to ' + email);
-    }
-
-    function simulateRoleLogin(role) {
+    function applyUserSession(user) {
       const roleDisp = document.getElementById('authCurrentRoleDisp');
       const idDisp = document.getElementById('authCurrentIdDisp');
       const navLabel = document.getElementById('navAuthLabel');
@@ -5862,70 +5829,109 @@
       const opId = document.getElementById('adminOperatorId');
       const opDept = document.getElementById('adminOperatorDept');
 
-      const profileMap = {
-        superadmin: idCardProfiles.pt_harsh_tiwari,
-        treasurer: idCardProfiles.navin_mishra,
-        patron: idCardProfiles.santosh_mishra,
-        education: idCardProfiles.ravindra_tiwari,
-        legal: idCardProfiles.atharva_upadhyay,
-        volunteer: {
-          name: "Approved Sevadar",
-          photo: "images/education-4.jpg",
-          role: "CERTIFIED VOLUNTEER (SEVADAR)",
-          id: "SSSS-VOL-000001",
-          dept: "Prayagraj Seva Mission"
-        }
-      };
-
-      const prof = profileMap[role] || profileMap.superadmin;
-      if (opPhoto && prof) opPhoto.src = prof.photo;
-      if (opName && prof) opName.innerText = prof.name;
-      if (opBadge && prof) opBadge.innerText = prof.role;
-      if (opId && prof) opId.innerText = prof.id;
-      if (opDept && prof) opDept.innerText = prof.dept;
-
-      if (role === 'superadmin') {
-        if (roleDisp) roleDisp.innerText = 'Super Admin (Pt. Harsh Tiwari)';
-        if (idDisp) idDisp.innerText = 'SSSS-TRU-000001';
-        if (navLabel) navLabel.innerText = 'Pt. Harsh Tiwari (Admin)';
-        onIdCardSelect('pt_harsh_tiwari');
-        showAuthFeedback('Signed in as Pt. Harsh Tiwari. Full Super Admin rights granted.');
-        setTimeout(() => { closeAuthModal(); switchTab('admin'); }, 800);
-      } else if (role === 'treasurer') {
-        if (roleDisp) roleDisp.innerText = 'Treasurer (Naveen Mishra)';
-        if (idDisp) idDisp.innerText = 'SSSS-TRU-000002';
-        if (navLabel) navLabel.innerText = 'Naveen Mishra (Treasurer)';
-        onIdCardSelect('navin_mishra');
-        showAuthFeedback('Signed in as Naveen Mishra (Treasurer). 80G and Finance modules enabled.');
-        setTimeout(() => { closeAuthModal(); switchTab('admin'); }, 800);
-      } else if (role === 'patron') {
-        if (roleDisp) roleDisp.innerText = 'Patron & Chief Advisor (Santosh Mishra)';
-        if (idDisp) idDisp.innerText = 'SSSS-TRU-000003';
-        if (navLabel) navLabel.innerText = 'Santosh Mishra (Patron)';
-        onIdCardSelect('santosh_mishra');
-        showAuthFeedback('Signed in as Santosh Mishra (Patron). Advisory portal active.');
-        setTimeout(() => { closeAuthModal(); switchTab('admin'); }, 800);
-      } else if (role === 'education') {
-        if (roleDisp) roleDisp.innerText = 'Education Secretary (R. N. Tiwari)';
-        if (idDisp) idDisp.innerText = 'SSSS-EMP-000001';
-        if (navLabel) navLabel.innerText = 'R. N. Tiwari (Education Sec)';
-        onIdCardSelect('ravindra_tiwari');
-        showAuthFeedback('Signed in as Ravindra Nath Tiwari. Free Pathshala portal open.');
-        setTimeout(() => { closeAuthModal(); switchTab('membership'); }, 800);
-      } else if (role === 'legal') {
-        if (roleDisp) roleDisp.innerText = 'Legal Counsel (Adv. Atharva Upadhyay)';
-        if (idDisp) idDisp.innerText = 'SSSS-EMP-000002';
-        if (navLabel) navLabel.innerText = 'Adv. Upadhyay (Legal)';
-        onIdCardSelect('atharva_upadhyay');
-        showAuthFeedback('Signed in as Adv. Atharva Upadhyay. Regulatory portal active.');
-        setTimeout(() => { closeAuthModal(); switchTab('admin'); }, 800);
-      } else if (role === 'volunteer') {
-        if (roleDisp) roleDisp.innerText = 'Approved Sevadar / Volunteer';
-        if (idDisp) idDisp.innerText = 'SSSS-VOL-000001';
-        if (navLabel) navLabel.innerText = 'Sevadar Portal';
-        showAuthFeedback('Signed in as Approved Volunteer. Seva events schedule synced.');
-        setTimeout(() => { closeAuthModal(); switchTab('membership'); }, 800);
+      if (!user) {
+        if (roleDisp) roleDisp.innerText = 'Guest Visitor';
+        if (idDisp) idDisp.innerText = 'Unauthenticated';
+        if (navLabel) navLabel.innerText = 'Sign In';
+        return;
       }
+
+      const email = (user.email || '').toLowerCase();
+      const name = user.displayName || (email ? email.split('@')[0] : 'Approved Sevadar');
+      
+      let role = 'Volunteer';
+      let roleBadge = 'CERTIFIED VOLUNTEER (SEVADAR)';
+      let ngoId = 'SSSS-VOL-' + (user.uid ? user.uid.slice(0, 6).toUpperCase() : '000001');
+      let dept = 'Prayagraj Seva Mission';
+
+      if (email.includes('founder') || email.includes('harsh') || email === 'msingh252001@gmail.com') {
+        role = 'Super Admin';
+        roleBadge = 'FOUNDER & CHIEF MANAGING TRUSTEE';
+        ngoId = 'SSSS-TRU-000001';
+        dept = 'Trust Governing Board & Annapurna Seva';
+        onIdCardSelect('pt_harsh_tiwari');
+      } else if (email.includes('treasurer') || email.includes('navin') || email === 'navinmishra6387@gmail.com') {
+        role = 'Treasurer';
+        roleBadge = 'TREASURER & FINANCE CONTROLLER';
+        ngoId = 'SSSS-TRU-000002';
+        dept = 'Finance, Audit & 80G Statutory Compliances';
+        onIdCardSelect('navin_mishra');
+      } else if (email.includes('patron') || email.includes('santosh')) {
+        role = 'Patron';
+        roleBadge = 'PATRON & CHIEF ADVISOR';
+        ngoId = 'SSSS-TRU-000003';
+        dept = 'Advisory Council & Ethics Supervision';
+        onIdCardSelect('santosh_mishra');
+      } else if (email.includes('education') || email.includes('tiwari')) {
+        role = 'Education Secretary';
+        roleBadge = 'EDUCATION SECRETARY & DIRECTOR';
+        ngoId = 'SSSS-EMP-000001';
+        dept = 'Free Rural Pathshala & Vidya Daan Mission';
+        onIdCardSelect('ravindra_tiwari');
+      } else if (email.includes('legal') || email.includes('upadhyay')) {
+        role = 'Legal Counsel';
+        roleBadge = 'CHIEF LEGAL COUNSEL & COMPLIANCE';
+        ngoId = 'SSSS-EMP-000002';
+        dept = 'Legal Affairs & Trust Regulatory Commission';
+        onIdCardSelect('atharva_upadhyay');
+      }
+
+      if (roleDisp) roleDisp.innerText = role + ' (' + name + ')';
+      if (idDisp) idDisp.innerText = ngoId;
+      if (navLabel) navLabel.innerText = name.length > 14 ? name.substring(0, 12) + '...' : name;
+
+      if (opPhoto && user.photoURL) opPhoto.src = user.photoURL;
+      if (opName) opName.innerText = name;
+      if (opBadge) opBadge.innerText = roleBadge;
+      if (opId) opId.innerText = ngoId;
+      if (opDept) opDept.innerText = dept;
+
+      // Populate user profile object
+      userProfile.name = name;
+      userProfile.id = ngoId;
+      userProfile.email = email;
+      userProfile.role = roleBadge;
+      userProfile.dept = dept;
+      if (user.photoURL) userProfile.photo = user.photoURL;
+      if (user.phoneNumber) userProfile.phone = user.phoneNumber;
+
+      const pNameInput = document.getElementById('profileFullName');
+      if (pNameInput && !pNameInput.value) pNameInput.value = name;
+      const pIdInput = document.getElementById('profileNgoId');
+      if (pIdInput && !pIdInput.value) pIdInput.value = ngoId;
+      const pEmailInput = document.getElementById('profileEmail');
+      if (pEmailInput && !pEmailInput.value) pEmailInput.value = email;
+
+      syncProfileInputsToPreview();
+
+      // Log real audit event
+      logAuditEvent('AUTH_SIGN_IN', `${role} (${name} <${email}>) authenticated via Firebase.`);
+    }
+
+    async function handleSignOut() {
+      if (fbAuth && typeof fbAuth.signOut === 'function') {
+        try {
+          await fbAuth.signOut();
+        } catch (e) {
+          console.warn('Sign out notice:', e);
+        }
+      }
+      applyUserSession(null);
+      alert('You have been signed out successfully.');
+      switchTab('home');
+    }
+
+    function logAuditEvent(action, detail) {
+      const container = document.getElementById('adminSecurityAuditContainer');
+      if (!container) return;
+      const timeStr = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+      const div = document.createElement('div');
+      div.className = 'p-3 bg-stone-50 rounded-xl border border-stone-200 flex justify-between items-center text-xs font-mono';
+      div.innerHTML = `
+        <span>[${timeStr}] <strong>${action}</strong>: ${detail}</span>
+        <span class="text-emerald-600 font-bold">LOGGED</span>
+      `;
+      container.prepend(div);
     }
 
     function showAuthFeedback(msg) {
@@ -6468,23 +6474,8 @@
       input.type = input.type === 'password' ? 'text' : 'password';
     }
 
-    function loginWithMasterPersona(persona) {
-      simulateRoleLogin(persona);
-      const personaNames = {
-        superadmin: 'Pt. Harsh Tiwari (Super Admin)',
-        treasurer: 'Naveen Mishra (Treasurer)',
-        patron: 'Santosh Mishra (Patron & Chief Advisor)',
-        education: 'Ravindra Nath Tiwari (Education Secretary & Director)',
-        legal: 'Adv. Atharva Upadhyay (Chief Legal Counsel)'
-      };
-      showLoginPageAlert('success', 'Logged in successfully as ' + (personaNames[persona] || persona) + '. Redirecting to Enterprise Dashboard...');
-      setTimeout(() => {
-        switchTab('admin');
-      }, 700);
-    }
-
-    function handleLoginPageSignIn() {
-      const email = (document.getElementById('loginPageEmail')?.value || '').trim().toLowerCase();
+    async function handleLoginPageSignIn() {
+      const email = (document.getElementById('loginPageEmail')?.value || '').trim();
       const pass = document.getElementById('loginPagePassword')?.value || '';
 
       if (!email) {
@@ -6498,33 +6489,32 @@
 
       showLoginPageAlert('loading', 'Verifying credentials with Google Firebase Auth (sarvasamarpitsewasanstha-b2636)...');
 
-      setTimeout(() => {
-        if (email.includes('founder') || email.includes('admin') || email.includes('harsh')) {
-          simulateRoleLogin('superadmin');
-          showLoginPageAlert('success', 'Authentication Successful! Signed in as Super Admin (Full Control).');
-          setTimeout(() => switchTab('admin'), 600);
-        } else if (email.includes('treasurer') || email.includes('navin')) {
-          simulateRoleLogin('treasurer');
-          showLoginPageAlert('success', 'Authentication Successful! Signed in as Treasurer (Naveen Mishra).');
-          setTimeout(() => switchTab('admin'), 600);
-        } else if (email.includes('patron') || email.includes('santosh')) {
-          simulateRoleLogin('patron');
-          showLoginPageAlert('success', 'Authentication Successful! Signed in as Patron & Chief Advisor.');
-          setTimeout(() => switchTab('admin'), 600);
-        } else if (email.includes('education') || email.includes('tiwari')) {
-          simulateRoleLogin('education');
-          showLoginPageAlert('success', 'Authentication Successful! Signed in as Education Secretary & Director.');
-          setTimeout(() => switchTab('membership'), 600);
-        } else if (email.includes('legal') || email.includes('upadhyay')) {
-          simulateRoleLogin('legal');
-          showLoginPageAlert('success', 'Authentication Successful! Signed in as Chief Legal Counsel.');
-          setTimeout(() => switchTab('admin'), 600);
-        } else {
-          simulateRoleLogin('volunteer');
-          showLoginPageAlert('success', 'Authentication Successful! Welcome to Sarva Samarpit Sewa Sansthan Portal.');
-          setTimeout(() => switchTab('membership'), 600);
+      if (!fbAuth || typeof fbAuth.signInWithEmailAndPassword !== 'function') {
+        showLoginPageAlert('error', 'Firebase Authentication service is currently unavailable. Please check your connection.');
+        return;
+      }
+
+      try {
+        const userCredential = await fbAuth.signInWithEmailAndPassword(email, pass);
+        const user = userCredential.user;
+        const name = user.displayName || user.email;
+        applyUserSession(user);
+        showLoginPageAlert('success', 'Authentication Successful! Welcome, ' + name + '. Redirecting...');
+        setTimeout(() => {
+          switchTab('profile');
+        }, 700);
+      } catch (err) {
+        console.warn('Firebase Sign-In Error:', err);
+        let msg = 'Invalid email or password.';
+        if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+          msg = 'Invalid credentials. Please verify your email and password or register a new account.';
+        } else if (err.code === 'auth/invalid-email') {
+          msg = 'Please enter a valid email address format.';
+        } else if (err.message) {
+          msg = err.message;
         }
-      }, 500);
+        showLoginPageAlert('error', msg);
+      }
     }
 
     function handleLoginPageRegister() {
@@ -6574,6 +6564,17 @@
 
       // Initialize Default ID Card (Naveen Mishra - SSSS-TRU-000002)
       onIdCardSelect('navin_mishra');
+
+      // Listen to Firebase Auth state changes
+      if (fbAuth && typeof fbAuth.onAuthStateChanged === 'function') {
+        fbAuth.onAuthStateChanged(user => {
+          if (user) {
+            applyUserSession(user);
+          } else {
+            applyUserSession(null);
+          }
+        });
+      }
 
       // Check URL query for public QR verification e.g. ?verify=SSSS-TRU-000001
       const urlParams = new URLSearchParams(window.location.search);
