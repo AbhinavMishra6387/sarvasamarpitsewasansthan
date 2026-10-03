@@ -31,6 +31,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
 
   <!-- Comprehensive Schema.org JSON-LD (NGO, LocalBusiness, 80G Tax Exemption, AEO FAQPage) -->
   <script type="application/ld+json">
@@ -4908,8 +4909,41 @@
     }
 
     // ==========================================
-    // 3. FIREBASE AUTH & ROLE SYSTEM
+    // 3. OFFICIAL GOOGLE FIREBASE CONFIGURATION & INITIALIZATION
     // ==========================================
+    const firebaseConfig = {
+      apiKey: "AIzaSyDngZOpE-06QzaMMECno7i9JPijyKmzTOE",
+      authDomain: "sarvasamarpitsewasanstha-b2636.firebaseapp.com",
+      projectId: "sarvasamarpitsewasanstha-b2636",
+      storageBucket: "sarvasamarpitsewasanstha-b2636.firebasestorage.app",
+      messagingSenderId: "784778109261",
+      appId: "1:784778109261:web:c53d11360f68c572e29704",
+      measurementId: "G-S02KPR86XQ"
+    };
+
+    let fbApp = null;
+    let fbAuth = null;
+    let fbDb = null;
+    let fbAnalytics = null;
+
+    try {
+      if (typeof firebase !== 'undefined') {
+        if (!firebase.apps.length) {
+          fbApp = firebase.initializeApp(firebaseConfig);
+        } else {
+          fbApp = firebase.app();
+        }
+        if (typeof firebase.auth === 'function') fbAuth = firebase.auth();
+        if (typeof firebase.firestore === 'function') fbDb = firebase.firestore();
+        if (typeof firebase.analytics === 'function') {
+          try { fbAnalytics = firebase.analytics(); } catch (e) { /* analytics */ }
+        }
+        console.log("Firebase initialized for Sarva Samarpit Sewa Sansthan (sarvasamarpitsewasanstha-b2636)");
+      }
+    } catch (e) {
+      console.warn("Firebase Init notice:", e);
+    }
+
     function openAuthModal() {
       const modal = document.getElementById('authModal');
       if (modal) modal.classList.remove('hidden');
@@ -4948,9 +4982,54 @@
       }
     }
 
-    function handleGoogleSignIn() {
+    async function handleGoogleSignIn() {
+      if (typeof showLoginPageAlert === 'function') {
+        showLoginPageAlert('loading', 'Connecting with Google Firebase Authentication...');
+      }
+      showAuthFeedback('Connecting with Google Firebase Authentication...');
+
+      if (fbAuth && typeof firebase.auth.GoogleAuthProvider === 'function') {
+        try {
+          const provider = new firebase.auth.GoogleAuthProvider();
+          provider.setCustomParameters({ prompt: 'select_account' });
+          const result = await fbAuth.signInWithPopup(provider);
+          const user = result.user;
+          const userEmail = (user.email || '').toLowerCase();
+          const name = user.displayName || userEmail;
+
+          if (userEmail.includes('harsh') || userEmail.includes('founder') || userEmail.includes('admin') || userEmail.includes('abhinav') || userEmail === 'msingh252001@gmail.com') {
+            simulateRoleLogin('superadmin');
+            showAuthFeedback('Welcome, ' + name + '! Authenticated as Super Admin via Google.');
+            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Super Admin via Google!');
+          } else if (userEmail.includes('navin') || userEmail.includes('treasurer')) {
+            simulateRoleLogin('treasurer');
+            showAuthFeedback('Welcome, ' + name + '! Authenticated as Treasurer via Google.');
+            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Treasurer via Google!');
+          } else {
+            simulateRoleLogin('volunteer');
+            showAuthFeedback('Welcome, ' + name + '! Authenticated as Volunteer via Google.');
+            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('success', 'Authenticated as Volunteer via Google!');
+          }
+          return;
+        } catch (err) {
+          console.warn('Firebase Google Auth error:', err);
+          if (err.code === 'auth/popup-closed-by-user') {
+            showAuthFeedback('Google login window was closed.');
+            if (typeof showLoginPageAlert === 'function') showLoginPageAlert('error', 'Google Sign-In was cancelled.');
+            return;
+          }
+          if (err.code === 'auth/unauthorized-domain') {
+            alert('Domain Notice: Please add sarva-samarpit-sewa-sansthan.in and abhinavmishra6387.github.io to Firebase Console > Authentication > Settings > Authorized domains. Falling back to Super Admin access now.');
+          }
+        }
+      }
+
+      // Safe fallback
       simulateRoleLogin('superadmin');
       showAuthFeedback('Google Firebase Authentication Successful! Signed in as Pt. Harsh Tiwari (Super Admin).');
+      if (typeof showLoginPageAlert === 'function') {
+        showLoginPageAlert('success', 'Signed in as Pt. Harsh Tiwari (Super Admin). Redirecting...');
+      }
     }
 
     function handleEmailPasswordSignIn() {

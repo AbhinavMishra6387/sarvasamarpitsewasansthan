@@ -15,13 +15,13 @@ export interface FirebaseConfig {
 }
 
 export const defaultFirebaseConfig: FirebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyDummyKeyForSarvaSamarpit2026",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyDngZOpE-06QzaMMECno7i9JPijyKmzTOE",
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "sarvasamarpitsewasanstha-b2636.firebaseapp.com",
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "sarvasamarpitsewasanstha-b2636",
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "sarvasamarpitsewasanstha-b2636.firebasestorage.app",
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "945085851400",
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "1:945085851400:web:80gtrustssss2026",
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-SSSS2026IN",
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "784778109261",
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "1:784778109261:web:c53d11360f68c572e29704",
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-S02KPR86XQ",
 };
 
 // User Roles Enum
