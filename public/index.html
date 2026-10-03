@@ -63,6 +63,11 @@
         },
         {
           "@type": "Person",
+          "name": "Amit Prakhar Pandey",
+          "jobTitle": "Secretary & Executive Administrator"
+        },
+        {
+          "@type": "Person",
           "name": "Santosh Mishra",
           "jobTitle": "Chief Patron & Advisor"
         },
@@ -1209,7 +1214,7 @@
 
       <!-- ======================================================== -->
       <!-- MAIN BODY (मुख्य कार्यकारिणी)                           -->
-      <!-- Designated Members: Patron, Treasurer, Education Secretary, Legal Advisor -->
+      <!-- Designated Members: Patron, Treasurer, Secretary, Education Secretary, Legal Advisor -->
       <!-- ======================================================== -->
       <div id="section-main-body" class="space-y-6 pt-8 border-t-2 border-stone-200/80 scroll-mt-24">
         
@@ -1302,7 +1307,48 @@
           </div>
         </div>
 
-        <!-- Member 3: Education Secretary (शिक्षा सचिव - निःशुल्क शिक्षा) -->
+        <!-- Member 3: Secretary / Additional Secretary (सचिव / अपर सचिव) -->
+        <div class="bg-gradient-to-b from-indigo-50/80 via-white to-purple-50/80 p-6 sm:p-10 pt-10 sm:pt-10 rounded-3xl border-2 border-indigo-300 shadow-sm relative overflow-hidden group">
+          <div class="absolute top-0 right-0 bg-indigo-600 text-white text-[11px] font-black uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl shadow-sm">
+            सचिव • Secretary
+          </div>
+          <div class="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
+            <!-- Middle Secretary Photo -->
+            <div class="relative w-36 h-44 sm:w-44 sm:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-indigo-500/25 shrink-0 group-hover:scale-105 transition-transform bg-stone-100 cursor-pointer" onclick="openSecretaryPhotoModal()" title="Click to view full photo">
+              <img src="images/social-1.jpg" alt="Amit Prakhar Pandey - Secretary" class="w-full h-full object-cover object-top" />
+              <div class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-md font-bold">
+                🔍 Zoom
+              </div>
+            </div>
+            <!-- Just Under The Photo: Name -->
+            <div class="space-y-1">
+              <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-black uppercase tracking-wider px-3.5 py-1 rounded-full border border-indigo-200 mb-1">
+                सचिव / अपर सचिव (Secretary)
+              </span>
+              <h4 class="text-2xl sm:text-4xl font-black text-gray-900 tracking-tight">Amit Prakhar Pandey</h4>
+              <p class="text-lg sm:text-xl font-bold text-indigo-700">अमित प्रखर पाण्डेय</p>
+              <p class="text-xs sm:text-sm font-semibold text-gray-500">Secretary &amp; Executive Administrator &bull; Sarva Samarpit Sewa Sansthan</p>
+            </div>
+            <!-- Under The Name: About of Member -->
+            <p class="text-xs sm:text-base text-gray-700 leading-relaxed max-w-2xl font-medium">
+              Overseeing general administration, executive coordination of charitable wings, field operations across Sangam Marg and rural Prayagraj, volunteer corps mobilization, and institutional correspondence.
+            </p>
+            <!-- Bottom Badges -->
+            <div class="pt-4 border-t border-stone-200/80 w-full flex flex-wrap items-center justify-center gap-3 text-xs text-gray-600">
+              <span class="bg-white px-3.5 py-1.5 rounded-xl border border-stone-200 font-semibold shadow-2xs">
+                🏛️ General Administration &amp; Operations
+              </span>
+              <span class="bg-white px-3.5 py-1.5 rounded-xl border border-stone-200 font-semibold shadow-2xs text-indigo-700">
+                ✓ Executive Seva Coordination
+              </span>
+              <span class="bg-white px-3.5 py-1.5 rounded-xl border border-stone-200 font-semibold shadow-2xs text-stone-600">
+                ✓ Volunteer Corps Management
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4: Education Secretary (शिक्षा सचिव - निःशुल्क शिक्षा) -->
         <div class="bg-gradient-to-b from-blue-50/80 via-white to-sky-50/80 p-6 sm:p-10 pt-10 sm:pt-10 rounded-3xl border-2 border-blue-300 shadow-sm relative overflow-hidden group">
           <div class="absolute top-0 right-0 bg-blue-600 text-white text-[11px] font-black uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl shadow-sm">
             शिक्षा सचिव • Education Secretary
@@ -1340,7 +1386,7 @@
           </div>
         </div>
 
-        <!-- Member 4: Legal Advisor (विधि सलाहकार) -->
+        <!-- Member 5: Legal Advisor (विधि सलाहकार) -->
         <div class="bg-gradient-to-b from-emerald-50/80 via-white to-teal-50/80 p-6 sm:p-10 pt-10 sm:pt-10 rounded-3xl border-2 border-emerald-300 shadow-sm relative overflow-hidden group">
           <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[11px] font-black uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl shadow-sm">
             विधि सलाहकार • Legal Advisor
@@ -2633,6 +2679,7 @@
           <select id="idCardSelector" onchange="onIdCardSelect(this.value)" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs sm:text-sm font-semibold text-gray-900 focus:outline-none focus:border-orange-500">
             <option value="pt_harsh_tiwari">Pt. Harsh Tiwari (Founder &amp; Chief Managing Trustee • SSSS-TRU-000001)</option>
             <option value="navin_mishra" selected>Naveen Mishra (Treasurer &amp; Finance Controller • SSSS-TRU-000002)</option>
+            <option value="amit_pandey">Amit Prakhar Pandey (Secretary &amp; Executive Administrator • SSSS-TRU-000004)</option>
             <option value="santosh_mishra">Santosh Mishra (Patron &amp; Chief Advisor • SSSS-TRU-000003)</option>
             <option value="ravindra_tiwari">Ravindra Nath Tiwari (Education Secretary &amp; Director • SSSS-EMP-000001)</option>
             <option value="atharva_upadhyay">Adv. Atharva Upadhyay (Chief Legal Counsel • SSSS-EMP-000002)</option>
@@ -3292,7 +3339,7 @@
         <!-- 3. Verified Officers & Trustees -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
           <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Governing Council</span>
-          <p id="adminKpiVerifiedStaff" class="text-lg sm:text-xl font-black text-gray-900">5 Officers</p>
+          <p id="adminKpiVerifiedStaff" class="text-lg sm:text-xl font-black text-gray-900">6 Officers</p>
           <span class="text-[10px] font-bold text-emerald-600">100% ID Verified</span>
         </div>
         <!-- 4. Primary Mission -->
@@ -3409,7 +3456,7 @@
         <!-- Founder & Executive Committee Bio CMS -->
         <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
           <h4 class="font-extrabold text-base text-gray-900">3. Founder &amp; Executive Leadership Profiles CMS</h4>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
             <div class="p-4 bg-stone-50 rounded-2xl border space-y-2">
               <span class="font-bold text-orange-600 uppercase text-[10px]">FOUNDER PROFILE</span>
               <input type="text" id="cmsFounderName" value="Pt. Harsh Tiwari (संस्थापक)" class="w-full px-3 py-2 border rounded-xl font-bold" />
@@ -3419,6 +3466,11 @@
               <span class="font-bold text-orange-600 uppercase text-[10px]">TREASURER PROFILE</span>
               <input type="text" id="cmsTreasurerName" value="Naveen Mishra (कोषाध्यक्ष)" class="w-full px-3 py-2 border rounded-xl font-bold" />
               <textarea id="cmsTreasurerBio" rows="3" class="w-full px-3 py-2 border rounded-xl text-xs font-medium">Supervising financial management, expenditure records, transparency audits, Form 10BD electronic filings, and Section 80G tax benefit processing.</textarea>
+            </div>
+            <div class="p-4 bg-stone-50 rounded-2xl border space-y-2">
+              <span class="font-bold text-orange-600 uppercase text-[10px]">SECRETARY PROFILE</span>
+              <input type="text" id="cmsSecretaryName" value="Amit Prakhar Pandey (सचिव)" class="w-full px-3 py-2 border rounded-xl font-bold" />
+              <textarea id="cmsSecretaryBio" rows="3" class="w-full px-3 py-2 border rounded-xl text-xs font-medium">Overseeing general administration, executive coordination of charitable wings, field operations across Sangam Marg and rural Prayagraj, volunteer corps mobilization.</textarea>
             </div>
           </div>
           <button onclick="saveCmsLeadershipSettings()" class="px-5 py-2 bg-neutral-900 hover:bg-black text-white text-xs font-bold rounded-xl shadow">
@@ -3514,7 +3566,24 @@
                     <button onclick="previewMemberId('navin_mishra')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
                   </td>
                 </tr>
-                <!-- Row 3: Patron -->
+                <!-- Row 3: Secretary -->
+                <tr>
+                  <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-TRU-000004</td>
+                  <td class="p-3.5 font-bold text-gray-900">
+                    <div class="flex items-center gap-2.5">
+                      <img src="images/social-1.jpg" class="w-8 h-8 rounded-full object-cover border border-indigo-400 shrink-0" alt="Secretary" />
+                      <span>Amit Prakhar Pandey</span>
+                    </div>
+                  </td>
+                  <td class="p-3.5"><span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded font-black text-[10px]">SECRETARY</span></td>
+                  <td class="p-3.5 text-gray-600">Executive Administration</td>
+                  <td class="p-3.5 font-mono text-gray-700">+91 94508 58514</td>
+                  <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
+                  <td class="p-3.5 text-right">
+                    <button onclick="previewMemberId('amit_pandey')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
+                  </td>
+                </tr>
+                <!-- Row 4: Patron -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-TRU-000003</td>
                   <td class="p-3.5 font-bold text-gray-900">
@@ -3531,7 +3600,7 @@
                     <button onclick="previewMemberId('santosh_mishra')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
                   </td>
                 </tr>
-                <!-- Row 4: Education Secretary -->
+                <!-- Row 5: Education Secretary -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-EMP-000001</td>
                   <td class="p-3.5 font-bold text-gray-900">
@@ -3548,7 +3617,7 @@
                     <button onclick="previewMemberId('ravindra_tiwari')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
                   </td>
                 </tr>
-                <!-- Row 5: Legal Advisor -->
+                <!-- Row 6: Legal Advisor -->
                 <tr>
                   <td class="p-3.5 font-mono font-bold text-orange-600">SSSS-EMP-000002</td>
                   <td class="p-3.5 font-bold text-gray-900">
@@ -4000,6 +4069,36 @@
       <div class="p-4 bg-neutral-950 border-t border-neutral-800 text-stone-300 text-xs sm:text-sm flex items-center justify-between">
         <p class="font-semibold text-stone-200">कोषाध्यक्ष एवं वित्तीय नियंत्रक • सर्व समर्पित सेवा संस्थान, प्रयागराज</p>
         <button onclick="closeTreasurerPhotoModal()" class="px-4 py-1.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs transition-colors">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SECRETARY PHOTO LIGHTBOX MODAL             -->
+  <!-- ========================================== -->
+  <div id="secretaryPhotoModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6" onclick="if(event.target === this) closeSecretaryPhotoModal()">
+    <div class="relative max-w-2xl w-full bg-neutral-900 border border-indigo-500/40 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+      <div class="p-4 bg-neutral-950 border-b border-neutral-800 flex items-center justify-between text-white">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xs font-black uppercase tracking-wider bg-indigo-600 px-3 py-1 rounded-md shadow-sm">
+            सचिव • Secretary
+          </span>
+          <h4 class="font-bold text-sm sm:text-base text-white truncate">
+            अमित प्रखर पाण्डेय (Amit Prakhar Pandey)
+          </h4>
+        </div>
+        <button onclick="closeSecretaryPhotoModal()" class="w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-gray-300 hover:text-white flex items-center justify-center font-bold text-base transition-colors" title="Close (Esc)">
+          ✕
+        </button>
+      </div>
+      <div class="relative flex-1 bg-black flex items-center justify-center overflow-hidden p-2 min-h-[350px]">
+        <img src="images/social-1.jpg" alt="Amit Prakhar Pandey - Secretary" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl" />
+      </div>
+      <div class="p-4 bg-neutral-950 border-t border-neutral-800 text-stone-300 text-xs sm:text-sm flex items-center justify-between">
+        <p class="font-semibold text-stone-200">सचिव एवं प्रशासनिक प्रमुख • सर्व समर्पित सेवा संस्थान, प्रयागराज</p>
+        <button onclick="closeSecretaryPhotoModal()" class="px-4 py-1.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs transition-colors">
           Close
         </button>
       </div>
@@ -4885,7 +4984,7 @@
     }
 
     // ==========================================
-    // FOUNDER & TREASURER PHOTO MODAL CONTROLLERS
+    // FOUNDER, TREASURER & SECRETARY PHOTO MODAL CONTROLLERS
     // ==========================================
     function openFounderPhotoModal() {
       const modal = document.getElementById('founderPhotoModal');
@@ -4904,6 +5003,16 @@
 
     function closeTreasurerPhotoModal() {
       const modal = document.getElementById('treasurerPhotoModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function openSecretaryPhotoModal() {
+      const modal = document.getElementById('secretaryPhotoModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeSecretaryPhotoModal() {
+      const modal = document.getElementById('secretaryPhotoModal');
       if (modal) modal.classList.add('hidden');
     }
 
@@ -4937,6 +5046,10 @@
       const treasurerModal = document.getElementById('treasurerPhotoModal');
       if (treasurerModal && !treasurerModal.classList.contains('hidden')) {
         if (e.key === 'Escape') closeTreasurerPhotoModal();
+      }
+      const secretaryModal = document.getElementById('secretaryPhotoModal');
+      if (secretaryModal && !secretaryModal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeSecretaryPhotoModal();
       }
     });
     // ==========================================
@@ -5270,6 +5383,23 @@
         emergency: "09450858514",
         photo: "images/treasurer.jpg",
         fallbackPhoto: "images/treasurer.jpg",
+        signatory: "Authorized Trust Signatory"
+      },
+      amit_pandey: {
+        name: "Amit Prakhar Pandey",
+        hindiName: "अमित प्रखर पाण्डेय (सचिव)",
+        id: "SSSS-TRU-000004",
+        role: "SECRETARY & EXECUTIVE ADMINISTRATOR",
+        dept: "Executive Governance & Sansthan Administration",
+        email: "secretary@sarva-samarpit-sewa-sansthan.in",
+        phone: "+91 94508 58514",
+        joinDate: "01-Jul-2018",
+        validity: "Permanent (Life Member)",
+        bloodGroup: "B+",
+        status: "ACTIVE",
+        emergency: "09450858514",
+        photo: "images/social-1.jpg",
+        fallbackPhoto: "images/social-1.jpg",
         signatory: "Authorized Trust Signatory"
       },
       santosh_mishra: {
@@ -5856,6 +5986,12 @@
         ngoId = 'SSSS-TRU-000002';
         dept = 'Finance, Audit & 80G Statutory Compliances';
         onIdCardSelect('navin_mishra');
+      } else if (email.includes('secretary') || email.includes('amit') || email.includes('pandey')) {
+        role = 'Secretary';
+        roleBadge = 'SECRETARY & EXECUTIVE ADMINISTRATOR';
+        ngoId = 'SSSS-TRU-000004';
+        dept = 'Executive Governance & Sansthan Administration';
+        onIdCardSelect('amit_pandey');
       } else if (email.includes('patron') || email.includes('santosh')) {
         role = 'Patron';
         roleBadge = 'PATRON & CHIEF ADVISOR';
