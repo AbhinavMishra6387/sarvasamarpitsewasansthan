@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ssss_web_app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/sarva_samarpit_sewa_sansthan?schema=public
+      - JWT_SECRET=ssss_prayagraj_jwt_secret_production_key_2026_9450858514
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+      - NEXT_PUBLIC_UPI_ID=9450858514@upi
+      - NEXT_PUBLIC_UPI_NAME=Sarva Samarpit Sewa Sansthan
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    container_name: ssss_postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sarva_samarpit_sewa_sansthan
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

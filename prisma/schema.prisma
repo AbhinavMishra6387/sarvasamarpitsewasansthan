@@ -1,0 +1,336 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+  CONTENT_MANAGER
+  DONATION_MANAGER
+  VOLUNTEER_MANAGER
+  ACCOUNT_MANAGER
+}
+
+enum PaymentStatus {
+  SUCCESS
+  PENDING
+  FAILED
+  REFUNDED
+}
+
+enum PaymentGateway {
+  RAZORPAY
+  PHONEPE
+  UPI_QR
+  BANK_TRANSFER
+  CASH
+}
+
+enum VolunteerStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  INACTIVE
+}
+
+enum MembershipType {
+  ANNUAL
+  PATRON
+  LIFE
+  HONORARY
+}
+
+enum MembershipStatus {
+  ACTIVE
+  PENDING_APPROVAL
+  EXPIRED
+  CANCELLED
+}
+
+enum ProjectCategory {
+  FOOD_DISTRIBUTION
+  FREE_EDUCATION
+  SOCIAL_WELFARE
+  RELIGIOUS_ACTIVITIES
+  MEDICAL_CAMPS
+  OTHER
+}
+
+enum ProjectStatus {
+  ONGOING
+  COMPLETED
+  UPCOMING
+}
+
+enum CommitteeType {
+  TRUSTEE
+  EXECUTIVE
+  ADVISORY
+  CORE_TEAM
+}
+
+model User {
+  id           String     @id @default(uuid())
+  email        String     @unique
+  passwordHash String
+  name         String
+  phone        String?
+  role         Role       @default(EDITOR)
+  isActive     Boolean    @default(true)
+  lastLogin    DateTime?
+  auditLogs    AuditLog[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Donation {
+  id                  String         @id @default(uuid())
+  receiptNo           String         @unique
+  donorName           String
+  donorEmail          String
+  donorPhone          String
+  panNumber           String?
+  address             String?
+  amount              Float
+  currency            String         @default("INR")
+  paymentGateway      PaymentGateway @default(RAZORPAY)
+  paymentStatus       PaymentStatus  @default(PENDING)
+  transactionId       String?        @unique
+  orderId             String?
+  signature           String?
+  campaignTitle       String?        @default("General Donation - Sarva Samarpit Sewa Sansthan")
+  isAnonymous         Boolean        @default(false)
+  is80GClaimed        Boolean        @default(true)
+  taxReceiptUrl       String?
+  notes               String?
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+}
+
+model Volunteer {
+  id                 String          @id @default(uuid())
+  volunteerCode      String          @unique
+  fullName           String
+  email              String          @unique
+  phone              String
+  altPhone           String?
+  dateOfBirth        String?
+  gender             String?
+  occupation         String?
+  address            String
+  city               String          @default("Prayagraj")
+  state              String          @default("Uttar Pradesh")
+  pincode            String?
+  photoUrl           String?
+  resumeUrl          String?
+  skills             String[]
+  availability       String          // e.g. "Weekends", "Full Time", "Evening"
+  previousExperience String?
+  reasonToJoin       String?
+  status             VolunteerStatus @default(PENDING)
+  notes              String?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+}
+
+model Membership {
+  id                 String           @id @default(uuid())
+  membershipNumber   String           @unique
+  fullName           String
+  fatherSpouseName   String?
+  email              String
+  phone              String
+  dateOfBirth        String?
+  gender             String?
+  bloodGroup         String?
+  aadharNo           String?
+  occupation         String?
+  fullAddress        String
+  photoUrl           String?
+  digitalCardUrl     String?
+  qrCodeData         String?
+  membershipType     MembershipType   @default(ANNUAL)
+  paymentStatus      PaymentStatus    @default(PENDING)
+  amountPaid         Float            @default(1100)
+  validFrom          DateTime         @default(now())
+  validUntil         DateTime
+  status             MembershipStatus @default(PENDING_APPROVAL)
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+}
+
+model Project {
+  id            String          @id @default(uuid())
+  slug          String          @unique
+  title         String
+  shortDesc     String
+  fullDesc      String
+  category      ProjectCategory @default(FOOD_DISTRIBUTION)
+  featuredImage String
+  galleryImages String[]
+  targetAmount  Float           @default(500000)
+  raisedAmount  Float           @default(185000)
+  donorsCount   Int             @default(340)
+  status        ProjectStatus   @default(ONGOING)
+  location      String          @default("Prayagraj Sangam & City Areas")
+  startDate     DateTime?
+  endDate       DateTime?
+  isFeatured    Boolean         @default(true)
+  displayOrder  Int             @default(1)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+}
+
+model Event {
+  id                   String              @id @default(uuid())
+  slug                 String              @unique
+  title                String
+  description          String
+  bannerImage          String
+  location             String              @default("Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj")
+  googleMapUrl         String?
+  eventDate            DateTime
+  startTime            String?
+  endTime              String?
+  isUpcoming           Boolean             @default(true)
+  registrationRequired Boolean             @default(true)
+  maxAttendees         Int                 @default(500)
+  registeredCount      Int                 @default(0)
+  photos               String[]
+  videos               String[]
+  isFeatured           Boolean             @default(true)
+  registrations        EventRegistration[]
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+}
+
+model EventRegistration {
+  id              String   @id @default(uuid())
+  eventId         String
+  event           Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name            String
+  email           String
+  phone           String
+  numberOfPersons Int      @default(1)
+  notes           String?
+  createdAt       DateTime @default(now())
+}
+
+model Blog {
+  id              String    @id @default(uuid())
+  slug            String    @unique
+  title           String
+  excerpt         String
+  content         String
+  coverImage      String
+  authorName      String    @default("Sarva Samarpit Editorial Team")
+  authorRole      String    @default("Seva Pratinidhi")
+  category        String    @default("Social Welfare")
+  tags            String[]
+  readTime        String    @default("4 min read")
+  isPublished     Boolean   @default(true)
+  publishedAt     DateTime  @default(now())
+  metaTitle       String?
+  metaDescription String?
+  viewCount       Int       @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model GalleryItem {
+  id           String   @id @default(uuid())
+  title        String
+  category     String   @default("Sangam Seva")
+  mediaType    String   @default("IMAGE") // IMAGE, YOUTUBE, MP4
+  url          String
+  thumbnailUrl String?
+  albumName    String   @default("Main Album")
+  isFeatured   Boolean  @default(false)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(uuid())
+  name        String
+  designation String
+  location    String   @default("Prayagraj")
+  avatarUrl   String?
+  quote       String
+  rating      Int      @default(5)
+  verified    Boolean  @default(true)
+  isFeatured  Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model TeamMember {
+  id             String        @id @default(uuid())
+  name           String
+  designation    String
+  committeeType  CommitteeType @default(TRUSTEE)
+  photoUrl       String
+  bio            String
+  phone          String?
+  email          String?
+  socialFacebook String?
+  socialTwitter  String?
+  socialLinkedin String?
+  displayOrder   Int           @default(1)
+  isFeatured     Boolean       @default(true)
+  isActive       Boolean       @default(true)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model ContactInquiry {
+  id         String   @id @default(uuid())
+  name       String
+  email      String
+  phone      String
+  subject    String
+  message    String
+  isRead     Boolean  @default(false)
+  isResolved Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+model Announcement {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  link      String?
+  linkText  String?
+  type      String   @default("TICKER") // TICKER, POPUP, BANNER
+  isActive  Boolean  @default(true)
+  priority  Int      @default(1)
+  startDate DateTime @default(now())
+  endDate   DateTime?
+  createdAt DateTime @default(now())
+}
+
+model SiteSetting {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  value       String
+  group       String   @default("GENERAL")
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  entity    String
+  entityId  String?
+  details   String?
+  ipAddress String?
+  createdAt DateTime @default(now())
+}

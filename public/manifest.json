@@ -1,0 +1,16 @@
+{
+  "name": "Sarva Samarpit Sewa Sansthan",
+  "short_name": "SSSS NGO",
+  "description": "Registered Charitable Trust & NGO in Prayagraj - 24/7 Annapurna Food Distribution & Medical Seva",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#F57C00",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
