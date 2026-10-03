@@ -4564,9 +4564,9 @@
       const rAmt = document.getElementById('recAmount');
       const rDate = document.getElementById('recDateDisp');
 
-      if (rNo) rNo.innerText = recNo || 'SSSS-80G-2026-0184';
+      if (rNo) rNo.innerText = recNo || ('SSSS-80G-' + Math.floor(1000 + Math.random() * 9000));
       if (rName) rName.innerText = name || 'Devotee';
-      if (rPan) rPan.innerText = pan || 'ABCPS1234D';
+      if (rPan) rPan.innerText = pan || 'NOT PROVIDED';
       if (rCause) rCause.innerText = cause || 'Annapurna Bhandara Daily Meals';
       if (rAmt) rAmt.innerText = '₹ ' + (Number(amount) || 2100).toLocaleString('en-IN') + '/- INR';
       if (rDate) rDate.innerText = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
