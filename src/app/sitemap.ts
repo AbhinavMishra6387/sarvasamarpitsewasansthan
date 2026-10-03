@@ -1,10 +1,11 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://sarvasamarpit.org";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://sarva-samarpit-sewa-sansthan.in";
 
   const routes = [
     "",
+    "/free-education",
     "/about",
     "/about/vision",
     "/about/mission",

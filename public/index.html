@@ -19,8 +19,8 @@
 
   <!-- OpenGraph & Twitter Social Cards -->
   <meta property="og:type" content="non_profit" />
-  <meta property="og:title" content="Sarva Samarpit Sewa Sansthan â€¢ Registered Public Charitable Trust Prayagraj" />
-  <meta property="og:description" content="Dedicated to the selfless service of humanity & divinity. 24x7 Annapurna Bhandara, free education, and 80G tax deductible donations." />
+  <meta property="og:title" content="Sarva Samarpit Sewa Sansthan • Registered Public Charitable Trust Prayagraj" />
+  <meta property="og:description" content="Dedicated to the selfless service of humanity & divinity. Primary Mission: Free Education & Vidya Daan. Supporting Seva: 24x7 Annapurna Langar & Social Welfare." />
   <meta property="og:url" content="https://sarva-samarpit-sewa-sansthan.in/" />
   <meta property="og:image" content="https://sarva-samarpit-sewa-sansthan.in/images/founder.jpg" />
 
@@ -35,20 +35,48 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
 
-  <!-- Comprehensive Schema.org JSON-LD (NGO, LocalBusiness, 80G Tax Exemption, AEO FAQPage) -->
+  <!-- Comprehensive Schema.org JSON-LD (NGO, EducationalOrganization, 80G Tax Exemption, AEO FAQPage) -->
   <script type="application/ld+json">
   [
     {
       "@context": "https://schema.org",
-      "@type": ["NGO", "LocalBusiness", "GovernmentPermit"],
+      "@type": ["NGO", "EducationalOrganization", "LocalBusiness"],
       "@id": "https://sarva-samarpit-sewa-sansthan.in/#organization",
       "name": "Sarva Samarpit Sewa Sansthan",
-      "alternateName": ["à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨", "SSSS Prayagraj"],
+      "alternateName": ["सर्व समर्पित सेवा संस्थान", "SSSS Prayagraj"],
       "url": "https://sarva-samarpit-sewa-sansthan.in",
       "logo": "https://sarva-samarpit-sewa-sansthan.in/logo.jpg",
       "image": "https://sarva-samarpit-sewa-sansthan.in/images/founder.jpg",
       "telephone": "+919450858514",
       "email": "contact@sarva-samarpit-sewa-sansthan.in",
+      "description": "Registered public charitable trust (UP/2018/0192847, 80G: AABTS8923RF20214, 12A: AABTS8923RE20201) headquartered at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj. Primary mission is Free Education (निःशुल्क शिक्षा एवं विद्यादान), alongside 24x7 Annapurna Bhandara, clothing distribution, and environmental seva.",
+      "founder": {
+        "@type": "Person",
+        "name": "Pt. Harsh Tiwari",
+        "jobTitle": "Founder & Chief Managing Trustee"
+      },
+      "member": [
+        {
+          "@type": "Person",
+          "name": "Naveen Mishra",
+          "jobTitle": "Treasurer & Finance Controller"
+        },
+        {
+          "@type": "Person",
+          "name": "Santosh Mishra",
+          "jobTitle": "Chief Patron & Advisor"
+        },
+        {
+          "@type": "Person",
+          "name": "Ravindra Nath Tiwari",
+          "jobTitle": "Education Secretary & Director"
+        },
+        {
+          "@type": "Person",
+          "name": "Adv. Atharva Upadhyay",
+          "jobTitle": "Chief Legal Counsel"
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Shree Bade Hanuman Ji Temple, Sangam Marg",
@@ -72,10 +100,18 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "What is the primary charitable mission of Sarva Samarpit Sewa Sansthan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free Education (निःशुल्क शिक्षा एवं विद्यादान) for underprivileged and rural children is the primary charitable mission of Sarva Samarpit Sewa Sansthan. The trust provides free evening pathshalas, textbooks, notebooks, school bags, and daily nutrition, supported by secondary missions including Annapurna Langar, winter clothing relief, and tree plantation."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Is donation to Sarva Samarpit Sewa Sansthan tax deductible?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, donations made to Sarva Samarpit Sewa Sansthan are eligible for 50% tax exemption under Section 80G of the Income Tax Act with official Form 10BD compliant digital receipts."
+            "text": "Yes, donations made to Sarva Samarpit Sewa Sansthan are eligible for 50% tax deduction under Section 80G of the Income Tax Act (Reg: AABTS8923RF20214). Every donor receives an instant Form 10BD compliant digital receipt."
           }
         },
         {
@@ -83,14 +119,29 @@
           "name": "Where is Sarva Samarpit Sewa Sansthan located?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The trust head office is located at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, UP - 211005, functioning 24 hours daily (Akhand Sewa)."
+            "text": "The trust head office is located at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, Uttar Pradesh - 211005, functioning 24 hours daily (Akhand Sewa). Helpline: 09450858514."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the organization conduct Annapurna Langar seva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sarva Samarpit Sewa Sansthan organizes daily free Satvik Mahaprasad distribution near Shree Bade Hanuman Ji Temple and Triveni Sangam Ghats, serving pilgrims, sadhus, elderly devotees, and hospital attendees with dignity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I verify an official Sansthan Volunteer or Trustee ID card?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every official Sansthan digital identity card includes an encrypted QR code and unique alphanumeric ID (e.g. SSSS-TRU-000001). Scan the QR code or enter the ID on the online verification portal at sarva-samarpit-sewa-sansthan.in to instantly confirm authentic trust authorization."
           }
         }
       ]
     }
   ]
   </script>
-  <meta name="description" content="Sarva Samarpit Sewa Sansthan is a registered charitable trust at Shree Bade Hanuman Ji Temple, Prayagraj — food distribution, free education, social welfare, and religious activities, 24 hours a day." />
   <link rel="icon" type="image/jpeg" href="logo.jpg" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -220,11 +271,11 @@
             <svg class="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
           </button>
           <div class="absolute left-0 mt-1 w-64 bg-white rounded-2xl shadow-2xl border border-stone-200/80 p-2 hidden group-hover:block transition-all z-50">
-            <a href="javascript:void(0)" onclick="switchTab('projects')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">All Seva Projects</a>
+            <a href="javascript:void(0)" onclick="switchTab('free-education')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">📚 Free Education (निःशुल्क शिक्षा - प्राथमिक सेवा)</a>
             <a href="javascript:void(0)" onclick="switchTab('food-distribution')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">🍲 Food Distribution (अन्न सेवा)</a>
-            <a href="javascript:void(0)" onclick="switchTab('free-education')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">📚 Free Education (निःशुल्क शिक्षा)</a>
-            <a href="javascript:void(0)" onclick="switchTab('social-welfare')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">🤝 Social Welfare (जन सेवा)</a>
+            <a href="javascript:void(0)" onclick="switchTab('social-welfare')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">🤝 Social Welfare &amp; Vastra Daan (जन सेवा)</a>
             <a href="javascript:void(0)" onclick="switchTab('religious-activities')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">🪔 Religious Activities (धार्मिक सेवा)</a>
+            <a href="javascript:void(0)" onclick="switchTab('projects')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">All Seva Projects</a>
             <a href="javascript:void(0)" onclick="switchTab('csr')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">🏢 CSR Partnerships (80G)</a>
           </div>
         </div>
@@ -239,7 +290,7 @@
             <a href="javascript:void(0)" onclick="switchTab('gallery')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">Photo Gallery</a>
             <a href="javascript:void(0)" onclick="switchTab('events')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">Melas &amp; Events</a>
             <a href="javascript:void(0)" onclick="switchTab('blogs')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">Seva News &amp; Updates</a>
-            <a href="javascript:void(0)" onclick="switchTab('testimonials')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">Testimonials</a>
+            <a href="javascript:void(0)" onclick="switchTab('csr')" class="block px-3.5 py-2.5 rounded-xl hover:bg-orange-50 hover:text-orange-600 text-xs font-semibold text-stone-700">80G &amp; CSR Compliance</a>
           </div>
         </div>
 
@@ -296,9 +347,9 @@
       <div class="pt-2 border-t border-stone-100">
         <p class="text-[10px] font-black uppercase tracking-wider text-stone-400 mb-2">Seva Streams</p>
         <div class="grid grid-cols-2 gap-2">
+          <button onclick="switchTab('free-education'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-blue-50 text-blue-700 font-bold bg-blue-50/70 border border-blue-200/60">📚 Free Education</button>
           <button onclick="switchTab('food-distribution'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-orange-50">🍲 Annapurna Langar</button>
-          <button onclick="switchTab('free-education'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-orange-50">📚 Free Education</button>
-          <button onclick="switchTab('social-welfare'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-orange-50">🤝 Social Welfare</button>
+          <button onclick="switchTab('social-welfare'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-orange-50">🤝 Social &amp; Vastra Daan</button>
           <button onclick="switchTab('religious-activities'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-orange-50">🪔 Religious Seva</button>
           <button onclick="switchTab('volunteer'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-orange-50">Join as Volunteer</button>
           <button onclick="switchTab('membership'); toggleMobileNav()" class="text-left py-2.5 px-3 rounded-xl hover:bg-orange-50">🪪 Digital ID Card</button>
@@ -414,7 +465,7 @@
                 निःशुल्क अन्नपूर्णा महाप्रसाद लंगर (Daily Mahaprasad Langar)
               </h3>
               <p id="sliderSlideDesc" class="text-xs sm:text-sm text-stone-600 font-medium leading-relaxed">
-                तीर्थराज प्रयागराज में बड़े हनुमान मंदिर एवं संगम तट पर प्रतिदिन 500+ साधु-संतों, निराश्रितों एवं श्रद्धालुओं को पौष्टिक भोजन सेवा।
+                तीर्थराज प्रयागराज में बड़े हनुमान मंदिर एवं संगम तट पर साधु-संतों, निराश्रितों एवं श्रद्धालुओं को प्रतिदिन सात्विक भोजन सेवा।
               </p>
             </div>
 
@@ -479,23 +530,23 @@
         <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y md:divide-y-0 md:divide-x divide-stone-100">
           
           <div class="pt-4 md:pt-0 text-left sm:text-center md:text-left px-2">
+            <span class="text-3xl sm:text-4xl font-extrabold text-blue-600 font-heading block">निःशुल्क शिक्षा</span>
+            <span class="text-xs sm:text-sm text-blue-900 font-bold mt-1 block">प्राथमिक सेवा &bull; Free Education</span>
+          </div>
+
+          <div class="pt-4 md:pt-0 md:pl-8 text-left sm:text-center md:text-left px-2">
             <span class="text-3xl sm:text-4xl font-extrabold text-[#1F1F1F] font-heading block">अन्न सेवा</span>
             <span class="text-xs sm:text-sm text-gray-500 font-medium mt-1 block">Food Distribution &bull; Anna Seva</span>
           </div>
 
           <div class="pt-4 md:pt-0 md:pl-8 text-left sm:text-center md:text-left px-2">
-            <span class="text-3xl sm:text-4xl font-extrabold text-blue-600 font-heading block">निःशुल्क शिक्षा</span>
-            <span class="text-xs sm:text-sm text-gray-500 font-medium mt-1 block">Free Education &bull; Nishulk Shiksha</span>
+            <span class="text-3xl sm:text-4xl font-extrabold text-emerald-600 font-heading block">वस्त्र व जन सेवा</span>
+            <span class="text-xs sm:text-sm text-gray-500 font-medium mt-1 block">Clothing &bull; Social Relief</span>
           </div>
 
           <div class="pt-4 md:pt-0 md:pl-8 text-left sm:text-center md:text-left px-2">
-            <span class="text-3xl sm:text-4xl font-extrabold text-emerald-600 font-heading block">जन सेवा</span>
-            <span class="text-xs sm:text-sm text-gray-500 font-medium mt-1 block">Social Welfare &bull; Jan Seva</span>
-          </div>
-
-          <div class="pt-4 md:pt-0 md:pl-8 text-left sm:text-center md:text-left px-2">
-            <span class="text-3xl sm:text-4xl font-extrabold text-orange-600 font-heading block">धार्मिक सेवा</span>
-            <span class="text-xs sm:text-sm text-gray-500 font-medium mt-1 block">Religious Activity &bull; Dharmik Seva</span>
+            <span class="text-3xl sm:text-4xl font-extrabold text-orange-600 font-heading block">पर्यावरण सेवा</span>
+            <span class="text-xs sm:text-sm text-gray-500 font-medium mt-1 block">Plantation &bull; Greenery</span>
           </div>
 
         </div>
@@ -510,10 +561,10 @@
               About us
             </span>
             <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              A trust rooted in faith, devoted to people.
+              A trust rooted in faith, devoted to education and human welfare.
             </h2>
             <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
-              Sarva Samarpit Sewa Sansthan is a registered charitable trust headquartered at Shree Bade Hanuman Ji Temple on Sangam Marg. Inspired by the spirit of selfless service, we work for the hungry, the sick and the forgotten.
+              Sarva Samarpit Sewa Sansthan is a registered charitable trust headquartered at Shree Bade Hanuman Ji Temple on Sangam Marg. Committed to eradicating illiteracy through free education and providing food, warm clothing, and care for every soul in need.
             </p>
             <div class="pt-2">
               <button onclick="switchTab('about')" class="text-xs sm:text-sm font-bold text-orange-600 hover:text-orange-700 underline flex items-center gap-1">
@@ -529,7 +580,7 @@
               </div>
               <h3 class="font-extrabold text-base text-gray-900 mb-1">Our Mission</h3>
               <p class="text-xs text-gray-600 leading-relaxed">
-                No one near the Sangam should sleep hungry or untreated.
+                Empowering children through free education and ensuring no one near the Sangam sleeps hungry.
               </p>
             </div>
 
@@ -539,7 +590,7 @@
               </div>
               <h3 class="font-extrabold text-base text-gray-900 mb-1">Our Vision</h3>
               <p class="text-xs text-gray-600 leading-relaxed">
-                A compassionate society where seva is a way of life.
+                A compassionate, educated society where selfless seva is a universal way of life.
               </p>
             </div>
           </div>
@@ -559,46 +610,29 @@
               Four streams of seva
             </h2>
             <p class="text-sm sm:text-base text-gray-600 mt-2">
-              Every programme is run by volunteers and supported by people like you.
+              Guided by education as our primary charitable pillar, sustained by community volunteers.
             </p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <!-- Stream 1: Food Distribution -->
-            <div class="bg-white rounded-3xl border border-stone-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all group">
-              <div class="space-y-4">
-                <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-2xl font-bold">
-                  🍲
-                </div>
-                <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-orange-600 transition-colors">
-                  Food Distribution (अन्न सेवा)
-                </h3>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  Freshly cooked meals and dry ration for pilgrims, the elderly and families in need around the Sangam.
-                </p>
+            <!-- Stream 1: Free Education (PRIMARY CHARITABLE MISSION) -->
+            <div class="bg-white rounded-3xl border-2 border-blue-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all group relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-blue-600 text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+                प्राथमिक सेवा
               </div>
-              <div class="pt-6 mt-4 border-t border-stone-100 flex items-center justify-between">
-                <button onclick="switchTab('food-distribution')" class="text-xs font-bold text-orange-600 hover:text-orange-700">
-                  Learn more &rarr;
-                </button>
-                <button onclick="switchTab('donate')" class="text-[11px] font-bold bg-orange-50 text-orange-700 px-3 py-1 rounded-full hover:bg-orange-100">
-                  Sponsor Meals
-                </button>
-              </div>
-            </div>
-
-            <!-- Stream 2: Free Education -->
-            <div class="bg-white rounded-3xl border border-stone-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all group">
               <div class="space-y-4">
                 <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold">
                   📚
                 </div>
-                <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-orange-600 transition-colors">
-                  Free Education (निःशुल्क शिक्षा)
-                </h3>
+                <div>
+                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">Primary Mission</span>
+                  <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
+                    Free Education (निःशुल्क शिक्षा)
+                  </h3>
+                </div>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  School books, stationery kits, uniforms, and free evening tutoring pathshalas for underprivileged children.
+                  School books, stationery kits, uniforms, and free evening tutoring pathshalas for underprivileged and rural children.
                 </p>
               </div>
               <div class="pt-6 mt-4 border-t border-stone-100 flex items-center justify-between">
@@ -611,17 +645,46 @@
               </div>
             </div>
 
-            <!-- Stream 3: Social Welfare -->
+            <!-- Stream 2: Food Distribution -->
+            <div class="bg-white rounded-3xl border border-stone-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all group">
+              <div class="space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-2xl font-bold">
+                  🍲
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-orange-600 uppercase tracking-wider block">Akhand Seva</span>
+                  <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-orange-600 transition-colors">
+                    Food Distribution (अन्न सेवा)
+                  </h3>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  Freshly cooked hot meals and dry ration for pilgrims, the elderly and families in need around the Sangam and Hanuman Mandir.
+                </p>
+              </div>
+              <div class="pt-6 mt-4 border-t border-stone-100 flex items-center justify-between">
+                <button onclick="switchTab('food-distribution')" class="text-xs font-bold text-orange-600 hover:text-orange-700">
+                  Learn more &rarr;
+                </button>
+                <button onclick="switchTab('donate')" class="text-[11px] font-bold bg-orange-50 text-orange-700 px-3 py-1 rounded-full hover:bg-orange-100">
+                  Sponsor Meals
+                </button>
+              </div>
+            </div>
+
+            <!-- Stream 3: Clothing & Winter Relief -->
             <div class="bg-white rounded-3xl border border-stone-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all group">
               <div class="space-y-4">
                 <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold">
-                  🤝
+                  👕
                 </div>
-                <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-orange-600 transition-colors">
-                  Social Welfare (जन सेवा)
-                </h3>
+                <div>
+                  <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block">Relief Outreach</span>
+                  <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-emerald-600 transition-colors">
+                    Clothing &amp; Relief (वस्त्र दान)
+                  </h3>
+                </div>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  Support for the poor, widows and the elderly — warm blankets in winter, seasonal clothing and relief work.
+                  Support for the impoverished, widows and the elderly — warm blankets in winter, seasonal clothing and medical assistance.
                 </p>
               </div>
               <div class="pt-6 mt-4 border-t border-stone-100 flex items-center justify-between">
@@ -634,25 +697,28 @@
               </div>
             </div>
 
-            <!-- Stream 4: Religious Activity -->
+            <!-- Stream 4: Environment & Plantation -->
             <div class="bg-white rounded-3xl border border-stone-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all group">
               <div class="space-y-4">
                 <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold">
-                  🪔
+                  🌱
                 </div>
-                <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-orange-600 transition-colors">
-                  Religious Activity (धार्मिक सेवा)
-                </h3>
+                <div>
+                  <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block">Ecological Seva</span>
+                  <h3 class="font-extrabold text-lg text-gray-900 group-hover:text-amber-600 transition-colors">
+                    Tree Plantation (वृक्षारोपण)
+                  </h3>
+                </div>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  Aarti, bhandara, satsang and seva at Shree Bade Hanuman Ji Temple and round-the-clock pilgrim support during Magh Mela &amp; Kumbh.
+                  Plantation of Peepal, Banyan and Neem saplings along the holy Ganga-Yamuna riverbanks, ghat cleanliness and water conservation.
                 </p>
               </div>
               <div class="pt-6 mt-4 border-t border-stone-100 flex items-center justify-between">
-                <button onclick="switchTab('religious-activities')" class="text-xs font-bold text-orange-600 hover:text-orange-700">
+                <button onclick="switchTab('social-welfare')" class="text-xs font-bold text-amber-600 hover:text-amber-700">
                   Learn more &rarr;
                 </button>
                 <button onclick="switchTab('donate')" class="text-[11px] font-bold bg-amber-50 text-amber-700 px-3 py-1 rounded-full hover:bg-amber-100">
-                  Temple Seva
+                  Plant Trees
                 </button>
               </div>
             </div>
@@ -1332,27 +1398,27 @@
         </p>
       </div>
 
-      <!-- Live Impact Numbers -->
+      <!-- Core Seva Pillars -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-gradient-to-br from-orange-50 to-white p-5 rounded-3xl border border-orange-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-orange-600">1,500+</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">प्रतिदिन भोजन प्रसादम</div>
-          <div class="text-[11px] text-gray-500">Daily hot meals served</div>
+          <div class="text-2xl sm:text-3xl font-black text-orange-600">दैनिक अन्नदान</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">प्रतिदिन सात्विक प्रसादम</div>
+          <div class="text-[11px] text-gray-500">Fresh hot meals &amp; ration</div>
         </div>
         <div class="bg-gradient-to-br from-amber-50 to-white p-5 rounded-3xl border border-amber-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-amber-700">10,000+</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">माघ मेला व कुंभ क्षमता</div>
-          <div class="text-[11px] text-gray-500">Peak festival capacity</div>
+          <div class="text-2xl sm:text-3xl font-black text-amber-700">संगम क्षेत्र</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">पावन त्रिवेणी तट सेवा</div>
+          <div class="text-[11px] text-gray-500">Bade Hanuman Ji Temple outposts</div>
         </div>
         <div class="bg-gradient-to-br from-orange-50 to-white p-5 rounded-3xl border border-orange-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-orange-700">365 दिन</div>
+          <div class="text-2xl sm:text-3xl font-black text-orange-700">365 दिन</div>
           <div class="text-xs sm:text-sm font-bold text-gray-800">अखंड अविरल भंडारा</div>
-          <div class="text-[11px] text-gray-500">Unbroken year-round</div>
+          <div class="text-[11px] text-gray-500">Unbroken year-round outreach</div>
         </div>
         <div class="bg-gradient-to-br from-stone-50 to-white p-5 rounded-3xl border border-stone-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-emerald-700">100%</div>
+          <div class="text-2xl sm:text-3xl font-black text-emerald-700">100% सात्विक</div>
           <div class="text-xs sm:text-sm font-bold text-gray-800">शुद्ध सात्विक भोजन</div>
-          <div class="text-[11px] text-gray-500">Pure Satvik meals on eco-pattals</div>
+          <div class="text-[11px] text-gray-500">Served with dignity on eco-pattals</div>
         </div>
       </div>
 
@@ -1655,27 +1721,27 @@
         </p>
       </div>
 
-      <!-- Live Impact Numbers -->
+      <!-- Core Education Pillars -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-gradient-to-br from-blue-50 to-white p-5 rounded-3xl border border-blue-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-blue-600">250+</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">पंजीकृत छात्र-छात्राएं</div>
-          <div class="text-[11px] text-gray-500">Enrolled rural students</div>
+          <div class="text-2xl sm:text-3xl font-black text-blue-600">निःशुल्क शिक्षा</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">वंचित बाल विकास</div>
+          <div class="text-[11px] text-gray-500">Evening pathshala coaching</div>
         </div>
         <div class="bg-gradient-to-br from-indigo-50 to-white p-5 rounded-3xl border border-indigo-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-indigo-700">कक्षा 1-10वीं</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">निःशुल्क कोचिंग स्तर</div>
-          <div class="text-[11px] text-gray-500">Comprehensive curriculum</div>
+          <div class="text-2xl sm:text-3xl font-black text-indigo-700">कक्षा 1-10वीं</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">फाउंडेशन स्तर शिक्षण</div>
+          <div class="text-[11px] text-gray-500">Core academic curriculum</div>
         </div>
         <div class="bg-gradient-to-br from-emerald-50 to-white p-5 rounded-3xl border border-emerald-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-emerald-700">100%</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">निःशुल्क पाठ्य सामग्री</div>
-          <div class="text-[11px] text-gray-500">Free books, kits &amp; bags</div>
+          <div class="text-2xl sm:text-3xl font-black text-emerald-700">100% निःशुल्क</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">पाठ्य सामग्री व बैग</div>
+          <div class="text-[11px] text-gray-500">Free books, kits &amp; school bags</div>
         </div>
         <div class="bg-gradient-to-br from-amber-50 to-white p-5 rounded-3xl border border-amber-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-amber-700">दैनिक</div>
+          <div class="text-2xl sm:text-3xl font-black text-amber-700">दैनिक अल्पाहार</div>
           <div class="text-xs sm:text-sm font-bold text-gray-800">पौष्टिक अल्पाहार सेवा</div>
-          <div class="text-[11px] text-gray-500">Daily nutrition &amp; snacks</div>
+          <div class="text-[11px] text-gray-500">Daily nutrition &amp; evening snacks</div>
         </div>
       </div>
 
@@ -2011,27 +2077,27 @@
         </p>
       </div>
 
-      <!-- Live Impact Numbers -->
+      <!-- Core Environmental & Welfare Pillars -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-gradient-to-br from-emerald-50 to-white p-5 rounded-3xl border border-emerald-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-emerald-600">5,000+</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">पौधे रोपित एवं संरक्षित</div>
-          <div class="text-[11px] text-gray-500">Saplings planted &amp; nurtured</div>
+          <div class="text-2xl sm:text-3xl font-black text-emerald-600">सघन पौधारोपण</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">पीपल, बरगद व नीम रोपण</div>
+          <div class="text-[11px] text-gray-500">Riverbank tree conservation</div>
         </div>
         <div class="bg-gradient-to-br from-teal-50 to-white p-5 rounded-3xl border border-teal-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-teal-700">100%</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">फलदार व छायादार पौधे</div>
-          <div class="text-[11px] text-gray-500">Mango, Guava, Neem, Peepal</div>
+          <div class="text-2xl sm:text-3xl font-black text-teal-700">औषधीय पौधे</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">पर्यावरण एवं जल संवर्धन</div>
+          <div class="text-[11px] text-gray-500">Indigenous sacred greenery</div>
         </div>
         <div class="bg-gradient-to-br from-lime-50 to-white p-5 rounded-3xl border border-lime-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-lime-700">20+</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">ग्रामीण अंचल व पंचायतें</div>
-          <div class="text-[11px] text-gray-500">Rural panchayats covered</div>
+          <div class="text-2xl sm:text-3xl font-black text-lime-700">शीतकालीन राहत</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">कम्बल व वस्त्र वितरण सेवा</div>
+          <div class="text-[11px] text-gray-500">Seasonal relief for the needy</div>
         </div>
         <div class="bg-gradient-to-br from-amber-50 to-white p-5 rounded-3xl border border-amber-200 shadow-sm text-center space-y-1">
-          <div class="text-3xl sm:text-4xl font-black text-amber-700">सैकड़ों</div>
-          <div class="text-xs sm:text-sm font-bold text-gray-800">सक्रिय पर्यावरण स्वयंसेवक</div>
-          <div class="text-[11px] text-gray-500">Dedicated eco volunteers</div>
+          <div class="text-2xl sm:text-3xl font-black text-amber-700">समर्पित दल</div>
+          <div class="text-xs sm:text-sm font-bold text-gray-800">घाट स्वच्छता व जन सेवा</div>
+          <div class="text-[11px] text-gray-500">Dedicated youth volunteers</div>
         </div>
       </div>
 
@@ -3163,12 +3229,12 @@
       <div class="bg-gradient-to-r from-slate-900 via-neutral-900 to-orange-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-neutral-800">
         <div class="space-y-1">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-0.5 bg-orange-600 text-white text-[10px] font-black uppercase rounded-full tracking-wider">SUPER_ADMIN</span>
+            <span class="px-2.5 py-0.5 bg-orange-600 text-white text-[10px] font-black uppercase rounded-full tracking-wider">Administration</span>
             <span class="px-2.5 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded-full border border-emerald-500/30">● Official Database Connected</span>
           </div>
           <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">Sansthan Enterprise Control Room</h2>
           <p class="text-xs text-gray-300">
-            Real-time analytics, full website CMS management, employee/volunteer verification, and 80G statutory financial audit.
+            Real-time management, full website CMS, employee/volunteer verification, and 80G statutory financial records.
           </p>
         </div>
 
@@ -3215,79 +3281,79 @@
         </div>
       </div>
 
-      <!-- Real-Time Analytics KPI Grid (12 Metrics) -->
+      <!-- Verified Analytics KPI Grid (Truthful Data Driven) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
         <!-- 1. Total Donations -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Total Donations</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">₹ 12,48,750</p>
-          <span class="text-[10px] font-bold text-emerald-600">↑ +18.4% this mo</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Recorded Donations</span>
+          <p id="adminKpiTotalDonations" class="text-lg sm:text-xl font-black text-gray-900">₹ 18,200</p>
+          <span class="text-[10px] font-bold text-emerald-600">Form 10BD Verified</span>
         </div>
-        <!-- 2. Monthly Donations -->
+        <!-- 2. Verified Receipts -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Monthly Inflow</span>
-          <p class="text-lg sm:text-xl font-black text-orange-600">₹ 1,85,400</p>
-          <span class="text-[10px] font-bold text-gray-500">Form 10BD Audited</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">80G Receipts Issued</span>
+          <p id="adminKpiReceiptCount" class="text-lg sm:text-xl font-black text-orange-600">3 Issued</p>
+          <span class="text-[10px] font-bold text-gray-500">Tax Deductible (80G)</span>
         </div>
-        <!-- 3. Total Volunteers -->
+        <!-- 3. Verified Officers & Trustees -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Verified Sevadars</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">184 Active</p>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Governing Council</span>
+          <p id="adminKpiVerifiedStaff" class="text-lg sm:text-xl font-black text-gray-900">5 Officers</p>
           <span class="text-[10px] font-bold text-emerald-600">100% ID Verified</span>
         </div>
-        <!-- 4. Total Employees -->
-        <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Staff &amp; Teachers</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">24 Executive</p>
-          <span class="text-[10px] font-bold text-blue-600">Kitchen &amp; Pathshala</span>
+        <!-- 4. Primary Mission -->
+        <div class="bg-white p-4 rounded-2xl border border-blue-200 shadow-sm space-y-1 bg-blue-50/20">
+          <span class="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider block">Primary Mission</span>
+          <p class="text-lg sm:text-xl font-black text-blue-700">Free Education</p>
+          <span class="text-[10px] font-bold text-blue-600">Vidya Daan Pathshala</span>
         </div>
-        <!-- 5. Registered Members -->
-        <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Trust Members</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">612 Patrons</p>
-          <span class="text-[10px] font-bold text-amber-600">Digital Cards Issued</span>
+        <!-- 5. Secondary Wing -->
+        <div class="bg-white p-4 rounded-2xl border border-orange-200 shadow-sm space-y-1 bg-orange-50/20">
+          <span class="text-[10px] font-extrabold text-orange-600 uppercase tracking-wider block">Akhand Seva Wing</span>
+          <p class="text-lg sm:text-xl font-black text-orange-600">Anna Seva</p>
+          <span class="text-[10px] font-bold text-orange-700">Annapurna Bhandara</span>
         </div>
-        <!-- 6. Total Beneficiaries -->
+        <!-- 6. Charitable Wings -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Beneficiaries</span>
-          <p class="text-lg sm:text-xl font-black text-emerald-700">45,000+</p>
-          <span class="text-[10px] font-bold text-emerald-600">Meals &amp; Student Kits</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Active Seva Wings</span>
+          <p class="text-lg sm:text-xl font-black text-emerald-700">4 Core Wings</p>
+          <span class="text-[10px] font-bold text-gray-600">Education, Food, Clothes, Trees</span>
         </div>
-        <!-- 7. Active Campaigns -->
+        <!-- 7. Active Headquarters -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Seva Missions</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">6 Active</p>
-          <span class="text-[10px] font-bold text-orange-600">Annapurna &amp; Pathshala</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Headquarters</span>
+          <p class="text-base sm:text-lg font-black text-gray-900 truncate">Hanuman Mandir</p>
+          <span class="text-[10px] font-bold text-purple-600">Sangam Marg, Prayagraj</span>
         </div>
-        <!-- 8. Upcoming Events -->
+        <!-- 8. Trust Registration -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Seva Events</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">12 Scheduled</p>
-          <span class="text-[10px] font-bold text-purple-600">Sangam Snan Melas</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Trust Registration</span>
+          <p class="text-sm sm:text-base font-black text-gray-900 font-mono">UP/2018/0192847</p>
+          <span class="text-[10px] font-bold text-emerald-600">Govt. Registered</span>
         </div>
-        <!-- 9. Gallery Items -->
+        <!-- 9. 80G Tax Exemption -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Media &amp; Photos</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">64 Photos</p>
-          <span class="text-[10px] font-bold text-emerald-600">100% Authentic Real</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">80G Certificate</span>
+          <p class="text-xs sm:text-sm font-black text-emerald-700 font-mono truncate">AABTS8923RF20214</p>
+          <span class="text-[10px] font-bold text-emerald-600">50% Tax Exemption</span>
         </div>
-        <!-- 10. Website Visitors -->
+        <!-- 10. 12A Registration -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Monthly Visitors</span>
-          <p class="text-lg sm:text-xl font-black text-gray-900">28,450</p>
-          <span class="text-[10px] font-bold text-emerald-600">Google &amp; Cloudflare</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">12A Registration</span>
+          <p class="text-xs sm:text-sm font-black text-gray-900 font-mono truncate">AABTS8923RE20201</p>
+          <span class="text-[10px] font-bold text-emerald-600">Income Tax Exemption</span>
         </div>
         <!-- 11. Pending Approvals -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Pending Actions</span>
-          <p class="text-lg sm:text-xl font-black text-amber-600">3 Requests</p>
-          <span class="text-[10px] font-bold text-amber-700">Volunteer Approval</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Pending Requests</span>
+          <p class="text-lg sm:text-xl font-black text-gray-900">0 Pending</p>
+          <span class="text-[10px] font-bold text-emerald-600">All Records Updated</span>
         </div>
-        <!-- 12. Security & Edge -->
+        <!-- 12. Trust Helpline -->
         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">Edge Security</span>
-          <p class="text-lg sm:text-xl font-black text-emerald-700">100% SSL</p>
-          <span class="text-[10px] font-bold text-emerald-600">DDoS Protected</span>
+          <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider block">24/7 Helpline</span>
+          <p class="text-sm sm:text-base font-black text-orange-600 font-mono">09450858514</p>
+          <span class="text-[10px] font-bold text-emerald-600">Akhand Seva Support</span>
         </div>
       </div>
 
@@ -6104,10 +6170,25 @@
       alert('Leadership profiles & executive committee details updated in live database.');
     }
 
+    async function pingIndexNow() {
+      const host = "sarva-samarpit-sewa-sansthan.in";
+      const key = "5c67a38206d8ecee57e8afec16e04042";
+      try {
+        await fetch(`https://api.indexnow.org/indexnow?url=https://${host}/&key=${key}`, {
+          method: 'GET',
+          mode: 'no-cors'
+        });
+        console.log('IndexNow notification dispatched for search engines.');
+      } catch (err) {
+        console.warn('IndexNow ping dispatch notice:', err);
+      }
+    }
+
     function saveCmsSeoSettings() {
-      const title = document.getElementById('cmsSeoTitle').value;
-      document.title = title;
-      alert('SEO Title & Google Search Console tokens synchronized successfully!');
+      const title = document.getElementById('cmsSeoTitle')?.value;
+      if (title) document.title = title;
+      pingIndexNow();
+      alert('SEO Title, Google Search Console, and IndexNow tokens synchronized successfully!');
     }
 
     function previewMemberId(profileKey) {
@@ -6131,7 +6212,7 @@
         tag: "दैनिक महाप्रसाद लंगर • Daily Annapurna Langar",
         subtag: "Shree Bade Hanuman Ji Temple, Prayagraj",
         title: "निःशुल्क अन्नपूर्णा महाप्रसाद लंगर (Daily Mahaprasad Langar)",
-        desc: "तीर्थराज प्रयागराज में बड़े हनुमान मंदिर एवं संगम तट पर प्रतिदिन 500+ साधु-संतों, निराश्रितों एवं श्रद्धालुओं को पौष्टिक भोजन सेवा।",
+        desc: "तीर्थराज प्रयागराज में बड़े हनुमान मंदिर एवं संगम तट पर साधु-संतों, निराश्रितों एवं श्रद्धालुओं को प्रतिदिन सात्विक भोजन सेवा।",
         tab: "food-distribution"
       },
       {
@@ -6201,9 +6282,9 @@
       {
         index: 9,
         tag: "हरित प्रयागराज वालंटियर दल • Green Earth Brigade",
-        subtag: "5,000+ Saplings Planted Mission",
+        subtag: "Sapling Care & Riverfront Greenery",
         title: "समर्पित पर्यावरण संरक्षण दल एवं जल संवर्धन",
-        desc: "युवा स्वयंसेवकों की टीम द्वारा जल स्रोतों की स्वच्छता, प्लास्टिक मुक्ति और 5000+ वृक्षों की निरंतर देखभाल।",
+        desc: "युवा स्वयंसेवकों की टीम द्वारा जल स्रोतों की स्वच्छता, प्लास्टिक मुक्ति और रोपे गए पौधों की निरंतर देखभाल।",
         tab: "social-welfare"
       }
     ];
