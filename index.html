@@ -34,6 +34,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
   <!-- Comprehensive Schema.org JSON-LD (NGO, EducationalOrganization, 80G Tax Exemption, AEO FAQPage) -->
   <script type="application/ld+json">
@@ -217,26 +218,28 @@
 </head>
 <body class="bg-[#FAF9F6] text-[#2D2D2D] antialiased flex flex-col min-h-screen overflow-x-hidden w-full relative">
 
-  <!-- TOP STATUTORY & CONTACT STRIP -->
-  <div class="bg-stone-900 text-stone-300 text-xs py-2 px-3 sm:px-4 border-b border-stone-800 no-print">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-      <!-- Left: Helpline & Location -->
-      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-4 text-[11px] sm:text-xs">
+  <!-- ========================================== -->
+  <!-- 1. MERGED STATUTORY STRIP & 24/7 HELPLINE (FULL SCREEN WIDTH) -->
+  <!-- ========================================== -->
+  <div class="bg-stone-900 text-stone-300 text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-stone-800 no-print w-full">
+    <div class="w-full flex flex-wrap justify-between items-center gap-2">
+      <!-- Left: Helpline, Registration, Temple Headquarters -->
+      <div class="flex flex-wrap items-center gap-2.5 sm:gap-4 text-[11px] sm:text-xs">
         <a href="tel:+919450858514" class="text-white hover:text-amber-400 font-bold flex items-center gap-1.5 transition-colors">
           <span class="text-orange-500">📞</span>
           <span class="tracking-wide">09450858514</span>
           <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-1.5 py-0.5 rounded font-semibold ml-0.5">24/7 Helpline</span>
         </a>
         <span class="hidden sm:inline text-stone-600">|</span>
-        <span class="text-stone-400 hidden md:inline flex items-center gap-1 font-mono text-[11px]">
+        <span class="text-stone-300 hidden sm:inline flex items-center gap-1 font-mono text-[11px]">
           Reg: UP/2018/0192847 &bull; PAN: AABTS8923R
         </span>
-        <span class="hidden xl:inline text-stone-600">|</span>
-        <span class="text-stone-400 hidden xl:inline items-center gap-1">
+        <span class="hidden lg:inline text-stone-600">|</span>
+        <span class="text-stone-300 hidden lg:inline flex items-center gap-1">
           📍 Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj – 211005
         </span>
       </div>
-      <!-- Right: Statutory Badges & Shortcuts -->
+      <!-- Right: Statutory 80G, WhatsApp, Single Portal Login -->
       <div class="flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs">
         <span class="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-300 border border-amber-500/25 px-2.5 py-0.5 rounded-full text-[10px] font-bold">
           <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
@@ -247,32 +250,22 @@
           <span>💬</span> WhatsApp
         </a>
         <span class="text-stone-600">|</span>
-        <button onclick="switchTab('login')" class="text-stone-300 hover:text-white font-medium text-xs transition-colors">
-          Portal Login
+        <button onclick="switchTab('login')" class="text-white hover:text-amber-300 font-bold text-xs bg-stone-800 hover:bg-stone-700 px-3 py-1 rounded-lg border border-stone-700 transition-colors flex items-center gap-1.5">
+          <span>🔐</span>
+          <span id="navAuthLabel">Portal Login</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- NOTICE TICKER BANNER -->
-  <div class="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 text-white text-xs py-1.5 px-3 sm:px-4 font-semibold shadow-sm flex items-center justify-between no-print">
-    <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-3">
-      <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap">
-        <span class="bg-black/30 text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider text-amber-200 shrink-0">SEVA ANNOUNCEMENT</span>
-        <span id="tickerText" class="truncate text-stone-50 text-[11px] sm:text-xs">Akhand Annapurna Bhandara, Free Education Pathshala &amp; Social Welfare Seva running 24x7 at Bade Hanuman Ji Temple, Sangam Marg, Prayagraj.</span>
-      </div>
-      <button onclick="switchTab('donate')" class="hidden sm:inline-block text-[11px] font-bold text-amber-100 hover:text-white underline shrink-0 pl-2">
-        Support Annapurna Langar &rarr;
-      </button>
-    </div>
-  </div>
-
-  <!-- MAIN NAVIGATION HEADER -->
-  <header class="bg-white/95 backdrop-blur-md border-b border-stone-200/90 sticky top-0 z-40 shadow-xs no-print transition-all">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+  <!-- ========================================== -->
+  <!-- 2. MAIN NAVIGATION HEADER (FULL SCREEN WIDTH) -->
+  <!-- ========================================== -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-stone-200/90 sticky top-0 z-40 shadow-xs no-print transition-all w-full">
+    <div class="w-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between">
       
       <!-- Brand Logo & Registered Title -->
-      <a href="javascript:void(0)" onclick="switchTab('home')" class="flex items-center gap-2.5 sm:gap-3.5 group">
+      <a href="javascript:void(0)" onclick="switchTab('home')" class="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
         <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-full border-2 border-orange-500 shadow-md shadow-orange-600/20 overflow-hidden bg-white p-0.5 group-hover:scale-105 transition-all shrink-0 flex items-center justify-center relative">
           <img src="logo.jpg" alt="Sarva Samarpit Sewa Sansthan Official Logo" class="w-full h-full object-cover rounded-full" />
           <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white" title="Govt. Registered NGO"></span>
@@ -291,7 +284,7 @@
       </a>
 
       <!-- Desktop Navigation Menu (Visible on lg: 1024px+) -->
-      <nav class="hidden lg:flex items-center gap-1 text-[13px] font-semibold text-stone-700">
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-[13px] font-semibold text-stone-700">
         <!-- About Dropdown -->
         <div class="relative group">
           <button class="px-3 py-2 rounded-xl hover:text-orange-600 hover:bg-orange-50/80 flex items-center gap-1.5 transition-all">
@@ -333,15 +326,11 @@
         </a>
       </nav>
 
-      <!-- Header Action Buttons -->
-      <div class="flex items-center gap-2 sm:gap-2.5">
-        <button onclick="openVerifyModal()" class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-700 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/40 transition-all shadow-2xs">
+      <!-- Header Action Buttons (No Duplicate Sign In) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="openVerifyModal()" class="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-700 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/40 transition-all shadow-2xs">
           <span>🛡️</span>
           <span>Verify ID</span>
-        </button>
-        <button onclick="switchTab('login')" class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-xs font-bold text-stone-800 transition-all">
-          <span>🔐</span>
-          <span id="navAuthLabel">Sign In</span>
         </button>
         <button onclick="openRazorpayDonationModal()" class="px-3.5 sm:px-5 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-extrabold text-xs shadow-md shadow-orange-600/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5">
           <span>❤️</span>
@@ -544,8 +533,8 @@
         </div>
 
         <!-- DEDICATED SLIDE CAPTION BAR (BELOW THE IMAGE — ZERO OVERLAPPING!) -->
-        <div class="bg-white text-stone-900 border-b border-stone-200 py-3.5 sm:py-5 px-3.5 sm:px-6 shadow-xs">
-          <div class="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4">
+        <div class="bg-white text-stone-900 border-b border-stone-200 py-3.5 sm:py-5 px-4 sm:px-6 lg:px-8 shadow-xs w-full">
+          <div class="w-full max-w-[1536px] mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4">
             
             <!-- Left: Information about currently active seva photo -->
             <div class="space-y-1 sm:space-y-1.5 max-w-3xl">
@@ -583,9 +572,9 @@
       </section>
 
       <!-- HERO SECTION -->
-      <section class="relative bg-[#FAF9F6] border-b border-stone-200/60 overflow-hidden py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div class="max-w-3xl space-y-6">
+      <section class="relative bg-[#FAF9F6] border-b border-stone-200/60 overflow-hidden py-16 sm:py-24 w-full">
+        <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+          <div class="max-w-4xl space-y-6">
             
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100/80 text-orange-800 text-xs font-semibold tracking-wide border border-orange-200">
               <span class="w-1.5 h-1.5 rounded-full bg-orange-600"></span>
@@ -622,8 +611,8 @@
       </section>
 
       <!-- FOUR PILLARS COUNTER STRIP -->
-      <section class="bg-white border-b border-stone-200/80 py-6 sm:py-8 px-4 sm:px-6 shadow-xs">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+      <section class="bg-white border-b border-stone-200/80 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 shadow-xs w-full">
+        <div class="w-full max-w-[1536px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
           
           <div class="p-3 sm:p-4 rounded-2xl bg-blue-50/50 border border-blue-100/80 text-left">
             <span class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 font-heading block">निःशुल्क शिक्षा</span>
@@ -649,7 +638,7 @@
       </section>
 
       <!-- ABOUT US PREVIEW -->
-      <section class="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div class="lg:col-span-6 space-y-4">
@@ -696,7 +685,7 @@
 
       <!-- OUR WORK: FOUR STREAMS OF SEVA -->
       <section class="py-16 sm:py-20 bg-stone-100/60 border-y border-stone-200/70">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+        <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-12">
           
           <div class="max-w-2xl">
             <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-100/80 px-3 py-1 rounded-full">
@@ -825,7 +814,7 @@
       </section>
 
       <!-- VOLUNTEER BANNER -->
-      <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6">
+      <section class="py-16 sm:py-20 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div class="bg-[#1F1F1F] text-white rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-xl">
           <div class="max-w-2xl space-y-4 relative z-10">
             <span class="text-xs font-bold uppercase tracking-wider text-orange-400 bg-orange-950/80 px-3 py-1 rounded-full border border-orange-800/60">
@@ -872,7 +861,7 @@
       </section>
 
       <!-- MOMENTS OF SEVA -->
-      <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+      <section class="py-16 sm:py-20 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-8">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
@@ -917,7 +906,7 @@
 
       <!-- VISIT US AT SANGAM MARG -->
       <section class="py-16 sm:py-20 bg-stone-100/70 border-t border-stone-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-10">
+        <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-10">
           
           <div class="max-w-2xl">
             <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-100/80 px-3 py-1 rounded-full">
@@ -1009,18 +998,19 @@
     <!-- ========================================== -->
     <!-- 2. DONATE TAB                              -->
     <!-- ========================================== -->
-    <div id="tab-donate" class="page-view hidden py-14 px-4 sm:px-6 max-w-4xl mx-auto space-y-8">
+    <div id="tab-donate" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-100/80 px-3 py-1 rounded-full">
           Instant 80G Tax Exemption
         </span>
-        <h2 class="text-3xl font-extrabold text-gray-900">Donate for Seva</h2>
-        <p class="text-xs sm:text-sm text-gray-500 max-w-xl mx-auto">
-          Every rupee is utilized directly for fresh warm meals at Sangam Marg and free medical healthcare. 100% transparent with instant digital tax certificate.
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Donate for Seva (समर्पित दान)</h2>
+        <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto">
+          Every rupee is utilized directly for fresh warm meals at Sangam Marg, free student pathshalas, and healthcare relief. 100% transparent with instant digital 80G tax exemption certificate.
         </p>
       </div>
 
-      <div class="bg-white rounded-3xl border border-stone-200 shadow-md p-6 sm:p-10 space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 bg-white rounded-3xl border border-stone-200 shadow-md p-6 sm:p-10 space-y-6">
         <div>
           <label class="block text-xs font-extrabold text-gray-700 uppercase mb-2">1. Choose Amount (₹ INR)</label>
           <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-3">
@@ -1090,12 +1080,80 @@
           Trust Reg: <strong>UP/2018/0192847</strong> &bull; 80G Certificate: <strong>AABTS8923RF20214</strong> &bull; PAN: <strong>AABTS8923R</strong>
         </div>
       </div>
+
+      <!-- Right Column: Institutional Trust Details, QR & Tax Exemption -->
+      <div class="lg:col-span-5 space-y-6">
+        <!-- Direct UPI Scan Card -->
+        <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl border border-orange-200 p-6 sm:p-7 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-black uppercase tracking-wider text-orange-700 bg-orange-100 px-3 py-1 rounded-full">
+              Direct UPI Seva
+            </span>
+            <span class="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">0% Transaction Fee</span>
+          </div>
+          <h3 class="text-lg font-black text-gray-900">Scan &amp; Donate via Any UPI App</h3>
+          <p class="text-xs text-gray-600">Scan with Google Pay, PhonePe, Paytm, BHIM, or any banking app to donate directly to the Trust account.</p>
+          
+          <div class="p-4 bg-white rounded-2xl border border-orange-200 text-center shadow-inner space-y-2">
+            <div class="font-mono text-sm font-black text-orange-700 bg-orange-50 py-2 px-3 rounded-xl border border-orange-200">
+              UPI ID: 9450858514@upi
+            </div>
+            <p class="text-[11px] text-stone-500 font-medium">Beneficiary: Sarva Samarpit Sewa Sansthan</p>
+          </div>
+        </div>
+
+        <!-- Official Bank Account Transfer -->
+        <div class="bg-white rounded-3xl border border-stone-200 p-6 sm:p-7 shadow-sm space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="text-base">🏦</span>
+            <h3 class="font-extrabold text-base text-gray-900">Direct Bank Wire / NEFT / RTGS</h3>
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="flex justify-between py-1.5 border-b border-stone-100">
+              <span class="text-stone-500">Account Name:</span>
+              <span class="font-bold text-gray-900 text-right">SARVA SAMARPIT SEWA SANSTHAN</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-stone-100">
+              <span class="text-stone-500">Account Type:</span>
+              <span class="font-bold text-gray-900">Current Charitable Account</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-stone-100">
+              <span class="text-stone-500">Bank &amp; Branch:</span>
+              <span class="font-bold text-gray-900 text-right">Prayagraj Main Branch, UP</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-stone-100">
+              <span class="text-stone-500">Trust Reg Number:</span>
+              <span class="font-mono font-bold text-orange-600">UP/2018/0192847</span>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <span class="text-stone-500">PAN Number:</span>
+              <span class="font-mono font-bold text-gray-900">AABTS8923R</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 80G Tax Exemption Guarantee -->
+        <div class="bg-white rounded-3xl border border-stone-200 p-6 shadow-sm space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-base">📜</span>
+            <h4 class="font-extrabold text-sm text-gray-900">Section 80G Tax Exemption</h4>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            All monetary contributions made to Sarva Samarpit Sewa Sansthan are eligible for 50% tax deduction under Section 80G of the Income Tax Act, 1961. Unique Form 10BD receipt is issued instantly.
+          </p>
+          <div class="pt-1 flex items-center gap-2 text-[11px] text-stone-500">
+            <span>📞 24/7 Accounts Helpline:</span>
+            <a href="tel:+919450858514" class="font-bold text-orange-600 hover:underline">09450858514</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
     <!-- ========================================== -->
     <!-- 3. ABOUT US TAB                            -->
     <!-- ========================================== -->
-    <div id="tab-about" class="page-view hidden py-14 px-4 sm:px-6 max-w-5xl mx-auto space-y-8">
+    <div id="tab-about" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
           About Us
@@ -1135,7 +1193,7 @@
     <!-- ========================================== -->
     <!-- 4. VISION & MISSION TAB                    -->
     <!-- ========================================== -->
-    <div id="tab-vision" class="page-view hidden py-14 px-4 sm:px-6 max-w-5xl mx-auto space-y-8">
+    <div id="tab-vision" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
           Guiding Principles
@@ -1175,7 +1233,7 @@
     <!-- ========================================== -->
     <!-- 5. FOUNDER MESSAGE TAB                     -->
     <!-- ========================================== -->
-    <div id="tab-founder" class="page-view hidden py-14 px-4 sm:px-6 max-w-4xl mx-auto space-y-8">
+    <div id="tab-founder" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
           Message from the Founder
@@ -1220,7 +1278,7 @@
     <!-- ========================================== -->
     <!-- 6. TRUSTEES & EXECUTIVE BODY TAB           -->
     <!-- ========================================== -->
-    <div id="tab-trustees" class="page-view hidden py-14 px-4 sm:px-6 max-w-6xl mx-auto space-y-12">
+    <div id="tab-trustees" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
       
       <!-- Top Overview Header & Quick Jump Navigation -->
       <div class="text-center space-y-3">
@@ -1521,7 +1579,7 @@
     <!-- ========================================== -->
     <!-- 7. SEVA PROJECTS TABS                      -->
     <!-- ========================================== -->
-    <div id="tab-food-distribution" class="page-view hidden py-14 px-4 sm:px-6 max-w-6xl mx-auto space-y-12">
+    <div id="tab-food-distribution" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
       <!-- Title Header -->
       <div class="text-center space-y-3">
         <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-orange-700 bg-orange-100/90 border border-orange-200 px-4 py-1.5 rounded-full shadow-2xs">
@@ -1844,7 +1902,7 @@
       </div>
     </div>
 
-    <div id="tab-free-education" class="page-view hidden py-14 px-4 sm:px-6 max-w-6xl mx-auto space-y-12">
+    <div id="tab-free-education" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
       <!-- Title Header -->
       <div class="text-center space-y-3">
         <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100/90 border border-blue-200 px-4 py-1.5 rounded-full shadow-2xs">
@@ -2174,7 +2232,7 @@
       </div>
     </div>
 
-    <div id="tab-religious-activities" class="page-view hidden py-14 px-4 sm:px-6 max-w-5xl mx-auto space-y-8">
+    <div id="tab-religious-activities" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3 py-1 rounded-full">
           धार्मिक सेवा (Dharmik Seva)
@@ -2200,7 +2258,7 @@
       </div>
     </div>
 
-    <div id="tab-social-welfare" class="page-view hidden py-14 px-4 sm:px-6 max-w-6xl mx-auto space-y-12">
+    <div id="tab-social-welfare" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
       <!-- Title Header -->
       <div class="text-center space-y-3">
         <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/90 border border-emerald-200 px-4 py-1.5 rounded-full shadow-2xs">
@@ -2669,7 +2727,7 @@
     <!-- ========================================== -->
     <!-- 8. VOLUNTEER REGISTRATION TAB              -->
     <!-- ========================================== -->
-    <div id="tab-volunteer" class="page-view hidden py-14 px-4 sm:px-6 max-w-4xl mx-auto space-y-8">
+    <div id="tab-volunteer" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
           Join the Sevadar Family
@@ -2752,7 +2810,7 @@
     <!-- ========================================== -->
     <!-- 9. CORPORATE DIGITAL IDENTITY CARD CENTER  -->
     <!-- ========================================== -->
-    <div id="tab-membership" class="page-view hidden py-8 sm:py-12 px-3 sm:px-6 max-w-6xl mx-auto space-y-6 sm:space-y-8">
+    <div id="tab-membership" class="page-view hidden py-8 sm:py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-6 sm:space-y-8">
       
       <!-- Top Title -->
       <div class="text-center space-y-2">
@@ -3147,7 +3205,7 @@
     <!-- ========================================== -->
     <!-- 10. PHOTO GALLERY TAB                      -->
     <!-- ========================================== -->
-    <div id="tab-gallery" class="page-view hidden py-14 px-4 sm:px-6 max-w-6xl mx-auto space-y-8">
+    <div id="tab-gallery" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
           Photo Gallery
@@ -3175,7 +3233,7 @@
     <!-- ========================================== -->
     <!-- 11. CONTACT TAB                            -->
     <!-- ========================================== -->
-    <div id="tab-contact" class="page-view hidden py-14 px-4 sm:px-6 max-w-5xl mx-auto space-y-8">
+    <div id="tab-contact" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
           Get in Touch
@@ -3220,7 +3278,7 @@
     <!-- ========================================== -->
     <!-- 11B. MEMBER PROFILE & DIGITAL ID HUB       -->
     <!-- ========================================== -->
-    <div id="tab-profile" class="page-view hidden py-12 px-4 sm:px-6 max-w-6xl mx-auto space-y-8">
+    <div id="tab-profile" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       
       <!-- Top Header / Title -->
       <div class="text-center space-y-2">
@@ -3485,9 +3543,9 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- 12. CLEAN ENTERPRISE PORTAL LOGIN          -->
+    <!-- 12. CLEAN ENTERPRISE PORTAL LOGIN (GOOGLE AUTH) -->
     <!-- ========================================== -->
-    <div id="tab-login" class="page-view hidden py-10 sm:py-14 px-3 sm:px-6 max-w-xl mx-auto space-y-6">
+    <div id="tab-login" class="page-view hidden py-12 px-4 sm:px-6 w-full max-w-xl mx-auto space-y-6">
       
       <!-- Top Title -->
       <div class="text-center space-y-2">
@@ -3496,155 +3554,49 @@
         </span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">Portal Authentication</h2>
         <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
-          Sign in to access your administrative dashboard, verified member roster, and personal Digital ID card generator.
+          One-click secure Google authentication for Governing Council Trustees, Executive Officers, Seva Coordinators, and Registered Sevadars.
         </p>
       </div>
 
       <!-- Main Clean Authentication Card -->
-      <div class="bg-white rounded-3xl border border-stone-200/90 shadow-xl p-5 sm:p-8 space-y-6">
+      <div class="bg-white rounded-3xl border border-stone-200/90 shadow-xl p-6 sm:p-9 space-y-6">
         
         <!-- Official Circular Logo -->
         <div class="text-center space-y-2">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-orange-500 overflow-hidden bg-white p-0.5 shadow-md mx-auto">
-            <img src="logo.jpg" alt="Logo" class="w-full h-full object-cover rounded-full" />
+          <div class="w-16 h-16 rounded-full border-2 border-orange-500 overflow-hidden bg-white p-0.5 shadow-md mx-auto flex items-center justify-center">
+            <img src="logo.jpg" alt="Sarva Samarpit Sewa Sansthan Official Logo" class="w-full h-full object-cover rounded-full" />
           </div>
-          <h3 class="font-extrabold text-sm sm:text-base text-gray-900">Sarva Samarpit Sewa Sansthan</h3>
-          <p class="text-[10px] sm:text-[11px] text-stone-500">Regd. Public Charitable Trust &bull; Shree Bade Hanuman Ji Temple, Prayagraj</p>
+          <h3 class="font-black text-base sm:text-lg text-gray-900">Sarva Samarpit Sewa Sansthan</h3>
+          <p class="text-[11px] text-stone-500">Regd. Public Charitable Trust &bull; Shree Bade Hanuman Ji Temple, Prayagraj</p>
         </div>
 
-        <!-- Mode Switcher Tabs -->
-        <div class="flex border-b border-stone-200 text-xs font-bold">
-          <button id="loginTabBtnSignIn" type="button" onclick="switchLoginMode('signin')" class="flex-1 pb-3 text-center border-b-2 border-orange-600 text-orange-600 transition-colors">
-            🔐 Sign In (प्रवेश)
+        <!-- Google Firebase OAuth Sign-In (The Single Login Method) -->
+        <div class="space-y-4 pt-2">
+          <button type="button" id="googleSignInMainBtn" onclick="handleGoogleSignIn()" class="w-full py-4 px-5 bg-white hover:bg-stone-50 active:scale-98 border-2 border-stone-300 hover:border-orange-500 rounded-2xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3.5 text-stone-900 font-black text-sm sm:text-base group cursor-pointer">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Continue with Google (Google से लॉगिन करें)</span>
           </button>
-          <button id="loginTabBtnRegister" type="button" onclick="switchLoginMode('register')" class="flex-1 pb-3 text-center border-b-2 border-transparent text-stone-500 hover:text-stone-900 transition-colors">
-            📝 New Sevadar (नया पंजीकरण)
-          </button>
+
+          <!-- Alert Notification Box -->
+          <div id="loginPageAlert" class="hidden p-3.5 rounded-xl text-xs font-bold text-center"></div>
         </div>
 
-        <!-- VIEW 1: SIGN IN -->
-        <div id="loginViewSignIn" class="space-y-5">
-          <!-- Google Firebase OAuth Sign-In -->
-          <div>
-            <button type="button" onclick="handleGoogleSignIn()" class="w-full py-3 px-4 bg-white hover:bg-stone-50 border-2 border-stone-200 hover:border-stone-400 text-stone-800 text-xs sm:text-sm font-bold rounded-2xl shadow-2xs flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 active:scale-98">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-              <span>Continue with Google</span>
-            </button>
+        <!-- Security Features & Real-Time Sync Highlights -->
+        <div class="pt-4 border-t border-stone-100 space-y-2 text-xs text-stone-600">
+          <div class="grid grid-cols-2 gap-2 text-[11px] font-semibold text-stone-600">
+            <span class="flex items-center gap-1.5"><span class="text-emerald-600">●</span> Live Firebase Sync</span>
+            <span class="flex items-center gap-1.5"><span class="text-emerald-600">●</span> Instant NGO ID Provisioning</span>
+            <span class="flex items-center gap-1.5"><span class="text-emerald-600">●</span> Admin Panel Sync</span>
+            <span class="flex items-center gap-1.5"><span class="text-emerald-600">●</span> 256-Bit SSL Encrypted</span>
           </div>
-
-          <!-- Clean Divider -->
-          <div class="relative flex items-center justify-center text-xs text-stone-400">
-            <span class="w-full border-t border-stone-200"></span>
-            <span class="px-3 bg-white text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-stone-400">or sign in with credentials</span>
-            <span class="w-full border-t border-stone-200"></span>
-          </div>
-
-          <!-- Clean Credentials Inputs -->
-          <div class="space-y-3.5">
-            <div>
-              <label class="block text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wider mb-1">Email Address or NGO ID</label>
-              <input id="loginPageEmail" type="text" placeholder="name@domain.com or SSSS-TRU-000001" class="w-full px-3.5 py-2.5 sm:py-3 bg-stone-50 border border-stone-300 rounded-xl text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-orange-500 font-medium" />
-            </div>
-
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <label class="text-[11px] sm:text-xs font-bold text-stone-700 uppercase tracking-wider">Password</label>
-                <a href="javascript:void(0)" onclick="handleForgotPassword()" class="text-xs text-orange-600 hover:underline font-semibold">Forgot?</a>
-              </div>
-              <div class="relative">
-                <input id="loginPagePassword" type="password" placeholder="Enter password" class="w-full px-3.5 py-2.5 sm:py-3 bg-stone-50 border border-stone-300 rounded-xl text-xs sm:text-sm text-stone-900 focus:outline-none focus:border-orange-500 font-medium pr-14" />
-                <button type="button" onclick="togglePasswordVisibility('loginPagePassword')" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-500 hover:text-stone-800 font-semibold px-1">
-                  Show
-                </button>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between text-xs text-stone-600 pt-1">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" checked class="rounded text-orange-600 focus:ring-orange-500" />
-                <span>Remember session</span>
-              </label>
-              <span class="text-emerald-700 font-bold text-[11px]">● Secure 256-bit SSL</span>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="button" onclick="handleLoginPageSignIn()" class="w-full py-3 sm:py-3.5 bg-neutral-900 hover:bg-black text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-98">
-              <span>🔐</span> Sign In to Portal
-            </button>
-          </div>
-        </div>
-
-        <!-- VIEW 2: NEW SEVADAR REGISTRATION -->
-        <div id="loginViewRegister" class="hidden space-y-4">
-          <p class="text-xs text-stone-600">Register as a Sevadar or Volunteer to generate your unique NGO ID and official digital identity card.</p>
-          
-          <div class="space-y-3">
-            <div>
-              <label class="block text-[11px] font-bold text-stone-700 mb-1">Full Legal Name (English)</label>
-              <input id="loginRegName" type="text" placeholder="e.g. Ramesh Kumar Sharma" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500" />
-            </div>
-
-            <div>
-              <label class="block text-[11px] font-bold text-stone-700 mb-1">Devanagari Name (Hindi)</label>
-              <input id="loginRegHindiName" type="text" placeholder="उदा. रमेश कुमार शर्मा" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500 font-hindi" />
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label class="block text-[11px] font-bold text-stone-700 mb-1">Email Address</label>
-                <input id="loginRegEmail" type="email" placeholder="name@email.com" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500" />
-              </div>
-              <div>
-                <label class="block text-[11px] font-bold text-stone-700 mb-1">Mobile / WhatsApp</label>
-                <input id="loginRegPhone" type="tel" placeholder="09450858514" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-semibold text-stone-900 focus:outline-none focus:border-orange-500" />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label class="block text-[11px] font-bold text-stone-700 mb-1">Role / Designation</label>
-                <select id="loginRegRole" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500">
-                  <option value="DEDICATED VOLUNTEER (SEVADAR)" selected>Dedicated Volunteer (Sevadar)</option>
-                  <option value="GENERAL LIFE MEMBER">General Life Member</option>
-                  <option value="SEVA COORDINATOR">Seva Coordinator</option>
-                  <option value="ANNAPURNA SEVA LEAD">Annapurna Seva Lead</option>
-                  <option value="VIDYA DAAN MENTOR">Vidya Daan Mentor</option>
-                  <option value="YOUTH WING CONVENOR">Youth Wing Convenor</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-[11px] font-bold text-stone-700 mb-1">Blood Group</label>
-                <select id="loginRegBloodGroup" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-bold text-stone-900 focus:outline-none focus:border-orange-500">
-                  <option value="O+" selected>O+</option>
-                  <option value="A+">A+</option>
-                  <option value="B+">B+</option>
-                  <option value="AB+">AB+</option>
-                  <option value="O-">O-</option>
-                  <option value="A-">A-</option>
-                  <option value="B-">B-</option>
-                  <option value="AB-">AB-</option>
-                </select>
-              </div>
-            </div>
-
-            <button type="button" onclick="handleLoginPageRegister()" class="w-full py-3.5 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-98">
-              <span>🪪</span> Register &amp; Issue Official Digital ID Card
-            </button>
-          </div>
-        </div>
-
-        <!-- Alert Notification Box -->
-        <div id="loginPageAlert" class="hidden p-3.5 rounded-xl text-xs font-bold"></div>
-
-        <!-- Member Links & Help -->
-        <div class="text-center pt-2 text-xs text-stone-500 space-y-1">
-          <p>Already a member? <a href="javascript:void(0)" onclick="switchTab('profile')" class="text-orange-600 font-bold hover:underline">View My Profile &rarr;</a></p>
-          <p class="text-[11px] text-stone-400">Trust Reg: UP/2018/0192847 &bull; 24/7 Helpline: 09450858514</p>
+          <p class="text-[10px] text-stone-400 text-center pt-2">
+            Indian Trusts Act, 1882 &bull; 80G Certified &bull; Reg: UP/2018/0192847
+          </p>
         </div>
 
       </div>
@@ -3654,7 +3606,7 @@
     <!-- ========================================== -->
     <!-- 13. ENTERPRISE ADMIN DASHBOARD & CMS       -->
     <!-- ========================================== -->
-    <div id="tab-admin" class="page-view hidden py-10 px-4 sm:px-6 max-w-7xl mx-auto space-y-8">
+    <div id="tab-admin" class="page-view hidden py-10 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       
       <!-- Admin Top Bar -->
       <div class="bg-gradient-to-r from-slate-900 via-neutral-900 to-orange-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-neutral-800">
@@ -4024,6 +3976,44 @@
                     <button onclick="previewMemberId('atharva_upadhyay')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
                   </td>
                 </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- LIVE GOOGLE AUTHENTICATED USERS (FIREBASE LIVE SYNC) -->
+        <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm">
+          <div class="p-6 border-b flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-gradient-to-r from-stone-50 to-orange-50/40">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <h3 class="font-extrabold text-lg text-gray-900">Live Firebase Users (Google Authentication)</h3>
+                <span id="adminGoogleUserCountBadge" class="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-[10px] font-black rounded-full">0 Authenticated</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-0.5">Real-time synchronized Google accounts saved in Firebase Realtime Database and Cloud Firestore.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> RTDB Live Connected
+              </span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-stone-50 text-gray-500 uppercase font-semibold border-b">
+                <tr>
+                  <th class="p-3.5">Assigned NGO ID</th>
+                  <th class="p-3.5">Google User / Name</th>
+                  <th class="p-3.5">Role</th>
+                  <th class="p-3.5">Department</th>
+                  <th class="p-3.5">Provider</th>
+                  <th class="p-3.5">Last Login Time</th>
+                  <th class="p-3.5 text-right">Card Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminGoogleUsersTableBody" class="divide-y divide-stone-100">
+                <!-- Dynamically rendered by renderAdminGoogleUsersTable() -->
               </tbody>
             </table>
           </div>
@@ -4528,69 +4518,20 @@
 
       <!-- Modal Body -->
       <div class="p-6 space-y-5">
-        <!-- Auth Tabs -->
-        <div class="flex border-b border-stone-200 text-xs font-bold">
-          <button id="tabBtnSignIn" onclick="switchAuthTab('signin')" class="flex-1 pb-2.5 text-center border-b-2 border-orange-600 text-orange-600">
-            Sign In
-          </button>
-          <button id="tabBtnSignUp" onclick="switchAuthTab('signup')" class="flex-1 pb-2.5 text-center border-b-2 border-transparent text-stone-500 hover:text-stone-900">
-            New Sevadar (Register)
-          </button>
-        </div>
+        <!-- Single Google Sign-In Portal in Modal -->
+        <div class="space-y-4 py-2">
+          <p class="text-xs text-stone-600 text-center">
+            Sign in securely using your authorized Google account to connect with Firebase and access your verified profile.
+          </p>
 
-        <!-- 1. Sign In Form -->
-        <div id="authViewSignIn" class="space-y-4">
-          <!-- Google Sign In Button -->
-          <button type="button" onclick="handleGoogleSignIn()" class="w-full py-2.5 px-4 bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-bold rounded-xl shadow-sm flex items-center justify-center gap-2.5 transition-all">
-            <svg class="w-4 h-4" viewBox="0 0 24 24">
+          <button type="button" onclick="handleGoogleSignIn()" class="w-full py-3.5 px-4 bg-white border-2 border-stone-300 hover:border-orange-500 hover:bg-stone-50 text-stone-900 text-xs sm:text-sm font-bold rounded-2xl shadow-sm flex items-center justify-center gap-3 transition-all active:scale-98">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
             </svg>
-            Continue with Google (Firebase OAuth)
-          </button>
-
-          <div class="relative flex items-center justify-center text-xs text-stone-400">
-            <span class="w-full border-t border-stone-200"></span>
-            <span class="px-2 bg-white text-[11px] uppercase tracking-wider font-semibold text-stone-400">or email login</span>
-            <span class="w-full border-t border-stone-200"></span>
-          </div>
-
-          <div class="space-y-3">
-            <div>
-              <label class="block text-[11px] font-bold text-stone-600 uppercase mb-1">Email / NGO User ID</label>
-              <input id="authEmailInput" type="email" placeholder="name@sarva-samarpit-sewa-sansthan.in or NGO ID" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-orange-500" />
-            </div>
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <label class="text-[11px] font-bold text-stone-600 uppercase">Password</label>
-                <a href="javascript:void(0)" onclick="handleForgotPassword()" class="text-[11px] text-orange-600 hover:underline">Forgot password?</a>
-              </div>
-              <input id="authPasswordInput" type="password" placeholder="Enter password" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-orange-500" />
-            </div>
-          </div>
-
-          <button type="button" onclick="handleEmailPasswordSignIn()" class="w-full py-3 bg-neutral-900 hover:bg-black text-white font-bold text-xs rounded-xl shadow transition-all">
-            Sign In with Firebase Credentials
-          </button>
-        </div>
-
-        <!-- 3. New Registration -->
-        <div id="authViewSignUp" class="hidden space-y-3">
-          <p class="text-xs text-stone-600">Join Sarva Samarpit Sewa Sansthan as an approved Volunteer or Contributing Member.</p>
-          <div class="space-y-2.5">
-            <input id="regFullName" type="text" placeholder="Full Legal Name" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900" />
-            <input id="regEmail" type="email" placeholder="Email Address" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900" />
-            <input id="regPhone" type="tel" placeholder="Mobile / WhatsApp (09450858514)" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900" />
-            <select id="regRoleSelect" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 font-medium">
-              <option value="Volunteer">Dedicated Volunteer (Sevadar)</option>
-              <option value="Donor">Patron Member / Donor</option>
-              <option value="Employee">Sansthan Staff / Coordinator</option>
-            </select>
-          </div>
-          <button type="button" onclick="handleNewRegistrationSubmit()" class="w-full py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs rounded-xl shadow">
-            Create Profile &amp; Generate ID Application
+            <span>Continue with Google</span>
           </button>
         </div>
 
@@ -4793,7 +4734,7 @@
   <!-- FOOTER                                     -->
   <!-- ========================================== -->
   <footer class="bg-[#1A1A1A] text-gray-400 pt-16 pb-24 xl:pb-12 border-t border-neutral-800 no-print mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+    <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-12">
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         
@@ -6417,6 +6358,7 @@
     const firebaseConfig = {
       apiKey: "AIzaSyDngZOpE-06QzaMMECno7i9JPijyKmzTOE",
       authDomain: "sarvasamarpitsewasanstha-b2636.firebaseapp.com",
+      databaseURL: "https://sarvasamarpitsewasanstha-b2636-default-rtdb.firebaseio.com",
       projectId: "sarvasamarpitsewasanstha-b2636",
       storageBucket: "sarvasamarpitsewasanstha-b2636.firebasestorage.app",
       messagingSenderId: "784778109261",
@@ -6427,6 +6369,7 @@
     let fbApp = null;
     let fbAuth = null;
     let fbDb = null;
+    let fbRealtimeDb = null;
     let fbAnalytics = null;
 
     try {
@@ -6437,6 +6380,9 @@
           fbApp = firebase.app();
         }
         if (typeof firebase.auth === 'function') fbAuth = firebase.auth();
+        if (typeof firebase.database === 'function') {
+          try { fbRealtimeDb = firebase.database(); } catch (e) { console.warn("Firebase RTDB init notice:", e); }
+        }
         if (typeof firebase.firestore === 'function') fbDb = firebase.firestore();
         if (typeof firebase.analytics === 'function') {
           try { fbAnalytics = firebase.analytics(); } catch (e) { /* analytics */ }
@@ -6695,8 +6641,155 @@
 
       syncProfileInputsToPreview();
 
+      // Prepare synchronized Google User record
+      const googleUserRecord = {
+        uid: user.uid,
+        name: name,
+        email: email,
+        photoURL: user.photoURL || '',
+        phoneNumber: user.phoneNumber || '',
+        role: role,
+        roleBadge: roleBadge,
+        ngoId: ngoId,
+        department: dept,
+        authProvider: 'Google Auth',
+        lastLogin: new Date().toISOString()
+      };
+
+      // 1. Save to Local Cache for instantaneous admin access
+      saveGoogleUserToCache(googleUserRecord);
+
+      // 2. Live Sync to Firebase Realtime Database
+      if (fbRealtimeDb && user.uid) {
+        fbRealtimeDb.ref('users/' + user.uid).update({
+          ...googleUserRecord,
+          lastLoginTimestamp: (typeof firebase !== 'undefined' && firebase.database && firebase.database.ServerValue) ? firebase.database.ServerValue.TIMESTAMP : Date.now()
+        }).catch(err => console.warn('Firebase RTDB user sync notice:', err.message));
+      }
+
+      // 3. Live Sync to Firestore
+      if (fbDb && user.uid) {
+        fbDb.collection('users').doc(user.uid).set(googleUserRecord, { merge: true })
+          .catch(err => console.warn('Firestore user sync notice:', err.message));
+      }
+
+      // 4. Update the Admin Table immediately
+      renderAdminGoogleUsersTable();
+
       // Log real audit event
       logAuditEvent('AUTH_SIGN_IN', `${role} (${name} <${email}>) authenticated via Firebase.`);
+    }
+
+    function saveGoogleUserToCache(record) {
+      try {
+        let users = JSON.parse(localStorage.getItem('ssss_google_users') || '[]');
+        const idx = users.findIndex(u => (u.uid && record.uid && u.uid === record.uid) || (u.email && record.email && u.email.toLowerCase() === record.email.toLowerCase()));
+        if (idx >= 0) {
+          users[idx] = { ...users[idx], ...record };
+        } else {
+          users.unshift(record);
+        }
+        localStorage.setItem('ssss_google_users', JSON.stringify(users));
+      } catch (e) {
+        console.warn('Cache save notice:', e);
+      }
+    }
+
+    function getCachedGoogleUsers() {
+      try {
+        return JSON.parse(localStorage.getItem('ssss_google_users') || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function renderAdminGoogleUsersTable() {
+      const tbody = document.getElementById('adminGoogleUsersTableBody');
+      const countBadge = document.getElementById('adminGoogleUserCountBadge');
+      if (!tbody) return;
+
+      const users = getCachedGoogleUsers();
+      if (countBadge) countBadge.innerText = users.length + ' Authenticated';
+
+      if (users.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="p-6 text-center text-stone-500 font-medium">No external Google users recorded yet. Users who sign in with Google will appear here live with automatic Firebase sync.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = users.map(u => {
+        const photo = u.photoURL || 'images/founder.jpg';
+        const dateStr = u.lastLogin ? new Date(u.lastLogin).toLocaleString('en-IN', { dateStyle: 'short', timeStyle: 'short' }) : 'Just now';
+        return `
+          <tr class="hover:bg-stone-50 transition-colors">
+            <td class="p-3.5 font-mono font-bold text-orange-600">${u.ngoId || 'Pending'}</td>
+            <td class="p-3.5 font-bold text-gray-900">
+              <div class="flex items-center gap-2.5">
+                <img src="${photo}" class="w-8 h-8 rounded-full object-cover border border-orange-400 shrink-0" onerror="this.src='images/founder.jpg'" alt="${u.name}" />
+                <div>
+                  <div class="text-xs font-bold text-stone-900">${u.name}</div>
+                  <div class="text-[10px] text-stone-500 font-normal">${u.email}</div>
+                </div>
+              </div>
+            </td>
+            <td class="p-3.5">
+              <span class="px-2 py-0.5 bg-orange-100 text-orange-800 rounded font-black text-[10px] uppercase">${u.role || 'Volunteer'}</span>
+            </td>
+            <td class="p-3.5 text-stone-600 text-xs">${u.department || 'Prayagraj Seva Mission'}</td>
+            <td class="p-3.5">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Google Auth
+              </span>
+            </td>
+            <td class="p-3.5 font-mono text-[11px] text-stone-600">${dateStr}</td>
+            <td class="p-3.5 text-right">
+              <button onclick="previewGoogleUserCard('${u.uid}')" class="px-2.5 py-1 bg-orange-50 hover:bg-orange-100 text-orange-700 font-bold rounded-lg text-[11px] border border-orange-200 transition-colors">Generate Card</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function previewGoogleUserCard(uid) {
+      const users = getCachedGoogleUsers();
+      const u = users.find(user => user.uid === uid);
+      if (!u) return;
+
+      const key = 'google_' + (u.uid ? u.uid.slice(0, 8) : 'user');
+      idCardProfiles[key] = {
+        name: u.name,
+        hindiName: u.name,
+        id: u.ngoId || 'SSSS-VOL-000001',
+        role: u.roleBadge || 'CERTIFIED VOLUNTEER (SEVADAR)',
+        dept: u.department || 'Prayagraj Seva Mission',
+        doj: '01 Jan 2024',
+        validity: '31 Dec 2027',
+        blood: 'O+',
+        phone: u.phoneNumber || '+91 94508 58514',
+        email: u.email || 'info@sarvasamarpitsewasansthan.org',
+        photo: u.photoURL || 'images/founder.jpg'
+      };
+
+      switchTab('membership');
+      onIdCardSelect(key);
+    }
+
+    function initRealtimeUsersListener() {
+      if (fbRealtimeDb) {
+        try {
+          fbRealtimeDb.ref('users').on('value', snapshot => {
+            const data = snapshot.val();
+            if (data) {
+              const remoteUsers = Object.values(data);
+              remoteUsers.forEach(u => saveGoogleUserToCache(u));
+              renderAdminGoogleUsersTable();
+            }
+          }, err => {
+            console.warn('Realtime DB rules notice:', err.message);
+          });
+        } catch (e) {
+          console.warn('Realtime listener notice:', e);
+        }
+      }
     }
 
     async function handleSignOut() {
@@ -7336,8 +7429,6 @@
         onIdCardSelect('vol_' + randomId);
       }, 1000);
     }
-      }, 1000);
-    }
 
     function showLoginPageAlert(type, message) {
       const alertBox = document.getElementById('loginPageAlert');
@@ -7368,6 +7459,14 @@
 
       // Initialize Default ID Card (Naveen Mishra - SSSS-TRU-000002)
       onIdCardSelect('navin_mishra');
+
+      // Render Live Google Users Table in Admin Panel & attach Realtime DB listener
+      if (typeof renderAdminGoogleUsersTable === 'function') {
+        renderAdminGoogleUsersTable();
+      }
+      if (typeof initRealtimeUsersListener === 'function') {
+        initRealtimeUsersListener();
+      }
 
       // Listen to Firebase Auth state changes
       if (fbAuth && typeof fbAuth.onAuthStateChanged === 'function') {
