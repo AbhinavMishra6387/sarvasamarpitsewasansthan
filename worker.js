@@ -59,11 +59,11 @@ export default {
         // SPA Fallback: Route clean URLs to index.html
         const fallbackRes = await fetch(`${RAW_ORIGIN}/index.html?_fresh=${Date.now()}`);
         if (fallbackRes.ok) {
-          const fallbackHeaders = new Headers(fallbackRes.headers);
-          fallbackHeaders.set("content-type", "text/html; charset=utf-8");
-          fallbackHeaders.set("access-control-allow-origin", "*");
-          fallbackHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
-          return new Response(fallbackRes.body, { status: 200, headers: fallbackHeaders });
+          const cleanHeaders = new Headers();
+          cleanHeaders.set("content-type", "text/html; charset=utf-8");
+          cleanHeaders.set("access-control-allow-origin", "*");
+          cleanHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
+          return new Response(fallbackRes.body, { status: 200, headers: cleanHeaders });
         }
       }
 
@@ -74,21 +74,22 @@ export default {
         });
       }
 
-      const newHeaders = new Headers(res.headers);
-      newHeaders.set("content-type", getMimeType(path));
-      newHeaders.set("access-control-allow-origin", "*");
+      // Clean headers without GitHub's restrictive sandbox CSP:
+      const cleanHeaders = new Headers();
+      cleanHeaders.set("content-type", getMimeType(path));
+      cleanHeaders.set("access-control-allow-origin", "*");
 
       if (isDynamicDoc) {
-        newHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
-        newHeaders.set("pragma", "no-cache");
-        newHeaders.set("expires", "0");
+        cleanHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
+        cleanHeaders.set("pragma", "no-cache");
+        cleanHeaders.set("expires", "0");
       } else {
-        newHeaders.set("cache-control", "public, max-age=86400");
+        cleanHeaders.set("cache-control", "public, max-age=86400");
       }
 
       return new Response(res.body, {
         status: 200,
-        headers: newHeaders
+        headers: cleanHeaders
       });
     } catch (err) {
       return new Response("Connecting to Sarva Samarpit Sewa Sansthan...", {
