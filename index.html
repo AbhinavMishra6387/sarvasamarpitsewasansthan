@@ -6838,7 +6838,7 @@
         hindiName: "नवीन मिश्रा (कोषाध्यक्ष)",
         id: "SSSS-TRU-000002",
         role: "TREASURER & FINANCE CONTROLLER",
-          Statutory Compliance &bull; &#x0915;&#x093E;&#x0928;&#x0942;&#x0928;&#x0940; &#x0938;&#x0941;&#x0930;&#x0915;&#x094D;&#x0937;&#x093E;
+        dept: "Finance, Audit & 80G Statutory Compliances",
         email: "treasurer@sarvasamarpitsewasansthan.com",
         phone: "+91 83030 64007",
         joinDate: "01-May-2018",
@@ -9398,7 +9398,9 @@
     // ==========================================
     // 6. INITIALIZATION & QR CODE VERIFICATION URL
     // ==========================================
-    window.addEventListener('DOMContentLoaded', function() {
+    // INITIALIZATION DISPATCHER
+    // ==========================================
+    function initSansthanApp() {
       // Cross-tab session recovery: If user is logged in in any tab, keep them logged in!
       try {
         const persisted = JSON.parse(localStorage.getItem('ssss_active_session') || 'null');
@@ -9464,7 +9466,13 @@
       if (verifyId) {
         openVerifyModal(verifyId);
       }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initSansthanApp);
+    } else {
+      initSansthanApp();
+    }
   </script>
 
     <!-- COOKIES, PRIVACY & FAIR USE CONSENT BANNER -->
