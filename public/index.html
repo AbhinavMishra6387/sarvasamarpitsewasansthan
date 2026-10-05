@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -342,7 +342,7 @@
         </a>
       </nav>
 
-      <!-- Header Action Buttons (No Duplicate Sign In) -->
+      <!-- Header Action Buttons -->
       <div class="flex items-center gap-2 sm:gap-3">
         <!-- Bilingual Language Switcher Button (Desktop & Header) -->
         <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-800 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/60 transition-all shadow-2xs" title="Switch language (हिंदी / English)">
@@ -356,6 +356,11 @@
         <button onclick="openRazorpayDonationModal()" class="px-3.5 sm:px-5 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-extrabold text-xs shadow-md shadow-orange-600/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5">
           <span>❤️</span>
           <span id="navDonateLabel">Donate (80G)</span>
+        </button>
+        <!-- Single Official Login Button on Right Side Last in Nav Bar Only -->
+        <button onclick="switchTab('login')" class="px-3.5 sm:px-4 py-2 rounded-xl bg-neutral-900 hover:bg-black text-white font-black text-xs shadow-md shadow-neutral-900/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5 border border-neutral-700">
+          <span>🔐</span>
+          <span>Login</span>
         </button>
         <!-- Mobile Menu Toggle Button (Visible on < lg) -->
         <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl border border-stone-200 text-stone-700 hover:bg-stone-100 transition-colors flex items-center justify-center" aria-label="Toggle Navigation">
@@ -1334,7 +1339,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -1380,7 +1385,7 @@
     <!-- ========================================== -->
     <!-- 4. VISION & MISSION TAB                    -->
     <!-- ========================================== -->
-    <div id="tab-vision" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
+    <div id="tab-vision" class="page-view hidden py-10 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
@@ -1388,45 +1393,124 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span>🏠</span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <span>❤️</span> <span>Donate</span>
           </button>
         </div>
       </div>
+
       <div class="text-center space-y-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
-          Guiding Principles
+        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-full border border-orange-200">
+          Guiding Principles &bull; मार्गदर्शक सिद्धांत
         </span>
-        <h2 class="text-3xl font-extrabold text-gray-900">Vision &amp; Mission</h2>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Our Mission &amp; Vision</h2>
+        <p class="text-base sm:text-lg font-serif italic text-orange-800 max-w-2xl mx-auto pt-1">
+          &ldquo;Service for every person, dignity in every life, and progress for every community.&rdquo;
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white p-8 rounded-3xl border border-stone-200 shadow-sm space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-2xl">
-            🎯
+      <!-- Core Mission & Vision 2-Column Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Mission Card -->
+        <div class="bg-gradient-to-br from-white to-orange-50/40 p-8 sm:p-10 rounded-3xl border border-orange-200/90 shadow-sm space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-orange-600 text-white flex items-center justify-center font-bold text-2xl shadow-sm">
+              🎯
+            </div>
+            <div>
+              <span class="text-[11px] font-black uppercase text-orange-600 tracking-wider">Our Sacred Pledge</span>
+              <h3 class="text-2xl font-black text-stone-900 tracking-tight">Our Mission</h3>
+            </div>
           </div>
-          <h3 class="text-xl font-extrabold text-gray-900">Our Mission</h3>
-          <p class="text-lg font-serif italic text-orange-700">
-            "No one near the Sangam should sleep hungry or untreated."
+          <p class="text-base sm:text-lg text-stone-800 leading-relaxed font-medium bg-white p-5 rounded-2xl border border-orange-100 shadow-2xs">
+            &ldquo;To empower every section of society through service, education, and values, and to build a healthy, educated, self-reliant, and compassionate society.&rdquo;
           </p>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            To maintain an unceasing pipeline of warm, wholesome food, free emergency medical triage, blankets, and sacred dignity for every pilgrim, destitute person, and sadhu in the holy city of Prayagraj.
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Rooted at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, our mission is to eliminate poverty-driven illiteracy, food insecurity, and social deprivation through unceasing selfless service.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-3xl border border-stone-200 shadow-sm space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-2xl">
-            🌅
+        <!-- Vision Card -->
+        <div class="bg-gradient-to-br from-white to-amber-50/40 p-8 sm:p-10 rounded-3xl border border-amber-200/90 shadow-sm space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center font-bold text-2xl shadow-sm">
+              🌅
+            </div>
+            <div>
+              <span class="text-[11px] font-black uppercase text-amber-700 tracking-wider">Our Long-Term Horizon</span>
+              <h3 class="text-2xl font-black text-stone-900 tracking-tight">Our Vision</h3>
+            </div>
           </div>
-          <h3 class="text-xl font-extrabold text-gray-900">Our Vision</h3>
-          <p class="text-lg font-serif italic text-amber-700">
-            "A compassionate society where seva is a way of life."
+          <p class="text-base sm:text-lg text-stone-800 leading-relaxed font-medium bg-white p-5 rounded-2xl border border-amber-100 shadow-2xs">
+            &ldquo;To work towards a Hunger-Free and Educated India by ensuring access to food, education, and essential support for every individual in need.&rdquo;
           </p>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            We envision an India where service to the underprivileged is celebrated as an integral dimension of everyday life, inspiring youth and communities to practice universal compassion and collective welfare.
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            We envision an India where no child is deprived of education, no family sleeps hungry near sacred pilgrimages, and seva is embraced by every citizen as a timeless duty.
           </p>
+        </div>
+      </div>
+
+      <!-- Key Focus Areas Strip -->
+      <div class="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-sm space-y-6">
+        <div class="text-center space-y-1">
+          <span class="text-xs font-bold uppercase tracking-wider text-orange-600">Core Strategic Pillars</span>
+          <h3 class="text-2xl sm:text-3xl font-black text-stone-900">Our Key Focus Areas (प्रमुख कार्यक्षेत्र)</h3>
+          <p class="text-xs text-stone-500 max-w-xl mx-auto">
+            The fundamental seven dimensions through which Sarva Samarpit Sewa Sansthan creates enduring ground-level impact:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-2">
+          <!-- 1. Education & Knowledge -->
+          <div onclick="switchTab('free-education')" class="p-5 rounded-2xl bg-blue-50/60 border border-blue-200 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer space-y-2">
+            <span class="text-3xl block">📚</span>
+            <h4 class="font-extrabold text-stone-900 text-base">Education &amp; Knowledge</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Free evening pathshalas, distribution of school kits, stationery, uniforms, and moral values coaching for slum and village children.</p>
+          </div>
+
+          <!-- 2. Service & Support for the Needy -->
+          <div onclick="switchTab('food-distribution')" class="p-5 rounded-2xl bg-amber-50/60 border border-amber-200 hover:border-amber-400 hover:shadow-md transition-all cursor-pointer space-y-2">
+            <span class="text-3xl block">❤️</span>
+            <h4 class="font-extrabold text-stone-900 text-base">Service &amp; Support for Needy</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">24-hour Akhand Annapurna Langar at Shree Bade Hanuman Ji Temple, warm winter blankets, clothing drives, and disaster relief.</p>
+          </div>
+
+          <!-- 3. Healthcare & Community Welfare -->
+          <div onclick="switchTab('social-welfare')" class="p-5 rounded-2xl bg-rose-50/60 border border-rose-200 hover:border-rose-400 hover:shadow-md transition-all cursor-pointer space-y-2">
+            <span class="text-3xl block">🏥</span>
+            <h4 class="font-extrabold text-stone-900 text-base">Healthcare &amp; Welfare</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Regular free medical awareness camps, diagnostic checkups, doctor consultations, and distribution of essential medicines.</p>
+          </div>
+
+          <!-- 4. Women & Child Empowerment -->
+          <div onclick="switchTab('social-welfare')" class="p-5 rounded-2xl border border-pink-200 bg-pink-50/60 hover:border-pink-400 hover:shadow-md transition-all cursor-pointer space-y-2">
+            <span class="text-3xl block">👩‍🦰</span>
+            <h4 class="font-extrabold text-stone-900 text-base">Women &amp; Child Empowerment</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Sanitary pad distribution drives, menstrual hygiene education, nutritional support for mothers, and self-defense &amp; skill training.</p>
+          </div>
+
+          <!-- 5. Environmental Protection -->
+          <div onclick="switchTab('social-welfare')" class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200 hover:border-emerald-400 hover:shadow-md transition-all cursor-pointer space-y-2">
+            <span class="text-3xl block">🌱</span>
+            <h4 class="font-extrabold text-stone-900 text-base">Environmental Protection</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Mass tree plantation drives along the Sangam banks and rural belts, river cleaning, plastic awareness, and water conservation.</p>
+          </div>
+
+          <!-- 6. Social Harmony & Humanity -->
+          <div onclick="switchTab('religious-activities')" class="p-5 rounded-2xl bg-purple-50/60 border border-purple-200 hover:border-purple-400 hover:shadow-md transition-all cursor-pointer space-y-2">
+            <span class="text-3xl block">🤝</span>
+            <h4 class="font-extrabold text-stone-900 text-base">Social Harmony &amp; Humanity</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Promoting universal brotherhood (&ldquo;Vasudhaiva Kutumbakam&rdquo;), inter-community solidarity, and marriage support for needy families.</p>
+          </div>
+
+          <!-- 7. Contribution towards Nation Building -->
+          <div onclick="switchTab('about')" class="p-5 rounded-2xl bg-orange-50/70 border border-orange-300 hover:border-orange-500 hover:shadow-md transition-all cursor-pointer space-y-2 sm:col-span-2 lg:col-span-1 xl:col-span-2">
+            <span class="text-3xl block">🇮🇳</span>
+            <h4 class="font-extrabold text-stone-900 text-base">Nation Building (राष्ट्र निर्माण)</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Fostering active citizenship, patriotic youth leadership, cultural heritage preservation, and selfless dedication to building a developed, self-reliant India (Atmanirbhar Bharat).</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1442,7 +1526,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -1501,7 +1585,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -1816,7 +1900,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -2153,7 +2237,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -2497,7 +2581,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -2537,7 +2621,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -3020,7 +3104,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -3117,7 +3201,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -3527,7 +3611,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -3569,7 +3653,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -3628,7 +3712,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -3908,7 +3992,7 @@
           <span>&larr;</span> <span>Back</span>
         </button>
         <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-          <span>ðŸ </span> <span>Home</span>
+          <span> </span> <span>Home</span>
         </button>
       </div>
       
@@ -4613,7 +4697,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -4697,7 +4781,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -4770,7 +4854,7 @@
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>ðŸ </span> <span>Home</span>
+            <span> </span> <span>Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>â¤ï¸</span> <span>Donate</span>
@@ -7364,6 +7448,8 @@
         if (vSignUp) vSignUp.classList.remove('hidden');
         if (bSignUp) { bSignUp.classList.add('border-orange-600', 'text-orange-600'); bSignUp.classList.remove('border-transparent', 'text-stone-500'); }
       }
+    }
+
     function toggleAdminLoginForm() {
       const form = document.getElementById('adminDirectLoginForm');
       const icon = document.getElementById('adminToggleIcon');
