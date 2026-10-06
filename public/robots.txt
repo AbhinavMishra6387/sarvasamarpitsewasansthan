@@ -4,4 +4,4 @@ Disallow: /admin
 Disallow: /api/
 Disallow: /dashboard
 
-Sitemap: https://sarva-samarpit-sewa-sansthan.in/sitemap.xml
+Sitemap: https://sarvasamarpitsewasansthan.com/sitemap.xml

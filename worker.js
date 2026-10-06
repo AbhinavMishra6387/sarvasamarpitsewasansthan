@@ -79,7 +79,9 @@ export default {
       cleanHeaders.set("content-type", getMimeType(path));
       cleanHeaders.set("access-control-allow-origin", "*");
 
-      if (isDynamicDoc) {
+      if (path.endsWith(".xml")) {
+        cleanHeaders.set("cache-control", "public, max-age=3600");
+      } else if (isDynamicDoc) {
         cleanHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
         cleanHeaders.set("pragma", "no-cache");
         cleanHeaders.set("expires", "0");

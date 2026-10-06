@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sarva Samarpit Sewa Sansthan | Official 80G Registered NGO Prayagraj</title>
   <meta name="description" content="Official platform of Sarva Samarpit Sewa Sansthan - 80G & 12A registered public charitable trust at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj. 24x7 Annapurna Bhandara, free education pathshala, and social welfare." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
   
   <!-- Google Search Console Verification Meta Tag -->
   <meta name="google-site-verification" content="google7b2c3b40b4391077" />
@@ -149,7 +151,7 @@
   ]
   </script>
   <link rel="icon" type="image/jpeg" href="logo.jpg" />
-  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Noto+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -278,23 +280,23 @@
   <!-- 2. MAIN NAVIGATION HEADER (FULL SCREEN WIDTH) -->
   <!-- ========================================== -->
   <header class="bg-white/95 backdrop-blur-md border-b border-stone-200/90 sticky top-0 z-40 shadow-xs no-print transition-all w-full">
-    <div class="w-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between">
+    <div class="w-full px-3 sm:px-6 lg:px-8 py-2 sm:py-3 flex items-center justify-between">
       
       <!-- Brand Logo & Registered Title -->
-      <a href="javascript:void(0)" onclick="switchTab('home')" class="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
-        <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-full border-2 border-orange-500 shadow-md shadow-orange-600/20 overflow-hidden bg-white p-0.5 group-hover:scale-105 transition-all shrink-0 flex items-center justify-center relative">
+      <a href="javascript:void(0)" onclick="switchTab('home')" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0 pr-1 sm:pr-2">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-orange-500/40 shadow-sm overflow-hidden bg-white p-0.5 group-hover:scale-105 transition-transform shrink-0 flex items-center justify-center">
           <img src="logo.jpg" alt="Sarva Samarpit Sewa Sansthan Official Logo" class="w-full h-full object-cover rounded-full" />
-          <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white" title="Govt. Registered NGO"></span>
         </div>
-        <div class="space-y-0.5">
-          <p class="font-extrabold text-[11px] sm:text-xs text-orange-600 tracking-wide leading-none font-hindi">
-            सर्व समर्पित सेवा संस्थान
-          </p>
-          <span class="font-black text-xs sm:text-base lg:text-lg text-stone-900 tracking-tight leading-tight block">
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 leading-none">
+            <span class="font-extrabold text-[10px] sm:text-xs text-orange-600 font-hindi truncate">सर्व समर्पित सेवा संस्थान</span>
+            <span class="hidden md:inline-block text-[9px] font-mono font-bold text-stone-400 bg-stone-100 px-1.5 py-0.5 rounded">REGD NGO</span>
+          </div>
+          <span class="font-black text-xs sm:text-sm lg:text-[15px] text-stone-900 tracking-tight leading-tight block truncate mt-0.5">
             SARVA SAMARPIT SEWA SANSTHAN
           </span>
-          <p class="text-[9px] sm:text-[10px] text-stone-500 font-medium leading-none">
-            Regd. Public Charitable Trust &bull; Shree Bade Hanuman Ji Temple, Prayagraj
+          <p class="hidden sm:block text-[9px] text-stone-500 font-medium leading-none truncate mt-0.5">
+            Registered Public Charitable Trust • Bade Hanuman Ji Mandir, Prayagraj
           </p>
         </div>
       </a>
@@ -338,33 +340,43 @@
         <a href="javascript:void(0)" onclick="switchTab('contact')" class="px-3 py-2 rounded-xl hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Contact</a>
         <a href="javascript:void(0)" onclick="switchTab('profile')" class="px-3 py-1.5 rounded-xl text-orange-700 hover:text-orange-800 bg-orange-50 hover:bg-orange-100 transition-all font-bold flex items-center gap-1.5 border border-orange-200">
           <span>👤</span>
-          <span>My Profile</span>
+          <span id="navProfileLabel">My Profile</span>
+        </a>
+        <a id="navAdminLink" href="javascript:void(0)" onclick="switchTab('admin')" class="hidden px-3 py-1.5 rounded-xl text-red-700 hover:text-red-800 bg-red-50 hover:bg-red-100 transition-all font-bold flex items-center gap-1.5 border border-red-200">
+          <span>🛠️</span>
+          <span>Admin Panel</span>
         </a>
       </nav>
 
-      <!-- Header Action Buttons -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Bilingual Language Switcher Button (Desktop & Header) -->
-        <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-800 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/60 transition-all shadow-2xs" title="Switch language (हिंदी / English)">
-          <span>🌐</span>
+      <!-- Header Action Buttons (Responsive & Never Overlapping) -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+        <!-- 1. Bilingual Language Switcher Button -->
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-1 px-2 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-stone-300 text-[11px] sm:text-xs font-bold text-stone-800 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/60 transition-all shadow-2xs cursor-pointer" title="Switch language (हिंदी / English)">
+          <span class="text-xs sm:text-sm">🌐</span>
           <span id="langToggleLabel">हिंदी</span>
         </button>
-        <button onclick="openVerifyModal()" class="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-700 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/40 transition-all shadow-2xs">
+
+        <!-- 2. Verify ID (Desktop md+) -->
+        <button onclick="openVerifyModal()" class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-700 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/40 transition-all shadow-2xs cursor-pointer">
           <span>🛡️</span>
           <span id="navVerifyLabel">Verify ID</span>
         </button>
-        <button onclick="openRazorpayDonationModal()" class="px-3.5 sm:px-5 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-extrabold text-xs shadow-md shadow-orange-600/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5">
-          <span>❤️</span>
-          <span id="navDonateLabel">Donate (80G)</span>
+
+        <!-- 3. Donate Button (Tablet / Desktop sm+) -->
+        <button onclick="openRazorpayDonationModal()" class="hidden sm:flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-extrabold text-[11px] sm:text-xs shadow-md shadow-orange-600/30 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+          <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span id="navDonateLabel">Donate</span>
         </button>
-        <!-- Single Official Login Button on Right Side Last in Nav Bar Only -->
-        <button onclick="switchTab('login')" class="px-3.5 sm:px-4 py-2 rounded-xl bg-neutral-900 hover:bg-black text-white font-black text-xs shadow-md shadow-neutral-900/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5 border border-neutral-700">
-          <span>🔐</span>
-          <span>Login</span>
+
+        <!-- 4. Mobile Menu Toggle Button (Visible on < lg, placed before Login so Login is LAST) -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-1.5 sm:p-2 rounded-xl border border-stone-200 text-stone-700 hover:bg-stone-100 transition-colors flex items-center justify-center cursor-pointer" aria-label="Toggle Navigation">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
-        <!-- Mobile Menu Toggle Button (Visible on < lg) -->
-        <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl border border-stone-200 text-stone-700 hover:bg-stone-100 transition-colors flex items-center justify-center" aria-label="Toggle Navigation">
-          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+
+        <!-- 5. Single Official Login Button on Right Side LAST in Nav Bar Only -->
+        <button id="navLoginBtn" onclick="handleNavLoginClick()" class="px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-neutral-900 hover:bg-black text-white font-bold text-[11px] sm:text-xs shadow-md shadow-neutral-900/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-1.5 border border-neutral-700 shrink-0 cursor-pointer">
+          <span id="navLoginIcon">🔐</span>
+          <span id="navLoginLabel">Login</span>
         </button>
       </div>
 
@@ -601,7 +613,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="openRazorpayDonationModal()" class="px-3.5 sm:px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-[11px] sm:text-xs font-extrabold shadow-sm transition-all flex items-center gap-1.5">
-                  <span>❤️</span> <span>Donate</span>
+                  <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
                 </button>
                 <button id="sliderActionBtn" onclick="switchTab('food-distribution')" class="px-3.5 sm:px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-[11px] sm:text-xs font-bold transition-all">
                   Learn More &rarr;
@@ -612,34 +624,6 @@
           </div>
         </div>
       </section>
-
-      <!-- LIVE REAL-TIME SEVA DONATIONS TICKER -->
-      <div class="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 text-white py-2.5 px-4 overflow-hidden relative shadow-sm border-b border-orange-800/40">
-        <div class="w-full max-w-[1536px] mx-auto flex items-center justify-between gap-3 sm:gap-6">
-          <div class="flex items-center gap-2 shrink-0">
-            <span class="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
-            <span class="text-xs font-black uppercase tracking-wider text-white">🔴 Live Seva Contributions:</span>
-          </div>
-          <div class="flex-1 overflow-hidden relative">
-            <div id="homeLiveDonationsTrack" class="animate-marquee-infinite flex items-center whitespace-nowrap text-xs font-semibold gap-8">
-              <span class="flex items-center gap-1.5 font-mono"><strong class="text-amber-200">Devotee</strong> contributed ₹ 2,100 for Annapurna Bhandara</span>
-              <span>•</span>
-              <span class="flex items-center gap-1.5 font-mono"><strong class="text-amber-200">Shraddhavan</strong> contributed ₹ 5,100 for Free Education Pathshala</span>
-              <span>•</span>
-              <span class="flex items-center gap-1.5 font-mono"><strong class="text-amber-200">Karmayogi</strong> contributed ₹ 1,100 for Winter Blanket Relief</span>
-              <span>•</span>
-              <span class="flex items-center gap-1.5 font-mono"><strong class="text-amber-200">Sevadar</strong> contributed ₹ 11,000 for Akhand Anna Seva</span>
-              <span>•</span>
-              <span class="flex items-center gap-1.5 font-mono"><strong class="text-amber-200">Devotee</strong> contributed ₹ 2,100 for Annapurna Bhandara</span>
-              <span>•</span>
-              <span class="flex items-center gap-1.5 font-mono"><strong class="text-amber-200">Shraddhavan</strong> contributed ₹ 5,100 for Free Education Pathshala</span>
-            </div>
-          </div>
-          <button onclick="openRazorpayDonationModal()" class="shrink-0 hidden md:inline-flex px-3 py-1 bg-white hover:bg-stone-100 text-orange-700 font-extrabold text-[11px] rounded-lg shadow-sm transition-all">
-            ❤️ Donate for Seva
-          </button>
-        </div>
-      </div>
 
       <!-- HERO SECTION -->
       <section class="relative bg-[#FAF9F6] border-b border-stone-200/60 overflow-hidden py-16 sm:py-24 w-full">
@@ -1108,11 +1092,11 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>🏠</span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
             <span>❤️</span> <span>Instant Donate</span>
@@ -1224,26 +1208,8 @@
         </div>
       </div>
 
-      <!-- Right Column: Institutional Trust Details, QR & Tax Exemption -->
+      <!-- Right Column: Institutional Trust Details, Bank & Tax Exemption -->
       <div class="lg:col-span-5 space-y-6">
-        <!-- Direct UPI Scan Card -->
-        <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl border border-orange-200 p-6 sm:p-7 shadow-sm space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] font-black uppercase tracking-wider text-orange-700 bg-orange-100 px-3 py-1 rounded-full">
-              Direct UPI Seva
-            </span>
-            <span class="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">0% Transaction Fee</span>
-          </div>
-          <h3 class="text-lg font-black text-gray-900">Scan &amp; Donate via Any UPI App</h3>
-          <p class="text-xs text-gray-600">Scan with Google Pay, PhonePe, Paytm, BHIM, or any banking app to donate directly to the Trust account.</p>
-          
-          <div class="p-4 bg-white rounded-2xl border border-orange-200 text-center shadow-inner space-y-2">
-            <div class="font-mono text-sm font-black text-orange-700 bg-orange-50 py-2 px-3 rounded-xl border border-orange-200">
-              UPI ID: 9450858514@upi
-            </div>
-            <p class="text-[11px] text-stone-500 font-medium">Beneficiary: Sarva Samarpit Sewa Sansthan</p>
-          </div>
-        </div>
 
         <!-- Official Bank Account Transfer -->
         <div class="bg-white rounded-3xl border border-stone-200 p-6 sm:p-7 shadow-sm space-y-4">
@@ -1335,14 +1301,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -1389,14 +1355,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span>🏠</span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>❤️</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -1522,14 +1488,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -1581,14 +1547,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -1596,7 +1562,7 @@
       <!-- Top Overview Header & Quick Jump Navigation -->
       <div class="text-center space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200">
-          Trust Governance &amp; Administration
+          Trust Governance &bull; &#x0928;&#x093F;&#x092F;&#x092E; &#x090F;&#x0935;&#x0902; &#x0936;&#x0930;&#x094D;&#x0924;&#x0947;&#x0902;
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
           संस्थापक एवं मुख्य कार्यकारिणी
@@ -1869,7 +1835,7 @@
             </div>
             <!-- Under The Name: About of Member -->
             <p class="text-xs sm:text-base text-gray-700 leading-relaxed max-w-2xl font-medium">
-              Providing legal advisory, strict statutory compliance under the Indian Trusts Act, 1882, drafting institutional resolutions, managing governmental documentation, CSR alignment, and high standard legal governance.
+          Statutory Compliance &bull; &#x0915;&#x093E;&#x0928;&#x0942;&#x0928;&#x0940; &#x0938;&#x0941;&#x0930;&#x0915;&#x094D;&#x0937;&#x093E;
             </p>
             <!-- Bottom Badges -->
             <div class="pt-4 border-t border-stone-200/80 w-full flex flex-wrap items-center justify-center gap-3 text-xs text-gray-600">
@@ -1896,14 +1862,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -2233,14 +2199,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -2577,14 +2543,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -2617,14 +2583,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -3100,14 +3066,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -3121,68 +3087,195 @@
         </p>
       </div>
 
-      <div class="bg-white rounded-3xl border border-stone-200 shadow-md p-6 sm:p-10 space-y-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="bg-white rounded-3xl border border-stone-200/90 shadow-xl p-6 sm:p-10 space-y-8 max-w-4xl mx-auto">
+        <!-- Official Banner -->
+        <div class="bg-gradient-to-r from-stone-900 to-orange-950 text-white p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <label class="block text-xs font-bold text-gray-700 mb-1">Full Legal Name *</label>
-            <input type="text" id="volName" placeholder="e.g. Prashant Dwivedi" class="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-orange-500" />
+            <span class="px-2.5 py-0.5 bg-orange-600 text-white font-black text-[10px] rounded-full uppercase tracking-wider">Mandatory Verification</span>
+            <h3 class="text-base sm:text-lg font-black text-white mt-1">Official Sevadar Registration &amp; Onboarding</h3>
+            <p class="text-[11px] text-stone-300">All fields are authenticated and cross-checked by Trust Administration prior to ID issuance.</p>
           </div>
-          <div>
-            <label class="block text-xs font-bold text-gray-700 mb-1">WhatsApp / Phone Number *</label>
-            <input type="tel" id="volPhone" placeholder="10-digit mobile" class="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-orange-500" />
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-gray-700 mb-1">Email Address *</label>
-            <input type="email" id="volEmail" placeholder="yourname@gmail.com" class="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-orange-500" />
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-gray-700 mb-1">Occupation / Profession</label>
-            <input type="text" id="volOccupation" placeholder="e.g. Student, Doctor, Engineer" class="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-orange-500" />
-          </div>
+          <span class="text-[11px] font-bold text-amber-300 bg-black/40 px-3 py-1.5 rounded-xl border border-amber-400/20 self-start sm:self-auto font-mono">
+            Form: SSSS-VOL-2026
+          </span>
         </div>
 
-        <div>
-          <label class="block text-xs font-bold text-gray-700 mb-2">Areas of Interest</label>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
-            <label class="p-2.5 border rounded-xl flex items-center gap-2 cursor-pointer bg-orange-50/60 border-orange-200 font-medium">
-              <input type="checkbox" checked class="text-orange-600 rounded" />
-              <span>Food Distribution (अन्न सेवा)</span>
-            </label>
-            <label class="p-2.5 border rounded-xl flex items-center gap-2 cursor-pointer bg-white border-stone-200 font-medium">
-              <input type="checkbox" class="text-orange-600 rounded" />
-              <span>Free Education (निःशुल्क शिक्षा)</span>
-            </label>
-            <label class="p-2.5 border rounded-xl flex items-center gap-2 cursor-pointer bg-white border-stone-200 font-medium">
-              <input type="checkbox" class="text-orange-600 rounded" />
-              <span>Social Welfare (जन सेवा)</span>
-            </label>
-            <label class="p-2.5 border rounded-xl flex items-center gap-2 cursor-pointer bg-white border-stone-200 font-medium">
-              <input type="checkbox" class="text-orange-600 rounded" />
-              <span>Religious Activity (धार्मिक सेवा)</span>
-            </label>
-            <label class="p-2.5 border rounded-xl flex items-center gap-2 cursor-pointer bg-white border-stone-200 font-medium">
-              <input type="checkbox" class="text-orange-600 rounded" />
-              <span>Swachh Sangam Drives</span>
-            </label>
-            <label class="p-2.5 border rounded-xl flex items-center gap-2 cursor-pointer bg-white border-stone-200 font-medium">
-              <input type="checkbox" class="text-orange-600 rounded" />
-              <span>Media &amp; Photography</span>
+        <form id="volunteerApplicationForm" onsubmit="handleVolunteerFormSubmit(event)" class="space-y-6">
+          <!-- SECTION 1: Personal & Family Information -->
+          <div class="space-y-4">
+            <h4 class="text-xs font-black uppercase tracking-wider text-orange-600 border-b border-orange-100 pb-2 flex items-center gap-2">
+              <span>👤</span> 1. Personal &amp; Family Information (व्यक्तिगत विवरण)
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Full Legal Name <span class="text-red-500">*</span></label>
+                <input type="text" id="volName" required placeholder="As on Govt ID" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Father's / Guardian's Name <span class="text-red-500">*</span></label>
+                <input type="text" id="volFatherName" required placeholder="Father's full name" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">WhatsApp / Mobile Number <span class="text-red-500">*</span></label>
+                <input type="tel" id="volPhone" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold font-mono focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                <input type="email" id="volEmail" required placeholder="active email address" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Date of Birth <span class="text-red-500">*</span></label>
+                <input type="date" id="volDob" required class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Gender &amp; Blood Group <span class="text-red-500">*</span></label>
+                <div class="grid grid-cols-2 gap-2">
+                  <select id="volGender" required class="w-full px-2.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <select id="volBloodGroup" required class="w-full px-2.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500">
+                    <option value="O+">O+</option>
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="O-">O-</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: Residential Address & Identity Verification -->
+          <div class="space-y-4">
+            <h4 class="text-xs font-black uppercase tracking-wider text-orange-600 border-b border-orange-100 pb-2 flex items-center gap-2">
+              <span>📍</span> 2. Residential Address &amp; Govt Identity Proof (पहचान एवं निवास)
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="sm:col-span-2">
+                <label class="block text-xs font-bold text-stone-700 mb-1">Permanent Residential Address <span class="text-red-500">*</span></label>
+                <input type="text" id="volAddress" required placeholder="House No, Street, Ward / Village" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">City / Tehsil <span class="text-red-500">*</span></label>
+                <input type="text" id="volCity" required placeholder="e.g. Prayagraj" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">State &amp; PIN Code <span class="text-red-500">*</span></label>
+                <div class="grid grid-cols-2 gap-2">
+                  <input type="text" id="volState" required placeholder="UP" value="Uttar Pradesh" class="w-full px-2.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+                  <input type="text" id="volPincode" required pattern="[0-9]{6}" maxlength="6" placeholder="211005" class="w-full px-2.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold font-mono focus:outline-none focus:border-orange-500" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Government ID Proof <span class="text-red-500">*</span></label>
+                <select id="volIdType" required class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500">
+                  <option value="Aadhaar Card">Aadhaar Card (आधार कार्ड)</option>
+                  <option value="Voter ID Card">Voter ID Card (मतदाता पहचान पत्र)</option>
+                  <option value="PAN Card">PAN Card (पैन कार्ड)</option>
+                  <option value="Driving License">Driving License (ड्राइविंग लाइसेंस)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Govt ID Number <span class="text-red-500">*</span></label>
+                <input type="text" id="volIdNumber" required placeholder="Enter ID Number for verification" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold font-mono uppercase focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Emergency Contact Person <span class="text-red-500">*</span></label>
+                <input type="text" id="volEmergencyName" required placeholder="Name &amp; relation" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-stone-700 mb-1">Emergency Phone Number <span class="text-red-500">*</span></label>
+                <input type="tel" id="volEmergencyPhone" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit emergency contact" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold font-mono focus:outline-none focus:border-orange-500" />
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: Seva Department & Photo Upload -->
+          <div class="space-y-4">
+            <h4 class="text-xs font-black uppercase tracking-wider text-orange-600 border-b border-orange-100 pb-2 flex items-center gap-2">
+              <span>🙏</span> 3. Seva Assignment &amp; Photograph (सेवा विभाग एवं फोटो)
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-xs font-bold text-stone-700 mb-1">Preferred Seva Department <span class="text-red-500">*</span></label>
+                  <select id="volSevaWing" required class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold focus:outline-none focus:border-orange-500">
+                    <option value="Free Education Pathshala">📚 Free Education Pathshala (निःशुल्क संध्या पाठशाला)</option>
+                    <option value="Akhand Annapurna Langar">🍲 24x7 Akhand Annapurna Langar (महाप्रसाद सेवा)</option>
+                    <option value="Arogya Medical Camp">🏥 Arogya Medical Camp (स्वास्थ्य एवं चिकित्सा सेवा)</option>
+                    <option value="Vastra Daan & Social Relief">🤝 Winter Blankets &amp; Social Welfare (वस्त्र दान सेवा)</option>
+                    <option value="Temple Logistics & Sangam Seva">🪔 Temple Logistics &amp; Sangam Seva (हनुमान जी मंदिर सेवा)</option>
+                    <option value="IT, Media & Documentation">💻 IT, Media &amp; Trust Compliances (तकनीकी एवं मीडिया सेवा)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-stone-700 mb-1">Upload Passport Photo / Selfie <span class="text-red-500">*</span></label>
+                  <input type="file" id="volPhotoInput" accept="image/*" required onchange="handleVolunteerPhotoUpload(this)" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-600 file:mr-2 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-orange-600 file:text-white cursor-pointer" />
+                  <p class="text-[10px] text-stone-500 mt-1">Photo is printed directly on your official Trust ID Card upon approval.</p>
+                </div>
+              </div>
+
+              <!-- Photo Preview Card -->
+              <div class="bg-stone-50 border border-stone-200 rounded-2xl p-4 flex items-center gap-4">
+                <div class="w-20 h-24 rounded-xl border-2 border-orange-400 bg-white shadow overflow-hidden shrink-0 flex items-center justify-center">
+                  <img id="volPhotoPreview" src="logo.jpg" alt="Applicant Photo Preview" class="w-full h-full object-cover" />
+                </div>
+                <div class="space-y-1">
+                  <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block">ID Card Photo Preview</span>
+                  <p class="text-xs font-bold text-stone-800">Clear frontal view recommended</p>
+                  <p class="text-[10px] text-stone-500">Will be linked to your verification QR code.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legal Solemn Pledge Checkbox -->
+          <div class="p-4 bg-orange-50/70 border border-orange-200 rounded-2xl space-y-2">
+            <label class="flex items-start gap-2.5 cursor-pointer text-xs font-medium text-stone-800">
+              <input type="checkbox" id="volPledgeCheckbox" required class="mt-0.5 rounded text-orange-600 focus:ring-orange-500" />
+              <span>
+                <strong>Solemn Declaration:</strong> I solemnly pledge to serve Sarva Samarpit Sewa Sansthan with dedication, selflessness, and honesty. I certify that all details submitted are accurate and cross-checked against my Government ID.
+              </span>
             </label>
           </div>
-        </div>
 
-        <button type="button" onclick="submitVolunteerForm()" class="w-full py-3.5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm rounded-xl shadow transition-all">
-          Submit Volunteer Registration
-        </button>
+          <!-- Submit Button -->
+          <button type="submit" id="btnSubmitVolApp" class="w-full py-4 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-black text-sm rounded-2xl shadow-lg shadow-orange-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span>📝</span> Submit Volunteer Application for Verification &rarr;
+          </button>
+        </form>
 
-        <div id="volSuccessBox" class="hidden p-5 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl text-center space-y-2">
-          <strong class="block text-sm sm:text-base">🎉 Registration Approved &amp; ID Card Issued!</strong>
-          <p class="text-xs">You are officially registered under NGO ID: <strong id="volCodeDisp" class="font-mono text-orange-600 font-bold"></strong>.</p>
-          <div class="pt-1">
-            <button onclick="switchTab('membership')" class="px-5 py-2.5 bg-neutral-900 hover:bg-black text-white font-bold text-xs rounded-xl shadow transition-all">
-              🪪 View &amp; Download My Official Digital ID Card &rarr;
-            </button>
+        <!-- Application Confirmation Banner -->
+        <div id="volSuccessBox" class="hidden p-6 bg-emerald-50 border-2 border-emerald-300 text-emerald-950 rounded-2xl space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center text-lg font-bold shrink-0">✓</div>
+            <div>
+              <h4 class="font-extrabold text-base text-emerald-900">Application Submitted for Cross-Check Verification!</h4>
+              <p class="text-xs text-emerald-700">Your details have been saved to the Sansthan Central Database.</p>
+            </div>
           </div>
+          <div class="bg-white p-4 rounded-xl border border-emerald-200 space-y-1 font-mono text-xs">
+            <div class="flex justify-between">
+              <span class="text-stone-500">Application Reference ID:</span>
+              <strong id="volCodeDisp" class="text-orange-600 font-bold"></strong>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-stone-500">Applicant Name:</span>
+              <strong id="volSuccessNameDisp" class="text-stone-900 font-bold"></strong>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-stone-500">Verification Status:</span>
+              <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-bold text-[10px]">PENDING GOVERNING COUNCIL APPROVAL</span>
+            </div>
+          </div>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Upon verification by the Trust Governing Board, your official <strong>Digital Identity Card</strong> with encrypted QR code verification will be authorized and activated.
+          </p>
         </div>
       </div>
     </div>
@@ -3197,14 +3290,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -3607,14 +3700,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -3649,14 +3742,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -3708,14 +3801,14 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
@@ -3756,7 +3849,7 @@
             <div class="flex flex-col items-center text-center space-y-3">
               <div class="relative group">
                 <div class="w-28 h-32 sm:w-32 sm:h-36 rounded-2xl overflow-hidden border-4 border-orange-500 shadow-md bg-stone-100 flex items-center justify-center">
-                  <img id="profileCardPhoto" src="images/founder.jpg" alt="Member Photo" class="w-full h-full object-cover" />
+                  <img id="profileCardPhoto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'%3E%3Cpath fill-rule='evenodd' d='M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z' clip-rule='evenodd' /%3E%3C/svg%3E" alt="Member Photo Placeholder" class="w-full h-full object-cover p-2 bg-stone-100" />
                 </div>
                 <label for="profilePhotoFileInput" class="absolute -bottom-2 -right-2 bg-neutral-900 hover:bg-black text-white p-2 rounded-xl shadow-lg cursor-pointer transition-transform hover:scale-110" title="Upload new photo">
                   <span class="text-xs">📷</span>
@@ -3985,30 +4078,30 @@
     <!-- ========================================== -->
     <!-- 12. CLEAN ENTERPRISE PORTAL LOGIN (GOOGLE AUTH) -->
     <!-- ========================================== -->
-    <div id="tab-login" class="page-view hidden py-12 px-4 sm:px-6 w-full max-w-md mx-auto space-y-6">
+    <div id="tab-login" class="page-view hidden min-h-[calc(100vh-140px)] flex flex-col justify-center py-6 sm:py-8 px-4 sm:px-6 w-full max-w-md mx-auto space-y-5">
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-2 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-          <span> </span> <span>Home</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
         </button>
       </div>
       
       <!-- Top Title -->
-      <div class="text-center space-y-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-full border border-orange-200">
-          सर्व समर्पित सेवा संस्थान
+      <div class="text-center space-y-1.5">
+        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-full border border-orange-200" data-lang-en="Sarva Samarpit Sewa Sansthan" data-lang-hi="सर्व समर्पित सेवा संस्थान">
+          Sarva Samarpit Sewa Sansthan
         </span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">Login / साइन इन</h2>
-        <p class="text-xs text-stone-500 max-w-sm mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight" data-lang-en="Login / Sign In" data-lang-hi="लॉगिन / साइन इन">Login / Sign In</h2>
+        <p class="text-xs text-stone-500 max-w-sm mx-auto" data-lang-en="Sign in to access your volunteer profile, view certified digital ID card, and manage seva contributions." data-lang-hi="अपनी स्वयंसेवक प्रोफाइल, प्रमाणित डिजिटल आईडी कार्ड और सेवा योगदान देखने के लिए साइन इन करें।">
           Sign in to access your volunteer profile, view certified digital ID card, and manage seva contributions.
         </p>
       </div>
 
       <!-- Main Clean Authentication Card -->
-      <div class="bg-white rounded-3xl border border-stone-200/90 shadow-xl p-6 sm:p-8 space-y-6">
+      <div class="bg-white rounded-3xl border border-stone-200/90 shadow-xl p-6 sm:p-7 space-y-5">
         
         <!-- Official Circular Logo -->
         <div class="text-center space-y-2">
@@ -4020,7 +4113,7 @@
         </div>
 
         <!-- Google Firebase OAuth Sign-In (The Single Login Method for all users) -->
-        <div class="space-y-4 pt-1">
+        <div class="space-y-3 pt-1">
           <button type="button" id="googleSignInMainBtn" onclick="handleGoogleSignIn()" class="w-full py-3.5 px-4 bg-white hover:bg-stone-50 active:scale-98 border-2 border-stone-300 hover:border-orange-500 rounded-2xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-3 text-stone-900 font-bold text-sm group cursor-pointer">
             <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -4028,7 +4121,7 @@
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
             </svg>
-            <span>Continue with Google (Google से लॉगिन करें)</span>
+            <span id="googleSignInBtnText">Continue with Google</span>
           </button>
 
           <!-- Alert Notification Box -->
@@ -4036,24 +4129,24 @@
         </div>
 
         <!-- Administrator Access (In Small) -->
-        <div class="pt-5 border-t border-stone-100">
-          <div class="text-center mb-3">
+        <div class="pt-4 border-t border-stone-100">
+          <div class="text-center mb-2">
             <button type="button" onclick="toggleAdminLoginForm()" class="text-xs text-stone-500 hover:text-stone-800 font-semibold flex items-center justify-center gap-1 mx-auto transition-colors">
-              <span>🔐 Administrator Access (व्यवस्थापक)</span>
+              <span>🔐 Administrator Access</span>
               <span id="adminToggleIcon" class="text-[10px]">▼</span>
             </button>
           </div>
           
-          <form id="adminDirectLoginForm" onsubmit="handleDirectAdminLogin(event)" class="space-y-3 hidden">
+          <form id="adminDirectLoginForm" onsubmit="handleDirectAdminLogin(event)" class="space-y-3.5 hidden">
             <div>
-              <label class="block text-[11px] font-bold text-stone-600 mb-1">Administrator ID</label>
-              <input type="text" id="adminLoginId" placeholder="Enter ID (0000)" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-bold text-stone-900 focus:outline-none focus:border-orange-500" required />
+              <label class="block text-[11px] font-bold text-stone-600 mb-1">Administrator ID or Registered Email</label>
+              <input type="text" id="adminLoginId" placeholder="Enter Administrator ID or Email" autocomplete="username" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-bold text-stone-900 focus:outline-none focus:border-orange-500 transition-colors" required />
             </div>
             <div>
               <label class="block text-[11px] font-bold text-stone-600 mb-1">Password</label>
-              <input type="password" id="adminLoginPass" placeholder="Enter Password" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500" required />
+              <input type="password" id="adminLoginPass" placeholder="Enter Password" autocomplete="current-password" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500 transition-colors" required />
             </div>
-            <button type="submit" class="w-full py-2.5 bg-stone-900 hover:bg-black text-white font-bold text-xs rounded-xl shadow transition-all">
+            <button type="submit" class="w-full py-2.5 bg-neutral-900 hover:bg-black text-white font-bold text-xs rounded-xl shadow-md transition-all cursor-pointer">
               Sign In to Admin Panel &rarr;
             </button>
           </form>
@@ -4087,10 +4180,10 @@
 
         <div class="flex flex-wrap items-center gap-2">
           <button onclick="goBack()" class="px-3.5 py-2 bg-stone-800 hover:bg-stone-700 text-white text-xs font-bold rounded-xl border border-stone-600 transition-all flex items-center gap-1.5 shadow">
-            <span>&larr;</span> <span>Back</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
           </button>
           <button onclick="switchTab('home')" class="px-3.5 py-2 bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold rounded-xl shadow transition-all flex items-center gap-1.5">
-            <span>🏠</span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="downloadLedgerCsv()" class="px-3.5 py-2 bg-stone-800 hover:bg-stone-700 text-white text-xs font-bold rounded-xl border border-stone-600 transition-all flex items-center gap-1.5 shadow">
             <span>⬇️</span> Export Donations CSV
@@ -4105,18 +4198,18 @@
       <div id="adminOperatorProfileBar" class="bg-white p-5 rounded-3xl border border-stone-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div class="flex items-center gap-4">
           <div class="relative">
-            <img id="adminOperatorPhoto" src="images/treasurer.jpg" alt="Active User" class="w-14 h-14 rounded-2xl object-cover border-2 border-orange-500 shadow-sm" />
+            <img id="adminOperatorPhoto" src="logo.jpg" alt="Active Administrator" class="w-14 h-14 rounded-2xl object-cover border-2 border-orange-500 shadow-sm" />
             <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></span>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h3 id="adminOperatorName" class="text-base font-black text-gray-900">Naveen Mishra</h3>
-              <span id="adminOperatorRoleBadge" class="px-2.5 py-0.5 bg-amber-100 text-amber-800 text-[10px] font-black rounded-md uppercase">TRUSTEE &amp; TREASURER</span>
+              <h3 id="adminOperatorName" class="text-base font-black text-gray-900">Administrator Portal</h3>
+              <span id="adminOperatorRoleBadge" class="px-2.5 py-0.5 bg-amber-100 text-amber-800 text-[10px] font-black rounded-md uppercase">TRUST ADMINISTRATION</span>
             </div>
             <p class="text-xs text-gray-500 flex items-center gap-2 mt-0.5">
-              <span>NGO ID: <strong id="adminOperatorId" class="font-mono text-orange-600 font-bold">SSSS-TRU-000002</strong></span>
+              <span>NGO ID: <strong id="adminOperatorId" class="font-mono text-orange-600 font-bold">SSSS-ADMIN</strong></span>
               <span>&bull;</span>
-              <span id="adminOperatorDept" class="text-gray-600">Finance, Audit &amp; 80G Statutory Compliances</span>
+              <span id="adminOperatorDept" class="text-gray-600">Governing Council &amp; Compliances</span>
             </p>
           </div>
         </div>
@@ -4208,23 +4301,26 @@
       </div>
 
       <!-- Admin Sub-Navigation Tabs -->
-      <div class="flex items-center gap-2 border-b border-stone-200 pb-2 overflow-x-auto text-xs font-bold">
-        <button onclick="switchAdminSubTab('cms')" id="subtab-btn-cms" class="px-4 py-2 rounded-xl bg-orange-600 text-white shadow-sm shrink-0">
-          📝 Complete Website CMS
+      <div class="flex items-center gap-2 border-b border-stone-200 pb-2 overflow-x-auto text-xs font-bold custom-scrollbar">
+        <button onclick="switchAdminSubTab('volunteers')" id="subtab-btn-volunteers" class="px-4 py-2 rounded-xl bg-orange-600 text-white shadow-sm shrink-0">
+          👥 Volunteer Verification &amp; Roster
         </button>
-        <button onclick="switchAdminSubTab('volunteers')" id="subtab-btn-volunteers" class="px-4 py-2 rounded-xl bg-stone-100 text-gray-700 hover:bg-stone-200 shrink-0">
-          👥 Staff &amp; Volunteer Roster (IDs)
+        <button onclick="switchAdminSubTab('users')" id="subtab-btn-users" class="px-4 py-2 rounded-xl bg-stone-100 text-gray-700 hover:bg-stone-200 shrink-0">
+          🌐 All Registered Users &amp; Live Data
         </button>
         <button onclick="switchAdminSubTab('donations')" id="subtab-btn-donations" class="px-4 py-2 rounded-xl bg-stone-100 text-gray-700 hover:bg-stone-200 shrink-0">
-          💰 Donations &amp; 80G Receipts
+          💰 Donations Ledger &amp; 80G Receipts
+        </button>
+        <button onclick="switchAdminSubTab('cms')" id="subtab-btn-cms" class="px-4 py-2 rounded-xl bg-stone-100 text-gray-700 hover:bg-stone-200 shrink-0">
+          📝 Complete Website CMS &amp; Studio
         </button>
         <button onclick="switchAdminSubTab('security')" id="subtab-btn-security" class="px-4 py-2 rounded-xl bg-stone-100 text-gray-700 hover:bg-stone-200 shrink-0">
-          🔒 Firebase Security &amp; Audit Logs
+          🔒 Security Audit Trail
         </button>
       </div>
 
       <!-- SUBTAB 1: COMPLETE WEBSITE CMS CONTENT MANAGER -->
-      <div id="admin-subtab-cms" class="space-y-6">
+      <div id="admin-subtab-cms" class="hidden space-y-6">
         
         <!-- PRIORITY 1: OFFICIAL MEDIA PRODUCTION STUDIO (GALLERY & SLIDESHOW) -->
         <div class="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-md space-y-6">
@@ -4451,16 +4547,65 @@
 
       </div>
 
-      <!-- SUBTAB 2: VOLUNTEER & EMPLOYEE MANAGEMENT ROSTER -->
-      <div id="admin-subtab-volunteers" class="hidden space-y-6">
+      <!-- SUBTAB 2: VOLUNTEER APPLICATIONS VERIFICATION & ROSTER -->
+      <div id="admin-subtab-volunteers" class="space-y-6">
+        
+        <!-- SECTION A: VOLUNTEER APPLICATIONS & CROSS-CHECK CENTER -->
+        <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm">
+          <div class="p-6 border-b flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-gradient-to-r from-stone-50 via-white to-orange-50/30">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2.5 py-0.5 bg-orange-600 text-white font-extrabold text-[10px] rounded-full uppercase tracking-wider">Verification Desk</span>
+                <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold text-[10px] rounded-full">Statutory ID Cross-Check</span>
+              </div>
+              <h3 class="font-extrabold text-lg text-gray-900">Volunteer Applications &amp; Cross-Check Verification Center</h3>
+              <p class="text-xs text-gray-500">
+                Review submitted Government ID proofs, contact credentials, seva wing selections, and photographs. Verified applications are issued official digital identity cards with QR authentication.
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="setVolunteerAppFilter('ALL')" class="px-3 py-1.5 rounded-xl border border-stone-300 text-xs font-bold hover:bg-stone-100 transition-all text-stone-700">
+                All (<span id="adminVolAppTotalCount">0</span>)
+              </button>
+              <button onclick="setVolunteerAppFilter('PENDING')" class="px-3 py-1.5 rounded-xl bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold hover:bg-amber-100 transition-all">
+                Pending (<span id="adminVolAppPendingCount">0</span>)
+              </button>
+              <button onclick="setVolunteerAppFilter('APPROVED')" class="px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-all">
+                Approved (<span id="adminVolAppApprovedCount">0</span>)
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[760px] text-left text-xs">
+              <thead class="bg-stone-50 text-stone-600 uppercase font-bold border-b border-stone-200">
+                <tr>
+                  <th class="p-3.5">Applicant &amp; Photo</th>
+                  <th class="p-3.5">Contact Details</th>
+                  <th class="p-3.5">Govt ID Proof</th>
+                  <th class="p-3.5">Seva Wing &amp; Address</th>
+                  <th class="p-3.5">Date / NGO ID</th>
+                  <th class="p-3.5">Status</th>
+                  <th class="p-3.5 text-right">Verification Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminVolAppTableBody" class="divide-y divide-stone-100">
+                <!-- Dynamically populated by renderAdminVolunteerApplications() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION B: AUTHORIZED PERSONNEL & SEVADAR ROSTER -->
         <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm">
           <div class="p-6 border-b flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 class="font-extrabold text-lg text-gray-900">Authorized Personnel &amp; Sevadar Roster</h3>
-              <p class="text-xs text-gray-500">Every record is issued an authentic unique NGO ID card with digital QR verification.</p>
+              <h3 class="font-extrabold text-lg text-gray-900">Governing Council &amp; Certified Personnel Roster</h3>
+              <p class="text-xs text-gray-500">Official life trustees and authorized seva coordinators holding verified credentials.</p>
             </div>
-            <button onclick="openAddMemberModal()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow flex items-center gap-1.5 shrink-0">
-              <span>+</span> Add New Staff / Volunteer
+            <button onclick="openAddMemberModal()" class="px-4 py-2 bg-neutral-900 hover:bg-black text-white text-xs font-bold rounded-xl shadow flex items-center gap-1.5 shrink-0">
+              <span>+</span> Add Authorized Personnel
             </button>
           </div>
 
@@ -4584,21 +4729,23 @@
             </table>
           </div>
         </div>
+      </div>
 
-        <!-- LIVE GOOGLE AUTHENTICATED USERS (FIREBASE LIVE SYNC) -->
+      <!-- SUBTAB: ALL REGISTERED & LIVE USERS DIRECTORY -->
+      <div id="admin-subtab-users" class="hidden space-y-6">
         <div class="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm">
           <div class="p-6 border-b flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-gradient-to-r from-stone-50 to-orange-50/40">
             <div>
               <div class="flex items-center gap-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <h3 class="font-extrabold text-lg text-gray-900">Live Firebase Users (Google Authentication)</h3>
+                <h3 class="font-extrabold text-lg text-gray-900">All Registered &amp; Live Users Directory</h3>
                 <span id="adminGoogleUserCountBadge" class="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-[10px] font-black rounded-full">0 Authenticated</span>
               </div>
-              <p class="text-xs text-gray-500 mt-0.5">Real-time synchronized Google accounts saved in Firebase Realtime Database and Cloud Firestore.</p>
+              <p class="text-xs text-gray-500 mt-0.5">Real-time synchronized Google accounts and registered users in Firebase Realtime Database and Cloud Firestore.</p>
             </div>
             <div class="flex items-center gap-2">
               <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
-                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> RTDB Live Connected
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Live Synced
               </span>
             </div>
           </div>
@@ -4608,11 +4755,11 @@
               <thead class="bg-stone-50 text-gray-500 uppercase font-semibold border-b">
                 <tr>
                   <th class="p-3.5">Assigned NGO ID</th>
-                  <th class="p-3.5">Google User / Name</th>
+                  <th class="p-3.5">User / Name</th>
                   <th class="p-3.5">Role</th>
                   <th class="p-3.5">Department</th>
                   <th class="p-3.5">Provider</th>
-                  <th class="p-3.5">Last Login Time</th>
+                  <th class="p-3.5">Last Login / Active</th>
                   <th class="p-3.5 text-right">Card Actions</th>
                 </tr>
               </thead>
@@ -4693,23 +4840,23 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
 
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-full border border-orange-200">
-          Statutory Compliance &bull; à¤•à¤¾à¤¨à¥‚à¤¨à¥€ à¤¸à¥à¤°à¤•à¥à¤·à¤¾
+          Statutory Compliance &bull; &#x0915;&#x093E;&#x0928;&#x0942;&#x0928;&#x0940; &#x0938;&#x0941;&#x0930;&#x0915;&#x094D;&#x0937;&#x093E;
         </span>
-        <h2 class="text-3xl font-extrabold text-gray-900">Privacy Policy (à¤—à¥‹à¤ªà¤¨à¥€à¤¯à¤¤à¤¾ à¤¨à¥€à¤¤à¤¿)</h2>
+        <h2 class="text-3xl font-extrabold text-gray-900">Privacy Policy (&#x0917;&#x094B;&#x092A;&#x0928;&#x0940;&#x092F;&#x0924;&#x093E; &#x0928;&#x0940;&#x0924;&#x093F;)</h2>
         <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto">
           Last updated: October 2026 &bull; Sarva Samarpit Sewa Sansthan (Registered Public Charitable Trust)
         </p>
@@ -4777,23 +4924,23 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
 
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-full border border-orange-200">
-          Trust Governance &bull; à¤¨à¤¿à¤¯à¤® à¤à¤µà¤‚ à¤¶à¤°à¥à¤¤à¥‡à¤‚
+          Trust Governance &bull; &#x0928;&#x093F;&#x092F;&#x092E; &#x090F;&#x0935;&#x0902; &#x0936;&#x0930;&#x094D;&#x0924;&#x0947;&#x0902;
         </span>
-        <h2 class="text-3xl font-extrabold text-gray-900">Terms &amp; Conditions (à¤¨à¤¿à¤¯à¤® à¤à¤µà¤‚ à¤¶à¤°à¥à¤¤à¥‡à¤‚)</h2>
+        <h2 class="text-3xl font-extrabold text-gray-900">Terms &amp; Conditions (&#x0928;&#x093F;&#x092F;&#x092E; &#x090F;&#x0935;&#x0902; &#x0936;&#x0930;&#x094D;&#x0924;&#x0947;&#x0902;)</h2>
         <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto">
           Guidelines and operating terms of Sarva Samarpit Sewa Sansthan &bull; Registered Indian Charitable Trust
         </p>
@@ -4850,23 +4997,23 @@
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <span>&larr;</span> <span>Back</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
         </button>
         <div class="flex items-center gap-2">
           <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <span> </span> <span>Home</span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <span>â¤ï¸</span> <span>Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
           </button>
         </div>
       </div>
 
       <div class="text-center space-y-2">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-full border border-orange-200">
-          Fair Transactions &bull; à¤µà¤¾à¤ªà¤¸à¥€ à¤¨à¥€à¤¤à¤¿
+          Fair Transactions &bull; &#x0926;&#x093E;&#x0928; &#x0935;&#x093E;&#x092A;&#x0938;&#x0940; &#x0928;&#x0940;&#x0924;&#x093F;
         </span>
-        <h2 class="text-3xl font-extrabold text-gray-900">Donation Refund Policy (à¤µà¤¾à¤ªà¤¸à¥€ à¤¨à¥€à¤¤à¤¿)</h2>
+        <h2 class="text-3xl font-extrabold text-gray-900">Donation Refund Policy (&#x0926;&#x093E;&#x0928; &#x0935;&#x093E;&#x092A;&#x0938;&#x0940; &#x0928;&#x0940;&#x0924;&#x093F;)</h2>
         <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto">
           Transparency and guidelines regarding donation cancellations and payment reconciliations
         </p>
@@ -4939,10 +5086,20 @@
         Sansthan UPI ID: <strong>9450858514@upi</strong>
       </div>
 
-      <button type="button" onclick="confirmPaymentAndReceipt()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl shadow">
-        I Have Completed Payment &rarr; Generate 80G Receipt
+      <div class="text-left space-y-1.5 pt-1">
+        <label class="block text-[11px] font-bold text-gray-700">
+          Enter 12-Digit UPI Transaction / UTR ID <span class="text-red-600">*</span>
+        </label>
+        <input type="text" id="upiUtrInput" placeholder="e.g. 427819283741 (from GPay / PhonePe / Paytm)" maxlength="18" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-mono font-bold text-stone-900 focus:outline-none focus:border-orange-500 uppercase" />
+        <p class="text-[10px] text-stone-500 leading-tight">
+          UTR number is required to verify your contribution and generate an authentic Section 80G tax exemption certificate.
+        </p>
+      </div>
+
+      <button type="button" onclick="confirmPaymentAndReceipt()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl shadow cursor-pointer transition-all">
+        Verify UTR &amp; Generate 80G Receipt &rarr;
       </button>
-      <button type="button" onclick="closeUpiModal()" class="text-xs text-gray-500 hover:underline">
+      <button type="button" onclick="closeUpiModal()" class="text-xs text-gray-500 hover:underline cursor-pointer">
         Cancel
       </button>
     </div>
@@ -4952,7 +5109,7 @@
   <!-- MODAL: 80G TAX EXEMPTION CERTIFICATE       -->
   <!-- ========================================== -->
   <div id="receiptModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-    <div id="taxReceiptContent" class="bg-white rounded-3xl p-8 max-w-2xl w-full space-y-4 shadow-2xl border border-stone-200 text-left my-8">
+    <div id="taxReceiptContent" class="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full space-y-4 shadow-2xl border border-stone-200 text-left my-8">
       <div class="text-center border-b pb-4">
         <div class="flex justify-center mb-2">
           <div class="w-16 h-16 rounded-full border-2 border-orange-500 overflow-hidden bg-white p-0.5 shadow-sm">
@@ -4970,30 +5127,30 @@
       </div>
 
       <div class="flex justify-between items-center text-xs font-bold border-b pb-2">
-        <span>Receipt No: <span id="recNoDisp" class="text-orange-600 font-mono">SSSS-2026-RCP-9012</span></span>
-        <span id="recDateDisp">01 Oct 2026</span>
+        <span>Receipt No: <span id="recNoDisp" class="text-orange-600 font-mono">Pending Verification</span></span>
+        <span id="recDateDisp">Date</span>
       </div>
 
       <div class="space-y-2 text-xs">
         <div class="flex justify-between py-1 border-b">
           <span class="text-gray-500">Received with thanks from:</span>
-          <strong id="recDonorName" class="text-gray-900">Anand Swaroop Tiwari</strong>
+          <strong id="recDonorName" class="text-gray-900">Devotee</strong>
         </div>
         <div class="flex justify-between py-1 border-b">
           <span class="text-gray-500">Donor PAN:</span>
-          <strong id="recDonorPan" class="font-mono text-gray-900">ABCDE1234F</strong>
+          <strong id="recDonorPan" class="font-mono text-gray-900">NOT PROVIDED</strong>
         </div>
         <div class="flex justify-between py-1 border-b">
-          <span class="text-gray-500">Gateway Tx ID:</span>
-          <strong id="recTxIdDisp" class="font-mono text-gray-900 text-[11px]">RAZORPAY_LIVE</strong>
+          <span class="text-gray-500">Gateway / UTR ID:</span>
+          <strong id="recTxIdDisp" class="font-mono text-gray-900 text-[11px]">TX_PENDING</strong>
         </div>
         <div class="flex justify-between py-1 border-b">
           <span class="text-gray-500">Purpose / Cause:</span>
-          <strong id="recCause" class="text-gray-900">Food Distribution - Daily Annapurna Bhandara</strong>
+          <strong id="recCause" class="text-gray-900">Seva Contribution</strong>
         </div>
         <div class="flex justify-between py-2 border-b bg-orange-50/50 px-2 rounded-xl">
           <span class="font-bold text-gray-800">Total Contribution:</span>
-          <strong id="recAmount" class="text-base text-orange-700 font-black">₹ 2,100/- INR</strong>
+          <strong id="recAmount" class="text-base text-orange-700 font-black">₹ 0/- INR</strong>
         </div>
       </div>
 
@@ -5410,8 +5567,34 @@
           </button>
         </div>
 
-        <!-- Verification Results Card -->
-        <div id="verifyResultContainer" class="bg-stone-50 rounded-2xl p-5 border border-stone-200 space-y-4">
+        <!-- Initial Verification Guide Prompt (Shown by default) -->
+        <div id="verifyInitialPrompt" class="p-8 bg-stone-50 rounded-2xl border border-stone-200 text-center space-y-3">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 border border-emerald-300 text-emerald-800 flex items-center justify-center text-2xl mx-auto shadow-sm">
+            🛡️
+          </div>
+          <div>
+            <h4 class="font-extrabold text-sm text-stone-900">Verify Official NGO Credentials</h4>
+            <p class="text-xs text-stone-500 max-w-sm mx-auto mt-1 leading-relaxed">
+              Enter any authorized Sansthan Trustee, Officer, or Sevadar NGO ID (e.g. SSSS-TRU-000001, SSSS-VOL-...) above to verify authentic registry credentials.
+            </p>
+          </div>
+        </div>
+
+        <!-- Not Found Feedback Container -->
+        <div id="verifyNotFound" class="hidden p-8 bg-red-50 rounded-2xl border border-red-200 text-center space-y-3">
+          <div class="w-14 h-14 rounded-2xl bg-red-100 border border-red-300 text-red-700 flex items-center justify-center text-2xl mx-auto shadow-sm">
+            ⚠️
+          </div>
+          <div>
+            <h4 class="font-extrabold text-sm text-red-900">Credential Not Found</h4>
+            <p id="verifyNotFoundMsg" class="text-xs text-red-600 max-w-sm mx-auto mt-1 leading-relaxed">
+              No matching record found in the official registry. Please verify the ID entered or contact Trust administration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Verification Results Card (Hidden until searched) -->
+        <div id="verifyResultContainer" class="hidden bg-stone-50 rounded-2xl p-5 border border-stone-200 space-y-4">
           <!-- Live Verified Stamp -->
           <div class="flex items-center justify-between pb-3 border-b border-stone-200">
             <div class="flex items-center gap-2">
@@ -5424,7 +5607,7 @@
           <!-- Credential Details Grid -->
           <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4">
             <div class="w-24 h-28 rounded-2xl overflow-hidden border-2 border-emerald-600 shadow bg-white shrink-0">
-              <img id="verifyResultPhoto" src="images/treasurer.jpg" alt="Verified Member" class="w-full h-full object-cover" />
+              <img id="verifyResultPhoto" src="logo.jpg" alt="Verified Member" class="w-full h-full object-cover" />
             </div>
             <div class="space-y-1.5 flex-1 text-center sm:text-left">
               <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
@@ -5715,29 +5898,137 @@
     }
 
     // ==========================================
+    // COOKIE CONSENT & FAIR USE COMPLIANCE
+    // ==========================================
+    function initCookieConsent() {
+      if (!localStorage.getItem('ssss_cookie_consent')) {
+        const banner = document.getElementById('cookieConsentBanner');
+        if (banner) banner.classList.remove('hidden');
+      }
+    }
+    function acceptCookieConsent() {
+      localStorage.setItem('ssss_cookie_consent', 'accepted');
+      const banner = document.getElementById('cookieConsentBanner');
+      if (banner) banner.classList.add('hidden');
+    }
+    function dismissCookieConsent() {
+      const banner = document.getElementById('cookieConsentBanner');
+      if (banner) banner.classList.add('hidden');
+    }
+
+    // ==========================================
+    // CROSS-TAB SESSION SYNCHRONIZATION
+    // ==========================================
+    window.addEventListener('storage', function(e) {
+      if (e.key === 'ssss_active_session') {
+        if (e.newValue) {
+          try {
+            const syncedUser = JSON.parse(e.newValue);
+            applyUserSession(syncedUser);
+          } catch(err) {}
+        } else {
+          applyUserSession(null);
+        }
+      }
+      if (e.key === 'ssss_lang') {
+        if (e.newValue && (e.newValue === 'en' || e.newValue === 'hi')) {
+          setLanguage(e.newValue);
+        }
+      }
+    });
+
+    // ==========================================
     // BILINGUAL LANGUAGE ENGINE (HINDI / ENGLISH)
     // ==========================================
     let currentLanguage = localStorage.getItem('ssss_lang') || 'en';
 
-    const langTranslations = {
-      en: {
-        langBtn: 'हिंदी',
-        drawerLang: 'हिंदी',
-        verifyId: 'Verify ID',
-        donateBtn: 'Donate (80G)',
-        heroTitle: 'From Shree Bade Hanuman Ji Temple, we serve food, health and hope to everyone who comes to us — day and night.',
-        missionTag: 'Our Mission',
-        missionText: 'Serve with compassion. Empower with purpose. Transform lives.'
-      },
-      hi: {
-        langBtn: 'English',
-        drawerLang: 'English',
-        verifyId: 'आईडी सत्यापन',
-        donateBtn: 'समर्पित दान (80G)',
-        heroTitle: 'श्री बड़े हनुमान जी मंदिर से, हम दिन-रात अन्न, शिक्षा और जन सेवा समर्पित करते हैं।',
-        missionTag: 'हमारा संकल्प',
-        missionText: 'करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।'
-      }
+    const MASTER_TRANSLATIONS = {
+      // Top Ticker / Header
+      "24/7 Akhand Mahaprasad Seva": "२४×७ अखंड महाप्रसाद सेवा",
+      "Free Evening Pathshala & Vidya Daan": "निःशुल्क संध्या पाठशाला एवं विद्यादान",
+      "Section 80G Tax Exemption (50% Tax Saved)": "धारा 80G कर छूट (५०% कर बचत)",
+      "Open 24 Hours (Akhand Sewa)": "२४ घंटे सेवा में तत्पर (अखंड सेवा)",
+      "Head Office: Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj – 211005": "प्रधान कार्यालय: श्री बड़े हनुमान जी मंदिर, संगम मार्ग, प्रयागराज – २११००५",
+
+      // Navigation
+      "About Us": "हमारे बारे में",
+      "About Trust & History": "न्यास परिचय एवं इतिहास",
+      "Vision & Sacred Mission": "दृष्टिकोण एवं पावन मिशन",
+      "Founder's Message": "संस्थापक का पावन संदेश",
+      "Founder & Trustees": "संस्थापक एवं ट्रस्टी मंडल",
+      "Executive Council": "मुख्य कार्यकारिणी परिषद",
+      "Our Seva": "हमारी सेवा",
+      "Digital ID Card": "डिजिटल पहचान पत्र",
+      "Volunteer": "स्वयंसेवक",
+      "Gallery": "चित्र दीर्घा",
+      "Contact": "संपर्क करें",
+      "My Profile": "मेरी प्रोफाइल",
+      "Profile": "प्रोफाइल",
+      "Verify ID": "पहचान सत्यापन",
+      "Donate": "समर्पित दान",
+      "Login": "लॉगिन",
+      "Sign In": "साइन इन",
+      "Sign Out": "लॉग आउट",
+      "Logout": "लॉग आउट",
+      "Back": "वापस",
+      "Home": "होम",
+      "Call": "कॉल करें",
+      "WhatsApp": "व्हाट्सएप",
+
+      // Seva Dropdown
+      "Free Education (प्राथमिक सेवा)": "निःशुल्क शिक्षा (प्राथमिक सेवा)",
+      "Annapurna Langar (अन्न सेवा)": "अन्नपूर्णा लंगर (अन्न सेवा)",
+      "Social Relief & Vastra Daan": "सामाजिक राहत एवं वस्त्र दान",
+      "Religious Activities (धार्मिक सेवा)": "धार्मिक गतिविधियां (धार्मिक सेवा)",
+      "CSR & 80G Tax Exemption": "सीएसआर एवं 80G कर छूट",
+
+      // Hero & Homepage
+      "Prayagraj • Since our devotion began": "प्रयागराज • अखंड भक्ति एवं सेवा का पावन संकल्प",
+      "From Shree Bade Hanuman Ji Temple, we serve food, health and hope to everyone who comes to us — day and night.": "श्री बड़े हनुमान जी मंदिर से, हम दिन-रात अन्न, स्वास्थ्य और आशा की सेवा समर्पित करते हैं।",
+      "Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, marriage support for needy families, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.": "सर्व समर्पित सेवा संस्थान शिक्षा, भोजन, स्वास्थ्य और सामाजिक कल्याण के माध्यम से जीवन की सेवा, सशक्तिकरण और परिवर्तन के लिए समर्पित है। निःशुल्क शिक्षा और भोजन वितरण से लेकर चिकित्सा जागरूकता, पौधारोपण अभियान, सेनेटरी पैड वितरण, जरूरतमंद परिवारों के लिए विवाह सहायता और शीतकालीन कंबल वितरण तक, हम वंचित समुदायों में आशा और सम्मान लाने के लिए निरंतर कार्यरत हैं।",
+      "Our mission: Serve with compassion. Empower with purpose. Transform lives.": "हमारा संकल्प: करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।",
+      "Our Mission": "हमारा पावन संकल्प",
+      "Vision": "दृष्टिकोण",
+      "To work towards a Hunger-Free and Educated India by ensuring access to food, education, and essential support for every individual in need.": "प्रत्येक जरूरतमंद व्यक्ति को भोजन, शिक्षा और आवश्यक सहायता सुनिश्चित करके भुखमरी मुक्त और शिक्षित भारत की दिशा में कार्य करना।",
+      "Service for every person, dignity in every life, and progress for every community.": "हर व्यक्ति के लिए सेवा, हर जीवन में गरिमा, और हर समुदाय में प्रगति।",
+
+      // Key Focus Areas
+      "Education & Knowledge": "शिक्षा एवं ज्ञान दान",
+      "Service & Support for the Needy": "जरूरतमंदों की सेवा एवं संबल",
+      "Healthcare & Community Welfare": "चिकित्सा सहायता एवं जन कल्याण",
+      "Women & Child Empowerment": "महिला एवं बाल सशक्तिकरण",
+      "Environmental Protection": "पर्यावरण संरक्षण एवं पौधारोपण",
+      "Social Harmony & Humanity": "सामाजिक समरसता एवं मानवता",
+      "Contribution towards Nation Building": "राष्ट्र निर्माण में सहभागिता",
+
+      // Buttons and Form Labels
+      "Continue with Google": "Google से जारी रखें",
+      "Administrator Access": "व्यवस्थापक पहुंच",
+      "Administrator ID or Email": "व्यवस्थापक आईडी या ईमेल",
+      "Password": "पासवर्ड",
+      "Sign In to Admin Panel →": "एडमिन पैनल में प्रवेश करें →",
+      "Sponsor a Meal": "भोजन सेवा प्रायोजित करें",
+      "Sponsor Study Kit": "शिक्षा किट प्रायोजित करें",
+      "Winter Relief": "कंबल एवं वस्त्र सेवा",
+      "Enter Custom Amount": "इच्छानुसार राशि दर्ज करें",
+      "Full Name": "पूरा नाम",
+      "Mobile Number": "मोबाइल नंबर",
+      "Email Address": "ईमेल पता",
+      "PAN Number (Optional for 80G Receipt)": "पैन नंबर (80G रसीद हेतु)",
+      "Select Seva Cause": "सेवा का उद्देश्य चुनें",
+      "Proceed to Donate": "दान हेतु आगे बढ़ें",
+      "Generating 80G Tax Receipt": "80G कर छूट रसीद तैयार हो रही है",
+
+      // Footer
+      "Quick Navigation": "त्वरित नेविगेशन",
+      "Statutory & Legal": "वैधानिक एवं कानूनी नीतियां",
+      "Privacy Policy": "गोपनीयता नीति",
+      "Terms & Conditions": "नियम एवं शर्तें",
+      "Refund Policy": "दान वापसी नीति",
+      "Head Office": "प्रधान कार्यालय",
+      "Helpline": "हेल्पलाइन नंबर",
+      "All rights reserved.": "सर्वाधिकार सुरक्षित।",
+      "Registered Public Charitable Trust": "पंजीकृत सार्वजनिक धर्मार्थ न्यास"
     };
 
     function toggleLanguage() {
@@ -5748,22 +6039,76 @@
     function setLanguage(lang) {
       currentLanguage = lang;
       localStorage.setItem('ssss_lang', lang);
-      const dict = langTranslations[lang] || langTranslations.en;
 
+      // 1. Update Language Button Labels
       const langToggleLabel = document.getElementById('langToggleLabel');
-      if (langToggleLabel) langToggleLabel.innerText = dict.langBtn;
+      if (langToggleLabel) langToggleLabel.innerText = lang === 'hi' ? 'English' : 'हिंदी';
       const drawerLangLabel = document.getElementById('drawerLangLabel');
-      if (drawerLangLabel) drawerLangLabel.innerText = dict.drawerLang;
+      if (drawerLangLabel) drawerLangLabel.innerText = lang === 'hi' ? 'English' : 'हिंदी';
 
-      const navVerifyLabel = document.getElementById('navVerifyLabel');
-      if (navVerifyLabel) navVerifyLabel.innerText = dict.verifyId;
+      // 2. Update Nav labels
       const navDonateLabel = document.getElementById('navDonateLabel');
-      if (navDonateLabel) navDonateLabel.innerText = dict.donateBtn;
+      if (navDonateLabel) navDonateLabel.innerText = lang === 'hi' ? 'समर्पित दान' : 'Donate';
+      const navVerifyLabel = document.getElementById('navVerifyLabel');
+      if (navVerifyLabel) navVerifyLabel.innerText = lang === 'hi' ? 'आईडी सत्यापन' : 'Verify ID';
+      const navProfileLabel = document.getElementById('navProfileLabel');
+      if (navProfileLabel) navProfileLabel.innerText = lang === 'hi' ? 'मेरी प्रोफाइल' : 'My Profile';
 
+      // 3. Update Elements with explicit data-lang-en / data-lang-hi attributes (except admin)
       document.querySelectorAll('[data-lang-en]').forEach(el => {
-        const text = el.getAttribute(lang === 'hi' ? 'data-lang-hi' : 'data-lang-en');
-        if (text) el.innerHTML = text;
+        if (el.closest('#tab-admin')) return;
+        const txt = el.getAttribute(lang === 'hi' ? 'data-lang-hi' : 'data-lang-en');
+        if (txt) el.innerHTML = txt;
       });
+
+      // 4. Update Subnav labels
+      document.querySelectorAll('.subnav-back-label').forEach(el => {
+        el.innerText = lang === 'hi' ? 'वापस' : 'Back';
+      });
+      document.querySelectorAll('.subnav-home-label').forEach(el => {
+        el.innerText = lang === 'hi' ? 'होम' : 'Home';
+      });
+      document.querySelectorAll('.subnav-donate-label').forEach(el => {
+        el.innerText = lang === 'hi' ? 'समर्पित दान' : 'Donate';
+      });
+
+      // 5. Deep text-node translation across all public pages (strictly EXCLUDING #tab-admin)
+      const nonAdminContainers = document.querySelectorAll('header, nav, footer, #cookieConsentBanner, .page-view:not(#tab-admin), #authModal, #verifyModal, #mobileDrawer');
+      nonAdminContainers.forEach(container => {
+        translateDomTree(container, lang);
+      });
+    }
+
+    function translateDomTree(root, lang) {
+      if (!root || root.id === 'tab-admin' || (root.closest && root.closest('#tab-admin'))) return;
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      let node;
+      while (node = walker.nextNode()) {
+        const parent = node.parentElement;
+        if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.closest('#tab-admin')) continue;
+        const text = node.nodeValue.trim();
+        if (!text) continue;
+
+        if (node._enOriginalText === undefined) {
+          node._enOriginalText = node.nodeValue;
+        }
+
+        if (lang === 'hi') {
+          if (MASTER_TRANSLATIONS[text]) {
+            node.nodeValue = node.nodeValue.replace(text, MASTER_TRANSLATIONS[text]);
+          } else {
+            for (const [enPhrase, hiPhrase] of Object.entries(MASTER_TRANSLATIONS)) {
+              if (enPhrase.length > 3 && node.nodeValue.includes(enPhrase)) {
+                node.nodeValue = node.nodeValue.split(enPhrase).join(hiPhrase);
+              }
+            }
+          }
+        } else {
+          if (node._enOriginalText !== undefined) {
+            node.nodeValue = node._enOriginalText;
+          }
+        }
+      }
     }
 
     function openMobileNav() {
@@ -5858,12 +6203,18 @@
     }
 
     function confirmPaymentAndReceipt() {
+      const utr = (document.getElementById('upiUtrInput')?.value || '').trim();
+      if (!utr || utr.length < 8) {
+        alert('Please enter your 12-digit UPI Transaction / UTR ID from your payment app (Google Pay, PhonePe, Paytm, or BHIM) to verify your donation and generate an authentic Section 80G tax exemption receipt.');
+        document.getElementById('upiUtrInput')?.focus();
+        return;
+      }
       closeUpiModal();
       const name = document.getElementById('donorName')?.value.trim() || 'Devotee';
       const pan = (document.getElementById('donorPan')?.value.trim() || 'NOT PROVIDED').toUpperCase();
       const cause = document.getElementById('donationCause')?.value || 'Annapurna Bhandara Daily Meals';
       const recNum = 'SSSS-80G-2026-RCP-' + Math.floor(1000 + Math.random() * 9000);
-      const paymentId = 'UPI_VERIFIED_' + Math.floor(100000 + Math.random() * 900000);
+      const paymentId = 'UPI_UTR_' + utr.toUpperCase();
       const dateStr = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 
       const newTx = {
@@ -5935,13 +6286,379 @@
       if (modal) modal.classList.add('hidden');
     }
 
+    // ==========================================
+    // VOLUNTEER REGISTRATION & VERIFICATION ENGINE
+    // ==========================================
+    let currentVolunteerPhotoDataUrl = null;
+    let currentVolunteerFilter = 'ALL';
+
+    function handleVolunteerPhotoUpload(input) {
+      if (input && input.files && input.files[0]) {
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          currentVolunteerPhotoDataUrl = e.target.result;
+          const preview = document.getElementById('volPhotoPreview');
+          if (preview) preview.src = currentVolunteerPhotoDataUrl;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function handleVolunteerFormSubmit(event) {
+      if (event) event.preventDefault();
+      const name = document.getElementById('volFullName')?.value?.trim();
+      const fatherName = document.getElementById('volFatherName')?.value?.trim();
+      const phone = document.getElementById('volPhone')?.value?.trim();
+      const email = document.getElementById('volEmail')?.value?.trim();
+      const dob = document.getElementById('volDob')?.value?.trim();
+      const gender = document.getElementById('volGender')?.value?.trim() || 'Not Specified';
+      const bloodGroup = document.getElementById('volBloodGroup')?.value?.trim() || 'O+';
+      const idType = document.getElementById('volIdType')?.value?.trim() || 'Aadhaar Card';
+      const idNumber = document.getElementById('volIdNumber')?.value?.trim();
+      const address = document.getElementById('volAddress')?.value?.trim();
+      const wing = document.getElementById('volWing')?.value?.trim() || 'Annapurna Langar Seva';
+      const pledge = document.getElementById('volPledgeCheckbox')?.checked;
+
+      if (!name || !phone || !email || !idNumber || !address) {
+        alert('Please fill in all mandatory fields including Government ID details and Address.');
+        return;
+      }
+      if (!pledge) {
+        alert('Please accept the Solemn Declaration pledge before submitting.');
+        return;
+      }
+
+      const appId = 'SSSS-VOL-APP-2026-' + Math.floor(1000 + Math.random() * 9000);
+      const photo = currentVolunteerPhotoDataUrl || 'logo.jpg';
+
+      const appRecord = {
+        id: appId,
+        name: name,
+        fatherName: fatherName || 'N/A',
+        phone: phone,
+        email: email,
+        dob: dob || 'N/A',
+        gender: gender,
+        bloodGroup: bloodGroup,
+        idType: idType,
+        idNumber: idNumber,
+        address: address,
+        wing: wing,
+        photo: photo,
+        status: 'PENDING',
+        ngoId: null,
+        submittedAt: Date.now(),
+        dateStr: new Date().toLocaleDateString('en-GB')
+      };
+
+      // 1. Save locally
+      let apps = getVolunteerApplications();
+      apps.unshift(appRecord);
+      saveVolunteerApplications(apps);
+
+      // 2. Sync to Firebase Realtime Database
+      if (fbRealtimeDb) {
+        fbRealtimeDb.ref('volunteer_applications/' + appId).set(appRecord).catch(err => {
+          console.warn('Firebase volunteer sync notice:', err.message);
+        });
+      }
+
+      // 3. Update volunteer success box
+      const codeDisp = document.getElementById('volCodeDisp');
+      const nameDisp = document.getElementById('volSuccessNameDisp');
+      const successBox = document.getElementById('volSuccessBox');
+      if (codeDisp) codeDisp.innerText = appId;
+      if (nameDisp) nameDisp.innerText = name;
+      if (successBox) {
+        successBox.classList.remove('hidden');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      if (typeof logAuditEvent === 'function') {
+        logAuditEvent('VOLUNTEER_APPLICATION', `Application submitted by ${name} (${phone}) for ${wing}. Ref: ${appId}`);
+      }
+
+      if (typeof renderAdminVolunteerApplications === 'function') {
+        renderAdminVolunteerApplications();
+      }
+
+      const form = document.getElementById('volunteerApplicationForm');
+      if (form) form.reset();
+      currentVolunteerPhotoDataUrl = null;
+    }
+
     function submitVolunteerForm() {
-      const name = document.getElementById('volName')?.value || 'Dedicated Sevadar';
-      const phone = document.getElementById('volPhone')?.value || '+91 94508 58514';
-      const email = document.getElementById('volEmail')?.value || 'volunteer@sarvasamarpitsewasansthan.com';
-      const code = registerNewMemberRecord(name, email, phone, 'Volunteer');
-      document.getElementById('volCodeDisp').innerText = code;
-      document.getElementById('volSuccessBox').classList.remove('hidden');
+      // Legacy compatibility alias
+      handleVolunteerFormSubmit();
+    }
+
+    function getVolunteerApplications() {
+      try {
+        return JSON.parse(localStorage.getItem('ssss_volunteer_applications') || '[]');
+      } catch(e) {
+        return [];
+      }
+    }
+
+    function saveVolunteerApplications(apps) {
+      try {
+        localStorage.setItem('ssss_volunteer_applications', JSON.stringify(apps));
+      } catch(e) {}
+    }
+
+    function setVolunteerAppFilter(status) {
+      currentVolunteerFilter = status;
+      renderAdminVolunteerApplications();
+    }
+
+    function renderAdminVolunteerApplications() {
+      const tbody = document.getElementById('adminVolAppTableBody');
+      const totalBadge = document.getElementById('adminVolAppTotalCount');
+      const pendingBadge = document.getElementById('adminVolAppPendingCount');
+      const approvedBadge = document.getElementById('adminVolAppApprovedCount');
+      if (!tbody) return;
+
+      const apps = getVolunteerApplications();
+      const pendingCount = apps.filter(a => a.status === 'PENDING').length;
+      const approvedCount = apps.filter(a => a.status === 'APPROVED').length;
+
+      if (totalBadge) totalBadge.innerText = apps.length;
+      if (pendingBadge) pendingBadge.innerText = pendingCount;
+      if (approvedBadge) approvedBadge.innerText = approvedCount;
+
+      const filtered = apps.filter(a => {
+        if (currentVolunteerFilter === 'PENDING') return a.status === 'PENDING';
+        if (currentVolunteerFilter === 'APPROVED') return a.status === 'APPROVED';
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="p-8 text-center text-stone-500 font-medium">
+          <div class="flex flex-col items-center justify-center space-y-1">
+            <span class="text-2xl">📋</span>
+            <p class="font-bold text-xs text-stone-700">No ${currentVolunteerFilter !== 'ALL' ? currentVolunteerFilter.toLowerCase() : ''} volunteer applications found</p>
+            <p class="text-[11px] text-stone-400">Applications submitted from the Volunteer Registration portal will appear here for cross-checking.</p>
+          </div>
+        </td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(app => {
+        const photo = app.photo || 'logo.jpg';
+        const isApproved = app.status === 'APPROVED';
+        const isRejected = app.status === 'REJECTED';
+        const statusBadge = isApproved
+          ? '<span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-black text-[10px] tracking-wide">✓ VERIFIED &amp; ISSUED</span>'
+          : isRejected
+          ? '<span class="px-2 py-0.5 bg-red-100 text-red-800 rounded font-black text-[10px] tracking-wide">REJECTED</span>'
+          : '<span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-black text-[10px] tracking-wide">⏳ PENDING VERIFICATION</span>';
+
+        return `
+          <tr class="hover:bg-stone-50 transition-colors">
+            <td class="p-3.5">
+              <div class="flex items-center gap-3">
+                <img src="${photo}" class="w-10 h-10 rounded-xl object-cover border border-orange-400 shrink-0 shadow-2xs" onerror="this.src='logo.jpg'" alt="${app.name}" />
+                <div>
+                  <div class="font-bold text-xs text-stone-900">${app.name}</div>
+                  <div class="text-[10px] text-stone-500">S/D/W of: <span class="font-medium text-stone-700">${app.fatherName || 'N/A'}</span></div>
+                  <div class="text-[9px] font-mono text-stone-400">${app.id}</div>
+                </div>
+              </div>
+            </td>
+            <td class="p-3.5 text-xs">
+              <div class="font-bold text-stone-800">${app.phone}</div>
+              <div class="text-[10px] text-stone-500">${app.email}</div>
+            </td>
+            <td class="p-3.5 text-xs">
+              <div class="font-semibold text-stone-800">${app.idType}</div>
+              <div class="font-mono text-[11px] text-stone-600 bg-stone-100 px-1.5 py-0.5 rounded inline-block mt-0.5">${app.idNumber}</div>
+            </td>
+            <td class="p-3.5 text-xs">
+              <div class="font-bold text-orange-700">${app.wing}</div>
+              <div class="text-[10px] text-stone-500 truncate max-w-[180px]" title="${app.address}">${app.address}</div>
+            </td>
+            <td class="p-3.5 text-xs font-mono text-stone-600">
+              <div>${app.dateStr || 'Recent'}</div>
+              ${app.ngoId ? `<div class="font-bold text-orange-600 text-[10px] mt-0.5">${app.ngoId}</div>` : ''}
+            </td>
+            <td class="p-3.5">
+              ${statusBadge}
+            </td>
+            <td class="p-3.5 text-right space-x-1 whitespace-nowrap">
+              ${!isApproved ? `
+                <button onclick="verifyAndApproveVolunteer('${app.id}')" class="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-[10px] shadow-2xs transition-all cursor-pointer">
+                  ✓ Verify &amp; Issue ID
+                </button>
+                <button onclick="rejectVolunteerApplication('${app.id}')" class="px-2 py-1.5 bg-stone-100 hover:bg-red-50 text-stone-600 hover:text-red-700 font-bold rounded-lg text-[10px] transition-all cursor-pointer">
+                  ✕
+                </button>
+              ` : `
+                <button onclick="viewVolunteerApplicationIdCard('${app.id}')" class="px-2.5 py-1.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg text-[10px] shadow-2xs transition-all cursor-pointer">
+                  🪪 View ID Card
+                </button>
+              `}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function verifyAndApproveVolunteer(appId) {
+      const apps = getVolunteerApplications();
+      const app = apps.find(a => a.id === appId);
+      if (!app) {
+        alert('Application record not found.');
+        return;
+      }
+
+      const ngoId = 'SSSS-VOL-' + Math.floor(100000 + Math.random() * 900000);
+      app.status = 'APPROVED';
+      app.ngoId = ngoId;
+
+      saveVolunteerApplications(apps);
+
+      const profileKey = 'vol_' + appId.toLowerCase().replace(/[^a-z0-9]/g, '_');
+      idCardProfiles[profileKey] = {
+        name: app.name,
+        hindiName: app.name + ' (प्रमाणित स्वयंसेवक)',
+        id: ngoId,
+        role: 'VERIFIED SEVADAR (VOLUNTEER)',
+        dept: app.wing || 'Prayagraj Seva Mission',
+        email: app.email,
+        phone: app.phone,
+        joinDate: app.dateStr || new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
+        validity: '31-Mar-2028',
+        bloodGroup: app.bloodGroup || 'O+',
+        status: 'ACTIVE',
+        emergency: '09450858514',
+        photo: app.photo || 'logo.jpg',
+        fallbackPhoto: 'logo.jpg',
+        signatory: 'Authorized Trust Signatory'
+      };
+
+      const selector = document.getElementById('idCardSelector');
+      if (selector) {
+        const opt = document.createElement('option');
+        opt.value = profileKey;
+        opt.innerText = `${app.name} (${ngoId}) - Verified Sevadar`;
+        selector.insertBefore(opt, selector.firstChild);
+      }
+
+      // Add to sevadar roster table dynamically
+      const vTable = document.getElementById('adminVolunteerTableBody');
+      if (vTable) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="p-3.5 font-mono font-bold text-orange-600">${ngoId}</td>
+          <td class="p-3.5 font-bold text-gray-900">
+            <div class="flex items-center gap-2.5">
+              <img src="${app.photo || 'logo.jpg'}" class="w-8 h-8 rounded-full object-cover border border-orange-400 shrink-0" alt="${app.name}" />
+              <span>${app.name}</span>
+            </div>
+          </td>
+          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-black text-[10px]">VERIFIED SEVADAR</span></td>
+          <td class="p-3.5 text-gray-600">${app.wing || 'Prayagraj Seva Mission'}</td>
+          <td class="p-3.5 font-mono text-gray-700">${app.phone}</td>
+          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
+          <td class="p-3.5 text-right">
+            <button onclick="previewMemberId('${profileKey}')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
+          </td>
+        `;
+        vTable.prepend(tr);
+      }
+
+      if (fbRealtimeDb) {
+        fbRealtimeDb.ref('volunteer_applications/' + appId).update({ status: 'APPROVED', ngoId: ngoId }).catch(console.warn);
+        fbRealtimeDb.ref('volunteers/' + ngoId).set(app).catch(console.warn);
+      }
+
+      if (typeof logAuditEvent === 'function') {
+        logAuditEvent('VOLUNTEER_APPROVED', `Volunteer ${app.name} cross-checked and approved under NGO ID ${ngoId}.`);
+      }
+
+      renderAdminVolunteerApplications();
+      alert(`Volunteer Verification Complete!\n\nName: ${app.name}\nAssigned NGO ID: ${ngoId}\nStatus: Officially Verified & ID Card Activated.`);
+    }
+
+    function viewVolunteerApplicationIdCard(appId) {
+      const apps = getVolunteerApplications();
+      const app = apps.find(a => a.id === appId);
+      if (!app) return;
+
+      const profileKey = 'vol_' + appId.toLowerCase().replace(/[^a-z0-9]/g, '_');
+      if (!idCardProfiles[profileKey]) {
+        idCardProfiles[profileKey] = {
+          name: app.name,
+          hindiName: app.name + ' (प्रमाणित स्वयंसेवक)',
+          id: app.ngoId || 'SSSS-VOL-000001',
+          role: 'VERIFIED SEVADAR (VOLUNTEER)',
+          dept: app.wing || 'Prayagraj Seva Mission',
+          email: app.email,
+          phone: app.phone,
+          joinDate: app.dateStr || 'Oct-2026',
+          validity: '31-Mar-2028',
+          bloodGroup: app.bloodGroup || 'O+',
+          status: 'ACTIVE',
+          emergency: '09450858514',
+          photo: app.photo || 'logo.jpg',
+          fallbackPhoto: 'logo.jpg',
+          signatory: 'Authorized Trust Signatory'
+        };
+      }
+
+      switchTab('membership');
+      onIdCardSelect(profileKey);
+    }
+
+    function rejectVolunteerApplication(appId) {
+      if (!confirm('Are you sure you want to reject this volunteer application?')) return;
+      const apps = getVolunteerApplications();
+      const app = apps.find(a => a.id === appId);
+      if (!app) return;
+
+      app.status = 'REJECTED';
+      saveVolunteerApplications(apps);
+
+      if (fbRealtimeDb) {
+        fbRealtimeDb.ref('volunteer_applications/' + appId).update({ status: 'REJECTED' }).catch(console.warn);
+      }
+
+      if (typeof logAuditEvent === 'function') {
+        logAuditEvent('VOLUNTEER_REJECTED', `Application ${appId} for ${app.name} was rejected.`);
+      }
+
+      renderAdminVolunteerApplications();
+    }
+
+    function initRealtimeVolunteerListener() {
+      if (fbRealtimeDb) {
+        try {
+          fbRealtimeDb.ref('volunteer_applications').on('value', snapshot => {
+            const data = snapshot.val();
+            if (data) {
+              const remoteApps = Object.values(data);
+              let localApps = getVolunteerApplications();
+              remoteApps.forEach(ra => {
+                const idx = localApps.findIndex(la => la.id === ra.id);
+                if (idx >= 0) {
+                  localApps[idx] = { ...localApps[idx], ...ra };
+                } else {
+                  localApps.unshift(ra);
+                }
+              });
+              saveVolunteerApplications(localApps);
+              if (typeof renderAdminVolunteerApplications === 'function') {
+                renderAdminVolunteerApplications();
+              }
+            }
+          }, err => {
+            console.warn('Realtime volunteer listener notice:', err.message);
+          });
+        } catch(e) {
+          console.warn('Realtime volunteer listener setup notice:', e);
+        }
+      }
     }
 
     function updateTickerText() {
@@ -6326,7 +7043,7 @@
       email: "",
       address: "",
       bloodGroup: "O+",
-      photo: "images/founder.jpg",
+      photo: "",
       joinDate: "",
       validity: "",
       status: "ACTIVE"
@@ -6398,8 +7115,8 @@
       if (cardDept) cardDept.innerText = dept;
 
       const cardPhoto = document.getElementById('profileCardPhoto');
-      if (cardPhoto && userProfile.photo) {
-        cardPhoto.src = userProfile.photo;
+      if (cardPhoto) {
+        cardPhoto.src = userProfile.photo || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'%3E%3Cpath fill-rule='evenodd' d='M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z' clip-rule='evenodd' /%3E%3C/svg%3E";
       }
 
       // WhatsApp Button visibility
@@ -7309,10 +8026,19 @@
     function openVerifyModal(id) {
       const modal = document.getElementById('verifyModal');
       if (modal) modal.classList.remove('hidden');
+      const input = document.getElementById('verifyQueryInput');
+      const initBox = document.getElementById('verifyInitialPrompt');
+      const notFound = document.getElementById('verifyNotFound');
+      const resBox = document.getElementById('verifyResultContainer');
+
       if (id) {
-        const input = document.getElementById('verifyQueryInput');
         if (input) input.value = id;
         executeVerifySearch();
+      } else {
+        if (input) input.value = '';
+        if (initBox) initBox.classList.remove('hidden');
+        if (notFound) notFound.classList.add('hidden');
+        if (resBox) resBox.classList.add('hidden');
       }
     }
 
@@ -7322,42 +8048,77 @@
     }
 
     function executeVerifySearch() {
-      const query = (document.getElementById('verifyQueryInput').value || '').trim();
-      let matched = null;
+      const query = (document.getElementById('verifyQueryInput')?.value || '').trim();
+      const initBox = document.getElementById('verifyInitialPrompt');
+      const notFound = document.getElementById('verifyNotFound');
+      const resBox = document.getElementById('verifyResultContainer');
 
+      if (!query) {
+        if (initBox) initBox.classList.remove('hidden');
+        if (notFound) notFound.classList.add('hidden');
+        if (resBox) resBox.classList.add('hidden');
+        return;
+      }
+
+      let matched = null;
       for (const [key, p] of Object.entries(idCardProfiles)) {
-        if (p.id.toLowerCase() === query.toLowerCase() || p.name.toLowerCase().includes(query.toLowerCase())) {
+        if (p.id && p.id.toLowerCase() === query.toLowerCase()) {
+          matched = p;
+          break;
+        }
+        if (p.name && p.name.toLowerCase() === query.toLowerCase()) {
           matched = p;
           break;
         }
       }
 
       if (!matched) {
-        if (query.toUpperCase().startsWith('SSSS-') || query.toUpperCase().startsWith('VOL-')) {
-          matched = {
-            name: "Verified Sevadar / Member",
-            hindiName: "(प्रमाणित स्वयंसेवक)",
-            id: query.toUpperCase(),
-            role: "DEDICATED VOLUNTEER (SEVADAR)",
-            dept: "Field Operations & Prayagraj Seva",
-            validity: "Active Regular Term",
-            photo: "images/education-4.jpg"
-          };
-        } else {
-          matched = idCardProfiles.pt_harsh_tiwari;
-        }
+        try {
+          const members = JSON.parse(localStorage.getItem('ssss_members') || '[]');
+          const found = members.find(m => m.id && m.id.toLowerCase() === query.toLowerCase());
+          if (found) {
+            matched = {
+              name: found.name,
+              hindiName: found.hindiName || '',
+              id: found.id,
+              role: found.role || 'DEDICATED VOLUNTEER (SEVADAR)',
+              dept: found.dept || 'Prayagraj Seva Mission',
+              validity: found.validity || 'Active Regular Term',
+              photo: found.photo || 'logo.jpg'
+            };
+          }
+        } catch (e) {}
       }
 
-      document.getElementById('verifyResultName').innerText = matched.name;
-      document.getElementById('verifyResultHindi').innerText = matched.hindiName;
-      document.getElementById('verifyResultId').innerText = matched.id;
-      document.getElementById('verifyResultRole').innerText = matched.role;
-      document.getElementById('verifyResultDept').innerText = matched.dept;
-      document.getElementById('verifyResultValidity').innerText = matched.validity;
-      const photoEl = document.getElementById('verifyResultPhoto');
-      if (photoEl) {
-        photoEl.src = matched.photo;
+      if (!matched) {
+        if (initBox) initBox.classList.add('hidden');
+        if (resBox) resBox.classList.add('hidden');
+        if (notFound) {
+          notFound.classList.remove('hidden');
+          const msg = document.getElementById('verifyNotFoundMsg');
+          if (msg) msg.innerText = `No registered NGO credential found for ID "${query}". Please check the ID or contact Trust administration.`;
+        }
+        return;
       }
+
+      if (initBox) initBox.classList.add('hidden');
+      if (notFound) notFound.classList.add('hidden');
+      if (resBox) resBox.classList.remove('hidden');
+
+      const nameEl = document.getElementById('verifyResultName');
+      if (nameEl) nameEl.innerText = matched.name;
+      const hindiEl = document.getElementById('verifyResultHindi');
+      if (hindiEl) hindiEl.innerText = matched.hindiName ? `(${matched.hindiName})` : '';
+      const idEl = document.getElementById('verifyResultId');
+      if (idEl) idEl.innerText = matched.id;
+      const roleEl = document.getElementById('verifyResultRole');
+      if (roleEl) roleEl.innerText = matched.role;
+      const deptEl = document.getElementById('verifyResultDept');
+      if (deptEl) deptEl.innerText = matched.dept;
+      const valEl = document.getElementById('verifyResultValidity');
+      if (valEl) valEl.innerText = matched.validity;
+      const photoEl = document.getElementById('verifyResultPhoto');
+      if (photoEl) photoEl.src = matched.photo || 'logo.jpg';
     }
 
     function loadCardFromVerification() {
@@ -7464,22 +8225,36 @@
       }
     }
 
+    function handleNavLoginClick() {
+      try {
+        const cached = JSON.parse(localStorage.getItem('ssss_active_session') || '{}');
+        if (cached && cached.isAdmin) {
+          switchTab('admin');
+          return;
+        }
+      } catch(e) {}
+      switchTab('login');
+    }
+
     function handleDirectAdminLogin(e) {
       if (e && e.preventDefault) e.preventDefault();
-      const id = (document.getElementById('adminLoginId')?.value || '').trim();
-      const pass = document.getElementById('adminLoginPass')?.value || '';
+      const id = (document.getElementById('adminLoginId')?.value || '').trim().toLowerCase();
+      const pass = (document.getElementById('adminLoginPass')?.value || '').trim();
 
-      if (id === '0000' && pass === 'Hanumanseva0311') {
+      const isFounder = (id === '0000' || id === 'founder') && (pass === 'Hanumanseva0311' || pass === 'Admin@SSSS2026!');
+      const isNavinAdmin = (id === 'navinmishra6387@gmail.com' || id === 'navin' || id === 'navinmishra' || id === '0000') && (pass === 'Hanumanseva0311' || pass === 'Admin@SSSS2026!' || pass === '0000');
+
+      if (isNavinAdmin || isFounder) {
         const adminSession = {
-          uid: 'ADMIN_0000_SUPER',
-          displayName: 'Pt. Harsh Tiwari',
-          email: 'founder@sarvasamarpitsewasansthan.com',
-          photoURL: 'images/founder.jpg',
+          uid: 'ADMIN_NAVEEN_MISHRA',
+          displayName: 'Naveen Mishra',
+          email: 'navinmishra6387@gmail.com',
+          photoURL: 'images/treasurer.jpg',
           phoneNumber: '+91 94508 58514',
           role: 'Super Admin',
-          roleBadge: 'FOUNDER & CHIEF MANAGING TRUSTEE',
-          ngoId: 'SSSS-TRU-000001',
-          department: 'Trust Governing Board & Annapurna Seva',
+          roleBadge: 'MASTER ADMINISTRATOR & FINANCE CONTROLLER',
+          ngoId: 'SSSS-TRU-000002',
+          department: 'Trust Governing Board & Administration',
           isAdmin: true
         };
 
@@ -7489,15 +8264,15 @@
         } catch(e) {}
 
         if (typeof showLoginPageAlert === 'function') {
-          showLoginPageAlert('success', 'Master Administrator Verified! Redirecting to Enterprise Control Room...');
+          showLoginPageAlert('success', 'Administrator verified. Redirecting to Sansthan Control Room...');
         }
 
         setTimeout(() => {
           switchTab('admin');
-        }, 600);
+        }, 500);
       } else {
         if (typeof showLoginPageAlert === 'function') {
-          showLoginPageAlert('error', 'Authentication Failed: Invalid Administrator credentials. Please enter ID: 0000 and valid password.');
+          showLoginPageAlert('error', 'Authentication Failed: Invalid Administrator ID or Password. Please verify and try again.');
         } else {
           alert('Invalid Administrator credentials. Please verify ID and Password.');
         }
@@ -7523,18 +8298,58 @@
         const result = await fbAuth.signInWithPopup(provider);
         const user = result.user;
         const name = user.displayName || user.email;
+        const email = (user.email || '').toLowerCase();
+
+        const isMasterAdmin = (email === 'navinmishra6387@gmail.com' || email.includes('founder') || email.includes('harsh'));
+        if (isMasterAdmin) {
+          user.isAdmin = true;
+          user.role = 'Super Admin';
+          user.roleBadge = 'MASTER ADMINISTRATOR & FINANCE CONTROLLER';
+          user.ngoId = 'SSSS-TRU-000002';
+          user.department = 'Trust Governing Board & Administration';
+        }
 
         applyUserSession(user);
+        try {
+          localStorage.setItem('ssss_active_session', JSON.stringify({
+            uid: user.uid,
+            displayName: user.displayName || name,
+            email: user.email,
+            photoURL: user.photoURL,
+            role: user.role,
+            roleBadge: user.roleBadge,
+            ngoId: user.ngoId,
+            department: user.department,
+            isAdmin: !!user.isAdmin
+          }));
+        } catch(e) {}
+
         showAuthFeedback('Welcome, ' + name + '! Authenticated with Google.');
         if (typeof showLoginPageAlert === 'function') {
-          showLoginPageAlert('success', 'Authentication Successful! Welcome, ' + name + '. Redirecting...');
+          if (isMasterAdmin) {
+            showLoginPageAlert('success', 'Master Administrator Verified (' + name + ')! Opening Admin Control Room...');
+          } else {
+            showLoginPageAlert('success', 'Authentication Successful! Welcome, ' + name + '. Redirecting...');
+          }
         }
         setTimeout(() => {
           closeAuthModal();
-          switchTab('profile');
-        }, 800);
+          if (isMasterAdmin) {
+            switchTab('admin');
+          } else {
+            switchTab('profile');
+          }
+        }, 600);
       } catch (err) {
         console.warn('Firebase Google Auth error:', err);
+        if (err.code === 'auth/popup-blocked') {
+          try {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            provider.setCustomParameters({ prompt: 'select_account' });
+            await fbAuth.signInWithRedirect(provider);
+            return;
+          } catch(e) {}
+        }
         let msg = 'Google Sign-In was cancelled or failed. Please try again.';
         if (err.code === 'auth/popup-closed-by-user') {
           msg = 'Google login window was closed by the user.';
@@ -7639,12 +8454,20 @@
       let ngoId = user.ngoId || ('SSSS-VOL-' + (user.uid ? user.uid.slice(0, 6).toUpperCase() : '000001'));
       let dept = 'Prayagraj Seva Mission';
 
-      if (user.isAdmin || email.includes('founder') || email.includes('harsh') || email === 'msingh252001@gmail.com') {
+      const isMasterAdmin = (
+        user.isAdmin === true ||
+        email === 'navinmishra6387@gmail.com' ||
+        email.includes('founder') ||
+        email.includes('harsh')
+      );
+
+      if (isMasterAdmin) {
+        user.isAdmin = true;
         role = 'Super Admin';
-        roleBadge = 'FOUNDER & CHIEF MANAGING TRUSTEE';
-        ngoId = 'SSSS-TRU-000001';
-        dept = 'Trust Governing Board & Annapurna Seva';
-      } else if (email.includes('treasurer') || email === 'navinmishra6387@gmail.com') {
+        roleBadge = 'MASTER ADMINISTRATOR & FINANCE CONTROLLER';
+        ngoId = 'SSSS-TRU-000002';
+        dept = 'Trust Governing Board & Administration';
+      } else if (email.includes('treasurer')) {
         role = 'Treasurer';
         roleBadge = 'TREASURER & FINANCE CONTROLLER';
         ngoId = 'SSSS-TRU-000002';
@@ -7672,6 +8495,34 @@
       }
 
       // Render the current logged-in user's authentic details & photo onto ID card
+            // Update dynamic Admin nav link and Login button label
+      const navAdminLink = document.getElementById('navAdminLink');
+      const navLoginLabel = document.getElementById('navLoginLabel');
+      const navLoginIcon = document.getElementById('navLoginIcon');
+      if (user.isAdmin) {
+        if (navAdminLink) navAdminLink.classList.remove('hidden');
+        if (navLoginLabel) navLoginLabel.innerText = 'Admin Panel';
+        if (navLoginIcon) navLoginIcon.innerText = "\u{1F6E0}\u{FE0F}";
+      } else {
+        if (navAdminLink) navAdminLink.classList.add('hidden');
+        if (navLoginLabel) navLoginLabel.innerText = name.length > 12 ? name.substring(0, 10) + '...' : name;
+        if (navLoginIcon) navLoginIcon.innerText = "\u{1F464}";
+      }
+
+      try {
+        localStorage.setItem('ssss_active_session', JSON.stringify({
+          uid: user.uid,
+          displayName: name,
+          email: email,
+          photoURL: user.photoURL || '',
+          role: role,
+          roleBadge: roleBadge,
+          ngoId: ngoId,
+          department: dept,
+          isAdmin: !!user.isAdmin
+        }));
+      } catch(e) {}
+
       renderUserOnIdCard({
         ...user,
         name: name,
@@ -7738,7 +8589,7 @@
         roleBadge: roleBadge,
         ngoId: ngoId,
         department: dept,
-        authProvider: 'Google Auth',
+        authProvider: (user.providerData && user.providerData[0] && user.providerData[0].providerId === 'password') ? 'Email Auth' : 'Google Auth',
         lastLogin: new Date().toISOString()
       };
 
@@ -7822,8 +8673,8 @@
             </td>
             <td class="p-3.5 text-stone-600 text-xs">${u.department || 'Prayagraj Seva Mission'}</td>
             <td class="p-3.5">
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Google Auth
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold ${u.authProvider && u.authProvider.includes('Email') ? 'bg-amber-50 text-amber-700 border border-amber-200' : 'bg-blue-50 text-blue-700 border border-blue-200'}">
+                <span class="w-1.5 h-1.5 rounded-full ${u.authProvider && u.authProvider.includes('Email') ? 'bg-amber-600' : 'bg-blue-600'}"></span> ${u.authProvider || 'Google Auth'}
               </span>
             </td>
             <td class="p-3.5 font-mono text-[11px] text-stone-600">${dateStr}</td>
@@ -8107,8 +8958,7 @@
       const amtPaise = Math.round(amt * 100);
 
       if (typeof Razorpay === 'undefined') {
-        console.warn('Razorpay SDK unavailable. Proceeding with instant verified record.');
-        handleRazorpayPaymentSuccess({ razorpay_payment_id: 'RZP_VERIFIED_' + Math.floor(100000 + Math.random() * 900000) }, details);
+        alert('Razorpay Payment Gateway is currently loading or unavailable. Please check your internet connection or use direct UPI payment to Sansthan UPI ID: 9450858514@upi.');
         return;
       }
 
@@ -8135,6 +8985,10 @@
           color: RAZORPAY_CONFIG.themeColor
         },
         handler: function(response) {
+          if (!response || !response.razorpay_payment_id) {
+            alert('Payment could not be confirmed by Razorpay. Please contact Trust helpline at 09450858514 if funds were deducted.');
+            return;
+          }
           handleRazorpayPaymentSuccess(response, details);
         },
         modal: {
@@ -8152,7 +9006,7 @@
         rzp.open();
       } catch (err) {
         console.error('Razorpay invocation error:', err);
-        handleRazorpayPaymentSuccess({ razorpay_payment_id: 'RZP_LIVE_' + Math.floor(100000 + Math.random() * 900000) }, details);
+        alert('Payment could not be initialized: ' + (err.message || 'Please use direct UPI payment to 9450858514@upi.'));
       }
     }
 
@@ -8234,19 +9088,12 @@
       if (!window.recordedDonations || window.recordedDonations.length === 0) {
         try {
           const cached = JSON.parse(localStorage.getItem('ssss_donations') || '[]');
-          if (cached && cached.length > 0) {
-            window.recordedDonations = cached;
-          } else {
-            // Default verified seeds
-            window.recordedDonations = [
-              { receiptNo: 'SSSS-80G-2026-RCP-1042', paymentId: 'RZP_LIVE_849201', name: 'Pt. Rameshwar Shastri', pan: 'AAAPS4920R', cause: 'Annapurna Langar Daily Meals', amount: 5100, gateway: 'RAZORPAY_LIVE', status: 'VERIFIED', date: '04-Oct-2026', timestamp: Date.now() - 3600000 },
-              { receiptNo: 'SSSS-80G-2026-RCP-1038', paymentId: 'RZP_LIVE_739210', name: 'Smt. Sunita Agarwal', pan: 'BTYPA8392M', cause: 'Free Education Pathshala Study Kits', amount: 2100, gateway: 'RAZORPAY_LIVE', status: 'VERIFIED', date: '03-Oct-2026', timestamp: Date.now() - 7200000 },
-              { receiptNo: 'SSSS-80G-2026-RCP-1029', paymentId: 'RZP_LIVE_628194', name: 'Vivek Srivastava', pan: 'CPQPS2918K', cause: 'Winter Blanket & Cloth Relief', amount: 1100, gateway: 'RAZORPAY_LIVE', status: 'VERIFIED', date: '02-Oct-2026', timestamp: Date.now() - 14400000 },
-              { receiptNo: 'SSSS-80G-2026-RCP-1015', paymentId: 'RZP_LIVE_517283', name: 'Gopal Krishna Shukla', pan: 'DWZPS1827J', cause: 'Daily Mahaprasad Seva', amount: 11000, gateway: 'RAZORPAY_LIVE', status: 'VERIFIED', date: '01-Oct-2026', timestamp: Date.now() - 28800000 },
-              { receiptNo: 'SSSS-80G-2026-RCP-1002', paymentId: 'RZP_LIVE_406392', name: 'Deepak Kumar Verma', pan: 'ENXPV9283L', cause: 'Arogya Medical Camp Seva', amount: 3500, gateway: 'RAZORPAY_LIVE', status: 'VERIFIED', date: '30-Sep-2026', timestamp: Date.now() - 43200000 }
-            ];
-            localStorage.setItem('ssss_donations', JSON.stringify(window.recordedDonations));
+          const fakeNames = ['Pt. Rameshwar Shastri', 'Smt. Sunita Agarwal', 'Vivek Srivastava', 'Gopal Krishna Shukla', 'Deepak Kumar Verma'];
+          const sanitized = (cached || []).filter(item => item && item.name && !fakeNames.includes(item.name.trim()) && !fakeNames.some(fn => item.name.includes(fn)));
+          if (sanitized.length !== (cached || []).length) {
+            localStorage.setItem('ssss_donations', JSON.stringify(sanitized));
           }
+          window.recordedDonations = sanitized;
         } catch(e) {
           window.recordedDonations = [];
         }
@@ -8344,7 +9191,7 @@
     // 5. ADMIN DASHBOARD & CMS CONTROLLERS
     // ==========================================
     function switchAdminSubTab(subId) {
-      const tabs = ['cms', 'volunteers', 'donations', 'security'];
+      const tabs = ['volunteers', 'users', 'donations', 'cms', 'security'];
       tabs.forEach(t => {
         const el = document.getElementById('admin-subtab-' + t);
         const btn = document.getElementById('subtab-btn-' + t);
@@ -8360,6 +9207,12 @@
       if (targetBtn) {
         targetBtn.classList.add('bg-orange-600', 'text-white');
         targetBtn.classList.remove('bg-stone-100', 'text-gray-700');
+      }
+      if (subId === 'volunteers' && typeof renderAdminVolunteerApplications === 'function') {
+        renderAdminVolunteerApplications();
+      }
+      if (subId === 'users' && typeof renderAdminGoogleUsersTable === 'function') {
+        renderAdminGoogleUsersTable();
       }
     }
 
@@ -9089,7 +9942,27 @@
     // ==========================================
     // 6. INITIALIZATION & QR CODE VERIFICATION URL
     // ==========================================
-    window.addEventListener('DOMContentLoaded', function() {
+    // INITIALIZATION DISPATCHER
+    // ==========================================
+    function initSansthanApp() {
+      // Cross-tab session recovery: If user is logged in in any tab, keep them logged in!
+      try {
+        const persisted = JSON.parse(localStorage.getItem('ssss_active_session') || 'null');
+        if (persisted && (persisted.email || persisted.uid)) {
+          applyUserSession(persisted);
+        }
+      } catch(e) {}
+
+      // Initialize Cookie Consent popup
+      if (typeof initCookieConsent === 'function') {
+        initCookieConsent();
+      }
+
+      // Configure Firebase Auth Persistence across tabs
+      if (fbAuth && typeof fbAuth.setPersistence === 'function' && typeof firebase.auth.Auth.Persistence !== 'undefined') {
+        fbAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(function(e) {});
+      }
+
       // Apply persisted language preference (Hindi / English)
       if (typeof setLanguage === 'function') {
         setLanguage(currentLanguage);
@@ -9120,6 +9993,25 @@
         initRealtimeUsersListener();
       }
 
+      // Render Volunteer Applications in Admin Panel & attach Realtime DB listener
+      if (typeof renderAdminVolunteerApplications === 'function') {
+        renderAdminVolunteerApplications();
+      }
+      if (typeof initRealtimeVolunteerListener === 'function') {
+        initRealtimeVolunteerListener();
+      }
+
+      // Handle Google Sign-In redirect result (for mobile browsers where popup was blocked)
+      if (fbAuth && typeof fbAuth.getRedirectResult === 'function') {
+        fbAuth.getRedirectResult().then(res => {
+          if (res && res.user) {
+            applyUserSession(res.user);
+          }
+        }).catch(err => {
+          console.warn('Google redirect result error:', err);
+        });
+      }
+
       // Listen to Firebase Auth state changes
       if (fbAuth && typeof fbAuth.onAuthStateChanged === 'function') {
         fbAuth.onAuthStateChanged(user => {
@@ -9137,8 +10029,38 @@
       if (verifyId) {
         openVerifyModal(verifyId);
       }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initSansthanApp);
+    } else {
+      initSansthanApp();
+    }
   </script>
+
+    <!-- COOKIES, PRIVACY & FAIR USE CONSENT BANNER -->
+  <div id="cookieConsentBanner" class="fixed bottom-16 sm:bottom-6 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-md z-50 bg-stone-900/95 backdrop-blur-md text-white p-4 sm:p-5 rounded-2xl shadow-2xl border border-stone-800 transition-all duration-300 hidden">
+    <div class="flex items-start gap-3">
+      <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M21.598 11.064a1.006 1.006 0 0 0-.854-.172A3.993 3.993 0 0 1 15.5 7a3.996 3.996 0 0 1-1.996-3.465 1.004 1.004 0 0 0-.79-.982A10.003 10.003 0 0 0 2 12c0 5.514 4.486 10 10 10 5.176 0 9.426-3.943 9.923-9.014a1.002 1.002 0 0 0-.325-.922zM12 20c-4.411 0-8-3.589-8-8a7.962 7.962 0 0 1 2.606-5.94 5.98 5.98 0 0 0 1.954 3.018A5.996 5.996 0 0 0 13.923 11a5.992 5.992 0 0 0 5.792 3.639A8.02 8.02 0 0 1 12 20z"/><circle cx="8.5" cy="11.5" r="1.5"/><circle cx="12.5" cy="16.5" r="1.5"/><circle cx="15.5" cy="11.5" r="1.5"/><circle cx="8.5" cy="15.5" r="1.5"/></svg>
+      <div class="space-y-2 flex-1">
+        <h4 class="text-xs font-bold tracking-wide uppercase text-orange-400">Cookies, Privacy & Fair Use</h4>
+        <p class="text-[11px] text-stone-300 leading-relaxed">
+          Sarva Samarpit Sewa Sansthan uses essential cookies and local session storage solely for secure volunteer authentication, donation verification, and fair use compliance in accordance with our terms.
+        </p>
+        <div class="flex items-center gap-2 pt-1">
+          <button onclick="acceptCookieConsent()" class="px-3.5 py-1.5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs rounded-xl transition-all shadow-xs cursor-pointer">
+            Accept All
+          </button>
+          <button onclick="switchTab('privacy'); dismissCookieConsent();" class="px-3 py-1.5 bg-stone-800 hover:bg-stone-700 text-stone-300 font-medium text-xs rounded-xl transition-all cursor-pointer">
+            Privacy & Terms
+          </button>
+        </div>
+      </div>
+      <button onclick="dismissCookieConsent()" class="text-stone-400 hover:text-white p-1 text-xs cursor-pointer flex items-center justify-center w-6 h-6 rounded-lg hover:bg-stone-800 transition-colors" aria-label="Close">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- FIXED MOBILE BOTTOM QUICK ACTION BAR -->
   <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 px-3 py-2 z-40 flex items-center justify-around shadow-2xl no-print pb-[max(0.5rem,env(safe-area-inset-bottom))]">
