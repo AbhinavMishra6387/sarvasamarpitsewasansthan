@@ -34,9 +34,12 @@ function getMimeType(pathname) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    let path = url.pathname;
+    let path = '/' + url.pathname.split('/').filter(Boolean).join('/');
     if (path === "/" || path === "") {
       path = "/index.html";
+    }
+    if (path === "/sitemap") {
+      path = "/sitemap.xml";
     }
 
     const isDynamicDoc = path.endsWith(".html") || path.endsWith(".xml") || path.endsWith(".txt");
