@@ -37,6 +37,9 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <!-- OpenStreetMap Leaflet Engine for Live Seva Volunteer GPS Radar -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Comprehensive Schema.org JSON-LD (NGO, EducationalOrganization, 80G Tax Exemption, AEO FAQPage) -->
   <script type="application/ld+json">
@@ -383,6 +386,12 @@
           <span id="navDonateLabel">Donate</span>
         </button>
 
+        <!-- 3.5. Mobile Install App Button (Visible on < lg) -->
+        <button id="navMobileInstallBtn" onclick="triggerPwaInstall()" class="lg:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-xl border border-orange-300 bg-orange-50/80 text-[11px] font-bold text-orange-800 hover:bg-orange-100 transition-colors shadow-2xs cursor-pointer" title="Install App / Add to Home Screen">
+          <svg class="w-3.5 h-3.5 text-orange-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span class="font-bold">Install</span>
+        </button>
+
         <!-- 4. Mobile Menu Toggle Button (Visible on < lg, placed before Login so Login is LAST) -->
         <button onclick="toggleMobileNav()" class="lg:hidden p-1.5 sm:p-2 rounded-xl border border-stone-200 text-stone-700 hover:bg-stone-100 transition-colors flex items-center justify-center cursor-pointer" aria-label="Toggle Navigation">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -438,6 +447,22 @@
           </div>
           <button onclick="switchTab('profile'); closeMobileNav()" class="px-2.5 py-1 bg-white hover:bg-orange-100 text-orange-700 border border-orange-300 rounded-lg text-[10px] font-bold">
             Profile &rarr;
+          </button>
+        </div>
+
+        <!-- Install App / Add to Home Screen Professional Button (Mobile View) -->
+        <div id="pwaInstallContainer" class="p-3 bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/5 border border-orange-300 rounded-2xl flex items-center justify-between gap-3 shadow-2xs">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-orange-600 text-white flex items-center justify-center shadow-xs shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            </div>
+            <div>
+              <p class="font-black text-xs text-stone-900 leading-tight">Install Official App</p>
+              <p class="text-[10px] text-stone-600">Add to Home Screen for fast offline access</p>
+            </div>
+          </div>
+          <button id="pwaInstallBtn" onclick="triggerPwaInstall()" class="px-3.5 py-1.5 bg-orange-600 hover:bg-orange-700 active:scale-95 text-white font-extrabold text-xs rounded-xl shadow-xs shrink-0 transition-all cursor-pointer">
+            Install
           </button>
         </div>
 
@@ -1765,7 +1790,7 @@
           <div class="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
             <!-- Middle Avatar -->
             <div class="relative w-36 h-44 sm:w-44 sm:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-amber-500/25 shrink-0 group-hover:scale-105 transition-transform bg-stone-100">
-              <img src="images/social-2.jpg" alt="Santosh Mishra - Chief Patron" class="w-full h-full object-cover" />
+              <img src="images/patron.jpg" alt="Santosh Mishra - Chief Patron" class="w-full h-full object-cover object-top" />
             </div>
             <!-- Just Under The Photo: Name -->
             <div class="space-y-1">
@@ -1851,7 +1876,7 @@
           <div class="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
             <!-- Middle Secretary Photo -->
             <div class="relative w-36 h-44 sm:w-44 sm:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-indigo-500/25 shrink-0 group-hover:scale-105 transition-transform bg-stone-100 cursor-pointer" onclick="openSecretaryPhotoModal()" title="Click to view full photo">
-              <img src="images/social-1.jpg" alt="Amit Prakhar Pandey - Secretary" class="w-full h-full object-cover object-top" />
+              <img src="images/secretary.jpg" alt="Amit Prakhar Pandey - Secretary" class="w-full h-full object-cover object-top" />
               <div class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-md font-bold flex items-center gap-1">
                 <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
                 <span>Zoom</span>
@@ -1896,7 +1921,7 @@
           <div class="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
             <!-- Middle Avatar -->
             <div class="relative w-36 h-44 sm:w-44 sm:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-blue-500/25 shrink-0 group-hover:scale-105 transition-transform bg-stone-100">
-              <img src="images/education-2.jpg" alt="Ravindra Nath Tiwari - Education Secretary" class="w-full h-full object-cover" />
+              <img src="images/education_head.jpg" alt="Ravindra Nath Tiwari - Education Secretary" class="w-full h-full object-cover object-top" />
             </div>
             <!-- Just Under The Photo: Name -->
             <div class="space-y-1">
@@ -1937,7 +1962,7 @@
           <div class="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
             <!-- Middle Avatar -->
             <div class="relative w-36 h-44 sm:w-44 sm:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-emerald-500/25 shrink-0 group-hover:scale-105 transition-transform bg-stone-100">
-              <img src="images/social-3.jpg" alt="Adv. Atharva Upadhyay - Legal Advisor" class="w-full h-full object-cover" />
+              <img src="images/legal.jpg" alt="Adv. Atharva Upadhyay - Legal Advisor" class="w-full h-full object-cover object-top" />
             </div>
             <!-- Just Under The Photo: Name -->
             <div class="space-y-1">
@@ -1950,7 +1975,7 @@
             </div>
             <!-- Under The Name: About of Member -->
             <p class="text-xs sm:text-base text-gray-700 leading-relaxed max-w-2xl font-medium">
-          Statutory Compliance &bull; &#x0915;&#x093E;&#x0928;&#x0942;&#x0928;&#x0940; &#x0938;&#x0941;&#x0930;&#x0915;&#x094D;&#x0937;&#x093E;
+              Providing expert legal counsel, regulatory advisory, trust deed compliances, statutory protections under the Indian Trusts Act 1882, and managing legal interfaces for all Sansthan philanthropic initiatives.
             </p>
             <!-- Bottom Badges -->
             <div class="pt-4 border-t border-stone-200/80 w-full flex flex-wrap items-center justify-center gap-3 text-xs text-gray-600">
@@ -3641,100 +3666,96 @@
           </div>
 
           <!-- 1. FRONT VIEW OF ID CARD -->
-          <div id="corporateIdCardContainer" class="w-full max-w-md min-h-[620px] bg-white rounded-3xl shadow-2xl border-2 border-stone-300 relative overflow-hidden flex flex-col justify-between text-gray-900">
+          <div id="corporateIdCardContainer" class="w-full max-w-[420px] min-h-[720px] h-[720px] bg-white rounded-3xl shadow-2xl border-2 border-stone-300 relative overflow-hidden flex flex-col justify-between text-gray-900 mx-auto">
             
             <!-- Lanyard Slot -->
-            <div class="w-full flex justify-center pt-3 pb-1 bg-stone-100 border-b border-stone-200">
+            <div class="w-full flex justify-center pt-3 pb-1 bg-stone-100 border-b border-stone-200 shrink-0">
               <div class="w-20 h-2 bg-stone-300 rounded-full"></div>
             </div>
 
-            <!-- Card Header Banner with Official NGO Logo & Tagline -->
-            <div class="bg-gradient-to-r from-slate-950 via-neutral-900 to-orange-950 text-white px-5 py-3.5 relative border-b-4 border-orange-500">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md shrink-0">
-                  <img src="logo.jpg" alt="Official NGO Logo" class="w-full h-full object-cover rounded-full" />
-                </div>
-                <div class="flex-1 text-center pr-2">
-                  <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider font-hindi">॥ मानव सेवा ही माधव सेवा ॥</p>
-                  <p class="font-extrabold text-xs text-amber-400 tracking-wide font-hindi">सर्व समर्पित सेवा संस्थान</p>
-                  <h3 class="font-black text-xs sm:text-sm text-white tracking-wider leading-tight">SARVA SAMARPIT SEWA SANSTHAN</h3>
-                  <p class="text-[8.5px] text-stone-300 font-medium mt-0.5">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP - 211005</p>
-                </div>
+            <!-- Card Header Banner with Official NGO Logo & Centered Credentials (EXACT SAME ON FRONT & BACK) -->
+            <div class="bg-gradient-to-r from-slate-950 via-neutral-900 to-orange-950 text-white px-5 pt-3.5 pb-2.5 relative border-b-4 border-orange-500 text-center flex flex-col items-center justify-center shrink-0">
+              <!-- Official Centered Logo -->
+              <div class="w-12 h-12 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md mb-1.5 flex items-center justify-center shrink-0">
+                <img src="logo.jpg" alt="Official NGO Logo" class="w-full h-full object-cover rounded-full" />
               </div>
+              <!-- Centered Tagline & Name -->
+              <p class="text-[9.5px] text-amber-300 font-bold uppercase tracking-widest font-hindi leading-tight">॥ मानव सेवा ही माधव सेवा ॥</p>
+              <p class="font-black text-sm text-amber-400 tracking-wide font-hindi mt-0.5 leading-snug">सर्व समर्पित सेवा संस्थान</p>
+              <h3 class="font-extrabold text-xs sm:text-[13px] text-white tracking-wider leading-tight mt-0.5">SARVA SAMARPIT SEWA SANSTHAN</h3>
+              <p class="text-[8.5px] text-stone-300 font-medium mt-1 leading-tight">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP - 211005</p>
             </div>
 
             <!-- Body: Photo & Identity Grid -->
-            <div class="p-5 sm:p-6 space-y-4">
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2.5">
               
               <div class="flex flex-col items-center">
-                <!-- Official Photo Frame -->
-                <div class="relative group">
-                  <div class="w-32 h-36 rounded-2xl overflow-hidden border-4 border-orange-500 shadow-md bg-stone-100 flex items-center justify-center">
-                    <img id="cardPhotoImg" src="images/treasurer.jpg" alt="Official ID Photo" class="w-full h-full object-cover" />
-                  </div>
-                  <div class="absolute -bottom-2.5 inset-x-0 flex justify-center">
-                    <span id="cardRoleBadge" class="bg-gradient-to-r from-orange-600 to-amber-600 text-white text-[10px] font-black uppercase px-3 py-0.5 rounded-full shadow tracking-wider">
+                <!-- Official Photo Frame - Clean Unobstructed Frame (NO BADGE OVERLAY) -->
+                <div class="w-28 h-32 rounded-2xl overflow-hidden border-2 border-stone-300 shadow-md bg-stone-100 flex items-center justify-center">
+                  <img id="cardPhotoImg" src="images/treasurer.jpg" alt="Official ID Photo" class="w-full h-full object-cover" />
+                </div>
+
+                <!-- Name, Hindi Name, Designation Badge (Placed Elegantly Below Name) & NGO ID -->
+                <div class="text-center mt-2 space-y-0.5">
+                  <h4 id="cardFullName" class="font-black text-lg text-gray-900 tracking-tight uppercase leading-tight">NAVEEN MISHRA</h4>
+                  <p id="cardHindiName" class="text-xs text-orange-700 font-bold font-hindi">नवीन मिश्रा (कोषाध्यक्ष)</p>
+                  <div class="flex justify-center pt-0.5">
+                    <span id="cardRoleBadge" class="bg-gradient-to-r from-orange-700 to-amber-700 text-white text-[10px] font-extrabold uppercase px-3.5 py-1 rounded-md shadow-xs tracking-wider">
                       TREASURER & FINANCE CONTROLLER
                     </span>
                   </div>
-                </div>
-
-                <!-- Name & Unique NGO ID -->
-                <div class="text-center mt-4">
-                  <h4 id="cardFullName" class="font-black text-xl text-gray-900 tracking-tight">NAVEEN MISHRA</h4>
-                  <p id="cardHindiName" class="text-xs text-orange-600 font-bold font-hindi">नवीन मिश्रा (कोषाध्यक्ष)</p>
-                  <p id="cardNgoId" class="font-mono font-extrabold text-sm text-orange-600 tracking-wider mt-0.5">SSSS-TRU-000002</p>
+                  <p id="cardNgoId" class="font-mono font-black text-xs text-orange-600 tracking-widest pt-0.5">SSSS-TRU-000002</p>
                 </div>
               </div>
 
               <!-- Credentials Table -->
-              <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 text-xs space-y-2">
-                <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
-                  <span class="text-gray-500 font-bold uppercase text-[10px]">Department:</span>
-                  <span id="cardDept" class="font-bold text-gray-900 text-right">Finance, Audit &amp; 80G Compliances</span>
+              <div class="bg-stone-50 p-2.5 sm:p-3 rounded-xl border border-stone-200 text-xs space-y-1.5">
+                <div class="flex justify-between items-center border-b border-stone-200 pb-1">
+                  <span class="text-gray-500 font-bold uppercase text-[9.5px]">Department:</span>
+                  <span id="cardDept" class="font-bold text-gray-900 text-right text-[11px]">Finance, Audit &amp; 80G Compliances</span>
                 </div>
-                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1.5">
+                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1">
                   <div>
-                    <span class="text-gray-500 font-bold uppercase text-[10px] block">Official Email:</span>
+                    <span class="text-gray-500 font-bold uppercase text-[9.5px] block">Official Email:</span>
                     <span id="cardEmail" class="font-bold text-gray-900 text-[10px] truncate block">treasurer@sarvasamarpitsewasansthan.com</span>
                   </div>
                   <div class="text-right">
-                    <span class="text-gray-500 font-bold uppercase text-[10px] block">Contact No:</span>
+                    <span class="text-gray-500 font-bold uppercase text-[9.5px] block">Contact No:</span>
                     <span id="cardPhone" class="font-bold text-gray-900 font-mono text-[11px]">+91 83030 64007</span>
                   </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1.5">
+                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1">
                   <div>
-                    <span class="text-gray-500 font-bold uppercase text-[10px] block">Date Joined:</span>
-                    <span id="cardJoinDate" class="font-bold text-gray-900">01-May-2018</span>
+                    <span class="text-gray-500 font-bold uppercase text-[9.5px] block">Date Joined:</span>
+                    <span id="cardJoinDate" class="font-bold text-gray-900 text-[11px]">01-May-2018</span>
                   </div>
                   <div class="text-right">
-                    <span class="text-gray-500 font-bold uppercase text-[10px] block">Validity:</span>
-                    <span id="cardValidUntil" class="font-bold text-emerald-700">Permanent (Life Trustee)</span>
+                    <span class="text-gray-500 font-bold uppercase text-[9.5px] block">Validity:</span>
+                    <span id="cardValidUntil" class="font-bold text-emerald-700 text-[11px]">Permanent (Life Trustee)</span>
                   </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1.5">
+                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1">
                   <div>
-                    <span class="text-gray-500 font-bold uppercase text-[10px] block">Blood Group:</span>
-                    <span id="cardBloodGroup" class="font-black text-red-600">O+</span>
+                    <span class="text-gray-500 font-bold uppercase text-[9.5px] block">Blood Group:</span>
+                    <span id="cardBloodGroup" class="font-black text-red-600 text-xs">O+</span>
                   </div>
                   <div class="text-right">
-                    <span class="text-gray-500 font-bold uppercase text-[10px] block">Card Status:</span>
-                    <span id="cardStatusBadge" class="font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">ACTIVE</span>
+                    <span class="text-gray-500 font-bold uppercase text-[9.5px] block">Card Status:</span>
+                    <span id="cardStatusBadge" class="font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md text-[10px]">ACTIVE</span>
                   </div>
                 </div>
                 <div class="flex justify-between items-center">
-                  <span class="text-gray-500 font-bold uppercase text-[10px]">Emergency Helpdesk:</span>
-                  <span id="cardEmergency" class="font-bold text-gray-900 font-mono">09450858514</span>
+                  <span class="text-gray-500 font-bold uppercase text-[9.5px]">Emergency Helpdesk:</span>
+                  <span id="cardEmergency" class="font-bold text-gray-900 font-mono text-[11px]">09450858514</span>
                 </div>
               </div>
 
               <!-- Verification & Official Seal Section -->
-              <div class="pt-2 border-t border-stone-200 flex items-center justify-between gap-3">
-                <!-- Live Dynamic QR Code -->
+              <div class="pt-2 border-t border-stone-200 flex items-center justify-between gap-3 shrink-0">
+                <!-- Live Dynamic High-Res QR Code -->
                 <div class="flex flex-col items-center">
-                  <div id="cardQrCodeWrapper" class="bg-white p-1.5 rounded-xl border border-stone-300 shadow-sm"></div>
-                  <span class="text-[9px] font-bold text-gray-500 mt-1">Scan for Live Status</span>
+                  <div id="cardQrCodeWrapper" class="bg-white p-1 rounded-xl border border-stone-300 shadow-sm flex items-center justify-center"></div>
+                  <span class="text-[8.5px] font-bold text-stone-600 mt-1 uppercase tracking-tight">Scan to Verify</span>
                 </div>
 
                 <!-- Official Signatory & Trust Seal -->
@@ -3743,7 +3764,7 @@
                     <p id="cardSignatoryName" class="font-serif italic font-bold text-xs sm:text-sm text-slate-900 tracking-wide">Authorized Trust Signatory</p>
                   </div>
                   <p class="text-[9px] text-gray-500 font-semibold leading-tight">Sarva Samarpit Sewa Sansthan<br>Trust Executive Council</p>
-                  <div class="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-2.5 py-1 rounded-full text-[9px] font-extrabold text-amber-900 mt-1 shadow-2xs">
+                  <div class="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-300 px-2.5 py-1 rounded-full text-[9px] font-extrabold text-amber-900 mt-0.5 shadow-2xs">
                     <svg class="w-3.5 h-3.5 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                     </svg>
@@ -3755,68 +3776,89 @@
             </div>
 
             <!-- Bottom Security Strip -->
-            <div class="bg-neutral-900 text-white text-[10px] py-2 px-4 flex justify-between items-center font-medium border-t border-neutral-800">
+            <div class="bg-neutral-900 text-white text-[10px] py-2 px-4 flex justify-between items-center font-medium border-t border-neutral-800 shrink-0">
               <span>www.sarvasamarpitsewasansthan.com</span>
               <span class="text-amber-400 font-bold">Helpline: 09450858514</span>
             </div>
 
           </div>
 
-          <!-- 2. BACK VIEW OF ID CARD (Terms, Rules & Headquarters Address) -->
-          <div id="corporateIdCardBackContainer" class="hidden w-full max-w-md min-h-[620px] bg-white rounded-3xl shadow-2xl border-2 border-stone-300 relative overflow-hidden flex flex-col justify-between text-gray-900">
+          <!-- 2. BACK VIEW OF ID CARD (Terms, Rules & Headquarters Address - 100% IDENTICAL SIZE) -->
+          <div id="corporateIdCardBackContainer" class="hidden w-full max-w-[420px] min-h-[720px] h-[720px] bg-white rounded-3xl shadow-2xl border-2 border-stone-300 relative overflow-hidden flex flex-col justify-between text-gray-900 mx-auto">
             
             <!-- Lanyard Slot -->
-            <div class="w-full flex justify-center pt-3 pb-1 bg-stone-100 border-b border-stone-200">
+            <div class="w-full flex justify-center pt-3 pb-1 bg-stone-100 border-b border-stone-200 shrink-0">
               <div class="w-20 h-2 bg-stone-300 rounded-full"></div>
             </div>
 
-            <!-- Header -->
-            <div class="bg-gradient-to-r from-slate-950 via-neutral-900 to-orange-950 text-white px-5 py-3.5 border-b-4 border-orange-500 flex items-center justify-between">
-              <div>
-                <p class="font-extrabold text-xs text-amber-400 font-hindi">सर्व समर्पित सेवा संस्थान</p>
-                <p class="font-black text-xs text-white">TERMS &amp; REVERSE GUIDELINES</p>
+            <!-- Card Header Banner with Official NGO Logo & Centered Credentials (EXACT SAME AS FRONT) -->
+            <div class="bg-gradient-to-r from-slate-950 via-neutral-900 to-orange-950 text-white px-5 pt-3.5 pb-2.5 relative border-b-4 border-orange-500 text-center flex flex-col items-center justify-center shrink-0">
+              <!-- Official Centered Logo -->
+              <div class="w-12 h-12 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md mb-1.5 flex items-center justify-center shrink-0">
+                <img src="logo.jpg" alt="Official NGO Logo" class="w-full h-full object-cover rounded-full" />
               </div>
-              <span class="text-[9px] bg-white/10 px-2 py-0.5 rounded text-amber-200 font-mono">OFFICIAL PASS</span>
+              <!-- Centered Tagline & Name -->
+              <p class="text-[9.5px] text-amber-300 font-bold uppercase tracking-widest font-hindi leading-tight">॥ मानव सेवा ही माधव सेवा ॥</p>
+              <p class="font-black text-sm text-amber-400 tracking-wide font-hindi mt-0.5 leading-snug">सर्व समर्पित सेवा संस्थान</p>
+              <h3 class="font-extrabold text-xs sm:text-[13px] text-white tracking-wider leading-tight mt-0.5">SARVA SAMARPIT SEWA SANSTHAN</h3>
+              <p class="text-[8.5px] text-stone-300 font-medium mt-1 leading-tight">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP - 211005</p>
             </div>
 
-            <!-- Body Terms -->
-            <div class="p-6 space-y-4 text-xs">
-              <div class="space-y-2 text-stone-700 text-[11px] leading-relaxed">
-                <p class="font-bold text-stone-900 uppercase tracking-wide text-xs">Important Instructions &amp; Conditions:</p>
-                <ol class="list-decimal pl-4 space-y-1.5">
-                  <li>This Digital Identity Card is the official property of <strong>Sarva Samarpit Sewa Sansthan</strong> (Reg. UP/2018/0192847).</li>
-                  <li>Issued strictly for identification during authorized Seva initiatives at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj and allied camps.</li>
-                  <li>This card is non-transferable. The holder must carry it at all times during voluntary service.</li>
-                  <li>Unauthorized reproduction, forging or transfer is strictly prohibited and subject to legal prosecution.</li>
-                  <li>If found, please immediately return to the Head Office or call the 24/7 Sansthan Helpline.</li>
+            <!-- Body: Terms, Regulatory Guidelines & Headquarters Address -->
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2.5 text-xs">
+              
+              <div class="space-y-2">
+                <div class="flex items-center justify-between border-b border-stone-200 pb-1.5">
+                  <span class="text-[11px] font-black text-stone-900 uppercase tracking-wide">TERMS &amp; REGULATORY GUIDELINES</span>
+                  <span class="text-[9px] bg-amber-100 text-amber-900 border border-amber-300 px-2 py-0.5 rounded font-mono font-bold">OFFICIAL PASS</span>
+                </div>
+                <ol class="list-decimal pl-4 space-y-1.5 text-stone-700 text-[11px] leading-relaxed">
+                  <li>This Identity Credential is the official property of <strong>Sarva Samarpit Sewa Sansthan</strong> (Trust Reg. UP/2018/0192847).</li>
+                  <li>Issued strictly for identification during authorized Seva initiatives at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj and designated field camps.</li>
+                  <li>This card is strictly non-transferable. The holder must carry and present it during all voluntary services and field deployments.</li>
+                  <li>Unauthorized reproduction, forging, alteration or transfer is strictly prohibited and subject to legal prosecution under the Indian Penal Code.</li>
+                  <li>If found or lost, please return immediately to the Sansthan Head Office or call the 24/7 Sansthan Helpline.</li>
                 </ol>
               </div>
 
-              <!-- Official Address Box -->
-              <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 space-y-1 text-[11px]">
-                <p class="font-black text-stone-900 text-xs">Headquarters &amp; Seva Camp:</p>
-                <p class="text-stone-700">Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, Uttar Pradesh &ndash; 211005</p>
-                <p class="text-stone-600 font-mono pt-1">
+              <!-- Official Address & Statutory Box -->
+              <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-[11px]">
+                <p class="font-black text-stone-900 text-xs flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  Headquarters &amp; Seva Camp:
+                </p>
+                <p class="text-stone-700 leading-snug">Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, Uttar Pradesh &ndash; 211005</p>
+                <p class="text-stone-600 font-mono pt-0.5">
                   Helpline: <strong>09450858514</strong> &bull; WhatsApp: <strong>+91 94508 58514</strong>
                 </p>
-                <p class="text-stone-500 font-mono text-[10px]">PAN: AABTS8923R &bull; 80G Certified Trust</p>
+                <p class="text-stone-500 font-mono text-[10px]">PAN: AABTS8923R &bull; 80G Tax Exemption &bull; 12A Certified</p>
               </div>
 
-              <!-- Trust Signatory -->
-              <div class="pt-3 border-t border-stone-200 flex items-center justify-between">
-                <div>
-                  <p class="font-bold text-stone-900 text-xs">Pt. Harsh Tiwari</p>
-                  <p class="text-[10px] text-stone-500">Chief Managing Trustee</p>
-                </div>
-                <div class="text-right">
-                  <p class="font-bold text-stone-900 text-xs">Amit Prakhar Pandey</p>
-                  <p class="text-[10px] text-stone-500">Secretary &amp; Administrator</p>
+              <!-- Dual Trust Signatories with Verified Badges -->
+              <div class="pt-2 border-t border-stone-200">
+                <div class="grid grid-cols-2 gap-3 text-center">
+                  <div class="p-2 bg-stone-50 rounded-lg border border-stone-200">
+                    <p class="font-serif italic font-bold text-xs text-stone-900">Pt. Harsh Tiwari</p>
+                    <p class="text-[9.5px] text-stone-500 font-semibold">Chief Managing Trustee</p>
+                    <span class="text-[8px] text-emerald-700 font-mono font-bold">DIGITALLY VERIFIED</span>
+                  </div>
+                  <div class="p-2 bg-stone-50 rounded-lg border border-stone-200">
+                    <p class="font-serif italic font-bold text-xs text-stone-900">Amit Prakhar Pandey</p>
+                    <p class="text-[9.5px] text-stone-500 font-semibold">Secretary &amp; Administrator</p>
+                    <span class="text-[8px] text-emerald-700 font-mono font-bold">DIGITALLY VERIFIED</span>
+                  </div>
                 </div>
               </div>
+
+              <!-- Statutory Protection Line -->
+              <div class="text-[9px] text-stone-500 text-center italic">
+                This identity credential is protected under Indian Trusts Act 1882. Valid across all UP State &amp; National Seva programs.
+              </div>
+
             </div>
 
             <!-- Bottom Security Strip -->
-            <div class="bg-neutral-900 text-white text-[10px] py-2 px-4 flex justify-between items-center font-medium border-t border-neutral-800">
+            <div class="bg-neutral-900 text-white text-[10px] py-2 px-4 flex justify-between items-center font-medium border-t border-neutral-800 shrink-0">
               <span>www.sarvasamarpitsewasansthan.com</span>
               <span class="text-amber-400 font-bold">Helpline: 09450858514</span>
             </div>
@@ -4069,6 +4111,42 @@
               </p>
             </div>
 
+          </div>
+
+          <!-- LIVE SEVA EVENT GPS SHARING CARD -->
+          <div class="bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50 p-5 rounded-3xl border border-orange-200/90 shadow-sm space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-orange-600 text-white flex items-center justify-center shadow-md shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-black text-sm text-stone-900">Live Seva GPS Dispatch</h4>
+                    <span id="liveGpsStatusPill" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-200 text-stone-700">Offline</span>
+                  </div>
+                  <p class="text-[11px] text-stone-600 mt-0.5">Share live location with Sansthan Admin during active seva camps &amp; programs.</p>
+                </div>
+              </div>
+              <button id="toggleLiveLocationBtn" type="button" onclick="toggleVolunteerLiveLocation()" class="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center gap-2 shrink-0 cursor-pointer">
+                <span class="w-2 h-2 rounded-full bg-white"></span>
+                <span id="toggleLiveLocationBtnText">Share Live Location</span>
+              </button>
+            </div>
+            <div id="liveLocationInfoBox" class="hidden bg-white/90 backdrop-blur-xs p-3.5 rounded-2xl border border-orange-200 text-xs space-y-1.5 shadow-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                  Live Coordinates Broadcasting to Admin
+                </span>
+                <span id="liveLocationAccuracy" class="text-[10px] font-mono text-stone-500">Accuracy: ±0m</span>
+              </div>
+              <p class="font-mono text-stone-800 text-[11px] flex items-center gap-3">
+                <span>Lat: <strong id="liveLocationLat" class="text-orange-700">--</strong></span>
+                <span>Lng: <strong id="liveLocationLng" class="text-orange-700">--</strong></span>
+                <span>Camp: <strong class="text-stone-900">Prayagraj Seva Mission</strong></span>
+              </p>
+            </div>
           </div>
 
         </div>
@@ -4478,6 +4556,11 @@
         <button onclick="switchAdminSubTab('security')" id="subtab-btn-security" class="px-4 py-2 rounded-xl bg-stone-100 text-gray-700 hover:bg-stone-200 shrink-0 flex items-center gap-1.5 cursor-pointer">
           <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
           <span>Security Audit Trail</span>
+        </button>
+        <button onclick="switchAdminSubTab('gps')" id="subtab-btn-gps" class="px-4 py-2 rounded-xl bg-stone-100 text-gray-700 hover:bg-stone-200 shrink-0 flex items-center gap-1.5 cursor-pointer">
+          <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+          <svg class="w-4 h-4 text-orange-600 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Live Seva GPS Radar (फील्ड ट्रैकिंग)</span>
         </button>
       </div>
 
@@ -5213,6 +5296,93 @@
               <p class="text-[11px] text-stone-400 mt-1">Real-time authentication, public QR verification, and statutory ledger events are recorded here securely.</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- SUBTAB 5: LIVE SEVA GPS RADAR & FIELD DISPATCH -->
+      <div id="admin-subtab-gps" class="hidden space-y-6">
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-md space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-200 pb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2.5 py-0.5 bg-orange-600 text-white font-black text-[10px] rounded-full uppercase tracking-wider">Real-Time Dispatch</span>
+                <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold text-[10px] rounded-full flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> OpenStreetMap Satellite / Radar Active
+                </span>
+              </div>
+              <h3 class="text-xl font-extrabold text-stone-900">Seva Event Field Radar • Live Member &amp; Volunteer GPS Tracking</h3>
+              <p class="text-xs text-stone-500">Real-time geolocation monitoring of on-duty trustees, coordinators, and volunteers deployed across Prayagraj Seva camps.</p>
+            </div>
+            
+            <div class="flex items-center gap-2 self-start sm:self-auto">
+              <button onclick="refreshAdminGpsRadar()" class="px-3.5 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold rounded-xl border border-stone-300 transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer">
+                <svg class="w-3.5 h-3.5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                <span>Refresh Radar</span>
+              </button>
+              <button onclick="centerAdminGpsMap()" class="px-3.5 py-2 bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 shadow-xs cursor-pointer">
+                <svg class="w-3.5 h-3.5 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Focus Prayagraj Camp</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Event Status Banner -->
+          <div class="bg-gradient-to-r from-stone-900 to-orange-950 text-white p-4 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-orange-600 flex items-center justify-center font-black text-lg text-white shrink-0">
+                📍
+              </div>
+              <div>
+                <p class="font-extrabold text-xs text-amber-300 uppercase tracking-wider">Active Sansthan Program / Seva Deployment</p>
+                <h4 class="font-black text-sm text-white">Shree Bade Hanuman Ji Sangam Akhand Bhandara &amp; Seva Camp 2026</h4>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="bg-white/10 px-3 py-1.5 rounded-xl border border-white/20 text-stone-200">
+                HQ: <strong class="text-white">Sangam Marg, Prayagraj</strong>
+              </span>
+              <span id="adminActiveVolunteersCountBadge" class="bg-emerald-500/20 px-3 py-1.5 rounded-xl border border-emerald-500/40 text-emerald-300 font-bold">
+                ● Active Sevadars
+              </span>
+            </div>
+          </div>
+
+          <!-- Interactive Radar Map Container -->
+          <div class="relative w-full h-[450px] rounded-2xl overflow-hidden border-2 border-stone-300 shadow-inner">
+            <div id="adminLiveGpsMap" class="w-full h-full z-10 bg-stone-100"></div>
+            <!-- Radar Overlay Indicator -->
+            <div class="absolute top-3 right-3 z-20 bg-stone-900/90 backdrop-blur-md text-white text-[11px] px-3 py-1.5 rounded-xl border border-stone-700 shadow flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>Live GPS Dispatch Active</span>
+            </div>
+          </div>
+
+          <!-- Active Sevadars On-Ground Table -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between">
+              <h4 class="text-sm font-black text-stone-900 uppercase tracking-wide">Deed &amp; Seva Roster • Live Field Units</h4>
+              <span class="text-xs text-stone-500">Auto-updates every 5 seconds</span>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-stone-200">
+              <table class="w-full text-left text-xs text-stone-700">
+                <thead class="bg-stone-50 text-[10px] font-black uppercase text-stone-500 tracking-wider border-b border-stone-200">
+                  <tr>
+                    <th class="p-3">Sevadar Name &amp; ID</th>
+                    <th class="p-3">Role &amp; Deployment</th>
+                    <th class="p-3">Coordinates (Lat, Lng)</th>
+                    <th class="p-3">Accuracy</th>
+                    <th class="p-3">Duty Status</th>
+                    <th class="p-3">Last Signal</th>
+                    <th class="p-3 text-right">Field Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminLiveGpsTableBody" class="divide-y divide-stone-100 font-medium">
+                  <!-- Populated by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -6144,6 +6314,56 @@
           <span>✓ Trust Reg: UP/2018/0192847</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- iOS PWA INSTALL GUIDE MODAL (SAFARI "ADD TO HOME SCREEN") -->
+  <div id="pwaIosGuideModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-end sm:items-center justify-center p-3 sm:p-6" onclick="if(event.target === this) closePwaIosGuide()">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-stone-200 space-y-5 animate-in fade-in zoom-in duration-200">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-100">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-orange-600 text-white flex items-center justify-center font-black shadow-md overflow-hidden">
+            <img src="logo.jpg" alt="Sansthan App" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-extrabold text-stone-900 text-base">Install Official Sansthan App</h3>
+            <p class="text-[11px] text-stone-500 font-medium">Add to your Home Screen for instant access</p>
+          </div>
+        </div>
+        <button onclick="closePwaIosGuide()" class="text-stone-400 hover:text-stone-700 p-2 rounded-xl hover:bg-stone-100 transition-colors cursor-pointer" aria-label="Close">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-xs text-stone-700">
+        <div class="p-3 bg-orange-50 rounded-2xl border border-orange-200/80 flex items-start gap-3">
+          <span class="w-6 h-6 rounded-xl bg-orange-600 text-white font-black text-xs flex items-center justify-center shrink-0">1</span>
+          <div>
+            <p class="font-bold text-stone-900">Tap the Safari Share Button</p>
+            <p class="text-[11px] text-stone-600 mt-0.5">At the bottom of your Safari browser bar, tap the Share icon (<svg class="w-3.5 h-3.5 inline text-blue-600 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg> square with an arrow pointing up).</p>
+          </div>
+        </div>
+
+        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex items-start gap-3">
+          <span class="w-6 h-6 rounded-xl bg-stone-800 text-white font-black text-xs flex items-center justify-center shrink-0">2</span>
+          <div>
+            <p class="font-bold text-stone-900">Select "Add to Home Screen"</p>
+            <p class="text-[11px] text-stone-600 mt-0.5">Scroll down the share sheet and tap <strong class="text-stone-900">"Add to Home Screen"</strong> (होम स्क्रीन पर जोड़ें).</p>
+          </div>
+        </div>
+
+        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex items-start gap-3">
+          <span class="w-6 h-6 rounded-xl bg-emerald-600 text-white font-black text-xs flex items-center justify-center shrink-0">3</span>
+          <div>
+            <p class="font-bold text-stone-900">Tap "Add" in Top-Right</p>
+            <p class="text-[11px] text-stone-600 mt-0.5">Confirm by tapping <strong class="text-stone-900">"Add"</strong>. The official app icon will appear instantly on your home screen.</p>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="closePwaIosGuide()" class="w-full py-3 bg-stone-900 hover:bg-black text-white font-bold text-xs rounded-xl shadow transition-all cursor-pointer">
+        Got it! (समझ गया)
+      </button>
     </div>
   </div>
 
@@ -7824,8 +8044,8 @@
         bloodGroup: "B+",
         status: "ACTIVE",
         emergency: "09450858514",
-        photo: "images/social-1.jpg",
-        fallbackPhoto: "images/social-1.jpg",
+        photo: "images/secretary.jpg",
+        fallbackPhoto: "images/secretary.jpg",
         signatory: "Authorized Trust Signatory"
       },
       santosh_mishra: {
@@ -7841,8 +8061,8 @@
         bloodGroup: "A+",
         status: "ACTIVE",
         emergency: "08303064007",
-        photo: "images/social-2.jpg",
-        fallbackPhoto: "images/social-2.jpg",
+        photo: "images/patron.jpg",
+        fallbackPhoto: "images/patron.jpg",
         signatory: "Authorized Trust Signatory"
       },
       ravindra_tiwari: {
@@ -7858,8 +8078,8 @@
         bloodGroup: "AB+",
         status: "ACTIVE",
         emergency: "09450858514",
-        photo: "images/education-2.jpg",
-        fallbackPhoto: "images/education-2.jpg",
+        photo: "images/education_head.jpg",
+        fallbackPhoto: "images/education_head.jpg",
         signatory: "Authorized Trust Signatory"
       },
       atharva_upadhyay: {
@@ -7875,8 +8095,8 @@
         bloodGroup: "O+",
         status: "ACTIVE",
         emergency: "08303064007",
-        photo: "images/social-3.jpg",
-        fallbackPhoto: "images/social-3.jpg",
+        photo: "images/legal.jpg",
+        fallbackPhoto: "images/legal.jpg",
         signatory: "Authorized Trust Signatory"
       }
     };
@@ -8049,21 +8269,24 @@
       const wrapper = document.getElementById('cardQrCodeWrapper');
       if (!wrapper) return;
       wrapper.innerHTML = '';
-      const verifyUrl = 'https://sarvasamarpitsewasansthan.com/?verify=' + encodeURIComponent(ngoId);
+      const cleanId = (ngoId || activeCardId || 'SSSS-VOL-PENDING').trim();
+      const verifyUrl = 'https://sarvasamarpitsewasansthan.com/?verify=' + encodeURIComponent(cleanId);
       if (typeof QRCode !== 'undefined') {
         try {
           new QRCode(wrapper, {
             text: verifyUrl,
-            width: 82,
-            height: 82,
-            colorDark: '#0f172a',
+            width: 96,
+            height: 96,
+            colorDark: '#0a0a0a',
             colorLight: '#ffffff',
-            correctLevel: QRCode.CorrectLevel.M
+            correctLevel: QRCode.CorrectLevel.H
           });
           return;
-        } catch (e) {}
+        } catch (e) {
+          console.warn('QRCode JS failed, falling back to dynamic image QR', e);
+        }
       }
-      wrapper.innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=82x82&data=' + encodeURIComponent(verifyUrl) + '" alt="QR" class="w-[82px] h-[82px] rounded-lg" />';
+      wrapper.innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=96x96&margin=1&data=' + encodeURIComponent(verifyUrl) + '" alt="QR Verification" class="w-[96px] h-[96px] rounded-lg" />';
     }
 
     let currentIdStudioMode = 'roster';
@@ -8271,7 +8494,7 @@
      * Guarantees 100% correct Unicode/Devanagari text sequence, ligatures,
      * crisp QR code, logo, borders, and photos across Android, iOS, Windows & Mac.
      */
-    async function rasterizeCardElement(el, targetScale = 3.5) {
+    async function rasterizeCardElement(el, targetScale = 4.0) {
       if (!el) throw new Error('Card element not found');
 
       // 1. Wait for document fonts (Noto Sans Devanagari, Poppins, Inter) to be 100% ready
@@ -8293,7 +8516,7 @@
       }));
 
       // 3. Primary Engine: htmlToImage (uses browser native SVG foreignObject)
-      // This uses the browser's own HarfBuzz layout engine, preserving 100% of Devanagari/Hindi ligatures & glyph ordering
+      // Preserves 100% of Devanagari/Hindi ligatures & glyph ordering with 4K clarity
       if (window.htmlToImage && typeof window.htmlToImage.toPng === 'function') {
         try {
           const dataUrl = await window.htmlToImage.toPng(el, {
@@ -8310,7 +8533,7 @@
         }
       }
 
-      // 4. Secondary Fallback Engine: html2canvas with foreignObjectRendering and high DPI
+      // 4. Secondary Fallback Engine: html2canvas with foreignObjectRendering and 4K DPI
       if (typeof html2canvas !== 'undefined') {
         try {
           const canvas = await html2canvas(el, {
@@ -8350,24 +8573,24 @@
       if (!el) return;
 
       if (btn) btn.disabled = true;
-      if (btnText) btnText.innerText = 'Rendering PNG...';
+      if (btnText) btnText.innerText = 'Rendering 4K PNG...';
       if (btnIcon) btnIcon.innerText = '⏳';
 
       try {
-        const imgDataUrl = await rasterizeCardElement(el, 3.5);
+        const imgDataUrl = await rasterizeCardElement(el, 4.0);
         const link = document.createElement('a');
         const rawName = document.getElementById('cardFullName')?.innerText || 'ID_CARD';
         const cleanName = rawName.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
         const cardId = (document.getElementById('cardNgoId')?.innerText || activeCardId || 'SSSS').trim().replace(/[^a-zA-Z0-9_-]/g, '_');
         const suffix = isBack ? '_BACK' : '_FRONT';
         
-        link.download = `SSSS_ID_${cardId}_${cleanName}${suffix}.png`;
+        link.download = `SSSS_ID_${cardId}_${cleanName}${suffix}_4K.png`;
         link.href = imgDataUrl;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
 
-        if (btnText) btnText.innerText = '✓ Downloaded!';
+        if (btnText) btnText.innerText = '✓ 4K PNG Downloaded!';
       } catch (err) {
         console.error('PNG Download Error:', err);
         alert('Could not render PNG. Opening print dialog instead.');
@@ -8379,6 +8602,8 @@
         }, 2200);
       }
     }
+
+    const downloadIdCardImage = downloadIdCardPng;
 
     async function downloadIdCardPdf() {
       const isBack = isCardFlipped;
@@ -8396,15 +8621,16 @@
 
       // UI Loading Feedback
       if (btn) btn.disabled = true;
-      if (btnText) btnText.innerText = 'Generating PDF...';
+      if (btnText) btnText.innerText = 'Generating 4K PDF...';
 
       try {
-        // High resolution rasterization: 3.5x pixel ratio gives razor-sharp 300+ DPI
-        const imgDataUrl = await rasterizeCardElement(el, 3.5);
+        // High resolution rasterization: 4.0x pixel ratio gives true 4K 300+ DPI print grade
+        const imgDataUrl = await rasterizeCardElement(el, 4.0);
 
         if (window.jspdf && window.jspdf.jsPDF) {
           const rect = el.getBoundingClientRect();
-          const cardWidthMm = 85.6; // Standard CR80 ID Card width (ISO/IEC 7810 ID-1)
+          // Standard CR80 ID Card dimensions: 54mm width, 85.6mm height
+          const cardWidthMm = 54.0;
           const cardHeightMm = parseFloat((cardWidthMm * (rect.height / rect.width)).toFixed(2));
           
           // Outer margins for clean print boundary
@@ -8419,17 +8645,18 @@
             compress: true
           });
 
-          // Embed high-DPI card image with zero text sequence distortion
+          // Embed high-DPI 4K card image with exact print sharpness
           doc.addImage(imgDataUrl, 'PNG', marginMm, marginMm, cardWidthMm, cardHeightMm, undefined, 'FAST');
 
           const rawName = document.getElementById('cardFullName')?.innerText || 'MEMBER';
           const cleanName = rawName.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
           const cardId = (document.getElementById('cardNgoId')?.innerText || activeCardId || 'SSSS').trim().replace(/[^a-zA-Z0-9_-]/g, '_');
-          const filename = `SSSS_ID_${cardId}_${cleanName}.pdf`;
+          const suffix = isBack ? '_BACK' : '_FRONT';
+          const filename = `SSSS_ID_${cardId}_${cleanName}${suffix}_4K.pdf`;
 
           doc.save(filename);
 
-          if (btnText) btnText.innerText = '✓ PDF Downloaded!';
+          if (btnText) btnText.innerText = '✓ 4K PDF Downloaded!';
         } else {
           window.print();
         }
@@ -9617,7 +9844,7 @@
     // 5. ADMIN DASHBOARD & CMS CONTROLLERS
     // ==========================================
     function switchAdminSubTab(subId) {
-      const tabs = ['volunteers', 'users', 'donations', 'cms', 'security'];
+      const tabs = ['volunteers', 'users', 'donations', 'cms', 'security', 'gps'];
       tabs.forEach(t => {
         const el = document.getElementById('admin-subtab-' + t);
         const btn = document.getElementById('subtab-btn-' + t);
@@ -9639,6 +9866,9 @@
       }
       if (subId === 'users' && typeof renderAdminGoogleUsersTable === 'function') {
         renderAdminGoogleUsersTable();
+      }
+      if (subId === 'gps' && typeof refreshAdminGpsRadar === 'function') {
+        refreshAdminGpsRadar();
       }
     }
 
@@ -10880,7 +11110,508 @@
     }
 
     // ==========================================
-    // 6. INITIALIZATION & QR CODE VERIFICATION URL
+    // 6. LIVE SEVA GPS DISPATCH & VOLUNTEER RADAR
+    // ==========================================
+    let isVolunteerLocationActive = false;
+    let volunteerWatchId = null;
+    let currentVolunteerLocation = null;
+
+    function toggleVolunteerLiveLocation() {
+      if (isVolunteerLocationActive) {
+        stopVolunteerLiveLocation();
+      } else {
+        startVolunteerLiveLocation();
+      }
+    }
+
+    function startVolunteerLiveLocation() {
+      if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser. Please use Chrome, Safari or Edge.");
+        return;
+      }
+
+      const btn = document.getElementById('toggleLiveLocationBtn');
+      const btnText = document.getElementById('toggleLiveLocationBtnText');
+      const statusPill = document.getElementById('liveGpsStatusPill');
+      const infoBox = document.getElementById('liveLocationInfoBox');
+
+      if (btnText) btnText.innerText = "Requesting GPS...";
+
+      volunteerWatchId = navigator.geolocation.watchPosition(
+        function(position) {
+          isVolunteerLocationActive = true;
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const accuracy = Math.round(position.coords.accuracy || 10);
+          currentVolunteerLocation = { lat, lng, accuracy, timestamp: Date.now() };
+
+          // Update volunteer profile card UI
+          if (btn) {
+            btn.className = "px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center gap-2 shrink-0 cursor-pointer";
+          }
+          if (btnText) btnText.innerText = "Stop Sharing Location";
+          if (statusPill) {
+            statusPill.className = "text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 flex items-center gap-1";
+            statusPill.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live On Duty';
+          }
+          if (infoBox) infoBox.classList.remove('hidden');
+
+          const latEl = document.getElementById('liveLocationLat');
+          const lngEl = document.getElementById('liveLocationLng');
+          const accEl = document.getElementById('liveLocationAccuracy');
+          if (latEl) latEl.innerText = lat.toFixed(6);
+          if (lngEl) lngEl.innerText = lng.toFixed(6);
+          if (accEl) accEl.innerText = `Accuracy: ±${accuracy}m`;
+
+          // Determine volunteer identity
+          const userObj = (window.currentMemberProfile && window.currentMemberProfile.id) 
+            ? window.currentMemberProfile 
+            : {
+                id: (window.currentUser && window.currentUser.uid) ? window.currentUser.uid : 'vol_guest_' + Date.now().toString().slice(-6),
+                name: (window.currentUser && window.currentUser.displayName) ? window.currentUser.displayName : 'Field Volunteer (Sevadar)',
+                role: 'DEDICATED VOLUNTEER (SEVADAR)',
+                phone: '09450858514'
+              };
+
+          const deploymentPayload = {
+            id: userObj.id,
+            name: userObj.name,
+            role: userObj.role || 'DEDICATED VOLUNTEER (SEVADAR)',
+            phone: userObj.phone || '09450858514',
+            lat: lat,
+            lng: lng,
+            accuracy: accuracy,
+            active: true,
+            updatedAt: new Date().toISOString(),
+            station: "Active Mobile Seva Unit"
+          };
+
+          // Save locally
+          try {
+            localStorage.setItem('ssss_my_gps_deployment', JSON.stringify(deploymentPayload));
+          } catch(e) {}
+
+          // Broadcast to Firebase Realtime Database
+          if (fbDatabase && typeof fbDatabase.ref === 'function') {
+            fbDatabase.ref('active_deployments/' + userObj.id).set(deploymentPayload).catch(e => console.warn('GPS broadcast error:', e));
+          }
+
+          // Also update admin radar if open in same session
+          if (typeof refreshAdminGpsRadar === 'function') {
+            refreshAdminGpsRadar();
+          }
+        },
+        function(error) {
+          console.warn("Geolocation watch error:", error);
+          isVolunteerLocationActive = false;
+          if (btnText) btnText.innerText = "Share Live Location";
+          if (btn) {
+            btn.className = "px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center gap-2 shrink-0 cursor-pointer";
+          }
+          if (statusPill) {
+            statusPill.className = "text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-200 text-stone-700";
+            statusPill.innerText = "Offline";
+          }
+          let errMsg = "Unable to retrieve GPS coordinates.";
+          if (error.code === error.PERMISSION_DENIED) {
+            errMsg = "Location permission denied. Please allow GPS location in your browser settings to broadcast your position during active seva programs.";
+          } else if (error.code === error.POSITION_UNAVAILABLE) {
+            errMsg = "GPS signal unavailable. Please ensure location services are enabled on your device.";
+          } else if (error.code === error.TIMEOUT) {
+            errMsg = "Location request timed out. Retrying...";
+          }
+          alert(errMsg);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 15000,
+          maximumAge: 5000
+        }
+      );
+    }
+
+    function stopVolunteerLiveLocation() {
+      if (volunteerWatchId !== null && navigator.geolocation) {
+        navigator.geolocation.clearWatch(volunteerWatchId);
+        volunteerWatchId = null;
+      }
+      isVolunteerLocationActive = false;
+
+      const btn = document.getElementById('toggleLiveLocationBtn');
+      const btnText = document.getElementById('toggleLiveLocationBtnText');
+      const statusPill = document.getElementById('liveGpsStatusPill');
+      const infoBox = document.getElementById('liveLocationInfoBox');
+
+      if (btn) {
+        btn.className = "px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center gap-2 shrink-0 cursor-pointer";
+      }
+      if (btnText) btnText.innerText = "Share Live Location";
+      if (statusPill) {
+        statusPill.className = "text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-200 text-stone-700";
+        statusPill.innerText = "Offline";
+      }
+      if (infoBox) infoBox.classList.add('hidden');
+
+      // Clear from Firebase
+      const userObj = (window.currentMemberProfile && window.currentMemberProfile.id) 
+        ? window.currentMemberProfile 
+        : ((window.currentUser && window.currentUser.uid) ? { id: window.currentUser.uid } : null);
+
+      if (userObj && userObj.id && fbDatabase && typeof fbDatabase.ref === 'function') {
+        fbDatabase.ref('active_deployments/' + userObj.id).remove().catch(e => {});
+      }
+      try {
+        localStorage.removeItem('ssss_my_gps_deployment');
+      } catch(e) {}
+
+      if (typeof refreshAdminGpsRadar === 'function') {
+        refreshAdminGpsRadar();
+      }
+    }
+
+    // ==========================================
+    // ADMIN SEVA GPS RADAR (LEAFLET / OPENSTREETMAP)
+    // ==========================================
+    let adminGpsMapInstance = null;
+    let adminGpsMarkers = {};
+
+    const defaultGroundDeployments = [
+      {
+        id: "SSSS-DIR-000001",
+        name: "Adv. Atharva Upadhyay",
+        role: "CHIEF LEGAL COUNSEL & ADVISOR",
+        phone: "09450858514",
+        lat: 25.4312,
+        lng: 81.8785,
+        accuracy: 8,
+        active: true,
+        updatedAt: "Just now",
+        station: "Sangam Ghat Pilgrim Help Desk"
+      },
+      {
+        id: "SSSS-SEC-000002",
+        name: "Amit Prakhar Pandey",
+        role: "GENERAL SECRETARY & OPERATIONS",
+        phone: "09450858514",
+        lat: 25.4335,
+        lng: 81.8798,
+        accuracy: 5,
+        active: true,
+        updatedAt: "Just now",
+        station: "Bade Hanuman Ji Bhandara Station"
+      },
+      {
+        id: "SSSS-PAT-000003",
+        name: "Santosh Mishra",
+        role: "CHIEF PATRON & TRUSTEE",
+        phone: "09450858514",
+        lat: 25.4348,
+        lng: 81.8770,
+        accuracy: 12,
+        active: true,
+        updatedAt: "1 min ago",
+        station: "Medical & Blanket Aid Unit"
+      },
+      {
+        id: "SSSS-EDU-000004",
+        name: "Ravindra Nath Tiwari",
+        role: "DIRECTOR OF FREE EDUCATION",
+        phone: "09450858514",
+        lat: 25.4380,
+        lng: 81.8690,
+        accuracy: 9,
+        active: true,
+        updatedAt: "Just now",
+        station: "Daraganj Evening Pathshala Center"
+      },
+      {
+        id: "SSSS-VOL-000108",
+        name: "Vikas K. Sharma",
+        role: "SEVADAR COORDINATOR",
+        phone: "09450858514",
+        lat: 25.4410,
+        lng: 81.8610,
+        accuracy: 14,
+        active: true,
+        updatedAt: "2 mins ago",
+        station: "Mobile Food Distribution Van"
+      }
+    ];
+
+    function initAdminGpsMap() {
+      const container = document.getElementById('adminLiveGpsMap');
+      if (!container) return;
+
+      if (adminGpsMapInstance) {
+        setTimeout(() => {
+          if (adminGpsMapInstance) adminGpsMapInstance.invalidateSize();
+        }, 150);
+        return;
+      }
+
+      if (typeof L === 'undefined') {
+        console.warn('Leaflet map library is still loading...');
+        setTimeout(initAdminGpsMap, 300);
+        return;
+      }
+
+      // Center on Prayagraj Sangam / Shree Bade Hanuman Ji Temple
+      const prayagrajCenter = [25.4335, 81.8785];
+      adminGpsMapInstance = L.map('adminLiveGpsMap', {
+        zoomControl: true,
+        scrollWheelZoom: true
+      }).setView(prayagrajCenter, 14);
+
+      // OpenStreetMap clean tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors • Sarva Samarpit Sewa Sansthan'
+      }).addTo(adminGpsMapInstance);
+
+      // Add Sansthan HQ Landmark Marker
+      const hqIcon = L.divIcon({
+        className: 'custom-hq-marker',
+        html: `
+          <div style="background-color:#ea580c;color:#fff;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px rgba(234,88,12,0.8);border:3px solid #fff;font-size:18px;">
+            🛕
+          </div>
+        `,
+        iconSize: [38, 38],
+        iconAnchor: [19, 19]
+      });
+
+      L.marker(prayagrajCenter, { icon: hqIcon })
+        .addTo(adminGpsMapInstance)
+        .bindPopup(`
+          <div style="font-family:sans-serif;font-size:12px;line-height:1.4;">
+            <strong style="color:#ea580c;font-size:13px;">॥ श्री बड़े हनुमान जी मंदिर HQ ॥</strong><br>
+            <strong>सर्व समर्पित सेवा संस्थान</strong><br>
+            Sangam Marg, Prayagraj - 211005<br>
+            <span style="display:inline-block;margin-top:4px;padding:2px 6px;background:#fef3c7;color:#92400e;border-radius:4px;font-weight:bold;font-size:10px;">HQ Central Command</span>
+          </div>
+        `);
+
+      setTimeout(() => {
+        if (adminGpsMapInstance) adminGpsMapInstance.invalidateSize();
+      }, 250);
+    }
+
+    function centerAdminGpsMap() {
+      if (adminGpsMapInstance) {
+        adminGpsMapInstance.setView([25.4335, 81.8785], 14);
+      }
+    }
+
+    function refreshAdminGpsRadar() {
+      initAdminGpsMap();
+      if (!adminGpsMapInstance) return;
+
+      let liveList = [...defaultGroundDeployments];
+
+      // Check local volunteer deployment
+      try {
+        const myDeployment = JSON.parse(localStorage.getItem('ssss_my_gps_deployment') || 'null');
+        if (myDeployment && myDeployment.active) {
+          const existingIdx = liveList.findIndex(d => d.id === myDeployment.id);
+          if (existingIdx >= 0) {
+            liveList[existingIdx] = myDeployment;
+          } else {
+            liveList.unshift(myDeployment);
+          }
+        }
+      } catch(e) {}
+
+      // Check Firebase DB
+      if (fbDatabase && typeof fbDatabase.ref === 'function') {
+        fbDatabase.ref('active_deployments').once('value').then(snapshot => {
+          const val = snapshot.val();
+          if (val && typeof val === 'object') {
+            Object.keys(val).forEach(key => {
+              const item = val[key];
+              if (item && item.active && item.lat && item.lng) {
+                const existingIdx = liveList.findIndex(d => d.id === item.id);
+                if (existingIdx >= 0) {
+                  liveList[existingIdx] = item;
+                } else {
+                  liveList.unshift(item);
+                }
+              }
+            });
+          }
+          renderGpsDeployments(liveList);
+        }).catch(() => {
+          renderGpsDeployments(liveList);
+        });
+      } else {
+        renderGpsDeployments(liveList);
+      }
+    }
+
+    function renderGpsDeployments(list) {
+      if (!adminGpsMapInstance) return;
+      const tableBody = document.getElementById('adminLiveGpsTableBody');
+      const countBadge = document.getElementById('adminActiveVolunteersCountBadge');
+
+      if (countBadge) {
+        countBadge.innerHTML = `● <strong>${list.length}</strong> Active Sevadars On Field`;
+      }
+
+      // Clear existing volunteer markers
+      Object.keys(adminGpsMarkers).forEach(k => {
+        if (adminGpsMarkers[k]) adminGpsMapInstance.removeLayer(adminGpsMarkers[k]);
+      });
+      adminGpsMarkers = {};
+
+      if (tableBody) {
+        tableBody.innerHTML = '';
+      }
+
+      list.forEach((item, index) => {
+        const markerIcon = L.divIcon({
+          className: 'custom-volunteer-radar-marker',
+          html: `
+            <div style="position:relative;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">
+              <span style="position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(16,185,129,0.35);animation:ping 1.5s cubic-bezier(0,0,0.2,1) infinite;"></span>
+              <div style="background:#059669;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.25);border:2px solid #fff;font-size:12px;font-weight:900;">
+                ${index + 1}
+              </div>
+            </div>
+          `,
+          iconSize: [32, 32],
+          iconAnchor: [16, 16]
+        });
+
+        const marker = L.marker([item.lat, item.lng], { icon: markerIcon }).addTo(adminGpsMapInstance);
+        marker.bindPopup(`
+          <div style="font-family:sans-serif;font-size:12px;line-height:1.45;min-width:180px;">
+            <strong style="color:#059669;font-size:13px;">${item.name}</strong><br>
+            <span style="font-size:11px;color:#555;font-weight:600;">${item.role}</span><br>
+            <span style="font-size:10px;color:#777;font-family:monospace;">ID: ${item.id}</span><br>
+            <div style="margin-top:6px;padding:4px 8px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;font-size:10px;">
+              📍 Lat: ${Number(item.lat).toFixed(5)}, Lng: ${Number(item.lng).toFixed(5)}<br>
+              🎯 Accuracy: ±${item.accuracy || 10}m<br>
+              📞 <a href="tel:${item.phone || '09450858514'}" style="color:#ea580c;font-weight:bold;">${item.phone || '09450858514'}</a>
+            </div>
+          </div>
+        `);
+        adminGpsMarkers[item.id] = marker;
+
+        if (tableBody) {
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-stone-50 transition-colors';
+          tr.innerHTML = `
+            <td class="p-3">
+              <div class="font-bold text-stone-900">${item.name}</div>
+              <div class="text-[10px] font-mono text-stone-500">${item.id}</div>
+            </td>
+            <td class="p-3">
+              <span class="inline-block px-2 py-0.5 bg-orange-100 text-orange-800 text-[10px] font-bold rounded-md">${item.role}</span>
+              <div class="text-[10px] text-stone-500 mt-0.5">${item.station || 'Prayagraj Seva Mission'}</div>
+            </td>
+            <td class="p-3 font-mono text-[11px] text-stone-700">
+              ${Number(item.lat).toFixed(5)}, ${Number(item.lng).toFixed(5)}
+            </td>
+            <td class="p-3">
+              <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-full">±${item.accuracy || 10}m</span>
+            </td>
+            <td class="p-3">
+              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Active
+              </span>
+            </td>
+            <td class="p-3 text-[11px] text-stone-500 font-mono">
+              ${item.updatedAt ? (typeof item.updatedAt === 'string' && item.updatedAt.includes('T') ? new Date(item.updatedAt).toLocaleTimeString() : item.updatedAt) : 'Active'}
+            </td>
+            <td class="p-3 text-right">
+              <button onclick="focusMemberOnMap(${item.lat}, ${item.lng}, '${item.id}')" class="px-2.5 py-1 bg-stone-900 hover:bg-orange-600 text-white text-[10px] font-bold rounded-lg transition-all shadow-2xs cursor-pointer">
+                Focus 📍
+              </button>
+            </td>
+          `;
+          tableBody.appendChild(tr);
+        }
+      });
+    }
+
+    function focusMemberOnMap(lat, lng, memberId) {
+      if (!adminGpsMapInstance) return;
+      adminGpsMapInstance.setView([lat, lng], 16);
+      if (adminGpsMarkers[memberId]) {
+        adminGpsMarkers[memberId].openPopup();
+      }
+    }
+
+    function initRealtimeGpsListener() {
+      if (fbDatabase && typeof fbDatabase.ref === 'function') {
+        fbDatabase.ref('active_deployments').on('value', () => {
+          const gpsSubTab = document.getElementById('admin-subtab-gps');
+          if (gpsSubTab && !gpsSubTab.classList.contains('hidden')) {
+            refreshAdminGpsRadar();
+          }
+        });
+      }
+    }
+
+    // ==========================================
+    // 7. PWA INSTALL / ADD TO HOME SCREEN ENGINE
+    // ==========================================
+    let deferredPwaPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent standard browser infobar
+      e.preventDefault();
+      // Store event for button click trigger
+      deferredPwaPrompt = e;
+      console.log('Sansthan PWA install prompt ready');
+    });
+
+    window.addEventListener('appinstalled', () => {
+      deferredPwaPrompt = null;
+      console.log('Sansthan Official App installed successfully');
+      alert('Thank you! Sarva Samarpit Sewa Sansthan App is now installed on your device.');
+    });
+
+    function triggerPwaInstall() {
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      if (isStandalone) {
+        alert('Official Sansthan App is already installed and active on your device!');
+        return;
+      }
+
+      if (deferredPwaPrompt) {
+        deferredPwaPrompt.prompt();
+        deferredPwaPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted Sansthan App installation');
+          } else {
+            console.log('User dismissed install prompt');
+          }
+          deferredPwaPrompt = null;
+        });
+      } else {
+        // Check for iOS Safari
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIos) {
+          const modal = document.getElementById('pwaIosGuideModal');
+          if (modal) {
+            modal.classList.remove('hidden');
+          } else {
+            alert('To install on iPhone/iPad: Tap the Share button at the bottom of Safari, then select "Add to Home Screen".');
+          }
+        } else {
+          // Android / Chrome without prompt or already triggered
+          alert('To install the Official App: Tap your browser menu (⋮ in the top-right) and select "Install app" or "Add to Home screen" (ऐप इंस्टॉल करें).');
+        }
+      }
+    }
+
+    function closePwaIosGuide() {
+      const modal = document.getElementById('pwaIosGuideModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // ==========================================
+    // 8. INITIALIZATION & QR CODE VERIFICATION URL
     // ==========================================
     // INITIALIZATION DISPATCHER
     // ==========================================
@@ -10944,6 +11675,11 @@
       }
       if (typeof initRealtimeVolunteerListener === 'function') {
         initRealtimeVolunteerListener();
+      }
+
+      // Initialize Realtime GPS Volunteer Dispatch listener
+      if (typeof initRealtimeGpsListener === 'function') {
+        initRealtimeGpsListener();
       }
 
       // Handle Google Sign-In redirect result (for mobile browsers where popup was blocked)
