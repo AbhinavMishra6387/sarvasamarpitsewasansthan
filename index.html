@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sarva Samarpit Sewa Sansthan | Official 80G Registered NGO Prayagraj</title>
   <meta name="description" content="Official platform of Sarva Samarpit Sewa Sansthan - 80G & 12A registered public charitable trust at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj. 24x7 Annapurna Bhandara, free education pathshala, and social welfare." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
   
   <!-- Google Search Console Verification Meta Tag -->
   <meta name="google-site-verification" content="google7b2c3b40b4391077" />
@@ -7811,6 +7813,14 @@
         }, 600);
       } catch (err) {
         console.warn('Firebase Google Auth error:', err);
+        if (err.code === 'auth/popup-blocked') {
+          try {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            provider.setCustomParameters({ prompt: 'select_account' });
+            await fbAuth.signInWithRedirect(provider);
+            return;
+          } catch(e) {}
+        }
         let msg = 'Google Sign-In was cancelled or failed. Please try again.';
         if (err.code === 'auth/popup-closed-by-user') {
           msg = 'Google login window was closed by the user.';
@@ -9447,6 +9457,17 @@
       }
       if (typeof initRealtimeUsersListener === 'function') {
         initRealtimeUsersListener();
+      }
+
+      // Handle Google Sign-In redirect result (for mobile browsers where popup was blocked)
+      if (fbAuth && typeof fbAuth.getRedirectResult === 'function') {
+        fbAuth.getRedirectResult().then(res => {
+          if (res && res.user) {
+            applyUserSession(res.user);
+          }
+        }).catch(err => {
+          console.warn('Google redirect result error:', err);
+        });
       }
 
       // Listen to Firebase Auth state changes
