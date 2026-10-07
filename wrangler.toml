@@ -1,3 +1,8 @@
 name = "sarvasamarpitsewasansthan"
 main = "worker.js"
 compatibility_date = "2024-09-23"
+
+routes = [
+  { pattern = "sarvasamarpitsewasansthan.com/*", zone_name = "sarvasamarpitsewasansthan.com" },
+  { pattern = "www.sarvasamarpitsewasansthan.com/*", zone_name = "sarvasamarpitsewasansthan.com" }
+]

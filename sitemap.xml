@@ -7,13 +7,13 @@
   <!-- 1. Homepage & Live Mahaprasad Langar -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://sarvasamarpitsewasansthan.com/logo.jpg</image:loc>
       <image:title>Sarva Samarpit Sewa Sansthan Official Logo</image:title>
-      <image:caption>Registered Public Charitable Trust at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj</image:caption>
+      <image:caption>Registered Public Charitable Trust at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-1.jpg</image:loc>
@@ -23,7 +23,7 @@
     <video:video>
       <video:thumbnail_loc>https://sarvasamarpitsewasansthan.com/images/anna-1.jpg</video:thumbnail_loc>
       <video:title>Daily Annapurna Langar Seva Prayagraj Sangam</video:title>
-      <video:description>Real ground coverage of 24x7 Mahaprasad Langar Bhandara by Sarva Samarpit Sewa Sansthan at Sangam Marg, Prayagraj.</video:description>
+      <video:description>Real ground coverage of 24x7 Mahaprasad Langar Bhandara by Sarva Samarpit Sewa Sansthan at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj.</video:description>
       <video:content_loc>https://sarvasamarpitsewasansthan.com/videos/blanket-relief.mp4</video:content_loc>
       <video:publication_date>2026-01-15T10:00:00+05:30</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -33,7 +33,7 @@
   <!-- 2. About Trust & Sacred History -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/about</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -45,7 +45,7 @@
   <!-- 3. Free Education (Primary Mission) -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/free-education</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -61,7 +61,7 @@
   <!-- 4. Annapurna Langar (Food Distribution) -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/food-distribution</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -77,7 +77,7 @@
   <!-- 5. Social Welfare & Blanket Relief -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/social-welfare</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -101,7 +101,7 @@
   <!-- 6. Religious Activities -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/religious-activities</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -109,7 +109,7 @@
   <!-- 7. Volunteer Portal -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/volunteer</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -117,7 +117,7 @@
   <!-- 8. Digital ID Card & Membership -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/membership</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -125,7 +125,7 @@
   <!-- 9. Donate & Section 80G Tax Exemption -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/donate</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
@@ -133,7 +133,7 @@
   <!-- 10. Photo & Video Gallery -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/gallery</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -141,7 +141,7 @@
   <!-- 11. Contact & Sangam Marg Location -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/contact</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -149,7 +149,7 @@
   <!-- 12. Privacy Policy -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/privacy-policy</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
@@ -157,7 +157,7 @@
   <!-- 13. Terms & Conditions -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/terms-and-conditions</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
@@ -165,7 +165,7 @@
   <!-- 14. Refund Policy -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/refund-policy</loc>
-    <lastmod>2026-10-06T18:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>

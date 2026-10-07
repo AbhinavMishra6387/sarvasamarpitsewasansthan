@@ -34,6 +34,25 @@ function getMimeType(pathname) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    // 1. Enforce HTTPS Everywhere (Fixes "Not Secure" browser warning & Chrome security block)
+    const proto = request.headers.get("x-forwarded-proto") || url.protocol.replace(":", "");
+    if (proto === "http" || url.protocol === "http:") {
+      return Response.redirect(`https://${url.host}${url.pathname}${url.search}`, 301);
+    }
+
+    // 2. Canonical Domain Normalization: Redirect WWW to Apex Domain (Fixes Cloudflare 522 & consolidates Google SEO)
+    if (url.hostname.toLowerCase().startsWith("www.")) {
+      const cleanHost = url.hostname.replace(/^www\./i, "");
+      return Response.redirect(`https://${cleanHost}${url.pathname}${url.search}`, 301);
+    }
+
+    // 3. Permanent 301 Migration Redirect for Old Domain (sarva-samarpit-sewa-sansthan.in)
+    // Instantly transfers Google ranking authority, backlinks, and search traffic to the new .com domain
+    if (url.hostname.includes("sarva-samarpit-sewa-sansthan.in")) {
+      return Response.redirect(`https://sarvasamarpitsewasansthan.com${url.pathname}${url.search}`, 301);
+    }
+
     let path = '/' + url.pathname.split('/').filter(Boolean).join('/');
     if (path === "/" || path === "") {
       path = "/index.html";
@@ -66,6 +85,10 @@ export default {
           cleanHeaders.set("content-type", "text/html; charset=utf-8");
           cleanHeaders.set("access-control-allow-origin", "*");
           cleanHeaders.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
+          cleanHeaders.set("strict-transport-security", "max-age=31536000; includeSubDomains; preload");
+          cleanHeaders.set("x-content-type-options", "nosniff");
+          cleanHeaders.set("x-frame-options", "SAMEORIGIN");
+          cleanHeaders.set("referrer-policy", "strict-origin-when-cross-origin");
           return new Response(fallbackRes.body, { status: 200, headers: cleanHeaders });
         }
       }
@@ -77,10 +100,14 @@ export default {
         });
       }
 
-      // Clean headers without GitHub's restrictive sandbox CSP:
+      // Clean headers with strict security to guarantee Green Padlock & A+ SSL Rating:
       const cleanHeaders = new Headers();
       cleanHeaders.set("content-type", getMimeType(path));
       cleanHeaders.set("access-control-allow-origin", "*");
+      cleanHeaders.set("strict-transport-security", "max-age=31536000; includeSubDomains; preload");
+      cleanHeaders.set("x-content-type-options", "nosniff");
+      cleanHeaders.set("x-frame-options", "SAMEORIGIN");
+      cleanHeaders.set("referrer-policy", "strict-origin-when-cross-origin");
 
       if (path.endsWith(".xml")) {
         cleanHeaders.set("cache-control", "public, max-age=3600");
