@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Newspaper, Calendar, ExternalLink } from "lucide-react";
@@ -46,7 +46,7 @@ export default function NewsPage() {
         {NEWS_ARTICLES.map((article) => (
           <div
             key={article.title}
-            className="p-8 bg-white rounded-3xl border border-gray-100 shadow-soft hover:shadow-card transition-all space-y-3"
+            className="p-8 bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all space-y-3"
           >
             <div className="flex items-center justify-between text-xs text-gray-500">
               <span className="font-bold text-ngo-orange uppercase tracking-wider">{article.source}</span>
@@ -54,7 +54,7 @@ export default function NewsPage() {
                 <Calendar className="w-3.5 h-3.5" /> {article.date}
               </span>
             </div>
-            <h3 className="font-heading font-extrabold text-xl text-gray-900 leading-snug">
+            <h3 className="font-heading font-semibold text-xl text-gray-900 leading-snug">
               {article.title}
             </h3>
             <p className="text-sm text-gray-600 leading-relaxed">

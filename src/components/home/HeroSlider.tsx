@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -80,18 +80,18 @@ export function HeroSlider() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white w-full">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ngo-orange/30 border border-ngo-orange/50 text-ngo-orange-300 text-xs sm:text-sm font-bold tracking-wide uppercase mb-4 animate-in fade-in">
-            <span className="w-2 h-2 rounded-full bg-ngo-orange animate-ping" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 border border-white/20 text-orange-200 text-xs font-medium tracking-wide mb-4">
+            <span className="w-1.5 h-1.5 rounded-xs bg-orange-400" />
             {SLIDES[current].tag}
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-tight text-white drop-shadow-md">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight leading-tight text-white">
             {SLIDES[current].title}
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-5 text-base sm:text-lg text-gray-200 leading-relaxed font-light">
+          <p className="mt-5 text-base sm:text-lg text-stone-300 leading-relaxed font-normal">
             {SLIDES[current].subtitle}
           </p>
 
@@ -99,38 +99,38 @@ export function HeroSlider() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href={SLIDES[current].ctaLink}
-              className="px-7 py-3.5 rounded-full bg-ngo-orange hover:bg-ngo-orange-600 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-ngo-orange/30 hover:shadow-glow transition-all flex items-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0"
+              className="px-5 py-2.5 rounded-md bg-orange-700 hover:bg-orange-800 text-white font-medium text-sm sm:text-base shadow-xs transition-colors flex items-center gap-2"
             >
-              <Heart className="w-5 h-5 fill-white" />
+              <Heart className="w-4 h-4 fill-white" />
               {SLIDES[current].ctaText}
             </Link>
 
             <Link
               href="/volunteer"
-              className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold text-sm sm:text-base backdrop-blur-sm transition-all flex items-center gap-2"
+              className="px-5 py-2.5 rounded-md bg-white/10 hover:bg-white/15 text-white border border-white/20 font-medium text-sm sm:text-base backdrop-blur-sm transition-colors flex items-center gap-2"
             >
               Join as Volunteer <ArrowRight className="w-4 h-4" />
             </Link>
 
             <a
               href={`tel:${ORG_DETAILS.phone}`}
-              className="hidden sm:flex items-center gap-2 text-gray-300 hover:text-ngo-orange-400 text-sm font-semibold ml-2 transition-colors"
+              className="hidden sm:flex items-center gap-2 text-stone-300 hover:text-orange-400 text-sm font-medium ml-2 transition-colors"
             >
-              <Phone className="w-4 h-4 text-ngo-orange" />
+              <Phone className="w-4 h-4 text-orange-400" />
               <span>{ORG_DETAILS.phone} (24x7)</span>
             </a>
           </div>
 
           {/* Trust Badges */}
-          <div className="mt-10 pt-6 border-t border-gray-700/60 flex flex-wrap items-center gap-6 text-xs text-gray-300">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <div className="mt-10 pt-6 border-t border-stone-800 flex flex-wrap items-center gap-6 text-xs text-stone-300">
+            <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-400" /> 100% Tax Deductible (80G)
             </span>
             <span className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-ngo-orange" /> Open 24 Hours
+              <Clock className="w-4 h-4 text-orange-400" /> Open 24 Hours
             </span>
             <span className="flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-ngo-orange" /> Shree Bade Hanuman Ji Temple, Sangam Marg
+              <MapPin className="w-4 h-4 text-orange-400" /> Shree Bade Hanuman Ji Temple, Sangam Marg
             </span>
           </div>
         </div>
@@ -139,18 +139,18 @@ export function HeroSlider() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-black/40 hover:bg-ngo-orange text-white backdrop-blur-sm transition-all hidden md:block"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-md bg-black/50 hover:bg-black/70 text-white border border-white/10 backdrop-blur-sm transition-colors hidden md:block"
         aria-label="Previous Slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-5 h-5" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-black/40 hover:bg-ngo-orange text-white backdrop-blur-sm transition-all hidden md:block"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-md bg-black/50 hover:bg-black/70 text-white border border-white/10 backdrop-blur-sm transition-colors hidden md:block"
         aria-label="Next Slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-5 h-5" />
       </button>
 
       {/* Indicators */}
@@ -159,8 +159,8 @@ export function HeroSlider() {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-2 rounded-full transition-all ${
-              idx === current ? "w-8 bg-ngo-orange" : "w-2 bg-white/50 hover:bg-white/80"
+            className={`h-1.5 rounded-xs transition-all ${
+              idx === current ? "w-6 bg-orange-500" : "w-2 bg-white/40 hover:bg-white/70"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />

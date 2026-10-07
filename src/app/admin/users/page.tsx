@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Users, Shield, Plus, CheckCircle2, Lock } from "lucide-react";
@@ -70,7 +70,7 @@ export default function AdminUsersPage() {
     <div className="space-y-6 max-w-6xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-heading font-black text-gray-900">
+          <h1 className="text-2xl font-heading font-bold text-gray-900">
             Administrator Roles &amp; Permissions (RBAC)
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -80,13 +80,13 @@ export default function AdminUsersPage() {
 
         <button
           onClick={() => setShowModal(true)}
-          className="px-4 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
+          className="px-4 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" /> Add System User
         </button>
       </div>
 
-      <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-soft">
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs">
         <table className="w-full text-left text-xs">
           <thead className="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
             <tr>
@@ -103,12 +103,12 @@ export default function AdminUsersPage() {
                 <td className="p-4 font-bold text-gray-900">{u.name}</td>
                 <td className="p-4 font-mono text-gray-600">{u.email}</td>
                 <td className="p-4">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-100 text-ngo-orange-800">
+                  <span className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-orange-100 text-ngo-orange-800">
                     {u.role}
                   </span>
                 </td>
                 <td className="p-4">
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                  <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800">
                     Active
                   </span>
                 </td>
@@ -120,20 +120,20 @@ export default function AdminUsersPage() {
       </div>
 
       {/* Permissions Matrix */}
-      <div className="bg-white p-6 rounded-3xl border border-gray-200 space-y-4 shadow-soft">
+      <div className="bg-white p-6 rounded-lg border border-gray-200 space-y-4 shadow-xs">
         <h4 className="font-heading font-bold text-base text-gray-900">
           Role-Based Access Control (RBAC) Permission Matrix
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-          <div className="p-4 bg-orange-50/70 rounded-2xl border border-orange-200 space-y-1.5">
+          <div className="p-4 bg-orange-50/70 rounded-lg border border-orange-200 space-y-1.5">
             <strong className="text-gray-900 block font-bold">SUPER_ADMIN</strong>
             <p className="text-gray-600">Unrestricted full control over financial ledgers, audit logs, user management, and real-time CMS settings.</p>
           </div>
-          <div className="p-4 bg-gray-50 rounded-2xl border border-gray-200 space-y-1.5">
+          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 space-y-1.5">
             <strong className="text-gray-900 block font-bold">DONATION_MANAGER</strong>
             <p className="text-gray-600">Access to payment gateways, transaction verification, 80G tax receipt generation, and refund administration.</p>
           </div>
-          <div className="p-4 bg-gray-50 rounded-2xl border border-gray-200 space-y-1.5">
+          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 space-y-1.5">
             <strong className="text-gray-900 block font-bold">VOLUNTEER_MANAGER</strong>
             <p className="text-gray-600">Authorized to review applicant dossiers, verify photo IDs, and approve or reject sevadar applications.</p>
           </div>
@@ -142,7 +142,7 @@ export default function AdminUsersPage() {
 
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl space-y-4">
+          <div className="w-full max-w-md bg-white rounded-lg p-6 sm:p-8 shadow-sm space-y-4">
             <h3 className="font-heading font-bold text-lg text-gray-900">Add Administrator Account</h3>
             <form onSubmit={handleCreateUser} className="space-y-4 text-xs">
               <div>
@@ -153,7 +153,7 @@ export default function AdminUsersPage() {
                   placeholder="e.g. Seva Coordinator"
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -165,7 +165,7 @@ export default function AdminUsersPage() {
                   placeholder="e.g. coordinator@sarvasamarpit.org"
                   value={newEmail}
                   onChange={(e) => setNewEmail(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -174,7 +174,7 @@ export default function AdminUsersPage() {
                 <select
                   value={newRole}
                   onChange={(e) => setNewRole(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange bg-white"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange bg-white"
                 >
                   {ROLES.map((r) => (
                     <option key={r} value={r}>
@@ -185,13 +185,13 @@ export default function AdminUsersPage() {
               </div>
 
               <div className="flex gap-2 pt-2">
-                <button type="submit" className="flex-1 py-2.5 bg-ngo-orange text-white rounded-xl font-bold">
+                <button type="submit" className="flex-1 py-2.5 bg-ngo-orange text-white rounded-md font-bold">
                   Create User
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowModal(false)}
-                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl font-bold"
+                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-md font-bold"
                 >
                   Cancel
                 </button>

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Eye, Target, Compass, Sparkles, CheckCircle2 } from "lucide-react";
@@ -19,13 +19,13 @@ export default function VisionPage() {
       />
 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-12">
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-card">
+        <div className="bg-white p-8 sm:p-10 rounded-lg border border-gray-100 shadow-xs">
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 rounded-2xl bg-orange-100 text-ngo-orange">
+            <div className="p-3 rounded-lg bg-orange-100 text-ngo-orange">
               <Eye className="w-8 h-8" />
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-ngo-dark">
+              <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-ngo-dark">
                 The Vision
               </h2>
               <p className="text-xs text-ngo-orange font-bold uppercase tracking-wider">
@@ -60,7 +60,7 @@ export default function VisionPage() {
         <div className="text-center">
           <Link
             href="/about/mission"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ngo-orange text-white font-bold text-sm shadow-md hover:bg-ngo-orange-600 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-ngo-orange text-white font-bold text-sm shadow-md hover:bg-ngo-orange-600 transition-colors"
           >
             <span>Proceed to Our Mission &rarr;</span>
           </Link>

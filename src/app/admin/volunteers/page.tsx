@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { CheckCircle2, XCircle, Search, Mail, Phone, Users, Shield } from "lucide-react";
@@ -59,7 +59,7 @@ export default function AdminVolunteersPage() {
     <div className="space-y-6 max-w-7xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-heading font-black text-gray-900">
+          <h1 className="text-2xl font-heading font-bold text-gray-900">
             Volunteer Sevadar Pipeline
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -70,13 +70,13 @@ export default function AdminVolunteersPage() {
         <a
           href="/api/admin/export?type=volunteers"
           download
-          className="px-4 py-2 bg-ngo-dark hover:bg-black text-white font-bold text-xs rounded-xl self-start sm:self-auto"
+          className="px-4 py-2 bg-ngo-dark hover:bg-black text-white font-bold text-xs rounded-md self-start sm:self-auto"
         >
           Download Volunteers CSV
         </a>
       </div>
 
-      <div className="bg-white p-4 rounded-2xl border border-gray-200 flex items-center gap-3">
+      <div className="bg-white p-4 rounded-lg border border-gray-200 flex items-center gap-3">
         <Search className="w-4 h-4 text-gray-400" />
         <input
           type="text"
@@ -87,7 +87,7 @@ export default function AdminVolunteersPage() {
         />
       </div>
 
-      <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-soft">
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead className="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
@@ -128,7 +128,7 @@ export default function AdminVolunteersPage() {
                   </td>
                   <td className="p-4">
                     <span
-                      className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${
+                      className={`px-2.5 py-1 rounded-md text-[10px] font-bold ${
                         v.status === "APPROVED"
                           ? "bg-emerald-100 text-emerald-800"
                           : v.status === "REJECTED"

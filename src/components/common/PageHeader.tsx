@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 
@@ -39,11 +39,11 @@ export function PageHeader({ title, subtitle, breadcrumbs, badge }: PageHeaderPr
 
         {/* Title & Subtitle */}
         {badge && (
-          <span className="inline-block bg-ngo-orange/20 border border-ngo-orange text-ngo-orange-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+          <span className="inline-block bg-ngo-orange/20 border border-ngo-orange text-ngo-orange-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md mb-3">
             {badge}
           </span>
         )}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-semibold text-white tracking-tight leading-tight">
           {title}
         </h1>
         {subtitle && (

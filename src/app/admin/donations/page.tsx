@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Download, Search, Printer, RotateCcw, ShieldCheck, ArrowDownToLine, AlertCircle } from "lucide-react";
@@ -105,7 +105,7 @@ export default function AdminDonationsPage() {
     <div className="space-y-6 max-w-7xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-heading font-black text-gray-900">
+          <h1 className="text-2xl font-heading font-bold text-gray-900">
             Donations Ledger &amp; Refund Management
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -116,14 +116,14 @@ export default function AdminDonationsPage() {
         <a
           href="/api/admin/export?type=donations"
           download
-          className="px-4 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-all self-start sm:self-auto"
+          className="px-4 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-all self-start sm:self-auto"
         >
           <ArrowDownToLine className="w-4 h-4" /> Download Complete CSV Ledger
         </a>
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-gray-200 flex flex-col sm:flex-row items-center gap-3">
+      <div className="bg-white p-4 rounded-lg border border-gray-200 flex flex-col sm:flex-row items-center gap-3">
         <div className="flex items-center gap-2 flex-1 w-full">
           <Search className="w-4 h-4 text-gray-400 shrink-0" />
           <input
@@ -140,7 +140,7 @@ export default function AdminDonationsPage() {
           <select
             value={selectedStatus}
             onChange={(e) => setSelectedStatus(e.target.value)}
-            className="text-xs font-semibold px-3 py-1.5 border rounded-xl bg-white focus:outline-none focus:border-ngo-orange"
+            className="text-xs font-semibold px-3 py-1.5 border rounded-md bg-white focus:outline-none focus:border-ngo-orange"
           >
             <option value="ALL">All Transactions</option>
             <option value="SUCCESS">Success Only</option>
@@ -151,7 +151,7 @@ export default function AdminDonationsPage() {
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-soft">
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead className="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
@@ -181,7 +181,7 @@ export default function AdminDonationsPage() {
                   <td className="p-4 text-gray-700 max-w-xs truncate">
                     {d.campaignTitle}
                   </td>
-                  <td className="p-4 font-heading font-black text-gray-900 text-sm">
+                  <td className="p-4 font-heading font-bold text-gray-900 text-sm">
                     ₹ {d.amount.toLocaleString("en-IN")}
                   </td>
                   <td className="p-4 font-semibold text-gray-600">
@@ -189,7 +189,7 @@ export default function AdminDonationsPage() {
                   </td>
                   <td className="p-4">
                     <span
-                      className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${
+                      className={`px-2.5 py-1 rounded-md text-[10px] font-bold ${
                         d.paymentStatus === "SUCCESS"
                           ? "bg-emerald-100 text-emerald-800"
                           : d.paymentStatus === "REFUNDED"
@@ -232,7 +232,7 @@ export default function AdminDonationsPage() {
       {/* Refund Modal */}
       {refundModal && (
         <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl space-y-4">
+          <div className="w-full max-w-md bg-white rounded-lg p-6 sm:p-8 shadow-sm space-y-4">
             <div className="flex items-center gap-2 text-red-600 font-bold text-base">
               <AlertCircle className="w-5 h-5" />
               <span>Confirm Donation Refund</span>
@@ -252,7 +252,7 @@ export default function AdminDonationsPage() {
                   placeholder="e.g. Duplicate debit or accidental extra donation requested by donor"
                   value={refundReason}
                   onChange={(e) => setRefundReason(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-red-500"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-red-500"
                 />
               </div>
 
@@ -260,14 +260,14 @@ export default function AdminDonationsPage() {
                 <button
                   type="submit"
                   disabled={refundLoading}
-                  className="flex-1 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold transition-all disabled:opacity-50"
+                  className="flex-1 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-md font-bold transition-all disabled:opacity-50"
                 >
                   {refundLoading ? "Processing Reversal..." : "Confirm & Reverse"}
                 </button>
                 <button
                   type="button"
                   onClick={() => setRefundModal(null)}
-                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl font-bold"
+                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-md font-bold"
                 >
                   Cancel
                 </button>

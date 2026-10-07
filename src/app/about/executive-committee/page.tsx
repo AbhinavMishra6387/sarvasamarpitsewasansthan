@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Users, Award, ShieldCheck } from "lucide-react";
 
@@ -49,16 +49,16 @@ export default function ExecutiveCommitteePage() {
           {COMMITTEE.map((member) => (
             <div
               key={member.name}
-              className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
+              className="bg-white p-6 sm:p-8 rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-3 py-1 rounded-md">
                     {member.dept}
                   </span>
                   <ShieldCheck className="w-4 h-4 text-emerald-500" />
                 </div>
-                <h3 className="font-heading font-black text-xl text-gray-900 mt-2">
+                <h3 className="font-heading font-bold text-xl text-gray-900 mt-2">
                   {member.name}
                 </h3>
                 <p className="text-xs text-ngo-orange-700 font-bold mb-3">{member.position}</p>

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Play, Video } from "lucide-react";
 
@@ -43,7 +43,7 @@ export default function VideoGalleryPage() {
           {VIDEOS.map((v) => (
             <div
               key={v.title}
-              className="bg-white rounded-3xl border border-gray-100 shadow-soft overflow-hidden flex flex-col"
+              className="bg-white rounded-lg border border-gray-100 shadow-xs overflow-hidden flex flex-col"
             >
               <div className="relative aspect-video bg-black">
                 <iframe
@@ -57,7 +57,7 @@ export default function VideoGalleryPage() {
 
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-2 py-0.5 rounded-md">
                     {v.category}
                   </span>
                   <h3 className="font-heading font-bold text-base text-gray-900 mt-2">

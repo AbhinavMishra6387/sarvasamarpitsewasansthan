@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Activity, Database, Server, Download, ShieldCheck, CheckCircle2, Clock } from "lucide-react";
@@ -34,7 +34,7 @@ export default function SystemHealthPage() {
     <div className="space-y-6 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-heading font-black text-gray-900">
+          <h1 className="text-2xl font-heading font-bold text-gray-900">
             System Health &amp; Automated Backups
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -45,51 +45,51 @@ export default function SystemHealthPage() {
         <button
           onClick={downloadBackup}
           disabled={downloading}
-          className="px-5 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
+          className="px-5 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
         >
           <Download className="w-4 h-4" /> Download Complete JSON Backup
         </button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-soft">
+        <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs text-gray-500 font-bold">Today&apos;s Visitors</span>
             <Activity className="w-4 h-4 text-emerald-500" />
           </div>
-          <p className="text-2xl font-heading font-black text-gray-900 mt-2">1,842</p>
+          <p className="text-2xl font-heading font-bold text-gray-900 mt-2">1,842</p>
           <span className="text-[11px] text-emerald-600 font-semibold">&uarr; +14% vs yesterday</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-soft">
+        <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs text-gray-500 font-bold">Database Status</span>
             <Database className="w-4 h-4 text-emerald-500" />
           </div>
-          <p className="text-lg font-heading font-extrabold text-emerald-600 mt-2">Connected</p>
+          <p className="text-lg font-heading font-semibold text-emerald-600 mt-2">Connected</p>
           <span className="text-[11px] text-gray-400">PostgreSQL / Neon Active</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-soft">
+        <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs text-gray-500 font-bold">API Response Time</span>
             <Clock className="w-4 h-4 text-ngo-orange" />
           </div>
-          <p className="text-2xl font-heading font-black text-gray-900 mt-2">24 ms</p>
+          <p className="text-2xl font-heading font-bold text-gray-900 mt-2">24 ms</p>
           <span className="text-[11px] text-emerald-600 font-semibold">Sub-second latency</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-soft">
+        <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs text-gray-500 font-bold">Uptime Record</span>
             <Server className="w-4 h-4 text-ngo-orange" />
           </div>
-          <p className="text-2xl font-heading font-black text-gray-900 mt-2">99.98%</p>
+          <p className="text-2xl font-heading font-bold text-gray-900 mt-2">99.98%</p>
           <span className="text-[11px] text-gray-400">Akhand 24/7 Service</span>
         </div>
       </div>
 
-      <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-soft space-y-6">
+      <div className="bg-white p-8 rounded-lg border border-gray-200 shadow-xs space-y-6">
         <h3 className="font-heading font-bold text-base text-gray-900 border-b pb-2">
           Security &amp; Disaster Recovery Protocols
         </h3>

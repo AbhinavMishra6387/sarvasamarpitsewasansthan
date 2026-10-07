@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { DonationForm } from "@/components/donation/DonationForm";
 import { ShieldCheck, Heart, Sparkles, Building2, Phone, HelpCircle } from "lucide-react";
@@ -29,15 +29,15 @@ export default function DonatePage({ searchParams }: { searchParams: { cause?: s
           {/* Sidebar Information & Bank Details */}
           <div className="lg:col-span-5 space-y-6">
             {/* 80G Information Card */}
-            <div className="bg-orange-50/80 p-6 rounded-3xl border border-orange-200 space-y-4">
-              <div className="flex items-center gap-2.5 text-ngo-orange-800 font-extrabold text-base">
+            <div className="bg-orange-50/80 p-6 rounded-lg border border-orange-200 space-y-4">
+              <div className="flex items-center gap-2.5 text-ngo-orange-800 font-semibold text-base">
                 <ShieldCheck className="w-5 h-5 text-ngo-orange" />
                 <span>Income Tax Exemption Benefits</span>
               </div>
               <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                 All donations to <strong>Sarva Samarpit Sewa Sansthan</strong> are eligible for a <strong>50% deduction</strong> from taxable income under Section 80G of the Income Tax Act, 1961.
               </p>
-              <div className="bg-white p-3.5 rounded-xl border border-orange-200 text-xs space-y-1 text-gray-600">
+              <div className="bg-white p-3.5 rounded-md border border-orange-200 text-xs space-y-1 text-gray-600">
                 <p><strong>Trust Reg No:</strong> {ORG_DETAILS.registrationNo}</p>
                 <p><strong>80G Unique Reg No:</strong> {ORG_DETAILS.section80G}</p>
                 <p><strong>Trust PAN:</strong> {ORG_DETAILS.panNumber}</p>
@@ -45,15 +45,15 @@ export default function DonatePage({ searchParams }: { searchParams: { cause?: s
             </div>
 
             {/* Direct Bank Account Card */}
-            <div className="bg-white p-6 rounded-3xl border border-gray-200 shadow-soft space-y-4">
-              <div className="flex items-center gap-2.5 text-gray-900 font-extrabold text-base">
+            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-xs space-y-4">
+              <div className="flex items-center gap-2.5 text-gray-900 font-semibold text-base">
                 <Building2 className="w-5 h-5 text-ngo-orange" />
                 <span>Direct Bank Transfer (NEFT / RTGS / IMPS)</span>
               </div>
               <p className="text-xs text-gray-500">
                 You can transfer funds directly into our verified State Bank of India account:
               </p>
-              <div className="bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-2 text-xs font-mono text-gray-800">
+              <div className="bg-gray-50 p-4 rounded-md border border-gray-200 space-y-2 text-xs font-mono text-gray-800">
                 <div className="flex justify-between border-b pb-1">
                   <span className="text-gray-500">Account Name:</span>
                   <span className="font-bold">{ORG_DETAILS.bankDetails.accountName}</span>
@@ -78,7 +78,7 @@ export default function DonatePage({ searchParams }: { searchParams: { cause?: s
             </div>
 
             {/* Need Help Card */}
-            <div className="bg-ngo-dark-900 text-white p-6 rounded-3xl border-t-4 border-ngo-orange space-y-3">
+            <div className="bg-ngo-dark-900 text-white p-6 rounded-lg border-t-4 border-ngo-orange space-y-3">
               <h4 className="font-heading font-bold text-base flex items-center gap-2">
                 <Phone className="w-4 h-4 text-ngo-orange" /> Need Assistance with Your Donation?
               </h4>
@@ -88,7 +88,7 @@ export default function DonatePage({ searchParams }: { searchParams: { cause?: s
               <div className="pt-2">
                 <a
                   href={`tel:${ORG_DETAILS.phone}`}
-                  className="inline-block px-4 py-2 bg-ngo-orange hover:bg-ngo-orange-600 text-white rounded-xl text-xs font-bold transition-all shadow-sm"
+                  className="inline-block px-4 py-2 bg-ngo-orange hover:bg-ngo-orange-600 text-white rounded-md text-xs font-bold transition-all shadow-sm"
                 >
                   Call Helpline: {ORG_DETAILS.phone}
                 </a>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -23,9 +23,9 @@ export default function MembershipRenewPage() {
       />
 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-12">
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-card space-y-6">
+        <div className="bg-white p-8 sm:p-10 rounded-lg border border-gray-200 shadow-xs space-y-6">
           <div className="space-y-2">
-            <h3 className="font-heading font-extrabold text-2xl text-gray-900">
+            <h3 className="font-heading font-semibold text-2xl text-gray-900">
               Renew Your Active Membership
             </h3>
             <p className="text-xs text-gray-500">
@@ -43,7 +43,7 @@ export default function MembershipRenewPage() {
                 placeholder="e.g. SSSS-ANN-00452"
                 value={membershipId}
                 onChange={(e) => setMembershipId(e.target.value.toUpperCase())}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange font-mono uppercase font-bold"
+                className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange font-mono uppercase font-bold"
               />
             </div>
 
@@ -54,7 +54,7 @@ export default function MembershipRenewPage() {
               <select
                 value={renewalType}
                 onChange={(e) => setRenewalType(e.target.value as any)}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange bg-white font-semibold"
+                className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange bg-white font-semibold"
               >
                 <option value="ANNUAL">Annual Renewal (₹ 1,100 / 1 Year)</option>
                 <option value="LIFE">Upgrade to Life Patron (₹ 21,000 / Lifetime)</option>

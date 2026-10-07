@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { dbStore } from "@/lib/db-storage";
@@ -26,15 +26,15 @@ export default async function BlogsPage() {
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="bg-white rounded-3xl border border-gray-100 shadow-soft hover:shadow-card transition-all overflow-hidden flex flex-col group"
+              className="bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all overflow-hidden flex flex-col group"
             >
               <div className="relative h-56 overflow-hidden bg-gray-100">
                 <img
                   src={blog.coverImage}
                   alt={blog.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-transition-colors duration-200 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-ngo-orange text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-ngo-orange text-xs font-bold px-3 py-1 rounded-md shadow-sm">
                   {blog.category}
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default async function BlogsPage() {
                     </span>
                   </div>
 
-                  <h3 className="font-heading font-extrabold text-base sm:text-lg text-gray-900 line-clamp-2 group-hover:text-ngo-orange transition-colors">
+                  <h3 className="font-heading font-semibold text-base sm:text-lg text-gray-900 line-clamp-2 group-hover:text-ngo-orange transition-colors">
                     {blog.title}
                   </h3>
 

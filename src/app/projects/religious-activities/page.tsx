@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { DonationForm } from "@/components/donation/DonationForm";
 import { Sparkles, MapPin, CheckCircle2 } from "lucide-react";
@@ -21,7 +21,7 @@ export default function ReligiousActivitiesPage() {
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 space-y-6">
-            <div className="rounded-3xl overflow-hidden shadow-card border-4 border-white">
+            <div className="rounded-lg overflow-hidden shadow-xs border-4 border-white">
               <img
                 src="https://images.unsplash.com/photo-1609137144822-261ef4216839?auto=format&fit=crop&q=80&w=1200"
                 alt="Shree Bade Hanuman Ji Temple Sangam Seva"
@@ -30,7 +30,7 @@ export default function ReligiousActivitiesPage() {
             </div>
 
             <div className="prose text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-ngo-dark">
+              <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-ngo-dark">
                 The Heritage of Bandh Wale Hanuman Ji
               </h2>
               <p>
@@ -40,7 +40,7 @@ export default function ReligiousActivitiesPage() {
                 The volunteers of <em>Sarva Samarpit Sewa Sansthan</em> provide round-the-clock support at the temple premises:
               </p>
 
-              <div className="bg-orange-50/60 p-6 rounded-2xl border border-orange-100 space-y-3">
+              <div className="bg-orange-50/60 p-6 rounded-lg border border-orange-100 space-y-3">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-ngo-orange shrink-0 mt-0.5" />
                   <div>

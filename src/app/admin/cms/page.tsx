@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Save, CheckCircle2, Sliders, Bell, Globe, MapPin, Phone, MessageSquare, Layout } from "lucide-react";
@@ -36,7 +36,7 @@ export default function AdminCmsPage() {
     <div className="space-y-6 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-heading font-black text-gray-900">
+          <h1 className="text-2xl font-heading font-bold text-gray-900">
             Content Management System (CMS)
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -46,14 +46,14 @@ export default function AdminCmsPage() {
 
         <button
           onClick={handleSave}
-          className="px-5 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
+          className="px-5 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
         >
           <Save className="w-4 h-4" /> Save CMS Changes
         </button>
       </div>
 
       {saved && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-2xl flex items-center gap-2">
+        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-lg flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-emerald-600" />
           <span>All CMS content updated and synchronized across all frontend components!</span>
         </div>
@@ -93,7 +93,7 @@ export default function AdminCmsPage() {
         </button>
       </div>
 
-      <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-soft">
+      <div className="bg-white p-8 rounded-lg border border-gray-200 shadow-xs">
         {activeTab === "general" && (
           <div className="space-y-5">
             <h3 className="font-heading font-bold text-base text-gray-900 border-b pb-2">
@@ -107,7 +107,7 @@ export default function AdminCmsPage() {
                   type="text"
                   value={cmsData.logoText}
                   onChange={(e) => setCmsData({ ...cmsData, logoText: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -117,7 +117,7 @@ export default function AdminCmsPage() {
                   type="text"
                   value={cmsData.phone}
                   onChange={(e) => setCmsData({ ...cmsData, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -127,7 +127,7 @@ export default function AdminCmsPage() {
                   type="text"
                   value={cmsData.whatsapp}
                   onChange={(e) => setCmsData({ ...cmsData, whatsapp: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -137,7 +137,7 @@ export default function AdminCmsPage() {
                   type="email"
                   value={cmsData.email}
                   onChange={(e) => setCmsData({ ...cmsData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -147,7 +147,7 @@ export default function AdminCmsPage() {
                   type="text"
                   value={cmsData.headOffice}
                   onChange={(e) => setCmsData({ ...cmsData, headOffice: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -157,7 +157,7 @@ export default function AdminCmsPage() {
                   type="text"
                   value={cmsData.googleMapEmbed}
                   onChange={(e) => setCmsData({ ...cmsData, googleMapEmbed: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange font-mono"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange font-mono"
                 />
               </div>
             </div>
@@ -178,11 +178,11 @@ export default function AdminCmsPage() {
                 rows={2}
                 value={cmsData.noticeTickerText}
                 onChange={(e) => setCmsData({ ...cmsData, noticeTickerText: e.target.value })}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
 
-            <div className="p-5 bg-orange-50/60 rounded-2xl border border-orange-200 space-y-4">
+            <div className="p-5 bg-orange-50/60 rounded-lg border border-orange-200 space-y-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-heading font-bold text-sm text-gray-900">
@@ -207,7 +207,7 @@ export default function AdminCmsPage() {
                   type="text"
                   value={cmsData.popupTitle}
                   onChange={(e) => setCmsData({ ...cmsData, popupTitle: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm bg-white focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm bg-white focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -217,7 +217,7 @@ export default function AdminCmsPage() {
                   rows={2}
                   value={cmsData.popupMessage}
                   onChange={(e) => setCmsData({ ...cmsData, popupMessage: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm bg-white focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm bg-white focus:outline-none focus:border-ngo-orange"
                 />
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function AdminCmsPage() {
                 rows={3}
                 value={cmsData.footerText}
                 onChange={(e) => setCmsData({ ...cmsData, footerText: e.target.value })}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
 
@@ -246,7 +246,7 @@ export default function AdminCmsPage() {
                 <input
                   type="text"
                   defaultValue={ORG_DETAILS.socialMedia.facebook}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
               <div>
@@ -254,7 +254,7 @@ export default function AdminCmsPage() {
                 <input
                   type="text"
                   defaultValue={ORG_DETAILS.socialMedia.youtube}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
               <div>
@@ -262,7 +262,7 @@ export default function AdminCmsPage() {
                 <input
                   type="text"
                   defaultValue={ORG_DETAILS.socialMedia.instagram}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
               <div>
@@ -270,7 +270,7 @@ export default function AdminCmsPage() {
                 <input
                   type="text"
                   defaultValue={ORG_DETAILS.googleBusinessUrl}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
                 />
               </div>
             </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -81,11 +81,11 @@ export default function VolunteerPage() {
 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-12">
         {successResult ? (
-          <div className="bg-white p-8 sm:p-12 rounded-3xl border border-gray-200 shadow-card text-center space-y-6">
-            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+          <div className="bg-white p-8 sm:p-12 rounded-lg border border-gray-200 shadow-xs text-center space-y-6">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900">
               Welcome, Sevadar {successResult.fullName}!
             </h2>
             <p className="text-sm text-gray-600 max-w-lg mx-auto">
@@ -96,7 +96,7 @@ export default function VolunteerPage() {
             <div className="pt-4">
               <button
                 onClick={() => setSuccessResult(null)}
-                className="px-6 py-2.5 rounded-xl bg-ngo-orange text-white text-xs font-bold shadow hover:bg-ngo-orange-600 transition-colors"
+                className="px-6 py-2.5 rounded-md bg-ngo-orange text-white text-xs font-bold shadow hover:bg-ngo-orange-600 transition-colors"
               >
                 Register Another Volunteer
               </button>
@@ -105,7 +105,7 @@ export default function VolunteerPage() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Form */}
-            <div className="lg:col-span-8 bg-white p-8 rounded-3xl border border-gray-100 shadow-card">
+            <div className="lg:col-span-8 bg-white p-8 rounded-lg border border-gray-100 shadow-xs">
               <div className="mb-6">
                 <span className="text-xs font-bold text-ngo-orange uppercase tracking-wider block mb-1">
                   Volunteer Application Form
@@ -134,7 +134,7 @@ export default function VolunteerPage() {
                       placeholder="e.g. Ramesh Chandra"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
                     />
                   </div>
 
@@ -148,7 +148,7 @@ export default function VolunteerPage() {
                       placeholder="10-digit mobile number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
                     />
                   </div>
 
@@ -162,7 +162,7 @@ export default function VolunteerPage() {
                       placeholder="e.g. ramesh@gmail.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
                     />
                   </div>
 
@@ -175,7 +175,7 @@ export default function VolunteerPage() {
                       placeholder="e.g. Doctor, Student, Teacher, Engineer"
                       value={formData.occupation}
                       onChange={(e) => setFormData({ ...formData, occupation: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
                     />
                   </div>
                 </div>
@@ -190,14 +190,14 @@ export default function VolunteerPage() {
                       placeholder="Street / Locality"
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="sm:col-span-2 px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
+                      className="sm:col-span-2 px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
                     />
                     <input
                       type="text"
                       placeholder="City (Default: Prayagraj)"
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      className="px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
+                      className="px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
                     />
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export default function VolunteerPage() {
                     {AVAILABLE_SKILLS.map((skill) => (
                       <label
                         key={skill}
-                        className={`p-2.5 rounded-xl border text-xs font-medium cursor-pointer flex items-center gap-2 transition-all ${
+                        className={`p-2.5 rounded-md border text-xs font-medium cursor-pointer flex items-center gap-2 transition-all ${
                           selectedSkills.includes(skill)
                             ? "bg-orange-50 border-ngo-orange text-ngo-orange-800 font-bold"
                             : "border-gray-200 text-gray-700 hover:border-gray-300"
@@ -236,7 +236,7 @@ export default function VolunteerPage() {
                     <select
                       value={formData.availability}
                       onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm bg-white"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm bg-white"
                     >
                       <option value="Weekends">Weekends Only</option>
                       <option value="Full Time">Full Time</option>
@@ -255,7 +255,7 @@ export default function VolunteerPage() {
                       placeholder="e.g. Devotion to Hanuman Ji and desire to feed the needy"
                       value={formData.reasonToJoin}
                       onChange={(e) => setFormData({ ...formData, reasonToJoin: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 focus:outline-none focus:border-ngo-orange text-sm"
                     />
                   </div>
                 </div>
@@ -264,7 +264,7 @@ export default function VolunteerPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-3.5 px-6 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="w-full py-3.5 px-6 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     <Users className="w-4 h-4" />
                     {submitting ? "Submitting Application..." : "Submit Volunteer Registration"}
@@ -275,7 +275,7 @@ export default function VolunteerPage() {
 
             {/* Benefits Sidebar */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="bg-orange-50/70 p-6 rounded-3xl border border-orange-200 space-y-4">
+              <div className="bg-orange-50/70 p-6 rounded-lg border border-orange-200 space-y-4">
                 <h4 className="font-heading font-bold text-base text-ngo-dark">
                   Why Volunteer with Us?
                 </h4>
@@ -295,7 +295,7 @@ export default function VolunteerPage() {
                 </ul>
               </div>
 
-              <div className="bg-ngo-dark-900 text-white p-6 rounded-3xl border-t-4 border-ngo-orange space-y-2 text-xs">
+              <div className="bg-ngo-dark-900 text-white p-6 rounded-lg border-t-4 border-ngo-orange space-y-2 text-xs">
                 <p className="font-bold text-sm text-white">Questions about Volunteering?</p>
                 <p className="text-gray-300">Call our Volunteer Helpdesk at {ORG_DETAILS.phone} (24x7).</p>
               </div>

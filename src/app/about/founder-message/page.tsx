@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Heart, Quote, Phone, Award } from "lucide-react";
@@ -20,9 +20,9 @@ export default function FounderMessagePage() {
       />
 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-100 shadow-card">
+        <div className="bg-white rounded-lg p-8 sm:p-12 border border-gray-100 shadow-xs">
           <div className="flex flex-col md:flex-row gap-8 items-center md:items-start mb-8 pb-8 border-b border-gray-100">
-            <div className="w-40 h-40 rounded-3xl overflow-hidden shrink-0 border-4 border-orange-200 shadow-md">
+            <div className="w-40 h-40 rounded-lg overflow-hidden shrink-0 border-4 border-orange-200 shadow-md">
               <img
                 src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=400"
                 alt="Founder & Chief Patron"
@@ -31,7 +31,7 @@ export default function FounderMessagePage() {
             </div>
             <div>
               <Quote className="w-10 h-10 text-ngo-orange/40 mb-2" />
-              <h2 className="text-2xl sm:text-3xl font-heading font-black text-ngo-dark leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-ngo-dark leading-tight">
                 &ldquo;Service to humanity is not an obligation—it is our highest privilege.&rdquo;
               </h2>
               <div className="mt-3">
@@ -75,13 +75,13 @@ export default function FounderMessagePage() {
               <div className="flex gap-3">
                 <Link
                   href="/donate"
-                  className="px-5 py-2.5 rounded-full bg-ngo-orange text-white text-xs font-bold shadow hover:bg-ngo-orange-600 transition-colors"
+                  className="px-5 py-2.5 rounded-md bg-ngo-orange text-white text-xs font-bold shadow hover:bg-ngo-orange-600 transition-colors"
                 >
                   Join the Seva Fund
                 </Link>
                 <a
                   href={`tel:${ORG_DETAILS.phone}`}
-                  className="px-5 py-2.5 rounded-full bg-ngo-dark text-white text-xs font-bold hover:bg-black transition-colors"
+                  className="px-5 py-2.5 rounded-md bg-ngo-dark text-white text-xs font-bold hover:bg-black transition-colors"
                 >
                   Call Helpline
                 </a>

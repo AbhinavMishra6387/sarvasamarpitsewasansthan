@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -70,11 +70,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           {/* Brand Logo */}
           <div className="p-5 border-b border-ngo-dark-800 flex items-center justify-between sticky top-0 bg-ngo-dark-900 z-10">
             <Link href="/admin" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-ngo-orange flex items-center justify-center font-bold text-white shadow-md text-base">
+              <div className="w-9 h-9 rounded-md bg-ngo-orange flex items-center justify-center font-bold text-white shadow-md text-base">
                 ॐ
               </div>
               <div>
-                <h3 className="font-heading font-extrabold text-sm leading-tight text-white">
+                <h3 className="font-heading font-semibold text-sm leading-tight text-white">
                   SSSS Admin
                 </h3>
                 <span className="text-[10px] text-ngo-orange-400 font-semibold block">
@@ -100,7 +100,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileSidebar(false)}
-                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-md text-xs font-semibold transition-all ${
                     isActive
                       ? "bg-ngo-orange text-white shadow-md"
                       : "text-gray-400 hover:bg-ngo-dark-800 hover:text-white"
@@ -119,7 +119,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link
             href="/"
             target="_blank"
-            className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl text-xs text-gray-400 hover:bg-ngo-dark-800 hover:text-white transition-colors"
+            className="flex items-center gap-2.5 px-3.5 py-2 rounded-md text-xs text-gray-400 hover:bg-ngo-dark-800 hover:text-white transition-colors"
           >
             <Globe className="w-4 h-4 text-ngo-orange shrink-0" />
             <span>Open Public Website</span>
@@ -127,7 +127,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-2.5 px-3.5 py-2 rounded-xl text-xs text-red-400 hover:bg-red-950/40 transition-colors font-semibold"
+            className="w-full flex items-center gap-2.5 px-3.5 py-2 rounded-md text-xs text-red-400 hover:bg-red-950/40 transition-colors font-semibold"
           >
             <LogOut className="w-4 h-4 shrink-0" />
             <span>Sign Out Administrator</span>
@@ -153,16 +153,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div className="flex items-center gap-3 text-xs">
             <Link
               href="/admin/notifications"
-              className="p-2 text-gray-500 hover:text-ngo-orange hover:bg-gray-100 rounded-full relative"
+              className="p-2 text-gray-500 hover:text-ngo-orange hover:bg-gray-100 rounded-md relative"
               title="Notifications"
             >
               <Bell className="w-4 h-4" />
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-ngo-orange" />
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-md bg-ngo-orange" />
             </Link>
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full font-bold border border-emerald-200">
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md font-bold border border-emerald-200">
               ● Online (24 Hours Open)
             </span>
-            <div className="w-8 h-8 rounded-full bg-ngo-orange text-white flex items-center justify-center font-bold text-xs shadow-sm">
+            <div className="w-8 h-8 rounded-md bg-ngo-orange text-white flex items-center justify-center font-bold text-xs shadow-sm">
               SA
             </div>
           </div>

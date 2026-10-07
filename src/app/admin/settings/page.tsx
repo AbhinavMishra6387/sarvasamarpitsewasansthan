@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Settings, Save, CheckCircle2, AlertCircle } from "lucide-react";
@@ -53,7 +53,7 @@ export default function AdminSettingsPage() {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       <div>
-        <h1 className="text-2xl font-heading font-black text-gray-900">
+        <h1 className="text-2xl font-heading font-bold text-gray-900">
           Real-Time CMS &amp; Site Configuration
         </h1>
         <p className="text-xs text-gray-500 mt-1">
@@ -62,13 +62,13 @@ export default function AdminSettingsPage() {
       </div>
 
       {success && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-2xl flex items-center gap-2">
+        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-lg flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-600" />
           <span>Settings saved successfully! Website content updated in real-time.</span>
         </div>
       )}
 
-      <form onSubmit={handleSave} className="bg-white p-8 rounded-3xl border border-gray-200 shadow-soft space-y-6">
+      <form onSubmit={handleSave} className="bg-white p-8 rounded-lg border border-gray-200 shadow-xs space-y-6">
         <div>
           <h3 className="font-heading font-bold text-base text-gray-900 mb-4 pb-2 border-b border-gray-100">
             Top Announcement Bar / Ticker
@@ -81,7 +81,7 @@ export default function AdminSettingsPage() {
               rows={2}
               value={settings.announcementText || ""}
               onChange={(e) => setSettings({ ...settings, announcementText: e.target.value })}
-              className="w-full px-3.5 py-2.5 border rounded-xl text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
+              className="w-full px-3.5 py-2.5 border rounded-md text-xs sm:text-sm focus:outline-none focus:border-ngo-orange"
             />
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={settings.phone || ""}
                 onChange={(e) => setSettings({ ...settings, phone: e.target.value })}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
 
@@ -111,7 +111,7 @@ export default function AdminSettingsPage() {
                 type="email"
                 value={settings.email || ""}
                 onChange={(e) => setSettings({ ...settings, email: e.target.value })}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
 
@@ -123,7 +123,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={settings.headOffice || ""}
                 onChange={(e) => setSettings({ ...settings, headOffice: e.target.value })}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function AdminSettingsPage() {
                 type="number"
                 value={settings.totalMealsServed || 0}
                 onChange={(e) => setSettings({ ...settings, totalMealsServed: parseInt(e.target.value) || 0 })}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
 
@@ -154,7 +154,7 @@ export default function AdminSettingsPage() {
                 type="number"
                 value={settings.patientsTreated || 0}
                 onChange={(e) => setSettings({ ...settings, patientsTreated: parseInt(e.target.value) || 0 })}
-                className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function AdminSettingsPage() {
           <button
             type="submit"
             disabled={saving}
-            className="px-6 py-3 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center gap-2 disabled:opacity-50"
+            className="px-6 py-3 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs sm:text-sm rounded-md shadow-md transition-all flex items-center gap-2 disabled:opacity-50"
           >
             <Save className="w-4 h-4" />
             {saving ? "Publishing Real-Time Updates..." : "Save & Sync Real-Time Changes"}

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Briefcase, ShieldCheck, CheckCircle2, Phone, Mail, Award } from "lucide-react";
@@ -22,10 +22,10 @@ export default function CsrPartnershipPage() {
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-ngo-orange bg-orange-50 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-wider text-ngo-orange bg-orange-50 px-3 py-1 rounded-md">
               MCA &bull; Section 135 Compliant
             </span>
-            <h2 className="text-3xl font-heading font-extrabold text-ngo-dark leading-tight">
+            <h2 className="text-3xl font-heading font-semibold text-ngo-dark leading-tight">
               Driving Measurable Social Value for Corporations
             </h2>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -62,7 +62,7 @@ export default function CsrPartnershipPage() {
             </div>
           </div>
 
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-card space-y-6">
+          <div className="bg-white p-8 sm:p-10 rounded-lg border border-gray-200 shadow-xs space-y-6">
             <h3 className="font-heading font-bold text-xl text-gray-900">
               Corporate CSR Inquiry Desk
             </h3>
@@ -71,7 +71,7 @@ export default function CsrPartnershipPage() {
             </p>
 
             <div className="space-y-4 text-xs sm:text-sm text-gray-700">
-              <div className="p-4 bg-orange-50 rounded-2xl border border-orange-200">
+              <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
                 <strong className="block text-gray-900 mb-1">Direct Line for CSR Heads:</strong>
                 <a href={`tel:${ORG_DETAILS.phone}`} className="text-ngo-orange font-bold text-base hover:underline">
                   {ORG_DETAILS.formattedPhone}
@@ -79,7 +79,7 @@ export default function CsrPartnershipPage() {
                 <span className="block text-[11px] text-gray-500 mt-1">Available 24x7 for urgent corporate queries.</span>
               </div>
 
-              <div className="p-4 bg-gray-50 rounded-2xl border border-gray-200">
+              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <strong className="block text-gray-900 mb-1">Official CSR Email:</strong>
                 <a href={`mailto:${ORG_DETAILS.email}`} className="text-gray-800 font-semibold hover:underline">
                   {ORG_DETAILS.email}
@@ -90,7 +90,7 @@ export default function CsrPartnershipPage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="w-full py-3.5 px-6 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all"
+                className="w-full py-3.5 px-6 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all"
               >
                 <Briefcase className="w-4 h-4" /> Submit CSR Partnership Proposal
               </Link>

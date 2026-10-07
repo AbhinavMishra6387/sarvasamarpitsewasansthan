@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -87,10 +87,10 @@ export default function MembershipPage() {
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
         {createdMember ? (
           <div className="max-w-2xl mx-auto text-center space-y-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-200">
               Membership Issued Successfully
             </span>
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900">
               Your Digital Membership ID Card is Ready
             </h2>
 
@@ -99,13 +99,13 @@ export default function MembershipPage() {
             <div className="pt-4 flex justify-center gap-3">
               <Link
                 href={`/membership/card/${createdMember.id}`}
-                className="px-6 py-2.5 rounded-xl bg-ngo-orange text-white text-xs font-bold shadow hover:bg-ngo-orange-600 transition-colors"
+                className="px-6 py-2.5 rounded-md bg-ngo-orange text-white text-xs font-bold shadow hover:bg-ngo-orange-600 transition-colors"
               >
                 View Full Card Page &rarr;
               </Link>
               <button
                 onClick={() => setCreatedMember(null)}
-                className="px-6 py-2.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-bold hover:bg-gray-200 transition-colors"
+                className="px-6 py-2.5 rounded-md bg-gray-100 text-gray-700 text-xs font-bold hover:bg-gray-200 transition-colors"
               >
                 Apply Another Member
               </button>
@@ -128,14 +128,14 @@ export default function MembershipPage() {
                 <div
                   key={tier.type}
                   onClick={() => setSelectedTier(tier.type)}
-                  className={`p-8 rounded-3xl border-2 cursor-pointer transition-all flex flex-col justify-between relative ${
+                  className={`p-8 rounded-lg border-2 cursor-pointer transition-all flex flex-col justify-between relative ${
                     selectedTier === tier.type
-                      ? "border-ngo-orange bg-orange-50/40 shadow-card"
+                      ? "border-ngo-orange bg-orange-50/40 shadow-xs"
                       : "border-gray-200 bg-white hover:border-gray-300"
                   }`}
                 >
                   {tier.recommended && (
-                    <span className="absolute -top-3.5 right-6 bg-ngo-orange text-white text-[11px] font-extrabold uppercase px-3 py-1 rounded-full shadow-sm">
+                    <span className="absolute -top-3.5 right-6 bg-ngo-orange text-white text-[11px] font-semibold uppercase px-3 py-1 rounded-md shadow-sm">
                       Most Revered Choice
                     </span>
                   )}
@@ -145,7 +145,7 @@ export default function MembershipPage() {
                       {tier.title}
                     </h4>
                     <div className="mt-4 flex items-baseline gap-1">
-                      <span className="text-3xl font-heading font-black text-ngo-orange-700">
+                      <span className="text-3xl font-heading font-bold text-ngo-orange-700">
                         ₹ {tier.fee.toLocaleString("en-IN")}
                       </span>
                       <span className="text-xs text-gray-500 font-semibold">/ {tier.validity}</span>
@@ -164,7 +164,7 @@ export default function MembershipPage() {
                   <div className="mt-8 pt-4 border-t border-gray-200/60">
                     <button
                       type="button"
-                      className={`w-full py-2.5 rounded-xl text-xs font-bold transition-all ${
+                      className={`w-full py-2.5 rounded-md text-xs font-bold transition-all ${
                         selectedTier === tier.type
                           ? "bg-ngo-orange text-white shadow-md"
                           : "bg-gray-100 text-gray-800 hover:bg-gray-200"
@@ -178,7 +178,7 @@ export default function MembershipPage() {
             </div>
 
             {/* Application Form */}
-            <div className="max-w-2xl mx-auto bg-white p-8 rounded-3xl border border-gray-200 shadow-card">
+            <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg border border-gray-200 shadow-xs">
               <h4 className="font-heading font-bold text-xl text-gray-900 mb-1">
                 Complete Member Profile
               </h4>
@@ -198,7 +198,7 @@ export default function MembershipPage() {
                       placeholder="e.g. Satya Prakash Tripathi"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
@@ -211,7 +211,7 @@ export default function MembershipPage() {
                       placeholder="e.g. Late Ram Ashray Tripathi"
                       value={formData.fatherSpouseName}
                       onChange={(e) => setFormData({ ...formData, fatherSpouseName: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
@@ -225,7 +225,7 @@ export default function MembershipPage() {
                       placeholder="10-digit number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
@@ -239,7 +239,7 @@ export default function MembershipPage() {
                       placeholder="e.g. satya@gmail.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
@@ -250,7 +250,7 @@ export default function MembershipPage() {
                     <select
                       value={formData.bloodGroup}
                       onChange={(e) => setFormData({ ...formData, bloodGroup: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange bg-white"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange bg-white"
                     >
                       <option value="A+">A+</option>
                       <option value="A-">A-</option>
@@ -272,7 +272,7 @@ export default function MembershipPage() {
                       placeholder="e.g. Retired Officer, Advocate"
                       value={formData.occupation}
                       onChange={(e) => setFormData({ ...formData, occupation: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
                 </div>
@@ -287,7 +287,7 @@ export default function MembershipPage() {
                     placeholder="Complete residential address with PIN code"
                     value={formData.fullAddress}
                     onChange={(e) => setFormData({ ...formData, fullAddress: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
+                    className="w-full px-3.5 py-2.5 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-ngo-orange"
                   />
                 </div>
 
@@ -295,7 +295,7 @@ export default function MembershipPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-3.5 px-6 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="w-full py-3.5 px-6 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     <Award className="w-4 h-4" />
                     {submitting ? "Generating Digital Membership..." : "Generate Digital Membership Card"}

@@ -32,16 +32,16 @@ const STATS = [
 
 export function StatisticsCounter() {
   return (
-    <section className="bg-gradient-to-b from-white to-orange-50/50 py-16 px-4 sm:px-6 lg:px-8 border-b border-orange-100">
+    <section className="bg-stone-50/50 py-20 px-4 sm:px-6 lg:px-8 border-b border-stone-200">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-ngo-orange bg-orange-100/70 px-3.5 py-1 rounded-full">
+          <span className="text-xs font-medium tracking-wide text-stone-800 bg-white px-3 py-1 rounded-md border border-stone-200">
             Our Measurable Ground Impact
           </span>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-ngo-dark mt-3">
+          <h2 className="text-2xl sm:text-4xl font-heading font-bold text-stone-900 tracking-tight mt-3">
             Real Seva. Tangible Lives Touched.
           </h2>
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-sm text-stone-600 mt-2">
             Every rupee donated and every hour volunteered transforms someone&apos;s hunger into nourishment and pain into healing.
           </p>
         </div>
@@ -52,18 +52,18 @@ export function StatisticsCounter() {
             return (
               <div
                 key={stat.label}
-                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all text-center flex flex-col items-center group"
+                className="bg-white p-6 rounded-lg border border-stone-200 shadow-xs hover:border-stone-300 transition-colors text-center flex flex-col items-center group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-orange-50 group-hover:bg-ngo-orange text-ngo-orange group-hover:text-white flex items-center justify-center transition-colors mb-4 shadow-sm">
-                  <Icon className="w-7 h-7" />
+                <div className="w-12 h-12 rounded-md bg-stone-100 text-stone-700 group-hover:text-orange-700 flex items-center justify-center transition-colors mb-4 border border-stone-200">
+                  <Icon className="w-6 h-6" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-heading font-black text-ngo-dark tracking-tight">
+                <div className="text-3xl sm:text-4xl font-heading font-bold text-stone-900 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-sm font-bold text-ngo-orange-700 mt-1">
+                <div className="text-sm font-semibold text-stone-700 mt-1">
                   {stat.label}
                 </div>
-                <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                <p className="text-xs text-stone-500 mt-2 leading-relaxed">
                   {stat.description}
                 </p>
               </div>

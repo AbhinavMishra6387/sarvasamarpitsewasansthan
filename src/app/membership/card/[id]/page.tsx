@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -30,7 +30,7 @@ export default async function MemberCardPage({ params }: { params: { id: string 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto space-y-8">
         <DigitalMemberCard member={member} />
 
-        <div className="bg-white p-6 rounded-2xl border border-gray-200 text-xs text-gray-600 space-y-2">
+        <div className="bg-white p-6 rounded-lg border border-gray-200 text-xs text-gray-600 space-y-2">
           <p className="font-bold text-gray-800 text-sm flex items-center gap-1.5">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
             <span>Digital Authenticity Verified</span>

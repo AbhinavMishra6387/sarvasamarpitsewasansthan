@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -82,14 +82,14 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-ngo-orange-600 to-ngo-orange-400 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-ngo-orange/30 group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-md bg-stone-900 border border-stone-800 flex items-center justify-center text-white font-semibold text-lg shadow-xs group-hover:bg-black transition-colors shrink-0">
             <span>ॐ</span>
           </div>
           <div>
-            <span className="block font-heading font-extrabold text-lg sm:text-xl text-ngo-dark tracking-tight leading-tight group-hover:text-ngo-orange transition-colors">
+            <span className="block font-heading font-semibold text-base sm:text-lg text-stone-900 tracking-tight leading-tight group-hover:text-orange-700 transition-colors">
               Sarva Samarpit Sewa Sansthan
             </span>
-            <span className="block text-[11px] sm:text-xs text-ngo-orange-600 font-medium">
+            <span className="block text-[11px] sm:text-xs text-stone-500 font-normal">
               Registered Charitable Trust &bull; Prayagraj Sangam (UP)
             </span>
           </div>
@@ -106,7 +106,7 @@ export function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="ml-3 px-5 py-2.5 rounded-full bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-sm shadow-md shadow-ngo-orange/25 hover:shadow-lg transition-all flex items-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="ml-3 px-4 py-2 rounded-md bg-orange-700 hover:bg-orange-800 text-white font-medium text-xs sm:text-sm shadow-xs transition-colors flex items-center gap-1.5"
                 >
                   <Heart className="w-4 h-4 fill-white" />
                   {link.name}
@@ -125,21 +125,21 @@ export function Header() {
                   href={link.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-colors ${
                     isActive
-                      ? "text-ngo-orange font-semibold"
-                      : "text-ngo-dark-600 hover:text-ngo-orange hover:bg-orange-50/50"
+                      ? "text-orange-700 font-semibold"
+                      : "text-stone-700 hover:text-stone-950 hover:bg-stone-50"
                   }`}
                 >
                   {link.name}
-                  {hasSub && <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover:text-ngo-orange" />}
+                  {hasSub && <ChevronDown className="w-3.5 h-3.5 text-stone-400 group-hover:text-stone-700" />}
                 </Link>
 
                 {hasSub && openDropdown === link.name && (
-                  <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-card border border-gray-100 py-2 mt-0 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="absolute top-full left-0 w-64 bg-white rounded-md shadow-float border border-stone-200 py-1.5 mt-0 z-50 animate-in fade-in slide-in-from-top-1 duration-100">
                     {link.subLinks?.map((sub) => (
                       <Link
                         key={sub.name}
                         href={sub.href}
-                        className="block px-4 py-2.5 text-xs sm:text-sm text-gray-700 hover:bg-orange-50 hover:text-ngo-orange font-medium transition-colors"
+                        className="block px-4 py-2 text-xs sm:text-sm text-stone-700 hover:bg-stone-50 hover:text-orange-700 font-medium transition-colors"
                       >
                         {sub.name}
                       </Link>
@@ -153,7 +153,7 @@ export function Header() {
           {/* Global Search Button */}
           <button
             onClick={() => setSearchOpen(true)}
-            className="p-2 ml-1 text-gray-500 hover:text-ngo-orange hover:bg-orange-50 rounded-full transition-colors"
+            className="p-2 ml-1 text-stone-500 hover:text-stone-900 hover:bg-stone-100 rounded-md transition-colors"
             title="Global Search (Projects, Blogs, Events)"
             aria-label="Global Search"
           >
@@ -165,20 +165,20 @@ export function Header() {
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setSearchOpen(true)}
-            className="p-1.5 text-gray-600 hover:text-ngo-orange"
+            className="p-1.5 text-stone-600 hover:text-stone-900"
             aria-label="Search"
           >
             <Search className="w-5 h-5" />
           </button>
           <Link
             href="/donate"
-            className="px-3.5 py-1.5 rounded-full bg-ngo-orange text-white text-xs font-bold flex items-center gap-1.5 shadow-sm"
+            className="px-3 py-1.5 rounded-md bg-orange-700 text-white text-xs font-medium flex items-center gap-1.5 shadow-xs"
           >
             <Heart className="w-3.5 h-3.5 fill-white" /> Donate
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-gray-700 hover:text-ngo-orange hover:bg-gray-100 focus:outline-none"
+            className="p-2 rounded-md text-stone-700 hover:text-stone-950 hover:bg-stone-100 focus:outline-none"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -188,7 +188,7 @@ export function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 shadow-xl max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 shadow-sm max-h-[85vh] overflow-y-auto">
           <div className="flex flex-col space-y-1">
             {NAVIGATION_LINKS.map((link) => {
               const hasSub = Boolean(link.subLinks);

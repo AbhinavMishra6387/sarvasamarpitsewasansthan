@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { DigitalMemberCard } from "@/components/membership/DigitalMemberCard";
@@ -43,21 +43,21 @@ export default async function MembershipVerifyPage({
         {member ? (
           <div className="space-y-8 text-center">
             {/* Authenticity Banner */}
-            <div className="p-6 bg-emerald-50 rounded-3xl border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+            <div className="p-6 bg-emerald-50 rounded-lg border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center shrink-0 shadow-inner">
+                <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center shrink-0 shadow-inner">
                   <ShieldCheck className="w-8 h-8" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-200/60 px-2.5 py-0.5 rounded-full">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-200/60 px-2.5 py-0.5 rounded-md">
                       Authentic &bull; Official Record
                     </span>
                     <span className="text-xs text-gray-500 font-mono">
                       Trust Reg: {ORG_DETAILS.registrationNo}
                     </span>
                   </div>
-                  <h3 className="font-heading font-black text-xl text-gray-900 mt-1">
+                  <h3 className="font-heading font-bold text-xl text-gray-900 mt-1">
                     Verified Active Member: {member.fullName}
                   </h3>
                   <p className="text-xs text-gray-600">
@@ -68,7 +68,7 @@ export default async function MembershipVerifyPage({
 
               <div className="text-right shrink-0">
                 <span className="text-xs text-gray-500 block">Valid Until</span>
-                <span className="font-heading font-extrabold text-sm text-gray-800">
+                <span className="font-heading font-semibold text-sm text-gray-800">
                   {new Date(member.validUntil).toLocaleDateString("en-IN", {
                     day: "numeric",
                     month: "long",
@@ -81,7 +81,7 @@ export default async function MembershipVerifyPage({
             {/* Render Digital Card */}
             <DigitalMemberCard member={member} />
 
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 text-xs text-gray-600 space-y-2 max-w-2xl mx-auto text-left">
+            <div className="bg-white p-6 rounded-lg border border-gray-200 text-xs text-gray-600 space-y-2 max-w-2xl mx-auto text-left">
               <p className="font-bold text-gray-800 text-sm flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>Verification Record Details</span>
@@ -105,13 +105,13 @@ export default async function MembershipVerifyPage({
             </div>
           </div>
         ) : (
-          <div className="max-w-md mx-auto bg-white p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-card text-center space-y-6">
-            <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto">
+          <div className="max-w-md mx-auto bg-white p-8 sm:p-10 rounded-lg border border-gray-200 shadow-xs text-center space-y-6">
+            <div className="w-16 h-16 bg-red-50 text-red-500 rounded-lg flex items-center justify-center mx-auto">
               <XCircle className="w-10 h-10" />
             </div>
 
             <div>
-              <h3 className="font-heading font-extrabold text-2xl text-gray-900">
+              <h3 className="font-heading font-semibold text-2xl text-gray-900">
                 {query ? "Membership Record Not Found" : "Scan or Enter Member ID"}
               </h3>
               <p className="text-xs text-gray-500 mt-2 leading-relaxed">
@@ -128,11 +128,11 @@ export default async function MembershipVerifyPage({
                 name="q"
                 defaultValue={query}
                 placeholder="e.g. SSSS-LIFE-00108"
-                className="w-full px-4 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange font-mono uppercase text-center"
+                className="w-full px-4 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange font-mono uppercase text-center"
               />
               <button
                 type="submit"
-                className="w-full py-3 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs rounded-xl shadow-md transition-all"
+                className="w-full py-3 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs rounded-md shadow-md transition-all"
               >
                 Verify Membership Now
               </button>

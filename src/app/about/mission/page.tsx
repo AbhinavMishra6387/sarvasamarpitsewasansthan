@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Target, CheckCircle2, Shield, HeartHandshake } from "lucide-react";
@@ -19,13 +19,13 @@ export default function MissionPage() {
       />
 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-12">
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-card space-y-8">
+        <div className="bg-white p-8 sm:p-10 rounded-lg border border-gray-100 shadow-xs space-y-8">
           <div className="flex items-center gap-3">
-            <div className="p-3 rounded-2xl bg-orange-100 text-ngo-orange">
+            <div className="p-3 rounded-lg bg-orange-100 text-ngo-orange">
               <Target className="w-8 h-8" />
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-ngo-dark">
+              <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-ngo-dark">
                 The 5 Core Mission Mandates
               </h2>
               <p className="text-xs text-ngo-orange font-bold uppercase tracking-wider">
@@ -35,7 +35,7 @@ export default function MissionPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-5 rounded-2xl bg-orange-50/60 border border-orange-100 space-y-2">
+            <div className="p-5 rounded-lg bg-orange-50/60 border border-orange-100 space-y-2">
               <span className="text-xs font-bold text-ngo-orange uppercase">Mandate 1</span>
               <h4 className="font-heading font-bold text-base text-gray-900">Round-The-Clock Food Distribution</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
@@ -43,7 +43,7 @@ export default function MissionPage() {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-orange-50/60 border border-orange-100 space-y-2">
+            <div className="p-5 rounded-lg bg-orange-50/60 border border-orange-100 space-y-2">
               <span className="text-xs font-bold text-ngo-orange uppercase">Mandate 2</span>
               <h4 className="font-heading font-bold text-base text-gray-900">Accessible Healthcare For All</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
@@ -51,7 +51,7 @@ export default function MissionPage() {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-orange-50/60 border border-orange-100 space-y-2">
+            <div className="p-5 rounded-lg bg-orange-50/60 border border-orange-100 space-y-2">
               <span className="text-xs font-bold text-ngo-orange uppercase">Mandate 3</span>
               <h4 className="font-heading font-bold text-base text-gray-900">Pilgrim Care &amp; Elder Assistance</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
@@ -59,7 +59,7 @@ export default function MissionPage() {
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-orange-50/60 border border-orange-100 space-y-2">
+            <div className="p-5 rounded-lg bg-orange-50/60 border border-orange-100 space-y-2">
               <span className="text-xs font-bold text-ngo-orange uppercase">Mandate 4</span>
               <h4 className="font-heading font-bold text-base text-gray-900">Emergency &amp; Winter Relief</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
@@ -72,13 +72,13 @@ export default function MissionPage() {
         <div className="text-center flex justify-center gap-4">
           <Link
             href="/about/founder-message"
-            className="px-6 py-3 rounded-full bg-ngo-dark text-white font-bold text-sm hover:bg-black transition-colors"
+            className="px-6 py-3 rounded-md bg-ngo-dark text-white font-bold text-sm hover:bg-black transition-colors"
           >
             Founder&apos;s Message &rarr;
           </Link>
           <Link
             href="/donate"
-            className="px-6 py-3 rounded-full bg-ngo-orange text-white font-bold text-sm hover:bg-ngo-orange-600 transition-colors shadow-md"
+            className="px-6 py-3 rounded-md bg-ngo-orange text-white font-bold text-sm hover:bg-ngo-orange-600 transition-colors shadow-md"
           >
             Support the Mission
           </Link>

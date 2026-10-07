@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -65,12 +65,12 @@ export default function EventsPage() {
 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
         {/* Featured Countdown Banner */}
-        <div className="bg-gradient-to-r from-ngo-orange-600 to-amber-600 text-white rounded-3xl p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-ngo-orange-600 to-amber-600 text-white rounded-lg p-8 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
-            <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-md">
               Upcoming Flagship Seva
             </span>
-            <h3 className="text-2xl sm:text-3xl font-heading font-extrabold">
+            <h3 className="text-2xl sm:text-3xl font-heading font-semibold">
               Magh Mela &amp; Mahakumbh Annapurna Mega Camp
             </h3>
             <p className="text-xs sm:text-sm text-orange-100 max-w-xl">
@@ -79,16 +79,16 @@ export default function EventsPage() {
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            <div className="bg-white/20 backdrop-blur-sm p-3 rounded-2xl text-center min-w-[70px]">
-              <span className="text-2xl sm:text-3xl font-heading font-black block">45</span>
+            <div className="bg-white/20 backdrop-blur-sm p-3 rounded-lg text-center min-w-[70px]">
+              <span className="text-2xl sm:text-3xl font-heading font-bold block">45</span>
               <span className="text-[10px] uppercase font-bold text-orange-100">Days</span>
             </div>
-            <div className="bg-white/20 backdrop-blur-sm p-3 rounded-2xl text-center min-w-[70px]">
-              <span className="text-2xl sm:text-3xl font-heading font-black block">24</span>
+            <div className="bg-white/20 backdrop-blur-sm p-3 rounded-lg text-center min-w-[70px]">
+              <span className="text-2xl sm:text-3xl font-heading font-bold block">24</span>
               <span className="text-[10px] uppercase font-bold text-orange-100">Hours</span>
             </div>
-            <div className="bg-white/20 backdrop-blur-sm p-3 rounded-2xl text-center min-w-[70px]">
-              <span className="text-2xl sm:text-3xl font-heading font-black block">600+</span>
+            <div className="bg-white/20 backdrop-blur-sm p-3 rounded-lg text-center min-w-[70px]">
+              <span className="text-2xl sm:text-3xl font-heading font-bold block">600+</span>
               <span className="text-[10px] uppercase font-bold text-orange-100">Sevadars</span>
             </div>
           </div>
@@ -99,15 +99,15 @@ export default function EventsPage() {
           {EVENTS.map((evt) => (
             <div
               key={evt.id}
-              className="bg-white rounded-3xl border border-gray-100 shadow-soft hover:shadow-card transition-all overflow-hidden flex flex-col group"
+              className="bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all overflow-hidden flex flex-col group"
             >
               <div className="relative h-52 overflow-hidden bg-gray-100">
                 <img
                   src={evt.image}
                   alt={evt.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-transition-colors duration-200 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-ngo-dark/85 backdrop-blur-sm text-white font-bold text-xs px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5">
+                <div className="absolute top-4 left-4 bg-ngo-dark/85 backdrop-blur-sm text-white font-bold text-xs px-3 py-1.5 rounded-md shadow-md flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5 text-ngo-orange" />
                   <span>{evt.date}</span>
                 </div>
@@ -115,7 +115,7 @@ export default function EventsPage() {
 
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-heading font-extrabold text-lg text-gray-900 group-hover:text-ngo-orange transition-colors">
+                  <h3 className="font-heading font-semibold text-lg text-gray-900 group-hover:text-ngo-orange transition-colors">
                     {evt.title}
                   </h3>
                   <p className="text-xs text-gray-500 mt-2 line-clamp-3 leading-relaxed">
@@ -143,7 +143,7 @@ export default function EventsPage() {
                       setSelectedEvent(evt);
                       setRegSuccess(false);
                     }}
-                    className="px-4 py-2 rounded-xl bg-orange-50 hover:bg-ngo-orange text-ngo-orange hover:text-white font-bold text-xs transition-colors"
+                    className="px-4 py-2 rounded-md bg-orange-50 hover:bg-ngo-orange text-ngo-orange hover:text-white font-bold text-xs transition-colors"
                   >
                     Register Free &rarr;
                   </button>
@@ -156,10 +156,10 @@ export default function EventsPage() {
         {/* Registration Modal */}
         {selectedEvent && (
           <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl relative border-t-4 border-ngo-orange">
+            <div className="w-full max-w-md bg-white rounded-lg p-6 sm:p-8 shadow-sm relative border-t-4 border-ngo-orange">
               {regSuccess ? (
                 <div className="text-center space-y-4 py-4">
-                  <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                  <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="font-heading font-bold text-xl text-gray-900">
@@ -170,7 +170,7 @@ export default function EventsPage() {
                   </p>
                   <button
                     onClick={() => setSelectedEvent(null)}
-                    className="px-6 py-2.5 rounded-xl bg-ngo-orange text-white text-xs font-bold"
+                    className="px-6 py-2.5 rounded-md bg-ngo-orange text-white text-xs font-bold"
                   >
                     Close
                   </button>
@@ -190,7 +190,7 @@ export default function EventsPage() {
                       placeholder="e.g. Ramesh Chandra"
                       value={regName}
                       onChange={(e) => setRegName(e.target.value)}
-                      className="w-full px-3 py-2 border rounded-xl text-xs focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3 py-2 border rounded-md text-xs focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
@@ -202,21 +202,21 @@ export default function EventsPage() {
                       placeholder="10-digit mobile number"
                       value={regPhone}
                       onChange={(e) => setRegPhone(e.target.value)}
-                      className="w-full px-3 py-2 border rounded-xl text-xs focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3 py-2 border rounded-md text-xs focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
                   <div className="flex gap-2 pt-2">
                     <button
                       type="submit"
-                      className="flex-1 py-2.5 bg-ngo-orange hover:bg-ngo-orange-600 text-white rounded-xl text-xs font-bold"
+                      className="flex-1 py-2.5 bg-ngo-orange hover:bg-ngo-orange-600 text-white rounded-md text-xs font-bold"
                     >
                       Confirm Registration
                     </button>
                     <button
                       type="button"
                       onClick={() => setSelectedEvent(null)}
-                      className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-xs font-bold"
+                      className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-xs font-bold"
                     >
                       Cancel
                     </button>

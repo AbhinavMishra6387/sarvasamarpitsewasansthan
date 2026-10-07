@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { CheckCircle2, Download, Printer, ArrowRight, ShieldCheck, Heart } from "lucide-react";
 import { dbStore } from "@/lib/db-storage";
@@ -22,15 +22,15 @@ export default async function DonationSuccessPage({
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center space-y-8">
       {/* Success Badge */}
-      <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
+      <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center mx-auto shadow-inner">
         <CheckCircle2 className="w-12 h-12" />
       </div>
 
       <div>
-        <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-200">
+        <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3.5 py-1 rounded-md border border-emerald-200">
           Payment Confirmed &bull; 80G Tax Exemption Applicable
         </span>
-        <h1 className="text-3xl sm:text-4xl font-heading font-black text-gray-900 mt-3">
+        <h1 className="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mt-3">
           Thank You for Your Sacred Contribution!
         </h1>
         <p className="text-sm sm:text-base text-gray-600 mt-2 max-w-xl mx-auto">
@@ -40,7 +40,7 @@ export default async function DonationSuccessPage({
 
       {/* Donation Receipt Summary Card */}
       {donation && (
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-card text-left space-y-4">
+        <div className="bg-white rounded-lg p-6 sm:p-8 border border-gray-200 shadow-xs text-left space-y-4">
           <div className="flex items-center justify-between border-b pb-4">
             <div>
               <span className="text-xs text-gray-400 uppercase font-semibold">Receipt Number</span>
@@ -50,7 +50,7 @@ export default async function DonationSuccessPage({
             </div>
             <div className="text-right">
               <span className="text-xs text-gray-400 uppercase font-semibold">Amount Donated</span>
-              <p className="font-heading font-extrabold text-gray-900 text-xl sm:text-2xl">
+              <p className="font-heading font-semibold text-gray-900 text-xl sm:text-2xl">
                 ₹ {donation.amount.toLocaleString("en-IN")} INR
               </p>
             </div>
@@ -81,14 +81,14 @@ export default async function DonationSuccessPage({
               href={`/api/donations/receipt/${donation.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md transition-all"
+              className="px-6 py-3 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md transition-all"
             >
               <Printer className="w-4 h-4" /> Download / Print 80G Tax Receipt
             </a>
 
             <Link
               href="/"
-              className="px-6 py-3 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all"
+              className="px-6 py-3 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all"
             >
               Back to Homepage <ArrowRight className="w-4 h-4" />
             </Link>

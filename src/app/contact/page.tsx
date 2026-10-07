@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -66,12 +66,12 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Office Details */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-ngo-dark-900 text-white p-8 rounded-3xl border-t-4 border-ngo-orange shadow-xl space-y-6">
+            <div className="bg-ngo-dark-900 text-white p-8 rounded-lg border-t-4 border-ngo-orange shadow-sm space-y-6">
               <div>
                 <span className="text-xs font-bold text-ngo-orange uppercase tracking-wider block mb-1">
                   Head Office &amp; Seva Kendra
                 </span>
-                <h3 className="text-2xl font-heading font-black text-white">
+                <h3 className="text-2xl font-heading font-bold text-white">
                   Sarva Samarpit Sewa Sansthan
                 </h3>
                 <p className="text-xs text-gray-400 mt-1">
@@ -124,7 +124,7 @@ export default function ContactPage() {
                   href={`https://wa.me/919450858514?text=${encodeURIComponent("Jai Shree Ram! I would like to contact Sarva Samarpit Sewa Sansthan.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all"
+                  className="w-full py-3 px-4 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all"
                 >
                   <MessageCircle className="w-4 h-4" /> Chat on WhatsApp (+91 94508 58514)
                 </a>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   href={ORG_DETAILS.googleBusinessUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-ngo-dark-800 hover:bg-ngo-dark-700 text-gray-300 font-medium text-xs flex items-center justify-center gap-2 border border-gray-700 transition-all"
+                  className="w-full py-2.5 px-4 rounded-md bg-ngo-dark-800 hover:bg-ngo-dark-700 text-gray-300 font-medium text-xs flex items-center justify-center gap-2 border border-gray-700 transition-all"
                 >
                   <ExternalLink className="w-3.5 h-3.5 text-ngo-orange" /> Open in Google Business &amp; Maps
                 </a>
@@ -142,8 +142,8 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-card">
-            <h3 className="font-heading font-extrabold text-2xl text-gray-900 mb-1">
+          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-lg border border-gray-200 shadow-xs">
+            <h3 className="font-heading font-semibold text-2xl text-gray-900 mb-1">
               Send an Official Message
             </h3>
             <p className="text-xs text-gray-500 mb-6">
@@ -151,7 +151,7 @@ export default function ContactPage() {
             </p>
 
             {success ? (
-              <div className="p-6 bg-emerald-50 rounded-2xl border border-emerald-200 text-center space-y-3">
+              <div className="p-6 bg-emerald-50 rounded-lg border border-emerald-200 text-center space-y-3">
                 <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
                 <h4 className="font-bold text-gray-900">Message Delivered!</h4>
                 <p className="text-xs text-gray-600">
@@ -159,7 +159,7 @@ export default function ContactPage() {
                 </p>
                 <button
                   onClick={() => setSuccess(false)}
-                  className="px-4 py-2 bg-ngo-orange text-white text-xs font-bold rounded-xl"
+                  className="px-4 py-2 bg-ngo-orange text-white text-xs font-bold rounded-md"
                 >
                   Send Another Message
                 </button>
@@ -167,7 +167,7 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {errorMsg && (
-                  <div className="p-3 bg-red-50 text-red-700 text-xs rounded-xl flex items-center gap-2">
+                  <div className="p-3 bg-red-50 text-red-700 text-xs rounded-md flex items-center gap-2">
                     <AlertCircle className="w-4 h-4" /> {errorMsg}
                   </div>
                 )}
@@ -181,7 +181,7 @@ export default function ContactPage() {
                       placeholder="e.g. Ramesh Kumar"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
@@ -193,7 +193,7 @@ export default function ContactPage() {
                       placeholder="10-digit number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
                 </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                       placeholder="e.g. ramesh@gmail.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
 
@@ -216,7 +216,7 @@ export default function ContactPage() {
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                      className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
                     />
                   </div>
                 </div>
@@ -229,14 +229,14 @@ export default function ContactPage() {
                     placeholder="How can we assist you with our seva programs or sponsorships?"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                    className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-3.5 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-3.5 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-semibold text-sm rounded-md shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   <Send className="w-4 h-4" />
                   {submitting ? "Sending Message..." : "Submit Inquiry"}
@@ -247,7 +247,7 @@ export default function ContactPage() {
         </div>
 
         {/* Embedded Interactive Google Map */}
-        <div className="rounded-3xl overflow-hidden shadow-card border border-gray-200 h-[400px]">
+        <div className="rounded-lg overflow-hidden shadow-xs border border-gray-200 h-[400px]">
           <iframe
             src={ORG_DETAILS.googleMapsEmbed}
             width="100%"

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -113,7 +113,7 @@ export default function SearchPage() {
 
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-8">
         {/* Search Bar */}
-        <div className="bg-white p-4 sm:p-5 rounded-3xl border border-gray-200 shadow-soft flex items-center gap-3">
+        <div className="bg-white p-4 sm:p-5 rounded-lg border border-gray-200 shadow-xs flex items-center gap-3">
           <Search className="w-5 h-5 text-ngo-orange shrink-0" />
           <input
             type="text"
@@ -130,7 +130,7 @@ export default function SearchPage() {
             <button
               key={c}
               onClick={() => setFilterType(c)}
-              className={`px-4 py-2 rounded-full transition-all ${
+              className={`px-4 py-2 rounded-md transition-all ${
                 filterType === c
                   ? "bg-ngo-orange text-white shadow-sm"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -148,7 +148,7 @@ export default function SearchPage() {
           </p>
 
           {results.length === 0 ? (
-            <div className="bg-white p-12 rounded-3xl border border-gray-200 text-center text-gray-500 space-y-2">
+            <div className="bg-white p-12 rounded-lg border border-gray-200 text-center text-gray-500 space-y-2">
               <p className="text-base font-bold">No results found.</p>
               <p className="text-xs">Try broader keywords or reset the category filter.</p>
             </div>
@@ -157,10 +157,10 @@ export default function SearchPage() {
               <Link
                 key={i}
                 href={r.url}
-                className="block p-6 bg-white rounded-3xl border border-gray-100 shadow-soft hover:shadow-card hover:border-ngo-orange transition-all group"
+                className="block p-6 bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs hover:border-ngo-orange transition-all group"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-2.5 py-0.5 rounded-full">
+                  <span className="text-[10px] font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-2.5 py-0.5 rounded-md">
                     {r.type}
                   </span>
                   <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-ngo-orange group-hover:translate-x-1 transition-transform" />

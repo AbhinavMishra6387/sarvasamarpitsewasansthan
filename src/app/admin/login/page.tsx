@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -40,12 +40,12 @@ export default function AdminLoginPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-ngo-dark-900 via-ngo-dark-800 to-black flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border-t-4 border-ngo-orange space-y-6">
+      <div className="w-full max-w-md bg-white rounded-lg p-8 sm:p-10 shadow-sm border-t-4 border-ngo-orange space-y-6">
         <div className="text-center space-y-2">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-ngo-orange-600 to-ngo-orange-400 text-white flex items-center justify-center text-2xl font-bold mx-auto shadow-md">
+          <div className="w-16 h-16 rounded-lg bg-gradient-to-tr from-ngo-orange-600 to-ngo-orange-400 text-white flex items-center justify-center text-2xl font-bold mx-auto shadow-md">
             ॐ
           </div>
-          <h2 className="text-2xl font-heading font-black text-gray-900">
+          <h2 className="text-2xl font-heading font-bold text-gray-900">
             Admin CMS Portal
           </h2>
           <p className="text-xs text-gray-500">
@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
         </div>
 
         {errorMsg && (
-          <div className="p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-center gap-2">
+          <div className="p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-md flex items-center gap-2">
             <AlertCircle className="w-4 h-4 shrink-0" />
             <span>{errorMsg}</span>
           </div>
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full pl-10 pr-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
           </div>
@@ -88,12 +88,12 @@ export default function AdminLoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange"
+                className="w-full pl-10 pr-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange"
               />
             </div>
           </div>
 
-          <div className="p-3 bg-orange-50 rounded-xl border border-orange-200 text-[11px] text-gray-600 space-y-1">
+          <div className="p-3 bg-orange-50 rounded-md border border-orange-200 text-[11px] text-gray-600 space-y-1">
             <p className="font-bold text-ngo-orange-800">Default Super Admin Credentials:</p>
             <p>Email: <code className="bg-white px-1.5 py-0.5 rounded border">admin@sarvasamarpit.org</code></p>
             <p>Password: <code className="bg-white px-1.5 py-0.5 rounded border">Admin@SSSS2026!</code></p>
@@ -102,7 +102,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full py-3.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {loading ? "Authenticating..." : "Access Secure Dashboard"}
             <ArrowRight className="w-4 h-4" />

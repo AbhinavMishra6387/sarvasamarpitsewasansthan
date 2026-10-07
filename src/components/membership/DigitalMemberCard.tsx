@@ -21,27 +21,23 @@ export function DigitalMemberCard({ member }: { member: MemberProps }) {
   return (
     <div className="flex flex-col items-center">
       {/* Printable Card Area */}
-      <div className="w-full max-w-md bg-gradient-to-br from-ngo-dark-900 via-ngo-dark-800 to-black text-white rounded-3xl p-6 shadow-2xl border-2 border-ngo-orange relative overflow-hidden">
-        {/* Subtle decorative glow */}
-        <div className="absolute -top-12 -right-12 w-36 h-36 bg-ngo-orange/20 rounded-full blur-2xl pointer-events-none" />
-        <div className="absolute -bottom-12 -left-12 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
-
+      <div className="w-full max-w-md bg-stone-900 text-white rounded-lg p-6 shadow-sm border border-stone-800 relative overflow-hidden">
         {/* Card Header */}
-        <div className="flex items-center justify-between border-b border-gray-700/60 pb-3 mb-4">
+        <div className="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-full bg-ngo-orange flex items-center justify-center font-bold text-white shadow-md text-base">
+            <div className="w-9 h-9 rounded-md bg-stone-800 border border-stone-700 flex items-center justify-center font-bold text-white shadow-xs text-base">
               ॐ
             </div>
             <div>
-              <h4 className="font-heading font-extrabold text-sm leading-tight text-white">
+              <h4 className="font-heading font-semibold text-sm leading-tight text-white">
                 {ORG_DETAILS.name}
               </h4>
-              <p className="text-[10px] text-ngo-orange-400 font-medium">
+              <p className="text-[10px] text-orange-400 font-medium">
                 Official Digital Member Card &bull; Prayagraj
               </p>
             </div>
           </div>
-          <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-ngo-orange/30 text-ngo-orange-300 border border-ngo-orange/40">
+          <span className="text-[10px] uppercase font-medium tracking-wide px-2.5 py-0.5 rounded-md bg-stone-800 text-orange-300 border border-stone-700">
             {member.membershipType}
           </span>
         </div>
@@ -83,25 +79,25 @@ export function DigitalMemberCard({ member }: { member: MemberProps }) {
 
           {/* Verification QR Code */}
           <div className="flex flex-col items-center justify-center">
-            <div className="bg-white p-1.5 rounded-xl shadow-md">
+            <div className="bg-white p-1.5 rounded-md border border-stone-700 shadow-xs">
               <img
                 src={qrUrl}
                 alt="Verification QR Code"
                 width={76}
                 height={76}
-                className="rounded"
+                className="rounded-xs"
               />
             </div>
-            <span className="text-[9px] text-gray-400 mt-1 flex items-center gap-0.5">
+            <span className="text-[9px] text-stone-400 mt-1 flex items-center gap-0.5">
               <CheckCircle className="w-2.5 h-2.5 text-emerald-400" /> Verified
             </span>
           </div>
         </div>
 
         {/* Card Footer */}
-        <div className="pt-3 border-t border-gray-800 flex items-center justify-between text-[10px] text-gray-400">
+        <div className="pt-3 border-t border-stone-800 flex items-center justify-between text-[10px] text-stone-400">
           <span>Head Office: Bade Hanuman Mandir, Prayagraj</span>
-          <span className="text-ngo-orange-400 font-semibold">{ORG_DETAILS.phone}</span>
+          <span className="text-orange-400 font-medium">{ORG_DETAILS.phone}</span>
         </div>
       </div>
 
@@ -109,9 +105,9 @@ export function DigitalMemberCard({ member }: { member: MemberProps }) {
       <div className="mt-4 flex items-center gap-3">
         <button
           onClick={() => window.print()}
-          className="px-4 py-2 bg-ngo-dark-800 hover:bg-ngo-dark-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all border border-gray-700"
+          className="px-4 py-2 bg-stone-900 hover:bg-black text-white rounded-md text-xs font-medium flex items-center gap-1.5 shadow-xs transition-colors border border-stone-800"
         >
-          <Printer className="w-3.5 h-3.5 text-ngo-orange" /> Print / Save Card PDF
+          <Printer className="w-3.5 h-3.5 text-orange-400" /> Print / Save Card PDF
         </button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { ORG_DETAILS } from "@/lib/constants";
@@ -23,10 +23,10 @@ export default function AboutPage() {
         {/* Section 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-ngo-orange bg-orange-50 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-wider text-ngo-orange bg-orange-50 px-3 py-1 rounded-md">
               Registered Charitable Trust
             </span>
-            <h2 className="text-3xl font-heading font-extrabold text-ngo-dark">
+            <h2 className="text-3xl font-heading font-semibold text-ngo-dark">
               Selfless Service Rooted in Sanatana Values
             </h2>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -56,7 +56,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-card border-4 border-white">
+          <div className="rounded-lg overflow-hidden shadow-xs border-4 border-white">
             <img
               src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1200"
               alt="Annapurna Bhandara Seva"
@@ -77,8 +77,8 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-card transition-all">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
+            <div className="p-6 bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all">
+              <div className="w-12 h-12 rounded-md bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
                 01
               </div>
               <h4 className="font-heading font-bold text-lg text-ngo-dark mb-2">Annapurna Seva</h4>
@@ -87,8 +87,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-card transition-all">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
+            <div className="p-6 bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all">
+              <div className="w-12 h-12 rounded-md bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
                 02
               </div>
               <h4 className="font-heading font-bold text-lg text-ngo-dark mb-2">Arogya Seva</h4>
@@ -97,8 +97,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-card transition-all">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
+            <div className="p-6 bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all">
+              <div className="w-12 h-12 rounded-md bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
                 03
               </div>
               <h4 className="font-heading font-bold text-lg text-ngo-dark mb-2">Dharamik Seva</h4>
@@ -107,8 +107,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-card transition-all">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
+            <div className="p-6 bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all">
+              <div className="w-12 h-12 rounded-md bg-orange-100 text-ngo-orange flex items-center justify-center font-bold mb-4">
                 04
               </div>
               <h4 className="font-heading font-bold text-lg text-ngo-dark mb-2">Manav Kalyan</h4>
@@ -120,7 +120,7 @@ export default function AboutPage() {
         </div>
 
         {/* Quick Links Submenu */}
-        <div className="p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border border-orange-200 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg border border-orange-200 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h4 className="font-heading font-bold text-xl text-ngo-dark">
               Explore Our Governance &amp; Leadership
@@ -132,19 +132,19 @@ export default function AboutPage() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/about/vision"
-              className="px-4 py-2 bg-white hover:bg-ngo-orange hover:text-white rounded-xl text-xs font-bold border border-orange-200 transition-colors shadow-sm"
+              className="px-4 py-2 bg-white hover:bg-ngo-orange hover:text-white rounded-md text-xs font-bold border border-orange-200 transition-colors shadow-sm"
             >
               Vision &amp; Mission
             </Link>
             <Link
               href="/about/trustees"
-              className="px-4 py-2 bg-white hover:bg-ngo-orange hover:text-white rounded-xl text-xs font-bold border border-orange-200 transition-colors shadow-sm"
+              className="px-4 py-2 bg-white hover:bg-ngo-orange hover:text-white rounded-md text-xs font-bold border border-orange-200 transition-colors shadow-sm"
             >
               Board of Trustees
             </Link>
             <Link
               href="/about/team"
-              className="px-4 py-2 bg-ngo-orange text-white rounded-xl text-xs font-bold transition-all shadow-md"
+              className="px-4 py-2 bg-ngo-orange text-white rounded-md text-xs font-bold transition-all shadow-md"
             >
               Our Team
             </Link>

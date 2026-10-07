@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { DonationForm } from "@/components/donation/DonationForm";
@@ -24,7 +24,7 @@ export default function FoodDistributionPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Main Content */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="rounded-3xl overflow-hidden shadow-card border-4 border-white">
+            <div className="rounded-lg overflow-hidden shadow-xs border-4 border-white">
               <img
                 src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1200"
                 alt="Annapurna Bhandara Preparation"
@@ -33,7 +33,7 @@ export default function FoodDistributionPage() {
             </div>
 
             <div className="prose text-gray-700 text-sm sm:text-base leading-relaxed space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-ngo-dark">
+              <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-ngo-dark">
                 The Sacred Tradition of Annadanam at Prayagraj
               </h2>
               <p>
@@ -43,7 +43,7 @@ export default function FoodDistributionPage() {
                 Operating 24 hours a day adjacent to <strong>Shree Bade Hanuman Ji Temple</strong>, the central kitchen of <em>Sarva Samarpit Sewa Sansthan</em> prepares and distributes over <strong>1,500 wholesome, sattvic meals every single day</strong>—surging to more than 10,000 daily during the historic Magh Mela and Kumbh Mela periods.
               </p>
 
-              <div className="bg-orange-50/70 p-6 rounded-2xl border border-orange-200 my-6 space-y-3">
+              <div className="bg-orange-50/70 p-6 rounded-lg border border-orange-200 my-6 space-y-3">
                 <h3 className="font-heading font-bold text-lg text-ngo-dark">
                   What Goes Into Every Meal:
                 </h3>

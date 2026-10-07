@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -46,10 +46,10 @@ export default function MemberLoginPage() {
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-12">
         {member ? (
           <div className="space-y-8 text-center">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-200">
               Active Member Verified
             </span>
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900">
               Welcome Back, {member.fullName}!
             </h2>
 
@@ -58,25 +58,25 @@ export default function MemberLoginPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
               <Link
                 href="/membership/renew"
-                className="px-6 py-3 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all"
+                className="px-6 py-3 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all"
               >
                 <RefreshCw className="w-4 h-4" /> Renew Membership Online
               </Link>
               <button
                 onClick={() => setMember(null)}
-                className="px-6 py-3 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs sm:text-sm transition-colors"
+                className="px-6 py-3 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs sm:text-sm transition-colors"
               >
                 Search Another Member
               </button>
             </div>
           </div>
         ) : (
-          <div className="max-w-md mx-auto bg-white p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-card space-y-6">
+          <div className="max-w-md mx-auto bg-white p-8 sm:p-10 rounded-lg border border-gray-200 shadow-xs space-y-6">
             <div className="text-center space-y-2">
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-ngo-orange flex items-center justify-center mx-auto shadow-inner">
+              <div className="w-14 h-14 rounded-lg bg-orange-100 text-ngo-orange flex items-center justify-center mx-auto shadow-inner">
                 <Award className="w-7 h-7" />
               </div>
-              <h3 className="font-heading font-extrabold text-2xl text-gray-900">
+              <h3 className="font-heading font-semibold text-2xl text-gray-900">
                 Member Sign In
               </h3>
               <p className="text-xs text-gray-500">
@@ -85,7 +85,7 @@ export default function MemberLoginPage() {
             </div>
 
             {errorMsg && (
-              <div className="p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-center gap-2">
+              <div className="p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-md flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 shrink-0" />
                 <span>{errorMsg}</span>
               </div>
@@ -102,14 +102,14 @@ export default function MemberLoginPage() {
                   placeholder="e.g. 9415233445 or SSSS-LIFE-00108"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  className="w-full px-3.5 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-ngo-orange font-semibold"
+                  className="w-full px-3.5 py-2.5 border rounded-md text-sm focus:outline-none focus:border-ngo-orange font-semibold"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-extrabold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full py-3.5 bg-ngo-orange hover:bg-ngo-orange-600 text-white font-semibold text-sm rounded-md shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {loading ? "Verifying Member..." : "Access Member Dashboard"}
                 <ArrowRight className="w-4 h-4" />

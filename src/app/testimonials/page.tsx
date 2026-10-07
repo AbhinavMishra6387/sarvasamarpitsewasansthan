@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Star, Quote, CheckCircle } from "lucide-react";
 
@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.name}
-              className="p-8 bg-white rounded-3xl border border-gray-100 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
+              className="p-8 bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -70,7 +70,7 @@ export default function TestimonialsPage() {
                   <h4 className="font-heading font-bold text-gray-900 text-base">{t.name}</h4>
                   <p className="text-xs text-gray-500">{t.location}</p>
                 </div>
-                <span className="flex items-center gap-1 text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-full">
+                <span className="flex items-center gap-1 text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">
                   <CheckCircle className="w-3.5 h-3.5" /> Verified
                 </span>
               </div>

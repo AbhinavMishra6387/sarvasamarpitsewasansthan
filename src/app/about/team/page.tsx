@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Heart, Users, Mail, Phone } from "lucide-react";
@@ -50,13 +50,13 @@ export default function TeamPage() {
           {TEAM_MEMBERS.map((m) => (
             <div
               key={m.name}
-              className="bg-white rounded-3xl border border-gray-100 shadow-soft hover:shadow-card transition-all overflow-hidden flex flex-col group"
+              className="bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all overflow-hidden flex flex-col group"
             >
               <div className="h-60 overflow-hidden bg-gray-100">
                 <img
                   src={m.image}
                   alt={m.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-transition-colors duration-200 transition-transform duration-500"
                 />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
@@ -64,7 +64,7 @@ export default function TeamPage() {
                   <span className="text-[11px] font-bold text-ngo-orange uppercase tracking-wider block mb-1">
                     {m.role}
                   </span>
-                  <h3 className="font-heading font-extrabold text-base text-gray-900">
+                  <h3 className="font-heading font-semibold text-base text-gray-900">
                     {m.name}
                   </h3>
                   <p className="text-xs text-gray-500 mt-2">{m.experience}</p>
@@ -75,7 +75,7 @@ export default function TeamPage() {
         </div>
 
         {/* Join the Team CTA */}
-        <div className="p-8 bg-orange-50 rounded-3xl border border-orange-200 text-center max-w-2xl mx-auto space-y-3">
+        <div className="p-8 bg-orange-50 rounded-lg border border-orange-200 text-center max-w-2xl mx-auto space-y-3">
           <h3 className="font-heading font-bold text-xl text-ngo-dark">
             Do You Want to Join Our Dedicated Sevadar Family?
           </h3>
@@ -85,7 +85,7 @@ export default function TeamPage() {
           <div className="pt-2">
             <Link
               href="/volunteer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ngo-orange text-white text-xs font-bold shadow-md hover:bg-ngo-orange-600 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-ngo-orange text-white text-xs font-bold shadow-md hover:bg-ngo-orange-600 transition-colors"
             >
               <Users className="w-4 h-4" /> Register as a Volunteer
             </Link>

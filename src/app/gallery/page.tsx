@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -69,7 +69,7 @@ export default function GalleryPage() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-md text-xs font-bold transition-all ${
                 activeCategory === cat
                   ? "bg-ngo-orange text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -86,16 +86,16 @@ export default function GalleryPage() {
             <div
               key={photo.id}
               onClick={() => setSelectedPhoto(photo)}
-              className="group relative h-72 rounded-3xl overflow-hidden shadow-soft hover:shadow-card cursor-pointer border border-gray-100 bg-gray-100"
+              className="group relative h-72 rounded-lg overflow-hidden shadow-xs hover:shadow-xs cursor-pointer border border-gray-100 bg-gray-100"
             >
               <img
                 src={photo.url}
                 alt={photo.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-transition-colors duration-200 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <div>
-                  <span className="text-[10px] font-bold text-ngo-orange uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded-full text-white backdrop-blur-sm">
+                  <span className="text-[10px] font-bold text-ngo-orange uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded-md text-white backdrop-blur-sm">
                     {photo.category}
                   </span>
                   <h4 className="font-heading font-bold text-white text-sm sm:text-base mt-1.5 leading-snug">
@@ -113,7 +113,7 @@ export default function GalleryPage() {
             onClick={() => setSelectedPhoto(null)}
             className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4"
           >
-            <div className="max-w-4xl max-h-[90vh] bg-white rounded-3xl overflow-hidden shadow-2xl">
+            <div className="max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-sm">
               <img
                 src={selectedPhoto.url}
                 alt={selectedPhoto.title}
@@ -126,7 +126,7 @@ export default function GalleryPage() {
                 </div>
                 <button
                   onClick={() => setSelectedPhoto(null)}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl"
+                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-md"
                 >
                   Close
                 </button>

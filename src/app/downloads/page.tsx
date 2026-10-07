@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Download, FileText, CheckCircle2 } from "lucide-react";
 
@@ -44,14 +44,14 @@ export default function DownloadsPage() {
         {DOWNLOADS.map((doc) => (
           <div
             key={doc.name}
-            className="p-6 sm:p-8 bg-white rounded-3xl border border-gray-200 shadow-soft hover:shadow-card transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+            className="p-6 sm:p-8 bg-white rounded-lg border border-gray-200 shadow-xs hover:shadow-xs transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
           >
             <div className="flex items-start gap-4">
-              <div className="p-3.5 rounded-2xl bg-orange-100 text-ngo-orange shrink-0">
+              <div className="p-3.5 rounded-lg bg-orange-100 text-ngo-orange shrink-0">
                 <FileText className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-heading font-extrabold text-base sm:text-lg text-gray-900 leading-snug">
+                <h4 className="font-heading font-semibold text-base sm:text-lg text-gray-900 leading-snug">
                   {doc.name}
                 </h4>
                 <p className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed">
@@ -65,7 +65,7 @@ export default function DownloadsPage() {
 
             <button
               onClick={() => alert(`Downloading ${doc.name} (${doc.format}). Provided by Sarva Samarpit Sewa Sansthan.`)}
-              className="px-6 py-2.5 rounded-xl bg-ngo-dark hover:bg-black text-white text-xs font-bold flex items-center gap-2 shadow-sm transition-all shrink-0"
+              className="px-6 py-2.5 rounded-md bg-ngo-dark hover:bg-black text-white text-xs font-bold flex items-center gap-2 shadow-sm transition-all shrink-0"
             >
               <Download className="w-3.5 h-3.5" /> Download
             </button>

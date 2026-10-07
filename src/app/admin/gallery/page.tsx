@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Camera, Video, Plus, Trash2, Eye, CheckCircle2 } from "lucide-react";
@@ -90,7 +90,7 @@ export default function AdminGalleryPage() {
     <div className="space-y-6 max-w-6xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-heading font-black text-gray-900">
+          <h1 className="text-2xl font-heading font-bold text-gray-900">
             Media &amp; Gallery Management
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -100,7 +100,7 @@ export default function AdminGalleryPage() {
 
         <button
           onClick={() => setShowAddModal(true)}
-          className="px-4 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
+          className="px-4 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" /> {activeTab === "photos" ? "Add Photo to Album" : "Add Video Embed"}
         </button>
@@ -132,7 +132,7 @@ export default function AdminGalleryPage() {
       {activeTab === "photos" ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {photos.map((p) => (
-            <div key={p.id} className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-soft flex flex-col justify-between">
+            <div key={p.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs flex flex-col justify-between">
               <div className="h-48 overflow-hidden bg-gray-100">
                 <img src={p.url} alt={p.title} className="w-full h-full object-cover" />
               </div>
@@ -156,7 +156,7 @@ export default function AdminGalleryPage() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {videos.map((v) => (
-            <div key={v.id} className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-soft">
+            <div key={v.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs">
               <div className="aspect-video bg-black">
                 <iframe
                   className="w-full h-full"
@@ -184,7 +184,7 @@ export default function AdminGalleryPage() {
 
       {showAddModal && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl space-y-4">
+          <div className="w-full max-w-md bg-white rounded-lg p-6 sm:p-8 shadow-sm space-y-4">
             <h3 className="font-heading font-bold text-lg text-gray-900">
               {activeTab === "photos" ? "Upload / Add Photo URL" : "Embed YouTube Video"}
             </h3>
@@ -197,7 +197,7 @@ export default function AdminGalleryPage() {
                   placeholder="e.g. Daily Annapurna Bhandara near Sangam"
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -211,7 +211,7 @@ export default function AdminGalleryPage() {
                   placeholder={activeTab === "photos" ? "https://images.unsplash.com/..." : "https://youtube.com/watch?v=..."}
                   value={newUrl}
                   onChange={(e) => setNewUrl(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange font-mono"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange font-mono"
                 />
               </div>
 
@@ -220,7 +220,7 @@ export default function AdminGalleryPage() {
                 <select
                   value={newCategory}
                   onChange={(e) => setNewCategory(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange bg-white"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange bg-white"
                 >
                   <option value="Annapurna Bhandara">Annapurna Bhandara</option>
                   <option value="Bade Hanuman Ji Seva">Bade Hanuman Ji Seva</option>
@@ -230,13 +230,13 @@ export default function AdminGalleryPage() {
               </div>
 
               <div className="flex gap-2 pt-2">
-                <button type="submit" className="flex-1 py-2.5 bg-ngo-orange text-white rounded-xl font-bold">
+                <button type="submit" className="flex-1 py-2.5 bg-ngo-orange text-white rounded-md font-bold">
                   Publish to Gallery
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl font-bold"
+                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-md font-bold"
                 >
                   Cancel
                 </button>

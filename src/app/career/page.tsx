@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Briefcase, Heart, Mail, CheckCircle2 } from "lucide-react";
@@ -50,16 +50,16 @@ export default function CareerPage() {
             {OPENINGS.map((job) => (
               <div
                 key={job.title}
-                className="p-6 sm:p-8 bg-white rounded-3xl border border-gray-200 shadow-soft hover:shadow-card transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
+                className="p-6 sm:p-8 bg-white rounded-lg border border-gray-200 shadow-xs hover:shadow-xs transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
               >
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-ngo-orange uppercase tracking-wider bg-orange-50 px-3 py-1 rounded-md">
                       {job.dept}
                     </span>
                     <span className="text-xs text-gray-500 font-medium">{job.type}</span>
                   </div>
-                  <h4 className="font-heading font-extrabold text-lg text-gray-900">
+                  <h4 className="font-heading font-semibold text-lg text-gray-900">
                     {job.title}
                   </h4>
                   <p className="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
@@ -69,7 +69,7 @@ export default function CareerPage() {
 
                 <a
                   href={`mailto:${ORG_DETAILS.email}?subject=${encodeURIComponent("Application for " + job.title)}`}
-                  className="px-6 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white text-xs font-bold shadow-md transition-all shrink-0 text-center"
+                  className="px-6 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white text-xs font-bold shadow-md transition-all shrink-0 text-center"
                 >
                   Apply via Email &rarr;
                 </a>
@@ -79,7 +79,7 @@ export default function CareerPage() {
         </div>
 
         {/* Spontaneous Applications */}
-        <div className="bg-orange-50/80 p-8 rounded-3xl border border-orange-200 text-center space-y-3">
+        <div className="bg-orange-50/80 p-8 rounded-lg border border-orange-200 text-center space-y-3">
           <h4 className="font-heading font-bold text-lg text-ngo-dark">
             Do not see a role that fits your profile?
           </h4>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Calendar, Plus, Trash2, MapPin, Users, CheckCircle2 } from "lucide-react";
@@ -66,7 +66,7 @@ export default function AdminEventsPage() {
     <div className="space-y-6 max-w-6xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-heading font-black text-gray-900">
+          <h1 className="text-2xl font-heading font-bold text-gray-900">
             Events &amp; Mahotsav Management
           </h1>
           <p className="text-xs text-gray-500 mt-1">
@@ -76,13 +76,13 @@ export default function AdminEventsPage() {
 
         <button
           onClick={() => setShowModal(true)}
-          className="px-4 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
+          className="px-4 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" /> Create New Event
         </button>
       </div>
 
-      <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-soft">
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs">
         <table className="w-full text-left text-xs">
           <thead className="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
             <tr>
@@ -104,7 +104,7 @@ export default function AdminEventsPage() {
                   {e.registered} / {e.maxAttendees}
                 </td>
                 <td className="p-4">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                  <span className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800">
                     Active
                   </span>
                 </td>
@@ -125,7 +125,7 @@ export default function AdminEventsPage() {
 
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl space-y-4">
+          <div className="w-full max-w-md bg-white rounded-lg p-6 sm:p-8 shadow-sm space-y-4">
             <h3 className="font-heading font-bold text-lg text-gray-900">Create Seva Event</h3>
             <form onSubmit={handleCreate} className="space-y-4 text-xs">
               <div>
@@ -136,7 +136,7 @@ export default function AdminEventsPage() {
                   placeholder="e.g. Free Cardiac Diagnostic Camp"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange font-semibold"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange font-semibold"
                 />
               </div>
 
@@ -148,7 +148,7 @@ export default function AdminEventsPage() {
                   placeholder="e.g. 15 November 2026"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -159,7 +159,7 @@ export default function AdminEventsPage() {
                   required
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
@@ -169,18 +169,18 @@ export default function AdminEventsPage() {
                   type="number"
                   value={maxAttendees}
                   onChange={(e) => setMaxAttendees(parseInt(e.target.value) || 500)}
-                  className="w-full px-3 py-2 border rounded-xl focus:outline-none focus:border-ngo-orange"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-ngo-orange"
                 />
               </div>
 
               <div className="flex gap-2 pt-2">
-                <button type="submit" className="flex-1 py-2.5 bg-ngo-orange text-white rounded-xl font-bold">
+                <button type="submit" className="flex-1 py-2.5 bg-ngo-orange text-white rounded-md font-bold">
                   Publish Event
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowModal(false)}
-                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl font-bold"
+                  className="px-4 py-2.5 bg-gray-100 text-gray-700 rounded-md font-bold"
                 >
                   Cancel
                 </button>

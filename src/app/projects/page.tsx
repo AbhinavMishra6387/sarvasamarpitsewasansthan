@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 import { dbStore } from "@/lib/db-storage";
@@ -29,26 +29,26 @@ export default async function ProjectsPage() {
             return (
               <div
                 key={proj.id}
-                className="bg-white rounded-3xl border border-gray-100 shadow-soft hover:shadow-card transition-all overflow-hidden flex flex-col group"
+                className="bg-white rounded-lg border border-gray-100 shadow-xs hover:shadow-xs transition-all overflow-hidden flex flex-col group"
               >
                 <div className="relative h-64 overflow-hidden bg-gray-100">
                   <img
                     src={proj.featuredImage}
                     alt={proj.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-transition-colors duration-200 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-ngo-dark/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                  <div className="absolute top-4 left-4 bg-ngo-dark/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-md flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5 text-ngo-orange" />
                     <span>{proj.location}</span>
                   </div>
-                  <div className="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                  <div className="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-md shadow-sm">
                     {proj.status}
                   </div>
                 </div>
 
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-heading font-extrabold text-xl text-gray-900 group-hover:text-ngo-orange transition-colors">
+                    <h3 className="font-heading font-semibold text-xl text-gray-900 group-hover:text-ngo-orange transition-colors">
                       {proj.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-600 mt-3 leading-relaxed">
@@ -64,9 +64,9 @@ export default async function ProjectsPage() {
                       <span className="text-ngo-orange font-bold text-sm">{percent}%</span>
                     </div>
 
-                    <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden mb-6">
+                    <div className="w-full bg-gray-100 h-2.5 rounded-xs overflow-hidden mb-6">
                       <div
-                        className="bg-ngo-orange h-full rounded-full transition-all duration-1000"
+                        className="bg-ngo-orange h-full rounded-xs transition-all duration-1000"
                         style={{ width: `${percent}%` }}
                       />
                     </div>
@@ -82,7 +82,7 @@ export default async function ProjectsPage() {
 
                       <Link
                         href={`/donate?cause=${encodeURIComponent(proj.title)}`}
-                        className="px-5 py-2.5 rounded-xl bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
+                        className="px-5 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
                       >
                         <Heart className="w-3.5 h-3.5 fill-white" />
                         <span>Sponsor this Project</span>

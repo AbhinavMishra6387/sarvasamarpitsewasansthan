@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { ShieldCheck, Search, Clock, FileText, User } from "lucide-react";
@@ -69,7 +69,7 @@ export default function AdminAuditLogsPage() {
   return (
     <div className="space-y-6 max-w-6xl mx-auto">
       <div>
-        <h1 className="text-2xl font-heading font-black text-gray-900">
+        <h1 className="text-2xl font-heading font-bold text-gray-900">
           Security Audit Trail &amp; Activity Logs
         </h1>
         <p className="text-xs text-gray-500 mt-1">
@@ -77,7 +77,7 @@ export default function AdminAuditLogsPage() {
         </p>
       </div>
 
-      <div className="bg-white p-4 rounded-2xl border border-gray-200 flex items-center gap-3">
+      <div className="bg-white p-4 rounded-lg border border-gray-200 flex items-center gap-3">
         <Search className="w-4 h-4 text-gray-400" />
         <input
           type="text"
@@ -88,7 +88,7 @@ export default function AdminAuditLogsPage() {
         />
       </div>
 
-      <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-soft">
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead className="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
@@ -108,7 +108,7 @@ export default function AdminAuditLogsPage() {
                     {log.time}
                   </td>
                   <td className="p-4">
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-ngo-orange-800">
+                    <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-100 text-ngo-orange-800">
                       {log.action}
                     </span>
                   </td>

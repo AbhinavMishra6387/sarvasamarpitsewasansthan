@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { ShieldCheck, Award, FileCheck, CheckCircle2 } from "lucide-react";
 import { ORG_DETAILS } from "@/lib/constants";
@@ -50,23 +50,23 @@ export default function CertificatesPage() {
           {CERTS.map((c) => (
             <div
               key={c.title}
-              className="p-6 sm:p-8 bg-white rounded-3xl border border-gray-200 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
+              className="p-6 sm:p-8 bg-white rounded-lg border border-gray-200 shadow-xs hover:shadow-xs transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="p-2.5 rounded-2xl bg-orange-100 text-ngo-orange">
+                  <span className="p-2.5 rounded-lg bg-orange-100 text-ngo-orange">
                     <ShieldCheck className="w-6 h-6" />
                   </span>
-                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
                     Active &bull; Verified
                   </span>
                 </div>
 
-                <h4 className="font-heading font-extrabold text-lg text-gray-900 leading-snug">
+                <h4 className="font-heading font-semibold text-lg text-gray-900 leading-snug">
                   {c.title}
                 </h4>
 
-                <div className="mt-4 p-3 bg-gray-50 rounded-xl border border-gray-100 text-xs font-mono text-gray-800">
+                <div className="mt-4 p-3 bg-gray-50 rounded-md border border-gray-100 text-xs font-mono text-gray-800">
                   <span className="text-gray-400 block text-[10px] font-sans">Certificate / Reg Number:</span>
                   <strong>{c.regNo}</strong>
                 </div>

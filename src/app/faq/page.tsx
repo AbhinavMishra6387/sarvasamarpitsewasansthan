@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -53,11 +53,11 @@ export default function FaqPage() {
           {FAQS.map((faq, idx) => (
             <div
               key={faq.q}
-              className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-soft transition-all"
+              className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs transition-all"
             >
               <button
                 onClick={() => toggle(idx)}
-                className="w-full p-6 text-left flex items-center justify-between gap-4 font-heading font-extrabold text-base text-gray-900 hover:text-ngo-orange transition-colors"
+                className="w-full p-6 text-left flex items-center justify-between gap-4 font-heading font-semibold text-base text-gray-900 hover:text-ngo-orange transition-colors"
               >
                 <span>{faq.q}</span>
                 <ChevronDown
@@ -76,7 +76,7 @@ export default function FaqPage() {
           ))}
         </div>
 
-        <div className="bg-ngo-dark-900 text-white p-8 rounded-3xl border-t-4 border-ngo-orange text-center space-y-3">
+        <div className="bg-ngo-dark-900 text-white p-8 rounded-lg border-t-4 border-ngo-orange text-center space-y-3">
           <h4 className="font-heading font-bold text-lg">Still Have Unanswered Questions?</h4>
           <p className="text-xs text-gray-300 max-w-md mx-auto">
             Our 24/7 volunteer desk is available by phone or WhatsApp to address any inquiries.
@@ -84,7 +84,7 @@ export default function FaqPage() {
           <div className="pt-2">
             <a
               href={`tel:${ORG_DETAILS.phone}`}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-ngo-orange hover:bg-ngo-orange-600 text-white text-xs font-bold transition-all shadow-md"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md bg-ngo-orange hover:bg-ngo-orange-600 text-white text-xs font-bold transition-all shadow-md"
             >
               <Phone className="w-3.5 h-3.5" /> Call Helpline: {ORG_DETAILS.phone}
             </a>

@@ -45,14 +45,9 @@ const config: Config = {
         heading: ["var(--font-poppins)", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
-        card: "0 10px 30px -4px rgba(45, 45, 45, 0.08)",
-        glow: "0 0 25px rgba(245, 124, 0, 0.25)",
-      },
-      borderRadius: {
-        xl: "1rem",
-        "2xl": "1.25rem",
-        "3xl": "1.75rem",
+        subtle: "0 1px 2px 0 rgba(0, 0, 0, 0.04)",
+        card: "0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.06)",
+        float: "0 4px 12px -2px rgba(0, 0, 0, 0.08)",
       },
     },
   },
