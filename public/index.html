@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -159,7 +159,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Mukta:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet">
   <style>
     html, body {
       overflow-x: hidden;
@@ -169,10 +169,19 @@
     }
     body { font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans', sans-serif; }
     h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif; }
-    .font-hindi, [lang="hi"], #cardHindiName, .hindi-text {
-      font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif !important;
+    body.lang-hi, .font-hindi, [lang="hi"], #cardHindiName, .hindi-text {
+      font-family: 'Mukta', 'Noto Sans Devanagari', 'Inter', -apple-system, sans-serif !important;
       letter-spacing: 0.01em;
       word-spacing: normal;
+      line-height: 1.6;
+    }
+    body.lang-hi h1, body.lang-hi h2, body.lang-hi h3, body.lang-hi h4, body.lang-hi h5, body.lang-hi h6,
+    [lang="hi"] h1, [lang="hi"] h2, [lang="hi"] h3, [lang="hi"] h4, [lang="hi"] h5, [lang="hi"] h6,
+    .font-hindi-heading {
+      font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif !important;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
     }
     #corporateIdCardContainer, #corporateIdCardBackContainer {
       font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
@@ -399,9 +408,9 @@
       <!-- Header Action Buttons (Responsive & Never Overlapping) -->
       <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
         <!-- 1. Bilingual Language Switcher Button -->
-        <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg border border-stone-300 text-[11px] sm:text-xs font-bold text-stone-800 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/60 transition-all shadow-2xs cursor-pointer" title="Switch language (हिंदी / English)">
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg border-2 border-orange-500 bg-orange-50/90 hover:bg-orange-100 text-stone-900 font-bold text-[11px] sm:text-xs shadow-xs transition-all cursor-pointer group" title="भाषा बदलें / Switch Language (हिन्दी / English)">
           <svg class="w-3.5 h-3.5 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
-          <span id="langToggleLabel">हिंदी</span>
+          <span id="langToggleLabel" class="flex items-center gap-1"><span id="langBadgeHi" class="px-1.5 py-0.5 rounded bg-orange-600 text-white font-hindi font-bold">हिन्दी</span><span class="text-stone-400">/</span><span id="langBadgeEn" class="text-stone-700 font-semibold">EN</span></span>
         </button>
 
         <!-- 2. Verify ID (Desktop md+) -->
@@ -463,7 +472,7 @@
         <!-- Language Switcher Strip in Drawer -->
         <button onclick="toggleLanguage()" class="w-full py-2.5 px-3 rounded-lg bg-stone-100 hover:bg-orange-50 text-stone-800 font-bold border border-stone-200 flex items-center justify-between text-xs transition-colors">
           <span class="flex items-center gap-2"><svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg> <span>Switch Language / भाषा</span></span>
-          <span id="drawerLangLabel" class="px-2.5 py-1 rounded-lg bg-orange-600 text-white font-semibold text-[11px] shadow-2xs">हिंदी</span>
+          <span id="drawerLangLabel" class="flex items-center gap-1"><span id="drawerBadgeHi" class="px-2 py-0.5 rounded bg-orange-600 text-white font-hindi font-bold text-xs">हिन्दी</span><span class="text-stone-400">/</span><span id="drawerBadgeEn" class="text-stone-700 font-bold text-xs">EN</span></span>
         </button>
 
         <!-- User Status Badge -->
@@ -749,90 +758,156 @@
         
       </section>
 
-      <!-- ALL SEVA PILLARS COUNTER STRIP -->
-      <section class="bg-white border-b border-stone-200/80 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 shadow-xs w-full">
-        <div class="w-full max-w-[1536px] mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
-          
-          <div onclick="switchTab('free-education')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5"/></svg>
-              </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">शिक्षा सेवा</span>
+      <!-- ALL 8 SEVA PILLARS COUNTER STRIP (BRIGHT, ACCURATE METRICS & DEDICATED ROUTING) -->
+      <section class="bg-gradient-to-b from-stone-50 via-white to-orange-50/30 border-y border-stone-200/80 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-xs w-full">
+        <div class="w-full max-w-[1536px] mx-auto">
+          <div class="flex items-center justify-between mb-4 px-1">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse"></span>
+              <span class="text-xs sm:text-sm font-bold text-stone-800 uppercase tracking-wider font-hindi">à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¤•à¥‡ à¥® à¤ªà¥à¤°à¤®à¥à¤– à¤¸à¥‡à¤µà¤¾ à¤¸à¥à¤¤à¤‚à¤­ â€¢ 8 Core Seva Wings</span>
             </div>
-            <span id="cmsDispPillarStudents" class="text-[11px] font-medium text-stone-500 block">Free Education</span>
+            <span class="text-[11px] font-bold text-orange-700 bg-orange-100/90 px-3 py-1 rounded-md border border-orange-200">à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤ªà¥à¤°à¤®à¤¾à¤£à¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤†à¤‚à¤•à¤¡à¤¼à¥‡</span>
           </div>
 
-          <div onclick="switchTab('food-distribution')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-3.5">
+            
+            <!-- 1. à¤¶à¤¿à¤•à¥à¤·à¤¾ à¤¸à¥‡à¤µà¤¾ â€¢ 85+ Students -->
+            <button type="button" onclick="switchTab('free-education')" class="relative p-3.5 rounded-xl bg-white border-2 border-orange-400 hover:border-orange-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 to-amber-500"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-orange-600 transition-colors leading-tight">à¤¶à¤¿à¤•à¥à¤·à¤¾ à¤¸à¥‡à¤µà¤¾</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-orange-100 text-orange-800 font-extrabold text-[11px] sm:text-xs">
+                  85+ Students
+                </div>
               </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">अन्न सेवा</span>
-            </div>
-            <span id="cmsDispPillarMeals" class="text-[11px] font-medium text-stone-500 block">24×7 Langar</span>
-          </div>
+              <span class="text-[10px] text-orange-600 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
 
-          <div onclick="switchTab('social-welfare')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            <!-- 2. à¤…à¤¨à¥à¤¨ à¤¸à¥‡à¤µà¤¾ â€¢ 5,00,000+ Meals -->
+            <button type="button" onclick="switchTab('food-distribution')" class="relative p-3.5 rounded-xl bg-white border-2 border-amber-400 hover:border-amber-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-amber-600 transition-colors leading-tight">à¤…à¤¨à¥à¤¨ à¤¸à¥‡à¤µà¤¾</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-extrabold text-[11px] sm:text-xs">
+                  5,00,000+ Meals
+                </div>
               </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">स्वास्थ्य सेवा</span>
-            </div>
-            <span id="cmsDispPillarMedical" class="text-[11px] font-medium text-stone-500 block">Medical Camps</span>
-          </div>
+              <span class="text-[10px] text-amber-700 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
 
-          <div onclick="switchTab('social-welfare')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            <!-- 3. à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤¸à¥‡à¤µà¤¾ â€¢ 15,000+ Patients -->
+            <button type="button" onclick="switchTab('healthcare')" class="relative p-3.5 rounded-xl bg-white border-2 border-emerald-400 hover:border-emerald-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-emerald-600 transition-colors leading-tight">à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤¸à¥‡à¤µà¤¾</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-extrabold text-[11px] sm:text-xs">
+                  15,000+ Patients
+                </div>
               </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">वृक्षारोपण</span>
-            </div>
-            <span id="cmsDispPillarTrees" class="text-[11px] font-medium text-stone-500 block">Plantation Drives</span>
-          </div>
+              <span class="text-[10px] text-emerald-700 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
 
-          <div onclick="switchTab('social-welfare')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <!-- 4. à¤µà¥ƒà¤•à¥à¤·à¤¾à¤°à¥‹à¤ªà¤£ â€¢ 5,000+ Trees -->
+            <button type="button" onclick="switchTab('tree-plantation')" class="relative p-3.5 rounded-xl bg-white border-2 border-green-500 hover:border-green-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-green-500 to-emerald-600"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-green-600 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-green-700 transition-colors leading-tight">à¤µà¥ƒà¤•à¥à¤·à¤¾à¤°à¥‹à¤ªà¤£</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-green-100 text-green-900 font-extrabold text-[11px] sm:text-xs">
+                  5,000+ Trees
+                </div>
               </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">महिला स्वच्छता</span>
-            </div>
-            <span class="text-[11px] font-medium text-stone-500 block">Sanitary Pads</span>
-          </div>
+              <span class="text-[10px] text-green-700 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
 
-          <div onclick="switchTab('social-welfare')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <!-- 5. à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾ â€¢ Sanitary Pads -->
+            <button type="button" onclick="switchTab('women-hygiene')" class="relative p-3.5 rounded-xl bg-white border-2 border-rose-400 hover:border-rose-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-500 to-pink-500"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-rose-500 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-rose-600 transition-colors leading-tight">à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-rose-100 text-rose-900 font-extrabold text-[11px] sm:text-xs">
+                  Sanitary Pads
+                </div>
               </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">विवाह सहयोग</span>
-            </div>
-            <span class="text-[11px] font-medium text-stone-500 block">Marriage Support</span>
-          </div>
+              <span class="text-[10px] text-rose-700 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
 
-          <div onclick="switchTab('social-welfare')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            <!-- 6. à¤µà¤¿à¤µà¤¾à¤¹ à¤¸à¤¹à¤¯à¥‹à¤— â€¢ Marriage Support -->
+            <button type="button" onclick="switchTab('marriage-support')" class="relative p-3.5 rounded-xl bg-white border-2 border-red-400 hover:border-red-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 to-rose-600"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-red-600 transition-colors leading-tight">à¤µà¤¿à¤µà¤¾à¤¹ à¤¸à¤¹à¤¯à¥‹à¤—</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-red-100 text-red-900 font-extrabold text-[11px] sm:text-xs">
+                  Marriage Support
+                </div>
               </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">कंबल सेवा</span>
-            </div>
-            <span id="cmsDispPillarBlankets" class="text-[11px] font-medium text-stone-500 block">Winter Blankets</span>
-          </div>
+              <span class="text-[10px] text-red-700 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
 
-          <div onclick="switchTab('religious-activities')" class="p-3.5 sm:p-4 rounded-lg bg-white border border-stone-200 hover:border-stone-400 transition-all cursor-pointer text-left group">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-md bg-stone-100 text-stone-700 group-hover:bg-orange-50 group-hover:text-orange-700 flex items-center justify-center shrink-0">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <!-- 7. à¤•à¤‚à¤¬à¤² à¤¸à¥‡à¤µà¤¾ â€¢ 25,000+ Blankets -->
+            <button type="button" onclick="switchTab('blanket-distribution')" class="relative p-3.5 rounded-xl bg-white border-2 border-indigo-400 hover:border-indigo-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-indigo-600 transition-colors leading-tight">à¤•à¤‚à¤¬à¤² à¤¸à¥‡à¤µà¤¾</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-indigo-100 text-indigo-900 font-extrabold text-[11px] sm:text-xs">
+                  25,000+ Blankets
+                </div>
               </div>
-              <span class="font-semibold text-sm sm:text-base text-stone-900 font-hindi">मंदिर सेवा</span>
-            </div>
-            <span class="text-[11px] font-medium text-stone-500 block">Shree Hanuman Seva</span>
-          </div>
+              <span class="text-[10px] text-indigo-700 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
 
+            <!-- 8. à¤®à¤‚à¤¦à¤¿à¤° à¤¸à¥‡à¤µà¤¾ â€¢ Shree Hanuman Seva -->
+            <button type="button" onclick="switchTab('temple-seva')" class="relative p-3.5 rounded-xl bg-white border-2 border-amber-500 hover:border-amber-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer text-left group flex flex-col justify-between overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-orange-600"></div>
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-orange-600 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                  </div>
+                  <span class="font-bold text-sm sm:text-base text-stone-900 font-hindi group-hover:text-orange-600 transition-colors leading-tight">à¤®à¤‚à¤¦à¤¿à¤° à¤¸à¥‡à¤µà¤¾</span>
+                </div>
+                <div class="inline-block px-2 py-0.5 rounded bg-orange-100 text-orange-950 font-extrabold text-[11px] sm:text-xs">
+                  Shree Hanuman Seva
+                </div>
+              </div>
+              <span class="text-[10px] text-orange-700 font-bold mt-2 flex items-center gap-1 group-hover:underline">à¤µà¤¿à¤¸à¥à¤¤à¥ƒà¤¤ à¤¸à¥‡à¤µà¤¾ &rarr;</span>
+            </button>
+
+          </div>
         </div>
       </section>
 
@@ -2172,7 +2247,13 @@
         </div>
       </div>
 
-      <!-- ======================================================== -->
+      
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="food-distribution-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-orange-200 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+<!-- ======================================================== -->
       <!-- ALL 5 AUTHENTIC SEVA PHOTOGRAPHS SHOWCASE                 -->
       <!-- ======================================================== -->
       <div class="space-y-6 pt-4">
@@ -2194,7 +2275,7 @@
         </div>
 
         <!-- 5 Photos Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="food-distribution-gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Photo 1 -->
           <div class="bg-white rounded-lg border-2 border-stone-200 overflow-hidden shadow-sm hover:shadow-sm hover:border-orange-400 transition-all flex flex-col group">
@@ -2516,7 +2597,13 @@
         </div>
       </div>
 
-      <!-- ======================================================== -->
+      
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="free-education-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-blue-200 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+<!-- ======================================================== -->
       <!-- ALL 5 AUTHENTIC EDUCATION PHOTOGRAPHS SHOWCASE            -->
       <!-- ======================================================== -->
       <div class="space-y-6 pt-4">
@@ -2538,7 +2625,7 @@
         </div>
 
         <!-- 5 Photos Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="free-education-gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Photo 1 -->
           <div class="bg-white rounded-lg border-2 border-stone-200 overflow-hidden shadow-sm hover:shadow-sm hover:border-blue-400 transition-all flex flex-col group">
@@ -3265,6 +3352,582 @@
     <!-- ========================================== -->
     <!-- 8. VOLUNTEER REGISTRATION TAB              -->
     <!-- ========================================== -->
+        <!-- ================================================================= -->
+    <!-- DEDICATED SEVA PROGRAM PAGE 3: HEALTHCARE SEVA (à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤¸à¥‡à¤µà¤¾)   -->
+    <!-- ================================================================= -->
+    <div id="tab-healthcare" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
+      <!-- Universal Subnav -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Title Header -->
+      <div class="text-center space-y-3">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/90 border border-emerald-300 px-4 py-1.5 rounded-md shadow-2xs">
+          <span>ðŸ¥</span> à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤¸à¥‡à¤µà¤¾ â€¢ Free Healthcare &amp; Medical Relief (15,000+ Patients Served)
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-semibold text-stone-900 tracking-tight">
+          à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤¸à¥‡à¤µà¤¾ <span class="text-2xl sm:text-4xl font-semibold text-emerald-600">(Healthcare &amp; Medical Camps)</span>
+        </h2>
+        <p class="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¤•à¥‡ à¤—à¥à¤°à¤¾à¤®à¥€à¤£ à¤…à¤‚à¤šà¤²à¥‹à¤‚, à¤®à¤²à¤¿à¤¨ à¤¬à¤¸à¥à¤¤à¤¿à¤¯à¥‹à¤‚ à¤à¤µà¤‚ à¤¸à¤‚à¤—à¤® à¤¤à¤Ÿ à¤ªà¤° à¤¨à¤¿à¤¯à¤®à¤¿à¤¤ à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤œà¤¾à¤‚à¤š à¤¶à¤¿à¤µà¤¿à¤°, à¤¬à¥€à¤ªà¥€/à¤¶à¥à¤—à¤° à¤ªà¤°à¥€à¤•à¥à¤·à¤£, à¤†à¤µà¤¶à¥à¤¯à¤• à¤¦à¤µà¤¾à¤“à¤‚ à¤•à¤¾ à¤µà¤¿à¤¤à¤°à¤£ à¤à¤µà¤‚ à¤—à¤‚à¤­à¥€à¤° à¤®à¤°à¥€à¤œà¥‹à¤‚ à¤•à¤¾ à¤®à¤¾à¤°à¥à¤—à¤¦à¤°à¥à¤¶à¤¨à¥¤
+        </p>
+      </div>
+
+      <!-- Impact Stats Deck -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-lg border-2 border-emerald-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-emerald-700 font-hindi">15,000+</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤²à¤¾à¤­à¤¾à¤¨à¥à¤µà¤¿à¤¤ à¤°à¥‹à¤—à¥€</div>
+          <div class="text-[11px] text-stone-500">Free checkups &amp; medicines</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-emerald-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-teal-700 font-hindi">100% à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤•</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¦à¤µà¤¾à¤à¤‚ à¤µ à¤œà¤¾à¤‚à¤š à¤•à¤¿à¤Ÿ</div>
+          <div class="text-[11px] text-stone-500">Zero cost to patients</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-emerald-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-cyan-700 font-hindi">à¤®à¤¾à¤¸à¤¿à¤• à¤¶à¤¿à¤µà¤¿à¤°</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤—à¥à¤°à¤¾à¤®à¥€à¤£ à¤šà¤¿à¤•à¤¿à¤¤à¥à¤¸à¤¾ à¤•à¥ˆà¤‚à¤ª</div>
+          <div class="text-[11px] text-stone-500">Rural outreach in Prayagraj</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-emerald-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-emerald-800 font-hindi">24Ã—7 à¤¸à¤¹à¤¾à¤¯à¤¤à¤¾</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤…à¤¸à¥à¤ªà¤¤à¤¾à¤² à¤®à¤¾à¤°à¥à¤—à¤¦à¤°à¥à¤¶à¤¨ à¤¦à¤²</div>
+          <div class="text-[11px] text-stone-500">Patient helpline &amp; guidance</div>
+        </div>
+      </div>
+
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="healthcare-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-emerald-200 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Dedicated Photo Gallery Grid -->
+      <div class="space-y-4 pt-2">
+        <div class="border-b border-stone-200 pb-3 flex items-center justify-between">
+          <h3 class="text-xl font-bold text-stone-900 font-hindi">à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤¸à¥‡à¤µà¤¾ à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤›à¤¾à¤¯à¤¾à¤šà¤¿à¤¤à¥à¤° â€¢ Real Medical Seva Photos</h3>
+          <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">à¤ªà¥à¤°à¤®à¤¾à¤£à¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¦à¤°à¥à¤¶à¤¨</span>
+        </div>
+        <div id="healthcare-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Narrative & Ground Details Card -->
+      <div class="bg-gradient-to-br from-emerald-50/60 via-white to-white p-6 sm:p-10 rounded-xl border-2 border-emerald-300 shadow-sm space-y-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-emerald-200">
+            <span>ðŸŒ¿</span> à¤†à¤°à¥‹à¤—à¥à¤¯ à¤à¤µà¤‚ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤•à¤²à¥à¤ª
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            "à¤†à¤°à¥‹à¤—à¥à¤¯ à¤¹à¥€ à¤¸à¤¬à¤¸à¥‡ à¤¬à¤¡à¤¼à¤¾ à¤§à¤¨ à¤¹à¥ˆ" â€” à¤…à¤¸à¤¹à¤¾à¤¯ à¤®à¤°à¥€à¤œà¥‹à¤‚ à¤•à¤¾ à¤¸à¤šà¥à¤šà¤¾ à¤¸à¤‚à¤¬à¤²
+          </h3>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¤•à¥‡ à¤¦à¥‚à¤°à¤¸à¥à¤¥ à¤—à¤¾à¤‚à¤µà¥‹à¤‚ à¤”à¤° à¤à¥à¤—à¥à¤—à¥€ à¤¬à¤¸à¥à¤¤à¤¿à¤¯à¥‹à¤‚ à¤®à¥‡à¤‚ à¤œà¤¹à¤¾à¤‚ à¤ªà¥à¤°à¤¾à¤¥à¤®à¤¿à¤• à¤šà¤¿à¤•à¤¿à¤¤à¥à¤¸à¤¾ à¤¸à¥à¤µà¤¿à¤§à¤¾à¤à¤‚ à¤¸à¥€à¤®à¤¿à¤¤ à¤¹à¥ˆà¤‚, à¤¨à¤¿à¤¯à¤®à¤¿à¤¤ à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤šà¤¿à¤•à¤¿à¤¤à¥à¤¸à¤¾ à¤ªà¤°à¤¾à¤®à¤°à¥à¤¶ à¤à¤µà¤‚ à¤¦à¤µà¤¾ à¤µà¤¿à¤¤à¤°à¤£ à¤¶à¤¿à¤µà¤¿à¤° à¤†à¤¯à¥‹à¤œà¤¿à¤¤ à¤•à¤¿à¤ à¤œà¤¾à¤¤à¥‡ à¤¹à¥ˆà¤‚à¥¤ à¤¸à¥‡à¤µà¤¾à¤­à¤¾à¤µà¥€ à¤¡à¥‰à¤•à¥à¤Ÿà¤°à¥‹à¤‚ à¤•à¥€ à¤Ÿà¥€à¤® à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤¸à¤¾à¤®à¤¾à¤¨à¥à¤¯ à¤®à¥Œà¤¸à¤®à¥€ à¤¬à¥€à¤®à¤¾à¤°à¤¿à¤¯à¤¾à¤‚, à¤¤à¥à¤µà¤šà¤¾ à¤°à¥‹à¤—, à¤‰à¤šà¥à¤š à¤°à¤•à¥à¤¤à¤šà¤¾à¤ª à¤à¤µà¤‚ à¤®à¤§à¥à¤®à¥‡à¤¹ à¤•à¥€ à¤œà¤¾à¤‚à¤š à¤•à¥€ à¤œà¤¾à¤¤à¥€ à¤¹à¥ˆ à¤”à¤° à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¦à¤µà¤¾à¤à¤‚ à¤‰à¤ªà¤²à¤¬à¥à¤§ à¤•à¤°à¤¾à¤ˆ à¤œà¤¾à¤¤à¥€ à¤¹à¥ˆà¤‚à¥¤
+          </p>
+        </div>
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer">
+            <span>ðŸ’Š</span> Sponsor Medical Camp (â‚¹ 2,100) &rarr;
+          </button>
+          <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
+            ðŸ“ž 09450858514
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- DEDICATED SEVA PROGRAM PAGE 4: TREE PLANTATION (à¤µà¥ƒà¤•à¥à¤·à¤¾à¤°à¥‹à¤ªà¤£)        -->
+    <!-- ================================================================= -->
+    <div id="tab-tree-plantation" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
+      <!-- Universal Subnav -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Title Header -->
+      <div class="text-center space-y-3">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-green-800 bg-green-100/90 border border-green-300 px-4 py-1.5 rounded-md shadow-2xs">
+          <span>ðŸŒ³</span> à¤¹à¤°à¤¿à¤¤ à¤§à¤°à¤¾ à¤…à¤­à¤¿à¤¯à¤¾à¤¨ â€¢ Sacred Tree Plantation Drives (5,000+ Trees Planted)
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-semibold text-stone-900 tracking-tight">
+          à¤µà¥ƒà¤•à¥à¤·à¤¾à¤°à¥‹à¤ªà¤£ à¤¸à¥‡à¤µà¤¾ <span class="text-2xl sm:text-4xl font-semibold text-green-700">(Tree Plantation &amp; Harit Dhara)</span>
+        </h2>
+        <p class="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          à¤¤à¥à¤°à¤¿à¤µà¥‡à¤£à¥€ à¤¸à¤‚à¤—à¤® à¤¤à¤Ÿ, à¤¤à¥€à¤°à¥à¤¥ à¤®à¤¾à¤°à¥à¤—à¥‹à¤‚, à¤—à¥à¤°à¤¾à¤®à¥€à¤£ à¤µà¤¿à¤¦à¥à¤¯à¤¾à¤²à¤¯à¥‹à¤‚ à¤µ à¤œà¤²à¤¾à¤¶à¤¯à¥‹à¤‚ à¤•à¥‡ à¤¸à¤®à¥€à¤ª à¤ªà¥à¤°à¤¾à¤£à¤µà¤¾à¤¯à¥ à¤ªà¥à¤°à¤¦à¤¾à¤¤à¤¾ à¤¨à¥€à¤®, à¤ªà¥€à¤ªà¤², à¤¬à¤°à¤—à¤¦ à¤µ à¤«à¤²à¤¦à¤¾à¤° à¤ªà¥Œà¤§à¥‹à¤‚ à¤•à¤¾ à¤¸à¤˜à¤¨ à¤°à¥‹à¤ªà¤£ à¤à¤µà¤‚ à¤¦à¥€à¤°à¥à¤˜à¤•à¤¾à¤²à¤¿à¤• à¤¸à¤‚à¤°à¤•à¥à¤·à¤£à¥¤
+        </p>
+      </div>
+
+      <!-- Impact Stats Deck -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-lg border-2 border-green-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-green-700 font-hindi">5,000+</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤°à¥‹à¤ªà¤¿à¤¤ à¤µ à¤¸à¤‚à¤°à¤•à¥à¤·à¤¿à¤¤ à¤µà¥ƒà¤•à¥à¤·</div>
+          <div class="text-[11px] text-stone-500">Trees thriving across Prayagraj</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-green-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-emerald-700 font-hindi">à¤ªà¥€à¤ªà¤², à¤¨à¥€à¤®, à¤¬à¤°à¤—à¤¦</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤ªà¥à¤°à¤¾à¤£à¤µà¤¾à¤¯à¥ à¤ªà¥à¤°à¤¦à¤¾à¤¤à¤¾ à¤µà¥ƒà¤•à¥à¤·</div>
+          <div class="text-[11px] text-stone-500">High oxygen sacred species</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-green-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-teal-700 font-hindi">à¤Ÿà¥à¤°à¥€-à¤—à¤¾à¤°à¥à¤¡ à¤¸à¥à¤°à¤•à¥à¤·à¤¾</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">100% à¤¨à¤¿à¤¯à¤®à¤¿à¤¤ à¤¦à¥‡à¤–à¤°à¥‡à¤–</div>
+          <div class="text-[11px] text-stone-500">Continuous watering &amp; care</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-green-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-lime-800 font-hindi">à¤¸à¤‚à¤—à¤® à¤¤à¤Ÿ à¤¸à¤‚à¤µà¤°à¥à¤§à¤¨</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤®à¥ƒà¤¦à¤¾ à¤•à¥à¤·à¤°à¤£ à¤°à¥‹à¤•à¤¥à¤¾à¤®</div>
+          <div class="text-[11px] text-stone-500">Riverbank ecological balance</div>
+        </div>
+      </div>
+
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="tree-plantation-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-green-300 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Dedicated Photo Gallery Grid -->
+      <div class="space-y-4 pt-2">
+        <div class="border-b border-stone-200 pb-3 flex items-center justify-between">
+          <h3 class="text-xl font-bold text-stone-900 font-hindi">à¤µà¥ƒà¤•à¥à¤·à¤¾à¤°à¥‹à¤ªà¤£ à¤µà¤¾à¤¸à¥à¤¤à¤µà¤¿à¤• à¤›à¤¾à¤¯à¤¾à¤šà¤¿à¤¤à¥à¤° â€¢ Real Tree Plantation Photos</h3>
+          <span class="text-xs font-semibold text-green-700 bg-green-50 px-2.5 py-1 rounded-md border border-green-200">à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤¸à¥‡à¤µà¤¾ à¤¦à¤°à¥à¤¶à¤¨</span>
+        </div>
+        <div id="tree-plantation-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Narrative & Ground Details Card -->
+      <div class="bg-gradient-to-br from-green-50/60 via-white to-white p-6 sm:p-10 rounded-xl border-2 border-green-400 shadow-sm space-y-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 bg-green-100 text-green-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-green-200">
+            <span>ðŸŒ±</span> à¤ªà¥à¤°à¤•à¥ƒà¤¤à¤¿ à¤¸à¤‚à¤°à¤•à¥à¤·à¤£ à¤¹à¥€ à¤¸à¤šà¥à¤šà¥€ à¤®à¤¾à¤¨à¤µ à¤¸à¥‡à¤µà¤¾ à¤¹à¥ˆ
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            'à¤à¤• à¤ªà¥‡à¤¡à¤¼ à¤®à¤¾à¤‚ à¤•à¥‡ à¤¨à¤¾à¤®' à¤à¤µà¤‚ à¤¤à¥à¤°à¤¿à¤µà¥‡à¤£à¥€ à¤¸à¤‚à¤—à¤® à¤¤à¤Ÿ à¤¹à¤°à¤¿à¤¤ à¤®à¤¹à¤¾à¤…à¤­à¤¿à¤¯à¤¾à¤¨
+          </h3>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤•à¥‡à¤µà¤² à¤ªà¥Œà¤§à¥‡ à¤°à¥‹à¤ªà¤¨à¥‡ à¤¤à¤• à¤¹à¥€ à¤¸à¥€à¤®à¤¿à¤¤ à¤¨à¤¹à¥€à¤‚ à¤°à¤¹à¤¾ à¤œà¤¾à¤¤à¤¾, à¤¬à¤²à¥à¤•à¤¿ à¤ªà¥à¤°à¤¤à¥à¤¯à¥‡à¤• à¤ªà¥Œà¤§à¥‡ à¤•à¥‹ à¤Ÿà¥à¤°à¥€-à¤—à¤¾à¤°à¥à¤¡ à¤²à¤—à¤¾à¤•à¤° à¤¸à¤‚à¤°à¤•à¥à¤·à¤¿à¤¤ à¤•à¤¿à¤¯à¤¾ à¤œà¤¾à¤¤à¤¾ à¤¹à¥ˆà¥¤ à¤¸à¥à¤¥à¤¾à¤¨à¥€à¤¯ à¤•à¤¿à¤¸à¤¾à¤¨à¥‹à¤‚ à¤µ à¤¯à¥à¤µà¤¾ à¤¸à¥à¤µà¤¯à¤‚à¤¸à¥‡à¤µà¤•à¥‹à¤‚ à¤•à¥‹ à¤ªà¥Œà¤§à¥‹à¤‚ à¤•à¥€ à¤¸à¤¿à¤‚à¤šà¤¾à¤ˆ à¤•à¥€ à¤œà¤¿à¤®à¥à¤®à¥‡à¤¦à¤¾à¤°à¥€ à¤¸à¥Œà¤‚à¤ªà¥€ à¤œà¤¾à¤¤à¥€ à¤¹à¥ˆà¥¤ à¤…à¤¬ à¤¤à¤• 5,000 à¤¸à¥‡ à¤…à¤§à¤¿à¤• à¤µà¥ƒà¤•à¥à¤· à¤ªà¥à¤·à¥à¤ªà¤¿à¤¤ à¤”à¤° à¤ªà¤²à¥à¤²à¤µà¤¿à¤¤ à¤¹à¥‹à¤•à¤° à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¤•à¥€ à¤§à¤°à¤¾ à¤•à¥‹ à¤¹à¤°à¤¾-à¤­à¤°à¤¾ à¤•à¤° à¤°à¤¹à¥‡ à¤¹à¥ˆà¤‚à¥¤
+          </p>
+        </div>
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-green-700 hover:bg-green-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer">
+            <span>ðŸŒ³</span> Plant 5 Trees (â‚¹ 1,100) &rarr;
+          </button>
+          <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
+            ðŸ“ž 09450858514
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- DEDICATED SEVA PROGRAM PAGE 5: WOMEN HYGIENE (à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾)     -->
+    <!-- ================================================================= -->
+    <div id="tab-women-hygiene" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
+      <!-- Universal Subnav -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Title Header -->
+      <div class="text-center space-y-3">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-rose-800 bg-rose-100/90 border border-rose-300 px-4 py-1.5 rounded-md shadow-2xs">
+          <span>ðŸŒ¸</span> à¤¨à¤¾à¤°à¥€ à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤à¤µà¤‚ à¤—à¤°à¤¿à¤®à¤¾ â€¢ Women &amp; Adolescent Menstrual Hygiene Mission
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-semibold text-stone-900 tracking-tight">
+          à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾ <span class="text-2xl sm:text-4xl font-semibold text-rose-600">(Sanitary Pads &amp; Menstrual Health)</span>
+        </h2>
+        <p class="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          à¤—à¥à¤°à¤¾à¤®à¥€à¤£ à¤¬à¤¸à¥à¤¤à¤¿à¤¯à¥‹à¤‚ à¤µ à¤†à¤°à¥à¤¥à¤¿à¤• à¤°à¥‚à¤ª à¤¸à¥‡ à¤•à¤®à¤œà¥‹à¤° à¤¬à¤¹à¤¨à¥‹à¤‚ à¤¹à¥‡à¤¤à¥ à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¸à¥‡à¤¨à¥‡à¤Ÿà¤°à¥€ à¤¨à¥ˆà¤ªà¤•à¤¿à¤¨ à¤µà¤¿à¤¤à¤°à¤£, à¤®à¤¾à¤¸à¤¿à¤• à¤§à¤°à¥à¤® à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾ à¤œà¤¾à¤—à¤°à¥‚à¤•à¤¤à¤¾ à¤•à¤¾à¤°à¥à¤¯à¤¶à¤¾à¤²à¤¾à¤à¤‚ à¤à¤µà¤‚ à¤•à¤¿à¤¶à¥‹à¤°à¥€ à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤¸à¤‚à¤µà¤°à¥à¤§à¤¨à¥¤
+        </p>
+      </div>
+
+      <!-- Impact Stats Deck -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-lg border-2 border-rose-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-rose-600 font-hindi">25,000+</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">Sanitary Pads Distributed</div>
+          <div class="text-[11px] text-stone-500">Free eco-safe napkins</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-rose-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-pink-700 font-hindi">1,200+</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤œà¤¾à¤—à¤°à¥‚à¤• à¤¬à¤¹à¤¨à¥‡à¤‚ à¤µ à¤•à¤¿à¤¶à¥‹à¤°à¤¿à¤¯à¤¾à¤‚</div>
+          <div class="text-[11px] text-stone-500">Trained in hygiene practices</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-rose-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-purple-700 font-hindi">à¤¸à¤‚à¤•à¥‹à¤š à¤®à¥à¤•à¥à¤¤</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤œà¤¾à¤—à¤°à¥‚à¤•à¤¤à¤¾ à¤•à¤¾à¤°à¥à¤¯à¤¶à¤¾à¤²à¤¾à¤à¤‚</div>
+          <div class="text-[11px] text-stone-500">Breaking social taboos</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-rose-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-rose-800 font-hindi">100% à¤—à¤°à¤¿à¤®à¤¾</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¨à¤¾à¤°à¥€ à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤°à¤•à¥à¤·à¤¾</div>
+          <div class="text-[11px] text-stone-500">Dignity, pride &amp; good health</div>
+        </div>
+      </div>
+
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="women-hygiene-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-rose-200 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Dedicated Photo Gallery Grid -->
+      <div class="space-y-4 pt-2">
+        <div class="border-b border-stone-200 pb-3 flex items-center justify-between">
+          <h3 class="text-xl font-bold text-stone-900 font-hindi">à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾ à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤›à¤¾à¤¯à¤¾à¤šà¤¿à¤¤à¥à¤° â€¢ Real Women Hygiene Seva Photos</h3>
+          <span class="text-xs font-semibold text-rose-700 bg-rose-50 px-2.5 py-1 rounded-md border border-rose-200">à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤¸à¥‡à¤µà¤¾ à¤¦à¤°à¥à¤¶à¤¨</span>
+        </div>
+        <div id="women-hygiene-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Narrative & Ground Details Card -->
+      <div class="bg-gradient-to-br from-rose-50/60 via-white to-white p-6 sm:p-10 rounded-xl border-2 border-rose-300 shadow-sm space-y-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 bg-rose-100 text-rose-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-rose-200">
+            <span>ðŸ’–</span> à¤¨à¤¾à¤°à¥€ à¤¸à¤¶à¤•à¥à¤¤à¤¿à¤•à¤°à¤£ à¤µ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾ à¤…à¤­à¤¿à¤¯à¤¾à¤¨
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            à¤¸à¤‚à¤•à¥‹à¤š à¤®à¤¿à¤Ÿà¤¾à¤•à¤° à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤µ à¤—à¤°à¤¿à¤®à¤¾ à¤•à¥€ à¤“à¤° à¤•à¤¦à¤®
+          </h3>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            à¤—à¥à¤°à¤¾à¤®à¥€à¤£ à¤¬à¤¸à¥à¤¤à¤¿à¤¯à¥‹à¤‚ à¤®à¥‡à¤‚ à¤¸à¤‚à¤•à¥‹à¤š à¤”à¤° à¤†à¤°à¥à¤¥à¤¿à¤• à¤¤à¤‚à¤—à¥€ à¤•à¥‡ à¤•à¤¾à¤°à¤£ à¤…à¤•à¥à¤¸à¤° à¤®à¤¹à¤¿à¤²à¤¾à¤à¤‚ à¤µ à¤¬à¥‡à¤Ÿà¤¿à¤¯à¤¾à¤‚ à¤…à¤¸à¥à¤µà¤šà¥à¤› à¤¸à¤¾à¤§à¤¨à¥‹à¤‚ à¤•à¤¾ à¤‰à¤ªà¤¯à¥‹à¤— à¤•à¤°à¤¨à¥‡ à¤ªà¤° à¤µà¤¿à¤µà¤¶ à¤¹à¥‹à¤¤à¥€ à¤¹à¥ˆà¤‚, à¤œà¤¿à¤¸à¤¸à¥‡ à¤—à¤‚à¤­à¥€à¤° à¤¬à¥€à¤®à¤¾à¤°à¤¿à¤¯à¤¾à¤‚ à¤«à¥ˆà¤²à¤¤à¥€ à¤¹à¥ˆà¤‚à¥¤ à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¥à¤µà¤¯à¤‚à¤¸à¥‡à¤µà¤¿à¤•à¤¾à¤“à¤‚ à¤•à¥‡ à¤®à¤¾à¤§à¥à¤¯à¤® à¤¸à¥‡ à¤˜à¤°-à¤˜à¤° à¤œà¤¾à¤•à¤° à¤¸à¥à¤°à¤•à¥à¤·à¤¿à¤¤ à¤¸à¥‡à¤¨à¥‡à¤Ÿà¤°à¥€ à¤¨à¥ˆà¤ªà¤•à¤¿à¤¨ à¤µà¤¿à¤¤à¤°à¤¿à¤¤ à¤•à¤¿à¤ à¤œà¤¾à¤¤à¥‡ à¤¹à¥ˆà¤‚ à¤”à¤° à¤‰à¤¨à¥à¤¹à¥‡à¤‚ à¤¸à¥à¤µà¤¾à¤¸à¥à¤¥à¥à¤¯ à¤µ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾ à¤•à¥‡ à¤µà¥ˆà¤œà¥à¤žà¤¾à¤¨à¤¿à¤• à¤®à¤¹à¤¤à¥à¤µ à¤¸à¥‡ à¤…à¤µà¤—à¤¤ à¤•à¤°à¤¾à¤¯à¤¾ à¤œà¤¾à¤¤à¤¾ à¤¹à¥ˆà¥¤
+          </p>
+        </div>
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-rose-700 hover:bg-rose-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer">
+            <span>ðŸŒ¸</span> Sponsor 100 Hygiene Kits (â‚¹ 1,500) &rarr;
+          </button>
+          <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
+            ðŸ“ž 09450858514
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- DEDICATED SEVA PROGRAM PAGE 6: MARRIAGE SUPPORT (à¤µà¤¿à¤µà¤¾à¤¹ à¤¸à¤¹à¤¯à¥‹à¤—)     -->
+    <!-- ================================================================= -->
+    <div id="tab-marriage-support" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
+      <!-- Universal Subnav -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Title Header -->
+      <div class="text-center space-y-3">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-red-800 bg-red-100/90 border border-red-300 px-4 py-1.5 rounded-md shadow-2xs">
+          <span>ðŸ’</span> à¤•à¤¨à¥à¤¯à¤¾à¤¦à¤¾à¤¨ à¤à¤µà¤‚ à¤µà¤¿à¤µà¤¾à¤¹ à¤¸à¤¹à¤¯à¥‹à¤— â€¢ Marriage Support for Needy Families
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-semibold text-stone-900 tracking-tight">
+          à¤µà¤¿à¤µà¤¾à¤¹ à¤¸à¤¹à¤¯à¥‹à¤— <span class="text-2xl sm:text-4xl font-semibold text-red-600">(Vivah Sahyog &amp; Kanyadan)</span>
+        </h2>
+        <p class="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          à¤¨à¤¿à¤°à¥à¤§à¤¨, à¤…à¤¸à¤¹à¤¾à¤¯ à¤µ à¤…à¤¨à¤¾à¤¥ à¤•à¤¨à¥à¤¯à¤¾à¤“à¤‚ à¤•à¥‡ à¤ªà¤¾à¤µà¤¨ à¤µà¤¿à¤µà¤¾à¤¹ à¤¹à¥‡à¤¤à¥ à¤µà¤¸à¥à¤¤à¥à¤°, à¤°à¤¾à¤¶à¤¨, à¤¬à¤°à¥à¤¤à¤¨ à¤¸à¥‡à¤Ÿ, à¤—à¥ƒà¤¹à¤¸à¥à¤¥à¥€ à¤¸à¤¾à¤®à¤—à¥à¤°à¥€ à¤à¤µà¤‚ à¤†à¤°à¥à¤¥à¤¿à¤• à¤¸à¤‚à¤¬à¤² à¤ªà¥à¤°à¤¦à¤¾à¤¨ à¤•à¤°à¤¨à¥‡ à¤•à¤¾ à¤ªà¥à¤¨à¥€à¤¤ à¤¸à¤‚à¤•à¤²à¥à¤ªà¥¤
+        </p>
+      </div>
+
+      <!-- Impact Stats Deck -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-red-600 font-hindi">51+</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤•à¤¨à¥à¤¯à¤¾à¤¦à¤¾à¤¨ à¤¸à¤¹à¤¯à¥‹à¤—</div>
+          <div class="text-[11px] text-stone-500">Daughters happily wedded</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-rose-700 font-hindi">à¤—à¥ƒà¤¹à¤¸à¥à¤¥à¥€ à¤‰à¤ªà¤¹à¤¾à¤°</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¬à¤°à¥à¤¤à¤¨, à¤¬à¤¿à¤¸à¥à¤¤à¤° à¤µ à¤°à¤¾à¤¶à¤¨ à¤•à¤¿à¤Ÿ</div>
+          <div class="text-[11px] text-stone-500">Complete household kits</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-amber-700 font-hindi">à¤¸à¤®à¥à¤®à¤¾à¤¨ à¤µ à¤¸à¥à¤¨à¥‡à¤¹</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤µà¥ˆà¤¦à¤¿à¤• à¤°à¥€à¤¤à¤¿-à¤°à¤¿à¤µà¤¾à¤œ</div>
+          <div class="text-[11px] text-stone-500">Dignified wedding ceremonies</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-red-800 font-hindi">100% à¤ªà¤¾à¤°à¤¦à¤°à¥à¤¶à¥€</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤ªà¤¾à¤°à¤¿à¤µà¤¾à¤°à¤¿à¤• à¤¸à¤‚à¤¬à¤²</div>
+          <div class="text-[11px] text-stone-500">Verified indigent families</div>
+        </div>
+      </div>
+
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="marriage-support-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-red-200 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Dedicated Photo Gallery Grid -->
+      <div class="space-y-4 pt-2">
+        <div class="border-b border-stone-200 pb-3 flex items-center justify-between">
+          <h3 class="text-xl font-bold text-stone-900 font-hindi">à¤µà¤¿à¤µà¤¾à¤¹ à¤¸à¤¹à¤¯à¥‹à¤— à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤›à¤¾à¤¯à¤¾à¤šà¤¿à¤¤à¥à¤° â€¢ Real Marriage Support Photos</h3>
+          <span class="text-xs font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md border border-red-200">à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤¸à¥‡à¤µà¤¾ à¤¦à¤°à¥à¤¶à¤¨</span>
+        </div>
+        <div id="marriage-support-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Narrative & Ground Details Card -->
+      <div class="bg-gradient-to-br from-red-50/60 via-white to-white p-6 sm:p-10 rounded-xl border-2 border-red-300 shadow-sm space-y-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 bg-red-100 text-red-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-red-200">
+            <span>ðŸ’</span> à¤•à¤¨à¥à¤¯à¤¾à¤¦à¤¾à¤¨ à¤®à¤¹à¤¾à¤¦à¤¾à¤¨ â€” à¤¸à¤¾à¤®à¤¾à¤œà¤¿à¤• à¤¸à¤‚à¤¬à¤²
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            à¤¬à¥‡à¤Ÿà¤¿à¤¯à¥‹à¤‚ à¤•à¤¾ à¤¹à¤¾à¤¥ à¤ªà¥€à¤²à¥‡ à¤•à¤°à¤¨à¥‡ à¤®à¥‡à¤‚ à¤†à¤°à¥à¤¥à¤¿à¤• à¤°à¥‚à¤ª à¤¸à¥‡ à¤•à¤®à¤œà¥‹à¤° à¤ªà¤°à¤¿à¤µà¤¾à¤°à¥‹à¤‚ à¤•à¤¾ à¤¸à¤¹à¤¯à¥‹à¤—
+          </h3>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            à¤•à¤ˆ à¤¨à¤¿à¤°à¥à¤§à¤¨ à¤®à¤¾à¤¤à¤¾-à¤ªà¤¿à¤¤à¤¾ à¤¸à¤¾à¤§à¤¨à¥‹à¤‚ à¤•à¥‡ à¤…à¤­à¤¾à¤µ à¤®à¥‡à¤‚ à¤…à¤ªà¤¨à¥€ à¤²à¤¾à¤¡à¤²à¥€ à¤•à¤¾ à¤µà¤¿à¤µà¤¾à¤¹ à¤¸à¤‚à¤ªà¤¨à¥à¤¨ à¤•à¤°à¤¾à¤¨à¥‡ à¤®à¥‡à¤‚ à¤…à¤¤à¥à¤¯à¤§à¤¿à¤• à¤•à¤ à¤¿à¤¨à¤¾à¤ˆ à¤•à¤¾ à¤¸à¤¾à¤®à¤¨à¤¾ à¤•à¤°à¤¤à¥‡ à¤¹à¥ˆà¤‚à¥¤ à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¤à¤¸à¥€ à¤œà¤°à¥‚à¤°à¤¤à¤®à¤‚à¤¦ à¤”à¤° à¤…à¤¨à¤¾à¤¥ à¤¬à¥‡à¤Ÿà¤¿à¤¯à¥‹à¤‚ à¤•à¥€ à¤ªà¤¹à¤šà¤¾à¤¨ à¤•à¤° à¤‰à¤¨à¤•à¥‡ à¤µà¤¿à¤µà¤¾à¤¹ à¤¹à¥‡à¤¤à¥ à¤•à¤ªà¤¡à¤¼à¥‡, à¤¸à¤¾à¤¡à¤¼à¤¿à¤¯à¤¾à¤‚, à¤¬à¤°à¥à¤¤à¤¨ à¤¸à¥‡à¤Ÿ, à¤°à¤¾à¤¶à¤¨ à¤”à¤° à¤†à¤µà¤¶à¥à¤¯à¤• à¤—à¥ƒà¤¹à¤¸à¥à¤¥à¥€ à¤•à¤¾ à¤¸à¤¾à¤®à¤¾à¤¨ à¤¸à¤¸à¤®à¥à¤®à¤¾à¤¨ à¤­à¥‡à¤‚à¤Ÿ à¤•à¤°à¤¤à¤¾ à¤¹à¥ˆà¥¤
+          </p>
+        </div>
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-red-700 hover:bg-red-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer">
+            <span>ðŸ’</span> Sponsor Kanyadan Support (â‚¹ 5,100) &rarr;
+          </button>
+          <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
+            ðŸ“ž 09450858514
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- DEDICATED SEVA PROGRAM PAGE 7: BLANKET DISTRIBUTION (à¤•à¤‚à¤¬à¤² à¤¸à¥‡à¤µà¤¾)   -->
+    <!-- ================================================================= -->
+    <div id="tab-blanket-distribution" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
+      <!-- Universal Subnav -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Title Header -->
+      <div class="text-center space-y-3">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-indigo-800 bg-indigo-100/90 border border-indigo-300 px-4 py-1.5 rounded-md shadow-2xs">
+          <span>â„ï¸</span> à¤¶à¥€à¤¤à¤•à¤¾à¤²à¥€à¤¨ à¤°à¤¾à¤¹à¤¤ à¤®à¤¹à¤¾à¤­à¤¿à¤¯à¤¾à¤¨ â€¢ Winter Blanket Relief Drive (25,000+ Blankets Distributed)
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-semibold text-stone-900 tracking-tight">
+          à¤•à¤‚à¤¬à¤² à¤¸à¥‡à¤µà¤¾ <span class="text-2xl sm:text-4xl font-semibold text-indigo-600">(Winter Blankets &amp; Warmth Seva)</span>
+        </h2>
+        <p class="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          à¤®à¤¾à¤˜ à¤®à¥‡à¤²à¤¾, à¤•à¤¡à¤¼à¤¾à¤•à¥‡ à¤•à¥€ à¤ à¤‚à¤¡ à¤à¤µà¤‚ à¤•à¥‹à¤¹à¤°à¥‡ à¤®à¥‡à¤‚ à¤¸à¤‚à¤—à¤® à¤¤à¤Ÿ, à¤°à¥ˆà¤¨ à¤¬à¤¸à¥‡à¤°à¥‹à¤‚ à¤µ à¤–à¥à¤²à¥‡ à¤†à¤¸à¤®à¤¾à¤¨ à¤¨à¥€à¤šà¥‡ à¤°à¤¾à¤¤ à¤¬à¤¿à¤¤à¤¾à¤¨à¥‡ à¤µà¤¾à¤²à¥‡ à¤¸à¤¾à¤§à¥-à¤¸à¤‚à¤¤à¥‹à¤‚, à¤¤à¥€à¤°à¥à¤¥à¤¯à¤¾à¤¤à¥à¤°à¤¿à¤¯à¥‹à¤‚ à¤µ à¤…à¤¸à¤¹à¤¾à¤¯ à¤œà¤¨à¥‹à¤‚ à¤•à¥‹ à¤—à¤°à¥à¤® à¤•à¤‚à¤¬à¤² à¤µ à¤Šà¤¨à¥€ à¤µà¤¸à¥à¤¤à¥à¤° à¤µà¤¿à¤¤à¤°à¤£à¥¤
+        </p>
+      </div>
+
+      <!-- Impact Stats Deck -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-lg border-2 border-indigo-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-indigo-600 font-hindi">25,000+</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¶à¥€à¤¤à¤•à¤¾à¤²à¥€à¤¨ à¤•à¤‚à¤¬à¤² à¤µà¤¿à¤¤à¤°à¤¿à¤¤</div>
+          <div class="text-[11px] text-stone-500">Heavy warm winter blankets</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-indigo-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-blue-700 font-hindi">à¤®à¤¾à¤˜ à¤®à¥‡à¤²à¤¾ à¤µ à¤¸à¤‚à¤—à¤®</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¤à¥€à¤°à¥à¤¥ à¤µ à¤°à¥ˆà¤¨ à¤¬à¤¸à¥‡à¤°à¤¾ à¤¶à¤¿à¤µà¤¿à¤°</div>
+          <div class="text-[11px] text-stone-500">Prayagraj Sangam &amp; ghats</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-indigo-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-teal-700 font-hindi">à¤®à¤§à¥à¤¯à¤°à¤¾à¤¤à¥à¤°à¤¿ à¤…à¤­à¤¿à¤¯à¤¾à¤¨</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤«à¥à¤Ÿà¤ªà¤¾à¤¥ à¤µ à¤°à¥‡à¤²à¤µà¥‡ à¤¸à¥à¤Ÿà¥‡à¤¶à¤¨</div>
+          <div class="text-[11px] text-stone-500">Direct midnight outreach</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-indigo-300 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-indigo-800 font-hindi">à¤œà¥€à¤µà¤¨ à¤°à¤•à¥à¤·à¤¾</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤•à¤¡à¤¼à¤¾à¤•à¥‡ à¤•à¥€ à¤ à¤‚à¤¡ à¤¸à¥‡ à¤¸à¥à¤°à¤•à¥à¤·à¤¾</div>
+          <div class="text-[11px] text-stone-500">Saving lives from freezing cold</div>
+        </div>
+      </div>
+
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="blanket-distribution-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-indigo-200 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Dedicated Photo Gallery Grid -->
+      <div class="space-y-4 pt-2">
+        <div class="border-b border-stone-200 pb-3 flex items-center justify-between">
+          <h3 class="text-xl font-bold text-stone-900 font-hindi">à¤•à¤‚à¤¬à¤² à¤¸à¥‡à¤µà¤¾ à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤›à¤¾à¤¯à¤¾à¤šà¤¿à¤¤à¥à¤° â€¢ Real Blanket Distribution Photos</h3>
+          <span class="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-200">à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤¸à¥‡à¤µà¤¾ à¤¦à¤°à¥à¤¶à¤¨</span>
+        </div>
+        <div id="blanket-distribution-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Narrative & Ground Details Card -->
+      <div class="bg-gradient-to-br from-indigo-50/60 via-white to-white p-6 sm:p-10 rounded-xl border-2 border-indigo-300 shadow-sm space-y-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-indigo-200">
+            <span>â„ï¸</span> à¤ à¤‚à¤¡ à¤®à¥‡à¤‚ à¤œà¥€à¤µà¤¨ à¤°à¤•à¥à¤·à¤¾ à¤•à¤¾ à¤®à¤¹à¤¾à¤¸à¤‚à¤•à¤²à¥à¤ª
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            "à¤•à¤¡à¤¼à¤¾à¤•à¥‡ à¤•à¥€ à¤ à¤‚à¤¡ à¤®à¥‡à¤‚ à¤à¤• à¤—à¤°à¥à¤® à¤•à¤‚à¤¬à¤² à¤•à¤¿à¤¸à¥€ à¤•à¤¾ à¤œà¥€à¤µà¤¨ à¤¬à¤šà¤¾ à¤¸à¤•à¤¤à¤¾ à¤¹à¥ˆ"
+          </h3>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¤®à¥‡à¤‚ à¤¶à¥€à¤¤à¤•à¤¾à¤² à¤•à¥‡ à¤¦à¥Œà¤°à¤¾à¤¨ à¤ªà¤¾à¤°à¤¾ 4-5 à¤¡à¤¿à¤—à¥à¤°à¥€ à¤¸à¥‡à¤²à¥à¤¸à¤¿à¤¯à¤¸ à¤¤à¤• à¤—à¤¿à¤° à¤œà¤¾à¤¤à¤¾ à¤¹à¥ˆà¥¤ à¤¤à¥à¤°à¤¿à¤µà¥‡à¤£à¥€ à¤¸à¤‚à¤—à¤® à¤¤à¤Ÿ, à¤•à¤²à¥à¤ªà¤µà¤¾à¤¸ à¤¶à¤¿à¤µà¤¿à¤°à¥‹à¤‚, à¤¬à¤¸ à¤…à¤¡à¥à¤¡à¥‹à¤‚ à¤à¤µà¤‚ à¤°à¥‡à¤²à¤µà¥‡ à¤¸à¥à¤Ÿà¥‡à¤¶à¤¨ à¤•à¥‡ à¤¬à¤¾à¤¹à¤° à¤–à¥à¤²à¥‡ à¤®à¥‡à¤‚ à¤¸à¥‹à¤¨à¥‡ à¤µà¤¾à¤²à¥‡ à¤¸à¤¾à¤§à¥-à¤¸à¤‚à¤¤à¥‹à¤‚, à¤•à¤²à¥à¤ªà¤µà¤¾à¤¸à¤¿à¤¯à¥‹à¤‚ à¤”à¤° à¤¨à¤¿à¤°à¥à¤§à¤¨ à¤­à¤¾à¤‡à¤¯à¥‹à¤‚-à¤¬à¤¹à¤¨à¥‹à¤‚ à¤•à¥‹ à¤•à¤‚à¤ªà¤•à¤‚à¤ªà¥€ à¤¸à¥‡ à¤¬à¤šà¤¾à¤¨à¥‡ à¤¹à¥‡à¤¤à¥ à¤¹à¤®à¤¾à¤°à¥€ à¤Ÿà¥€à¤® à¤°à¤¾à¤¤ à¤­à¤° à¤˜à¥‚à¤®-à¤˜à¥‚à¤® à¤•à¤° à¤—à¤°à¥à¤® à¤•à¤‚à¤¬à¤² à¤”à¤° à¤Šà¤¨à¥€ à¤µà¤¸à¥à¤¤à¥à¤° à¤“à¤¢à¤¼à¤¾à¤¨à¥‡ à¤•à¤¾ à¤ªà¤¾à¤µà¤¨ à¤•à¤¾à¤°à¥à¤¯ à¤•à¤°à¤¤à¥€ à¤¹à¥ˆà¥¤
+          </p>
+        </div>
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-indigo-700 hover:bg-indigo-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer">
+            <span>ðŸ§¥</span> Sponsor 10 Blankets (â‚¹ 2,500) &rarr;
+          </button>
+          <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
+            ðŸ“ž 09450858514
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- DEDICATED SEVA PROGRAM PAGE 8: TEMPLE SEVA (à¤®à¤‚à¤¦à¤¿à¤° à¤¸à¥‡à¤µà¤¾)           -->
+    <!-- ================================================================= -->
+    <div id="tab-temple-seva" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
+      <!-- Universal Subnav -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Title Header -->
+      <div class="text-center space-y-3">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-orange-800 bg-orange-100/90 border border-orange-300 px-4 py-1.5 rounded-md shadow-2xs">
+          <span>ðŸ•‰ï¸</span> à¤¶à¥à¤°à¥€ à¤¬à¤¡à¤¼à¥‡ à¤¹à¤¨à¥à¤®à¤¾à¤¨ à¤œà¥€ à¤®à¤‚à¤¦à¤¿à¤° à¤¸à¥‡à¤µà¤¾ â€¢ Shree Bade Hanuman Ji Mandir Marg Prayagraj
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-semibold text-stone-900 tracking-tight">
+          à¤®à¤‚à¤¦à¤¿à¤° à¤¸à¥‡à¤µà¤¾ <span class="text-2xl sm:text-4xl font-semibold text-orange-600">(Shree Hanuman Seva &amp; Sangam Aarti)</span>
+        </h2>
+        <p class="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          à¤¬à¤¾à¤‚à¤§ à¤¸à¥à¤¥à¤¿à¤¤ à¤¶à¥à¤°à¥€ à¤¬à¤¡à¤¼à¥‡ à¤¹à¤¨à¥à¤®à¤¾à¤¨ à¤œà¥€ à¤®à¤‚à¤¦à¤¿à¤° à¤à¤µà¤‚ à¤ªà¤¾à¤µà¤¨ à¤¤à¥à¤°à¤¿à¤µà¥‡à¤£à¥€ à¤¸à¤‚à¤—à¤® à¤¤à¤Ÿ à¤ªà¤° 24 à¤˜à¤‚à¤Ÿà¥‡ à¤…à¤µà¤¿à¤°à¤² à¤¶à¥à¤°à¤¦à¥à¤§à¤¾à¤²à¥ à¤¸à¤¹à¤¾à¤¯à¤¤à¤¾, à¤•à¤¤à¤¾à¤° à¤ªà¥à¤°à¤¬à¤‚à¤§à¤¨, à¤¶à¥€à¤¤à¤² à¤œà¤² à¤¸à¥‡à¤µà¤¾ à¤à¤µà¤‚ à¤®à¤¹à¤¾à¤ªà¥à¤°à¤¸à¤¾à¤¦ à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾à¥¤
+        </p>
+      </div>
+
+      <!-- Impact Stats Deck -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-lg border-2 border-orange-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-orange-600 font-hindi">24Ã—7 à¤…à¤–à¤‚à¤¡</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¸à¥‡à¤µà¤• à¤¦à¤² à¤¤à¥ˆà¤¨à¤¾à¤¤</div>
+          <div class="text-[11px] text-stone-500">Round the clock sevadars</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-orange-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-amber-700 font-hindi">à¤•à¤¤à¤¾à¤° à¤µ à¤µà¥à¤¹à¥€à¤²à¤šà¥‡à¤¯à¤°</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¦à¤¿à¤µà¥à¤¯à¤¾à¤‚à¤— à¤µ à¤µà¥ƒà¤¦à¥à¤§ à¤¸à¥‡à¤µà¤¾</div>
+          <div class="text-[11px] text-stone-500">Elderly &amp; wheelchair support</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-orange-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-red-700 font-hindi">à¤…à¤–à¤‚à¤¡ à¤œà¤² à¤¸à¥‡à¤µà¤¾</div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¶à¥à¤¦à¥à¤§ à¤¶à¥€à¤¤à¤² à¤ªà¥‡à¤¯à¤œà¤² à¤¬à¥‚à¤¥</div>
+          <div class="text-[11px] text-stone-500">Free clean drinking water</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg border-2 border-orange-400 shadow-xs text-center space-y-1">
+          <div class="text-2xl sm:text-3xl font-semibold text-orange-800 font-hindi">à¤¸à¥à¤‚à¤¦à¤°à¤•à¤¾à¤‚à¤¡ à¤µ à¤ªà¤¾à¤ </div>
+          <div class="text-xs sm:text-sm font-bold text-stone-800">à¤¨à¤¿à¤¯à¤®à¤¿à¤¤ à¤§à¤¾à¤°à¥à¤®à¤¿à¤• à¤…à¤¨à¥à¤·à¥à¤ à¤¾à¤¨</div>
+          <div class="text-[11px] text-stone-500">Sunderkand &amp; Ramayan path</div>
+        </div>
+      </div>
+
+      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
+      <div id="temple-seva-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-orange-300 shadow-sm space-y-4">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Dedicated Photo Gallery Grid -->
+      <div class="space-y-4 pt-2">
+        <div class="border-b border-stone-200 pb-3 flex items-center justify-between">
+          <h3 class="text-xl font-bold text-stone-900 font-hindi">à¤®à¤‚à¤¦à¤¿à¤° à¤¸à¥‡à¤µà¤¾ à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤›à¤¾à¤¯à¤¾à¤šà¤¿à¤¤à¥à¤° â€¢ Real Temple Seva Photos</h3>
+          <span class="text-xs font-semibold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">à¤ªà¥à¤°à¤¤à¥à¤¯à¤•à¥à¤· à¤¸à¥‡à¤µà¤¾ à¤¦à¤°à¥à¤¶à¤¨</span>
+        </div>
+        <div id="temple-seva-gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Narrative & Ground Details Card -->
+      <div class="bg-gradient-to-br from-orange-50/60 via-white to-white p-6 sm:p-10 rounded-xl border-2 border-orange-400 shadow-sm space-y-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-orange-200">
+            <span>ðŸš©</span> à¤†à¤¸à¥à¤¥à¤¾ à¤à¤µà¤‚ à¤¸à¤®à¤°à¥à¤ªà¤£ à¤•à¥€ à¤…à¤®à¤° à¤—à¤¾à¤¥à¤¾
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            à¤¶à¥à¤°à¥€ à¤¬à¤¡à¤¼à¥‡ à¤¹à¤¨à¥à¤®à¤¾à¤¨ à¤œà¥€ à¤•à¥‡ à¤ªà¤¾à¤µà¤¨ à¤¸à¤¾à¤¨à¤¿à¤§à¥à¤¯ à¤®à¥‡à¤‚ à¤¨à¤¿à¤°à¤‚à¤¤à¤° à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤œà¤¨ à¤¸à¥‡à¤µà¤¾
+          </h3>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            à¤¤à¥€à¤°à¥à¤¥à¤°à¤¾à¤œ à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¤®à¥‡à¤‚ à¤¸à¤‚à¤—à¤® à¤•à¤¿à¤¨à¤¾à¤°à¥‡ à¤¸à¥à¤¥à¤¿à¤¤ à¤¶à¥à¤°à¥€ à¤¬à¤¡à¤¼à¥‡ à¤¹à¤¨à¥à¤®à¤¾à¤¨ à¤œà¥€ à¤•à¤¾ à¤®à¤‚à¤¦à¤¿à¤° à¤¸à¤‚à¤ªà¥‚à¤°à¥à¤£ à¤µà¤¿à¤¶à¥à¤µ à¤®à¥‡à¤‚ à¤…à¤¦à¥à¤µà¤¿à¤¤à¥€à¤¯ à¤¹à¥ˆà¥¤ à¤®à¤‚à¤—à¤²à¤µà¤¾à¤° à¤”à¤° à¤¶à¤¨à¤¿à¤µà¤¾à¤° à¤¤à¤¥à¤¾ à¤¹à¤¨à¥à¤®à¤¾à¤¨ à¤œà¤¯à¤‚à¤¤à¥€ à¤œà¥ˆà¤¸à¥‡ à¤µà¤¿à¤¶à¥‡à¤· à¤‰à¤¤à¥à¤¸à¤µà¥‹à¤‚ à¤ªà¤° à¤²à¤¾à¤–à¥‹à¤‚ à¤¶à¥à¤°à¤¦à¥à¤§à¤¾à¤²à¥ à¤¦à¤°à¥à¤¶à¤¨ à¤¹à¥‡à¤¤à¥ à¤†à¤¤à¥‡ à¤¹à¥ˆà¤‚à¥¤ à¤¹à¤®à¤¾à¤°à¥‡ à¤¸à¥à¤µà¤¯à¤‚à¤¸à¥‡à¤µà¤• à¤­à¤¾à¤°à¥€ à¤­à¥€à¤¡à¤¼ à¤•à¥‹ à¤¨à¤¿à¤¯à¤‚à¤¤à¥à¤°à¤¿à¤¤ à¤•à¤°à¤¨à¥‡, à¤¬à¥à¤œà¥à¤°à¥à¤— à¤¶à¥à¤°à¤¦à¥à¤§à¤¾à¤²à¥à¤“à¤‚ à¤•à¥‹ à¤¸à¤¹à¤¾à¤°à¤¾ à¤¦à¥‡à¤¨à¥‡, à¤–à¥‹à¤¯à¤¾-à¤ªà¤¾à¤¯à¤¾ à¤•à¥‡à¤‚à¤¦à¥à¤° à¤¸à¤‚à¤šà¤¾à¤²à¤¿à¤¤ à¤•à¤°à¤¨à¥‡ à¤”à¤° à¤¨à¤¿à¤°à¤‚à¤¤à¤° à¤®à¤¹à¤¾à¤ªà¥à¤°à¤¸à¤¾à¤¦ à¤µà¤¿à¤¤à¤°à¤£ à¤®à¥‡à¤‚ à¤¸à¤¹à¤¯à¥‹à¤— à¤•à¤°à¤¤à¥‡ à¤¹à¥ˆà¤‚à¥¤
+          </p>
+        </div>
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-orange-700 hover:bg-orange-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer">
+            <span>ðŸ•‰ï¸</span> Donate for Mandir Seva &rarr;
+          </button>
+          <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
+            ðŸ“ž 09450858514
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div id="tab-volunteer" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
       <!-- Standardized Universal Back & Home Navigation Bar -->
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
@@ -4843,6 +5506,7 @@
             <button type="button" id="img-tab-btn-leadership" onclick="switchCustomImageTab('leadership')" class="px-4 py-2 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 shrink-0 cursor-pointer">
               3. Trustee &amp; Leadership Headshots
             </button>
+            <button type="button" id="img-tab-btn-programs" onclick="switchCustomImageTab('programs')" class="px-4 py-2 rounded-lg bg-orange-100 text-orange-950 font-bold hover:bg-orange-200 shrink-0 border border-orange-300 cursor-pointer">5. Program Galleries &amp; Slideshow CMS</button>
             <button type="button" id="img-tab-btn-identity" onclick="switchCustomImageTab('identity')" class="px-4 py-2 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 shrink-0 cursor-pointer">
               4. Official Logo &amp; Seal
             </button>
@@ -4871,6 +5535,102 @@
               <!-- Dynamically populated by renderSiteImageCustomizer() -->
             </div>
           </div>
+
+                    <!-- TAB 5: 8 PROGRAM GALLERIES & SLIDESHOW CMS -->
+          <div id="custom-img-tab-programs" class="hidden space-y-6">
+            <div class="bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50 p-5 rounded-xl border-2 border-orange-300 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <span class="px-2.5 py-0.5 rounded bg-orange-600 text-white font-bold text-[10px] uppercase tracking-wider">8 Programs Dedicated CMS</span>
+                <h4 class="text-lg font-bold text-stone-900 mt-1 font-hindi">सेवा कार्यक्रम छवि एवं स्लाइडशो प्रबंधन (Separate Image &amp; Slideshow Controls)</h4>
+                <p class="text-xs text-stone-600">Upload, edit captions, and toggle interactive slideshow displays for each of the 8 seva programs individually.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="saveProgramGalleriesCMS()" class="px-5 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Save All Changes Live</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Program Selector & Slideshow Master Toggle Deck -->
+            <div class="bg-white p-5 rounded-xl border border-stone-200 shadow-xs space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                <div class="md:col-span-2 space-y-1.5">
+                  <label class="block text-xs font-bold text-stone-800 uppercase tracking-wide">Select Seva Program to Manage / कार्यक्रम चुनें:</label>
+                  <select id="adminProgramSelect" onchange="switchAdminProgramTab(this.value)" class="w-full px-3.5 py-2.5 rounded-lg border-2 border-orange-400 bg-white text-xs sm:text-sm font-bold text-stone-900 focus:outline-none focus:border-orange-600 shadow-2xs">
+                    <option value="free-education">1. शिक्षा सेवा • Free Education (85+ Students)</option>
+                    <option value="food-distribution">2. अन्न सेवा • Food Distribution (5,00,000+ Meals)</option>
+                    <option value="healthcare">3. स्वास्थ्य सेवा • Healthcare Seva (15,000+ Patients)</option>
+                    <option value="tree-plantation">4. वृक्षारोपण • Tree Plantation (5,000+ Trees)</option>
+                    <option value="women-hygiene">5. महिला स्वच्छता • Women Hygiene (Sanitary Pads)</option>
+                    <option value="marriage-support">6. विवाह सहयोग • Marriage Support (51+ Kanyadan)</option>
+                    <option value="blanket-distribution">7. कंबल सेवा • Winter Blankets (25,000+ Blankets)</option>
+                    <option value="temple-seva">8. मंदिर सेवा • Shree Hanuman Temple Seva</option>
+                  </select>
+                </div>
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-stone-800">Slideshow on Page:</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="adminSlideshowEnabledCheck" onchange="toggleAdminSlideshowForCurrentProgram(this.checked)" class="sr-only peer" />
+                      <div class="w-9 h-5 bg-stone-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange-600"></div>
+                    </label>
+                  </div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-stone-600">Speed:</span>
+                    <select id="adminSlideshowDurationSelect" onchange="updateAdminSlideshowDuration(this.value)" class="text-xs font-bold text-stone-800 border border-stone-300 rounded px-1.5 py-0.5 bg-white">
+                      <option value="3000">3 Seconds</option>
+                      <option value="4000" selected>4 Seconds</option>
+                      <option value="5000">5 Seconds</option>
+                      <option value="8000">8 Seconds</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add New Image Section -->
+            <div class="bg-white p-5 rounded-xl border border-stone-200 shadow-xs space-y-4">
+              <h5 class="text-xs font-bold text-stone-800 uppercase tracking-wide flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <span>Upload New Image for Selected Program / नई तस्वीर जोड़ें</span>
+              </h5>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label class="block text-xs font-semibold text-stone-700">Choose File from Device (PC/Phone):</label>
+                  <input type="file" id="adminNewPhotoFile" accept="image/*" class="w-full text-xs text-stone-700 file:mr-2 file:py-2 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-bold file:bg-orange-600 file:text-white cursor-pointer" />
+                  <span class="text-[10px] text-stone-500 block">Or enter external image URL below:</span>
+                  <input type="text" id="adminNewPhotoUrl" placeholder="https://example.com/seva-photo.jpg" class="w-full px-3 py-2 rounded-lg border border-stone-300 text-xs focus:outline-none focus:border-orange-500" />
+                </div>
+                <div class="space-y-2">
+                  <input type="text" id="adminNewPhotoTitleHi" placeholder="शीर्षक (Hindi Title, e.g. शिविर में भोजन वितरण)" class="w-full px-3 py-2 rounded-lg border border-stone-300 text-xs font-hindi focus:outline-none focus:border-orange-500" />
+                  <input type="text" id="adminNewPhotoTitleEn" placeholder="English Title (e.g. Mahaprasad Seva)" class="w-full px-3 py-2 rounded-lg border border-stone-300 text-xs focus:outline-none focus:border-orange-500" />
+                  <textarea id="adminNewPhotoDesc" rows="2" placeholder="संक्षिप्त विवरण / Description..." class="w-full px-3 py-1.5 rounded-lg border border-stone-300 text-xs focus:outline-none focus:border-orange-500"></textarea>
+                  <div class="flex items-center justify-between pt-1">
+                    <label class="flex items-center gap-2 text-xs font-bold text-stone-700 cursor-pointer">
+                      <input type="checkbox" id="adminNewPhotoInSlideshow" checked class="rounded text-orange-600 focus:ring-orange-500" />
+                      <span>Include in Slideshow (स्लाइडशो में दिखाएं)</span>
+                    </label>
+                    <button type="button" onclick="addNewProgramPhoto()" class="px-4 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer">
+                      + Add Image Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Current Program Photos List -->
+            <div class="bg-white p-5 rounded-xl border border-stone-200 shadow-xs space-y-4">
+              <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+                <h5 class="text-xs font-bold text-stone-800 uppercase tracking-wide">Current Photos in Selected Program / वर्तमान तस्वीरें:</h5>
+                <span id="adminProgramPhotosCountBadge" class="text-xs font-bold text-orange-700 bg-orange-50 px-2.5 py-0.5 rounded-md border border-orange-200">5 Photos Active</span>
+              </div>
+              <div id="adminProgramPhotosList" class="space-y-3">
+                <!-- Dynamically populated by renderAdminProgramGallery() -->
+              </div>
+            </div>
+          </div>
+
 
           <!-- TAB 4: OFFICIAL LOGO & SEAL -->
           <div id="custom-img-tab-identity" class="hidden space-y-4">
@@ -7764,6 +8524,15 @@
         }, 80);
         return;
       }
+      
+      if (tabId === 'education') tabId = 'free-education';
+      if (tabId === 'food' || tabId === 'langar') tabId = 'food-distribution';
+      if (tabId === 'health' || tabId === 'medical') tabId = 'healthcare';
+      if (tabId === 'plantation' || tabId === 'trees' || tabId === 'social-welfare') tabId = 'tree-plantation';
+      if (tabId === 'hygiene' || tabId === 'women' || tabId === 'pads') tabId = 'women-hygiene';
+      if (tabId === 'marriage' || tabId === 'vivah' || tabId === 'kanyadan') tabId = 'marriage-support';
+      if (tabId === 'blanket' || tabId === 'blankets' || tabId === 'kambal') tabId = 'blanket-distribution';
+      if (tabId === 'temple' || tabId === 'mandir' || tabId === 'hanuman' || tabId === 'religious-activities') tabId = 'temple-seva';
       if (tabId === 'projects') tabId = 'food-distribution';
       if (tabId === 'csr') tabId = 'donate';
       if (tabId === 'events' || tabId === 'blogs') tabId = 'gallery';
@@ -7886,6 +8655,35 @@
       "Religious Activities (धार्मिक सेवा)": "धार्मिक गतिविधियां (धार्मिक सेवा)",
       "CSR & 80G Tax Exemption": "सीएसआर एवं 80G कर छूट",
 
+    // 8 Dedicated Seva Programs & Accurate Ground Metrics
+    "शिक्षा सेवा": "शिक्षा सेवा",
+    "Education Seva": "शिक्षा सेवा",
+    "85+ Students": "८५+ नामांकित विद्यार्थी",
+    "अन्न सेवा": "अन्न सेवा",
+    "Anna Seva": "अन्न सेवा",
+    "5,00,000+ Meals": "५,००,०००+ तृप्त भोजन प्रसादम",
+    "स्वास्थ्य सेवा": "स्वास्थ्य सेवा",
+    "Healthcare Seva": "स्वास्थ्य सेवा",
+    "15,000+ Patients": "१५,०००+ लाभान्वित मरीज",
+    "वृक्षारोपण": "वृक्षारोपण",
+    "Tree Plantation": "वृक्षारोपण",
+    "5,000+ Trees": "५,०००+ रोपित वृक्ष",
+    "महिला स्वच्छता": "महिला स्वच्छता",
+    "Women Hygiene": "महिला स्वच्छता",
+    "Sanitary Pads": "२५,०००+ सेनेटरी पैड वितरण",
+    "विवाह सहयोग": "विवाह सहयोग",
+    "Marriage Support": "५१+ कन्यादान सहयोग",
+    "कंबल सेवा": "कंबल सेवा",
+    "Winter Blankets": "कंबल सेवा",
+    "25,000+ Blankets": "२५,०००+ शीतकालीन कंबल",
+    "मंदिर सेवा": "मंदिर सेवा",
+    "Shree Hanuman Seva": "श्री हनुमान जी मंदिर सेवा",
+    "Shree Hanuman Temple Seva": "श्री बड़े हनुमान जी मंदिर सेवा",
+    "विस्तृत सेवा →": "विस्तृत सेवा →",
+    "View Seva →": "विस्तृत सेवा →",
+    "प्रत्यक्ष प्रमाणित सेवा आंकड़े": "प्रत्यक्ष प्रमाणित सेवा आंकड़े",
+    "Verified Ground Impact Numbers": "प्रत्यक्ष प्रमाणित सेवा आंकड़े",
+
       // Hero & Homepage
       "Prayagraj • Since our devotion began": "प्रयागराज • अखंड भक्ति एवं सेवा का पावन संकल्प",
       "From Shree Bade Hanuman Ji Temple, we serve food, health and hope to everyone who comes to us — day and night.": "श्री बड़े हनुमान जी मंदिर से, हम दिन-रात अन्न, स्वास्थ्य और आशा की सेवा समर्पित करते हैं।",
@@ -7942,6 +8740,33 @@
 
     function setLanguage(lang) {
       currentLanguage = lang;
+      document.body.classList.toggle('lang-hi', lang === 'hi');
+      document.documentElement.setAttribute('lang', lang);
+      const badgeHi = document.getElementById('langBadgeHi');
+      const badgeEn = document.getElementById('langBadgeEn');
+      if (badgeHi && badgeEn) {
+        if (lang === 'hi') {
+          badgeHi.className = 'px-1.5 py-0.5 rounded bg-orange-600 text-white font-hindi font-bold';
+          badgeEn.className = 'text-stone-700 font-semibold';
+        } else {
+          badgeHi.className = 'text-stone-600 font-hindi font-semibold';
+          badgeEn.className = 'px-1.5 py-0.5 rounded bg-stone-900 text-white font-bold';
+        }
+      }
+      const drBadgeHi = document.getElementById('drawerBadgeHi');
+      const drBadgeEn = document.getElementById('drawerBadgeEn');
+      if (drBadgeHi && drBadgeEn) {
+        if (lang === 'hi') {
+          drBadgeHi.className = 'px-2 py-0.5 rounded bg-orange-600 text-white font-hindi font-bold text-xs';
+          drBadgeEn.className = 'text-stone-700 font-bold text-xs';
+        } else {
+          drBadgeHi.className = 'text-stone-600 font-hindi font-bold text-xs';
+          drBadgeEn.className = 'px-2 py-0.5 rounded bg-stone-900 text-white font-bold text-xs';
+        }
+      }
+      if (typeof renderAllPublicProgramPages === 'function') {
+        renderAllPublicProgramPages();
+      }
       localStorage.setItem('ssss_lang', lang);
 
       // 1. Update Language Button Labels
@@ -12328,8 +13153,543 @@
 
     let customSiteImagesCache = {};
 
+        // =========================================================================
+    // 8 DEDICATED SEVA PROGRAMS MASTER DATA & REAL-TIME SLIDESHOW ENGINE
+    // =========================================================================
+    const DEFAULT_PROGRAM_GALLERIES = {
+      'free-education': {
+        titleHi: 'शिक्षा सेवा',
+        titleEn: 'Education Seva',
+        metric: '85+ Students',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'edu-1', src: 'images/education-1.jpg', titleHi: 'निःशुल्क पाठ्य सामग्री एवं स्टेशनरी वितरण', titleEn: 'Free Study Kits & Stationery Distribution', descHi: 'कॉपियाँ, पेंसिल किट एवं अध्ययन सामग्री वितरण।', descEn: 'Free notebooks, stationery & geometry kits distributed to 85+ underprivileged children.', inSlideshow: true },
+          { id: 'edu-2', src: 'images/education-2.jpg', titleHi: 'दैनिक पौष्टिक अल्पाहार व शिक्षण सहयोग', titleEn: 'Daily Nutrition & Educational Guidance', descHi: 'पाठशाला में अध्ययन के साथ पौष्टिक अल्पाहार।', descEn: 'Nutritious evening refreshments served daily alongside foundational coaching.', inSlideshow: true },
+          { id: 'edu-3', src: 'images/education-3.jpg', titleHi: 'सांध्यकालीन ग्रामीण पाठशाला कक्षा', titleEn: 'Evening Sangam Pathshala Classes', descHi: 'व्हाइटबोर्ड एवं चार्ट्स के माध्यम से नियमित शिक्षण।', descEn: 'Regular interactive teaching by volunteer teachers for primary & middle school students.', inSlideshow: true },
+          { id: 'edu-4', src: 'images/education-4.jpg', titleHi: 'नन्हें विद्यार्थियों का सामूहिक उत्साह', titleEn: 'Enthusiastic Young Students', descHi: 'शिक्षा की नई उमंग के साथ नन्हें बच्चे।', descEn: 'Joyful smiles of rural children receiving education and books.', inSlideshow: true },
+          { id: 'edu-5', src: 'images/education-5.jpg', titleHi: 'विद्यादान एवं सर्वांगीण बाल विकास', titleEn: 'Holistic Child Growth & Vidya Daan', descHi: 'संस्कार, खेलकूद व सर्वांगीण बाल विकास।', descEn: 'Character building, moral ethics, sports, and holistic development.', inSlideshow: true }
+        ]
+      },
+      'food-distribution': {
+        titleHi: 'अन्न सेवा',
+        titleEn: 'Food Distribution (Anna Seva)',
+        metric: '5,00,000+ Meals',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'anna-1', src: 'images/anna-1.jpg', titleHi: 'महाप्रसाद वितरण सेवा', titleEn: 'Mahaprasad Distribution Seva', descHi: 'श्री बड़े हनुमान जी मंदिर मार्ग पर प्रतिदिन सायं 5 बजे भंडारा।', descEn: 'Daily hot Satvik Mahaprasad served to pilgrims, sadhus and devotees.', inSlideshow: true },
+          { id: 'anna-2', src: 'images/anna-2.jpg', titleHi: 'महाप्रसाद तैयारी एवं विशाल चूल्हा सेवा', titleEn: 'Langar Kitchen Cooking & Preparation', descHi: 'कड़े स्वच्छता व पवित्रता मानकों के साथ भोजन निर्माण।', descEn: 'Strict hygiene, purity and devotion in preparing pure Satvik meals.', inSlideshow: true },
+          { id: 'anna-3', src: 'images/anna-3.jpg', titleHi: 'त्रिवेणी संगम महाशिविर लंगर', titleEn: 'Triveni Sangam Seva Camp', descHi: 'त्रिवेणी संगम तट पर तीर्थयात्रियों व साधु-संतों की सेवा।', descEn: 'Pilgrim and devotee food relief camp on the banks of Triveni Sangam.', inSlideshow: true },
+          { id: 'anna-4', src: 'images/anna-4.jpg', titleHi: 'श्रद्धालु पंगत प्रसादम', titleEn: 'Devotees Seated in Pangat', descHi: 'पंगत में बैठकर साल के पत्तलों में सात्विक भोजन ग्रहण करते श्रद्धालु।', descEn: 'Devotees and sadhus seated respectfully in traditional Pangat on eco-pattals.', inSlideshow: true },
+          { id: 'anna-5', src: 'images/anna-5.jpg', titleHi: 'सात्विक भोजन वितरण सेवा', titleEn: 'Dignified Food Seva', descHi: 'तीर्थयात्रियों व जरूरतमंदों को आदरपूर्वक भोजन सेवा।', descEn: 'Continuous food distribution with love, humility and dedication.', inSlideshow: true }
+        ]
+      },
+      'healthcare': {
+        titleHi: 'स्वास्थ्य सेवा',
+        titleEn: 'Healthcare Seva',
+        metric: '15,000+ Patients',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'hlth-1', src: 'images/social-2.jpg', titleHi: 'निःशुल्क चिकित्सा एवं स्वास्थ्य परीक्षण शिविर', titleEn: 'Free Medical Consultation Camps', descHi: 'ग्रामीण व मलिन बस्तियों में अनुभवी डॉक्टरों द्वारा परामर्श।', descEn: 'Experienced doctors providing free diagnosis, checkups and consultation.', inSlideshow: true },
+          { id: 'hlth-2', src: 'images/social-3.jpg', titleHi: 'आवश्यक दवाएं एवं रक्तचाप/शर्करा जांच', titleEn: 'Free Essential Medicines & Diagnostics', descHi: 'जरूरतमंद मरीजों को निशुल्क दवाइयां व जांच किट।', descEn: 'Free basic medicines, BP, diabetes testing and seasonal ailment care.', inSlideshow: true },
+          { id: 'hlth-3', src: 'images/social-1.jpg', titleHi: 'जन स्वास्थ्य व स्वच्छता चेतना अभियान', titleEn: 'Community Health Awareness Drive', descHi: 'मौसमी बीमारियों व संक्रामक रोगों से बचाव हेतु जनजागरण।', descEn: 'Educating families on preventative healthcare, clean water, and sanitation.', inSlideshow: true }
+        ]
+      },
+      'tree-plantation': {
+        titleHi: 'वृक्षारोपण',
+        titleEn: 'Tree Plantation & Greenery',
+        metric: '5,000+ Trees',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'tree-1', src: 'images/social-1.jpg', titleHi: 'नन्हें पौधों का रोपण व भूमि पूजन', titleEn: 'Sapling Plantation & Bhumi Pujan', descHi: 'फलदार एवं प्राणवायु प्रदाता वृक्षों का रोपण।', descEn: 'Planting indigenous Neem, Peepal, Banyan, and fruit-bearing trees.', inSlideshow: true },
+          { id: 'tree-2', src: 'images/social-2.jpg', titleHi: 'सामूहिक पौधारोपण महाअभियान', titleEn: 'Community Mass Plantation Drive', descHi: 'प्रयागराज के ग्रामीण अंचलों में कार्यकर्ताओं द्वारा रोपण।', descEn: 'Volunteers and villagers collaborating for greener riverbanks.', inSlideshow: true },
+          { id: 'tree-3', src: 'images/social-3.jpg', titleHi: 'हरित धरा संवर्धन सेवा', titleEn: 'Harit Dhara Conservation', descHi: 'उपजाऊ भूमि में फलदार वृक्षों का संरक्षण।', descEn: 'Long-term tree guard protection and organic care for every planted tree.', inSlideshow: true },
+          { id: 'tree-4', src: 'images/social-4.jpg', titleHi: 'पर्यावरण संतुलन व जल संरक्षण', titleEn: 'Ecological Balance & Water Care', descHi: 'जलाशयों व नदियों के तट पर सघन वन रोपण।', descEn: 'Planting along riverbeds to prevent soil erosion and promote biodiversity.', inSlideshow: true },
+          { id: 'tree-5', src: 'images/social-5.jpg', titleHi: 'हरित ग्राम चेतना महाअभियान', titleEn: 'Village Green Awareness Campaign', descHi: 'ग्रामीणों को एक पेड़ मां के नाम लगाने का आह्वान।', descEn: 'Inspiring rural youth to adopt and protect sacred flora.', inSlideshow: true }
+        ]
+      },
+      'women-hygiene': {
+        titleHi: 'महिला स्वच्छता',
+        titleEn: 'Women Hygiene & Health',
+        metric: 'Sanitary Pads',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'wh-1', src: 'images/social-3.jpg', titleHi: 'निःशुल्क सेनेटरी पैड वितरण सेवा', titleEn: 'Free Sanitary Pad Distribution', descHi: 'ग्रामीण व झुग्गी बस्तियों में नि:शुल्क सेनेटरी पैड वितरण।', descEn: 'Distributing biodegradable sanitary pads to rural and slum women.', inSlideshow: true },
+          { id: 'wh-2', src: 'images/social-1.jpg', titleHi: 'मासिक धर्म स्वच्छता जागरूकता कार्यशाला', titleEn: 'Menstrual Hygiene Awareness Workshop', descHi: 'संकोच व भ्रांतियां दूर कर वैज्ञानिक स्वच्छता की सीख।', descEn: 'Conducting awareness sessions to eliminate taboos and ensure dignity.', inSlideshow: true },
+          { id: 'wh-3', src: 'images/education-2.jpg', titleHi: 'किशोरी स्वास्थ्य व स्वच्छता किट वितरण', titleEn: 'Adolescent Girls Health Kits', descHi: 'बालिकाओं के स्वास्थ्य संवर्धन हेतु आवश्यक किट वितरण।', descEn: 'Empowering young girls with hygiene kits, soap, and health counseling.', inSlideshow: true }
+        ]
+      },
+      'marriage-support': {
+        titleHi: 'विवाह सहयोग',
+        titleEn: 'Marriage Support & Kanyadan',
+        metric: 'Marriage Support',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'mrg-1', src: 'images/social-1.jpg', titleHi: 'निर्धन कन्या विवाह सहयोग व उपहार सामग्री', titleEn: 'Kanyadan Sahyog & Wedding Essentials', descHi: 'असहाय परिवारों की बेटियों के विवाह हेतु आर्थिक व भौतिक संबल।', descEn: 'Providing bridal attire, wedding groceries, and household essentials.', inSlideshow: true },
+          { id: 'mrg-2', src: 'images/founder.jpg', titleHi: 'कन्यादान आशीर्वाद एवं पारिवारिक संबल', titleEn: 'Blessings & Dignified Family Support', descHi: 'संस्थान के संस्थापक व ट्रस्टियों द्वारा कन्यादान उपहार।', descEn: 'Sansthan trustees blessing the newlyweds with utensils and financial aid.', inSlideshow: true },
+          { id: 'mrg-3', src: 'images/social-5.jpg', titleHi: 'सामूहिक विवाह सहयोग व गृहस्थ सामग्री', titleEn: 'Community Marriage Support', descHi: 'बर्तन सेट, वस्त्र एवं दैनिक उपयोगी सामग्री भेंट।', descEn: 'Complete kitchen utensil sets, bedding, and dignity support for the bride.', inSlideshow: true }
+        ]
+      },
+      'blanket-distribution': {
+        titleHi: 'कंबल सेवा',
+        titleEn: 'Winter Blanket Distribution',
+        metric: '25,000+ Blankets',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'blk-1', src: 'images/social-5.jpg', titleHi: 'शीतकालीन कंबल वितरण - संगम तट', titleEn: 'Winter Blanket Drive at Sangam Ghats', descHi: 'माघ मेला व कड़ाके की ठंड में खुले आसमान तले रात बिताने वालों को राहत।', descEn: 'Distributing thick warm blankets to sadhus, pilgrims and destitute families.', inSlideshow: true },
+          { id: 'blk-2', src: 'images/social-2.jpg', titleHi: 'रैन बसेरों व रेलवे स्टेशन पर सेवा', titleEn: 'Night Shelter & Station Outreach', descHi: 'मध्यरात्रि में फुटपाथ पर ठिठुरते असहाय जनों को कंबल ओढ़ाना।', descEn: 'Midnight volunteer drives covering railway stations and open pavements.', inSlideshow: true },
+          { id: 'blk-3', src: 'images/anna-4.jpg', titleHi: 'साधु-संतों व कल्पवासियों को ऊनी वस्त्र', titleEn: 'Woolen Relief for Sadhus & Kalpwasis', descHi: 'कंबल, ऊनी टोपी व गर्म वस्त्रों का ससम्मान वितरण।', descEn: 'Warm sweaters, woolen caps and blankets distributed with utmost respect.', inSlideshow: true }
+        ]
+      },
+      'temple-seva': {
+        titleHi: 'मंदिर सेवा',
+        titleEn: 'Shree Hanuman Temple Seva',
+        metric: 'Shree Hanuman Seva',
+        slideshowEnabled: true,
+        interval: 4000,
+        photos: [
+          { id: 'tmp-1', src: 'images/founder.jpg', titleHi: 'श्री बड़े हनुमान जी मंदिर सानिध्य सेवा', titleEn: 'Bandh Wale Bade Hanuman Ji Marg Seva', descHi: 'बांध स्थित श्री बड़े हनुमान जी मंदिर में 24 घंटे सेवारत।', descEn: '24x7 volunteer service at Bandh Wale Shree Bade Hanuman Ji Temple.', inSlideshow: true },
+          { id: 'tmp-2', src: 'logo.jpg', titleHi: 'सर्व समर्पित सेवा न्यास पावन प्रतीक', titleEn: 'Sansthan Sacred Emblem & Mission', descHi: 'मानव सेवा ही माधव सेवा है के पावन ध्येय के साथ।', descEn: 'Dedicated to the selfless service of humanity, divinity and faith.', inSlideshow: true },
+          { id: 'tmp-3', src: 'images/anna-1.jpg', titleHi: 'दर्शनार्थी कतार प्रबंधन व जल सेवा', titleEn: 'Queue Management & Clean Drinking Water', descHi: 'मंगलवार व शनिवार को भारी भीड़ में श्रद्धालुओं की सहायता।', descEn: 'Assisting elderly, wheelchair pilgrims, and 24-hr clean drinking water booths.', inSlideshow: true },
+          { id: 'tmp-4', src: 'images/anna-3.jpg', titleHi: 'पावन त्रिवेणी संगम आरती व शिविर व्यवस्था', titleEn: 'Triveni Sangam Aarti & Devotee Assistance', descHi: 'धार्मिक पर्वों, माघ मेला व कुंभ में अविरल व्यवस्था।', descEn: 'Managing pilgrim shelters, lost-and-found help desks, and holy prasad.', inSlideshow: true }
+        ]
+      }
+    };
+
+    let PROGRAM_GALLERIES = {};
+    let programSlideshowTimers = {};
+    let currentProgramSlideIndices = {};
+    let currentAdminProgramKey = 'free-education';
+
+    function initProgramGalleries() {
+      try {
+        const stored = localStorage.getItem('ssss_program_galleries');
+        if (stored) {
+          PROGRAM_GALLERIES = JSON.parse(stored);
+        } else {
+          PROGRAM_GALLERIES = JSON.parse(JSON.stringify(DEFAULT_PROGRAM_GALLERIES));
+        }
+      } catch (e) {
+        PROGRAM_GALLERIES = JSON.parse(JSON.stringify(DEFAULT_PROGRAM_GALLERIES));
+      }
+
+      // Merge any missing keys from default
+      Object.keys(DEFAULT_PROGRAM_GALLERIES).forEach(k => {
+        if (!PROGRAM_GALLERIES[k]) {
+          PROGRAM_GALLERIES[k] = JSON.parse(JSON.stringify(DEFAULT_PROGRAM_GALLERIES[k]));
+        }
+      });
+
+      renderAllPublicProgramPages();
+      renderAdminProgramGallery(currentAdminProgramKey);
+
+      // Listen to Firebase RTDB for real-time synchronization
+      if (typeof fbRealtimeDb !== 'undefined' && fbRealtimeDb) {
+        try {
+          fbRealtimeDb.ref('program_galleries').on('value', snap => {
+            if (snap.exists()) {
+              PROGRAM_GALLERIES = snap.val();
+              localStorage.setItem('ssss_program_galleries', JSON.stringify(PROGRAM_GALLERIES));
+              renderAllPublicProgramPages();
+              renderAdminProgramGallery(currentAdminProgramKey);
+            }
+          });
+        } catch (e) {}
+      }
+    }
+
+    function renderAllPublicProgramPages() {
+      const isHi = (currentLanguage === 'hi');
+      Object.keys(PROGRAM_GALLERIES).forEach(progKey => {
+        const prog = PROGRAM_GALLERIES[progKey];
+        if (!prog) return;
+
+        // 1. Render Slideshow if container exists
+        const slideContainer = document.getElementById(progKey + '-slideshow-container');
+        if (slideContainer) {
+          const slideshowPhotos = (prog.photos || []).filter(p => p.inSlideshow);
+          if (!prog.slideshowEnabled || slideshowPhotos.length === 0) {
+            slideContainer.classList.add('hidden');
+          } else {
+            slideContainer.classList.remove('hidden');
+            const activeIdx = currentProgramSlideIndices[progKey] || 0;
+            const currentItem = slideshowPhotos[activeIdx % slideshowPhotos.length];
+
+            const titleText = isHi ? (currentItem.titleHi || currentItem.titleEn) : (currentItem.titleEn || currentItem.titleHi);
+            const descText = isHi ? (currentItem.descHi || currentItem.descEn) : (currentItem.descEn || currentItem.descHi);
+
+            slideContainer.innerHTML = `
+              <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse"></span>
+                  <span class="text-xs font-bold text-stone-800 uppercase tracking-wider font-hindi">
+                    ${isHi ? prog.titleHi : prog.titleEn} • लाइव सेवा स्लाइडशो
+                  </span>
+                </div>
+                <div class="flex items-center gap-1.5 text-xs font-mono font-bold text-stone-500 bg-stone-100 px-2 py-0.5 rounded">
+                  <span>${(activeIdx % slideshowPhotos.length) + 1}</span> / <span>${slideshowPhotos.length}</span>
+                </div>
+              </div>
+
+              <!-- Main Slide Frame -->
+              <div class="relative aspect-[16/9] sm:aspect-[21/9] rounded-lg overflow-hidden bg-stone-900 border border-stone-300 shadow-inner group">
+                <img id="${progKey}-slide-img" src="${currentItem.src}" alt="${titleText}" class="w-full h-full object-cover transition-all duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
+                  <span class="px-2.5 py-0.5 rounded bg-orange-600 text-white font-bold text-[10px] self-start uppercase tracking-wider mb-1.5 shadow-sm">
+                    ${isHi ? 'प्रत्यक्ष सेवा दर्शन' : 'Verified Seva'}
+                  </span>
+                  <h4 class="text-base sm:text-xl font-bold leading-snug drop-shadow-sm font-hindi">${titleText}</h4>
+                  <p class="text-xs sm:text-sm text-stone-200 mt-1 max-w-3xl leading-relaxed drop-shadow">${descText}</p>
+                </div>
+
+                <!-- Prev / Next Interactive Arrow Controls -->
+                <button type="button" onclick="changeProgramSlide('${progKey}', -1)" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center font-bold text-lg shadow-md transition-all cursor-pointer border border-white/20">
+                  &#10094;
+                </button>
+                <button type="button" onclick="changeProgramSlide('${progKey}', 1)" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center font-bold text-lg shadow-md transition-all cursor-pointer border border-white/20">
+                  &#10095;
+                </button>
+              </div>
+
+              <!-- Slide Dots Indicator Strip -->
+              <div class="flex items-center justify-between pt-1">
+                <div class="flex items-center gap-1.5">
+                  ${slideshowPhotos.map((_, dotIdx) => `
+                    <button type="button" onclick="jumpToProgramSlide('${progKey}', ${dotIdx})" class="h-2 rounded-full transition-all cursor-pointer ${dotIdx === (activeIdx % slideshowPhotos.length) ? 'w-6 bg-orange-600' : 'w-2 bg-stone-300 hover:bg-stone-400'}"></button>
+                  `).join('')}
+                </div>
+                <span class="text-[11px] text-stone-500 font-medium">Automatic Slideshow Active</span>
+              </div>
+            `;
+
+            // Reset and start autoplay timer
+            if (programSlideshowTimers[progKey]) {
+              clearInterval(programSlideshowTimers[progKey]);
+            }
+            const intervalTime = prog.interval || 4000;
+            programSlideshowTimers[progKey] = setInterval(() => {
+              changeProgramSlide(progKey, 1, false);
+            }, intervalTime);
+          }
+        }
+
+        // 2. Render Photo Gallery Grid if container exists
+        const galleryGrid = document.getElementById(progKey + '-gallery-grid');
+        if (galleryGrid && prog.photos) {
+          galleryGrid.innerHTML = prog.photos.map((item, idx) => {
+            const title = isHi ? (item.titleHi || item.titleEn) : (item.titleEn || item.titleHi);
+            const desc = isHi ? (item.descHi || item.descEn) : (item.descEn || item.descHi);
+            return `
+              <div class="bg-white rounded-lg border-2 border-stone-200 overflow-hidden shadow-xs hover:border-orange-400 hover:shadow-md transition-all flex flex-col group cursor-pointer" onclick="openProgramLightbox('${progKey}', ${idx})">
+                <div class="relative aspect-[4/3] bg-stone-100 overflow-hidden">
+                  <img src="${item.src}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-2.5 left-2.5 bg-orange-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">
+                    ${isHi ? 'छायाचित्र ' + (idx + 1) : 'Photo ' + (idx + 1)}
+                  </div>
+                  <div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-[10px] text-white px-2 py-0.5 rounded font-bold">
+                    🔍 Zoom
+                  </div>
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between space-y-2">
+                  <div>
+                    <h5 class="font-bold text-stone-900 text-sm leading-snug group-hover:text-orange-600 transition-colors font-hindi">${title}</h5>
+                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">${desc}</p>
+                  </div>
+                  <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-400">
+                    <span class="font-hindi text-orange-700 font-semibold">${isHi ? 'सर्व समर्पित सेवा न्यास' : 'Sarva Samarpit Trust'}</span>
+                    <span class="text-orange-600 font-bold hover:underline">Full View &rarr;</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+      });
+    }
+
+    function changeProgramSlide(progKey, delta, manual = true) {
+      const prog = PROGRAM_GALLERIES[progKey];
+      if (!prog || !prog.photos) return;
+      const slideshowPhotos = prog.photos.filter(p => p.inSlideshow);
+      if (slideshowPhotos.length === 0) return;
+
+      let idx = currentProgramSlideIndices[progKey] || 0;
+      idx = (idx + delta + slideshowPhotos.length) % slideshowPhotos.length;
+      currentProgramSlideIndices[progKey] = idx;
+
+      renderSingleProgramSlideshow(progKey);
+    }
+
+    function jumpToProgramSlide(progKey, targetIdx) {
+      currentProgramSlideIndices[progKey] = targetIdx;
+      renderSingleProgramSlideshow(progKey);
+    }
+
+    function renderSingleProgramSlideshow(progKey) {
+      const prog = PROGRAM_GALLERIES[progKey];
+      if (!prog) return;
+      const slideContainer = document.getElementById(progKey + '-slideshow-container');
+      if (!slideContainer) return;
+
+      const isHi = (currentLanguage === 'hi');
+      const slideshowPhotos = (prog.photos || []).filter(p => p.inSlideshow);
+      if (slideshowPhotos.length === 0) return;
+
+      const activeIdx = currentProgramSlideIndices[progKey] || 0;
+      const currentItem = slideshowPhotos[activeIdx % slideshowPhotos.length];
+      const titleText = isHi ? (currentItem.titleHi || currentItem.titleEn) : (currentItem.titleEn || currentItem.titleHi);
+      const descText = isHi ? (currentItem.descHi || currentItem.descEn) : (currentItem.descEn || currentItem.descHi);
+
+      slideContainer.innerHTML = `
+        <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse"></span>
+            <span class="text-xs font-bold text-stone-800 uppercase tracking-wider font-hindi">
+              ${isHi ? prog.titleHi : prog.titleEn} • लाइव सेवा स्लाइडशो
+            </span>
+          </div>
+          <div class="flex items-center gap-1.5 text-xs font-mono font-bold text-stone-500 bg-stone-100 px-2 py-0.5 rounded">
+            <span>${(activeIdx % slideshowPhotos.length) + 1}</span> / <span>${slideshowPhotos.length}</span>
+          </div>
+        </div>
+
+        <div class="relative aspect-[16/9] sm:aspect-[21/9] rounded-lg overflow-hidden bg-stone-900 border border-stone-300 shadow-inner group">
+          <img src="${currentItem.src}" alt="${titleText}" class="w-full h-full object-cover transition-all duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
+            <span class="px-2.5 py-0.5 rounded bg-orange-600 text-white font-bold text-[10px] self-start uppercase tracking-wider mb-1.5 shadow-sm">
+              ${isHi ? 'प्रत्यक्ष सेवा दर्शन' : 'Verified Seva'}
+            </span>
+            <h4 class="text-base sm:text-xl font-bold leading-snug drop-shadow-sm font-hindi">${titleText}</h4>
+            <p class="text-xs sm:text-sm text-stone-200 mt-1 max-w-3xl leading-relaxed drop-shadow">${descText}</p>
+          </div>
+
+          <button type="button" onclick="changeProgramSlide('${progKey}', -1)" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center font-bold text-lg shadow-md transition-all cursor-pointer border border-white/20">
+            &#10094;
+          </button>
+          <button type="button" onclick="changeProgramSlide('${progKey}', 1)" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center font-bold text-lg shadow-md transition-all cursor-pointer border border-white/20">
+            &#10095;
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between pt-1">
+          <div class="flex items-center gap-1.5">
+            ${slideshowPhotos.map((_, dotIdx) => `
+              <button type="button" onclick="jumpToProgramSlide('${progKey}', ${dotIdx})" class="h-2 rounded-full transition-all cursor-pointer ${dotIdx === (activeIdx % slideshowPhotos.length) ? 'w-6 bg-orange-600' : 'w-2 bg-stone-300 hover:bg-stone-400'}"></button>
+            `).join('')}
+          </div>
+          <span class="text-[11px] text-stone-500 font-medium">Automatic Slideshow Active</span>
+        </div>
+      `;
+    }
+
+    // ---------------------------------------------------------
+    // ADMIN CMS FUNCTIONS FOR 8 PROGRAM GALLERIES
+    // ---------------------------------------------------------
+    function switchAdminProgramTab(progKey) {
+      currentAdminProgramKey = progKey;
+      renderAdminProgramGallery(progKey);
+    }
+
+    function renderAdminProgramGallery(progKey) {
+      const prog = PROGRAM_GALLERIES[progKey];
+      if (!prog) return;
+
+      const selectEl = document.getElementById('adminProgramSelect');
+      if (selectEl) selectEl.value = progKey;
+
+      const checkEl = document.getElementById('adminSlideshowEnabledCheck');
+      if (checkEl) checkEl.checked = !!prog.slideshowEnabled;
+
+      const durationEl = document.getElementById('adminSlideshowDurationSelect');
+      if (durationEl) durationEl.value = (prog.interval || 4000).toString();
+
+      const countBadge = document.getElementById('adminProgramPhotosCountBadge');
+      if (countBadge) {
+        countBadge.innerText = `${prog.photos ? prog.photos.length : 0} Photos (${prog.photos ? prog.photos.filter(p => p.inSlideshow).length : 0} in Slideshow)`;
+      }
+
+      const listEl = document.getElementById('adminProgramPhotosList');
+      if (!listEl) return;
+
+      if (!prog.photos || prog.photos.length === 0) {
+        listEl.innerHTML = `
+          <div class="p-6 text-center text-stone-400 border-2 border-dashed border-stone-200 rounded-lg">
+            No photos yet in this program. Use the form above to upload an image.
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = prog.photos.map((item, idx) => `
+        <div class="bg-stone-50 p-4 rounded-lg border border-stone-200 flex flex-col md:flex-row items-start md:items-center gap-4">
+          <div class="w-24 h-20 rounded-md overflow-hidden bg-stone-900 border border-stone-300 shrink-0">
+            <img src="${item.src}" alt="${item.titleEn}" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex-1 w-full space-y-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <input type="text" value="${item.titleHi || ''}" onchange="updateProgramPhotoCaption('${progKey}', ${idx}, 'titleHi', this.value)" placeholder="Hindi Title" class="px-2.5 py-1.5 rounded border border-stone-300 text-xs font-hindi focus:border-orange-500 w-full" />
+              <input type="text" value="${item.titleEn || ''}" onchange="updateProgramPhotoCaption('${progKey}', ${idx}, 'titleEn', this.value)" placeholder="English Title" class="px-2.5 py-1.5 rounded border border-stone-300 text-xs focus:border-orange-500 w-full" />
+            </div>
+            <input type="text" value="${item.descHi || item.descEn || ''}" onchange="updateProgramPhotoCaption('${progKey}', ${idx}, 'descHi', this.value)" placeholder="Description" class="px-2.5 py-1.5 rounded border border-stone-300 text-xs text-stone-600 focus:border-orange-500 w-full" />
+          </div>
+          <div class="flex md:flex-col items-center justify-between gap-2 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-stone-200">
+            <label class="flex items-center gap-1.5 text-[11px] font-bold text-stone-700 cursor-pointer">
+              <input type="checkbox" ${item.inSlideshow ? 'checked' : ''} onchange="toggleProgramPhotoInSlideshow('${progKey}', ${idx}, this.checked)" class="rounded text-orange-600" />
+              <span>Slideshow</span>
+            </label>
+            <div class="flex items-center gap-1">
+              <button type="button" onclick="moveProgramPhoto('${progKey}', ${idx}, -1)" ${idx === 0 ? 'disabled' : ''} class="px-2 py-1 bg-white hover:bg-stone-200 disabled:opacity-30 rounded border border-stone-300 text-xs font-bold" title="Move Up">&uarr;</button>
+              <button type="button" onclick="moveProgramPhoto('${progKey}', ${idx}, 1)" ${idx === prog.photos.length - 1 ? 'disabled' : ''} class="px-2 py-1 bg-white hover:bg-stone-200 disabled:opacity-30 rounded border border-stone-300 text-xs font-bold" title="Move Down">&darr;</button>
+              <button type="button" onclick="deleteProgramPhoto('${progKey}', ${idx})" class="px-2.5 py-1 bg-red-50 hover:bg-red-100 text-red-700 rounded border border-red-200 text-xs font-bold" title="Delete Photo">🗑️</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleAdminSlideshowForCurrentProgram(enabled) {
+      if (!PROGRAM_GALLERIES[currentAdminProgramKey]) return;
+      PROGRAM_GALLERIES[currentAdminProgramKey].slideshowEnabled = enabled;
+      saveProgramGalleriesCMS(false);
+      renderAllPublicProgramPages();
+    }
+
+    function updateAdminSlideshowDuration(durationMs) {
+      if (!PROGRAM_GALLERIES[currentAdminProgramKey]) return;
+      PROGRAM_GALLERIES[currentAdminProgramKey].interval = parseInt(durationMs, 10);
+      saveProgramGalleriesCMS(false);
+      renderAllPublicProgramPages();
+    }
+
+    function updateProgramPhotoCaption(progKey, idx, field, val) {
+      if (!PROGRAM_GALLERIES[progKey] || !PROGRAM_GALLERIES[progKey].photos[idx]) return;
+      PROGRAM_GALLERIES[progKey].photos[idx][field] = val;
+    }
+
+    function toggleProgramPhotoInSlideshow(progKey, idx, inSlide) {
+      if (!PROGRAM_GALLERIES[progKey] || !PROGRAM_GALLERIES[progKey].photos[idx]) return;
+      PROGRAM_GALLERIES[progKey].photos[idx].inSlideshow = inSlide;
+      renderAdminProgramGallery(progKey);
+      renderAllPublicProgramPages();
+    }
+
+    function moveProgramPhoto(progKey, idx, dir) {
+      const photos = PROGRAM_GALLERIES[progKey].photos;
+      const targetIdx = idx + dir;
+      if (targetIdx < 0 || targetIdx >= photos.length) return;
+      const temp = photos[idx];
+      photos[idx] = photos[targetIdx];
+      photos[targetIdx] = temp;
+      renderAdminProgramGallery(progKey);
+      renderAllPublicProgramPages();
+    }
+
+    function deleteProgramPhoto(progKey, idx) {
+      if (!confirm('Are you sure you want to remove this photo from ' + progKey + '?')) return;
+      PROGRAM_GALLERIES[progKey].photos.splice(idx, 1);
+      renderAdminProgramGallery(progKey);
+      renderAllPublicProgramPages();
+      saveProgramGalleriesCMS(false);
+    }
+
+    function addNewProgramPhoto() {
+      const prog = PROGRAM_GALLERIES[currentAdminProgramKey];
+      if (!prog) return;
+
+      const fileInput = document.getElementById('adminNewPhotoFile');
+      const urlInput = document.getElementById('adminNewPhotoUrl');
+      const titleHi = (document.getElementById('adminNewPhotoTitleHi').value || '').trim();
+      const titleEn = (document.getElementById('adminNewPhotoTitleEn').value || '').trim();
+      const desc = (document.getElementById('adminNewPhotoDesc').value || '').trim();
+      const inSlideshow = document.getElementById('adminNewPhotoInSlideshow').checked;
+
+      function commitNewPhoto(srcUrl) {
+        const newObj = {
+          id: 'prog_' + Date.now(),
+          src: srcUrl,
+          titleHi: titleHi || titleEn || 'सेवा छायाचित्र',
+          titleEn: titleEn || titleHi || 'Seva Photograph',
+          descHi: desc || 'सर्व समर्पित सेवा संस्थान प्रयागराज',
+          descEn: desc || 'Sarva Samarpit Sewa Sansthan Prayagraj',
+          inSlideshow: inSlideshow
+        };
+        if (!prog.photos) prog.photos = [];
+        prog.photos.push(newObj);
+
+        if (fileInput) fileInput.value = '';
+        if (urlInput) urlInput.value = '';
+        document.getElementById('adminNewPhotoTitleHi').value = '';
+        document.getElementById('adminNewPhotoTitleEn').value = '';
+        document.getElementById('adminNewPhotoDesc').value = '';
+
+        renderAdminProgramGallery(currentAdminProgramKey);
+        renderAllPublicProgramPages();
+        saveProgramGalleriesCMS();
+      }
+
+      if (fileInput && fileInput.files && fileInput.files[0]) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          commitNewPhoto(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      } else if (urlInput && urlInput.value.trim()) {
+        commitNewPhoto(urlInput.value.trim());
+      } else {
+        alert('Please choose an image file or enter an image URL.');
+      }
+    }
+
+    function saveProgramGalleriesCMS(showToast = true) {
+      try {
+        localStorage.setItem('ssss_program_galleries', JSON.stringify(PROGRAM_GALLERIES));
+        if (typeof fbRealtimeDb !== 'undefined' && fbRealtimeDb) {
+          fbRealtimeDb.ref('program_galleries').set(PROGRAM_GALLERIES).catch(function() {});
+        }
+        renderAllPublicProgramPages();
+        if (showToast) {
+          if (typeof showSystemNotice === 'function') {
+            showSystemNotice('सेवा कार्यक्रम छवियां व स्लाइडशो सुरक्षित कर दिए गए हैं। Live Synced across all devices.');
+          } else {
+            alert('Program galleries and slideshow settings saved successfully!');
+          }
+        }
+      } catch (err) {
+        console.error('Error saving program galleries:', err);
+      }
+    }
+
+    function openProgramLightbox(progKey, photoIdx) {
+      const prog = PROGRAM_GALLERIES[progKey];
+      if (!prog || !prog.photos || !prog.photos[photoIdx]) return;
+      const item = prog.photos[photoIdx];
+      const isHi = (currentLanguage === 'hi');
+
+      const modal = document.getElementById('annaLightboxModal');
+      const imgEl = document.getElementById('annaLightboxImage');
+      const badgeEl = document.getElementById('annaLightboxBadge');
+      const titleEl = document.getElementById('annaLightboxTitle');
+      const descEl = document.getElementById('annaLightboxDesc');
+
+      if (modal && imgEl) {
+        imgEl.src = item.src;
+        if (badgeEl) badgeEl.innerText = `${isHi ? prog.titleHi : prog.titleEn} • Photo ${photoIdx + 1} of ${prog.photos.length}`;
+        if (titleEl) titleEl.innerText = isHi ? (item.titleHi || item.titleEn) : (item.titleEn || item.titleHi);
+        if (descEl) descEl.innerText = isHi ? (item.descHi || item.descEn) : (item.descEn || item.descHi);
+        modal.classList.remove('hidden');
+      }
+    }
+
+
     function switchCustomImageTab(tabKey) {
-      const tabs = ['hero', 'wings', 'leadership', 'identity'];
+      const tabs = ['hero', 'wings', 'leadership', 'identity', 'programs'];
       tabs.forEach(t => {
         const el = document.getElementById('custom-img-tab-' + t);
         const btn = document.getElementById('img-tab-btn-' + t);
