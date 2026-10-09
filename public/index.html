@@ -161,11 +161,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Mukta:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     html, body {
-      overflow-x: hidden;
-      max-width: 100vw;
-      width: 100%;
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0;
+      padding: 0;
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+    .page-view {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+      box-sizing: border-box !important;
+    }
+    img, svg, video, canvas, audio, iframe, embed, object {
+      max-width: 100%;
     }
     body { font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans', sans-serif; }
     h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif; }
@@ -425,11 +439,6 @@
           <span id="navDonateLabel">Donate</span>
         </button>
 
-        <!-- 3.5. Mobile Install App Button (Visible on < lg) -->
-        <button id="navMobileInstallBtn" onclick="triggerPwaInstall()" class="lg:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-orange-300 bg-orange-50/80 text-[11px] font-bold text-orange-800 hover:bg-orange-100 transition-colors shadow-2xs cursor-pointer" title="Install App / Add to Home Screen">
-          <svg class="w-3.5 h-3.5 text-orange-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          <span class="font-bold">Install</span>
-        </button>
 
         <!-- 4. Mobile Menu Toggle Button (Visible on < lg, placed before Login so Login is LAST) -->
         <button onclick="toggleMobileNav()" class="lg:hidden p-1.5 sm:p-2 rounded-lg border border-stone-200 text-stone-700 hover:bg-stone-100 transition-colors flex items-center justify-center cursor-pointer" aria-label="Toggle Navigation">
@@ -489,21 +498,8 @@
           </button>
         </div>
 
-        <!-- Install App / Add to Home Screen Professional Button (Mobile View) -->
-        <div id="pwaInstallContainer" class="p-3 bg-stone-50 border border-stone-200 rounded-lg flex items-center justify-between gap-3">
-          <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-lg bg-orange-600 text-white flex items-center justify-center shadow-xs shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-            </div>
-            <div>
-              <p class="font-semibold text-xs text-stone-900 leading-tight">Install Official App</p>
-              <p class="text-[10px] text-stone-600">Add to Home Screen for fast offline access</p>
-            </div>
-          </div>
-          <button id="pwaInstallBtn" onclick="triggerPwaInstall()" class="px-3.5 py-1.5 bg-orange-600 hover:bg-orange-700  text-white font-semibold text-xs rounded-lg shadow-xs shrink-0 transition-all cursor-pointer">
-            Install
-          </button>
-        </div>
+        <!-- PWA install container removed permanently from mobile view -->
+        <div id="pwaInstallContainer" class="hidden"><button id="pwaInstallBtn" class="hidden"></button></div>
 
         <!-- Section 1: Core Navigation -->
         <div>
@@ -4772,17 +4768,59 @@
       </div>
 
       <div id="officialGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-stone-200 cursor-pointer" onclick="switchTab('food-distribution')">
-          <img src="images/anna-4.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790955501051.jpg';" class="w-full h-52 object-cover transition-colors duration-200 transition-transform duration-500" alt="Bhandara Preparation" />
-          <div class="p-4"><h4 class="font-bold text-sm">Annapurna Langar Seva (अन्न सेवा)</h4><p class="text-xs text-gray-500 mt-1">Daily warm meal preparation for visiting devotees, sadhus, and pilgrims at Sangam Marg.</p></div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200 hover:border-orange-400 transition-all cursor-pointer group" onclick="openUniversalImageModal('images/anna-4.jpg', 'Annapurna Langar Seva (अन्न सेवा)', 'दैनिक गर्म महाप्रसाद निर्माण एवं संगम मार्ग पर सेवादार वितरण कार्य।')">
+          <div class="relative overflow-hidden h-56 bg-stone-100">
+            <img src="images/anna-4.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790955501051.jpg';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bhandara Preparation" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-white text-xs font-semibold flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg> Click to View High-Res</span>
+            </div>
+          </div>
+          <div class="p-4"><h4 class="font-bold text-sm text-stone-900 font-hindi">Annapurna Langar Seva (अन्न सेवा)</h4><p class="text-xs text-stone-500 mt-1">Daily warm meal preparation for visiting devotees, sadhus, and pilgrims at Sangam Marg.</p></div>
         </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-stone-200 cursor-pointer" onclick="switchTab('free-education')">
-          <img src="images/education-1.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790958576622.jpg';" class="w-full h-52 object-cover transition-colors duration-200 transition-transform duration-500" alt="Free Education &amp; Vidya Daan" />
-          <div class="p-4"><h4 class="font-bold text-sm">Free Education Pathshala (निःशुल्क शिक्षा)</h4><p class="text-xs text-gray-500 mt-1">Daily classes, study material distribution, and mentoring for underprivileged children.</p></div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200 hover:border-orange-400 transition-all cursor-pointer group" onclick="openUniversalImageModal('images/education-1.jpg', 'Free Education Pathshala (निःशुल्क शिक्षा)', 'प्रतिदिन ग्रामीण व वंचित बच्चों हेतु निःशुल्क अध्ययन एवं स्टेशनरी सहयोग।')">
+          <div class="relative overflow-hidden h-56 bg-stone-100">
+            <img src="images/education-1.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790958576622.jpg';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Free Education &amp; Vidya Daan" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-white text-xs font-semibold flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg> Click to View High-Res</span>
+            </div>
+          </div>
+          <div class="p-4"><h4 class="font-bold text-sm text-stone-900 font-hindi">Free Education Pathshala (निःशुल्क शिक्षा)</h4><p class="text-xs text-stone-500 mt-1">Daily classes, study material distribution, and mentoring for underprivileged children.</p></div>
         </div>
-        <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-stone-200 cursor-pointer" onclick="switchTab('social-welfare')">
-          <img src="images/social-3.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790960505717.jpg';" class="w-full h-52 object-cover transition-colors duration-200 transition-transform duration-500" alt="Social Welfare Seva" />
-          <div class="p-4"><h4 class="font-bold text-sm">Social Welfare &amp; Dharmic Seva (जन सेवा)</h4><p class="text-xs text-gray-500 mt-1">Community outreach, winter relief blanket distribution, and tree plantation drives.</p></div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200 hover:border-orange-400 transition-all cursor-pointer group" onclick="openUniversalImageModal('images/social-3.jpg', 'Social Welfare & Dharmic Seva (जन सेवा)', 'शीतकालीन राहत कंबल वितरण, वृक्षारोपण एवं सामुदायिक सेवा अभियान।')">
+          <div class="relative overflow-hidden h-56 bg-stone-100">
+            <img src="images/social-3.jpg" onerror="this.onerror=null; this.src='.user_uploaded/media_1790960505717.jpg';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Social Welfare Seva" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-white text-xs font-semibold flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg> Click to View High-Res</span>
+            </div>
+          </div>
+          <div class="p-4"><h4 class="font-bold text-sm text-stone-900 font-hindi">Social Welfare &amp; Dharmic Seva (जन सेवा)</h4><p class="text-xs text-stone-500 mt-1">Community outreach, winter relief blanket distribution, and tree plantation drives.</p></div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200 hover:border-orange-400 transition-all cursor-pointer group" onclick="openUniversalImageModal('images/anna-1.jpg', '24x7 Akhand Bhandara (महाप्रसाद)', 'पवित्र संगम तट पर श्री बड़े हनुमान जी मंदिर परिसर में निरंतर अन्न सेवा।')">
+          <div class="relative overflow-hidden h-56 bg-stone-100">
+            <img src="images/anna-1.jpg" onerror="this.onerror=null; this.src='logo.jpg';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="24x7 Akhand Bhandara" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-white text-xs font-semibold flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg> Click to View High-Res</span>
+            </div>
+          </div>
+          <div class="p-4"><h4 class="font-bold text-sm text-stone-900 font-hindi">24x7 Akhand Bhandara (महाप्रसाद)</h4><p class="text-xs text-stone-500 mt-1">Daily warm satvik puri, sabzi, and mahaprasad served continuous to pilgrims at Sangam Marg.</p></div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200 hover:border-orange-400 transition-all cursor-pointer group" onclick="openUniversalImageModal('images/education-2.jpg', 'Vidya Daan & Stationery Support (विद्या दान)', 'ज़रूरतमंद छात्र-छात्राओं को पुस्तकें, कॉपियां व स्कूल बैग वितरण।')">
+          <div class="relative overflow-hidden h-56 bg-stone-100">
+            <img src="images/education-2.jpg" onerror="this.onerror=null; this.src='logo.jpg';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Vidya Daan Seva" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-white text-xs font-semibold flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg> Click to View High-Res</span>
+            </div>
+          </div>
+          <div class="p-4"><h4 class="font-bold text-sm text-stone-900 font-hindi">Vidya Daan &amp; Stationery (विद्या दान)</h4><p class="text-xs text-stone-500 mt-1">Free notebooks, school supplies, and educational guidance for children from rural Prayagraj.</p></div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200 hover:border-orange-400 transition-all cursor-pointer group" onclick="openUniversalImageModal('images/social-2.jpg', 'Winter Blanket Relief & Healthcare (कंबल सेवा)', 'कड़ाके की ठंड में निराश्रितों एवं साधु-संतों को गर्म कंबल भेंट।')">
+          <div class="relative overflow-hidden h-56 bg-stone-100">
+            <img src="images/social-2.jpg" onerror="this.onerror=null; this.src='logo.jpg';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Winter Relief Seva" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-white text-xs font-semibold flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg> Click to View High-Res</span>
+            </div>
+          </div>
+          <div class="p-4"><h4 class="font-bold text-sm text-stone-900 font-hindi">Winter Relief &amp; Blanket Seva (कंबल सेवा)</h4><p class="text-xs text-stone-500 mt-1">Protecting underprivileged pilgrims, elderly citizens, and sadhus during harsh winter months.</p></div>
         </div>
       </div>
     </div>
@@ -4894,191 +4932,189 @@
       </div>
       
       <!-- Top Header / Title -->
-      <div class="text-center space-y-2">
-        <span class="text-xs font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-md border border-orange-200">
-          Official Member Profile &bull; डिजिटल प्रोफाइल
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">Member Profile &amp; ID Card Hub</h2>
-        <p class="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto">
-          Manage your volunteer credentials, direct social channels (WhatsApp, Instagram, Mobile Calling), and generate your authentic 300 DPI verified Digital Identity Card.
+      <div class="text-center space-y-1.5 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 text-orange-700 border border-orange-200/80 text-[11px] font-semibold tracking-wide uppercase">
+          <span class="w-1.5 h-1.5 rounded-full bg-orange-600"></span>
+          <span>Member Portal • सर्व समर्पित सेवा संस्थान</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">Member Profile &amp; Contributions</h2>
+        <p class="text-xs sm:text-sm text-stone-500">
+          Manage your verified member identity, download official Section 80G tax receipts, and access digital credentials.
         </p>
       </div>
 
       <!-- Feedback Alert Box -->
-      <div id="profileFeedbackAlert" class="hidden p-4 rounded-lg text-xs font-bold border transition-all"></div>
+      <div id="profileFeedbackAlert" class="hidden p-3.5 rounded-xl text-xs font-semibold border transition-all max-w-3xl mx-auto"></div>
 
-      <!-- Main Profile Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-        <!-- LEFT COLUMN: Live Identity Card & Quick Connect Action Hub -->
-        <div class="lg:col-span-5 space-y-6">
-          
-          <!-- Live Preview Card -->
-          <div class="bg-white rounded-lg border border-stone-200 shadow-sm overflow-hidden p-6 sm:p-7 space-y-6">
-            
-            <div class="flex items-center justify-between border-b border-stone-100 pb-4">
-              <span class="text-[10px] font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">
-                Live Card Preview
-              </span>
-              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Verified Sevadar
-              </span>
+      <!-- Executive Profile Hero Card -->
+      <div class="bg-white rounded-2xl border border-stone-200 shadow-xs p-5 sm:p-7 max-w-4xl mx-auto space-y-6">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
+          <!-- Avatar with Upload Action -->
+          <div class="relative shrink-0 group">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-orange-500/80 shadow-sm bg-stone-100 flex items-center justify-center">
+              <img id="profileCardPhoto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'%3E%3Cpath fill-rule='evenodd' d='M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z' clip-rule='evenodd' /%3E%3C/svg%3E" alt="Member Photo" class="w-full h-full object-cover" />
             </div>
+            <label for="profilePhotoFileInput" class="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-lg bg-stone-900 hover:bg-black text-white flex items-center justify-center shadow-md cursor-pointer transition-transform hover:scale-105" title="Upload new photo">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3" stroke-width="2"/></svg>
+            </label>
+          </div>
 
-            <!-- Avatar & Primary Info -->
-            <div class="flex flex-col items-center text-center space-y-3">
-              <div class="relative group">
-                <div class="w-28 h-32 sm:w-32 sm:h-36 rounded-lg overflow-hidden border-4 border-orange-500 shadow-md bg-stone-100 flex items-center justify-center">
-                  <img id="profileCardPhoto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'%3E%3Cpath fill-rule='evenodd' d='M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z' clip-rule='evenodd' /%3E%3C/svg%3E" alt="Member Photo Placeholder" class="w-full h-full object-cover p-2 bg-stone-100" />
-                </div>
-                <label for="profilePhotoFileInput" class="absolute -bottom-2 -right-2 bg-neutral-900 hover:bg-black text-white p-2 rounded-lg shadow-lg cursor-pointer transition-transform hover:scale-110" title="Upload new photo">
-                  <span class="text-xs">📷</span>
-                </label>
-              </div>
-
+          <!-- Identity Details -->
+          <div class="flex-1 text-center sm:text-left space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
-                <h3 id="profileCardName" class="text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">Your Full Name</h3>
-                <p id="profileCardHindi" class="text-xs text-orange-600 font-bold font-hindi"></p>
-                <div class="flex items-center justify-center gap-2 mt-1">
-                  <span id="profileCardId" class="text-xs font-mono font-bold text-gray-700 bg-stone-100 px-2.5 py-0.5 rounded-md border border-stone-200">Not Assigned</span>
-                  <span id="profileCardBloodGroup" class="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-md border border-red-200">O+</span>
-                </div>
+                <h3 id="profileCardName" class="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">Your Full Name</h3>
+                <p id="profileCardHindi" class="text-xs text-orange-600 font-semibold font-hindi"></p>
               </div>
-
-              <div class="w-full pt-1">
-                <span id="profileCardRole" class="inline-block bg-orange-700 text-white text-[10px] font-medium uppercase px-2.5 py-1 rounded-md tracking-wider">
-                  DEDICATED VOLUNTEER (SEVADAR)
+              <div class="flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>Verified Sevadar</span>
                 </span>
-                <p id="profileCardDept" class="text-xs text-stone-500 font-medium mt-1">Akhand Annapurna Bhandara &amp; Vidya Daan</p>
+                <span id="profileCardBloodGroup" class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-red-50 text-red-700 border border-red-200">O+</span>
               </div>
             </div>
 
-            <!-- Direct Social & Communication Action Buttons -->
-            <div class="space-y-2.5 pt-4 border-t border-stone-100">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1">Direct Social Redirects:</span>
-              
-              <!-- 1. WhatsApp Button -->
-              <button id="profileCardWhatsAppBtn" type="button" onclick="openProfileWhatsApp()" style="display: none;" class="w-full py-2.5 px-3.5 bg-emerald-600 hover:bg-emerald-700  text-white rounded-lg text-xs font-bold shadow-sm transition-all items-center justify-between group">
-                <div class="flex items-center gap-2">
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                  <span>Chat on WhatsApp</span>
-                </div>
-                <span class="text-[11px] opacity-80 group-hover:translate-x-0.5 transition-transform" id="profileCardWhatsAppDisp">Direct ↗</span>
-              </button>
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-xs">
+              <span class="text-stone-500 font-medium">NGO ID:</span>
+              <span id="profileCardId" class="font-mono font-bold text-stone-800 bg-stone-100 px-2 py-0.5 rounded border border-stone-200 text-[11px]">Not Assigned</span>
+              <span class="text-stone-300">•</span>
+              <span id="profileCardRole" class="font-bold text-orange-800 uppercase tracking-wide text-[10px] bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
+                DEDICATED VOLUNTEER (SEVADAR)
+              </span>
+            </div>
 
-              <!-- 2. Instagram Button -->
-              <button id="profileCardInstagramBtn" type="button" onclick="openProfileInstagram()" style="display: none;" class="w-full py-2.5 px-3.5 bg-stone-900 hover:bg-black text-white rounded-lg text-xs font-medium transition-colors items-center justify-between group">
-                <div class="flex items-center gap-2">
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                  <span>Visit Instagram</span>
-                </div>
-                <span class="text-[11px] opacity-80 group-hover:translate-x-0.5 transition-transform" id="profileCardInstagramDisp">@profile ↗</span>
-              </button>
+            <p id="profileCardDept" class="text-xs text-stone-500 font-medium">Akhand Annapurna Bhandara &amp; Vidya Daan</p>
 
-              <!-- 3. Direct Mobile Phone Call -->
-              <a id="profileCardPhoneBtn" href="tel:+919450858514" style="display: none;" class="w-full py-2.5 px-3.5 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs font-bold transition-all items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <svg class="w-3.5 h-3.5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                  <span>Call Mobile</span>
-                </div>
-                <span id="profileCardPhoneDisp" class="font-mono text-[11px] text-stone-600">09450858514</span>
+            <!-- Minimal Quick Connect Buttons -->
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-2">
+              <button id="profileCardWhatsAppBtn" type="button" onclick="openProfileWhatsApp()" style="display: none;" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold shadow-2xs transition-colors cursor-pointer">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span id="profileCardWhatsAppDisp">WhatsApp</span>
+              </button>
+              <button id="profileCardInstagramBtn" type="button" onclick="openProfileInstagram()" style="display: none;" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-900 hover:bg-black text-white rounded-lg text-xs font-semibold shadow-2xs transition-colors cursor-pointer">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span id="profileCardInstagramDisp">Instagram</span>
+              </button>
+              <a id="profileCardPhoneBtn" href="tel:+919450858514" style="display: none;" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs font-semibold transition-colors">
+                <svg class="w-3.5 h-3.5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span id="profileCardPhoneDisp">Call</span>
               </a>
-
-              <!-- Empty state notice when no social links provided -->
-              <div id="profileNoSocialMessage" class="p-3 bg-stone-50 rounded-lg border border-stone-200 text-center text-[11px] text-stone-500">
-                No social links configured yet. Fill your details on the right to display WhatsApp and Instagram buttons.
-              </div>
-            </div>
-
-            <!-- Generate Digital ID Card CTA -->
-            <div class="pt-4 border-t border-stone-100">
-              <button type="button" onclick="generateIdCardFromProfile()" class="w-full py-3.5 px-4 bg-orange-700 hover:bg-orange-800  text-white font-semibold text-xs sm:text-sm rounded-lg shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="10" r="2.5" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 16c0-1.657 1.343-2.5 3-2.5s3 .843 3 2.5M15 9h3M15 13h3M15 16h2"/></svg>
-                <span>Generate My Digital ID Card &rarr;</span>
-              </button>
-              <p class="text-[10px] text-stone-400 text-center mt-2">
-                Creates your verified card ready for 300 DPI PDF &amp; High-Res PNG download.
-              </p>
-            </div>
-
-          </div>
-
-          <!-- LIVE SEVA EVENT GPS SHARING CARD -->
-          <div class="bg-stone-50 p-5 rounded-lg border border-stone-200 shadow-xs space-y-4">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-orange-600 text-white flex items-center justify-center shadow-md shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                </div>
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h4 class="font-semibold text-sm text-stone-900">Live Seva GPS Dispatch</h4>
-                    <span id="liveGpsStatusPill" class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-stone-200 text-stone-700">Offline</span>
-                  </div>
-                  <p class="text-[11px] text-stone-600 mt-0.5">Share live location with Sansthan Admin during active seva camps &amp; programs.</p>
-                </div>
-              </div>
-              <button id="toggleLiveLocationBtn" type="button" onclick="toggleVolunteerLiveLocation()" class="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold text-xs rounded-lg shadow-md transition-all flex items-center gap-2 shrink-0 cursor-pointer">
-                <span class="w-2 h-2 rounded-full bg-white"></span>
-                <span id="toggleLiveLocationBtnText">Share Live Location</span>
-              </button>
-            </div>
-            <div id="liveLocationInfoBox" class="hidden bg-white/95 backdrop-blur-xs p-3.5 rounded-lg border border-orange-200 text-xs space-y-2 shadow-xs">
-              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-orange-100 pb-2">
-                <span class="text-emerald-700 font-bold flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  Verified On-Duty Sevadar
-                </span>
-                <span id="liveLocationAccuracy" class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">GPS Active</span>
-              </div>
-              <div class="space-y-1">
-                <div class="flex items-start gap-1.5 text-stone-800 text-xs">
-                  <span class="text-orange-600 font-bold shrink-0 mt-0.5">📍 Location:</span>
-                  <strong id="liveLocationAreaName" class="text-stone-900 font-semibold">Prayagraj Seva Kshetra</strong>
-                </div>
-                <div class="flex items-center gap-1.5 text-stone-500 text-[11px]">
-                  <span class="shrink-0">🏷️ Station:</span>
-                  <span id="liveLocationStation" class="text-stone-700 font-semibold">Shree Bade Hanuman Ji Mandir Bhandara Marg</span>
-                </div>
-              </div>
+              <span id="profileNoSocialMessage" class="text-[11px] text-stone-400">Configure WhatsApp &amp; Instagram in Edit tab</span>
             </div>
           </div>
-
         </div>
 
-        <!-- RIGHT COLUMN: Editable Profile & Channels Form -->
-        <div class="lg:col-span-7 bg-white rounded-lg border border-stone-200 shadow-sm p-6 sm:p-8 space-y-6">
-          
-          <div class="border-b border-stone-100 pb-4">
-            <h3 class="text-xl font-semibold text-gray-900">Edit Member Details &amp; Social Links</h3>
-            <p class="text-xs text-gray-500">Update your details below to sync with your Digital ID card and public member link.</p>
+        <!-- 3 Executive KPI Mini Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-stone-100">
+          <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200/70">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Verified Contribution</span>
+            <div class="text-base sm:text-lg font-bold text-emerald-700 font-mono mt-0.5">₹ 501.00 INR</div>
+            <span class="text-[10px] text-stone-500 font-hindi">शिक्षा सेवा (100% Tax Deductible)</span>
+          </div>
+          <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200/70">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Statutory 80G Status</span>
+            <div class="text-sm sm:text-base font-bold text-stone-800 mt-0.5">AAETS7355LF20231</div>
+            <span class="text-[10px] text-emerald-700 font-semibold">✓ Form 10BD Live Linked</span>
+          </div>
+          <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200/70">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Digital Member Pass</span>
+            <div class="text-sm sm:text-base font-bold text-stone-800 mt-0.5">300 DPI Verified</div>
+            <span class="text-[10px] text-orange-700 font-semibold">Ready to Print &amp; Download</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segmented Sub-Tab Switcher (Apple/Linear Style) -->
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-stone-100 p-1 rounded-xl border border-stone-200/80 grid grid-cols-2 sm:grid-cols-4 gap-1">
+          <button id="profileTabBtn_receipts" onclick="switchProfileSubView('receipts')" class="py-2 px-3 rounded-lg text-xs font-bold transition-all text-center bg-white text-stone-900 shadow-2xs border border-stone-200/60 cursor-pointer flex items-center justify-center gap-1.5">
+            <span>📜</span> <span>80G Receipts</span>
+          </button>
+          <button id="profileTabBtn_edit" onclick="switchProfileSubView('edit')" class="py-2 px-3 rounded-lg text-xs font-bold transition-all text-center text-stone-500 hover:text-stone-800 cursor-pointer flex items-center justify-center gap-1.5">
+            <span>✏️</span> <span>Edit Profile</span>
+          </button>
+          <button id="profileTabBtn_idcard" onclick="switchProfileSubView('idcard')" class="py-2 px-3 rounded-lg text-xs font-bold transition-all text-center text-stone-500 hover:text-stone-800 cursor-pointer flex items-center justify-center gap-1.5">
+            <span>🪪</span> <span>Digital ID</span>
+          </button>
+          <button id="profileTabBtn_gps" onclick="switchProfileSubView('gps')" class="py-2 px-3 rounded-lg text-xs font-bold transition-all text-center text-stone-500 hover:text-stone-800 cursor-pointer flex items-center justify-center gap-1.5">
+            <span>📍</span> <span>Seva GPS</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SUB-VIEW 1: 80G RECEIPTS & CONTRIBUTIONS (DEFAULT) -->
+      <div id="profileSubView_receipts" class="max-w-4xl mx-auto w-full space-y-6">
+        <div id="profileDonationsSection" class="bg-white rounded-2xl border border-stone-200 shadow-xs p-5 sm:p-7 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-100 pb-4">
+            <div class="space-y-1">
+              <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-bold border border-emerald-200">
+                <span>✓</span> Section 80G(5)(vi) Income Tax Certified (Form 10BD)
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-stone-900 font-hindi">मेरी समर्पित सेवाएं एवं 80G आयकर छूट रसीदें</h3>
+              <p class="text-xs text-stone-500 font-hindi">आपके द्वारा किए गए समस्त दान, रसीद संख्या एवं धारा 80G(5)(vi) प्रमाणपत्र का डिजिटल रिकॉर्ड।</p>
+            </div>
+            <button type="button" onclick="openRazorpayDonationModal()" class="px-4 py-2 bg-orange-700 hover:bg-orange-800 text-white font-semibold text-xs rounded-lg shadow-xs transition-colors shrink-0 flex items-center gap-1.5 cursor-pointer">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <span>+ नई सेवा हेतु दान करें</span>
+            </button>
           </div>
 
-          <!-- SECTION 1: Personal Details -->
+          <!-- Direct Receipt Search & Retrieval Tool -->
+          <div class="bg-stone-50 p-4 rounded-xl border border-stone-200/80 space-y-2.5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <label class="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <span>तत्काल रसीद खोजें व डाउनलोड करें / Find Receipt (Payment ID or Phone):</span>
+              </label>
+              <span class="text-[10px] font-mono text-stone-400">उदा. pay_Tlhzd7rhESNenT या 7752946125</span>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+              <input id="profileReceiptSearchInput" type="text" placeholder="Payment ID दर्ज करें (उदा. pay_Tlhzd7rhESNenT) या 10 अंकों का मोबाइल नंबर" class="flex-1 px-3.5 py-2 bg-white border border-stone-300 rounded-lg text-xs font-mono font-medium text-stone-900 focus:outline-none focus:border-orange-500 shadow-2xs" />
+              <button type="button" onclick="searchAndClaimUserReceipt()" class="px-4 py-2 bg-stone-900 hover:bg-black text-white font-semibold text-xs rounded-lg shadow-xs shrink-0 cursor-pointer transition-colors flex items-center justify-center gap-1.5">
+                <span>रसीद खोजें व PDF डाउनलोड</span>
+              </button>
+            </div>
+            <p id="profileReceiptSearchMsg" class="text-xs font-bold hidden"></p>
+          </div>
+
+          <!-- Dynamic Donations Cards Container -->
+          <div id="profileDonationsCardsContainer" class="space-y-4">
+            <!-- Rendered dynamically by renderUserProfileDonations() -->
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-VIEW 2: EDIT PROFILE FORM -->
+      <div id="profileSubView_edit" class="hidden max-w-4xl mx-auto w-full">
+        <div class="bg-white rounded-2xl border border-stone-200 shadow-xs p-5 sm:p-7 space-y-6">
+          <div class="border-b border-stone-100 pb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-stone-900">Edit Member Details &amp; Social Links</h3>
+            <p class="text-xs text-stone-500">Update your verified volunteer information. Changes sync directly to your Digital ID Pass and public directory.</p>
+          </div>
+
+          <!-- Section 1: Personal Details -->
           <div class="space-y-4">
-            <h4 class="text-xs font-semibold uppercase tracking-wider text-orange-600">1. Personal &amp; Organization Details</h4>
-            
+            <h4 class="text-xs font-bold uppercase tracking-wider text-orange-700">1. Personal &amp; Organization Details</h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Full Legal Name (English)</label>
-                <input id="profileFullName" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Enter Your Full Name" />
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Full Name (English)</label>
+                <input id="profileFullName" type="text" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Enter Your Full Name" />
               </div>
-
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Devanagari Name (Hindi)</label>
-                <input id="profileHindiName" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500 font-hindi" placeholder="उदा. पूरा नाम (हिंदी में)" />
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Devanagari Name (Hindi)</label>
+                <input id="profileHindiName" type="text" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500 font-hindi" placeholder="उदा. पूरा नाम (हिंदी में)" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Unique NGO ID</label>
-                <input id="profileNgoId" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-mono font-bold text-orange-700 focus:outline-none focus:border-orange-500" placeholder="Auto-generated or Enter ID" />
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Unique NGO ID</label>
+                <input id="profileNgoId" type="text" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-mono font-bold text-orange-700 focus:outline-none focus:border-orange-500" placeholder="SSSS-TRU-000001" />
               </div>
-
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Role / Designation</label>
-                <select id="profileRole" onchange="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500">
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Role / Designation</label>
+                <select id="profileRole" onchange="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500">
                   <option value="DEDICATED VOLUNTEER (SEVADAR)" selected>Dedicated Volunteer (Sevadar)</option>
                   <option value="GENERAL LIFE MEMBER">General Life Member</option>
                   <option value="SEVA COORDINATOR">Seva Coordinator</option>
@@ -5089,10 +5125,9 @@
                   <option value="STAFF EXECUTIVE">Staff Executive</option>
                 </select>
               </div>
-
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Blood Group</label>
-                <select id="profileBloodGroup" onchange="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-bold text-gray-900 focus:outline-none focus:border-orange-500">
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Blood Group</label>
+                <select id="profileBloodGroup" onchange="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-bold text-stone-900 focus:outline-none focus:border-orange-500">
                   <option value="O+" selected>O+</option>
                   <option value="A+">A+</option>
                   <option value="B+">B+</option>
@@ -5106,140 +5141,127 @@
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-stone-700 mb-1">Department / Seva Wing</label>
-              <input id="profileDept" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Akhand Annapurna Bhandara &amp; Vidya Daan" />
+              <label class="block text-xs font-semibold text-stone-700 mb-1">Department / Seva Wing</label>
+              <input id="profileDept" type="text" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Akhand Annapurna Bhandara &amp; Vidya Daan" />
             </div>
           </div>
 
-          <!-- SECTION 2: Social & Contact Channels (WhatsApp, Instagram, Phone, Email) -->
-          <div class="space-y-4 pt-2 border-t border-stone-100">
-            <h4 class="text-xs font-semibold uppercase tracking-wider text-orange-600">2. Social Channels &amp; Professional Redirects</h4>
-
-            <!-- WhatsApp Channel -->
-            <div class="bg-emerald-50/50 p-4 rounded-lg border border-emerald-200/80 space-y-2">
-              <div class="flex items-center justify-between">
-                <label class="text-xs font-bold text-emerald-950 flex items-center gap-1.5">
-                  <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-                  <span>WhatsApp Number / Direct Link</span>
-                </label>
-                <button type="button" onclick="openProfileWhatsApp()" class="text-[11px] font-bold text-emerald-700 hover:text-emerald-800 underline">
-                  Test WhatsApp Redirect ↗
-                </button>
-              </div>
-              <div class="flex gap-2">
-                <input id="profileWhatsApp" type="text" value="" oninput="syncProfileInputsToPreview()" class="flex-1 px-3.5 py-2.5 bg-white border border-emerald-300 rounded-lg text-xs font-mono font-bold text-gray-900 focus:outline-none focus:border-emerald-500" placeholder="e.g. 919450858514 (Include country code)" />
-                <button type="button" onclick="openProfileWhatsApp()" class="px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-lg shadow-xs shrink-0">
-                  Open
-                </button>
-              </div>
-              <p class="text-[10px] text-emerald-700">Redirects directly to <code class="bg-white/80 px-1 py-0.5 rounded font-mono">https://wa.me/&lt;number&gt;</code> with your custom greeting.</p>
-            </div>
-
-            <!-- Instagram Channel -->
-            <div class="bg-purple-50/50 p-4 rounded-lg border border-purple-200/80 space-y-2">
-              <div class="flex items-center justify-between">
-                <label class="text-xs font-bold text-purple-950 flex items-center gap-1.5">
-                  <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                  <span>Instagram Profile (Handle or Link)</span>
-                </label>
-                <button type="button" onclick="openProfileInstagram()" class="text-[11px] font-bold text-purple-700 hover:text-purple-800 underline">
-                  Test Instagram Redirect ↗
-                </button>
-              </div>
-              <div class="flex gap-2">
-                <input id="profileInstagram" type="text" value="" oninput="syncProfileInputsToPreview()" class="flex-1 px-3.5 py-2.5 bg-white border border-purple-300 rounded-lg text-xs font-bold text-gray-900 focus:outline-none focus:border-purple-500" placeholder="e.g. @your_username or instagram.com/your_username" />
-                <button type="button" onclick="openProfileInstagram()" class="px-3.5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-lg shadow-xs shrink-0">
-                  Open
-                </button>
-              </div>
-              <p class="text-[10px] text-purple-700">Redirects cleanly to <code class="bg-white/80 px-1 py-0.5 rounded font-mono">https://instagram.com/&lt;handle&gt;</code> in a new tab.</p>
-            </div>
-
-            <!-- Mobile Phone & Email -->
+          <!-- Section 2: Contact & Social Channels -->
+          <div class="space-y-4 pt-3 border-t border-stone-100">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-orange-700">2. Social Channels &amp; Contact</h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Mobile Number (Calling)</label>
-                <input id="profilePhone" type="tel" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-mono font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. 09450858514" />
+                <label class="block text-xs font-semibold text-stone-700 mb-1">WhatsApp Number</label>
+                <input id="profileWhatsApp" type="text" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-mono font-medium text-stone-900 focus:outline-none focus:border-orange-500" placeholder="e.g. 919450858514" />
               </div>
-
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Email Address</label>
-                <input id="profileEmail" type="email" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="yourname@domain.com" />
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Instagram Profile</label>
+                <input id="profileInstagram" type="text" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500" placeholder="e.g. @username" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Mobile Calling Number</label>
+                <input id="profilePhone" type="tel" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-mono font-medium text-stone-900 focus:outline-none focus:border-orange-500" placeholder="e.g. 09450858514" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-stone-700 mb-1">Email Address</label>
+                <input id="profileEmail" type="email" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500" placeholder="yourname@domain.com" />
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-stone-700 mb-1">District / City / Address</label>
-              <input id="profileAddress" type="text" value="" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-gray-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Prayagraj, UP" />
+              <label class="block text-xs font-semibold text-stone-700 mb-1">District / City / Address</label>
+              <input id="profileAddress" type="text" oninput="syncProfileInputsToPreview()" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500" placeholder="e.g. Prayagraj, UP" />
             </div>
           </div>
 
-          <!-- SECTION 3: Profile Photo Upload -->
-          <div class="space-y-3 pt-2 border-t border-stone-100">
-            <h4 class="text-xs font-semibold uppercase tracking-wider text-orange-600">3. Profile Photo for Official ID Card</h4>
-            <div class="flex flex-col sm:flex-row items-center gap-4 bg-stone-50 p-4 rounded-lg border border-stone-200">
-              <input id="profilePhotoFileInput" type="file" accept="image/*" onchange="handleProfilePhotoUpload(event)" class="text-xs file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-orange-600 file:text-white hover:file:bg-orange-700 file:cursor-pointer" />
-              <button type="button" onclick="setProfilePresetPhoto('founder')" class="text-xs font-bold text-stone-600 hover:text-orange-600 underline">Use Preset Photo</button>
+          <!-- Section 3: Profile Photo Upload -->
+          <div class="space-y-3 pt-3 border-t border-stone-100">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-orange-700">3. Profile Photo for Official ID Card</h4>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-stone-50 p-4 rounded-xl border border-stone-200">
+              <input id="profilePhotoFileInput" type="file" accept="image/*" onchange="handleProfilePhotoUpload(event)" class="text-xs file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-orange-700 file:text-white hover:file:bg-orange-800 file:cursor-pointer" />
+              <button type="button" onclick="setProfilePresetPhoto('founder')" class="text-xs font-semibold text-stone-600 hover:text-orange-700 underline cursor-pointer shrink-0">Use Preset Photo</button>
             </div>
           </div>
 
           <!-- Action Buttons Bar -->
-          <div class="pt-4 border-t border-stone-100 flex flex-wrap items-center gap-3">
-            <button type="button" onclick="saveUserProfile()" class="flex-1 py-3 px-5 bg-neutral-900 hover:bg-black text-white font-bold text-xs sm:text-sm rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center gap-3">
+            <button type="button" onclick="saveUserProfile()" class="w-full sm:flex-1 py-2.5 px-4 bg-stone-900 hover:bg-black text-white font-semibold text-xs rounded-lg shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
               <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
               <span>Save &amp; Sync Profile</span>
             </button>
-            <button type="button" onclick="generateIdCardFromProfile()" class="flex-1 py-3 px-5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs sm:text-sm rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <button type="button" onclick="generateIdCardFromProfile()" class="w-full sm:flex-1 py-2.5 px-4 bg-orange-700 hover:bg-orange-800 text-white font-semibold text-xs rounded-lg shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
               <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="10" r="2.5" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 16c0-1.657 1.343-2.5 3-2.5s3 .843 3 2.5M15 9h3M15 13h3M15 16h2"/></svg>
-              <span>Generate My Digital ID Card &rarr;</span>
+              <span>Generate My Digital ID Pass &rarr;</span>
             </button>
           </div>
-
         </div>
-
       </div>
 
-      <!-- ======================================================== -->
-      <!-- SECTION 4: MY SEVA CONTRIBUTIONS & 80G TAX RECEIPTS HUB  -->
-      <!-- ======================================================== -->
-      <div id="profileDonationsSection" class="bg-white rounded-2xl border-2 border-orange-200/90 shadow-md p-6 sm:p-8 space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-200 pb-4">
-          <div class="space-y-1">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold font-hindi">
-              <span>✓</span> धारा 80G आयकर छूट प्रमाणित रिकॉर्ड (Form 10BD)
+      <!-- SUB-VIEW 3: DIGITAL ID PASS LAUNCHER -->
+      <div id="profileSubView_idcard" class="hidden max-w-4xl mx-auto w-full">
+        <div class="bg-white rounded-2xl border border-stone-200 shadow-xs p-5 sm:p-7 space-y-6">
+          <div class="border-b border-stone-100 pb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-stone-900">Official Digital Identity Pass (300 DPI)</h3>
+            <p class="text-xs text-stone-500">Government compliant volunteer identification pass with encrypted verification QR code.</p>
+          </div>
+
+          <div class="bg-stone-50 p-5 rounded-xl border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="space-y-1 text-center sm:text-left">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-orange-100 text-orange-800 text-[10px] font-bold font-mono">300 DPI PRINT COMPLIANT</span>
+              <h4 class="text-base font-bold text-stone-900">Interactive Identity Card Hub</h4>
+              <p class="text-xs text-stone-600">Preview front and back faces, toggle security holographic overlays, and export print-ready PDFs.</p>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-stone-900 font-hindi">मेरी समर्पित सेवाएं एवं 80G आयकर छूट रसीदें</h3>
-            <p class="text-xs text-stone-600 font-hindi">आपके द्वारा किए गए समस्त दान, रसीद संख्या एवं धारा 80G(5)(vi) प्रमाणपत्र का डिजिटल रिकॉर्ड।</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <button type="button" onclick="openRazorpayDonationModal()" class="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs rounded-lg shadow-xs flex items-center gap-1.5 cursor-pointer font-hindi">
-              <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-              <span>+ नई सेवा हेतु दान करें</span>
-            </button>
+            <div class="flex flex-col sm:flex-row gap-2 shrink-0 w-full sm:w-auto">
+              <button type="button" onclick="switchTab('membership')" class="px-4 py-2.5 bg-orange-700 hover:bg-orange-800 text-white font-semibold text-xs rounded-lg shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                <span>Open ID Card Studio &rarr;</span>
+              </button>
+              <button type="button" onclick="generateIdCardFromProfile()" class="px-4 py-2.5 bg-stone-900 hover:bg-black text-white font-semibold text-xs rounded-lg shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                <span>Quick Update Pass</span>
+              </button>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Direct Receipt Retrieval Tool (Search by Payment ID / Mobile / PAN) -->
-        <div class="bg-gradient-to-r from-stone-50 via-orange-50/30 to-amber-50/20 p-5 rounded-xl border border-stone-200 space-y-3">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-            <label class="text-xs font-bold text-stone-900 font-hindi flex items-center gap-1.5">
-              <span>🔍</span> तत्काल रसीद खोजें व डाउनलोड करें / Find Receipt (Payment ID or Phone):
-            </label>
-            <span class="text-[11px] font-mono text-stone-500">उदा. pay_Tlhzd7rhESNenT या 7752946125</span>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-2">
-            <input id="profileReceiptSearchInput" type="text" placeholder="Payment ID दर्ज करें (उदा. pay_Tlhzd7rhESNenT) या 10 अंकों का मोबाइल नंबर" class="flex-1 px-4 py-2.5 bg-white border border-stone-300 rounded-lg text-xs font-mono font-bold text-stone-900 focus:outline-none focus:border-orange-500 shadow-2xs" />
-            <button type="button" onclick="searchAndClaimUserReceipt()" class="px-5 py-2.5 bg-orange-700 hover:bg-orange-800 text-white font-bold text-xs rounded-lg shadow-xs shrink-0 cursor-pointer font-hindi flex items-center justify-center gap-1.5 transition-colors">
-              <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-              <span>रसीद खोजें व PDF डाउनलोड करें</span>
+      <!-- SUB-VIEW 4: LIVE SEVA GPS DISPATCH -->
+      <div id="profileSubView_gps" class="hidden max-w-4xl mx-auto w-full">
+        <div class="bg-white rounded-2xl border border-stone-200 shadow-xs p-5 sm:p-7 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-100 pb-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg sm:text-xl font-bold text-stone-900">Live Seva GPS Dispatch</h3>
+                <span id="liveGpsStatusPill" class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-stone-200 text-stone-700">Offline</span>
+              </div>
+              <p class="text-xs text-stone-500">Share live location with Sansthan Admin during active seva camps &amp; bhandara programs.</p>
+            </div>
+            <button id="toggleLiveLocationBtn" type="button" onclick="toggleVolunteerLiveLocation()" class="px-4 py-2 bg-orange-700 hover:bg-orange-800 text-white font-semibold text-xs rounded-lg shadow-xs transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+              <span class="w-2 h-2 rounded-full bg-white"></span>
+              <span id="toggleLiveLocationBtnText">Share Live Location</span>
             </button>
           </div>
-          <p id="profileReceiptSearchMsg" class="text-xs font-bold hidden"></p>
-        </div>
 
-        <!-- Active User Donation Cards Deck -->
-        <div id="profileDonationsCardsContainer" class="space-y-4">
-          <!-- Dynamically populated by renderUserProfileDonations() -->
+          <div id="liveLocationInfoBox" class="hidden bg-stone-50 p-4 rounded-xl border border-stone-200 text-xs space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200/60 pb-2">
+              <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Verified On-Duty Sevadar
+              </span>
+              <span id="liveLocationAccuracy" class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">GPS Active</span>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-start gap-1.5 text-stone-800 text-xs">
+                <span class="text-orange-600 font-bold shrink-0">📍 Location:</span>
+                <strong id="liveLocationAreaName" class="text-stone-900 font-semibold">Prayagraj Seva Kshetra</strong>
+              </div>
+              <div class="flex items-center gap-1.5 text-stone-500 text-[11px]">
+                <span class="shrink-0">🏷️ Station:</span>
+                <span id="liveLocationStation" class="text-stone-700 font-semibold">Shree Bade Hanuman Ji Mandir Bhandara Marg</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -7960,6 +7982,39 @@
   </div>
 
   <!-- ========================================== -->
+  <!-- MODAL: UNIVERSAL IMAGE LIGHTBOX MODAL      -->
+  <!-- ========================================== -->
+  <div id="universalImageModal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="if(event.target === this) closeUniversalImageModal()">
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl relative flex flex-col my-auto animate-in fade-in zoom-in duration-200">
+      <!-- Lightbox Header -->
+      <div class="px-5 py-3.5 bg-neutral-950/80 border-b border-neutral-800/80 flex items-center justify-between text-white">
+        <div class="flex items-center gap-2.5 truncate">
+          <span class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>
+          <h3 id="universalImageTitle" class="text-sm sm:text-base font-bold text-stone-100 truncate">Seva Gallery Preview</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="universalImageDownloadBtn" href="#" download="SSSS_Seva_Photo.jpg" target="_blank" class="px-2.5 py-1 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-stone-200 text-xs font-semibold border border-neutral-700 transition-colors flex items-center gap-1" title="Download Image">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span class="hidden sm:inline">Download</span>
+          </a>
+          <button type="button" onclick="closeUniversalImageModal()" class="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-stone-300 hover:text-white flex items-center justify-center text-sm font-bold border border-neutral-700 transition-colors cursor-pointer" title="Close (Esc)">
+            ✕
+          </button>
+        </div>
+      </div>
+      <!-- Image Display Viewport -->
+      <div class="relative bg-black flex items-center justify-center p-2 sm:p-4 min-h-[300px] max-h-[75vh] overflow-hidden">
+        <img id="universalImageSrc" src="" alt="Seva Preview" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-lg select-none transition-transform duration-200" />
+      </div>
+      <!-- Lightbox Caption & Info -->
+      <div class="px-5 py-3 bg-neutral-950 border-t border-neutral-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-stone-300 text-xs">
+        <p id="universalImageDesc" class="text-stone-300 text-xs leading-relaxed font-hindi">सर्व समर्पित सेवा संस्थान • पावन सेवा प्रकल्प, प्रयागराज</p>
+        <span class="text-[10px] text-stone-500 font-mono shrink-0">Official Digital Archive • SSSS Trust</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
   <!-- MODAL: FIREBASE AUTH & MULTI-ROLE PORTAL   -->
   <!-- ========================================== -->
   <div id="authModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="if(event.target === this) closeAuthModal()">
@@ -8852,6 +8907,7 @@
 
       if (tabId === 'profile') {
         if (typeof loadUserProfile === 'function') loadUserProfile();
+        if (typeof switchProfileSubView === 'function') switchProfileSubView('receipts');
         if (typeof renderUserProfileDonations === 'function') renderUserProfileDonations();
       }
 
@@ -9371,12 +9427,22 @@
       if (rWords) rWords.innerText = convertAmountToWords(numericAmt);
 
       const modal = document.getElementById('receiptModal');
-      if (modal) modal.classList.remove('hidden');
+      if (modal) {
+        modal.removeAttribute('style');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
     }
 
     function closeReceiptModal() {
       const modal = document.getElementById('receiptModal');
-      if (modal) modal.classList.add('hidden');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        modal.removeAttribute('style');
+        document.body.style.overflow = '';
+      }
     }
 
     // ==========================================
@@ -12641,6 +12707,91 @@
     // ========================================================
     // USER PROFILE DONATIONS HUB & 80G RECEIPTS CONTROLLER
     // ========================================================
+    // ========================================================
+    // PROFILE SUB-VIEW SWITCHER & LIGHTBOX CONTROLLERS
+    // ========================================================
+    function switchProfileSubView(viewKey) {
+      const views = ['receipts', 'edit', 'idcard', 'gps'];
+      views.forEach(v => {
+        const el = document.getElementById('profileSubView_' + v);
+        const btn = document.getElementById('profileTabBtn_' + v);
+        if (el) el.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('bg-white', 'text-stone-900', 'shadow-2xs', 'border', 'border-stone-200/60');
+          btn.classList.add('text-stone-500');
+        }
+      });
+      const activeEl = document.getElementById('profileSubView_' + viewKey);
+      const activeBtn = document.getElementById('profileTabBtn_' + viewKey);
+      if (activeEl) activeEl.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.remove('text-stone-500');
+        activeBtn.classList.add('bg-white', 'text-stone-900', 'shadow-2xs', 'border', 'border-stone-200/60');
+      }
+      if (viewKey === 'receipts' && typeof renderUserProfileDonations === 'function') {
+        renderUserProfileDonations();
+      }
+    }
+
+    function openUserDonationReceipt(recNo) {
+      const list = getRecordedDonationsList();
+      const d = list.find(item => item.receiptNo === recNo || item.paymentId === recNo) || HARSH_TIWARI_DONATION;
+      openReceiptModal(
+        d.receiptNo,
+        d.name,
+        d.amount,
+        d.pan,
+        d.cause,
+        d.paymentId,
+        d.phone || '',
+        d.email || '',
+        d.address || ''
+      );
+    }
+
+    function openUserDonationThankYou(recNo) {
+      const list = getRecordedDonationsList();
+      const d = list.find(item => item.receiptNo === recNo || item.paymentId === recNo) || HARSH_TIWARI_DONATION;
+      openDonationThankYouModal(d);
+    }
+
+    function openUniversalImageModal(src, title, desc) {
+      const modal = document.getElementById('universalImageModal');
+      const img = document.getElementById('universalImageSrc');
+      const titleEl = document.getElementById('universalImageTitle');
+      const descEl = document.getElementById('universalImageDesc');
+      const dlBtn = document.getElementById('universalImageDownloadBtn');
+
+      if (img) img.src = src || '';
+      if (titleEl) titleEl.innerText = title || 'Seva Gallery Preview';
+      if (descEl) descEl.innerText = desc || 'सर्व समर्पित सेवा संस्थान • पावन सेवा प्रकल्प, प्रयागराज';
+      if (dlBtn) dlBtn.href = src || '#';
+
+      if (modal) {
+        modal.removeAttribute('style');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeUniversalImageModal() {
+      const modal = document.getElementById('universalImageModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeUniversalImageModal();
+        closeReceiptModal();
+        closeDonationThankYouModal();
+      }
+    });
+
     function renderUserProfileDonations() {
       const container = document.getElementById('profileDonationsCardsContainer');
       if (!container) return;
@@ -12658,65 +12809,65 @@
       container.innerHTML = allDonations.map(d => {
         const amt = (Number(d.amount) || 0).toLocaleString('en-IN');
         const isHarsh = d.paymentId === HARSH_TIWARI_DONATION.paymentId || (d.phone && d.phone.includes('7752946125')) || (d.email && d.email.includes('princeeharsht'));
-        const dJson = JSON.stringify(d).replace(/"/g, '&quot;');
+        const cleanRecNo = d.receiptNo || 'SSSS-80G-2026-RCP-5156';
         return `
-          <div class="border-2 ${isHarsh ? 'border-amber-400 bg-amber-50/25' : 'border-stone-200 bg-white'} rounded-xl p-4 sm:p-5 shadow-xs space-y-4 transition-all hover:shadow-md">
+          <div class="border ${isHarsh ? 'border-amber-300 bg-amber-50/20' : 'border-stone-200 bg-white'} rounded-xl p-4 sm:p-5 shadow-2xs space-y-3.5 transition-all hover:shadow-xs">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div class="space-y-0.5">
                 <div class="flex items-center gap-2">
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 font-mono">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 font-mono">
                     ✓ 80G CERTIFIED
                   </span>
-                  <span class="text-xs font-mono font-bold text-orange-700">${d.receiptNo}</span>
+                  <span class="text-xs font-mono font-bold text-orange-700">${cleanRecNo}</span>
                 </div>
-                <h4 class="text-base font-bold text-stone-900 font-hindi">${d.cause}</h4>
+                <h4 class="text-sm sm:text-base font-bold text-stone-900 font-hindi">${d.cause}</h4>
               </div>
               <div class="text-left sm:text-right">
-                <span class="text-xs text-stone-500 font-hindi">समर्पित दान राशि:</span>
-                <div class="text-xl font-black text-emerald-700 font-mono">₹ ${amt}.00</div>
+                <span class="text-[11px] text-stone-500 font-hindi">समर्पित दान राशि:</span>
+                <div class="text-lg sm:text-xl font-bold text-emerald-700 font-mono">₹ ${amt}.00 INR</div>
               </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs bg-stone-50/80 p-3 rounded-lg border border-stone-100">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-xs bg-stone-50/80 p-3 rounded-lg border border-stone-100">
               <div>
-                <span class="text-stone-500 text-[11px]">समर्पक / Donor:</span>
-                <p class="font-bold text-stone-800">${d.name}</p>
+                <span class="text-stone-400 text-[10px] block">समर्पक / Donor</span>
+                <p class="font-bold text-stone-800 truncate">${d.name}</p>
               </div>
               <div>
-                <span class="text-stone-500 text-[11px]">पैन संख्या / Donor PAN:</span>
+                <span class="text-stone-400 text-[10px] block">पैन / PAN</span>
                 <p class="font-mono font-bold text-stone-900">${d.pan || 'N/A'}</p>
               </div>
               <div>
-                <span class="text-stone-500 text-[11px]">दिनांक / Date:</span>
-                <p class="text-stone-700 font-medium">${d.date || 'Recent'}</p>
+                <span class="text-stone-400 text-[10px] block">दिनांक / Date</span>
+                <p class="text-stone-700 font-medium truncate">${d.date || 'Recent'}</p>
               </div>
               <div>
-                <span class="text-stone-500 text-[11px]">भुगतान आईडी / Payment ID:</span>
+                <span class="text-stone-400 text-[10px] block">Payment ID</span>
                 <p class="font-mono text-stone-700 text-[11px] truncate">${d.paymentId || 'N/A'}</p>
               </div>
               <div>
-                <span class="text-stone-500 text-[11px]">बैंक RRN / Ref:</span>
-                <p class="font-mono text-stone-700 text-[11px]">${d.bankRrn || d.orderId || 'Direct UPI'}</p>
+                <span class="text-stone-400 text-[10px] block">Bank RRN</span>
+                <p class="font-mono text-stone-700 text-[11px] truncate">${d.bankRrn || d.orderId || 'Direct UPI'}</p>
               </div>
               <div>
-                <span class="text-stone-500 text-[11px]">आयकर छूट / IT Deduction:</span>
-                <p class="text-emerald-700 font-bold text-[11px]">Section 80G(5)(vi)</p>
+                <span class="text-stone-400 text-[10px] block">Status</span>
+                <p class="text-emerald-700 font-bold text-[11px]">80G(5)(vi) Active</p>
               </div>
             </div>
 
             <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
-              <div class="text-[11px] text-stone-500 font-hindi">
+              <span class="text-[11px] text-stone-500 font-hindi">
                 <span>प्रमाणपत्र: Form 10BD Reported</span>
-              </div>
+              </span>
               <div class="flex flex-wrap items-center gap-2">
-                <button type="button" onclick="openDonationThankYouModal(${dJson})" class="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold rounded-lg border border-amber-300 transition-colors cursor-pointer font-hindi flex items-center gap-1">
+                <button type="button" onclick="openUserDonationThankYou('${cleanRecNo}')" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-semibold rounded-lg border border-amber-200 transition-colors cursor-pointer font-hindi flex items-center gap-1">
                   <span>🙏 आशीर्वाद एवं विवरण</span>
                 </button>
-                <button type="button" onclick="openReceiptModal('${d.receiptNo}', '${d.name}', ${d.amount}, '${d.pan}', '${d.cause}', '${d.paymentId}', '${d.phone || ''}', '${d.email || ''}', '${d.address || ''}')" class="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold rounded-lg border border-stone-200 transition-colors cursor-pointer font-hindi flex items-center gap-1">
+                <button type="button" onclick="openUserDonationReceipt('${cleanRecNo}')" class="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold rounded-lg border border-stone-200 transition-colors cursor-pointer font-hindi flex items-center gap-1">
                   <svg class="w-3.5 h-3.5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                   <span>रसीद देखें (View)</span>
                 </button>
-                <button type="button" onclick="downloadReceiptDirect('${d.receiptNo}')" class="px-4 py-1.5 bg-orange-700 hover:bg-orange-800 text-white text-xs font-bold rounded-lg shadow-xs transition-colors cursor-pointer font-hindi flex items-center gap-1.5">
+                <button type="button" onclick="downloadReceiptDirect('${cleanRecNo}')" class="px-3.5 py-1.5 bg-orange-700 hover:bg-orange-800 text-white text-xs font-semibold rounded-lg shadow-xs transition-colors cursor-pointer font-hindi flex items-center gap-1.5">
                   <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                   <span>80G PDF डाउनलोड</span>
                 </button>
@@ -12812,6 +12963,9 @@
     }
 
     async function downloadTaxReceiptPdf(customDonationRecord) {
+      const modal = document.getElementById('receiptModal');
+      const wasHidden = modal ? (modal.classList.contains('hidden') || modal.style.display === 'none') : false;
+
       if (customDonationRecord) {
         openReceiptModal(
           customDonationRecord.receiptNo,
@@ -12826,24 +12980,10 @@
         );
       }
 
-      const modal = document.getElementById('receiptModal');
       const el = document.getElementById('taxReceiptContent');
       if (!el) {
         window.print();
         return;
-      }
-
-      const wasHidden = modal && modal.classList.contains('hidden');
-      let originalModalStyle = '';
-      if (wasHidden) {
-        originalModalStyle = modal.getAttribute('style') || '';
-        modal.classList.remove('hidden');
-        modal.style.position = 'fixed';
-        modal.style.left = '-9999px';
-        modal.style.top = '0';
-        modal.style.opacity = '0';
-        modal.style.pointerEvents = 'none';
-        modal.style.display = 'flex';
       }
 
       const actions = document.getElementById('receiptModalActions');
@@ -12854,14 +12994,32 @@
       if (btnText) btnText.innerText = 'Generating PDF...';
       if (actions) actions.style.visibility = 'hidden';
 
+      let originalModalStyle = '';
+      if (wasHidden && modal) {
+        originalModalStyle = modal.getAttribute('style') || '';
+        modal.classList.remove('hidden');
+        modal.style.position = 'fixed';
+        modal.style.left = '-9999px';
+        modal.style.top = '0';
+        modal.style.opacity = '0';
+        modal.style.pointerEvents = 'none';
+        modal.style.display = 'flex';
+      }
+
+      // Enforce standard capture width for crisp A4 PDF render regardless of viewport width
+      const originalWidth = el.style.width;
+      const originalMaxWidth = el.style.maxWidth;
+      el.style.width = '640px';
+      el.style.maxWidth = '640px';
+
       try {
-        const imgData = await rasterizeCardElement(el, 3.0);
+        const imgData = await rasterizeCardElement(el, 2.5);
         if (actions) actions.style.visibility = '';
 
         if (window.jspdf && window.jspdf.jsPDF) {
           const doc = new window.jspdf.jsPDF('p', 'mm', 'a4');
           const pageWidth = 210;
-          const margin = 12;
+          const margin = 10;
           const printWidth = pageWidth - (margin * 2);
           
           const imgProps = doc.getImageProperties(imgData);
@@ -12880,13 +13038,19 @@
         console.error('Tax Receipt PDF Error:', err);
         window.print();
       } finally {
+        el.style.width = originalWidth;
+        el.style.maxWidth = originalMaxWidth;
+        if (actions) actions.style.visibility = '';
         if (wasHidden && modal) {
           modal.classList.add('hidden');
+          modal.classList.remove('flex');
           if (originalModalStyle) {
             modal.setAttribute('style', originalModalStyle);
           } else {
             modal.removeAttribute('style');
           }
+        } else if (modal) {
+          modal.removeAttribute('style');
         }
         setTimeout(() => {
           if (btn) btn.disabled = false;
