@@ -47,7 +47,15 @@ export default {
       return Response.redirect(`https://${cleanHost}${url.pathname}${url.search}`, 301);
     }
 
-    // Old Domain & New Domain both served live simultaneously for Google Search Console verification & migration
+    // 3. Permanent 301 Migration Redirect for Old Domain (sarva-samarpit-sewa-sansthan.in)
+    // Satisfies Google Search Console Change of Address test and transfers 100% of SEO authority
+    if (url.hostname.toLowerCase().includes("sarva-samarpit-sewa-sansthan.in")) {
+      if (url.pathname.startsWith("/google") && url.pathname.endsWith(".html")) {
+        // Serve Google HTML verification token if needed
+      } else {
+        return Response.redirect(`https://sarvasamarpitsewasansthan.com${url.pathname}${url.search}`, 301);
+      }
+    }
 
     let path = '/' + url.pathname.split('/').filter(Boolean).join('/');
     if (path === "/" || path === "") {
