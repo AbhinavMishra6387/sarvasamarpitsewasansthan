@@ -4588,201 +4588,210 @@
           </div>
 
           <!-- 1. FRONT VIEW OF ID CARD -->
-          <div id="idCardApprovalNotice" class="hidden mb-4"></div>
-          <div id="corporateIdCardContainer" class="w-full max-w-[420px] min-h-[775px] h-[775px] bg-white rounded-lg shadow-sm border-2 border-stone-300 relative overflow-hidden flex flex-col justify-between text-gray-900 mx-auto">
+          <div id="idCardApprovalNotice" class="hidden mb-3 w-full max-w-[350px]"></div>
+          <div id="corporateIdCardContainer" class="w-full max-w-[340px] sm:max-w-[350px] bg-white rounded-2xl shadow-xl border-2 border-stone-200 relative overflow-hidden flex flex-col justify-between text-gray-900 mx-auto transition-all">
             
-            <!-- Lanyard Slot -->
-            <div class="w-full flex justify-center pt-2.5 pb-1 bg-stone-100 border-b border-stone-200 shrink-0">
-              <div class="w-20 h-1.5 bg-stone-300 rounded-full"></div>
+            <!-- Dynamic Lock / Pending Overlay (Controlled via updateCardLockState) -->
+            <div id="cardLockOverlay" class="hidden absolute inset-0 bg-stone-900/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-5 text-center text-white space-y-2.5">
+              <div id="cardLockIconWrapper" class="w-14 h-14 rounded-2xl bg-amber-500/20 border-2 border-amber-400 flex items-center justify-center text-2xl shadow-lg">
+                🔒
+              </div>
+              <span id="cardLockBadge" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/40 text-[10px] font-bold uppercase tracking-wider">
+                ₹1,101 सदस्यता आवश्यक • Membership Required
+              </span>
+              <h4 id="cardLockTitle" class="text-sm sm:text-base font-bold text-white leading-tight">आधिकारिक पहचान पत्र लॉक है</h4>
+              <p id="cardLockDesc" class="text-[11px] text-stone-300 max-w-xs leading-relaxed">
+                डिजिटल पहचान पत्र (ID Card) प्राप्त करने के लिए ₹1,101 वार्षिक सदस्यता एवं प्रशासक (Admin) अनुमोदन अनिवार्य है।
+              </p>
+              <div id="cardLockActionContainer" class="pt-1">
+                <button type="button" onclick="openMembershipApplicationModal()" class="px-4 py-2 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs rounded-xl shadow-lg transition-transform hover:scale-105 flex items-center gap-1.5 cursor-pointer">
+                  <span>💳 ₹1,101 सदस्यता आवेदन करें (Apply Now)</span>
+                </button>
+              </div>
             </div>
 
-            <!-- Card Header Banner with Official NGO Logo & Centered Credentials (EXACT SAME ON FRONT & BACK) -->
-            <div class="bg-stone-900 text-white px-5 pt-3 pb-2 relative border-b-4 border-orange-600 text-center flex flex-col items-center justify-center shrink-0">
+            <!-- Lanyard Slot -->
+            <div class="w-full flex justify-center pt-2 pb-1 bg-stone-100 border-b border-stone-200 shrink-0">
+              <div class="w-16 h-1.5 bg-stone-300 rounded-full"></div>
+            </div>
+
+            <!-- Card Header Banner with Official NGO Logo & Centered Credentials -->
+            <div class="bg-stone-900 text-white px-3.5 pt-2.5 pb-2 relative border-b-2 border-amber-500 text-center flex flex-col items-center justify-center shrink-0">
               <!-- Official Centered Logo -->
-              <div class="w-12 h-12 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md mb-1 flex items-center justify-center shrink-0">
+              <div class="w-10 h-10 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md mb-1 flex items-center justify-center shrink-0">
                 <img src="logo.jpg" alt="Official NGO Logo" class="w-full h-full object-cover rounded-full" />
               </div>
               <!-- Centered Tagline & Name -->
-              <p class="text-[9.5px] text-amber-300 font-bold uppercase tracking-widest font-hindi leading-tight">॥ मानव सेवा ही माधव सेवा ॥</p>
-              <p class="font-semibold text-sm text-amber-400 tracking-wide font-hindi mt-0.5 leading-snug">सर्व समर्पित सेवा संस्थान</p>
-              <h3 class="font-semibold text-xs sm:text-[13px] text-white tracking-wider leading-tight mt-0.5">SARVA SAMARPIT SEWA SANSTHAN</h3>
-              <p class="text-[8.5px] text-stone-300 font-medium mt-0.5 leading-tight">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP - 211005</p>
+              <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider font-hindi leading-tight">॥ मानव सेवा ही माधव सेवा ॥</p>
+              <p class="font-bold text-[12.5px] text-amber-400 tracking-wide font-hindi mt-0.5 leading-snug">सर्व समर्पित सेवा संस्थान</p>
+              <h3 class="font-semibold text-[10px] text-white tracking-wider leading-tight">SARVA SAMARPIT SEWA SANSTHAN</h3>
+              <p class="text-[8px] text-stone-300 font-medium mt-0.5 leading-tight">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP</p>
             </div>
 
-            <!-- Body: Photo & Identity Grid -->
-            <div class="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2">
-              
-              <div class="flex flex-col items-center">
-                <!-- Official Photo Frame - Clean Unobstructed Frame (NO BADGE OVERLAY) -->
-                <div class="w-24 h-28 rounded-lg overflow-hidden border-2 border-stone-300 shadow-md bg-stone-100 flex items-center justify-center">
+            <!-- Body: Photo & Identity -->
+            <div class="p-3 sm:p-3.5 flex-1 flex flex-col justify-between space-y-2">
+              <div class="flex items-center gap-3">
+                <!-- Official Photo Frame -->
+                <div class="w-20 h-24 rounded-xl overflow-hidden border-2 border-stone-300 shadow-sm bg-stone-100 flex items-center justify-center shrink-0">
                   <img id="cardPhotoImg" src="images/treasurer.jpg" alt="Official ID Photo" class="w-full h-full object-cover" />
                 </div>
 
-                <!-- Name, Hindi Name, Designation Badge (Placed Elegantly Below Name) & NGO ID -->
-                <div class="text-center mt-1.5 space-y-0.5">
-                  <h4 id="cardFullName" class="font-semibold text-base sm:text-lg text-gray-900 tracking-tight uppercase leading-tight">NAVEEN MISHRA</h4>
-                  <p id="cardHindiName" class="text-xs text-orange-700 font-bold font-hindi">नवीन मिश्रा (कोषाध्यक्ष)</p>
-                  <div class="flex justify-center pt-0.5">
-                    <span id="cardRoleBadge" class="bg-orange-700 text-white text-[9.5px] font-semibold uppercase px-3 py-0.5 rounded-md shadow-xs tracking-wider">
-                      TREASURER & FINANCE CONTROLLER
+                <!-- Identity Details on Right -->
+                <div class="flex-1 min-w-0 space-y-1">
+                  <h4 id="cardFullName" class="font-bold text-sm sm:text-base text-gray-900 tracking-tight uppercase leading-snug truncate">NAVEEN MISHRA</h4>
+                  <p id="cardHindiName" class="text-[11px] text-orange-700 font-bold font-hindi truncate">नवीन मिश्रा (कोषाध्यक्ष)</p>
+                  <div>
+                    <span id="cardRoleBadge" class="inline-block bg-orange-700 text-white text-[8.5px] font-semibold uppercase px-2 py-0.5 rounded shadow-2xs tracking-wide">
+                      TREASURER &amp; FINANCE CONTROLLER
                     </span>
                   </div>
-                  <p id="cardNgoId" class="font-mono font-semibold text-[11px] text-orange-600 tracking-widest pt-0.5">SSSS-TRU-000002</p>
+                  <p class="text-[10px] text-stone-500 font-medium">NGO ID: <strong id="cardNgoId" class="font-mono text-orange-600 font-bold text-[11px]">SSSS-TRU-000002</strong></p>
                 </div>
               </div>
 
               <!-- Credentials Table -->
-              <div class="bg-stone-50 p-2 sm:p-2.5 rounded-lg border border-stone-200 text-xs space-y-1">
-                <div class="flex justify-between items-center border-b border-stone-200 pb-1">
-                  <span class="text-gray-500 font-bold uppercase text-[9px]">Department:</span>
-                  <span id="cardDept" class="font-bold text-gray-900 text-right text-[10.5px]">Finance, Audit &amp; 80G Compliances</span>
+              <div class="bg-stone-50 p-2 sm:p-2.5 rounded-xl border border-stone-200 text-[10px] space-y-1">
+                <div class="flex justify-between items-center border-b border-stone-200/60 pb-1">
+                  <span class="text-stone-500 font-bold uppercase text-[8.5px]">Wing/Dept:</span>
+                  <span id="cardDept" class="font-semibold text-stone-900 truncate max-w-[190px] text-right">Finance, Audit &amp; 80G Compliances</span>
                 </div>
-                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1">
+                <div class="grid grid-cols-2 gap-2 border-b border-stone-200/60 pb-1">
                   <div>
-                    <span class="text-gray-500 font-bold uppercase text-[9px] block">Official Email:</span>
-                    <span id="cardEmail" class="font-bold text-gray-900 text-[9.5px] truncate block">treasurer@sarvasamarpitsewasansthan.com</span>
+                    <span class="text-stone-500 font-bold uppercase text-[8.5px] block">Official Email:</span>
+                    <span id="cardEmail" class="font-semibold text-stone-800 text-[9px] truncate block">treasurer@sarvasamarpitsewasansthan.com</span>
                   </div>
                   <div class="text-right">
-                    <span class="text-gray-500 font-bold uppercase text-[9px] block">Contact No:</span>
-                    <span id="cardPhone" class="font-bold text-gray-900 font-mono text-[10.5px]">+91 83030 64007</span>
+                    <span class="text-stone-500 font-bold uppercase text-[8.5px] block">Contact No:</span>
+                    <span id="cardPhone" class="font-bold text-stone-900 font-mono text-[10px]">+91 83030 64007</span>
                   </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1">
+                <div class="grid grid-cols-2 gap-2 border-b border-stone-200/60 pb-1">
                   <div>
-                    <span class="text-gray-500 font-bold uppercase text-[9px] block">Date Joined:</span>
-                    <span id="cardJoinDate" class="font-bold text-gray-900 text-[10.5px]">01-May-2018</span>
+                    <span class="text-stone-500 font-bold uppercase text-[8.5px] block">Joined:</span>
+                    <span id="cardJoinDate" class="font-bold text-stone-800">01-May-2018</span>
                   </div>
                   <div class="text-right">
-                    <span class="text-gray-500 font-bold uppercase text-[9px] block">Validity:</span>
-                    <span id="cardValidUntil" class="font-bold text-emerald-700 text-[10.5px]">Permanent (Life Trustee)</span>
+                    <span class="text-stone-500 font-bold uppercase text-[8.5px] block">Validity:</span>
+                    <span id="cardValidUntil" class="font-bold text-emerald-700">Permanent (Life Trustee)</span>
                   </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-1">
+                <div class="grid grid-cols-2 gap-2">
                   <div>
-                    <span class="text-gray-500 font-bold uppercase text-[9px] block">Blood Group:</span>
-                    <span id="cardBloodGroup" class="font-semibold text-red-600 text-[11px]">O+</span>
+                    <span class="text-stone-500 font-bold uppercase text-[8.5px] block">Blood Group:</span>
+                    <span id="cardBloodGroup" class="font-bold text-red-600">O+</span>
                   </div>
                   <div class="text-right">
-                    <span class="text-gray-500 font-bold uppercase text-[9px] block">Card Status:</span>
-                    <span id="cardStatusBadge" class="font-semibold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded text-[9.5px]">ACTIVE</span>
+                    <span class="text-stone-500 font-bold uppercase text-[8.5px] block">Card Status:</span>
+                    <span id="cardStatusBadge" class="font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.2 rounded text-[8.5px]">ACTIVE</span>
                   </div>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-gray-500 font-bold uppercase text-[9px]">Emergency Helpdesk:</span>
-                  <span id="cardEmergency" class="font-bold text-gray-900 font-mono text-[10.5px]">09450858514</span>
                 </div>
               </div>
 
               <!-- Verification & Official Seal Section -->
-              <div class="pt-1.5 border-t border-stone-200 flex items-center justify-between gap-3 shrink-0">
-                <!-- Live Dynamic High-Res QR Code -->
+              <div class="pt-1 border-t border-stone-200 flex items-center justify-between gap-2 shrink-0">
                 <div class="flex flex-col items-center">
-                  <div id="cardQrCodeWrapper" class="bg-white p-1 rounded-lg border border-stone-300 shadow-sm flex items-center justify-center min-w-[84px] min-h-[84px]"></div>
-                  <span class="text-[8px] font-bold text-stone-600 mt-0.5 uppercase tracking-tight">Scan to Verify</span>
+                  <div id="cardQrCodeWrapper" class="bg-white p-1 rounded-lg border border-stone-300 shadow-2xs flex items-center justify-center min-w-[62px] min-h-[62px]"></div>
+                  <span class="text-[7.5px] font-bold text-stone-600 mt-0.5 uppercase tracking-tight">Scan to Verify</span>
                 </div>
 
-                <!-- Official Signatory & Trust Seal -->
                 <div class="flex-1 text-right space-y-0.5">
                   <div class="inline-block border-b border-stone-400 pb-0.5">
-                    <p id="cardSignatoryName" class="font-serif italic font-bold text-xs text-slate-900 tracking-wide">Authorized Trust Signatory</p>
+                    <p id="cardSignatoryName" class="font-serif italic font-bold text-[10.5px] text-slate-900 tracking-wide">Authorized Trust Signatory</p>
                   </div>
-                  <p class="text-[8.5px] text-gray-500 font-semibold leading-tight">Sarva Samarpit Sewa Sansthan<br>Trust Executive Council</p>
-                  <div class="inline-flex items-center gap-1 bg-amber-50 border border-amber-300 px-2 py-0.5 rounded-full text-[8.5px] font-semibold text-amber-900 mt-0.5 shadow-2xs">
-                    <svg class="w-3 h-3 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>OFFICIAL TRUST SEAL</span>
+                  <p class="text-[7.5px] text-gray-500 font-semibold leading-tight">Sarva Samarpit Sewa Sansthan<br>Trust Executive Council</p>
+                  <div class="inline-flex items-center gap-1 bg-amber-50 border border-amber-300 px-2 py-0.5 rounded-full text-[8px] font-semibold text-amber-900 shadow-2xs">
+                    <span>★</span> <span>OFFICIAL TRUST SEAL</span>
                   </div>
                 </div>
               </div>
-
             </div>
 
             <!-- Bottom Security Strip -->
-            <div class="bg-neutral-900 text-white text-[9.5px] py-2 px-4 flex justify-between items-center font-medium border-t border-neutral-800 shrink-0">
-              <span>www.sarvasamarpitsewasansthan.com</span>
+            <div class="bg-stone-900 text-white text-[8.5px] py-1.5 px-3 flex justify-between items-center font-medium border-t border-stone-800 shrink-0">
+              <span class="font-mono">sarvasamarpitsewasansthan.com</span>
               <span class="text-amber-400 font-bold">Helpline: 09450858514</span>
             </div>
 
           </div>
 
-          <!-- 2. BACK VIEW OF ID CARD (Terms, Rules & Headquarters Address - 100% IDENTICAL SIZE) -->
-          <div id="corporateIdCardBackContainer" class="hidden w-full max-w-[420px] min-h-[775px] h-[775px] bg-white rounded-lg shadow-sm border-2 border-stone-300 relative overflow-hidden flex flex-col justify-between text-gray-900 mx-auto">
+          <!-- 2. BACK VIEW OF ID CARD (Terms, Rules & Headquarters Address) -->
+          <div id="corporateIdCardBackContainer" class="hidden w-full max-w-[340px] sm:max-w-[350px] bg-white rounded-2xl shadow-xl border-2 border-stone-200 relative overflow-hidden flex flex-col justify-between text-gray-900 mx-auto transition-all">
             
             <!-- Lanyard Slot -->
-            <div class="w-full flex justify-center pt-2.5 pb-1 bg-stone-100 border-b border-stone-200 shrink-0">
-              <div class="w-20 h-1.5 bg-stone-300 rounded-full"></div>
+            <div class="w-full flex justify-center pt-2 pb-1 bg-stone-100 border-b border-stone-200 shrink-0">
+              <div class="w-16 h-1.5 bg-stone-300 rounded-full"></div>
             </div>
 
-            <!-- Card Header Banner with Official NGO Logo & Centered Credentials (EXACT SAME AS FRONT) -->
-            <div class="bg-stone-900 text-white px-5 pt-3 pb-2 relative border-b-4 border-orange-600 text-center flex flex-col items-center justify-center shrink-0">
-              <!-- Official Centered Logo -->
-              <div class="w-12 h-12 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md mb-1 flex items-center justify-center shrink-0">
+            <!-- Card Header Banner (Identical to Front) -->
+            <div class="bg-stone-900 text-white px-3.5 pt-2.5 pb-2 relative border-b-2 border-amber-500 text-center flex flex-col items-center justify-center shrink-0">
+              <div class="w-10 h-10 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md mb-1 flex items-center justify-center shrink-0">
                 <img src="logo.jpg" alt="Official NGO Logo" class="w-full h-full object-cover rounded-full" />
               </div>
-              <!-- Centered Tagline & Name -->
-              <p class="text-[9.5px] text-amber-300 font-bold uppercase tracking-widest font-hindi leading-tight">॥ मानव सेवा ही माधव सेवा ॥</p>
-              <p class="font-semibold text-sm text-amber-400 tracking-wide font-hindi mt-0.5 leading-snug">सर्व समर्पित सेवा संस्थान</p>
-              <h3 class="font-semibold text-xs sm:text-[13px] text-white tracking-wider leading-tight mt-0.5">SARVA SAMARPIT SEWA SANSTHAN</h3>
-              <p class="text-[8.5px] text-stone-300 font-medium mt-0.5 leading-tight">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP - 211005</p>
+              <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider font-hindi leading-tight">॥ मानव सेवा ही माधव सेवा ॥</p>
+              <p class="font-bold text-[12.5px] text-amber-400 tracking-wide font-hindi mt-0.5 leading-snug">सर्व समर्पित सेवा संस्थान</p>
+              <h3 class="font-semibold text-[10px] text-white tracking-wider leading-tight">SARVA SAMARPIT SEWA SANSTHAN</h3>
+              <p class="text-[8px] text-stone-300 font-medium mt-0.5 leading-tight">Trust Reg: UP/2018/0192847 • 80G Certified • Prayagraj, UP</p>
             </div>
 
             <!-- Body: Terms, Regulatory Guidelines & Headquarters Address -->
-            <div class="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2 text-xs">
-              
-              <div class="space-y-1.5">
+            <div class="p-3 sm:p-3.5 flex-1 flex flex-col justify-between space-y-2 text-[10px]">
+              <div class="space-y-1">
                 <div class="flex items-center justify-between border-b border-stone-200 pb-1">
-                  <span class="text-[10.5px] font-semibold text-stone-900 uppercase tracking-wide">TERMS &amp; REGULATORY GUIDELINES</span>
-                  <span class="text-[8.5px] bg-amber-100 text-amber-900 border border-amber-300 px-2 py-0.5 rounded font-mono font-bold">OFFICIAL PASS</span>
+                  <span class="text-[9.5px] font-bold text-stone-900 uppercase tracking-wide">TERMS &amp; REGULATORY GUIDELINES</span>
+                  <span class="text-[7.5px] bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.2 rounded font-mono font-bold">OFFICIAL PASS</span>
                 </div>
-                <ol class="list-decimal pl-4 space-y-1 text-stone-700 text-[10.5px] leading-relaxed">
-                  <li>This Identity Credential is the official property of <strong>Sarva Samarpit Sewa Sansthan</strong> (Trust Reg. UP/2018/0192847).</li>
-                  <li>Issued strictly for identification during authorized Seva initiatives at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj and designated field camps.</li>
-                  <li>This card is strictly non-transferable. The holder must carry and present it during all voluntary services and field deployments.</li>
-                  <li>Unauthorized reproduction, forging, alteration or transfer is strictly prohibited and subject to legal prosecution under the Indian Penal Code.</li>
-                  <li>If found or lost, please return immediately to the Sansthan Head Office or call the 24/7 Sansthan Helpline.</li>
+                <ol class="list-decimal pl-3.5 space-y-0.5 text-stone-700 text-[9px] leading-relaxed">
+                  <li>Official credential of <strong>Sarva Samarpit Sewa Sansthan</strong> (Trust Reg. UP/2018/0192847).</li>
+                  <li>Issued for identification during authorized Seva initiatives at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj.</li>
+                  <li>Strictly non-transferable. The holder must carry during voluntary service deployments.</li>
+                  <li>Misuse or unauthorized reproduction is strictly punishable under law.</li>
+                  <li>If found or lost, please return to Sansthan Head Office or call 24/7 Helpline.</li>
                 </ol>
               </div>
 
               <!-- Official Address & Statutory Box -->
-              <div class="bg-stone-50 p-2.5 rounded-lg border border-stone-200 space-y-1 text-[10.5px]">
-                <p class="font-semibold text-stone-900 text-xs flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  Headquarters &amp; Seva Camp:
+              <div class="bg-stone-50 p-2 sm:p-2.5 rounded-xl border border-stone-200 space-y-1 text-[9px]">
+                <p class="font-bold text-stone-900 text-[10px] flex items-center gap-1">
+                  <span class="text-orange-600">📍</span>
+                  <span>Headquarters &amp; Seva Camp:</span>
                 </p>
-                <p class="text-stone-700 leading-snug">Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj, Uttar Pradesh &ndash; 211005</p>
+                <p class="text-stone-700 leading-snug">
+                  Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj, Uttar Pradesh &ndash; 211005
+                </p>
                 <p class="text-stone-600 font-mono pt-0.5">
                   Helpline: <strong>09450858514</strong> &bull; WhatsApp: <strong>+91 94508 58514</strong>
                 </p>
-                <p class="text-stone-500 font-mono text-[9.5px]">PAN: AABTS8923R &bull; 80G Tax Exemption &bull; 12A Certified</p>
+                <div class="grid grid-cols-2 gap-1 pt-1 border-t border-stone-200/60 font-mono text-[8px] text-stone-600">
+                  <div>80G: AAETS7355LF20231</div>
+                  <div class="text-right">12A: AABTS8923RE20201</div>
+                </div>
               </div>
 
               <!-- Dual Trust Signatories with Verified Badges -->
-              <div class="pt-1.5 border-t border-stone-200">
-                <div class="grid grid-cols-2 gap-2.5 text-center">
-                  <div class="p-1.5 bg-stone-50 rounded-lg border border-stone-200">
-                    <p class="font-serif italic font-bold text-xs text-stone-900">Pt. Harsh Tiwari</p>
-                    <p class="text-[9px] text-stone-500 font-semibold">Chief Managing Trustee</p>
-                    <span class="text-[7.5px] text-emerald-700 font-mono font-bold">DIGITALLY VERIFIED</span>
+              <div class="pt-1 border-t border-stone-200">
+                <div class="grid grid-cols-2 gap-2 text-center">
+                  <div class="p-1 bg-stone-50 rounded-lg border border-stone-200">
+                    <p class="font-serif italic font-bold text-[10.5px] text-stone-900">Pt. Harsh Tiwari</p>
+                    <p class="text-[8px] text-stone-500 font-semibold">Chief Managing Trustee</p>
+                    <span class="text-[7px] text-emerald-700 font-mono font-bold">DIGITALLY VERIFIED</span>
                   </div>
-                  <div class="p-1.5 bg-stone-50 rounded-lg border border-stone-200">
-                    <p class="font-serif italic font-bold text-xs text-stone-900">Amit Prakhar Pandey</p>
-                    <p class="text-[9px] text-stone-500 font-semibold">Secretary &amp; Administrator</p>
-                    <span class="text-[7.5px] text-emerald-700 font-mono font-bold">DIGITALLY VERIFIED</span>
+                  <div class="p-1 bg-stone-50 rounded-lg border border-stone-200">
+                    <p class="font-serif italic font-bold text-[10.5px] text-stone-900">Amit Prakhar Pandey</p>
+                    <p class="text-[8px] text-stone-500 font-semibold">Secretary &amp; Administrator</p>
+                    <span class="text-[7px] text-emerald-700 font-mono font-bold">DIGITALLY VERIFIED</span>
                   </div>
                 </div>
               </div>
 
               <!-- Statutory Protection Line -->
-              <div class="text-[8.5px] text-stone-500 text-center italic">
-                This identity credential is protected under Indian Trusts Act 1882. Valid across all UP State &amp; National Seva programs.
+              <div class="text-[7.5px] text-stone-400 text-center italic">
+                Protected under Indian Trusts Act 1882. Valid for all Sansthan Seva wings.
               </div>
-
             </div>
 
             <!-- Bottom Security Strip -->
-            <div class="bg-neutral-900 text-white text-[9.5px] py-2 px-4 flex justify-between items-center font-medium border-t border-neutral-800 shrink-0">
-              <span>www.sarvasamarpitsewasansthan.com</span>
+            <div class="bg-stone-900 text-white text-[8.5px] py-1.5 px-3 flex justify-between items-center font-medium border-t border-stone-800 shrink-0">
+              <span class="font-mono">sarvasamarpitsewasansthan.com</span>
               <span class="text-amber-400 font-bold">Helpline: 09450858514</span>
             </div>
 
@@ -5062,8 +5071,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-stone-100">
           <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200/70">
             <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Verified Contribution</span>
-            <div class="text-base sm:text-lg font-bold text-emerald-700 font-mono mt-0.5">₹ 501.00 INR</div>
-            <span class="text-[10px] text-stone-500 font-hindi">शिक्षा सेवा (100% Tax Deductible)</span>
+            <div id="profileKpiContribution" class="text-base sm:text-lg font-bold text-emerald-700 font-mono mt-0.5">₹ 0.00 INR</div>
+            <span id="profileKpiCause" class="text-[10px] text-stone-500 font-hindi">व्यक्तिगत सेवा रिकॉर्ड</span>
           </div>
           <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200/70">
             <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Statutory 80G Status</span>
@@ -5072,8 +5081,8 @@
           </div>
           <div class="p-3.5 bg-stone-50 rounded-xl border border-stone-200/70">
             <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Digital Member Pass</span>
-            <div class="text-sm sm:text-base font-bold text-stone-800 mt-0.5">300 DPI Verified</div>
-            <span class="text-[10px] text-orange-700 font-semibold">Ready to Print &amp; Download</span>
+            <div id="profileKpiMemberStatus" class="text-sm sm:text-base font-bold text-stone-800 mt-0.5">₹1,101 सदस्यता आवश्यक</div>
+            <span id="profileKpiMemberBadge" class="text-[10px] text-orange-700 font-semibold">प्रशासक अनुमोदन अनिवार्य</span>
           </div>
         </div>
       </div>
@@ -6376,9 +6385,56 @@
 
       </div>
 
-      <!-- SUBTAB 2: VOLUNTEER APPLICATIONS VERIFICATION & ROSTER -->
+      <!-- SUBTAB 2: VOLUNTEER & MEMBERSHIP VERIFICATION DESK -->
       <div id="admin-subtab-volunteers" class="space-y-6">
         
+        <!-- SECTION 0: ₹1,101 MEMBERSHIP & ID CARD APPROVAL DESK (सदस्यता अनुमोदन डेस्क) -->
+        <div class="bg-white rounded-lg border-2 border-orange-200 overflow-hidden shadow-sm">
+          <div class="p-6 border-b flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-gradient-to-r from-orange-50 via-amber-50 to-white">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2.5 py-0.5 bg-orange-700 text-white font-bold text-[10px] rounded-md uppercase tracking-wider">₹1,101 Membership</span>
+                <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold text-[10px] rounded-md">ID Card Approval Desk</span>
+              </div>
+              <h3 class="font-bold text-lg text-gray-900 font-hindi">₹1,101 सदस्यता एवं डिजिटल ID कार्ड अनुमोदन डेस्क</h3>
+              <p class="text-xs text-gray-600">
+                उपयोगकर्ताओं द्वारा सबमिट किए गए ₹1,101 सदस्यता शुल्क, ट्रांजेक्शन आईडी एवं पहचान विवरण की जांच करें। अनुमोदन (Approve) करने पर सदस्य का डिजिटल ID कार्ड तुरंत सक्रिय हो जाएगा।
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-2 shrink-0">
+              <button onclick="setMembershipAppFilter('ALL')" class="px-3 py-1.5 rounded-lg border border-stone-300 text-xs font-bold hover:bg-stone-100 transition-all text-stone-700 cursor-pointer">
+                All (<span id="adminMemAppTotalCount">0</span>)
+              </button>
+              <button onclick="setMembershipAppFilter('PENDING')" class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold hover:bg-amber-100 transition-all cursor-pointer">
+                Pending (<span id="adminMemAppPendingCount">0</span>)
+              </button>
+              <button onclick="setMembershipAppFilter('APPROVED')" class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-all cursor-pointer">
+                Approved (<span id="adminMemAppApprovedCount">0</span>)
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[760px] text-left text-xs">
+              <thead class="bg-stone-50 text-stone-600 uppercase font-bold border-b border-stone-200">
+                <tr>
+                  <th class="p-3.5">Applicant &amp; Photo</th>
+                  <th class="p-3.5">Contact Details</th>
+                  <th class="p-3.5">Fee &amp; Payment Ref</th>
+                  <th class="p-3.5">Address &amp; Blood Group</th>
+                  <th class="p-3.5">Date Submitted</th>
+                  <th class="p-3.5">Status</th>
+                  <th class="p-3.5 text-right">Approval Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminMemAppTableBody" class="divide-y divide-stone-100">
+                <!-- Dynamically populated by renderAdminMembershipApplications() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <!-- SECTION A: VOLUNTEER APPLICATIONS & CROSS-CHECK CENTER -->
         <div class="bg-white rounded-lg border border-stone-200 overflow-hidden shadow-sm">
           <div class="p-6 border-b flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-gradient-to-r from-stone-50 via-white to-orange-50/30">
@@ -7685,31 +7741,31 @@
         <div class="border border-stone-200 rounded-xl divide-y divide-stone-100 bg-stone-50/60 overflow-hidden">
           <div class="flex items-center justify-between p-3">
             <span class="text-stone-500 font-medium">रसीद संख्या (Receipt No):</span>
-            <strong id="tyReceiptNo" class="font-mono text-orange-700 font-bold">SSSS-80G-2026-RCP-5156</strong>
+            <strong id="tyReceiptNo" class="font-mono text-orange-700 font-bold">—</strong>
           </div>
           <div class="flex items-center justify-between p-3">
             <span class="text-stone-500 font-medium">भुगतान आईडी (Payment ID):</span>
-            <strong id="tyPaymentId" class="font-mono text-stone-900 font-bold">pay_Tlhzd7rhESNenT</strong>
+            <strong id="tyPaymentId" class="font-mono text-stone-900 font-bold">—</strong>
           </div>
           <div class="flex items-center justify-between p-3">
             <span class="text-stone-500 font-medium">बैंक संदर्भ संख्या (Bank RRN):</span>
-            <strong id="tyBankRrn" class="font-mono text-stone-900">628276277825</strong>
+            <strong id="tyBankRrn" class="font-mono text-stone-900">—</strong>
           </div>
           <div class="flex items-center justify-between p-3">
             <span class="text-stone-500 font-medium">दान राशि (Amount Contributed):</span>
-            <strong id="tyAmount" class="text-base text-emerald-700 font-bold font-mono">₹ 501.00 INR</strong>
+            <strong id="tyAmount" class="text-base text-emerald-700 font-bold font-mono">₹ 0.00 INR</strong>
           </div>
           <div class="flex items-center justify-between p-3">
             <span class="text-stone-500 font-medium">दाता पैन (Donor PAN):</span>
-            <strong id="tyPan" class="font-mono text-stone-900 font-bold">BYPPT2508A (80G Eligible)</strong>
+            <strong id="tyPan" class="font-mono text-stone-900 font-bold">—</strong>
           </div>
           <div class="flex items-center justify-between p-3">
             <span class="text-stone-500 font-medium">दिनांक एवं समय (Date &amp; Time):</span>
-            <strong id="tyDate" class="text-stone-800 font-medium">09 Oct 2026, 11:50 AM</strong>
+            <strong id="tyDate" class="text-stone-800 font-medium">—</strong>
           </div>
           <div class="flex items-center justify-between p-3">
             <span class="text-stone-500 font-medium">सेवा प्रकल्प (Seva Purpose):</span>
-            <strong id="tyCause" class="text-stone-800 font-hindi">Free Education &amp; Child Welfare</strong>
+            <strong id="tyCause" class="text-stone-800 font-hindi">—</strong>
           </div>
         </div>
 
@@ -8258,6 +8314,130 @@
           </button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: ₹1,101 ANNUAL MEMBERSHIP APPLICATION & ID CARD VERIFICATION -->
+  <!-- ========================================== -->
+  <div id="membershipModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="if(event.target === this) closeMembershipModal()">
+    <div class="bg-white rounded-2xl max-w-lg w-full shadow-2xl border border-stone-200 overflow-hidden relative my-6 animate-scaleIn">
+      <!-- Modal Header -->
+      <div class="bg-stone-900 text-white p-5 sm:p-6 relative border-b-2 border-orange-600">
+        <button type="button" onclick="closeMembershipModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm transition-colors cursor-pointer" title="Close">
+          ✕
+        </button>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full border-2 border-amber-400 bg-white p-0.5 shrink-0 shadow-md">
+            <img src="logo.jpg" alt="Logo" class="w-full h-full object-cover rounded-full" />
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="px-2 py-0.5 bg-orange-600 text-white font-bold text-[10px] rounded uppercase tracking-wider">Official KYC Portal</span>
+              <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 font-bold text-[10px] rounded border border-emerald-500/30">80G Form 10BD Linked</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-white tracking-tight mt-0.5 font-hindi">₹1,101 वार्षिक सदस्यता एवं डिजिटल ID कार्ड आवेदन</h3>
+            <p class="text-[11px] text-stone-300 leading-snug">सर्व समर्पित सेवा संस्थान • Shree Bade Hanuman Ji Temple Marg, Prayagraj</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <form id="membershipApplicationForm" onsubmit="handleMembershipApplicationSubmit(event)" class="p-5 sm:p-6 space-y-4 text-xs">
+        
+        <!-- Notice Banner -->
+        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-amber-900 space-y-1">
+          <p class="font-bold flex items-center gap-1 text-[11px]">
+            <span>ℹ️</span> <span>आधिकारिक पहचान पत्र (ID Card) हेतु नियम:</span>
+          </p>
+          <p class="text-[10.5px] text-stone-600 leading-relaxed font-hindi">
+            डिजिटल ID कार्ड प्राप्त करने के लिए ₹1,101 वार्षिक सदस्यता अंशदान एवं प्रशासक (Admin) द्वारा विवरणों का सत्यापन अनिवार्य है। अनुमोदन के उपरांत आपका 300 DPI ID कार्ड स्वतः सक्रिय हो जाएगा।
+          </p>
+        </div>
+
+        <!-- Personal Details -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-stone-700 uppercase text-[10px] mb-1">पूरा नाम (Full Name) *</label>
+            <input id="memAppFullName" type="text" required placeholder="अपना पूरा नाम दर्ज करें" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500" />
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 uppercase text-[10px] mb-1">मोबाइल नंबर (WhatsApp No) *</label>
+            <input id="memAppPhone" type="tel" required placeholder="10 अंकों का मोबाइल नंबर" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-stone-700 uppercase text-[10px] mb-1">ईमेल पता (Email Address) *</label>
+            <input id="memAppEmail" type="email" required placeholder="name@example.com" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500" />
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 uppercase text-[10px] mb-1">रक्त समूह (Blood Group)</label>
+            <select id="memAppBloodGroup" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-bold text-stone-900 focus:outline-none focus:border-orange-500">
+              <option value="O+">O+</option>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="AB+">AB+</option>
+              <option value="O-">O-</option>
+              <option value="A-">A-</option>
+              <option value="B-">B-</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-700 uppercase text-[10px] mb-1">पत्राचार का पता (Residential Address & City) *</label>
+          <input id="memAppAddress" type="text" required placeholder="मकान नं., मोहल्ला/गांव, शहर, पिन कोड" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500" />
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-700 uppercase text-[10px] mb-1">सेवा प्रभाग / Seva Wing Preference</label>
+          <select id="memAppWing" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold text-stone-900 focus:outline-none focus:border-orange-500">
+            <option value="Akhand Annapurna Langar Seva">Akhand Annapurna Mahaprasad Langar Seva (अन्न सेवा)</option>
+            <option value="Free Rural Pathshala & Vidya Daan">Free Rural Pathshala &amp; Vidya Daan (शिक्षा सेवा)</option>
+            <option value="Social Relief & Winter Blanket Seva">Social Welfare &amp; Blanket Distribution (सामाजिक सेवा)</option>
+            <option value="Temple Heritage & Cultural Mission">Temple Heritage &amp; Gau Seva Mission (संस्कृति सेवा)</option>
+          </select>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="bg-stone-50 p-3.5 rounded-xl border border-stone-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-stone-900 font-hindi">वार्षिक सदस्यता अंशदान राशि:</span>
+            <span class="text-sm font-bold text-emerald-700 font-mono bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">₹ 1,101.00 INR</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button type="button" id="memPayModeOnline" onclick="setMemPaymentMode('ONLINE')" class="py-2.5 px-3 rounded-xl border-2 border-orange-600 bg-white font-bold text-orange-700 text-[11px] flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer">
+              <span>💳 ऑनलाइन भुगतान (Razorpay)</span>
+            </button>
+            <button type="button" id="memPayModeUpi" onclick="setMemPaymentMode('UPI')" class="py-2.5 px-3 rounded-xl border border-stone-200 bg-white font-bold text-stone-700 text-[11px] flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>📱 सीधा UPI / QR ट्रांसफर</span>
+            </button>
+          </div>
+
+          <!-- Direct UPI Box (Shown if UPI mode chosen) -->
+          <div id="memDirectUpiBox" class="hidden p-3 bg-white rounded-lg border border-stone-200 space-y-2">
+            <div class="text-[11px] text-stone-700 space-y-1">
+              <p><strong>आधिकारिक UPI ID:</strong> <span class="font-mono text-orange-700 font-bold select-all">9450858514@upi</span></p>
+              <p class="text-[10px] text-stone-500">PhonePe / GPay / Paytm से ₹1,101 भेजकर 12 अंकों का UTR / Transaction ID नीचे दर्ज करें:</p>
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-stone-700 uppercase mb-0.5">12-Digit UPI Ref / UTR No *</label>
+              <input id="memAppUtrInput" type="text" placeholder="उदा. 4289XXXXXXXX या pay_XXXX" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-mono font-bold text-stone-900 focus:outline-none focus:border-orange-500" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button type="submit" id="btnSubmitMembershipApp" class="w-full py-3 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg transition-transform hover:scale-[1.01] flex items-center justify-center gap-2 cursor-pointer">
+            <span>✓ ₹1,101 सदस्यता सबमिट करें (Submit Application)</span>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -8957,6 +9137,8 @@
       if (tabId === 'admin') {
         if (typeof updateAllDonationViews === 'function') updateAllDonationViews();
         if (typeof renderAdminFullDonationsTable === 'function') renderAdminFullDonationsTable();
+        if (typeof renderAdminMembershipApplications === 'function') renderAdminMembershipApplications();
+        if (typeof renderAdminVolunteerApplications === 'function') renderAdminVolunteerApplications();
       }
 
       window.scrollTo(0, 0);
@@ -9632,6 +9814,443 @@
     function submitVolunteerForm() {
       // Legacy compatibility alias
       handleVolunteerFormSubmit();
+    }
+
+    // ==========================================
+    // ₹1,101 ANNUAL MEMBERSHIP & ID CARD SYSTEM
+    // ==========================================
+    let currentMembershipFilter = 'ALL';
+    let memPaymentMode = 'ONLINE';
+
+    function getMembershipApplications() {
+      try {
+        const stored = localStorage.getItem('ssss_membership_apps');
+        return stored ? JSON.parse(stored) : [];
+      } catch(e) {
+        return [];
+      }
+    }
+
+    function saveMembershipApplications(apps) {
+      try {
+        localStorage.setItem('ssss_membership_apps', JSON.stringify(apps));
+        if (typeof fbRealtimeDb !== 'undefined' && fbRealtimeDb) {
+          fbRealtimeDb.ref('membership_applications').set(apps).catch(console.warn);
+        }
+      } catch(e) {}
+    }
+
+    function checkUserMembershipStatus(user) {
+      if (!user) return { isApproved: false, isPending: false, isOfficer: false };
+      
+      const email = (user.email || '').toLowerCase().trim();
+      const phone = (user.phoneNumber || user.phone || '').replace(/[^0-9]/g, '');
+      const uid = user.uid || '';
+
+      // 1. Governing Council Trustees & Key Staff are pre-verified official officers
+      const isOfficer = (
+        user.isAdmin === true ||
+        email === 'navinmishra6387@gmail.com' ||
+        email.includes('founder') ||
+        email.includes('harsh') ||
+        email.includes('treasurer') ||
+        email.includes('secretary') ||
+        email.includes('pandey') ||
+        email.includes('patron') ||
+        email.includes('education') ||
+        email.includes('legal') ||
+        phone.includes('7752946125')
+      );
+
+      if (isOfficer) {
+        return { isApproved: true, isPending: false, isOfficer: true, memberId: user.ngoId || 'SSSS-TRU-000001' };
+      }
+
+      // 2. Check submitted membership applications
+      const apps = getMembershipApplications();
+      const app = apps.find(a => {
+        if (!a) return false;
+        const aEmail = (a.email || '').toLowerCase().trim();
+        const aPhone = (a.phone || '').replace(/[^0-9]/g, '');
+        if (email && aEmail && email === aEmail) return true;
+        if (phone && aPhone && phone.length >= 10 && phone.includes(aPhone.slice(-10))) return true;
+        if (uid && a.uid === uid) return true;
+        return false;
+      });
+
+      if (app) {
+        if (app.status === 'APPROVED') {
+          return { isApproved: true, isPending: false, isOfficer: false, memberId: app.memberId || app.ngoId, app };
+        } else if (app.status === 'PENDING') {
+          return { isApproved: false, isPending: true, isOfficer: false, app };
+        }
+      }
+
+      return { isApproved: false, isPending: false, isOfficer: false };
+    }
+
+    function updateCardLockState(statusObj) {
+      const overlay = document.getElementById('cardLockOverlay');
+      const notice = document.getElementById('idCardApprovalNotice');
+      const btnPng = document.getElementById('btnDownloadIdPng');
+      const btnPdf = document.getElementById('btnDownloadIdPdf');
+      const btnComplete = document.getElementById('btnDownloadCompletePdf');
+
+      if (!overlay) return;
+
+      if (statusObj && statusObj.isApproved) {
+        overlay.classList.add('hidden');
+        if (notice) notice.classList.add('hidden');
+        if (btnPng) btnPng.disabled = false;
+        if (btnPdf) btnPdf.disabled = false;
+        if (btnComplete) btnComplete.disabled = false;
+      } else if (statusObj && statusObj.isPending) {
+        overlay.classList.remove('hidden');
+        const iconWrapper = document.getElementById('cardLockIconWrapper');
+        const badge = document.getElementById('cardLockBadge');
+        const title = document.getElementById('cardLockTitle');
+        const desc = document.getElementById('cardLockDesc');
+        const actionCont = document.getElementById('cardLockActionContainer');
+
+        if (iconWrapper) {
+          iconWrapper.innerText = '⏳';
+          iconWrapper.className = 'w-14 h-14 rounded-2xl bg-amber-500/20 border-2 border-amber-400 flex items-center justify-center text-2xl shadow-lg animate-pulse';
+        }
+        if (badge) {
+          badge.innerText = 'प्रशासकीय सत्यापन प्रतीक्षारत • Pending Admin Approval';
+          badge.className = 'px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/40 text-[10px] font-bold uppercase tracking-wider';
+        }
+        if (title) title.innerText = 'सदस्यता आवेदन समीक्षा में है';
+        if (desc) desc.innerText = 'आपका ₹1,101 सदस्यता आवेदन प्राप्त हो गया है। व्यवस्थापक (Admin) द्वारा अनुमोदन के उपरांत आपका आधिकारिक डिजिटल ID कार्ड स्वतः सक्रिय हो जाएगा।';
+        if (actionCont) {
+          actionCont.innerHTML = `
+            <div class="px-3.5 py-1.5 bg-white/10 rounded-lg text-[11px] font-mono text-amber-200">
+              Ref ID: ${statusObj.app?.id || 'SSSS-MEM-APP'} • Status: PENDING
+            </div>
+          `;
+        }
+        if (btnPng) btnPng.disabled = true;
+        if (btnPdf) btnPdf.disabled = true;
+        if (btnComplete) btnComplete.disabled = true;
+      } else {
+        overlay.classList.remove('hidden');
+        const iconWrapper = document.getElementById('cardLockIconWrapper');
+        const badge = document.getElementById('cardLockBadge');
+        const title = document.getElementById('cardLockTitle');
+        const desc = document.getElementById('cardLockDesc');
+        const actionCont = document.getElementById('cardLockActionContainer');
+
+        if (iconWrapper) {
+          iconWrapper.innerText = '🔒';
+          iconWrapper.className = 'w-14 h-14 rounded-2xl bg-amber-500/20 border-2 border-amber-400 flex items-center justify-center text-2xl shadow-lg';
+        }
+        if (badge) {
+          badge.innerText = '₹1,101 सदस्यता आवश्यक • Membership Required';
+          badge.className = 'px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/40 text-[10px] font-bold uppercase tracking-wider';
+        }
+        if (title) title.innerText = 'आधिकारिक पहचान पत्र लॉक है';
+        if (desc) desc.innerText = 'डिजिटल पहचान पत्र (ID Card) प्राप्त करने के लिए संस्थान की ₹1,101 वार्षिक सदस्यता एवं प्रशासक (Admin) अनुमोदन अनिवार्य है।';
+        if (actionCont) {
+          actionCont.innerHTML = `
+            <button type="button" onclick="openMembershipApplicationModal()" class="px-4 py-2 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs rounded-xl shadow-lg transition-transform hover:scale-105 flex items-center gap-1.5 cursor-pointer">
+              <span>💳 ₹1,101 सदस्यता आवेदन करें (Apply Now)</span>
+            </button>
+          `;
+        }
+        if (btnPng) btnPng.disabled = true;
+        if (btnPdf) btnPdf.disabled = true;
+        if (btnComplete) btnComplete.disabled = true;
+      }
+    }
+
+    function openMembershipApplicationModal() {
+      const modal = document.getElementById('membershipModal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+
+      let curUser = null;
+      try {
+        const cached = localStorage.getItem('ssss_active_session');
+        if (cached) curUser = JSON.parse(cached);
+      } catch(e) {}
+
+      const nameInput = document.getElementById('memAppFullName');
+      const emailInput = document.getElementById('memAppEmail');
+      const phoneInput = document.getElementById('memAppPhone');
+
+      if (nameInput) nameInput.value = curUser?.displayName || userProfile?.name || '';
+      if (emailInput) emailInput.value = curUser?.email || userProfile?.email || '';
+      if (phoneInput) phoneInput.value = curUser?.phoneNumber || userProfile?.phone || '';
+      setMemPaymentMode('ONLINE');
+    }
+
+    function closeMembershipModal() {
+      const modal = document.getElementById('membershipModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function setMemPaymentMode(mode) {
+      memPaymentMode = mode;
+      const btnOnline = document.getElementById('memPayModeOnline');
+      const btnUpi = document.getElementById('memPayModeUpi');
+      const upiBox = document.getElementById('memDirectUpiBox');
+
+      if (mode === 'ONLINE') {
+        if (btnOnline) {
+          btnOnline.className = 'py-2.5 px-3 rounded-xl border-2 border-orange-600 bg-white font-bold text-orange-700 text-[11px] flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer';
+        }
+        if (btnUpi) {
+          btnUpi.className = 'py-2.5 px-3 rounded-xl border border-stone-200 bg-white font-bold text-stone-700 text-[11px] flex items-center justify-center gap-1.5 cursor-pointer';
+        }
+        if (upiBox) upiBox.classList.add('hidden');
+      } else {
+        if (btnOnline) {
+          btnOnline.className = 'py-2.5 px-3 rounded-xl border border-stone-200 bg-white font-bold text-stone-700 text-[11px] flex items-center justify-center gap-1.5 cursor-pointer';
+        }
+        if (btnUpi) {
+          btnUpi.className = 'py-2.5 px-3 rounded-xl border-2 border-orange-600 bg-white font-bold text-orange-700 text-[11px] flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer';
+        }
+        if (upiBox) upiBox.classList.remove('hidden');
+      }
+    }
+
+    function handleMembershipApplicationSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('memAppFullName')?.value.trim();
+      const phone = document.getElementById('memAppPhone')?.value.trim();
+      const email = document.getElementById('memAppEmail')?.value.trim();
+      const bg = document.getElementById('memAppBloodGroup')?.value || 'O+';
+      const addr = document.getElementById('memAppAddress')?.value.trim() || 'Prayagraj';
+      const wing = document.getElementById('memAppWing')?.value || 'Prayagraj Seva Mission';
+      const utr = document.getElementById('memAppUtrInput')?.value.trim();
+
+      if (!name || !phone || !email) {
+        alert('कृपया सभी आवश्यक फ़ील्ड (नाम, मोबाइल, ईमेल) भरें।');
+        return;
+      }
+
+      if (memPaymentMode === 'UPI' && !utr) {
+        alert('कृपया 12 अंकों का UPI UTR / Transaction Reference ID दर्ज करें।');
+        return;
+      }
+
+      if (memPaymentMode === 'ONLINE') {
+        closeMembershipModal();
+        if (typeof openRazorpayDonationModal === 'function') {
+          openRazorpayDonationModal();
+          setTimeout(() => {
+            const amtInput = document.getElementById('rzpCustomAmount');
+            if (amtInput) {
+              amtInput.value = '1101';
+              if (typeof onRzpCustomChange === 'function') onRzpCustomChange('1101');
+            }
+            const nameEl = document.getElementById('rzpDonorName');
+            if (nameEl) nameEl.value = name;
+            const phEl = document.getElementById('rzpDonorPhone');
+            if (phEl) phEl.value = phone;
+            const emEl = document.getElementById('rzpDonorEmail');
+            if (emEl) emEl.value = email;
+            const causeEl = document.getElementById('rzpCause');
+            if (causeEl) causeEl.value = 'वार्षिक ट्रस्ट सदस्यता (Annual Trust Membership ₹1101)';
+          }, 300);
+        }
+        recordPendingMembershipApp(name, email, phone, bg, addr, wing, 'ONLINE_CHECKOUT');
+        return;
+      }
+
+      recordPendingMembershipApp(name, email, phone, bg, addr, wing, utr || 'UPI_TRANSFER');
+      closeMembershipModal();
+      alert(`✓ सदस्यता आवेदन सबमिट!\n\nनाम: ${name}\nअंशदान: ₹ 1,101\nरेफरेंस: ${utr}\n\nआपका आवेदन प्रशासक (Admin) सत्यापन हेतु भेज दिया गया है। अनुमोदन के उपरांत आपका डिजिटल ID कार्ड सक्रिय हो जाएगा।`);
+    }
+
+    function recordPendingMembershipApp(name, email, phone, bg, addr, wing, paymentRef) {
+      const apps = getMembershipApplications();
+      const appId = 'APP-' + Date.now();
+      const newApp = {
+        id: appId,
+        name: name,
+        email: email,
+        phone: phone,
+        bloodGroup: bg,
+        address: addr,
+        wing: wing,
+        amount: 1101,
+        paymentRef: paymentRef,
+        status: 'PENDING',
+        date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
+        photo: userProfile?.photo || 'logo.jpg'
+      };
+
+      apps.unshift(newApp);
+      saveMembershipApplications(apps);
+
+      if (typeof initIdCardDisplay === 'function') initIdCardDisplay();
+      if (typeof renderAdminMembershipApplications === 'function') renderAdminMembershipApplications();
+    }
+
+    function setMembershipAppFilter(status) {
+      currentMembershipFilter = status;
+      renderAdminMembershipApplications();
+    }
+
+    function renderAdminMembershipApplications() {
+      const tbody = document.getElementById('adminMemAppTableBody');
+      const totalBadge = document.getElementById('adminMemAppTotalCount');
+      const pendingBadge = document.getElementById('adminMemAppPendingCount');
+      const approvedBadge = document.getElementById('adminMemAppApprovedCount');
+      if (!tbody) return;
+
+      const apps = getMembershipApplications();
+      const pendingCount = apps.filter(a => a.status === 'PENDING').length;
+      const approvedCount = apps.filter(a => a.status === 'APPROVED').length;
+
+      if (totalBadge) totalBadge.innerText = apps.length;
+      if (pendingBadge) pendingBadge.innerText = pendingCount;
+      if (approvedBadge) approvedBadge.innerText = approvedCount;
+
+      const filtered = apps.filter(a => {
+        if (currentMembershipFilter === 'PENDING') return a.status === 'PENDING';
+        if (currentMembershipFilter === 'APPROVED') return a.status === 'APPROVED';
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="p-8 text-center text-stone-500 font-medium">
+          <div class="flex flex-col items-center justify-center space-y-1">
+            <svg class="w-8 h-8 text-stone-300 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+            <p class="font-bold text-xs text-stone-700">कोई ${currentMembershipFilter !== 'ALL' ? currentMembershipFilter.toLowerCase() : ''} सदस्यता आवेदन नहीं मिला</p>
+            <p class="text-[11px] text-stone-400">उपयोगकर्ताओं द्वारा सबमिट किए गए ₹1,101 सदस्यता आवेदन यहां सत्यापन हेतु दिखाई देंगे।</p>
+          </div>
+        </td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(app => {
+        const isApproved = app.status === 'APPROVED';
+        const isRejected = app.status === 'REJECTED';
+        const statusBadge = isApproved
+          ? '<span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-semibold text-[10px] tracking-wide">✓ APPROVED &amp; ISSUED</span>'
+          : isRejected
+          ? '<span class="px-2 py-0.5 bg-red-100 text-red-800 rounded font-semibold text-[10px] tracking-wide">REJECTED</span>'
+          : '<span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-semibold text-[10px] tracking-wide">⏳ PENDING APPROVAL</span>';
+
+        return `
+          <tr class="hover:bg-stone-50 transition-colors">
+            <td class="p-3.5">
+              <div class="flex items-center gap-3">
+                <img src="${app.photo || 'logo.jpg'}" class="w-10 h-10 rounded-lg object-cover border border-orange-400 shrink-0 shadow-2xs" onerror="this.src='logo.jpg'" alt="${app.name}" />
+                <div>
+                  <div class="font-bold text-xs text-stone-900">${app.name}</div>
+                  <div class="text-[9px] font-mono text-stone-400">${app.id}</div>
+                  ${app.memberId ? `<div class="font-bold text-[10px] font-mono text-emerald-700">${app.memberId}</div>` : ''}
+                </div>
+              </div>
+            </td>
+            <td class="p-3.5 text-xs">
+              <div class="font-bold text-stone-800">${app.phone}</div>
+              <div class="text-[10px] text-stone-500">${app.email}</div>
+            </td>
+            <td class="p-3.5 text-xs">
+              <div class="font-bold text-emerald-700 font-mono">₹ ${(Number(app.amount)||1101).toLocaleString('en-IN')}</div>
+              <div class="font-mono text-[10px] text-stone-500 truncate max-w-[140px]">${app.paymentRef || 'N/A'}</div>
+            </td>
+            <td class="p-3.5 text-xs">
+              <div class="font-semibold text-stone-800 truncate max-w-[150px]">${app.address || 'Prayagraj'}</div>
+              <div class="text-[10px] text-red-600 font-bold mt-0.5">Blood: ${app.bloodGroup || 'O+'}</div>
+            </td>
+            <td class="p-3.5 text-xs font-mono text-stone-600">
+              ${app.date || 'Recent'}
+            </td>
+            <td class="p-3.5">
+              ${statusBadge}
+            </td>
+            <td class="p-3.5 text-right space-x-1 whitespace-nowrap">
+              ${!isApproved ? `
+                <button type="button" onclick="adminApproveMembership('${app.id}')" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-[10px] shadow-2xs transition-all cursor-pointer">
+                  ✓ Approve &amp; Activate ID
+                </button>
+                <button type="button" onclick="adminRejectMembership('${app.id}')" class="px-2 py-1.5 bg-stone-100 hover:bg-red-50 text-stone-600 hover:text-red-700 font-bold rounded-lg text-[10px] transition-all cursor-pointer">
+                  ✕
+                </button>
+              ` : `
+                <button type="button" onclick="previewMemberId('${app.profileKey || 'mem_' + app.id}')" class="px-2.5 py-1.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg text-[10px] shadow-2xs transition-all cursor-pointer inline-flex items-center gap-1">
+                  <span>View ID Card</span>
+                </button>
+              `}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function adminApproveMembership(appId) {
+      const apps = getMembershipApplications();
+      const app = apps.find(a => a.id === appId);
+      if (!app) {
+        alert('Membership application not found.');
+        return;
+      }
+
+      const memberId = 'SSSS-MEM-' + Math.floor(100000 + Math.random() * 900000);
+      app.status = 'APPROVED';
+      app.memberId = memberId;
+
+      const profileKey = 'mem_' + appId.toLowerCase().replace(/[^a-z0-9]/g, '_');
+      app.profileKey = profileKey;
+
+      saveMembershipApplications(apps);
+
+      idCardProfiles[profileKey] = {
+        name: app.name,
+        hindiName: app.name + ' (आजीवन सदस्य)',
+        id: memberId,
+        role: 'VERIFIED TRUST MEMBER (1101 PASS)',
+        dept: app.wing || 'Prayagraj Seva Mission',
+        email: app.email,
+        phone: app.phone,
+        joinDate: app.date || new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
+        validity: '31-Mar-2028',
+        bloodGroup: app.bloodGroup || 'O+',
+        status: 'ACTIVE',
+        emergency: '09450858514',
+        photo: app.photo || 'logo.jpg',
+        fallbackPhoto: 'logo.jpg',
+        signatory: 'Authorized Trust Signatory'
+      };
+
+      const selector = document.getElementById('idCardSelector');
+      if (selector) {
+        const opt = document.createElement('option');
+        opt.value = profileKey;
+        opt.innerText = `${app.name} (${memberId}) - Verified Member`;
+        selector.insertBefore(opt, selector.firstChild);
+      }
+
+      try {
+        const cached = localStorage.getItem('ssss_active_session');
+        if (cached) {
+          const u = JSON.parse(cached);
+          if (u && (u.email === app.email || u.phoneNumber === app.phone)) {
+            u.ngoId = memberId;
+            u.isMemberApproved = true;
+            localStorage.setItem('ssss_active_session', JSON.stringify(u));
+            if (typeof initIdCardDisplay === 'function') initIdCardDisplay();
+          }
+        }
+      } catch(e) {}
+
+      renderAdminMembershipApplications();
+      alert(`सदस्यता सफलतापूर्वक स्वीकृत (Approved)!\n\nसदस्य: ${app.name}\nअसाइन NGO ID: ${memberId}\nस्टेटस: डिजिटल ID कार्ड सक्रिय हो गया है।`);
+    }
+
+    function adminRejectMembership(appId) {
+      if (!confirm('क्या आप इस सदस्यता आवेदन को अस्वीकार (Reject) करना चाहते हैं?')) return;
+      const apps = getMembershipApplications();
+      const app = apps.find(a => a.id === appId);
+      if (!app) return;
+      app.status = 'REJECTED';
+      saveMembershipApplications(apps);
+      renderAdminMembershipApplications();
     }
 
     function getVolunteerApplications() {
@@ -10698,36 +11317,40 @@
     let activeCardId = "SSSS-VOL-PENDING";
 
     function renderGuestIdCard() {
-      activeCardId = "SSSS-VOL-PENDING";
+      activeCardId = "SSSS-MEM-LOCKED";
       const img = document.getElementById('cardPhotoImg');
       if (img) img.src = 'logo.jpg';
       const role = document.getElementById('cardRoleBadge');
-      if (role) role.innerText = 'PROVISIONAL SEVADAR PASS';
+      if (role) role.innerText = 'PROVISIONAL PASS (₹1,101)';
       const name = document.getElementById('cardFullName');
-      if (name) name.innerText = 'DEVOTEE / SEVADAR';
+      if (name) name.innerText = 'DEVOTEE / VISITOR';
       const hindi = document.getElementById('cardHindiName');
-      if (hindi) hindi.innerText = 'पंजीकृत सेवादार (लॉगिन करें)';
+      if (hindi) hindi.innerText = 'अतिथि / सेवादार';
       const idEl = document.getElementById('cardNgoId');
-      if (idEl) idEl.innerText = 'SSSS-VOL-PENDING';
+      if (idEl) idEl.innerText = 'सदस्यता आवश्यक';
       const dept = document.getElementById('cardDept');
       if (dept) dept.innerText = 'Prayagraj Seva Mission';
       const email = document.getElementById('cardEmail');
-      if (email) email.innerText = 'volunteer@sarvasamarpitsewasansthan.com';
+      if (email) email.innerText = 'member@sarvasamarpitsewasansthan.com';
       const phone = document.getElementById('cardPhone');
       if (phone) phone.innerText = '09450858514';
       const join = document.getElementById('cardJoinDate');
       if (join) join.innerText = 'Active 2026';
       const valid = document.getElementById('cardValidUntil');
-      if (valid) valid.innerText = 'Login with Google to Activate';
+      if (valid) valid.innerText = '₹1,101 Membership Required';
       const bg = document.getElementById('cardBloodGroup');
       if (bg) bg.innerText = 'O+';
       const statusBadge = document.getElementById('cardStatusBadge');
-      if (statusBadge) statusBadge.innerText = 'PROVISIONAL';
+      if (statusBadge) {
+        statusBadge.innerText = 'LOCKED';
+        statusBadge.className = 'font-semibold text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded text-[9.5px]';
+      }
       const em = document.getElementById('cardEmergency');
       if (em) em.innerText = '09450858514';
       const sig = document.getElementById('cardSignatoryName');
       if (sig) sig.innerText = 'Authorized Trust Signatory';
-      renderIdCardQr('SSSS-VOL-PENDING');
+      renderIdCardQr('https://sarvasamarpitsewasansthan.com/#membership');
+      updateCardLockState({ isApproved: false, isPending: false });
     }
 
     function renderUserOnIdCard(u) {
@@ -10735,14 +11358,38 @@
         renderGuestIdCard();
         return;
       }
+      const memStatus = checkUserMembershipStatus(u);
       const uName = (u.displayName || u.name || 'Dedicated Sevadar').trim();
-      const uNgoId = u.ngoId || ('SSSS-VOL-' + (u.uid ? u.uid.slice(0, 6).toUpperCase() : '000001'));
-      const uRole = u.roleBadge || u.role || 'CERTIFIED VOLUNTEER (SEVADAR)';
-      const uDept = u.department || u.dept || 'Prayagraj Seva Mission';
-      const uEmail = u.email || 'volunteer@sarvasamarpitsewasansthan.com';
+      const uEmail = u.email || 'member@sarvasamarpitsewasansthan.com';
       const uPhone = u.phoneNumber || u.phone || '09450858514';
       const uPhoto = u.photoURL || u.photo || 'logo.jpg';
       const uHindi = u.hindiName || 'समर्पित सेवादार';
+      const uDept = u.department || u.dept || 'Prayagraj Seva Mission';
+
+      let uNgoId = u.ngoId;
+      let uRole = u.roleBadge || u.role || 'CERTIFIED VOLUNTEER (SEVADAR)';
+      let cardStatus = 'VERIFIED';
+      let validity = 'Permanent / Valid';
+
+      if (memStatus.isOfficer) {
+        cardStatus = 'ACTIVE';
+        validity = 'Permanent (Life Trustee)';
+      } else if (memStatus.isApproved) {
+        uNgoId = memStatus.memberId || uNgoId || 'SSSS-MEM-000001';
+        uRole = 'VERIFIED TRUST MEMBER (1101 PASS)';
+        cardStatus = 'ACTIVE';
+        validity = '31-Mar-2028';
+      } else if (memStatus.isPending) {
+        uNgoId = 'SSSS-APP-PENDING';
+        uRole = 'MEMBERSHIP APPLICANT (₹1,101)';
+        cardStatus = 'PENDING';
+        validity = 'Pending Admin Approval';
+      } else {
+        uNgoId = 'सदस्यता आवश्यक';
+        uRole = 'NON-MEMBER (₹1,101 REQUIRED)';
+        cardStatus = 'LOCKED';
+        validity = '₹1,101 Membership Required';
+      }
 
       idCardProfiles['currentUser'] = {
         name: uName,
@@ -10753,9 +11400,9 @@
         email: uEmail,
         phone: uPhone,
         joinDate: u.joinDate || new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
-        validity: 'Permanent / Active',
+        validity: validity,
         bloodGroup: u.bloodGroup || 'O+',
-        status: 'VERIFIED',
+        status: cardStatus,
         emergency: '09450858514',
         photo: uPhoto,
         fallbackPhoto: 'logo.jpg',
@@ -10785,17 +11432,24 @@
       const join = document.getElementById('cardJoinDate');
       if (join) join.innerText = u.joinDate || new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
       const valid = document.getElementById('cardValidUntil');
-      if (valid) valid.innerText = 'Permanent / Valid';
+      if (valid) valid.innerText = validity;
       const bg = document.getElementById('cardBloodGroup');
       if (bg) bg.innerText = u.bloodGroup || 'O+';
       const statusBadge = document.getElementById('cardStatusBadge');
-      if (statusBadge) statusBadge.innerText = 'VERIFIED';
+      if (statusBadge) {
+        const isAppr = memStatus.isApproved || memStatus.isOfficer;
+        statusBadge.innerText = isAppr ? 'ACTIVE' : (memStatus.isPending ? 'PENDING' : 'LOCKED');
+        statusBadge.className = isAppr 
+          ? 'font-semibold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded text-[9.5px]'
+          : 'font-semibold text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded text-[9.5px]';
+      }
       const em = document.getElementById('cardEmergency');
       if (em) em.innerText = '09450858514';
       const sig = document.getElementById('cardSignatoryName');
       if (sig) sig.innerText = 'Pt. Harsh Tiwari (Managing Trustee)';
 
       renderIdCardQr(uNgoId);
+      updateCardLockState(memStatus);
     }
 
     function initIdCardDisplay() {
@@ -10851,7 +11505,8 @@
       const bg = document.getElementById('cardBloodGroup');
       if (bg) bg.innerText = p.bloodGroup;
 
-      const isApproved = (p.status === 'ACTIVE' || p.status === 'APPROVED' || p.status === 'VERIFIED');
+      const isOfficer = ['pt_harsh_tiwari', 'navin_mishra', 'amit_pandey', 'santosh_mishra', 'ravindra_tiwari', 'atharva_upadhyay'].includes(profileKey);
+      const isApproved = isOfficer || (p.status === 'ACTIVE' || p.status === 'APPROVED' || p.status === 'VERIFIED');
       const statusBadge = document.getElementById('cardStatusBadge');
       if (statusBadge) {
         statusBadge.innerText = isApproved ? 'ACTIVE' : 'PENDING APPROVAL';
@@ -10886,6 +11541,8 @@
       const sig = document.getElementById('cardSignatoryName');
       if (sig) sig.innerText = p.signatory || 'Authorized Trust Signatory';
       renderIdCardQr(p.id);
+
+      updateCardLockState({ isApproved: isApproved, isPending: !isApproved, isOfficer: isOfficer });
     }
 
     function approveMemberFromIdStudio(profileKey) {
@@ -11216,13 +11873,43 @@
       throw new Error('No supported canvas rasterization engine available');
     }
 
-    async function downloadIdCardPng() {
+    function verifyIdCardDownloadPermission() {
       const curSelector = document.getElementById('idCardSelector')?.value || 'pt_harsh_tiwari';
-      const p = idCardProfiles[curSelector];
-      if (p && (p.status === 'PENDING' || p.status === 'PENDING APPROVAL')) {
-        alert('Official ID Card generation is locked.\n\nThis member/volunteer profile is currently in the administrative review queue and has not been verified by Sansthan administration yet. Once verified, official 4K PNG export is activated.');
-        return;
+      if (curSelector === 'currentUser' || curSelector === 'guest_preview') {
+        const u = (typeof currentUser !== 'undefined' && currentUser) ? currentUser : null;
+        if (!u) {
+          alert('Official ID Card generation is locked.\n\n₹1,101 Annual Trust Membership is required to generate and download your Official Digital ID Card. Please login and apply for membership.');
+          if (typeof openAuthModal === 'function') openAuthModal();
+          return false;
+        }
+        const memStatus = checkUserMembershipStatus(u);
+        if (!memStatus.isOfficer && !memStatus.isApproved) {
+          if (memStatus.isPending) {
+            alert('Official ID Card generation is locked.\n\nYour ₹1,101 Annual Trust Membership application has been received and is pending Admin Approval.\n\nYour official ID Card will be unlocked for download as soon as the Admin approves your application.');
+          } else {
+            alert('Official ID Card generation is locked.\n\n₹1,101 Annual Trust Membership is required to issue and activate an Official Digital ID Card. Please apply for membership to unlock your verified ID Card.');
+            if (typeof openMembershipApplicationModal === 'function') openMembershipApplicationModal();
+          }
+          return false;
+        }
       }
+
+      const p = idCardProfiles[curSelector];
+      if (p && (p.status === 'PENDING' || p.status === 'PENDING APPROVAL' || p.status === 'LOCKED')) {
+        if (p.status === 'LOCKED') {
+          alert('Official ID Card generation is locked.\n\n₹1,101 Annual Trust Membership is required to issue and activate an Official Digital ID Card. Please apply for membership to unlock your verified ID Card.');
+          if (typeof openMembershipApplicationModal === 'function') openMembershipApplicationModal();
+          return false;
+        }
+        alert('Official ID Card generation is locked.\n\nThis member profile is currently in the administrative review queue and has not been verified by Sansthan administration yet. Once verified by Admin, official export is activated.');
+        return false;
+      }
+
+      return true;
+    }
+
+    async function downloadIdCardPng() {
+      if (!verifyIdCardDownloadPermission()) return;
 
       const isBack = isCardFlipped;
       const el = isBack 
@@ -11268,12 +11955,7 @@
     const downloadIdCardImage = downloadIdCardPng;
 
     async function downloadIdCardPdf() {
-      const curSelector = document.getElementById('idCardSelector')?.value || 'pt_harsh_tiwari';
-      const p = idCardProfiles[curSelector];
-      if (p && (p.status === 'PENDING' || p.status === 'PENDING APPROVAL')) {
-        alert('Official ID Card generation is locked.\n\nThis member/volunteer profile is currently in the administrative review queue and has not been verified by Sansthan administration yet. Once verified, official PDF export is activated.');
-        return;
-      }
+      if (!verifyIdCardDownloadPermission()) return;
 
       const isBack = isCardFlipped;
       const el = isBack 
@@ -11335,12 +12017,7 @@
     }
 
     async function downloadCompleteIdCardPdf() {
-      const curSelector = document.getElementById('idCardSelector')?.value || 'pt_harsh_tiwari';
-      const p = idCardProfiles[curSelector];
-      if (p && (p.status === 'PENDING' || p.status === 'PENDING APPROVAL')) {
-        alert('Official ID Card generation is locked.\n\nThis member/volunteer profile is currently in the administrative review queue and has not been verified by Sansthan administration yet. Once verified, official 2-Page PDF export is activated.');
-        return;
-      }
+      if (!verifyIdCardDownloadPermission()) return;
 
       const frontEl = document.getElementById('corporateIdCardContainer');
       const backEl = document.getElementById('corporateIdCardBackContainer');
@@ -12010,6 +12687,35 @@
       // 4. Update the Admin Table immediately
       renderAdminGoogleUsersTable();
 
+      // 5. Update Profile Membership KPI Badge
+      const kpiStatus = document.getElementById('profileKpiMemberStatus');
+      const kpiBadge = document.getElementById('profileKpiMemberBadge');
+      const memStatus = checkUserMembershipStatus(user);
+      if (kpiStatus && kpiBadge) {
+        if (memStatus.isOfficer) {
+          kpiStatus.innerText = 'आधिकारिक ट्रस्टी पास';
+          kpiBadge.innerText = '✓ 100% सत्यापित (Governing Board)';
+          kpiBadge.className = 'text-[10px] text-emerald-700 font-semibold';
+        } else if (memStatus.isApproved) {
+          kpiStatus.innerText = '✓ आजीवन/वार्षिक सदस्य';
+          kpiBadge.innerText = `ID: ${memStatus.memberId || 'SSSS-MEM'} (80G Active)`;
+          kpiBadge.className = 'text-[10px] text-emerald-700 font-semibold';
+        } else if (memStatus.isPending) {
+          kpiStatus.innerText = '⏳ सत्यापन प्रतीक्षारत';
+          kpiBadge.innerText = 'प्रशासक समीक्षा में (Pending Approval)';
+          kpiBadge.className = 'text-[10px] text-amber-700 font-semibold';
+        } else {
+          kpiStatus.innerText = '₹1,101 सदस्यता आवश्यक';
+          kpiBadge.innerText = 'प्रशासक अनुमोदन अनिवार्य';
+          kpiBadge.className = 'text-[10px] text-orange-700 font-semibold';
+        }
+      }
+
+      // 6. Update personal donations view (STRICT PRIVACY: never leak Harsh Tiwari's donation to others)
+      if (typeof renderUserProfileDonations === 'function') {
+        renderUserProfileDonations();
+      }
+
       // Log real audit event
       logAuditEvent('AUTH_SIGN_IN', `${role} (${name} <${email}>) authenticated via Firebase.`);
     }
@@ -12162,31 +12868,13 @@
     }
 
     function registerNewMemberRecord(name, email, phone, role, hindiName, bloodGroup) {
-      const randomCode = 'SSSS-VOL-' + Math.floor(100000 + Math.random() * 900000);
-      const profileKey = 'vol_' + Date.now();
-      idCardProfiles[profileKey] = {
-        name: name,
-        hindiName: hindiName || "(प्रमाणित स्वयंसेवक)",
-        id: randomCode,
-        role: role ? role.toUpperCase() : "DEDICATED VOLUNTEER (SEVADAR)",
-        dept: "Prayagraj Seva Mission & Outreach",
-        email: email || "volunteer@sarvasamarpitsewasansthan.com",
-        phone: phone || "+91 94508 58514",
-        joinDate: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
-        validity: "31-Mar-2028",
-        bloodGroup: bloodGroup || "O+",
-        status: "ACTIVE",
-        emergency: "09450858514",
-        photo: "images/education-4.jpg",
-        fallbackPhoto: "logo.jpg",
-        signatory: "Authorized Trust Signatory"
-      };
+      const tempId = 'SSSS-REG-' + Math.floor(100000 + Math.random() * 900000);
 
-      // Also persist to current active user profile
+      // Persist to current user profile without granting pre-approved ID card
       userProfile.name = name;
       userProfile.hindiName = hindiName || "";
-      userProfile.id = randomCode;
-      userProfile.role = role ? role.toUpperCase() : "DEDICATED VOLUNTEER (SEVADAR)";
+      userProfile.id = tempId;
+      userProfile.role = role ? role.toUpperCase() : "REGISTERED SEVADAR";
       userProfile.email = email;
       userProfile.phone = phone;
       userProfile.bloodGroup = bloodGroup || "O+";
@@ -12194,46 +12882,42 @@
         localStorage.setItem('ssss_user_profile', JSON.stringify(userProfile));
       } catch (e) {}
 
-      const selector = document.getElementById('idCardSelector');
-      if (selector) {
-        const opt = document.createElement('option');
-        opt.value = profileKey;
-        opt.innerText = `${name} (${randomCode}) - Newly Issued ID`;
-        selector.insertBefore(opt, selector.firstChild);
-        selector.value = profileKey;
-      }
+      const regUser = {
+        uid: 'reg_' + Date.now(),
+        name: name,
+        email: email,
+        phoneNumber: phone,
+        role: role || 'Registered Sevadar',
+        roleBadge: 'REGISTERED SEVADAR (MEMBERSHIP REQUIRED)',
+        ngoId: tempId,
+        department: 'Prayagraj Seva Mission',
+        authProvider: 'Website Registration',
+        lastLogin: new Date().toISOString()
+      };
+      saveGoogleUserToCache(regUser);
+      renderAdminGoogleUsersTable();
 
-      const vTable = document.getElementById('adminVolunteerTableBody');
-      if (vTable) {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td class="p-3.5 font-mono font-bold text-orange-600">${randomCode}</td>
-          <td class="p-3.5 font-bold text-gray-900">${name}</td>
-          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-semibold text-[10px]">${role ? role.toUpperCase() : 'SEVADAR'}</span></td>
-          <td class="p-3.5 text-gray-600">Prayagraj Seva Mission</td>
-          <td class="p-3.5 font-mono">${phone || '09450858514'}</td>
-          <td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">ACTIVE</span></td>
-          <td class="p-3.5 text-right">
-            <button onclick="previewMemberId('${profileKey}')" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-gray-800 font-bold rounded-lg text-[11px]">View ID</button>
-          </td>
-        `;
-        vTable.prepend(tr);
-      }
+      applyUserSession({
+        uid: regUser.uid,
+        displayName: name,
+        email: email,
+        phoneNumber: phone,
+        ngoId: tempId
+      });
 
-      onIdCardSelect(profileKey);
-      return randomCode;
+      return tempId;
     }
 
     function handleNewRegistrationSubmit() {
-      const name = document.getElementById('regFullName').value || 'Devoted Volunteer';
-      const email = document.getElementById('regEmail').value || '';
-      const phone = document.getElementById('regPhone').value || '';
+      const name = document.getElementById('regFullName')?.value || 'Devoted Volunteer';
+      const email = document.getElementById('regEmail')?.value || '';
+      const phone = document.getElementById('regPhone')?.value || '';
       const code = registerNewMemberRecord(name, email, phone, 'Volunteer');
-      showAuthFeedback('Registration submitted! Issued NGO ID: ' + code + '. Generating ID card profile.');
+      showAuthFeedback(`Account registered for ${name}! Please apply for ₹1,101 Annual Trust Membership to unlock your Official Digital ID Card.`);
       setTimeout(() => {
         closeAuthModal();
-        switchTab('membership');
-      }, 1000);
+        switchTab('profile');
+      }, 1200);
     }
 
     // ==========================================
@@ -12707,12 +13391,12 @@
       if (msgEl) {
         msgEl.innerHTML = `आदरणीय <strong>${d.name || 'दाता'} जी</strong>, आपका <strong>₹ ${(Number(d.amount)||501).toLocaleString('en-IN')}/-</strong> का पावन सहयोग <strong>"${d.cause || 'शिक्षा सेवा'}"</strong> प्रकल्प हेतु कृतज्ञतापूर्वक प्राप्त हुआ है।`;
       }
-      if (rNoEl) rNoEl.innerText = d.receiptNo || 'SSSS-80G-2026-RCP-5156';
-      if (pIdEl) pIdEl.innerText = d.paymentId || 'pay_Tlhzd7rhESNenT';
-      if (rrnEl) rrnEl.innerText = d.bankRrn || d.orderId || '628276277825';
+      if (rNoEl) rNoEl.innerText = d.receiptNo || ('SSSS-80G-' + new Date().getFullYear() + '-RCP-' + Math.floor(1000 + Math.random() * 9000));
+      if (pIdEl) pIdEl.innerText = d.paymentId || 'pay_online_direct';
+      if (rrnEl) rrnEl.innerText = d.bankRrn || d.orderId || 'Gateway Confirmed';
       if (amtEl) amtEl.innerText = '₹ ' + (Number(d.amount)||501).toLocaleString('en-IN') + '.00 INR';
-      if (panEl) panEl.innerText = (d.pan || 'BYPPT2508A') + ' (80G Eligible)';
-      if (dateEl) dateEl.innerText = d.date || '09 Oct 2026, 11:50 AM';
+      if (panEl) panEl.innerText = d.pan ? (d.pan + ' (80G Eligible)') : 'PAN Exempt / Not Provided';
+      if (dateEl) dateEl.innerText = d.date || new Date().toLocaleString('en-IN');
       if (causeEl) causeEl.innerText = d.cause || 'Free Education & Child Welfare';
 
       if (modal) {
@@ -12729,12 +13413,34 @@
       }
     }
 
+    function getActiveThankYouDonation() {
+      if (currentThankYouDonation) return currentThankYouDonation;
+      const u = (typeof currentUser !== 'undefined' && currentUser) ? currentUser : null;
+      if (u) {
+        const email = (u.email || '').toLowerCase().trim();
+        const phone = (u.phoneNumber || u.phone || '').replace(/[^0-9]/g, '');
+        if (email === 'princeeharsht@gmail.com' || phone.includes('7752946125') || (u.displayName && u.displayName.toLowerCase().includes('harsh'))) {
+          return HARSH_TIWARI_DONATION;
+        }
+      }
+      return null;
+    }
+
     function downloadCurrentThankYouPdf() {
-      downloadTaxReceiptPdf(currentThankYouDonation || HARSH_TIWARI_DONATION);
+      const d = getActiveThankYouDonation();
+      if (!d) {
+        alert('No active donation receipt found in current session.');
+        return;
+      }
+      downloadTaxReceiptPdf(d);
     }
 
     function viewFullTaxReceiptFromTy() {
-      const d = currentThankYouDonation || HARSH_TIWARI_DONATION;
+      const d = getActiveThankYouDonation();
+      if (!d) {
+        alert('No active donation receipt found in current session.');
+        return;
+      }
       closeDonationThankYouModal();
       openReceiptModal(
         d.receiptNo,
@@ -12750,8 +13456,12 @@
     }
 
     function shareThankYouWhatsApp() {
-      const d = currentThankYouDonation || HARSH_TIWARI_DONATION;
-      const msg = `🕉️ श्री सर्व समर्पित सेवा संस्थान (पंजीकृत) • प्रयागराज\n\nहार्दिक आभार! श्री बड़े हनुमान जी महाराज की कृपा से हमारा ₹ ${(Number(d.amount)||501).toLocaleString('en-IN')}/- का सेवा सहयोग ("${d.cause}") स्वीकृत हुआ है।\nरसीद सं: ${d.receiptNo}\nभुगतान आईडी: ${d.paymentId}\nधारा 80G आयकर छूट मान्य।`;
+      const d = getActiveThankYouDonation();
+      if (!d) {
+        alert('No active donation receipt found in current session.');
+        return;
+      }
+      const msg = `🕉️ श्री सर्व समर्पित सेवा संस्थान (पंजीकृत) • प्रयागराज\n\nहार्दिक आभार! श्री बड़े हनुमान जी महाराज की कृपा से हमारा ₹ ${(Number(d.amount)||501).toLocaleString('en-IN')}/- का सेवा सहयोग ("${d.cause || 'शिक्षा सेवा'}") स्वीकृत हुआ है।\nरसीद सं: ${d.receiptNo}\nभुगतान आईडी: ${d.paymentId}\nधारा 80G आयकर छूट मान्य।`;
       window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg), '_blank');
     }
 
@@ -12847,22 +13557,84 @@
       const container = document.getElementById('profileDonationsCardsContainer');
       if (!container) return;
 
-      const allDonations = getRecordedDonationsList();
-      if (!allDonations || allDonations.length === 0) {
+      const kpiContEl = document.getElementById('profileKpiContribution');
+      const kpiCauseEl = document.getElementById('profileKpiCause');
+
+      // Get current logged-in user
+      let curUser = null;
+      try {
+        const cached = localStorage.getItem('ssss_active_session');
+        if (cached) curUser = JSON.parse(cached);
+      } catch (e) {}
+
+      const uEmail = (curUser?.email || userProfile.email || '').toLowerCase().trim();
+      const uPhone = (curUser?.phoneNumber || curUser?.phone || userProfile.phone || '').replace(/[^0-9]/g, '');
+      const uUid = curUser?.uid || '';
+      const isHarsh = (
+        uEmail === 'princeeharsht@gmail.com' ||
+        uEmail.includes('founder') ||
+        (uEmail.includes('harsh') && !uEmail.includes('other')) ||
+        uPhone.includes('7752946125') ||
+        (curUser?.isAdmin === true && uEmail === 'navinmishra6387@gmail.com')
+      );
+
+      const allDonations = getRecordedDonationsList() || [];
+
+      // STRICT PRIVACY FILTER: Only include donations belonging to this authenticated user
+      const userDonations = allDonations.filter(d => {
+        if (!d) return false;
+        // If current user is Harsh Tiwari, show his verified donation
+        if (isHarsh && (d.paymentId === HARSH_TIWARI_DONATION.paymentId || d.receiptNo === HARSH_TIWARI_DONATION.receiptNo)) {
+          return true;
+        }
+        const dEmail = (d.email || '').toLowerCase().trim();
+        const dPhone = (d.phone || '').replace(/[^0-9]/g, '');
+        const dClaimed = (d.claimedBy || '').toLowerCase().trim();
+
+        if (uEmail && dEmail && uEmail === dEmail) return true;
+        if (uEmail && dClaimed && uEmail === dClaimed) return true;
+        if (uPhone && dPhone && dPhone.length >= 10 && uPhone.includes(dPhone.slice(-10))) return true;
+        if (uUid && d.userId === uUid) return true;
+        return false;
+      });
+
+      // Update KPI counter
+      const totalAmt = userDonations.reduce((sum, d) => sum + (Number(d.amount) || 0), 0);
+      if (kpiContEl) {
+        kpiContEl.innerText = `₹ ${totalAmt.toLocaleString('en-IN')}.00 INR`;
+      }
+      if (kpiCauseEl) {
+        kpiCauseEl.innerText = userDonations.length > 0
+          ? `${userDonations.length} सत्यापित रसीद (Form 10BD Linked)`
+          : 'व्यक्तिगत सेवा रिकॉर्ड';
+      }
+
+      if (userDonations.length === 0) {
         container.innerHTML = `
-          <div class="text-center py-8 px-4 border border-dashed border-stone-200 rounded-xl bg-stone-50/50">
-            <p class="text-xs text-stone-500 font-hindi">वर्तमान में कोई दान रिकॉर्ड लिंक नहीं है। कृपया ऊपर अपनी Payment ID या मोबाइल नंबर दर्ज कर रसीद प्राप्त करें।</p>
+          <div class="text-center py-10 px-4 border border-dashed border-stone-200 rounded-2xl bg-stone-50/60 space-y-3">
+            <div class="w-12 h-12 mx-auto rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xl shadow-2xs">🙏</div>
+            <div class="space-y-1">
+              <h4 class="text-sm font-bold text-stone-900 font-hindi">वर्तमान में इस खाते से कोई दान रिकॉर्ड उपलब्ध नहीं है</h4>
+              <p class="text-xs text-stone-500 max-w-md mx-auto font-hindi">
+                आपने इस प्रोफाइल से अभी तक कोई सेवा अंशदान नहीं किया है। पवित्र अन्नपूर्णा भंडारा, निःशुल्क शिक्षा या गौ सेवा हेतु योगदान कर आयकर छूट धारा 80G रसीद प्राप्त करें।
+              </p>
+            </div>
+            <div class="pt-2">
+              <button type="button" onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1.5 px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs rounded-xl shadow-xs transition-transform hover:scale-105 cursor-pointer">
+                <span>+ पहला पवित्र दान करें (Make First Contribution)</span>
+              </button>
+            </div>
           </div>
         `;
         return;
       }
 
-      container.innerHTML = allDonations.map(d => {
+      container.innerHTML = userDonations.map(d => {
         const amt = (Number(d.amount) || 0).toLocaleString('en-IN');
-        const isHarsh = d.paymentId === HARSH_TIWARI_DONATION.paymentId || (d.phone && d.phone.includes('7752946125')) || (d.email && d.email.includes('princeeharsht'));
+        const isHarshDonation = d.paymentId === HARSH_TIWARI_DONATION.paymentId;
         const cleanRecNo = d.receiptNo || 'SSSS-80G-2026-RCP-5156';
         return `
-          <div class="border ${isHarsh ? 'border-amber-300 bg-amber-50/20' : 'border-stone-200 bg-white'} rounded-xl p-4 sm:p-5 shadow-2xs space-y-3.5 transition-all hover:shadow-xs">
+          <div class="border ${isHarshDonation ? 'border-amber-300 bg-amber-50/20' : 'border-stone-200 bg-white'} rounded-xl p-4 sm:p-5 shadow-2xs space-y-3.5 transition-all hover:shadow-xs">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-100 pb-3">
               <div class="space-y-0.5">
                 <div class="flex items-center gap-2">
@@ -12955,10 +13727,23 @@
       });
 
       if (match) {
+        // Link claimed donation to current active user session
+        try {
+          const cached = localStorage.getItem('ssss_active_session');
+          if (cached) {
+            const curUser = JSON.parse(cached);
+            if (curUser && curUser.email) {
+              match.claimedBy = curUser.email;
+              localStorage.setItem('ssss_donations', JSON.stringify(list));
+            }
+          }
+        } catch(e) {}
+
         if (msgEl) {
-          msgEl.innerHTML = `✓ रसीद सफलतापूर्वक प्राप्त: <strong>${match.receiptNo}</strong> (दाता: <strong>${match.name}</strong>, राशि: <strong>₹ ${(Number(match.amount)||0).toLocaleString('en-IN')}/-</strong>)`;
+          msgEl.innerHTML = `✓ रसीद सफलतापूर्वक प्राप्त व लिंक: <strong>${match.receiptNo}</strong> (दाता: <strong>${match.name}</strong>, राशि: <strong>₹ ${(Number(match.amount)||0).toLocaleString('en-IN')}/-</strong>)`;
           msgEl.className = 'text-xs font-bold text-emerald-700 block';
         }
+        renderUserProfileDonations();
         openDonationThankYouModal(match);
       } else {
         if (fbRealtimeDb) {
@@ -13209,8 +13994,9 @@
         targetBtn.classList.add('bg-orange-600', 'text-white');
         targetBtn.classList.remove('bg-stone-100', 'text-gray-700');
       }
-      if (subId === 'volunteers' && typeof renderAdminVolunteerApplications === 'function') {
-        renderAdminVolunteerApplications();
+      if (subId === 'volunteers') {
+        if (typeof renderAdminVolunteerApplications === 'function') renderAdminVolunteerApplications();
+        if (typeof renderAdminMembershipApplications === 'function') renderAdminMembershipApplications();
       }
       if (subId === 'users' && typeof renderAdminGoogleUsersTable === 'function') {
         renderAdminGoogleUsersTable();
@@ -16267,12 +17053,11 @@
         return;
       }
 
-      const randomId = registerNewMemberRecord(name, email, phone, role, hindiName, bloodGroup);
-      showLoginPageAlert('success', 'Registration Approved! Profile & Digital ID Card issued for ' + name + ' (ID: ' + randomId + '). Loading ID Card Studio...');
+      const tempId = registerNewMemberRecord(name, email, phone, role, hindiName, bloodGroup);
+      showLoginPageAlert('success', `Account created successfully for ${name}! Official Digital ID Card requires ₹1,101 Annual Trust Membership & Admin Approval. Opening Profile...`);
       setTimeout(() => {
-        switchTab('membership');
-        onIdCardSelect('vol_' + randomId);
-      }, 1000);
+        switchTab('profile');
+      }, 1200);
     }
 
     function showLoginPageAlert(type, message) {
