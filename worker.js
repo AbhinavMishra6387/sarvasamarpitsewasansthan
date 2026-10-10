@@ -47,11 +47,7 @@ export default {
       return Response.redirect(`https://${cleanHost}${url.pathname}${url.search}`, 301);
     }
 
-    // 3. Permanent 301 Migration Redirect for Old Domain (sarva-samarpit-sewa-sansthan.in)
-    // Instantly transfers Google ranking authority, backlinks, and search traffic to the new .com domain
-    if (url.hostname.includes("sarva-samarpit-sewa-sansthan.in")) {
-      return Response.redirect(`https://sarvasamarpitsewasansthan.com${url.pathname}${url.search}`, 301);
-    }
+    // Old Domain & New Domain both served live simultaneously for Google Search Console verification & migration
 
     let path = '/' + url.pathname.split('/').filter(Boolean).join('/');
     if (path === "/" || path === "") {
