@@ -65,6 +65,20 @@ export default {
       path = "/sitemap.xml";
     }
 
+    // Direct routing for all canonical SPA pages & Uttar Pradesh district landing pages
+    const SPA_ROUTES = [
+      "/about", "/vision", "/founder", "/trustees", "/executive-committee",
+      "/free-education", "/food-distribution", "/social-welfare", "/religious-activities",
+      "/healthcare", "/tree-plantation", "/women-hygiene", "/marriage-support", "/blanket-distribution",
+      "/temple-seva", "/membership", "/volunteer", "/gallery", "/contact", "/donate",
+      "/privacy-policy", "/terms-and-conditions", "/refund-policy",
+      "/prayagraj", "/varanasi", "/ayodhya", "/lucknow", "/gorakhpur",
+      "/kanpur", "/mathura", "/jhansi", "/meerut", "/mirzapur"
+    ];
+    if (SPA_ROUTES.includes(path.toLowerCase())) {
+      path = "/index.html";
+    }
+
     const isDynamicDoc = path.endsWith(".html") || path.endsWith(".xml") || path.endsWith(".txt");
     const freshParam = `_fresh=${Date.now()}`;
     const sep = url.search ? "&" : "?";

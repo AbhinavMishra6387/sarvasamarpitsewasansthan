@@ -4,12 +4,12 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- 1. Homepage & Live Mahaprasad Langar -->
+  <!-- 1. Universal Homepage & 24/7 Akhand Mahaprasad Langar -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/</loc>
-    <lastmod>2026-10-10T12:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
     <image:image>
       <image:loc>https://sarvasamarpitsewasansthan.com/logo.jpg</image:loc>
       <image:title>Sarva Samarpit Sewa Sansthan Official Logo</image:title>
@@ -23,7 +23,7 @@
     <image:image>
       <image:loc>https://sarvasamarpitsewasansthan.com/images/founder.jpg</image:loc>
       <image:title>Pt. Harsh Tiwari - Founder and Chief Managing Trustee</image:title>
-      <image:caption>Pt. Harsh Tiwari guiding charitable seva operations at Prayagraj</image:caption>
+      <image:caption>Pt. Harsh Tiwari guiding charitable seva operations across Uttar Pradesh</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-2.jpg</image:loc>
@@ -40,32 +40,274 @@
       <image:title>Social Welfare and Tree Plantation Seva</image:title>
       <image:caption>Winter blanket distribution, tree plantation, and community relief</image:caption>
     </image:image>
-    <video:video>
-      <video:thumbnail_loc>https://sarvasamarpitsewasansthan.com/images/anna-1.jpg</video:thumbnail_loc>
-      <video:title>Daily Annapurna Langar Seva Prayagraj Sangam</video:title>
-      <video:description>Real ground coverage of 24x7 Mahaprasad Langar Bhandara by Sarva Samarpit Sewa Sansthan at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj.</video:description>
-      <video:content_loc>https://sarvasamarpitsewasansthan.com/videos/blanket-relief.mp4</video:content_loc>
-      <video:publication_date>2026-01-15T10:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
   </url>
 
-  <!-- 2. About Trust & Sacred History -->
+  <!-- ======================================================== -->
+  <!-- 10 UTTAR PRADESH DISTRICT REGIONAL SEVA HUBS / LANDING PAGES -->
+  <!-- ======================================================== -->
+
+  <!-- UP Hub 1: Prayagraj (Headquarters & Triveni Sangam) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/prayagraj</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-1.jpg</image:loc>
+      <image:title>Prayagraj Triveni Sangam Mahaprasad Langar</image:title>
+      <image:caption>Daily free Bhandara for pilgrims and sadhus at Bade Hanuman Ji Mandir Marg, Prayagraj</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-1.jpg</image:loc>
+      <image:title>Prayagraj Slum Children Free Education Pathshala</image:title>
+      <image:caption>Free stationery, school bags and primary tuition in Prayagraj</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-1.jpg</image:loc>
+      <image:title>Prayagraj Magh Mela Winter Blanket &amp; Health Relief</image:title>
+      <image:caption>Charitable healthcare and warm clothing distribution across Prayagraj</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 2: Varanasi / Kashi (Kashi Vishwanath & Ganga Ghats) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/varanasi</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.96</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-3.jpg</image:loc>
+      <image:title>Varanasi Kashi Annapurna Langar on Ganga Ghats</image:title>
+      <image:caption>Daily hot satvik food for sadhus, destitute elders and pilgrims at Varanasi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-2.jpg</image:loc>
+      <image:title>Kashi Sanskrit Vidyarthi &amp; Rural Children Aid</image:title>
+      <image:caption>Free books and educational stipends for students across Varanasi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-2.jpg</image:loc>
+      <image:title>Varanasi Ghat Cleanliness &amp; Winter Blanket Distribution</image:title>
+      <image:caption>Protecting homeless pilgrims in cold weather across Varanasi ghats</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 3: Ayodhya (Shree Ram Janmabhoomi & Saryu Pilgrimage) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/ayodhya</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.96</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-2.jpg</image:loc>
+      <image:title>Ayodhya Ram Janmabhoomi Pilgrim Mahaprasad Camp</image:title>
+      <image:caption>Free drinking water and fresh meal distribution for Ayodhya pilgrims</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-3.jpg</image:loc>
+      <image:title>Ayodhya Saryu Ghat Seva &amp; Sadhu Parikrama Relief</image:title>
+      <image:caption>Charitable seva camps and medical support for elderly devotees in Ayodhya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-3.jpg</image:loc>
+      <image:title>Ayodhya Rural Village Evening Coaching &amp; Sanskar Pathshala</image:title>
+      <image:caption>Free education and moral values coaching for Ayodhya children</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 4: Lucknow (State Capital & Slum Rehabilitation) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/lucknow</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-4.jpg</image:loc>
+      <image:title>Lucknow Urban Slum Primary Education &amp; Digital Literacy</image:title>
+      <image:caption>Empowering underprivileged children with free coaching across Lucknow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-4.jpg</image:loc>
+      <image:title>Lucknow Underprivileged Women Hygiene &amp; Pad Distribution</image:title>
+      <image:caption>Health awareness and menstrual hygiene kit distribution in Lucknow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-4.jpg</image:loc>
+      <image:title>Lucknow Railway Station &amp; Hospital Food Relief</image:title>
+      <image:caption>Hot meals for patients' attendants and stranded laborers in Lucknow</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 5: Gorakhpur (Purvanchal Child Nutrition & Primary Schools) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/gorakhpur</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-5.jpg</image:loc>
+      <image:title>Gorakhpur Rural Malnutrition Relief &amp; Bal Poshan</image:title>
+      <image:caption>Nutritious food baskets for vulnerable farming children in Gorakhpur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-5.jpg</image:loc>
+      <image:title>Gorakhpur Village School Kits &amp; Vidya Daan</image:title>
+      <image:caption>Providing notebooks, school bags and free tuition across Gorakhpur villages</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-5.jpg</image:loc>
+      <image:title>Gorakhpur Preventive Health &amp; Seasonal Fever Relief</image:title>
+      <image:caption>Free health camps and diagnostic assistance in rural Gorakhpur</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 6: Kanpur (Industrial Belt Labor Welfare & Child Labor Prevention) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/kanpur</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-1.jpg</image:loc>
+      <image:title>Kanpur Laborers Children Education &amp; Anti-Child Labor Drive</image:title>
+      <image:caption>Bringing children from factory outskirts into regular schools in Kanpur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-1.jpg</image:loc>
+      <image:title>Kanpur Daily Wage Worker Langar &amp; Ration Kits</image:title>
+      <image:caption>Emergency ration packs and wholesome meals in industrial Kanpur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-1.jpg</image:loc>
+      <image:title>Kanpur Ganga Barrage Environmental Cleanup &amp; Saplings</image:title>
+      <image:caption>Mass tree plantation and river conservation volunteers in Kanpur</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 7: Mathura-Vrindavan (Braj Gau Seva & Sadhu Annadaan) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/mathura</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-2.jpg</image:loc>
+      <image:title>Mathura Vrindavan Gau Seva &amp; Chara Daan Ashram</image:title>
+      <image:caption>Protection and medical treatment for destitute cows across Braj Dham</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-2.jpg</image:loc>
+      <image:title>Vrindavan Sadhu Bhandara &amp; Destitute Mataji Seva</image:title>
+      <image:caption>Daily warm meals and medicines for elderly mothers and sadhus in Vrindavan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-3.jpg</image:loc>
+      <image:title>Govardhan Parikrama Pilgrim Relief Camp</image:title>
+      <image:caption>Free shoes, clean water and medical first aid during Parikrama</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 8: Jhansi (Bundelkhand Drought Relief & Jal Daan Tankers) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/jhansi</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-4.jpg</image:loc>
+      <image:title>Jhansi Bundelkhand Emergency Drinking Water Jal Daan</image:title>
+      <image:caption>Supplying potable drinking water tankers to water-scarce villages in Jhansi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-3.jpg</image:loc>
+      <image:title>Jhansi Drought Impacted Small Farmers Ration Support</image:title>
+      <image:caption>Grain sacks and food security provisions for struggling farm families</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-2.jpg</image:loc>
+      <image:title>Jhansi Rural Literacy &amp; Village Study Centers</image:title>
+      <image:caption>Free basic educational support for Bundelkhand children</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 9: Meerut (Western UP Agrarian Aid & Youth Exam Centers) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/meerut</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.94</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-3.jpg</image:loc>
+      <image:title>Meerut Rural Youth Competitive Exam Library &amp; Coaching</image:title>
+      <image:caption>Free study halls and book bank for youth in Meerut</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-5.jpg</image:loc>
+      <image:title>Western UP Farmer Distress Support &amp; Health Checks</image:title>
+      <image:caption>Medical checkups and elder support in agricultural communities</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-4.jpg</image:loc>
+      <image:title>Meerut Community Kitchen &amp; Seasonal Blanket Drives</image:title>
+      <image:caption>Helping vulnerable urban workers and night shelter residents</image:caption>
+    </image:image>
+  </url>
+
+  <!-- UP Hub 10: Mirzapur (Vindhyachal Pilgrimage & Forest Tribal Education) -->
+  <url>
+    <loc>https://sarvasamarpitsewasansthan.com/mirzapur</loc>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.94</priority>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-5.jpg</image:loc>
+      <image:title>Mirzapur Vindhyachal Pilgrim Prasadam &amp; Drinking Water</image:title>
+      <image:caption>Pilgrim welfare camp at Maa Vindhyavasini Dham, Mirzapur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-4.jpg</image:loc>
+      <image:title>Mirzapur Forest Tribal Village Primary School</image:title>
+      <image:caption>Free primary learning and meal support for Vanvasi children</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-1.jpg</image:loc>
+      <image:title>Mirzapur Traditional Carpet Weaver Family Relief</image:title>
+      <image:caption>Healthcare camps and educational aid for artisan households</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ======================================================== -->
+  <!-- INSTITUTIONAL, SEVA & COMPLIANCE PAGES                   -->
+  <!-- ======================================================== -->
+
+  <!-- About Trust & Sacred History -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/about</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.95</priority>
     <image:image>
       <image:loc>https://sarvasamarpitsewasansthan.com/images/founder.jpg</image:loc>
       <image:title>Pt. Harsh Tiwari - Founder and Chief Managing Trustee</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/treasurer.jpg</image:loc>
+      <image:title>Naveen Mishra - Treasurer and Financial Custodian</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/secretary.jpg</image:loc>
+      <image:title>Amit Prakhar Pandey - Secretary</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/patron.jpg</image:loc>
+      <image:title>Santosh Mishra - Chief Patron</image:title>
+    </image:image>
   </url>
 
-  <!-- 3. Free Education (Primary Mission) -->
+  <!-- Free Education (Primary Mission) -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/free-education</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -78,10 +320,10 @@
     </image:image>
   </url>
 
-  <!-- 4. Annapurna Langar (Food Distribution) -->
+  <!-- Annapurna Langar (Food Distribution) -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/food-distribution</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -94,10 +336,10 @@
     </image:image>
   </url>
 
-  <!-- 5. Social Welfare & Blanket Relief -->
+  <!-- Social Welfare & Community Relief -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/social-welfare</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -108,84 +350,76 @@
       <image:loc>https://sarvasamarpitsewasansthan.com/images/social-2.jpg</image:loc>
       <image:title>Mass Tree Plantation Team Prayagraj</image:title>
     </image:image>
-    <video:video>
-      <video:thumbnail_loc>https://sarvasamarpitsewasansthan.com/images/social-2.jpg</video:thumbnail_loc>
-      <video:title>Winter Blanket and Social Relief Distribution Seva</video:title>
-      <video:description>Ground video showing cold relief and warm blanket distribution by trustees and volunteers in Prayagraj.</video:description>
-      <video:content_loc>https://sarvasamarpitsewasansthan.com/videos/blanket-relief.mp4</video:content_loc>
-      <video:publication_date>2026-01-10T14:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
   </url>
 
-  <!-- 6. Religious Activities -->
+  <!-- Religious & Cultural Heritage Activities -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/religious-activities</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.88</priority>
   </url>
 
-  <!-- 7. Volunteer Portal -->
+  <!-- Volunteer Portal -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/volunteer</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.88</priority>
   </url>
 
-  <!-- 8. Digital ID Card & Membership -->
+  <!-- Digital ID Card & Membership Portal -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/membership</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.88</priority>
   </url>
 
-  <!-- 9. Donate & Section 80G Tax Exemption -->
+  <!-- Donate Online & 80G Tax Exemption -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/donate</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <priority>0.96</priority>
   </url>
 
-  <!-- 10. Photo & Video Gallery -->
+  <!-- Photo & Video Gallery -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/gallery</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- 11. Contact & Sangam Marg Location -->
+  <!-- Contact & Prayagraj Sangam Location -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/contact</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- 12. Privacy Policy -->
+  <!-- Privacy Policy -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/privacy-policy</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
 
-  <!-- 13. Terms & Conditions -->
+  <!-- Terms & Conditions -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/terms-and-conditions</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
 
-  <!-- 14. Refund Policy -->
+  <!-- Refund Policy -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/refund-policy</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T18:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
