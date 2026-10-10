@@ -35,26 +35,26 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // 1. Enforce HTTPS Everywhere (Fixes "Not Secure" browser warning & Chrome security block)
-    const proto = request.headers.get("x-forwarded-proto") || url.protocol.replace(":", "");
-    if (proto === "http" || url.protocol === "http:") {
-      return Response.redirect(`https://${url.host}${url.pathname}${url.search}`, 301);
-    }
-
-    // 2. Canonical Domain Normalization: Redirect WWW to Apex Domain (Fixes Cloudflare 522 & consolidates Google SEO)
-    if (url.hostname.toLowerCase().startsWith("www.")) {
-      const cleanHost = url.hostname.replace(/^www\./i, "");
-      return Response.redirect(`https://${cleanHost}${url.pathname}${url.search}`, 301);
-    }
-
-    // 3. Permanent 301 Migration Redirect for Old Domain (sarva-samarpit-sewa-sansthan.in)
-    // Satisfies Google Search Console Change of Address test and transfers 100% of SEO authority
+    // 1. Permanent 301 Migration Redirect for Old Domain (sarva-samarpit-sewa-sansthan.in)
+    // Ensures single-hop 301 redirect directly to https://sarvasamarpitsewasansthan.com for both HTTP and HTTPS
     if (url.hostname.toLowerCase().includes("sarva-samarpit-sewa-sansthan.in")) {
       if (url.pathname.startsWith("/google") && url.pathname.endsWith(".html")) {
         // Serve Google HTML verification token if needed
       } else {
         return Response.redirect(`https://sarvasamarpitsewasansthan.com${url.pathname}${url.search}`, 301);
       }
+    }
+
+    // 2. Enforce HTTPS Everywhere for New Domain
+    const proto = request.headers.get("x-forwarded-proto") || url.protocol.replace(":", "");
+    if (proto === "http" || url.protocol === "http:") {
+      return Response.redirect(`https://${url.host}${url.pathname}${url.search}`, 301);
+    }
+
+    // 3. Canonical Domain Normalization: Redirect WWW to Apex Domain (Fixes Cloudflare 522 & consolidates Google SEO)
+    if (url.hostname.toLowerCase().startsWith("www.")) {
+      const cleanHost = url.hostname.replace(/^www\./i, "");
+      return Response.redirect(`https://${cleanHost}${url.pathname}${url.search}`, 301);
     }
 
     let path = '/' + url.pathname.split('/').filter(Boolean).join('/');
