@@ -7,7 +7,7 @@
   <!-- 1. Homepage & Live Mahaprasad Langar -->
   <url>
     <loc>https://sarvasamarpitsewasansthan.com/</loc>
-    <lastmod>2026-10-07T21:00:00+05:30</lastmod>
+    <lastmod>2026-10-10T12:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -19,6 +19,26 @@
       <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-1.jpg</image:loc>
       <image:title>Daily Mahaprasad Annapurna Langar Distribution</image:title>
       <image:caption>24x7 Hot Satvik meal distribution to devotees and pilgrims at Prayagraj</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/founder.jpg</image:loc>
+      <image:title>Pt. Harsh Tiwari - Founder and Chief Managing Trustee</image:title>
+      <image:caption>Pt. Harsh Tiwari guiding charitable seva operations at Prayagraj</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/anna-2.jpg</image:loc>
+      <image:title>Puri and Sabzi Mahaprasad Langar Seva</image:title>
+      <image:caption>Selfless food seva at Shree Bade Hanuman Ji Temple</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/education-1.jpg</image:loc>
+      <image:title>Free Education Pathshala and Vidya Daan</image:title>
+      <image:caption>Free study kits, school bags, and evening coaching for underprivileged children</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sarvasamarpitsewasansthan.com/images/social-1.jpg</image:loc>
+      <image:title>Social Welfare and Tree Plantation Seva</image:title>
+      <image:caption>Winter blanket distribution, tree plantation, and community relief</image:caption>
     </image:image>
     <video:video>
       <video:thumbnail_loc>https://sarvasamarpitsewasansthan.com/images/anna-1.jpg</video:thumbnail_loc>
