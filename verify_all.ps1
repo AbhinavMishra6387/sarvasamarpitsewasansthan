@@ -39,7 +39,7 @@ $diff = ($ob - $cb) + ($op - $cp) + ($os - $cs)
 Write-Host "[2/6] JS Brackets Balance: { $ob vs } $cb, ( $op vs ) $cp, [ $os vs ] $cs (Total Diff: $diff)" -ForegroundColor $(if ($diff -eq 0) { "Green" } else { "Red" })
 
 # 3. Check All Image Assets Existence
-$imgMatches = [regex]::Matches($content, '["''](images/[a-zA-Z0-9_\-\.]+\.(?:jpg|jpeg|png|webp|svg))["'']')
+$imgMatches = [regex]::Matches($content, '["''](images/[a-zA-Z0-9_\-\.]+\.(?:jpg|jpeg|png|webp|svg))(?:\?[^"'']*)?["'']')
 $missingImages = @()
 $checkedImages = [System.Collections.Generic.HashSet[string]]::new()
 foreach ($im in $imgMatches) {
