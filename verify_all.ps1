@@ -85,5 +85,10 @@ Write-Host "[5/6] 10 UP Regional Seva Hubs: $($hubs.Count - $missingHubs.Count)/
 # 6. Check Chief Patron Santosh Mishra Integration
 $hasPatronImg = Test-Path (Join-Path $scratchDir "images\patron.jpg")
 $hasPatronTab = $content.Contains("openPatronPhotoModal()") -and $content.Contains("patronPhotoModal")
-Write-Host "[6/6] Chief Patron Santosh Mishra Photo & Modal: $(if ($hasPatronImg -and $hasPatronTab) { 'Fully Integrated & Verified' } else { 'Incomplete' })" -ForegroundColor $(if ($hasPatronImg -and $hasPatronTab) { "Green" } else { "Red" })
+Write-Host "[6/7] Chief Patron Santosh Mishra Photo & Modal: $(if ($hasPatronImg -and $hasPatronTab) { 'Fully Integrated & Verified' } else { 'Incomplete' })" -ForegroundColor $(if ($hasPatronImg -and $hasPatronTab) { "Green" } else { "Red" })
+
+# 7. Check Education Secretary Ravindra Nath Tiwari Integration
+$hasEduImg = Test-Path (Join-Path $scratchDir "images\education_head.jpg")
+$hasEduTab = $content.Contains("openEducationPhotoModal()") -and $content.Contains("educationPhotoModal")
+Write-Host "[7/7] Education Sec Ravindra Nath Tiwari Photo & Modal: $(if ($hasEduImg -and $hasEduTab) { 'Fully Integrated & Verified' } else { 'Incomplete' })" -ForegroundColor $(if ($hasEduImg -and $hasEduTab) { "Green" } else { "Red" })
 Write-Host "=============================================="
