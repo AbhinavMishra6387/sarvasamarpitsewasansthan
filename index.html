@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -517,7 +517,7 @@
         </div>
 
         <!-- Direct Nav Links -->
-        <a href="#membership" onclick="switchTab('membership')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Digital ID Card</a>
+        <a href="#membership" onclick="switchTab('membership')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Membership</a>
         <a href="#volunteer" onclick="switchTab('volunteer')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Volunteer</a>
         <a href="#gallery" onclick="switchTab('gallery')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Gallery</a>
         <a href="#contact" onclick="switchTab('contact')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Contact</a>
@@ -678,7 +678,7 @@
           <div class="grid grid-cols-2 gap-2">
             <a href="#membership" onclick="switchTab('membership'); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg bg-purple-50 text-purple-900 border border-purple-200 font-bold flex items-center gap-1.5 cursor-pointer">
               <svg class="w-4 h-4 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="10" r="2.5" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 16c0-1.657 1.343-2.5 3-2.5s3 .843 3 2.5M15 9h3M15 13h3M15 16h2"/></svg>
-              <span>Digital ID Card</span>
+              <span>Membership &amp; ID</span>
             </a>
             <button onclick="openVerifyModal(); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-200 font-bold flex items-center gap-1.5 cursor-pointer">
               <svg class="w-4 h-4 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M15 9h2M15 15h2"/></svg>
@@ -1182,52 +1182,453 @@
       </section>
 
 
-      <!-- ABOUT US PREVIEW -->
-      <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <!-- ========================================== -->
+      <!-- FRONT SECTION: ABOUT TRUST & LEADERSHIP    -->
+      <!-- ========================================== -->
+      <section id="section-front-about" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto scroll-mt-20">
+        <div class="space-y-10 sm:space-y-12">
           
-          <div class="lg:col-span-6 space-y-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-md">
-              About us
-            </span>
-            <h2 class="text-2xl sm:text-4xl font-semibold text-gray-900 tracking-tight leading-tight">
-              A trust rooted in faith, devoted to education and human welfare.
-            </h2>
-            <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
-              Sarva Samarpit Sewa Sansthan is a registered charitable trust headquartered at Shree Bade Hanuman Ji Temple Marg, Bandhwa. Committed to eradicating illiteracy through free education and providing food, warm clothing, and care for every soul in need.
-            </p>
-            <div class="pt-2">
-              <button onclick="switchTab('about')" class="text-xs sm:text-sm font-bold text-orange-600 hover:text-orange-700 underline flex items-center gap-1">
-                Learn more about our trust &amp; leadership &rarr;
-              </button>
+          <!-- Section Header & Narrative -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-7 space-y-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-bold uppercase tracking-wider border border-orange-200">
+                <svg class="w-3.5 h-3.5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v4m-4 0h4"/></svg>
+                <span>à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¤ªà¤°à¤¿à¤šà¤¯ â€¢ About Our Trust</span>
+              </span>
+              <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 tracking-tight leading-tight">
+                Rooted in Holy Sangam, Devoted to Education, Langar &amp; Human Welfare
+              </h2>
+              <p class="text-sm sm:text-base font-hindi font-semibold text-orange-700">
+                à¥¥ à¤¹à¤®à¤¾à¤°à¤¾ à¤¸à¤‚à¤•à¤²à¥à¤ª: à¤­à¥à¤–à¤®à¤•à¥à¤¤ à¤à¤µà¤‚ à¤¶à¤¿à¤•à¥à¤·à¤¾à¤¯à¥à¤•à¥à¤¤ à¤­à¤¾à¤°à¤¤ â€¢ à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¥¥
+              </p>
+              <p class="text-stone-600 text-xs sm:text-sm sm:text-base leading-relaxed">
+                Headquartered at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj, <strong>Sarva Samarpit Sewa Sansthan</strong> is a registered public charitable trust dedicated to selfless seva. Guided by the spiritual vision of our founders, we conduct 24/7 Akhand Annapurna Langar, free evening pathshala schools for underprivileged children, medical camps, and state-wide relief operations.
+              </p>
+              
+              <!-- Action CTA -->
+              <div class="pt-2 flex flex-wrap items-center gap-3">
+                <button onclick="switchTab('about')" class="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+                  <span>Explore Full Trust &amp; Main Body Dossier</span>
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+                <button onclick="switchTab('vision')" class="px-5 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                  Vision &amp; Sacred Mission
+                </button>
+              </div>
+            </div>
+
+            <!-- Statutory Trust Verification Dossier Card -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-stone-900 via-stone-900 to-orange-950 text-white p-6 sm:p-8 rounded-2xl shadow-xl border border-stone-800 space-y-5">
+              <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center p-1">
+                    <img src="logo.jpg" alt="Trust Logo" class="w-full h-full object-cover rounded-full" />
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-sm text-white leading-tight">Official Trust Accreditation</h3>
+                    <p class="text-[10px] text-amber-300 font-hindi">à¤®à¤¾à¤¨à¥à¤¯à¤¤à¤¾ à¤à¤µà¤‚ à¤µà¤¿à¤§à¤¿à¤• à¤ªà¤‚à¤œà¥€à¤•à¤°à¤£</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-bold uppercase tracking-wider">
+                  100% Verified
+                </span>
+              </div>
+
+              <!-- 4 Legal Matrix Badges -->
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span class="text-[10px] text-stone-400 font-medium block">Trust Registration</span>
+                  <p class="font-bold font-mono text-amber-300 text-xs">UP/2018/0192847</p>
+                  <p class="text-[9.5px] text-stone-300">Indian Trusts Act, 1882</p>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span class="text-[10px] text-stone-400 font-medium block">80G Tax Exemption</span>
+                  <p class="font-bold font-mono text-emerald-300 text-xs">50% Tax Relief</p>
+                  <p class="text-[9.5px] text-stone-300">Income Tax Form 10BD</p>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span class="text-[10px] text-stone-400 font-medium block">MCA CSR-1 Registered</span>
+                  <p class="font-bold font-mono text-blue-300 text-xs">CSR00042918</p>
+                  <p class="text-[9.5px] text-stone-300">Eligible for Corporate Grants</p>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span class="text-[10px] text-stone-400 font-medium block">NITI Aayog Darpan</span>
+                  <p class="font-bold font-mono text-purple-300 text-xs">UP/2021/0284729</p>
+                  <p class="text-[9.5px] text-stone-300">Govt of India NGO Portal</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-400/20 text-[11px] text-stone-300 flex items-center gap-2">
+                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <span>Annual Chartered Accountant Audited accounts submitted with the Income Tax Department.</span>
+              </div>
             </div>
           </div>
 
-          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div onclick="switchTab('vision')" class="bg-white p-6 rounded-lg border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow cursor-pointer group">
-              <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><circle cx="12" cy="12" r="6" stroke-width="2"/><circle cx="12" cy="12" r="2" stroke-width="2"/></svg>
+          <!-- Leadership & Main Body Snapshot Grid -->
+          <div class="pt-8 border-t border-stone-200 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-md border border-orange-200">
+                  Leadership &bull; à¤¨à¥à¤¯à¤¾à¤¸à¥€ à¤à¤µà¤‚ à¤®à¥à¤–à¥à¤¯ à¤•à¤¾à¤°à¥à¤¯à¤•à¤¾à¤°à¤¿à¤£à¥€
+                </span>
+                <h3 class="text-xl sm:text-2xl font-bold text-stone-900 mt-1">Guiding Custodians &amp; Executive Main Body</h3>
               </div>
-              <h3 class="font-semibold text-base text-gray-900 mb-1">Our Mission</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Empowering children through free education and ensuring no one near the Sangam sleeps hungry.
-              </p>
+              <button onclick="switchTab('about')" class="text-xs sm:text-sm font-bold text-orange-600 hover:text-orange-700 underline flex items-center gap-1 cursor-pointer">
+                <span>View Full Executive Profiles</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
             </div>
 
-            <div onclick="switchTab('vision')" class="bg-white p-6 rounded-lg border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow cursor-pointer group">
-              <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4">
+              <!-- 1. Founder -->
+              <div onclick="switchTab('about')" class="bg-stone-50 hover:bg-orange-50/70 p-3.5 rounded-xl border border-stone-200 hover:border-orange-300 transition-all text-center space-y-2 cursor-pointer group shadow-2xs">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-orange-500 mx-auto shadow-xs bg-white shrink-0">
+                  <img src="images/founder.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Pt. Harsh Tiwari" class="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-stone-900 group-hover:text-orange-600 transition-colors truncate">Pt. Harsh Tiwari</h4>
+                  <p class="text-[10px] text-orange-700 font-hindi font-bold truncate">à¤ªà¤‚. à¤¹à¤°à¥à¤· à¤¤à¤¿à¤µà¤¾à¤°à¥€</p>
+                  <span class="inline-block text-[9px] font-bold text-orange-800 bg-orange-100/90 px-1.5 py-0.5 rounded mt-1 truncate max-w-full">à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤ªà¤• â€¢ Founder</span>
+                </div>
               </div>
-              <h3 class="font-semibold text-base text-gray-900 mb-1">Our Vision</h3>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                A compassionate, educated society where selfless seva is a universal way of life.
-              </p>
+
+              <!-- 2. Patron -->
+              <div onclick="switchTab('about')" class="bg-stone-50 hover:bg-amber-50/70 p-3.5 rounded-xl border border-stone-200 hover:border-amber-300 transition-all text-center space-y-2 cursor-pointer group shadow-2xs">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-amber-500 mx-auto shadow-xs bg-white shrink-0">
+                  <img src="images/patron.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Santosh Mishra" class="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-stone-900 group-hover:text-amber-700 transition-colors truncate">Santosh Mishra</h4>
+                  <p class="text-[10px] text-amber-700 font-hindi font-bold truncate">à¤¸à¤‚à¤¤à¥‹à¤· à¤®à¤¿à¤¶à¥à¤°à¤¾</p>
+                  <span class="inline-block text-[9px] font-bold text-amber-800 bg-amber-100/90 px-1.5 py-0.5 rounded mt-1 truncate max-w-full">à¤®à¥à¤–à¥à¤¯ à¤¸à¤‚à¤°à¤•à¥à¤·à¤• â€¢ Patron</span>
+                </div>
+              </div>
+
+              <!-- 3. Treasurer -->
+              <div onclick="switchTab('about')" class="bg-stone-50 hover:bg-emerald-50/70 p-3.5 rounded-xl border border-stone-200 hover:border-emerald-300 transition-all text-center space-y-2 cursor-pointer group shadow-2xs">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 mx-auto shadow-xs bg-white shrink-0">
+                  <img src="images/treasurer.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Naveen Mishra" class="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-stone-900 group-hover:text-emerald-700 transition-colors truncate">Naveen Mishra</h4>
+                  <p class="text-[10px] text-emerald-700 font-hindi font-bold truncate">à¤¨à¤µà¥€à¤¨ à¤®à¤¿à¤¶à¥à¤°à¤¾</p>
+                  <span class="inline-block text-[9px] font-bold text-emerald-800 bg-emerald-100/90 px-1.5 py-0.5 rounded mt-1 truncate max-w-full">à¤•à¥‹à¤·à¤¾à¤§à¥à¤¯à¤•à¥à¤· â€¢ Treasurer</span>
+                </div>
+              </div>
+
+              <!-- 4. Secretary -->
+              <div onclick="switchTab('about')" class="bg-stone-50 hover:bg-blue-50/70 p-3.5 rounded-xl border border-stone-200 hover:border-blue-300 transition-all text-center space-y-2 cursor-pointer group shadow-2xs">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400 mx-auto shadow-xs bg-white flex items-center justify-center p-1 shrink-0">
+                  <img src="logo.jpg" alt="Amit Prakhar Pandey" class="w-full h-full object-contain rounded-full" loading="lazy" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-stone-900 group-hover:text-blue-700 transition-colors truncate">Amit Prakhar Pandey</h4>
+                  <p class="text-[10px] text-blue-700 font-hindi font-bold truncate">à¤…à¤®à¤¿à¤¤ à¤ªà¥à¤°à¤–à¤° à¤ªà¤¾à¤£à¥à¤¡à¥‡à¤¯</p>
+                  <span class="inline-block text-[9px] font-bold text-blue-800 bg-blue-100/90 px-1.5 py-0.5 rounded mt-1 truncate max-w-full">à¤¸à¤šà¤¿à¤µ â€¢ Secretary</span>
+                </div>
+              </div>
+
+              <!-- 5. Education Head -->
+              <div onclick="switchTab('about')" class="bg-stone-50 hover:bg-purple-50/70 p-3.5 rounded-xl border border-stone-200 hover:border-purple-300 transition-all text-center space-y-2 cursor-pointer group shadow-2xs">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-purple-500 mx-auto shadow-xs bg-white shrink-0">
+                  <img src="images/education_head.jpg?v=2" onerror="this.onerror=null; this.src='logo.jpg';" alt="Ravindra Nath Tiwari" class="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-stone-900 group-hover:text-purple-700 transition-colors truncate">Ravindra Nath Tiwari</h4>
+                  <p class="text-[10px] text-purple-700 font-hindi font-bold truncate">à¤°à¤µà¥€à¤‚à¤¦à¥à¤° à¤¨à¤¾à¤¥ à¤¤à¤¿à¤µà¤¾à¤°à¥€</p>
+                  <span class="inline-block text-[9px] font-bold text-purple-800 bg-purple-100/90 px-1.5 py-0.5 rounded mt-1 truncate max-w-full">à¤¶à¤¿à¤•à¥à¤·à¤¾ à¤¸à¤šà¤¿à¤µ â€¢ Edu Sec</span>
+                </div>
+              </div>
+
+              <!-- 6. Legal Advisor -->
+              <div onclick="switchTab('about')" class="bg-stone-50 hover:bg-stone-100 p-3.5 rounded-xl border border-stone-200 hover:border-stone-400 transition-all text-center space-y-2 cursor-pointer group shadow-2xs">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-stone-400 mx-auto shadow-xs bg-white flex items-center justify-center p-1 shrink-0">
+                  <img src="logo.jpg" alt="Adv. Atharva Upadhyay" class="w-full h-full object-contain rounded-full" loading="lazy" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-stone-900 group-hover:text-stone-700 transition-colors truncate">Adv. Atharva Upadhyay</h4>
+                  <p class="text-[10px] text-stone-700 font-hindi font-bold truncate">à¤à¤¡. à¤…à¤¥à¤°à¥à¤µ à¤‰à¤ªà¤¾à¤§à¥à¤¯à¤¾à¤¯</p>
+                  <span class="inline-block text-[9px] font-bold text-stone-800 bg-stone-200/90 px-1.5 py-0.5 rounded mt-1 truncate max-w-full">à¤µà¤¿à¤§à¤¿à¤• à¤¸à¤²à¤¾à¤¹à¤•à¤¾à¤° â€¢ Legal</span>
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
       </section>
 
+      <!-- ======================================================== -->
+      <!-- FRONT SECTION: MEMBERSHIP & CORPORATE DIGITAL ID STUDIO  -->
+      <!-- ======================================================== -->
+      <section id="section-front-membership" class="py-16 sm:py-24 bg-gradient-to-b from-orange-50/40 via-white to-stone-50/60 border-y border-stone-200/90 scroll-mt-20">
+        <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-12">
+          
+          <div class="text-center max-w-3xl mx-auto space-y-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-bold uppercase tracking-wider border border-orange-200">
+              <svg class="w-3.5 h-3.5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+              <span>à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ à¤¸à¤¦à¤¸à¥à¤¯à¤¤à¤¾ à¤à¤µà¤‚ à¤¡à¤¿à¤œà¤¿à¤Ÿà¤² à¤ªà¤¹à¤šà¤¾à¤¨ à¤ªà¤¤à¥à¤° â€¢ Trust Membership</span>
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight">
+              Official Membership &amp; Certified Digital ID Card
+            </h2>
+            <p class="text-xs sm:text-sm md:text-base text-stone-600 leading-relaxed font-medium">
+              Join Sarva Samarpit Sewa Sansthan as an official verified member. Support 24/7 Akhand Bhandara and Free Pathshala schools, receive 80G tax exemptions, and access your high-resolution verified Digital Photo ID Card with anti-counterfeit QR code.
+            </p>
+          </div>
+
+          <!-- 2-Column Responsive Membership Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Left: Membership Tiers & Privileges -->
+            <div class="lg:col-span-7 space-y-5">
+              
+              <!-- Tier 1: Annual Membership -->
+              <div class="bg-white p-5 sm:p-6 rounded-2xl border-2 border-orange-200 shadow-sm hover:border-orange-400 transition-all space-y-3 relative overflow-hidden">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-9 h-9 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-sm">â‚¹</span>
+                    <div>
+                      <h3 class="font-bold text-base text-stone-900">Annual Active Member â€¢ à¤µà¤¾à¤°à¥à¤·à¤¿à¤• à¤¸à¤¦à¤¸à¥à¤¯à¤¤à¤¾</h3>
+                      <p class="text-xs text-orange-700 font-semibold font-hindi">â‚¹1,101 à¤ªà¥à¤°à¤¤à¤¿ à¤µà¤°à¥à¤· â€¢ 80G à¤•à¤° à¤›à¥‚à¤Ÿ à¤®à¤¾à¤¨à¥à¤¯</p>
+                    </div>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-orange-600 text-white font-bold text-xs shadow-2xs">â‚¹1,101 / Year</span>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Full membership credential, active voting and advisory participation in trust welfare meetings, digital receipt, and immediate issuance of certified photo ID card.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-semibold text-stone-700 pt-1">
+                  <span class="px-2 py-0.5 rounded bg-stone-100 border border-stone-200">âœ“ Digital ID Card</span>
+                  <span class="px-2 py-0.5 rounded bg-stone-100 border border-stone-200">âœ“ 80G Tax Exemption</span>
+                  <span class="px-2 py-0.5 rounded bg-stone-100 border border-stone-200">âœ“ Seva Privilege</span>
+                  <span class="px-2 py-0.5 rounded bg-stone-100 border border-stone-200">âœ“ Live QR Verification</span>
+                </div>
+              </div>
+
+              <!-- Tier 2: Life Patron Member -->
+              <div class="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm hover:border-amber-400 transition-all space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">â˜…</span>
+                    <div>
+                      <h3 class="font-bold text-base text-stone-900">Life Patron Member â€¢ à¤†à¤œà¥€à¤µà¤¨ à¤¸à¤‚à¤°à¤•à¥à¤·à¤• à¤¸à¤¦à¤¸à¥à¤¯</h3>
+                      <p class="text-xs text-amber-700 font-semibold font-hindi">â‚¹5,101 à¤†à¤œà¥€à¤µà¤¨ à¤¸à¤¹à¤¯à¥‹à¤— â€¢ à¤¸à¥à¤¥à¤¾à¤¯à¥€ à¤ªà¤¹à¤šà¤¾à¤¨ à¤ªà¤¤à¥à¤°</p>
+                    </div>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-stone-900 text-amber-300 font-bold text-xs shadow-2xs">â‚¹5,101 Lifetime</span>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Permanent lifetime identity card, permanent roll of honor on trust donor plaques, lifetime 80G tax benefit certificate, and permanent invitation to all major festival bhandaras.
+                </p>
+              </div>
+
+              <!-- Quick Membership Action Buttons -->
+              <div class="pt-2 flex flex-wrap items-center gap-3">
+                <button type="button" onclick="openMembershipApplicationModal()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition-transform hover:scale-102 flex items-center gap-2 cursor-pointer">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                  <span>Apply for Membership (â‚¹1,101 à¤¸à¤¦à¤¸à¥à¤¯à¤¤à¤¾ à¤†à¤µà¥‡à¤¦à¤¨)</span>
+                </button>
+                <button onclick="switchTab('membership')" class="px-5 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer">
+                  <span>Open Full ID Card Studio</span>
+                  <svg class="w-4 h-4 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+                <button onclick="openVerifyModal()" class="px-4 py-3 rounded-xl bg-white hover:bg-stone-50 border border-stone-300 text-stone-700 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 cursor-pointer">
+                  <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  <span>Verify ID</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Right: Interactive Live ID Card Showcase Card -->
+            <div class="lg:col-span-5 flex flex-col items-center">
+              <div class="w-full max-w-[340px] bg-white rounded-2xl shadow-xl border-2 border-stone-200 overflow-hidden text-gray-900 transition-all hover:shadow-2xl">
+                <!-- Lanyard Slot -->
+                <div class="w-full flex justify-center pt-2 pb-1 bg-stone-100 border-b border-stone-200">
+                  <div class="w-16 h-1.5 bg-stone-300 rounded-full"></div>
+                </div>
+
+                <!-- Card Header -->
+                <div class="bg-stone-900 text-white px-3.5 pt-2.5 pb-2 border-b-2 border-amber-500 text-center flex flex-col items-center justify-center">
+                  <div class="w-9 h-9 rounded-full border-2 border-amber-400 overflow-hidden bg-white p-0.5 shadow-md mb-1 flex items-center justify-center">
+                    <img src="logo.jpg" alt="Logo" class="w-full h-full object-cover rounded-full" />
+                  </div>
+                  <p class="text-[8.5px] text-amber-300 font-bold uppercase tracking-wider font-hindi leading-tight">à¥¥ à¤®à¤¾à¤¨à¤µ à¤¸à¥‡à¤µà¤¾ à¤¹à¥€ à¤®à¤¾à¤§à¤µ à¤¸à¥‡à¤µà¤¾ à¥¥</p>
+                  <p class="font-bold text-[12px] text-amber-400 font-hindi mt-0.5">à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨</p>
+                  <p class="text-[8.5px] text-stone-300 font-medium leading-tight">Trust Reg: UP/2018/0192847 â€¢ 80G Certified â€¢ Prayagraj</p>
+                </div>
+
+                <!-- Card Body -->
+                <div class="p-3.5 space-y-2.5 bg-stone-50/50">
+                  <div class="flex items-center gap-3">
+                    <div class="w-20 h-24 rounded-xl overflow-hidden border-2 border-stone-300 shadow-sm bg-stone-100 shrink-0">
+                      <img src="images/treasurer.jpg" alt="Member Photo" class="w-full h-full object-cover object-top" />
+                    </div>
+                    <div class="flex-1 min-w-0 space-y-1">
+                      <h4 class="font-bold text-sm text-stone-900 truncate">NAVEEN MISHRA</h4>
+                      <p class="text-[11px] text-orange-700 font-bold font-hindi truncate">à¤¨à¤µà¥€à¤¨ à¤®à¤¿à¤¶à¥à¤°à¤¾ (à¤•à¥‹à¤·à¤¾à¤§à¥à¤¯à¤•à¥à¤·)</p>
+                      <span class="inline-block bg-orange-700 text-white text-[8px] font-bold uppercase px-1.5 py-0.5 rounded shadow-2xs">
+                        TREASURER &amp; FINANCE CONTROLLER
+                      </span>
+                      <p class="text-[10px] text-stone-500 font-medium">NGO ID: <strong class="font-mono text-orange-600 font-bold">SSSS-TRU-000002</strong></p>
+                    </div>
+                  </div>
+
+                  <!-- Details Table -->
+                  <div class="grid grid-cols-2 gap-2 text-[10px] bg-white p-2.5 rounded-lg border border-stone-200">
+                    <div>
+                      <span class="text-stone-400 block text-[9px]">Department:</span>
+                      <span class="font-semibold text-stone-800 truncate block">Finance &amp; 80G Seva</span>
+                    </div>
+                    <div>
+                      <span class="text-stone-400 block text-[9px]">Blood Group:</span>
+                      <span class="font-bold text-red-600">B+</span>
+                    </div>
+                    <div>
+                      <span class="text-stone-400 block text-[9px]">Valid Thru:</span>
+                      <span class="font-semibold text-stone-800">31-Mar-2028</span>
+                    </div>
+                    <div>
+                      <span class="text-stone-400 block text-[9px]">Status:</span>
+                      <span class="font-bold text-emerald-700 bg-emerald-100 px-1 py-0.2 rounded text-[9px]">ACTIVE</span>
+                    </div>
+                  </div>
+
+                  <!-- QR & Trust Stamp -->
+                  <div class="flex items-center justify-between pt-1">
+                    <div class="flex items-center gap-2">
+                      <div class="w-9 h-9 bg-white p-0.5 border border-stone-300 rounded flex items-center justify-center">
+                        <svg class="w-full h-full text-stone-800" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm8-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14-2h4v2h-4v-2zm-6 0h2v4h-2v-4zm2 4h4v2h-4v-2zm2 2h2v2h-2v-2zm-6-2h2v4h-2v-4zm6-6h2v2h-2V8zm-2 2h2v2h-2v-2z"/></svg>
+                      </div>
+                      <span class="text-[9px] text-stone-500 font-mono">Scan to Verify</span>
+                    </div>
+                    <div class="text-right">
+                      <span class="text-[9px] text-amber-700 font-bold block uppercase">Authorized Seal</span>
+                      <span class="text-[8px] text-stone-400">Indian Trusts Act, 1882</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Action on Card -->
+                <div class="p-2.5 bg-stone-100 border-t border-stone-200 text-center">
+                  <button onclick="switchTab('membership')" class="text-xs font-bold text-orange-600 hover:text-orange-700 underline flex items-center justify-center gap-1 mx-auto cursor-pointer">
+                    <span>Generate &amp; Download Your Own Digital ID Card &rarr;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- FRONT SECTION: VOLUNTEER & SEVADAR CORPS                -->
+      <!-- ======================================================== -->
+      <section id="section-front-volunteer" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto scroll-mt-20">
+        <div class="space-y-12">
+          
+          <div class="text-center max-w-3xl mx-auto space-y-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider border border-emerald-200">
+              <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>à¤¸à¥à¤µà¤¯à¤‚à¤¸à¥‡à¤µà¤• à¤ªà¤°à¤¿à¤µà¤¾à¤° â€¢ Join Our Volunteer Sevadar Family</span>
+            </span>
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 tracking-tight leading-tight">
+              Give Your Time, Transform Lives â€” Serve as a Sevadar
+            </h2>
+            <p class="text-xs sm:text-sm md:text-base text-stone-600 leading-relaxed font-medium">
+              à¥¥ à¤®à¤¾à¤¨à¤µ à¤¸à¥‡à¤µà¤¾ à¤¹à¥€ à¤®à¤¾à¤§à¤µ à¤¸à¥‡à¤µà¤¾ à¥¥ Dedicated sevadars are the beating heart of Sarva Samarpit Sewa Sansthan. Whether you can give 2 hours a week or serve full-time during Magh Mela and Kumbh, every hand counts.
+            </p>
+          </div>
+
+          <!-- 4 Volunteer Stream Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Wing 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:border-orange-400 hover:shadow-md transition-all space-y-3 group">
+              <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+                ðŸ›
+              </div>
+              <h3 class="font-bold text-base text-stone-900 group-hover:text-orange-600 transition-colors">
+                1. Annapurna Langar Seva
+              </h3>
+              <p class="text-xs text-orange-700 font-semibold font-hindi">à¤…à¤¨à¥à¤¨à¤ªà¥‚à¤°à¥à¤£à¤¾ à¤°à¤¸à¥‹à¤ˆ à¤à¤µà¤‚ à¤²à¤‚à¤—à¤° à¤¸à¥‡à¤µà¤¾</p>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Vegetable cutting, hot khichdi preparation, packing, and disciplined queue food distribution to pilgrims and the needy at Bade Hanuman Ji Temple Marg.
+              </p>
+            </div>
+
+            <!-- Wing 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:border-blue-400 hover:shadow-md transition-all space-y-3 group">
+              <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+                ðŸ“š
+              </div>
+              <h3 class="font-bold text-base text-stone-900 group-hover:text-blue-600 transition-colors">
+                2. Free Rural Pathshala
+              </h3>
+              <p class="text-xs text-blue-700 font-semibold font-hindi">à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¸à¤¾à¤‚à¤§à¥à¤¯ à¤ªà¤¾à¤ à¤¶à¤¾à¤²à¤¾ à¤à¤µà¤‚ à¤µà¤¿à¤¦à¥à¤¯à¤¾ à¤¦à¤¾à¤¨</p>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Teaching slum children, mentoring mathematics and Hindi, organizing evening homework classes, and distributing free notebooks and stationery.
+              </p>
+            </div>
+
+            <!-- Wing 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:border-emerald-400 hover:shadow-md transition-all space-y-3 group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+                ðŸ©º
+              </div>
+              <h3 class="font-bold text-base text-stone-900 group-hover:text-emerald-600 transition-colors">
+                3. Health Camps &amp; Relief
+              </h3>
+              <p class="text-xs text-emerald-700 font-semibold font-hindi">à¤šà¤¿à¤•à¤¿à¤¤à¥à¤¸à¤¾ à¤¶à¤¿à¤µà¤¿à¤°, à¤”à¤·à¤§à¤¿ à¤à¤µà¤‚ à¤µà¤¸à¥à¤¤à¥à¤° à¤µà¤¿à¤¤à¤°à¤£</p>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Assisting doctors at free health checkup camps, managing medicine dispensaries, conducting winter blanket drives, and sanitary pad distribution.
+              </p>
+            </div>
+
+            <!-- Wing 4 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:border-amber-400 hover:shadow-md transition-all space-y-3 group">
+              <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+                ðŸŒ±
+              </div>
+              <h3 class="font-bold text-base text-stone-900 group-hover:text-amber-600 transition-colors">
+                4. Sangam Ghat &amp; Gau Seva
+              </h3>
+              <p class="text-xs text-amber-700 font-semibold font-hindi">à¤¤à¥à¤°à¤¿à¤µà¥‡à¤£à¥€ à¤˜à¤¾à¤Ÿ à¤¸à¥à¤µà¤šà¥à¤›à¤¤à¤¾ à¤à¤µà¤‚ à¤µà¥ƒà¤•à¥à¤·à¤¾à¤°à¥‹à¤ªà¤£</p>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Cleanliness drives along Ganga-Yamuna banks, plantation of sacred neem &amp; banyan trees, and providing fodder to abandoned cows.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Bottom CTA Banner for Volunteer -->
+          <div class="bg-gradient-to-r from-stone-900 via-stone-900 to-orange-950 text-white rounded-2xl p-6 sm:p-10 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6 border border-stone-800">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-bold uppercase">Certificate of Service</span>
+                <span class="px-2.5 py-0.5 rounded bg-orange-500/20 text-orange-300 border border-orange-400/30 text-[10px] font-bold uppercase">Official Sevadar ID</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Ready to serve society with Sarva Samarpit Sewa Sansthan?</h3>
+              <p class="text-xs sm:text-sm text-stone-300 max-w-xl">
+                Register online today. Our volunteer coordinator will connect with you and onboard you into our active WhatsApp seva groups.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 shrink-0">
+              <button onclick="switchTab('volunteer')" class="px-6 py-3 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                <span>Register as a Volunteer Now</span>
+              </button>
+              <button onclick="switchTab('gallery')" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition-all cursor-pointer">
+                View Seva Moments
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
       <!-- OUR WORK: FOUR STREAMS OF SEVA -->
       <section class="py-16 sm:py-20 bg-stone-100/60 border-y border-stone-200/70">
         <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-12">
@@ -1355,33 +1756,6 @@
 
           </div>
 
-        </div>
-      </section>
-
-      <!-- VOLUNTEER BANNER -->
-      <section class="py-16 sm:py-20 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div class="bg-[#1F1F1F] text-white rounded-lg p-8 sm:p-14 relative overflow-hidden shadow-sm">
-          <div class="max-w-2xl space-y-4 relative z-10">
-            <span class="text-xs font-bold uppercase tracking-wider text-orange-400 bg-orange-950/80 px-3 py-1 rounded-md border border-orange-800/60">
-              Volunteer
-            </span>
-            <h2 class="text-2xl sm:text-4xl font-semibold tracking-tight">
-              Give your time. Receive blessings.
-            </h2>
-            <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
-              Help in the kitchen, at medical camps, during Magh Mela and Kumbh, or with outreach. Any skill, any hour.
-            </p>
-            <div class="flex flex-wrap gap-3 pt-3">
-              <button onclick="switchTab('volunteer')" class="px-6 py-3 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-xs transition-all">
-                Register as volunteer
-              </button>
-              <button onclick="switchTab('membership')" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-all">
-                Become a member
-              </button>
-            </div>
-          </div>
-          
-          <div class="absolute right-0 bottom-0 top-0 w-1/3 opacity-10 bg-gradient-to-l from-orange-500 to-transparent pointer-events-none"></div>
         </div>
       </section>
 
@@ -2229,368 +2603,6 @@
         </div>
       </div>
 
-      <!-- Board of Trustees & Executive Leadership -->
-      <div class="space-y-6">
-        <div class="text-center space-y-2">
-          <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-md border border-orange-200">
-            Trustees &bull; न्यासी एवं प्रबन्ध कार्यकारिणी
-          </span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">Institutional Board of Trustees</h2>
-          <p class="text-xs sm:text-sm text-stone-500 max-w-xl mx-auto">Distinguished community leaders, educators, and social stewards guiding the trust with impeccable integrity.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- 1. Founder & President -->
-          <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-sm flex flex-col items-center text-center space-y-4">
-            <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-orange-200 shadow-sm shrink-0 bg-stone-100">
-              <img src="images/founder.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Pt. Harsh Tiwari - Founder &amp; President" class="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
-            </div>
-            <div class="space-y-1">
-              <span class="text-[11px] font-bold uppercase tracking-wide bg-orange-100 text-orange-800 px-2.5 py-0.5 rounded-full">संस्थापक एवं अध्यक्ष &bull; Founder</span>
-              <h3 class="font-bold text-lg text-stone-900">Pt. Harsh Tiwari</h3>
-              <p class="text-xs font-bold text-orange-700">पं. हर्ष तिवारी</p>
-              <p class="text-xs text-stone-500">Founder &amp; Chief Managing Trustee</p>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Visionary spiritual social worker spearheading 24/7 Akhand Mahaprasad Langar, slum children education drives, and state-wide seva chapters.
-            </p>
-          </div>
-
-          <!-- 2. Chief Patron -->
-          <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-sm flex flex-col items-center text-center space-y-4">
-            <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-amber-200 shadow-sm shrink-0 bg-stone-100 cursor-pointer" onclick="openPatronPhotoModal()" title="Click to view full photo">
-              <img src="images/patron.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Santosh Mishra - Chief Patron" class="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
-            </div>
-            <div class="space-y-1">
-              <span class="text-[11px] font-bold uppercase tracking-wide bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full">मुख्य संरक्षक &bull; Patron</span>
-              <h3 class="font-bold text-lg text-stone-900">Santosh Mishra</h3>
-              <p class="text-xs font-bold text-amber-700">संतोष मिश्रा</p>
-              <p class="text-xs text-stone-500">Chief Patron &amp; Spiritual Mentor</p>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Senior community guide providing overarching ethical guardianship, spiritual vision, and institutional wisdom to the Trust.
-            </p>
-          </div>
-
-          <!-- 3. Treasurer -->
-          <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-sm flex flex-col items-center text-center space-y-4">
-            <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-emerald-200 shadow-sm shrink-0 bg-stone-100">
-              <img src="images/treasurer.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Naveen Mishra - Treasurer" class="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
-            </div>
-            <div class="space-y-1">
-              <span class="text-[11px] font-bold uppercase tracking-wide bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">कोषाध्यक्ष &bull; Treasurer</span>
-              <h3 class="font-bold text-lg text-stone-900">Naveen Mishra</h3>
-              <p class="text-xs font-bold text-emerald-700">नवीन मिश्रा</p>
-              <p class="text-xs text-stone-500">Treasurer &amp; Chief Financial Custodian</p>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Oversees financial governance, statutory tax compliance, audited balances, and ensures every single donation rupee is accounted for.
-            </p>
-          </div>
-
-          <!-- 4. Secretary -->
-          <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-sm flex flex-col items-center text-center space-y-4">
-            <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-blue-200 shadow-sm shrink-0 bg-stone-100 flex items-center justify-center p-2">
-              <img src="logo.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Amit Prakhar Pandey - Secretary" class="w-full h-full object-contain rounded-full" loading="lazy" decoding="async" />
-            </div>
-            <div class="space-y-1">
-              <span class="text-[11px] font-bold uppercase tracking-wide bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">सचिव &bull; Secretary</span>
-              <h3 class="font-bold text-lg text-stone-900">Amit Prakhar Pandey</h3>
-              <p class="text-xs font-bold text-blue-700">अमित प्रखर पाण्डेय</p>
-              <p class="text-xs text-stone-500">General Secretary &amp; Field Operations</p>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Manages daily ground logistics, volunteer corps deployment, emergency relief drives, and coordination with local administration.
-            </p>
-          </div>
-
-          <!-- 5. Education Head -->
-          <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-sm flex flex-col items-center text-center space-y-4">
-            <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-blue-200 shadow-sm shrink-0 bg-stone-100 cursor-pointer" onclick="openEducationPhotoModal()" title="Click to view full photo">
-              <img src="images/education_head.jpg?v=2" onerror="this.onerror=null; this.src='logo.jpg';" alt="Ravindra Nath Tiwari - Education Head" class="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
-            </div>
-            <div class="space-y-1">
-              <span class="text-[11px] font-bold uppercase tracking-wide bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded-full">शिक्षा सचिव &bull; Education Lead</span>
-              <h3 class="font-bold text-lg text-stone-900">Ravindra Nath Tiwari</h3>
-              <p class="text-xs font-bold text-purple-700">रवीन्द्र नाथ तिवारी</p>
-              <p class="text-xs text-stone-500">Head of Educational Initiatives</p>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Leads the free evening coaching centers, curriculum development, distribution of school kits, and youth skill training.
-            </p>
-          </div>
-
-          <!-- 6. Legal Advisor -->
-          <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-sm flex flex-col items-center text-center space-y-4">
-            <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-stone-300 shadow-sm shrink-0 bg-stone-100 flex items-center justify-center p-2">
-              <img src="logo.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Adv. Atharva Upadhyay - Legal Advisor" class="w-full h-full object-contain rounded-full" loading="lazy" decoding="async" />
-            </div>
-            <div class="space-y-1">
-              <span class="text-[11px] font-bold uppercase tracking-wide bg-stone-100 text-stone-800 px-2.5 py-0.5 rounded-full">विधिक सलाहकार &bull; Legal Counsel</span>
-              <h3 class="font-bold text-lg text-stone-900">Adv. Atharva Upadhyay</h3>
-              <p class="text-xs font-bold text-stone-700">एड. अथर्व उपाध्याय</p>
-              <p class="text-xs text-stone-500">Legal Advisor &amp; Compliance Officer</p>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Ensures statutory governance under Indian Trusts Act, regulatory filings, intellectual property rights, and donor privacy compliance.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Financial Transparency & Audit Compliance -->
-      <div class="bg-orange-50/70 border border-orange-200 rounded-2xl p-6 sm:p-8 space-y-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-orange-600 text-white flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-stone-900">Statutory Transparency &amp; CA Audited Integrity</h3>
-            <p class="text-xs text-stone-600">Every single rupee entrusted by donors is spent with audited responsibility.</p>
-          </div>
-        </div>
-        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
-          The financial accounts of Sarva Samarpit Sewa Sansthan are independently audited at the conclusion of each financial year by licensed Chartered Accountants in accordance with the Standards on Auditing issued by the Institute of Chartered Accountants of India (ICAI). All donations received are digitally credited into the trust's scheduled bank accounts and accompanied by instant 80G receipts and Form 10BD filings.
-        </p>
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <button onclick="switchTab('donate')" class="px-5 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-xs">
-            Donate with 80G Tax Exemption &rarr;
-          </button>
-          <button onclick="switchTab('volunteer')" class="px-5 py-2.5 rounded-lg bg-white hover:bg-orange-50 text-orange-700 font-bold text-xs border border-orange-300">
-            Join as Volunteer &rarr;
-          </button>
-          <button onclick="switchTab('contact')" class="px-5 py-2.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-xs">
-            Contact Head Office Prayagraj &rarr;
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- 4. VISION & MISSION TAB                    -->
-    <!-- ========================================== -->
-    <div id="tab-vision" class="page-view hidden py-10 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
-      <!-- Standardized Universal Back & Home Navigation Bar -->
-      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
-        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
-        </button>
-        <div class="flex items-center gap-2">
-          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
-          </button>
-          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="text-center space-y-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-md border border-orange-200">
-          Guiding Principles &bull; मार्गदर्शक सिद्धांत
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">Our Mission &amp; Vision</h2>
-        <p class="text-base sm:text-lg font-serif italic text-orange-800 max-w-2xl mx-auto pt-1">
-          &ldquo;Service for every person, dignity in every life, and progress for every community.&rdquo;
-        </p>
-      </div>
-
-      <!-- Core Mission & Vision 2-Column Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Mission Card -->
-        <div class="bg-gradient-to-br from-white to-orange-50/40 p-8 sm:p-10 rounded-lg border border-orange-200/90 shadow-sm space-y-5">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-orange-600 text-white flex items-center justify-center shadow-sm">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><circle cx="12" cy="12" r="6" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
-            </div>
-            <div>
-              <span class="text-[11px] font-semibold uppercase text-orange-600 tracking-wider">Our Sacred Pledge</span>
-              <h3 class="text-2xl font-semibold text-stone-900 tracking-tight">Our Mission</h3>
-            </div>
-          </div>
-          <p class="text-base sm:text-lg text-stone-800 leading-relaxed font-medium bg-white p-5 rounded-lg border border-orange-100 shadow-2xs">
-            &ldquo;To empower every section of society through service, education, and values, and to build a healthy, educated, self-reliant, and compassionate society.&rdquo;
-          </p>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
-            Rooted at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, our mission is to eliminate poverty-driven illiteracy, food insecurity, and social deprivation through unceasing selfless service.
-          </p>
-        </div>
-
-        <!-- Vision Card -->
-        <div class="bg-gradient-to-br from-white to-amber-50/40 p-8 sm:p-10 rounded-lg border border-amber-200/90 shadow-sm space-y-5">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-amber-600 text-white flex items-center justify-center shadow-sm">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M18.364 18.364l-1.414-1.414M7.05 7.05L5.636 5.636M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            </div>
-            <div>
-              <span class="text-[11px] font-semibold uppercase text-amber-700 tracking-wider">Our Long-Term Horizon</span>
-              <h3 class="text-2xl font-semibold text-stone-900 tracking-tight">Our Vision</h3>
-            </div>
-          </div>
-          <p class="text-base sm:text-lg text-stone-800 leading-relaxed font-medium bg-white p-5 rounded-lg border border-amber-100 shadow-2xs">
-            &ldquo;To work towards a Hunger-Free and Educated India by ensuring access to food, education, and essential support for every individual in need.&rdquo;
-          </p>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
-            We envision an India where no child is deprived of education, no family sleeps hungry near sacred pilgrimages, and seva is embraced by every citizen as a timeless duty.
-          </p>
-        </div>
-      </div>
-
-      <!-- Key Focus Areas Strip -->
-      <div class="bg-white p-8 sm:p-10 rounded-lg border border-stone-200 shadow-sm space-y-6">
-        <div class="text-center space-y-1">
-          <span class="text-xs font-bold uppercase tracking-wider text-orange-600">Core Strategic Pillars</span>
-          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">Our Key Focus Areas (प्रमुख कार्यक्षेत्र)</h3>
-          <p class="text-xs text-stone-500 max-w-xl mx-auto">
-            The fundamental seven dimensions through which Sarva Samarpit Sewa Sansthan creates enduring ground-level impact:
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-2">
-          <!-- 1. Education & Knowledge -->
-          <div onclick="switchTab('free-education')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
-            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-            </div>
-            <h4 class="font-semibold text-stone-900 text-base">Education &amp; Knowledge</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">Free evening pathshalas, distribution of school kits, stationery, uniforms, and moral values coaching for slum and village children.</p>
-          </div>
-
-          <!-- 2. Service & Support for the Needy -->
-          <div onclick="switchTab('food-distribution')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
-            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            </div>
-            <h4 class="font-semibold text-stone-900 text-base">Service &amp; Support for Needy</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">24-hour Akhand Annapurna Langar at Shree Bade Hanuman Ji Temple, warm winter blankets, clothing drives, and disaster relief.</p>
-          </div>
-
-          <!-- 3. Healthcare & Community Welfare -->
-          <div onclick="switchTab('social-welfare')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
-            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            </div>
-            <h4 class="font-semibold text-stone-900 text-base">Healthcare &amp; Welfare</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">Regular free medical awareness camps, diagnostic checkups, doctor consultations, and distribution of essential medicines.</p>
-          </div>
-
-          <!-- 4. Women & Child Empowerment -->
-          <div onclick="switchTab('social-welfare')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
-            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-            </div>
-            <h4 class="font-semibold text-stone-900 text-base">Women &amp; Child Empowerment</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">Sanitary pad distribution drives, menstrual hygiene education, nutritional support for mothers, and self-defense &amp; skill training.</p>
-          </div>
-
-          <!-- 5. Environmental Protection -->
-          <div onclick="switchTab('social-welfare')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
-            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-            </div>
-            <h4 class="font-semibold text-stone-900 text-base">Environmental Protection</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">Mass tree plantation drives along the Sangam banks and rural belts, river cleaning, plastic awareness, and water conservation.</p>
-          </div>
-
-          <!-- 6. Social Harmony & Humanity -->
-          <div onclick="switchTab('religious-activities')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
-            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
-            </div>
-            <h4 class="font-semibold text-stone-900 text-base">Social Harmony &amp; Humanity</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">Promoting universal brotherhood (&ldquo;Vasudhaiva Kutumbakam&rdquo;), inter-community solidarity, and marriage support for needy families.</p>
-          </div>
-
-          <!-- 7. Contribution towards Nation Building -->
-          <div onclick="switchTab('about')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group sm:col-span-2 lg:col-span-1 xl:col-span-2">
-            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10zm4 4v3m4-3v3m4-3v3"/></svg>
-            </div>
-            <h4 class="font-semibold text-stone-900 text-base">Nation Building (राष्ट्र निर्माण)</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">Fostering active citizenship, patriotic youth leadership, cultural heritage preservation, and selfless dedication to building a developed, self-reliant India (Atmanirbhar Bharat).</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- 5. FOUNDER MESSAGE TAB                     -->
-    <!-- ========================================== -->
-    <div id="tab-founder" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
-      <!-- Standardized Universal Back & Home Navigation Bar -->
-      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
-        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
-        </button>
-        <div class="flex items-center gap-2">
-          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
-          </button>
-          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
-          </button>
-        </div>
-      </div>
-      <div class="text-center space-y-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-md">
-          Message from the Founder
-        </span>
-        <h2 class="text-3xl font-semibold text-gray-900">Sewa As The Highest Form of Worship</h2>
-      </div>
-
-      <div class="bg-white p-8 sm:p-12 rounded-lg border border-stone-200 shadow-sm space-y-6 text-sm text-gray-700 leading-relaxed">
-        <blockquote class="text-xl sm:text-2xl font-serif italic text-orange-700 border-l-4 border-orange-500 pl-4 py-1">
-          “Sewa is the highest form of worship. When we serve people, we serve the divine.”
-        </blockquote>
-        <p>
-          Dear Devotees, Well-Wishers, and Volunteers,
-        </p>
-        <p>
-          When you stand on the banks of Triveni Sangam, where the holy Ganga, Yamuna, and mystical Saraswati merge, you experience the timeless pulse of Bharat. Here, millions arrive in search of spiritual peace. Yet, among them are also those shivering in winter nights without a blanket, those who have traveled hundreds of miles on empty stomachs, and elderly pilgrims unable to afford basic medicines.
-        </p>
-        <p>
-          It was from this sacred realization that <strong>Sarva Samarpit Sewa Sansthan</strong> took birth. Our mission is pure: to be the hands that feed, the medicine that cures, and the warmth that consoles.
-        </p>
-        <p>
-          I invite each one of you to join hands with us. May the blessings of Shree Bade Hanuman Ji protect and inspire you and your family.
-        </p>
-        <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div class="flex items-center gap-3.5">
-            <div class="w-14 h-14 rounded-lg overflow-hidden border-2 border-orange-500 shadow-md shrink-0 cursor-pointer" onclick="openFounderPhotoModal()" title="View full photo">
-              <img loading="lazy" decoding="async" src="images/founder.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Pt. Harsh Tiwari" class="w-full h-full object-cover object-top" />
-            </div>
-            <div>
-              <h4 class="font-semibold text-base text-gray-900">Pt. Harsh Tiwari <span class="text-xs font-semibold text-stone-500">(पं. हर्ष तिवारी)</span></h4>
-              <p class="text-xs text-orange-600 font-bold">Founder &amp; Chief Managing Trustee</p>
-              <p class="text-[11px] text-gray-500">Sarva Samarpit Sewa Sansthan, Prayagraj</p>
-            </div>
-          </div>
-          <button onclick="switchTab('donate')" class="px-5 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow transition-all self-start sm:self-auto">
-            Contribute to Seva &rarr;
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- 6. TRUSTEES & EXECUTIVE BODY TAB           -->
-    <!-- ========================================== -->
-    <div id="tab-trustees" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
-      <!-- Standardized Universal Back & Home Navigation Bar -->
-      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
-        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
-          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
-        </button>
-        <div class="flex items-center gap-2">
-          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
-          </button>
-          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
-          </button>
-        </div>
-      </div>
-      
       <!-- Top Overview Header & Quick Jump Navigation -->
       <div class="text-center space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1.5 rounded-md border border-orange-200">
@@ -2903,9 +2915,241 @@
           </div>
         </div>
       </div>
-
+      <!-- Financial Transparency & Audit Compliance -->
+      <div class="bg-orange-50/70 border border-orange-200 rounded-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-orange-600 text-white flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">Statutory Transparency &amp; CA Audited Integrity</h3>
+            <p class="text-xs text-stone-600">Every single rupee entrusted by donors is spent with audited responsibility.</p>
+          </div>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+          The financial accounts of Sarva Samarpit Sewa Sansthan are independently audited at the conclusion of each financial year by licensed Chartered Accountants in accordance with the Standards on Auditing issued by the Institute of Chartered Accountants of India (ICAI). All donations received are digitally credited into the trust's scheduled bank accounts and accompanied by instant 80G receipts and Form 10BD filings.
+        </p>
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <button onclick="switchTab('donate')" class="px-5 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-xs">
+            Donate with 80G Tax Exemption &rarr;
+          </button>
+          <button onclick="switchTab('volunteer')" class="px-5 py-2.5 rounded-lg bg-white hover:bg-orange-50 text-orange-700 font-bold text-xs border border-orange-300">
+            Join as Volunteer &rarr;
+          </button>
+          <button onclick="switchTab('contact')" class="px-5 py-2.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-xs">
+            Contact Head Office Prayagraj &rarr;
+          </button>
+        </div>
+      </div>
     </div>
 
+    <!-- ========================================== -->
+    <!-- 4. VISION & MISSION TAB                    -->
+    <!-- ========================================== -->
+    <div id="tab-vision" class="page-view hidden py-10 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
+      <!-- Standardized Universal Back & Home Navigation Bar -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-md border border-orange-200">
+          Guiding Principles &bull; मार्गदर्शक सिद्धांत
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">Our Mission &amp; Vision</h2>
+        <p class="text-base sm:text-lg font-serif italic text-orange-800 max-w-2xl mx-auto pt-1">
+          &ldquo;Service for every person, dignity in every life, and progress for every community.&rdquo;
+        </p>
+      </div>
+
+      <!-- Core Mission & Vision 2-Column Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Mission Card -->
+        <div class="bg-gradient-to-br from-white to-orange-50/40 p-8 sm:p-10 rounded-lg border border-orange-200/90 shadow-sm space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-lg bg-orange-600 text-white flex items-center justify-center shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><circle cx="12" cy="12" r="6" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <span class="text-[11px] font-semibold uppercase text-orange-600 tracking-wider">Our Sacred Pledge</span>
+              <h3 class="text-2xl font-semibold text-stone-900 tracking-tight">Our Mission</h3>
+            </div>
+          </div>
+          <p class="text-base sm:text-lg text-stone-800 leading-relaxed font-medium bg-white p-5 rounded-lg border border-orange-100 shadow-2xs">
+            &ldquo;To empower every section of society through service, education, and values, and to build a healthy, educated, self-reliant, and compassionate society.&rdquo;
+          </p>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Rooted at Shree Bade Hanuman Ji Temple, Sangam Marg, Prayagraj, our mission is to eliminate poverty-driven illiteracy, food insecurity, and social deprivation through unceasing selfless service.
+          </p>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="bg-gradient-to-br from-white to-amber-50/40 p-8 sm:p-10 rounded-lg border border-amber-200/90 shadow-sm space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-lg bg-amber-600 text-white flex items-center justify-center shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M18.364 18.364l-1.414-1.414M7.05 7.05L5.636 5.636M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <div>
+              <span class="text-[11px] font-semibold uppercase text-amber-700 tracking-wider">Our Long-Term Horizon</span>
+              <h3 class="text-2xl font-semibold text-stone-900 tracking-tight">Our Vision</h3>
+            </div>
+          </div>
+          <p class="text-base sm:text-lg text-stone-800 leading-relaxed font-medium bg-white p-5 rounded-lg border border-amber-100 shadow-2xs">
+            &ldquo;To work towards a Hunger-Free and Educated India by ensuring access to food, education, and essential support for every individual in need.&rdquo;
+          </p>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            We envision an India where no child is deprived of education, no family sleeps hungry near sacred pilgrimages, and seva is embraced by every citizen as a timeless duty.
+          </p>
+        </div>
+      </div>
+
+      <!-- Key Focus Areas Strip -->
+      <div class="bg-white p-8 sm:p-10 rounded-lg border border-stone-200 shadow-sm space-y-6">
+        <div class="text-center space-y-1">
+          <span class="text-xs font-bold uppercase tracking-wider text-orange-600">Core Strategic Pillars</span>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900">Our Key Focus Areas (प्रमुख कार्यक्षेत्र)</h3>
+          <p class="text-xs text-stone-500 max-w-xl mx-auto">
+            The fundamental seven dimensions through which Sarva Samarpit Sewa Sansthan creates enduring ground-level impact:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-2">
+          <!-- 1. Education & Knowledge -->
+          <div onclick="switchTab('free-education')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
+            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <h4 class="font-semibold text-stone-900 text-base">Education &amp; Knowledge</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Free evening pathshalas, distribution of school kits, stationery, uniforms, and moral values coaching for slum and village children.</p>
+          </div>
+
+          <!-- 2. Service & Support for the Needy -->
+          <div onclick="switchTab('food-distribution')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
+            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <h4 class="font-semibold text-stone-900 text-base">Service &amp; Support for Needy</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">24-hour Akhand Annapurna Langar at Shree Bade Hanuman Ji Temple, warm winter blankets, clothing drives, and disaster relief.</p>
+          </div>
+
+          <!-- 3. Healthcare & Community Welfare -->
+          <div onclick="switchTab('social-welfare')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
+            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </div>
+            <h4 class="font-semibold text-stone-900 text-base">Healthcare &amp; Welfare</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Regular free medical awareness camps, diagnostic checkups, doctor consultations, and distribution of essential medicines.</p>
+          </div>
+
+          <!-- 4. Women & Child Empowerment -->
+          <div onclick="switchTab('social-welfare')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
+            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <h4 class="font-semibold text-stone-900 text-base">Women &amp; Child Empowerment</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Sanitary pad distribution drives, menstrual hygiene education, nutritional support for mothers, and self-defense &amp; skill training.</p>
+          </div>
+
+          <!-- 5. Environmental Protection -->
+          <div onclick="switchTab('social-welfare')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
+            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            </div>
+            <h4 class="font-semibold text-stone-900 text-base">Environmental Protection</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Mass tree plantation drives along the Sangam banks and rural belts, river cleaning, plastic awareness, and water conservation.</p>
+          </div>
+
+          <!-- 6. Social Harmony & Humanity -->
+          <div onclick="switchTab('religious-activities')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group">
+            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
+            </div>
+            <h4 class="font-semibold text-stone-900 text-base">Social Harmony &amp; Humanity</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Promoting universal brotherhood (&ldquo;Vasudhaiva Kutumbakam&rdquo;), inter-community solidarity, and marriage support for needy families.</p>
+          </div>
+
+          <!-- 7. Contribution towards Nation Building -->
+          <div onclick="switchTab('about')" class="p-5 rounded-lg bg-white border border-stone-200 hover:border-stone-400 hover:shadow-xs transition-all cursor-pointer space-y-2 group sm:col-span-2 lg:col-span-1 xl:col-span-2">
+            <div class="w-9 h-9 rounded-md bg-stone-100 text-stone-700 flex items-center justify-center mb-1 group-hover:bg-orange-50 group-hover:text-orange-700 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10zm4 4v3m4-3v3m4-3v3"/></svg>
+            </div>
+            <h4 class="font-semibold text-stone-900 text-base">Nation Building (राष्ट्र निर्माण)</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">Fostering active citizenship, patriotic youth leadership, cultural heritage preservation, and selfless dedication to building a developed, self-reliant India (Atmanirbhar Bharat).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 5. FOUNDER MESSAGE TAB                     -->
+    <!-- ========================================== -->
+    <div id="tab-founder" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-8">
+      <!-- Standardized Universal Back & Home Navigation Bar -->
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label">Back</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
+          </button>
+          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+          </button>
+        </div>
+      </div>
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-md">
+          Message from the Founder
+        </span>
+        <h2 class="text-3xl font-semibold text-gray-900">Sewa As The Highest Form of Worship</h2>
+      </div>
+
+      <div class="bg-white p-8 sm:p-12 rounded-lg border border-stone-200 shadow-sm space-y-6 text-sm text-gray-700 leading-relaxed">
+        <blockquote class="text-xl sm:text-2xl font-serif italic text-orange-700 border-l-4 border-orange-500 pl-4 py-1">
+          “Sewa is the highest form of worship. When we serve people, we serve the divine.”
+        </blockquote>
+        <p>
+          Dear Devotees, Well-Wishers, and Volunteers,
+        </p>
+        <p>
+          When you stand on the banks of Triveni Sangam, where the holy Ganga, Yamuna, and mystical Saraswati merge, you experience the timeless pulse of Bharat. Here, millions arrive in search of spiritual peace. Yet, among them are also those shivering in winter nights without a blanket, those who have traveled hundreds of miles on empty stomachs, and elderly pilgrims unable to afford basic medicines.
+        </p>
+        <p>
+          It was from this sacred realization that <strong>Sarva Samarpit Sewa Sansthan</strong> took birth. Our mission is pure: to be the hands that feed, the medicine that cures, and the warmth that consoles.
+        </p>
+        <p>
+          I invite each one of you to join hands with us. May the blessings of Shree Bade Hanuman Ji protect and inspire you and your family.
+        </p>
+        <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-14 h-14 rounded-lg overflow-hidden border-2 border-orange-500 shadow-md shrink-0 cursor-pointer" onclick="openFounderPhotoModal()" title="View full photo">
+              <img loading="lazy" decoding="async" src="images/founder.jpg" onerror="this.onerror=null; this.src='logo.jpg';" alt="Pt. Harsh Tiwari" class="w-full h-full object-cover object-top" />
+            </div>
+            <div>
+              <h4 class="font-semibold text-base text-gray-900">Pt. Harsh Tiwari <span class="text-xs font-semibold text-stone-500">(पं. हर्ष तिवारी)</span></h4>
+              <p class="text-xs text-orange-600 font-bold">Founder &amp; Chief Managing Trustee</p>
+              <p class="text-[11px] text-gray-500">Sarva Samarpit Sewa Sansthan, Prayagraj</p>
+            </div>
+          </div>
+          <button onclick="switchTab('donate')" class="px-5 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow transition-all self-start sm:self-auto">
+            Contribute to Seva &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
     <!-- ========================================== -->
     <!-- 7. SEVA PROJECTS TABS                      -->
     <!-- ========================================== -->
@@ -11739,20 +11983,43 @@
     function switchTab(tabId, pushHistory = true) {
       if (tabId === 'executive-committee' || tabId === 'main-body') {
         document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
-        const active = document.getElementById('tab-trustees');
+        const active = document.getElementById('tab-about');
         if (active) active.classList.remove('hidden');
         if (pushHistory) {
-          if (tabHistory.length === 0 || tabHistory[tabHistory.length - 1] !== 'trustees') {
-            tabHistory.push('trustees');
+          if (tabHistory.length === 0 || tabHistory[tabHistory.length - 1] !== 'about') {
+            tabHistory.push('about');
           }
           try {
-            if (window.location.hash !== '#trustees') {
-              history.pushState({ tab: 'trustees' }, '', '#trustees');
+            if (window.location.hash !== '#about') {
+              history.pushState({ tab: 'about' }, '', '#about');
             }
           } catch(e) {}
         }
         setTimeout(() => {
           const target = document.getElementById('section-main-body');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 80);
+        return;
+      }
+
+      if (tabId === 'trustees' || tabId === 'founder-trustees') {
+        document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
+        const active = document.getElementById('tab-about');
+        if (active) active.classList.remove('hidden');
+        if (pushHistory) {
+          if (tabHistory.length === 0 || tabHistory[tabHistory.length - 1] !== 'about') {
+            tabHistory.push('about');
+          }
+          try {
+            if (window.location.hash !== '#about') {
+              history.pushState({ tab: 'about' }, '', '#about');
+            }
+          } catch(e) {}
+        }
+        setTimeout(() => {
+          const target = document.getElementById('section-founder');
           if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
           }
