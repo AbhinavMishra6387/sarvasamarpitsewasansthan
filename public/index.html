@@ -517,8 +517,8 @@
         </div>
 
         <!-- Direct Nav Links -->
-        <a href="#membership" onclick="switchTab('membership')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Membership" data-lang-hi="सदस्यता">सदस्यता</a>
-        <a href="#volunteer" onclick="switchTab('volunteer')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक">स्वयंसेवक</a>
+        <button type="button" onclick="event.preventDefault(); switchTab('membership')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi cursor-pointer" data-lang-en="Membership" data-lang-hi="सदस्यता">सदस्यता</button>
+        <button type="button" onclick="event.preventDefault(); switchTab('volunteer')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi cursor-pointer" data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक">स्वयंसेवक</button>
         <a href="#gallery" onclick="switchTab('gallery')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Gallery" data-lang-hi="सेवा दर्शन">सेवा दर्शन</a>
         <a href="#contact" onclick="switchTab('contact')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Contact" data-lang-hi="संपर्क">संपर्क</a>
         <a href="#profile" onclick="switchTab('profile')" class="px-3 py-1.5 rounded-lg text-orange-700 hover:text-orange-800 bg-orange-50 hover:bg-orange-100 transition-all font-bold flex items-center gap-1.5 border border-orange-200">
@@ -676,18 +676,18 @@
         <div class="pt-3 border-t border-stone-100">
           <p class="text-[10px] font-semibold uppercase tracking-wider text-stone-400 mb-2">Identity &amp; Volunteer Hub</p>
           <div class="grid grid-cols-2 gap-2">
-            <a href="#membership" onclick="switchTab('membership'); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg bg-purple-50 text-purple-900 border border-purple-200 font-bold flex items-center gap-1.5 cursor-pointer">
+            <button type="button" onclick="event.preventDefault(); switchTab('membership'); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg bg-purple-50 text-purple-900 border border-purple-200 font-bold flex items-center gap-1.5 cursor-pointer w-full font-hindi" data-lang-en="Membership &amp; ID" data-lang-hi="सदस्यता एवं पहचान पत्र">
               <svg class="w-4 h-4 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="10" r="2.5" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 16c0-1.657 1.343-2.5 3-2.5s3 .843 3 2.5M15 9h3M15 13h3M15 16h2"/></svg>
               <span>Membership &amp; ID</span>
-            </a>
+            </button>
             <button onclick="openVerifyModal(); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-200 font-bold flex items-center gap-1.5 cursor-pointer">
               <svg class="w-4 h-4 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M15 9h2M15 15h2"/></svg>
               <span>Verify ID</span>
             </button>
-            <a href="#volunteer" onclick="switchTab('volunteer'); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg hover:bg-stone-100 text-stone-700 font-semibold flex items-center gap-1.5 cursor-pointer">
+            <button type="button" onclick="event.preventDefault(); switchTab('volunteer'); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg hover:bg-stone-100 text-stone-700 font-semibold flex items-center gap-1.5 cursor-pointer w-full font-hindi" data-lang-en="Volunteer Join" data-lang-hi="स्वयंसेवक बनें">
               <svg class="w-4 h-4 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
               <span>Volunteer Join</span>
-            </a>
+            </button>
             <a href="#login" onclick="switchTab('login'); closeMobileNav()" class="text-left py-2.5 px-3 rounded-lg hover:bg-stone-100 text-stone-700 font-semibold flex items-center gap-1.5 cursor-pointer">
               <svg class="w-4 h-4 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
               <span>Officer Portal</span>
@@ -867,6 +867,14 @@
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                 <span data-lang-en="Donate for seva &rarr;" data-lang-hi="सेवा हेतु दान करें &rarr;">Donate for seva &rarr;</span>
               </button>
+              <button type="button" onclick="switchTab('membership')" class="px-5 py-3.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-900 font-bold text-sm border border-orange-200 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer font-hindi" data-lang-en="Membership" data-lang-hi="सदस्यता">
+                <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+                <span data-lang-en="Membership" data-lang-hi="सदस्यता">सदस्यता</span>
+              </button>
+              <button type="button" onclick="switchTab('volunteer')" class="px-5 py-3.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-sm border border-stone-300 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer font-hindi" data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक बनें">
+                <svg class="w-4 h-4 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                <span data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक बनें">स्वयंसेवक बनें</span>
+              </button>
               <button onclick="scrollToFrontAbout()" class="px-7 py-3.5 rounded-lg bg-white hover:bg-stone-50 text-gray-800 font-bold text-sm border border-stone-300 shadow-sm transition-all cursor-pointer" data-lang-en="Our story" data-lang-hi="हमारी गाथा">
                 Our story
               </button>
@@ -896,8 +904,8 @@
               <svg class="w-3.5 h-3.5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
               <span data-lang-en="Trust Membership &amp; Digital ID • संस्थान सदस्यता" data-lang-hi="संस्थान सदस्यता एवं डिजिटल पहचान पत्र">संस्थान सदस्यता एवं डिजिटल पहचान पत्र • Trust Membership</span>
             </span>
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight" data-lang-en="Official Membership &amp; Certified Digital ID Card" data-lang-hi="आधिकारिक सदस्यता एवं प्रमाणित डिजिटल पहचान पत्र">
-              <a href="#membership" onclick="switchTab('membership')" class="hover:text-orange-600 transition-colors cursor-pointer font-hindi">आधिकारिक सदस्यता एवं प्रमाणित डिजिटल पहचान पत्र</a>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight font-hindi">
+              <button type="button" onclick="switchTab('membership')" class="hover:text-orange-600 transition-colors cursor-pointer text-left font-hindi bg-transparent border-0 p-0" data-lang-en="Official Membership &amp; Certified Digital ID Card" data-lang-hi="आधिकारिक सदस्यता एवं प्रमाणित डिजिटल पहचान पत्र">आधिकारिक सदस्यता एवं प्रमाणित डिजिटल पहचान पत्र</button>
             </h2>
             <p class="text-xs sm:text-sm md:text-base text-stone-600 leading-relaxed font-medium" data-lang-en="Join Sarva Samarpit Sewa Sansthan as an official verified member. Support 24/7 Akhand Bhandara and Free Pathshala schools, receive 80G tax exemptions, and access your high-resolution verified Digital Photo ID Card with anti-counterfeit QR code." data-lang-hi="सर्व समर्पित सेवा संस्थान के अधिकृत सदस्य बनें। 24/7 अखंड लंगर एवं निःशुल्क पाठशालाओं में सहयोग करें, 80G कर छूट प्राप्त करें, और लाइव क्यूआर कोड सत्यापन युक्त डिजिटल फोटो पहचान पत्र प्राप्त करें।">
               सर्व समर्पित सेवा संस्थान के अधिकृत सदस्य बनें। 24/7 अखंड लंगर एवं निःशुल्क पाठशालाओं में सहयोग करें, 80G कर छूट प्राप्त करें, और लाइव क्यूआर कोड सत्यापन युक्त डिजिटल फोटो पहचान पत्र प्राप्त करें।
@@ -956,10 +964,11 @@
                   <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                   <span data-lang-en="Apply for Membership (&#8377;1,101)" data-lang-hi="सदस्यता आवेदन करें (&#8377;1,101)" class="font-hindi">सदस्यता आवेदन करें (&#8377;1,101)</span>
                 </button>
-                <button onclick="switchTab('membership')" class="px-5 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer">
+                <button type="button" onclick="switchTab('membership')" class="px-5 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer">
                   <span data-lang-en="Open Full ID Card Studio" data-lang-hi="पहचान पत्र स्टूडियो खोलें" class="font-hindi">पहचान पत्र स्टूडियो खोलें</span>
                   <svg class="w-4 h-4 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </button>
+                <button type="button" onclick="switchTab('volunteer')" class="px-5 py-3 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer font-hindi" data-lang-en="Join as Volunteer" data-lang-hi="स्वयंसेवक बनें">                   <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>                   <span data-lang-en="Join as Volunteer" data-lang-hi="स्वयंसेवक बनें">स्वयंसेवक बनें</span>                 </button>
                 <button onclick="openVerifyModal()" class="px-4 py-3 rounded-xl bg-white hover:bg-stone-50 border border-stone-300 text-stone-700 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 cursor-pointer">
                   <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                   <span data-lang-en="Verify ID" data-lang-hi="आईडी सत्यापन" class="font-hindi">आईडी सत्यापन</span>
@@ -1348,6 +1357,10 @@
                 <button type="button" onclick="openMembershipApplicationModal()" class="px-4 py-2 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs rounded-xl shadow-xs transition-transform hover:scale-102 flex items-center gap-1.5 cursor-pointer">
                   <span>+</span>
                   <span data-lang-en="Apply for Membership (₹1,101)" data-lang-hi="सदस्यता हेतु आवेदन करें">Apply for Membership (₹1,101)</span>
+                </button>
+                <button type="button" onclick="switchTab('volunteer')" class="px-3.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-300 text-stone-800 font-bold text-xs rounded-xl transition-all cursor-pointer flex items-center gap-1.5 font-hindi" data-lang-en="Become Volunteer" data-lang-hi="स्वयंसेवक बनें">
+                  <svg class="w-3.5 h-3.5 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                  <span data-lang-en="Become Volunteer" data-lang-hi="स्वयंसेवक बनें">स्वयंसेवक बनें</span>
                 </button>
                 <button type="button" onclick="openVerifyModal()" class="px-3.5 py-2 bg-white hover:bg-stone-50 border border-stone-300 text-stone-700 font-bold text-xs rounded-xl transition-all cursor-pointer">
                   <span data-lang-en="Verify ID" data-lang-hi="आईडी जांचें">Verify ID</span>
@@ -2142,8 +2155,8 @@
               <button onclick="switchTab('donate')" class="px-5 py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-xs">
                 Donate now
               </button>
-              <button onclick="switchTab('volunteer')" class="px-5 py-2.5 rounded-lg bg-white hover:bg-orange-50 text-orange-700 font-bold text-xs border border-orange-300">
-                Become a volunteer
+              <button type="button" onclick="switchTab('volunteer')" class="px-5 py-2.5 rounded-lg bg-white hover:bg-orange-50 text-orange-700 font-bold text-xs border border-orange-300 cursor-pointer font-hindi" data-lang-en="Become a volunteer" data-lang-hi="स्वयंसेवक बनें">
+                <span data-lang-en="Become a volunteer" data-lang-hi="स्वयंसेवक बनें">स्वयंसेवक बनें</span>
               </button>
             </div>
           </div>
@@ -11996,9 +12009,9 @@
           <h4 class="text-white font-bold text-xs uppercase tracking-wider">Media &amp; Connect</h4>
           <ul class="space-y-2 text-xs">
             <li><a href="#gallery" onclick="switchTab('gallery')" class="hover:text-white transition-colors">Photo Gallery</a></li>
-            <li><a href="#volunteer" onclick="switchTab('volunteer')" class="hover:text-white transition-colors">Volunteer</a></li>
+            <li><button type="button" onclick="event.preventDefault(); switchTab('volunteer')" class="hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0 text-left text-xs font-normal" data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक">Volunteer</button></li>
             <li><a href="#profile" onclick="switchTab('profile')" class="hover:text-white transition-colors text-orange-400 font-semibold">My Profile &amp; Socials</a></li>
-            <li><a href="#membership" onclick="switchTab('membership')" class="hover:text-white transition-colors">Membership &amp; ID Card</a></li>
+            <li><button type="button" onclick="event.preventDefault(); switchTab('membership')" class="hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0 text-left text-xs font-normal" data-lang-en="Membership &amp; ID Card" data-lang-hi="सदस्यता एवं पहचान पत्र">Membership &amp; ID Card</button></li>
             <li><a href="#donate" onclick="switchTab('donate')" class="hover:text-white transition-colors">Donate</a></li>
             <li><a href="#contact" onclick="switchTab('contact')" class="hover:text-white transition-colors">Contact</a></li>
           </ul>
@@ -12151,10 +12164,13 @@
 
       if (tabId === 'membership') {
         if (typeof initIdCardDisplay === 'function') initIdCardDisplay();
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        setTimeout(() => window.scrollTo(0, 0), 25);
       }
 
       if (tabId === 'volunteer') {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        setTimeout(() => window.scrollTo(0, 0), 25);
       }
 
       if (tabId === 'admin') {
@@ -12166,6 +12182,11 @@
 
       window.scrollTo(0, 0);
     }
+    window.switchTab = switchTab;
+    window.openMembershipApplicationModal = openMembershipApplicationModal;
+    window.closeMembershipModal = closeMembershipModal;
+    window.openVerifyModal = openVerifyModal;
+    window.scrollToFrontAbout = scrollToFrontAbout;
 
     function goBack() {
       // Professional back behavior across mobile and laptop window
@@ -12413,7 +12434,7 @@
       document.querySelectorAll('[data-lang-en]').forEach(el => {
         if (el.closest('#tab-admin')) return;
         const txt = el.getAttribute(lang === 'hi' ? 'data-lang-hi' : 'data-lang-en');
-        if (txt) el.innerHTML = txt;
+        if (txt) { if (el.children.length === 0) { el.innerHTML = txt; } else { const textNode = Array.from(el.childNodes).find(n => n.nodeType === 3 && n.nodeValue.trim()); if (textNode) { textNode.nodeValue = txt; } } }
       });
 
       // 4. Update Subnav labels
