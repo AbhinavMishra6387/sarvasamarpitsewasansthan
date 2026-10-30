@@ -13041,93 +13041,11 @@
         // ==========================================
     // TRUST MEMBERSHIP & APPROVED DIRECTORY ENGINE
     // ==========================================
-    const DEFAULT_MEMBERSHIP_APPLICATIONS = [
-      {
-        id: 'APP-MEM-2026-001',
-        memberId: 'SSSS-MEM-104928',
-        name: 'Rajesh Kumar Sharma',
-        hindiName: 'राजेश कुमार शर्मा',
-        email: 'rajesh.sharma@gmail.com',
-        phone: '+91 98390 12345',
-        bloodGroup: 'B+',
-        address: 'Civil Lines, Prayagraj',
-        wing: 'Annapurna Langar Seva',
-        amount: 1101,
-        paymentRef: 'UPI-AXIS-284910284',
-        status: 'APPROVED',
-        date: '15-Jan-2026',
-        photo: 'logo.jpg',
-        profileKey: 'mem_app_mem_2026_001'
-      },
-      {
-        id: 'APP-MEM-2026-002',
-        memberId: 'SSSS-MEM-104929',
-        name: 'Dr. Sunita Dwivedi',
-        hindiName: 'डॉ. सुनीता द्विवेदी',
-        email: 'dr.sunita@gmail.com',
-        phone: '+91 94152 67890',
-        bloodGroup: 'O+',
-        address: 'Kalyani Devi, Prayagraj',
-        wing: 'Free Healthcare & Relief Mission',
-        amount: 1101,
-        paymentRef: 'UPI-HDFC-918273645',
-        status: 'APPROVED',
-        date: '22-Jan-2026',
-        photo: 'logo.jpg',
-        profileKey: 'mem_app_mem_2026_002'
-      },
-      {
-        id: 'APP-MEM-2026-003',
-        memberId: 'SSSS-MEM-104930',
-        name: 'Vikash Chandra Shukla',
-        hindiName: 'विकाश चंद्र शुक्ला',
-        email: 'vikash.shukla@yahoo.com',
-        phone: '+91 97941 23456',
-        bloodGroup: 'A+',
-        address: 'Daraganj, Sangam Marg, Prayagraj',
-        wing: 'Free Evening Pathshala',
-        amount: 1101,
-        paymentRef: 'UPI-SBI-772819203',
-        status: 'APPROVED',
-        date: '02-Feb-2026',
-        photo: 'logo.jpg',
-        profileKey: 'mem_app_mem_2026_003'
-      },
-      {
-        id: 'APP-MEM-2026-004',
-        memberId: 'SSSS-MEM-104931',
-        name: 'Pooja Upadhyay',
-        hindiName: 'पूजा उपाध्याय',
-        email: 'pooja.upadhyay@gmail.com',
-        phone: '+91 93351 84920',
-        bloodGroup: 'AB+',
-        address: 'Katra, Prayagraj',
-        wing: 'Women Empowerment & Child Welfare',
-        amount: 1101,
-        paymentRef: 'UPI-ICICI-661920394',
-        status: 'APPROVED',
-        date: '10-Feb-2026',
-        photo: 'logo.jpg',
-        profileKey: 'mem_app_mem_2026_004'
-      },
-      {
-        id: 'APP-MEM-2026-005',
-        memberId: 'SSSS-MEM-104932',
-        name: 'Arvind Pratap Singh',
-        hindiName: 'अरविंद प्रताप सिंह',
-        email: 'arvind.singh@gmail.com',
-        phone: '+91 94510 39281',
-        bloodGroup: 'O+',
-        address: 'Naini, Prayagraj',
-        wing: 'Ghat Cleanliness & Tree Plantation',
-        amount: 1101,
-        paymentRef: 'UPI-PNB-551029384',
-        status: 'APPROVED',
-        date: '18-Feb-2026',
-        photo: 'logo.jpg',
-        profileKey: 'mem_app_mem_2026_005'
-      }
-    ];
+    const DEFAULT_MEMBERSHIP_APPLICATIONS = [];
+
+    const FAKE_MEMBER_NAMES = ['Rajesh Kumar Sharma', 'Dr. Sunita Dwivedi', 'Vikash Chandra Shukla', 'Pooja Upadhyay', 'Arvind Pratap Singh'];
+    const FAKE_PAYMENTS = ['UPI-AXIS-284910284', 'UPI-HDFC-918273645', 'UPI-SBI-772819203', 'UPI-ICICI-661920394', 'UPI-PNB-551029384'];
+    const FAKE_MEMBER_IDS = ['APP-MEM-2026-001', 'APP-MEM-2026-002', 'APP-MEM-2026-003', 'APP-MEM-2026-004', 'APP-MEM-2026-005', 'SSSS-MEM-104928', 'SSSS-MEM-104929', 'SSSS-MEM-104930', 'SSSS-MEM-104931', 'SSSS-MEM-104932'];
 
     function scrollToFrontAbout() {
       const el = document.getElementById('section-front-about');
@@ -13143,20 +13061,24 @@
         const stored = localStorage.getItem('ssss_membership_apps');
         if (stored) {
           const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            const hasApproved = parsed.some(a => a && (a.status === 'APPROVED' || a.status === 'ACTIVE'));
-            if (!hasApproved) {
-              const merged = [...parsed, ...DEFAULT_MEMBERSHIP_APPLICATIONS];
-              localStorage.setItem('ssss_membership_apps', JSON.stringify(merged));
-              return merged;
+          if (Array.isArray(parsed)) {
+            // Strictly filter out any fake members or fake payments
+            const sanitized = parsed.filter(a => {
+              if (!a || !a.name) return false;
+              if (FAKE_MEMBER_NAMES.includes(a.name.trim())) return false;
+              if (FAKE_MEMBER_IDS.includes(a.id) || FAKE_MEMBER_IDS.includes(a.memberId)) return false;
+              if (a.paymentRef && FAKE_PAYMENTS.includes(a.paymentRef.trim())) return false;
+              return true;
+            });
+            if (sanitized.length !== parsed.length) {
+              localStorage.setItem('ssss_membership_apps', JSON.stringify(sanitized));
             }
-            return parsed;
+            return sanitized;
           }
         }
-        localStorage.setItem('ssss_membership_apps', JSON.stringify(DEFAULT_MEMBERSHIP_APPLICATIONS));
-        return DEFAULT_MEMBERSHIP_APPLICATIONS;
+        return [];
       } catch(e) {
-        return DEFAULT_MEMBERSHIP_APPLICATIONS;
+        return [];
       }
     }
 
@@ -13168,6 +13090,27 @@
         }
       } catch(e) {}
     }
+
+    // Immediate Purge of any cached fake payments and fake members from previous sessions
+    try {
+      const cachedMem = localStorage.getItem('ssss_membership_apps');
+      if (cachedMem) {
+        const parsedMem = JSON.parse(cachedMem);
+        if (Array.isArray(parsedMem)) {
+          const cleanMem = parsedMem.filter(a => a && a.name && !FAKE_MEMBER_NAMES.includes(a.name.trim()) && !FAKE_MEMBER_IDS.includes(a.id) && !FAKE_MEMBER_IDS.includes(a.memberId) && (!a.paymentRef || !FAKE_PAYMENTS.includes(a.paymentRef.trim())));
+          localStorage.setItem('ssss_membership_apps', JSON.stringify(cleanMem));
+        }
+      }
+      const cachedDon = localStorage.getItem('ssss_donations');
+      if (cachedDon) {
+        const parsedDon = JSON.parse(cachedDon);
+        if (Array.isArray(parsedDon)) {
+          const fakeNames = ['Pt. Rameshwar Shastri', 'Smt. Sunita Agarwal', 'Vivek Srivastava', 'Gopal Krishna Shukla', 'Deepak Kumar Verma'];
+          const cleanDon = parsedDon.filter(d => d && d.name && !fakeNames.includes(d.name.trim()) && (!d.paymentId || (!d.paymentId.includes('demo') && !d.paymentId.includes('fake') && !d.paymentId.includes('test'))));
+          localStorage.setItem('ssss_donations', JSON.stringify(cleanDon));
+        }
+      }
+    } catch(e) {}
 
     function renderAboutApprovedMembers() {
       const frontContainer = document.getElementById('frontApprovedMembersContainer');
@@ -16787,8 +16730,8 @@
 
       // 1. Update KPI totals
       const computedAmt = list.reduce((sum, d) => sum + (Number(d.amount) || 0), 0);
-      const totalAmt = computedAmt > 0 ? computedAmt : 501;
-      const receiptCount = Math.max(1, list.length);
+      const totalAmt = computedAmt;
+      const receiptCount = list.length;
       const kpiTotal = document.getElementById('adminKpiTotalDonations');
       if (kpiTotal) kpiTotal.innerText = '₹ ' + totalAmt.toLocaleString('en-IN');
       const kpiCount = document.getElementById('adminKpiReceiptCount');
@@ -16813,28 +16756,23 @@
     }
 
     function getRecordedDonationsList() {
-      if (!window.recordedDonations || window.recordedDonations.length === 0) {
-        try {
-          const cached = JSON.parse(localStorage.getItem('ssss_donations') || '[]');
-          const fakeNames = ['Pt. Rameshwar Shastri', 'Smt. Sunita Agarwal', 'Vivek Srivastava', 'Gopal Krishna Shukla', 'Deepak Kumar Verma'];
-          let sanitized = (cached || []).filter(item => item && item.name && !fakeNames.includes(item.name.trim()) && !fakeNames.some(fn => item.name.includes(fn)));
-          
-          const hasHarsh = sanitized.some(item => item && (item.paymentId === HARSH_TIWARI_DONATION.paymentId || item.receiptNo === HARSH_TIWARI_DONATION.receiptNo));
-          if (!hasHarsh) {
-            sanitized.unshift(HARSH_TIWARI_DONATION);
-          }
-          localStorage.setItem('ssss_donations', JSON.stringify(sanitized));
-          window.recordedDonations = sanitized;
-        } catch(e) {
-          window.recordedDonations = [HARSH_TIWARI_DONATION];
-        }
-      } else {
-        const hasHarsh = window.recordedDonations.some(item => item && (item.paymentId === HARSH_TIWARI_DONATION.paymentId || item.receiptNo === HARSH_TIWARI_DONATION.receiptNo));
-        if (!hasHarsh) {
-          window.recordedDonations.unshift(HARSH_TIWARI_DONATION);
-        }
+      if (!window.recordedDonations) window.recordedDonations = [];
+      try {
+        const cached = JSON.parse(localStorage.getItem('ssss_donations') || '[]');
+        const fakeNames = ['Pt. Rameshwar Shastri', 'Smt. Sunita Agarwal', 'Vivek Srivastava', 'Gopal Krishna Shukla', 'Deepak Kumar Verma'];
+        let sanitized = (cached || []).filter(item => {
+          if (!item || !item.name) return false;
+          const nameTrim = item.name.trim();
+          if (fakeNames.includes(nameTrim) || fakeNames.some(fn => nameTrim.includes(fn))) return false;
+          if (item.paymentId && (item.paymentId.includes('demo') || item.paymentId.includes('fake') || item.paymentId.includes('test'))) return false;
+          return true;
+        });
+        localStorage.setItem('ssss_donations', JSON.stringify(sanitized));
+        window.recordedDonations = sanitized;
+      } catch(e) {
+        window.recordedDonations = [];
       }
-      return window.recordedDonations;
+      return window.recordedDonations || [];
     }
 
     try {
@@ -16850,7 +16788,14 @@
       const track = document.getElementById('homeLiveDonationsTrack');
       if (!track) return;
       const items = (list || getRecordedDonationsList()).slice(0, 8);
-      if (items.length === 0) return;
+      if (items.length === 0) {
+        track.innerHTML = 
+          <span class="flex items-center gap-1.5 font-hindi font-semibold text-amber-200">à¥¥ à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ â€¢ à¤…à¤–à¤‚à¤¡ à¤…à¤¨à¥à¤¨à¤ªà¥‚à¤°à¥à¤£à¤¾ à¤®à¤¹à¤¾à¤ªà¥à¤°à¤¸à¤¾à¤¦ à¤à¤µà¤‚ à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¶à¤¿à¤•à¥à¤·à¤¾ à¤¸à¥‡à¤µà¤¾ â€¢ à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¥¥</span>
+          <span> â€¢ </span>
+          <span class="flex items-center gap-1.5 font-hindi font-semibold text-amber-200">à¥¥ à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ â€¢ à¤…à¤–à¤‚à¤¡ à¤…à¤¨à¥à¤¨à¤ªà¥‚à¤°à¥à¤£à¤¾ à¤®à¤¹à¤¾à¤ªà¥à¤°à¤¸à¤¾à¤¦ à¤à¤µà¤‚ à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¶à¤¿à¤•à¥à¤·à¤¾ à¤¸à¥‡à¤µà¤¾ â€¢ à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¥¥</span>
+        ;
+        return;
+      }
       track.innerHTML = items.map(d => `
         <span class="flex items-center gap-1.5 font-mono"><strong class="text-amber-200">${d.name}</strong> contributed ₹ ${(Number(d.amount)||0).toLocaleString('en-IN')} for ${d.cause}</span>
         <span> • </span>
