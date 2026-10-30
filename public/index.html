@@ -517,13 +517,13 @@
         </div>
 
         <!-- Direct Nav Links -->
-        <a href="#membership" onclick="switchTab('membership')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Membership</a>
-        <a href="#volunteer" onclick="switchTab('volunteer')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Volunteer</a>
-        <a href="#gallery" onclick="switchTab('gallery')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Gallery</a>
-        <a href="#contact" onclick="switchTab('contact')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold">Contact</a>
+        <a href="#membership" onclick="switchTab('membership')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Membership" data-lang-hi="सदस्यता">सदस्यता</a>
+        <a href="#volunteer" onclick="switchTab('volunteer')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक">स्वयंसेवक</a>
+        <a href="#gallery" onclick="switchTab('gallery')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Gallery" data-lang-hi="सेवा दर्शन">सेवा दर्शन</a>
+        <a href="#contact" onclick="switchTab('contact')" class="px-3 py-2 rounded-lg hover:text-orange-600 hover:bg-orange-50/80 transition-all font-semibold font-hindi" data-lang-en="Contact" data-lang-hi="संपर्क">संपर्क</a>
         <a href="#profile" onclick="switchTab('profile')" class="px-3 py-1.5 rounded-lg text-orange-700 hover:text-orange-800 bg-orange-50 hover:bg-orange-100 transition-all font-bold flex items-center gap-1.5 border border-orange-200">
           <svg class="w-4 h-4 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-          <span id="navProfileLabel">My Profile</span>
+          <span id="navProfileLabel" class="font-hindi">मेरी प्रोफाइल</span>
         </a>
         <a id="navAdminLink" href="#admin" onclick="switchTab('admin')" class="hidden px-3 py-1.5 rounded-lg text-red-700 hover:text-red-800 bg-red-50 hover:bg-red-100 transition-all font-bold flex items-center gap-1.5 border border-red-200">
           <svg class="w-4 h-4 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -542,13 +542,13 @@
         <!-- 2. Verify ID (Desktop md+) -->
         <button onclick="openVerifyModal()" class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-lg border border-stone-300 text-xs font-bold text-stone-700 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50/40 transition-all shadow-2xs cursor-pointer">
           <svg class="w-4 h-4 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="10" r="2.5" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 16c0-1.657 1.343-2.5 3-2.5s3 .843 3 2.5M15 9h3M15 13h3M15 16h2"/></svg>
-          <span id="navVerifyLabel">Verify ID</span>
+          <span id="navVerifyLabel" class="font-hindi">आईडी सत्यापन</span>
         </button>
 
         <!-- 3. Donate Button (Tablet / Desktop sm+) -->
         <button onclick="openRazorpayDonationModal()" class="hidden sm:flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-orange-700 hover:bg-orange-800 text-white font-semibold text-[11px] sm:text-xs shadow-xs transition-all hover:opacity-95 cursor-pointer">
           <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-          <span id="navDonateLabel">Donate</span>
+          <span id="navDonateLabel" class="font-hindi">समर्पित दान</span>
         </button>
 
 
@@ -560,7 +560,7 @@
         <!-- 5. Single Official Login Button on Right Side LAST in Nav Bar Only -->
         <button id="navLoginBtn" onclick="handleNavLoginClick()" class="px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-neutral-900 hover:bg-black text-white font-bold text-[11px] sm:text-xs shadow-xs transition-all hover:opacity-95 flex items-center gap-1.5 border border-neutral-700 shrink-0 cursor-pointer">
           <svg id="navLoginIcon" class="w-3.5 h-3.5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-          <span id="navLoginLabel">Login</span>
+          <span id="navLoginLabel" class="font-hindi">लोगिन</span>
         </button>
       </div>
 
@@ -817,10 +817,10 @@
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="openRazorpayDonationModal()" class="px-3.5 sm:px-4 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-[11px] sm:text-xs font-semibold shadow-sm transition-all flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+                  <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
                 </button>
                 <button id="sliderActionBtn" onclick="switchTab('food-distribution')" class="px-3.5 sm:px-4 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 text-[11px] sm:text-xs font-bold transition-all">
-                  Learn More &rarr;
+                  विस्तृत सेवा &rarr;
                 </button>
               </div>
             </div>
@@ -836,24 +836,24 @@
             
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-orange-100/80 text-orange-800 text-xs font-semibold tracking-wide border border-orange-200">
               <span class="w-1.5 h-1.5 rounded-full bg-orange-600"></span>
-              Prayagraj &bull; Since our devotion began
+              प्रयागराज &bull; पावन संगम सेवा संकल्प
             </div>
 
-            <h1 id="heroMainHeading" class="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#1F1F1F] tracking-tight leading-[1.15]" data-lang-en="From Shree Bade Hanuman Ji Temple Marg, Bandhwa, we serve food, health and hope to everyone who comes to us — day and night." data-lang-hi="श्री बड़े हनुमान जी मंदिर मार्ग, बांधवा से, हम दिन-रात अन्न, शिक्षा और जन सेवा समर्पित करते हैं।">
-              From Shree Bade Hanuman Ji Temple Marg, Bandhwa, we serve food, health and hope to everyone who comes to us — day and night.
+            <h1 id="heroMainHeading" class="text-3xl sm:text-5xl lg:text-6xl font-semibold text-[#1F1F1F] tracking-tight leading-[1.15] font-hindi" data-lang-en="From Shree Bade Hanuman Ji Temple Marg, Bandhwa, we serve food, health and hope to everyone who comes to us — day and night." data-lang-hi="श्री बड़े हनुमान जी मंदिर मार्ग, बांधवा से, हम दिन-रात अन्न, शिक्षा और जन सेवा समर्पित करते हैं।">
+              श्री बड़े हनुमान जी मंदिर मार्ग, बांधवा से, हम दिन-रात अन्न, शिक्षा और जन सेवा समर्पित करते हैं।
             </h1>
 
             <!-- Professional Sansthan Intro & Mission Card -->
             <div class="bg-white p-5 sm:p-7 rounded-lg border border-stone-200 shadow-xs space-y-4">
-              <p id="heroMissionDesc" class="text-base sm:text-lg text-stone-800 leading-relaxed font-normal" data-lang-en="Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, marriage support for needy families, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities." data-lang-hi="सर्व समर्पित सेवा संस्थान शिक्षा, भोजन, स्वास्थ्य और सामाजिक कल्याण के माध्यम से जीवन की सेवा, सशक्तिकरण और परिवर्तन के लिए समर्पित है। निःशुल्क शिक्षा और भोजन वितरण से लेकर चिकित्सा जागरूकता, पौधारोपण अभियान, सेनेटरी पैड वितरण, जरूरतमंद परिवारों के लिए विवाह सहायता और शीतकालीन कंबल वितरण तक, हम वंचित समुदायों में आशा और सम्मान लाने के लिए निरंतर कार्यरत हैं।">
-                Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, marriage support for needy families, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.
+              <p id="heroMissionDesc" class="text-base sm:text-lg text-stone-800 leading-relaxed font-normal font-hindi" data-lang-en="Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities." data-lang-hi="सर्व समर्पित सेवा संस्थान शिक्षा, भोजन, स्वास्थ्य और सामाजिक कल्याण के माध्यम से जीवन की सेवा, सशक्तिकरण और परिवर्तन के लिए समर्पित है। निःशुल्क शिक्षा और भोजन वितरण से लेकर चिकित्सा जागरूकता, पौधारोपण अभियान, सेनेटरी पैड वितरण और शीतकालीन कंबल वितरण तक, हम वंचित समुदायों में आशा और सम्मान लाने के लिए निरंतर कार्यरत हैं।">
+                सर्व समर्पित सेवा संस्थान शिक्षा, भोजन, स्वास्थ्य और सामाजिक कल्याण के माध्यम से जीवन की सेवा, सशक्तिकरण और परिवर्तन के लिए समर्पित है। निःशुल्क शिक्षा और भोजन वितरण से लेकर चिकित्सा जागरूकता, पौधारोपण अभियान, सेनेटरी पैड वितरण और शीतकालीन कंबल वितरण तक, हम वंचित समुदायों में आशा और सम्मान लाने के लिए निरंतर कार्यरत हैं।
               </p>
               
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-orange-200/70">
                 <div class="flex items-center gap-2.5">
-                  <span class="px-3 py-1 rounded-md bg-orange-600 text-white text-xs font-semibold uppercase tracking-wider shadow-2xs" data-lang-en="Our Mission" data-lang-hi="हमारा संकल्प">Our Mission</span>
-                  <p id="heroMissionMotto" class="text-xs sm:text-sm font-semibold text-orange-950" data-lang-en="Serve with compassion. Empower with purpose. Transform lives." data-lang-hi="करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।">
-                    Serve with compassion. Empower with purpose. Transform lives.
+                  <span class="px-3 py-1 rounded-md bg-orange-600 text-white text-xs font-semibold uppercase tracking-wider shadow-2xs font-hindi" data-lang-en="Our Mission" data-lang-hi="हमारा संकल्प">हमारा संकल्प</span>
+                  <p id="heroMissionMotto" class="text-xs sm:text-sm font-semibold text-orange-950 font-hindi" data-lang-en="Serve with compassion. Empower with purpose. Transform lives." data-lang-hi="करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।">
+                    करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।
                   </p>
                 </div>
                 <span class="text-[11px] font-bold text-orange-700 bg-white/90 px-3 py-1 rounded-lg border border-orange-200 shrink-0">
@@ -897,10 +897,10 @@
               <span data-lang-en="Trust Membership &amp; Digital ID • संस्थान सदस्यता" data-lang-hi="संस्थान सदस्यता एवं डिजिटल पहचान पत्र">संस्थान सदस्यता एवं डिजिटल पहचान पत्र • Trust Membership</span>
             </span>
             <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight" data-lang-en="Official Membership &amp; Certified Digital ID Card" data-lang-hi="आधिकारिक सदस्यता एवं प्रमाणित डिजिटल पहचान पत्र">
-              <a href="#membership" onclick="switchTab('membership')" class="hover:text-orange-600 transition-colors cursor-pointer">Official Membership &amp; Certified Digital ID Card</a>
+              <a href="#membership" onclick="switchTab('membership')" class="hover:text-orange-600 transition-colors cursor-pointer font-hindi">आधिकारिक सदस्यता एवं प्रमाणित डिजिटल पहचान पत्र</a>
             </h2>
             <p class="text-xs sm:text-sm md:text-base text-stone-600 leading-relaxed font-medium" data-lang-en="Join Sarva Samarpit Sewa Sansthan as an official verified member. Support 24/7 Akhand Bhandara and Free Pathshala schools, receive 80G tax exemptions, and access your high-resolution verified Digital Photo ID Card with anti-counterfeit QR code." data-lang-hi="सर्व समर्पित सेवा संस्थान के अधिकृत सदस्य बनें। 24/7 अखंड लंगर एवं निःशुल्क पाठशालाओं में सहयोग करें, 80G कर छूट प्राप्त करें, और लाइव क्यूआर कोड सत्यापन युक्त डिजिटल फोटो पहचान पत्र प्राप्त करें।">
-              Join Sarva Samarpit Sewa Sansthan as an official verified member. Support 24/7 Akhand Bhandara and Free Pathshala schools, receive 80G tax exemptions, and access your high-resolution verified Digital Photo ID Card with anti-counterfeit QR code.
+              सर्व समर्पित सेवा संस्थान के अधिकृत सदस्य बनें। 24/7 अखंड लंगर एवं निःशुल्क पाठशालाओं में सहयोग करें, 80G कर छूट प्राप्त करें, और लाइव क्यूआर कोड सत्यापन युक्त डिजिटल फोटो पहचान पत्र प्राप्त करें।
             </p>
           </div>
 
@@ -954,15 +954,15 @@
               <div class="pt-2 flex flex-wrap items-center gap-3">
                 <button type="button" onclick="openMembershipApplicationModal()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition-transform hover:scale-102 flex items-center gap-2 cursor-pointer">
                   <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-                  <span data-lang-en="Apply for Membership (₹1,101)" data-lang-hi="सदस्यता आवेदन करें (₹1,101)">Apply for Membership (₹1,101 सदस्यता आवेदन)</span>
+                  <span data-lang-en="Apply for Membership (&#8377;1,101)" data-lang-hi="सदस्यता आवेदन करें (&#8377;1,101)" class="font-hindi">सदस्यता आवेदन करें (&#8377;1,101)</span>
                 </button>
                 <button onclick="switchTab('membership')" class="px-5 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer">
-                  <span data-lang-en="Open Full ID Card Studio" data-lang-hi="आईडी कार्ड स्टूडियो खोलें">Open Full ID Card Studio</span>
+                  <span data-lang-en="Open Full ID Card Studio" data-lang-hi="पहचान पत्र स्टूडियो खोलें" class="font-hindi">पहचान पत्र स्टूडियो खोलें</span>
                   <svg class="w-4 h-4 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </button>
                 <button onclick="openVerifyModal()" class="px-4 py-3 rounded-xl bg-white hover:bg-stone-50 border border-stone-300 text-stone-700 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 cursor-pointer">
                   <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                  <span data-lang-en="Verify ID" data-lang-hi="आईडी सत्यापन">Verify ID</span>
+                  <span data-lang-en="Verify ID" data-lang-hi="आईडी सत्यापन" class="font-hindi">आईडी सत्यापन</span>
                 </button>
               </div>
 
@@ -1378,7 +1378,7 @@
                 <span>श्री सर्व समर्पित सेवा संस्थान (पंजीकृत) • प्रमुख प्रकल्प</span>
               </div>
               <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900 tracking-tight font-hindi">
-                संस्थान के ८ प्रमुख सेवा स्तंभ
+                संस्थान के प्रमुख सेवा प्रकल्प
               </h2>
               <p class="text-xs sm:text-sm text-stone-600 font-hindi max-w-2xl leading-relaxed">
                 प्रयागराज की पावन धरा पर समाज के अंतिम व्यक्ति तक समर्पित निःस्वार्थ सेवा, शिक्षा, चिकित्सा, पर्यावरण एवं संस्कार अभियान।
@@ -1557,39 +1557,6 @@
                   <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                 </span>
                 <span class="text-[11px] font-semibold text-stone-400 group-hover:text-stone-600">नारी सम्मान</span>
-              </div>
-            </div>
-
-            <!-- 6. विवाह सहयोग • 51+ Kanyadan -->
-            <div role="button" tabindex="0" onclick="switchTab('marriage-support')" onkeydown="if(event.key==='Enter'||event.key===' ')switchTab('marriage-support')" class="relative rounded-2xl bg-white border-2 border-stone-200/90 hover:border-red-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col justify-between group cursor-pointer text-left overflow-hidden">
-              <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 to-rose-600"></div>
-              <div class="space-y-4">
-                <div class="flex items-start justify-between gap-3">
-                  <div class="w-12 h-12 rounded-xl bg-red-600 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-110 group-hover:bg-red-700 transition-all duration-200">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                  </div>
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-red-50 border border-red-200 text-red-900 font-bold text-xs tracking-wide">
-                    51+ Kanyadan
-                  </span>
-                </div>
-                <div class="space-y-1.5">
-                  <h3 class="font-bold text-lg text-stone-900 font-hindi group-hover:text-red-600 transition-colors">
-                    कन्या विवाह सहयोग
-                  </h3>
-                  <p class="text-xs font-semibold text-stone-500 tracking-wide">
-                    Sacred Kanyadan &amp; Matrimonial Support
-                  </p>
-                  <p class="text-xs text-stone-600 font-hindi leading-relaxed pt-1">
-                    आर्थिक रूप से कमजोर परिवारों की कन्याओं के विवाह में उपहार, मंगल सामग्री, परिधान एवं पूर्ण आर्थिक सहयोग।
-                  </p>
-                </div>
-              </div>
-              <div class="pt-5 mt-4 border-t border-stone-100 flex items-center justify-between">
-                <span class="text-xs font-bold text-red-700 group-hover:text-red-800 font-hindi flex items-center gap-1.5">
-                  <span>विस्तृत सेवा देखें</span>
-                  <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
-                </span>
-                <span class="text-[11px] font-semibold text-stone-400 group-hover:text-stone-600">कन्यादान</span>
               </div>
             </div>
 
@@ -2424,7 +2391,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -3017,7 +2984,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -3135,7 +3102,7 @@
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
             </div>
             <h4 class="font-semibold text-stone-900 text-base">Social Harmony &amp; Humanity</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">Promoting universal brotherhood (&ldquo;Vasudhaiva Kutumbakam&rdquo;), inter-community solidarity, and marriage support for needy families.</p>
+            <p class="text-xs text-stone-600 leading-relaxed">Promoting universal brotherhood (&ldquo;Vasudhaiva Kutumbakam&rdquo;), inter-community solidarity, and social support for needy families.</p>
           </div>
 
           <!-- 7. Contribution towards Nation Building -->
@@ -3164,7 +3131,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -3224,7 +3191,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -3567,7 +3534,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -3917,7 +3884,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -3957,7 +3924,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -4709,102 +4676,6 @@
         <div class="pt-2 flex flex-wrap items-center gap-3">
           <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-rose-700 hover:bg-rose-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer font-hindi">
             <span>🌸</span> Sponsor 100 Hygiene Kits (₹ 1,500) &rarr;
-          </button>
-          <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
-            📞 09450858514
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================================================================= -->
-    <!-- DEDICATED SEVA PROGRAM PAGE 6: MARRIAGE SUPPORT (विवाह सहयोग)     -->
-    <!-- ================================================================= -->
-    <div id="tab-marriage-support" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto space-y-12">
-      <!-- Universal Subnav -->
-      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
-        <button onclick="goBack()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all shadow-2xs cursor-pointer">
-          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> <span class="subnav-back-label font-hindi">वापस / Back</span>
-        </button>
-        <div class="flex items-center gap-2">
-          <button onclick="switchTab('home')" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold transition-all border border-orange-200 shadow-2xs cursor-pointer font-hindi">
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">मुख्य पृष्ठ / Home</span>
-          </button>
-          <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs cursor-pointer font-hindi">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">सहयोग करें / Donate</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Title Header -->
-      <div class="text-center space-y-3">
-        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-red-800 bg-red-100/90 border border-red-300 px-4 py-1.5 rounded-md shadow-2xs font-hindi">
-          <span>💍</span> कन्यादान एवं विवाह सहयोग • Marriage Support for Needy Families
-        </span>
-        <h2 class="text-3xl sm:text-5xl font-semibold text-stone-900 tracking-tight font-hindi">
-          विवाह सहयोग <span class="text-2xl sm:text-4xl font-semibold text-red-600 font-sans">(Vivah Sahyog &amp; Kanyadan)</span>
-        </h2>
-        <p class="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto leading-relaxed font-hindi">
-          निर्धन, असहाय व अनाथ कन्याओं के पावन विवाह हेतु वस्त्र, राशन, बर्तन सेट, गृहस्थी सामग्री एवं आर्थिक संबल प्रदान करने का पुनीत संकल्प।
-        </p>
-      </div>
-
-      <!-- Impact Stats Deck -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
-          <div class="text-2xl sm:text-3xl font-semibold text-red-600 font-hindi">51+</div>
-          <div class="text-xs sm:text-sm font-bold text-stone-800 font-hindi">कन्यादान सहयोग</div>
-          <div class="text-[11px] text-stone-500">Daughters happily wedded</div>
-        </div>
-        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
-          <div class="text-2xl sm:text-3xl font-semibold text-rose-700 font-hindi">गृहस्थी उपहार</div>
-          <div class="text-xs sm:text-sm font-bold text-stone-800 font-hindi">बर्तन, बिस्तर व राशन किट</div>
-          <div class="text-[11px] text-stone-500">Complete household kits</div>
-        </div>
-        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
-          <div class="text-2xl sm:text-3xl font-semibold text-amber-700 font-hindi">सम्मान व स्नेह</div>
-          <div class="text-xs sm:text-sm font-bold text-stone-800 font-hindi">वैदिक रीति-रिवाज</div>
-          <div class="text-[11px] text-stone-500">Dignified wedding ceremonies</div>
-        </div>
-        <div class="bg-white p-5 rounded-lg border-2 border-red-300 shadow-xs text-center space-y-1">
-          <div class="text-2xl sm:text-3xl font-semibold text-red-800 font-hindi">100% पारदर्शी</div>
-          <div class="text-xs sm:text-sm font-bold text-stone-800 font-hindi">प्रत्यक्ष पारिवारिक संबल</div>
-          <div class="text-[11px] text-stone-500">Verified indigent families</div>
-        </div>
-      </div>
-
-      <!-- Dedicated Dynamic Slideshow Container (Updated by Admin CMS) -->
-      <div id="marriage-support-slideshow-container" class="program-slideshow-deck bg-white p-4 sm:p-6 rounded-xl border-2 border-red-200 shadow-sm space-y-4">
-        <!-- Rendered dynamically by JavaScript -->
-      </div>
-
-      <!-- Dedicated Photo Gallery Grid -->
-      <div class="space-y-4 pt-2">
-        <div class="border-b border-stone-200 pb-3 flex items-center justify-between">
-          <h3 class="text-xl font-bold text-stone-900 font-hindi">विवाह सहयोग प्रत्यक्ष छायाचित्र • Real Marriage Support Photos</h3>
-          <span class="text-xs font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md border border-red-200 font-hindi">प्रमाणित सेवा दर्शन</span>
-        </div>
-        <div id="marriage-support-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <!-- Rendered dynamically by JavaScript -->
-        </div>
-      </div>
-
-      <!-- Narrative & Ground Details Card -->
-      <div class="bg-gradient-to-br from-red-50/60 via-white to-white p-6 sm:p-10 rounded-xl border-2 border-red-300 shadow-sm space-y-6">
-        <div class="space-y-3">
-          <div class="inline-flex items-center gap-2 bg-red-100 text-red-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-red-200 font-hindi">
-            <span>💍</span> कन्यादान महादान — सामाजिक संबल
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-semibold text-stone-900 font-hindi">
-            बेटियों का हाथ पीले करने में आर्थिक रूप से कमजोर परिवारों का सहयोग
-          </h3>
-          <p class="text-sm text-stone-700 leading-relaxed font-hindi">
-            कई निर्धन माता-पिता साधनों के अभाव में अपनी लाडली का विवाह संपन्न कराने में अत्यधिक कठिनाई का सामना करते हैं। सर्व समर्पित सेवा संस्थान ऐसी जरूरतमंद और अनाथ बेटियों की पहचान कर उनके विवाह हेतु कपड़े, साड़ियां, बर्तन सेट, राशन और आवश्यक गृहस्थी का सामान ससम्मान भेंट करता है।
-          </p>
-        </div>
-        <div class="pt-2 flex flex-wrap items-center gap-3">
-          <button onclick="switchTab('donate')" class="px-7 py-3 rounded-lg bg-red-700 hover:bg-red-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer font-hindi">
-            <span>💍</span> Sponsor Kanyadan Support (₹ 5,100) &rarr;
           </button>
           <a href="tel:+919450858514" class="px-5 py-3 rounded-lg bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-colors flex items-center gap-1.5">
             📞 09450858514
@@ -7048,7 +6919,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -7276,7 +7147,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -7286,10 +7157,8 @@
         <span class="text-xs font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-3.5 py-1 rounded-md border border-orange-200">
           Official Identity Portal &bull; आधिकारिक पहचान पत्र
         </span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight">Official Membership &amp; Corporate Digital ID Studio</h2>
-        <p class="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto">
-          Official photo ID cards with unique NGO ID, digital signature, verified trust seal, and live verification QR code for authorized Trustees, Employees, Sevadars, and Members.
-        </p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight font-hindi">आधिकारिक सदस्यता एवं प्रमाणित डिजिटल पहचान पत्र</h2>
+        <p class="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto font-hindi">सर्व समर्पित सेवा संस्थान के अधिकृत ट्रस्टी व सदस्यों हेतु प्रमाणित डिजिटल पहचान पत्र स्टूडियो&#2404;</p>
       </div>
 
       <!-- Official Membership Plans & Direct Application Strip -->
@@ -7299,19 +7168,17 @@
             <span class="px-2.5 py-0.5 rounded-full bg-orange-500/20 text-orange-300 border border-orange-400/30 text-[10px] font-bold uppercase tracking-wider">Official Trust Membership</span>
             <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-bold uppercase tracking-wider">80G Tax Exemption</span>
           </div>
-          <h3 class="text-xl sm:text-2xl font-extrabold text-white">Join Sarva Samarpit Sewa Sansthan as an Official Member</h3>
-          <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
-            Annual Active Membership (&#8377;1,101/yr) or Life Patron Membership (&#8377;5,101). Get certified photo ID card with live anti-counterfeit QR code, 80G tax receipt, and seva voting privileges.
-          </p>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white font-hindi">सर्व समर्पित सेवा संस्थान के अधिकृत सदस्य बनें</h3>
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed font-hindi">वार्षिक सक्रिय सदस्यता (&#8377;1,101/&#2357;&#2352;&#2381;&#2359;) अथवा आजीवन संरक्षक सदस्यता (&#8377;5,101)&#2404; प्रमाणित डिजिटल पहचान पत्र, 80G कर छूट रसीद एवं सेवा सहभागिता प्राप्त करें&#2404;</p>
         </div>
         <div class="flex flex-wrap items-center gap-3 shrink-0">
           <button type="button" onclick="openMembershipApplicationModal()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition-transform hover:scale-102 flex items-center gap-2 cursor-pointer">
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-            <span>Apply for Membership (&#8377;1,101)</span>
+            <span class="font-hindi">सदस्यता आवेदन करें (&#8377;1,101)</span>
           </button>
           <button type="button" onclick="openVerifyModal()" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition-all cursor-pointer flex items-center gap-1.5">
             <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            <span>Verify Any ID Card</span>
+            <span class="font-hindi">आईडी सत्यापन</span>
           </button>
         </div>
       </div>
@@ -7756,7 +7623,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -7840,7 +7707,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -7927,7 +7794,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -8797,9 +8664,8 @@
                     <option value="healthcare">3. स्वास्थ्य सेवा • Healthcare Seva (15,000+ Patients)</option>
                     <option value="tree-plantation">4. वृक्षारोपण • Tree Plantation (5,000+ Trees)</option>
                     <option value="women-hygiene">5. महिला स्वच्छता • Women Hygiene (Sanitary Pads)</option>
-                    <option value="marriage-support">6. विवाह सहयोग • Marriage Support (51+ Kanyadan)</option>
-                    <option value="blanket-distribution">7. कंबल सेवा • Winter Blankets (25,000+ Blankets)</option>
-                    <option value="temple-seva">8. मंदिर सेवा • Shree Hanuman Temple Seva</option>
+                    <option value="blanket-distribution">6. कंबल सेवा • Winter Blankets (25,000+ Blankets)</option>
+                    <option value="temple-seva">7. मंदिर सेवा • Shree Hanuman Temple Seva</option>
                   </select>
                 </div>
                 <div class="bg-stone-50 p-3 rounded-lg border border-stone-200 space-y-2">
@@ -9097,7 +8963,7 @@
             </div>
             <div class="lg:col-span-2">
               <label class="block font-bold text-gray-700 mb-1">Homepage Mission Narrative Statement:</label>
-              <textarea id="cmsHeroMissionDescEn" rows="3" class="w-full px-3.5 py-2 border border-stone-300 rounded-lg font-medium leading-relaxed">Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, marriage support for needy families, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.</textarea>
+              <textarea id="cmsHeroMissionDescEn" rows="3" class="w-full px-3.5 py-2 border border-stone-300 rounded-lg font-medium leading-relaxed">Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.</textarea>
             </div>
             <div class="lg:col-span-2">
               <label class="block font-bold text-gray-700 mb-1">Sacred Mission Pledge Tagline / Motto:</label>
@@ -10284,7 +10150,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -10368,7 +10234,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -10400,7 +10266,7 @@
             <li>24-Hour Akhand Annapurna Langar at Shree Bade Hanuman Ji Temple, Prayagraj.</li>
             <li>Free evening pathshalas, books, uniforms, and educational supplies for underprivileged students.</li>
             <li>Medical awareness, free health checkups, and sanitary hygiene kits.</li>
-            <li>Winter blanket distribution, tree plantation, and marriage assistance for needy families.</li>
+            <li>Winter blanket distribution, tree plantation, and essential relief for needy families.</li>
           </ul>
         </div>
 
@@ -10441,7 +10307,7 @@
             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> <span class="subnav-home-label">Home</span>
           </button>
           <button onclick="openRazorpayDonationModal()" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label">Donate</span>
+            <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span class="subnav-donate-label font-hindi">समर्पित दान</span>
           </button>
         </div>
       </div>
@@ -12228,7 +12094,7 @@
       if (tabId === 'health' || tabId === 'medical') tabId = 'healthcare';
       if (tabId === 'plantation' || tabId === 'trees' || tabId === 'social-welfare') tabId = 'tree-plantation';
       if (tabId === 'hygiene' || tabId === 'women' || tabId === 'pads') tabId = 'women-hygiene';
-      if (tabId === 'marriage' || tabId === 'vivah' || tabId === 'kanyadan') tabId = 'marriage-support';
+      if (tabId === 'marriage' || tabId === 'vivah' || tabId === 'kanyadan' || tabId === 'marriage-support') tabId = 'home';
       if (tabId === 'blanket' || tabId === 'blankets' || tabId === 'kambal') tabId = 'blanket-distribution';
       if (tabId === 'temple' || tabId === 'mandir' || tabId === 'hanuman' || tabId === 'religious-activities') tabId = 'temple-seva';
       if (tabId === 'projects') tabId = 'food-distribution';
@@ -12367,7 +12233,12 @@
     // ==========================================
     // BILINGUAL LANGUAGE ENGINE (HINDI / ENGLISH)
     // ==========================================
-    let currentLanguage = localStorage.getItem('ssss_lang') || 'en';
+    let currentLanguage = localStorage.getItem('ssss_lang_v2') || localStorage.getItem('ssss_lang') || 'hi';
+    if (!localStorage.getItem('ssss_lang_v2')) {
+      currentLanguage = 'hi';
+      localStorage.setItem('ssss_lang', 'hi');
+      localStorage.setItem('ssss_lang_v2', 'hi');
+    }
 
     const MASTER_TRANSLATIONS = {
       // Top Ticker / Header
@@ -12441,7 +12312,7 @@
       // Hero & Homepage
       "Prayagraj • Since our devotion began": "प्रयागराज • अखंड भक्ति एवं सेवा का पावन संकल्प",
       "From Shree Bade Hanuman Ji Temple, we serve food, health and hope to everyone who comes to us — day and night.": "श्री बड़े हनुमान जी मंदिर से, हम दिन-रात अन्न, स्वास्थ्य और आशा की सेवा समर्पित करते हैं।",
-      "Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, marriage support for needy families, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.": "सर्व समर्पित सेवा संस्थान शिक्षा, भोजन, स्वास्थ्य और सामाजिक कल्याण के माध्यम से जीवन की सेवा, सशक्तिकरण और परिवर्तन के लिए समर्पित है। निःशुल्क शिक्षा और भोजन वितरण से लेकर चिकित्सा जागरूकता, पौधारोपण अभियान, सेनेटरी पैड वितरण, जरूरतमंद परिवारों के लिए विवाह सहायता और शीतकालीन कंबल वितरण तक, हम वंचित समुदायों में आशा और सम्मान लाने के लिए निरंतर कार्यरत हैं।",
+      "Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.": "सर्व समर्पित सेवा संस्थान शिक्षा, भोजन, स्वास्थ्य और सामाजिक कल्याण के माध्यम से जीवन की सेवा, सशक्तिकरण और परिवर्तन के लिए समर्पित है। निःशुल्क शिक्षा और भोजन वितरण से लेकर चिकित्सा जागरूकता, पौधारोपण अभियान, सेनेटरी पैड वितरण, जरूरतमंद परिवारों के लिए विवाह सहायता और शीतकालीन कंबल वितरण तक, हम वंचित समुदायों में आशा और सम्मान लाने के लिए निरंतर कार्यरत हैं।",
       "Our mission: Serve with compassion. Empower with purpose. Transform lives.": "हमारा संकल्प: करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।",
       "Our Mission": "हमारा पावन संकल्प",
       "Vision": "दृष्टिकोण",
@@ -12522,6 +12393,7 @@
         renderAllPublicProgramPages();
       }
       localStorage.setItem('ssss_lang', lang);
+      localStorage.setItem('ssss_lang_v2', lang);
 
       // 1. Update Language Button Labels
       const langToggleLabel = document.getElementById('langToggleLabel');
@@ -17465,7 +17337,7 @@
 
       heroHeadingEn: "From Shree Bade Hanuman Ji Temple, we serve food, health and hope to everyone who comes to us — day and night.",
       heroHeadingHi: "श्री बड़े हनुमान जी मंदिर से, हम दिन-रात अन्न, शिक्षा और जन सेवा समर्पित करते हैं।",
-      heroMissionDescEn: "Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, marriage support for needy families, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.",
+      heroMissionDescEn: "Sarva Samarpit Sewa Sansthan is committed to serving, empowering, and transforming lives through education, food, healthcare, and social welfare. From free education and food distribution to medical awareness, plantation drives, sanitary pad distribution, and winter blanket distribution, we work to bring hope and dignity to underprivileged communities.",
       heroMotto: "Serve with compassion. Empower with purpose. Transform lives.",
 
       statMeals: "5,00,000+",
@@ -17593,13 +17465,21 @@
       }
 
       const heroDesc = document.getElementById('heroMissionDesc');
-      if (heroDesc && data.heroMissionDescEn) {
-        heroDesc.innerText = data.heroMissionDescEn;
+      if (heroDesc) {
+        if (data.heroMissionDescEn) heroDesc.setAttribute('data-lang-en', data.heroMissionDescEn);
+        if (data.heroMissionDescHi) heroDesc.setAttribute('data-lang-hi', data.heroMissionDescHi);
+        heroDesc.innerText = currentLanguage === 'hi' ? (data.heroMissionDescHi || heroDesc.getAttribute('data-lang-hi') || data.heroMissionDescEn) : (data.heroMissionDescEn || heroDesc.getAttribute('data-lang-en'));
       }
 
       const heroMotto = document.getElementById('heroMissionMotto');
-      if (heroMotto && data.heroMotto) {
-        heroMotto.innerText = data.heroMotto;
+      if (heroMotto) {
+        const mottoEn = data.heroMottoEn || data.heroMotto;
+        const mottoHi = data.heroMottoHi || '
+करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।
+';
+        if (mottoEn) heroMotto.setAttribute('data-lang-en', mottoEn);
+        if (mottoHi) heroMotto.setAttribute('data-lang-hi', mottoHi);
+        heroMotto.innerText = currentLanguage === 'hi' ? (mottoHi || heroMotto.getAttribute('data-lang-hi')) : (mottoEn || heroMotto.getAttribute('data-lang-en'));
       }
 
       // 3. Live Seva Impact Statistics
@@ -18426,18 +18306,6 @@
           { id: 'wh-1', src: 'images/social-3.jpg', titleHi: 'निःशुल्क सेनेटरी पैड वितरण सेवा', titleEn: 'Free Sanitary Pad Distribution', descHi: 'ग्रामीण व झुग्गी बस्तियों में नि:शुल्क सेनेटरी पैड वितरण।', descEn: 'Distributing biodegradable sanitary pads to rural and slum women.', inSlideshow: true },
           { id: 'wh-2', src: 'images/social-1.jpg', titleHi: 'मासिक धर्म स्वच्छता जागरूकता कार्यशाला', titleEn: 'Menstrual Hygiene Awareness Workshop', descHi: 'संकोच व भ्रांतियां दूर कर वैज्ञानिक स्वच्छता की सीख।', descEn: 'Conducting awareness sessions to eliminate taboos and ensure dignity.', inSlideshow: true },
           { id: 'wh-3', src: 'images/education-2.jpg', titleHi: 'किशोरी स्वास्थ्य व स्वच्छता किट वितरण', titleEn: 'Adolescent Girls Health Kits', descHi: 'बालिकाओं के स्वास्थ्य संवर्धन हेतु आवश्यक किट वितरण।', descEn: 'Empowering young girls with hygiene kits, soap, and health counseling.', inSlideshow: true }
-        ]
-      },
-      'marriage-support': {
-        titleHi: 'विवाह सहयोग',
-        titleEn: 'Marriage Support & Kanyadan',
-        metric: 'Marriage Support',
-        slideshowEnabled: true,
-        interval: 4000,
-        photos: [
-          { id: 'mrg-1', src: 'images/social-1.jpg', titleHi: 'निर्धन कन्या विवाह सहयोग व उपहार सामग्री', titleEn: 'Kanyadan Sahyog & Wedding Essentials', descHi: 'असहाय परिवारों की बेटियों के विवाह हेतु आर्थिक व भौतिक संबल।', descEn: 'Providing bridal attire, wedding groceries, and household essentials.', inSlideshow: true },
-          { id: 'mrg-2', src: 'images/founder.jpg', titleHi: 'कन्यादान आशीर्वाद एवं पारिवारिक संबल', titleEn: 'Blessings & Dignified Family Support', descHi: 'संस्थान के संस्थापक व ट्रस्टियों द्वारा कन्यादान उपहार।', descEn: 'Sansthan trustees blessing the newlyweds with utensils and financial aid.', inSlideshow: true },
-          { id: 'mrg-3', src: 'images/social-5.jpg', titleHi: 'सामूहिक विवाह सहयोग व गृहस्थ सामग्री', titleEn: 'Community Marriage Support', descHi: 'बर्तन सेट, वस्त्र एवं दैनिक उपयोगी सामग्री भेंट।', descEn: 'Complete kitchen utensil sets, bedding, and dignity support for the bride.', inSlideshow: true }
         ]
       },
       'blanket-distribution': {
