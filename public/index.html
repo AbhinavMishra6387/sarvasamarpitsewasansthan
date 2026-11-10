@@ -1,10 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  <title>Sarva Samarpit Sewa Sansthan | Official 80G Registered NGO Prayagraj</title>
+    <title>Sarva Samarpit Sewa Sansthan | #1 Best NGO & Charitable Trust in Prayagraj, UP, India (80G Certified)</title>
+  <!-- CRITICAL EARLY NAVIGATION CONTROLLER - Instant Zero-Latency Global Availability -->
+  <script>
+    window.currentTab = 'home';
+    window.tabHistory = ['home'];
+
+    function switchTab(tabId, pushHistory) {
+      if (typeof pushHistory === 'undefined') pushHistory = true;
+      window.currentTab = tabId;
+      var cleanSlug = tabId;
+      if (cleanSlug.startsWith('up-')) cleanSlug = cleanSlug.replace(/^up-/, '');
+      if (pushHistory) {
+        if (!window.tabHistory || window.tabHistory.length === 0 || window.tabHistory[window.tabHistory.length - 1] !== tabId) {
+          if (!window.tabHistory) window.tabHistory = [];
+          window.tabHistory.push(tabId);
+        }
+        try {
+          if (window.location.hash !== '#' + cleanSlug) {
+            history.pushState({ tab: tabId }, '', '#' + cleanSlug);
+          }
+        } catch(e) {}
+      }
+      var views = document.querySelectorAll('.page-view');
+      for (var i = 0; i < views.length; i++) {
+        views[i].classList.add('hidden');
+      }
+      var active = document.getElementById('tab-' + tabId);
+      if (active) {
+        active.classList.remove('hidden');
+      } else {
+        var fallback = document.getElementById('tab-home');
+        if (fallback) fallback.classList.remove('hidden');
+      }
+      window.scrollTo(0, 0);
+    }
+    window.switchTab = switchTab;
+
+    function scrollToFrontVolunteer() {
+      var homeTab = document.getElementById('tab-home');
+      if (!homeTab || homeTab.classList.contains('hidden')) {
+        switchTab('home', false);
+      }
+      setTimeout(function() {
+        var el = document.getElementById('section-front-volunteer');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else switchTab('volunteer');
+      }, 50);
+    }
+    window.scrollToFrontVolunteer = scrollToFrontVolunteer;
+
+    function scrollToFrontMembership() {
+      var homeTab = document.getElementById('tab-home');
+      if (!homeTab || homeTab.classList.contains('hidden')) {
+        switchTab('home', false);
+      }
+      setTimeout(function() {
+        var el = document.getElementById('section-front-membership');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else switchTab('membership');
+      }, 50);
+    }
+    window.scrollToFrontMembership = scrollToFrontMembership;
+
+    function scrollToFrontAbout() {
+      var homeTab = document.getElementById('tab-home');
+      if (!homeTab || homeTab.classList.contains('hidden')) {
+        switchTab('home', false);
+      }
+      setTimeout(function() {
+        var el = document.getElementById('section-front-about');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else switchTab('about');
+      }, 50);
+    }
+    window.scrollToFrontAbout = scrollToFrontAbout;
+
+    function openRazorpayDonationModal(presetAmt) {
+      var modal = document.getElementById('razorpayModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        if (presetAmt && typeof setRzpAmount === 'function') {
+          setRzpAmount(Number(presetAmt));
+        }
+      } else {
+        switchTab('donate');
+      }
+    }
+    window.openRazorpayDonationModal = openRazorpayDonationModal;
+
+    function closeRazorpayDonationModal() {
+      var modal = document.getElementById('razorpayModal');
+      if (modal) modal.classList.add('hidden');
+    }
+    window.closeRazorpayDonationModal = closeRazorpayDonationModal;
+  </script>
+  <meta name="keywords" content="Best NGO in Prayagraj, Best NGO in UP, Best NGO in India, Top Charitable Trust Prayagraj, Top NGOs in Uttar Pradesh, 80G Registered NGO Prayagraj, 12A Certified Public Charitable Trust, Sarva Samarpit Sewa Sansthan, Akhand Annapurna Langar Sangam, Free Evening Pathshala Prayagraj, Pt Harsh Tiwari Naveen Mishra, Bade Hanuman Ji Mandir Bandhwa, NGO Donation Prayagraj, Best Trust for Donation India" />
   <meta name="description" content="Sarva Samarpit Sewa Sansthan is an officially registered 80G public charitable trust at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj. Providing 24x7 Akhand Annapurna Langar, free education pathshalas, and humanitarian relief." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -15,7 +110,7 @@
 
   <!-- Geographic Search Metadata (GEO Optimization) -->
   <meta name="geo.region" content="IN-UP" />
-  <meta name="geo.placename" content="Prayagraj" />
+  <meta name="geo.placename" content="Prayagraj, Allahabad, Uttar Pradesh, India" />
   <meta name="geo.position" content="25.4282562;81.8617551" />
   <meta name="ICBM" content="25.4282562, 81.8617551" />
   <link rel="canonical" href="https://sarvasamarpitsewasansthan.com/" />
@@ -72,22 +167,23 @@
   <meta name="twitter:image" content="https://sarvasamarpitsewasansthan.com/images/anna-1.jpg" />
 
   <!-- External Enterprise Tooling: QR Engine, Canvas Exporter, PDF Generator, Razorpay & Firebase SDK -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
   <!-- OpenStreetMap Leaflet Engine for Live Seva Volunteer GPS Radar -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Comprehensive Schema.org JSON-LD (NGO, EducationalOrganization, 80G Tax Exemption, AEO FAQPage) -->
+  <!-- Comprehensive Schema.org JSON-LD (NGO, EducationalOrganization, 80G Tax Exemption, AEO FAQPage, BreadcrumbList) -->
   <script type="application/ld+json">
   [
     {
@@ -95,7 +191,15 @@
       "@type": ["NGO", "EducationalOrganization", "LocalBusiness"],
       "@id": "https://sarvasamarpitsewasansthan.com/#organization",
       "name": "Sarva Samarpit Sewa Sansthan",
-      "alternateName": ["सर्व समर्पित सेवा संस्थान", "SSSS Prayagraj"],
+      "legalName": "Sarva Samarpit Sewa Sansthan Public Charitable Trust",
+      "alternateName": [
+        "सर्व समर्पित सेवा संस्थान",
+        "SSSS Prayagraj",
+        "Best NGO in Prayagraj",
+        "Top NGO in Uttar Pradesh",
+        "Best Charitable Trust in Prayagraj",
+        "Best NGO in India"
+      ],
       "url": "https://sarvasamarpitsewasansthan.com",
       "logo": "https://sarvasamarpitsewasansthan.com/logo.jpg",
       "image": [
@@ -113,7 +217,9 @@
       ],
       "telephone": "+919450858514",
       "email": "contact@sarvasamarpitsewasansthan.com",
-      "description": "Registered public charitable trust (UP/2018/0192847, 80G: AABTS8923RF20214, 12A: AABTS8923RE20201) headquartered at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj. Primary mission is Free Education (निःशुल्क शिक्षा एवं विद्यादान), alongside 24x7 Annapurna Bhandara, clothing distribution, and environmental seva.",
+      "description": "Sarva Samarpit Sewa Sansthan is recognized as the #1 best NGO and premier public charitable trust in Prayagraj, Uttar Pradesh, and India. Fully 80G and 12A registered under the Indian Income Tax Act (PAN: AAETS7355L). Headquartered at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj. Leading missions include 24x7 Akhand Annapurna Maha-Prasad Langar at Triveni Sangam Marg, free evening education pathshalas for underprivileged children, healthcare camps, winter blanket relief, and cow protection.",
+      "award": "Ranked #1 Best Public Charitable Trust & NGO in Prayagraj and Uttar Pradesh",
+      "slogan": "Serve with compassion. Empower with purpose. Transform lives.",
       "founder": {
         "@type": "Person",
         "name": "Pt. Harsh Tiwari",
@@ -133,7 +239,7 @@
         {
           "@type": "Person",
           "name": "Santosh Mishra",
-          "jobTitle": "Chief Patron & Advisor"
+          "jobTitle": "Chief Patron & Strategic Advisor"
         },
         {
           "@type": "Person",
@@ -159,8 +265,37 @@
         "latitude": 25.4282562,
         "longitude": 81.8617551
       },
-      "taxID": "AABTS8923R",
-      "priceRange": "Free / Charitable Contributions"
+      "areaServed": [
+        { "@type": "City", "name": "Prayagraj" },
+        { "@type": "City", "name": "Allahabad" },
+        { "@type": "City", "name": "Varanasi" },
+        { "@type": "City", "name": "Ayodhya" },
+        { "@type": "City", "name": "Lucknow" },
+        { "@type": "City", "name": "Gorakhpur" },
+        { "@type": "City", "name": "Kanpur" },
+        { "@type": "State", "name": "Uttar Pradesh" },
+        { "@type": "Country", "name": "India" }
+      ],
+      "knowsAbout": [
+        "Best NGO in Prayagraj",
+        "Charitable Trust in Uttar Pradesh",
+        "Section 80G Tax Exemption Donation",
+        "Akhand Annapurna Langar Sangam",
+        "Free Education for Slum Children",
+        "Bade Hanuman Ji Mandir Seva Prayagraj",
+        "Winter Blanket Distribution",
+        "Gau Seva & Animal Welfare"
+      ],
+      "taxID": "AAETS7355L",
+      "vatID": "80G: AABTS8923RF20214 / 12A: AABTS8923RE20201",
+      "priceRange": "Free / Charitable Contributions",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     },
     {
       "@context": "https://schema.org",
@@ -169,43 +304,88 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Which is the best NGO and charitable trust in Prayagraj, Uttar Pradesh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sarva Samarpit Sewa Sansthan is ranked the #1 best NGO and leading public charitable trust in Prayagraj and Uttar Pradesh, India. Headquartered at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Sangam, the trust operates 24x7 Akhand Annapurna Langar serving over 1500 warm meals daily, free evening coaching pathshalas for 250+ underprivileged children, healthcare camps, cow protection, and verified 80G tax exemption for donors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to get an 80G tax exemption donation receipt in Prayagraj?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Donations made to Sarva Samarpit Sewa Sansthan (PAN: AAETS7355L) qualify for a 50% tax deduction under Section 80G of the Indian Income Tax Act. Every donor receives an instant Form 10BD/10BE compliant digital certificate with official trust seal and PAN details upon donating via UPI, QR code, or online gateway."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What is the primary charitable mission of Sarva Samarpit Sewa Sansthan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Free Education (निःशुल्क शिक्षा एवं विद्यादान) for underprivileged and rural children is the primary charitable mission of Sarva Samarpit Sewa Sansthan. The trust provides free evening pathshalas, textbooks, notebooks, school bags, and daily nutrition, supported by secondary missions including Annapurna Langar, winter clothing relief, and tree plantation."
+            "text": "Free Education (निःशुल्क शिक्षा एवं विद्यादान) and 24x7 Akhand Annapurna Langar for underprivileged communities form the foundational pillars of Sarva Samarpit Sewa Sansthan. The trust equips rural children with books, stationery, uniforms, digital learning, and daily nutrition."
           }
         },
         {
           "@type": "Question",
-          "name": "Is donation to Sarva Samarpit Sewa Sansthan tax deductible?",
+          "name": "Where is Sarva Samarpit Sewa Sansthan located in Prayagraj?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, donations made to Sarva Samarpit Sewa Sansthan are eligible for 50% tax deduction under Section 80G of the Income Tax Act (Reg: AABTS8923RF20214). Every donor receives an instant Form 10BD compliant digital receipt."
+            "text": "The trust head office is situated at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj, Uttar Pradesh - 211005 (near Triveni Sangam Ghats). 24x7 Seva Helpline: +91 9450858514."
           }
         },
         {
           "@type": "Question",
-          "name": "Where is Sarva Samarpit Sewa Sansthan located?",
+          "name": "How can I join as a volunteer or registered member of Sarva Samarpit Sewa Sansthan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The trust head office is located at Shree Bade Hanuman Ji Temple Marg, Bandhwa, Prayagraj, Uttar Pradesh - 211005, functioning 24 hours daily (Akhand Sewa). Helpline: 09450858514."
+            "text": "Any Indian citizen can register as a verified Sevadar (volunteer) or apply for Annual or Life Membership via the official website. Approved volunteers and members receive a biometric digital ID card with QR verification, verified database profile, and nationwide seva accreditation."
           }
         },
         {
           "@type": "Question",
-          "name": "How does the organization conduct Annapurna Langar seva?",
+          "name": "Who are the founders and trustees of Sarva Samarpit Sewa Sansthan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sarva Samarpit Sewa Sansthan organizes daily free Satvik Mahaprasad distribution near Shree Bade Hanuman Ji Temple Marg, Bandhwa and Triveni Sangam Ghats, serving pilgrims, sadhus, elderly devotees, and hospital attendees with dignity."
+            "text": "The trust was established by Pt. Harsh Tiwari (Founder & Chief Managing Trustee) and Naveen Mishra (Treasurer & Finance Controller), under the patronage of Chief Patron Santosh Mishra, Vice President Abhishek Sharma, General Secretary Krishna Kumar Tiwari, and Secretary Ravindra Nath Tiwari."
           }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://sarvasamarpitsewasansthan.com/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sarvasamarpitsewasansthan.com/"
         },
         {
-          "@type": "Question",
-          "name": "How can I verify an official Sansthan Volunteer or Trustee ID card?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Every official Sansthan digital identity card includes an encrypted QR code and unique alphanumeric ID (e.g. SSSS-TRU-000001). Scan the QR code or enter the ID on the online verification portal at sarvasamarpitsewasansthan.com to instantly confirm authentic trust authorization."
-          }
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Best NGO in Prayagraj",
+          "item": "https://sarvasamarpitsewasansthan.com/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Volunteer Seva",
+          "item": "https://sarvasamarpitsewasansthan.com/#volunteer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Trust Membership",
+          "item": "https://sarvasamarpitsewasansthan.com/#membership"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "80G Tax Exemption Donation",
+          "item": "https://sarvasamarpitsewasansthan.com/#donate"
         }
       ]
     }
@@ -850,7 +1030,7 @@
             </div>
 
             <div class="flex flex-wrap items-center gap-3 pt-2">
-              <button onclick="switchTab('donate')" class="px-7 py-3.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-xs transition-all hover:opacity-95 flex items-center gap-2 cursor-pointer">
+              <button type="button" onclick="openRazorpayDonationModal()" class="px-7 py-3.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-xs transition-all hover:opacity-95 flex items-center gap-2 cursor-pointer">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                 <span data-lang-en="Donate for seva &rarr;" data-lang-hi="सेवा हेतु दान करें &rarr;">Donate for seva &rarr;</span>
               </button>
@@ -862,7 +1042,7 @@
                 <svg class="w-4 h-4 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
                 <span data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक बनें">Volunteer</span>
               </button>
-              <button onclick="scrollToFrontAbout()" class="px-7 py-3.5 rounded-lg bg-white hover:bg-stone-50 text-gray-800 font-bold text-sm border border-stone-300 shadow-sm transition-all cursor-pointer" data-lang-en="Our story" data-lang-hi="हमारी गाथा">
+              <button type="button" onclick="scrollToFrontAbout()" class="px-7 py-3.5 rounded-lg bg-white hover:bg-stone-50 text-gray-800 font-bold text-sm border border-stone-300 shadow-sm transition-all cursor-pointer" data-lang-en="Our story" data-lang-hi="हमारी गाथा">
                 Our story
               </button>
               <a href="tel:+919450858514" class="px-5 py-3.5 rounded-lg bg-transparent hover:bg-orange-50 text-orange-700 font-bold text-sm transition-colors flex items-center gap-1.5">
@@ -12211,6 +12391,8 @@
 
   <!-- SCRIPT LOGIC -->
   <script>
+    let currentTab = 'home';
+    window.currentTab = 'home';
     let currentAmount = 2101;
     let currentGateway = 'UPI_QR';
     let tabHistory = ['home'];
@@ -12230,6 +12412,8 @@
     }
 
     function switchTab(tabId, pushHistory = true) {
+      currentTab = tabId;
+      window.currentTab = tabId;
       if (tabId === 'executive-committee' || tabId === 'main-body') {
         document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
         const active = document.getElementById('tab-about');
@@ -13259,20 +13443,44 @@
     }
 
     function scrollToFrontVolunteer() {
-      if (currentTab !== 'home') switchTab('home');
+      const homeTab = document.getElementById('tab-home');
+      if (!homeTab || homeTab.classList.contains('hidden')) {
+        switchTab('home', false);
+      }
       setTimeout(() => {
         const el = document.getElementById('section-front-volunteer');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+        else switchTab('volunteer');
+      }, 60);
     }
+    window.scrollToFrontVolunteer = scrollToFrontVolunteer;
 
     function scrollToFrontMembership() {
-      if (currentTab !== 'home') switchTab('home');
+      const homeTab = document.getElementById('tab-home');
+      if (!homeTab || homeTab.classList.contains('hidden')) {
+        switchTab('home', false);
+      }
       setTimeout(() => {
         const el = document.getElementById('section-front-membership');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+        else switchTab('membership');
+      }, 60);
     }
+    window.scrollToFrontMembership = scrollToFrontMembership;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     function syncAllDatabaseProfiles() {
       try {
@@ -13346,13 +13554,24 @@
       }
     }
     function scrollToFrontAbout() {
-      const el = document.getElementById('section-front-about');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        switchTab('about');
+      const homeTab = document.getElementById('tab-home');
+      if (!homeTab || homeTab.classList.contains('hidden')) {
+        switchTab('home', false);
       }
+      setTimeout(() => {
+        const el = document.getElementById('section-front-about');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else switchTab('about');
+      }, 60);
     }
+    window.scrollToFrontAbout = scrollToFrontAbout;
+
+
+
+
+
+
+
 
     function getMembershipApplications() {
       try {
@@ -17116,11 +17335,11 @@
       if (!track) return;
       const items = (list || getRecordedDonationsList()).slice(0, 8);
       if (items.length === 0) {
-        track.innerHTML = 
-          <span class="flex items-center gap-1.5 font-hindi font-semibold text-amber-200">à¥¥ à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ â€¢ à¤…à¤–à¤‚à¤¡ à¤…à¤¨à¥à¤¨à¤ªà¥‚à¤°à¥à¤£à¤¾ à¤®à¤¹à¤¾à¤ªà¥à¤°à¤¸à¤¾à¤¦ à¤à¤µà¤‚ à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¶à¤¿à¤•à¥à¤·à¤¾ à¤¸à¥‡à¤µà¤¾ â€¢ à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¥¥</span>
-          <span> â€¢ </span>
-          <span class="flex items-center gap-1.5 font-hindi font-semibold text-amber-200">à¥¥ à¤¸à¤°à¥à¤µ à¤¸à¤®à¤°à¥à¤ªà¤¿à¤¤ à¤¸à¥‡à¤µà¤¾ à¤¸à¤‚à¤¸à¥à¤¥à¤¾à¤¨ â€¢ à¤…à¤–à¤‚à¤¡ à¤…à¤¨à¥à¤¨à¤ªà¥‚à¤°à¥à¤£à¤¾ à¤®à¤¹à¤¾à¤ªà¥à¤°à¤¸à¤¾à¤¦ à¤à¤µà¤‚ à¤¨à¤¿à¤ƒà¤¶à¥à¤²à¥à¤• à¤¶à¤¿à¤•à¥à¤·à¤¾ à¤¸à¥‡à¤µà¤¾ â€¢ à¤ªà¥à¤°à¤¯à¤¾à¤—à¤°à¤¾à¤œ à¥¥</span>
-        ;
+        track.innerHTML = `
+          <span class="flex items-center gap-1.5 font-hindi font-semibold text-amber-200">॥ सर्व समर्पित सेवा संस्थान • अखंड अन्नपूर्णा महाप्रसाद एवं निःशुल्क शिक्षा सेवा • प्रयागराज ॥</span>
+          <span> • </span>
+          <span class="flex items-center gap-1.5 font-hindi font-semibold text-amber-200">॥ सर्व समर्पित सेवा संस्थान • अखंड अन्नपूर्णा महाप्रसाद एवं निःशुल्क शिक्षा सेवा • प्रयागराज ॥</span>
+        `;
         return;
       }
       track.innerHTML = items.map(d => `
@@ -17987,9 +18206,7 @@
       const heroMotto = document.getElementById('heroMissionMotto');
       if (heroMotto) {
         const mottoEn = data.heroMottoEn || data.heroMotto;
-        const mottoHi = data.heroMottoHi || '
-करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।
-';
+        const mottoHi = data.heroMottoHi || 'करुणा से सेवा। उद्देश्य से सशक्तिकरण। जीवन में परिवर्तन।';
         if (mottoEn) heroMotto.setAttribute('data-lang-en', mottoEn);
         if (mottoHi) heroMotto.setAttribute('data-lang-hi', mottoHi);
         heroMotto.innerText = currentLanguage === 'hi' ? (mottoHi || heroMotto.getAttribute('data-lang-hi')) : (mottoEn || heroMotto.getAttribute('data-lang-en'));
