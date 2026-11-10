@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -854,11 +854,11 @@
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                 <span data-lang-en="Donate for seva &rarr;" data-lang-hi="सेवा हेतु दान करें &rarr;">Donate for seva &rarr;</span>
               </button>
-              <button type="button" onclick="switchTab('membership')" class="px-5 py-3.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-900 font-bold text-sm border border-orange-200 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer font-hindi" data-lang-en="Membership" data-lang-hi="सदस्यता">
+              <button type="button" onclick="scrollToFrontMembership()" class="px-5 py-3.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-900 font-bold text-sm border border-orange-200 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer font-hindi" data-lang-en="Membership" data-lang-hi="सदस्यता">
                 <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
                 <span data-lang-en="Membership" data-lang-hi="सदस्यता">Membership</span>
               </button>
-              <button type="button" onclick="switchTab('volunteer')" class="px-5 py-3.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-sm border border-stone-300 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer font-hindi" data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक बनें">
+              <button type="button" onclick="scrollToFrontVolunteer()" class="px-5 py-3.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-sm border border-stone-300 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer font-hindi" data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक बनें">
                 <svg class="w-4 h-4 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
                 <span data-lang-en="Volunteer" data-lang-hi="स्वयंसेवक बनें">Volunteer</span>
               </button>
@@ -881,7 +881,166 @@
       
 
       <!-- ======================================================== -->
-      <!-- 1. FRONT SECTION: MEMBERSHIP & CORPORATE DIGITAL ID STUDIO -->
+      <!-- 1. FRONT SECTION: VOLUNTEER SEVA NETWORK & CORPS -->
+      <!-- ======================================================== -->
+      <section id="section-front-volunteer" class="py-16 sm:py-24 bg-stone-50/80 border-b border-stone-200/90 scroll-mt-20">
+        <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-12">
+          
+          <div class="text-center max-w-3xl mx-auto space-y-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-900 text-xs font-bold uppercase tracking-wider border border-orange-200">
+              <svg class="w-3.5 h-3.5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+              <span data-lang-en="Devoted Seva Network • Dedicated Volunteer Corps" data-lang-hi="समर्पित स्वयंसेवक दल • सेवा नेटवर्क">Devoted Seva Network • Dedicated Volunteer Corps</span>
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight font-hindi">
+              <button type="button" onclick="switchTab('volunteer')" class="hover:text-orange-600 transition-colors cursor-pointer text-left bg-transparent border-0 p-0" data-lang-en="Join as an Official Sansthan Volunteer (Sevadar)" data-lang-hi="संस्थान के अधिकृत स्वयंसेवक (सेवादार) बनें">Join as an Official Sansthan Volunteer (Sevadar)</button>
+            </h2>
+            <p class="text-xs sm:text-sm md:text-base text-stone-600 leading-relaxed font-medium" data-lang-en="Offer your selfless time, energy, and sacred dedication to rural education, 24/7 Akhand Langar, healthcare camps, and environmental conservation at Sangam Marg, Prayagraj. Every registered volunteer receives official trust credentials and a digital photo identity card." data-lang-hi="प्रयागराज के संगम मार्ग पर ग्रामीण शिक्षा, 24/7 अखंड लंगर, स्वास्थ्य शिविर और पर्यावरण संरक्षण के लिए अपना निःस्वार्थ समय और समर्पण दें। प्रत्येक पंजीकृत स्वयंसेवक को अधिकृत ट्रस्ट पहचान पत्र और डिजिटल फोटो आईडी कार्ड प्रदान किया जाता है।">Offer your selfless time, energy, and sacred dedication to rural education, 24/7 Akhand Langar, healthcare camps, and environmental conservation at Sangam Marg, Prayagraj. Every registered volunteer receives official trust credentials and a digital photo identity card.</p>
+          </div>
+
+          <!-- Security & Identity Mandate Alert Banner -->
+          <div class="max-w-4xl mx-auto p-4 sm:p-5 rounded-2xl bg-amber-50/90 border-2 border-amber-300 text-stone-800 shadow-sm flex flex-col sm:flex-row items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-orange-600 text-white flex items-center justify-center shrink-0 shadow-md">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div class="space-y-1 text-center sm:text-left flex-1">
+              <div class="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
+                <span class="px-2 py-0.5 rounded bg-orange-600 text-white font-bold text-[10px] uppercase tracking-wider">Security Mandate</span>
+                <span class="text-xs font-bold text-stone-900" data-lang-en="Mandatory Identity Verification for All Volunteers" data-lang-hi="सभी स्वयंसेवकों के लिए अनिवार्य पहचान सत्यापन">Mandatory Identity Verification for All Volunteers</span>
+              </div>
+              <p class="text-xs text-stone-600 leading-relaxed" data-lang-en="For campus security and official database records, all normal volunteers must submit a clear portrait photograph and either an Aadhaar Card (12 digits) or PAN Card (10 alphanumeric). Profiles are professionally recorded and verified." data-lang-hi="परिसर सुरक्षा और अधिकृत डेटाबेस के लिए, सभी सामान्य स्वयंसेवकों को अपनी स्पष्ट फोटो तथा आधार कार्ड (12 अंक) या पैन कार्ड (10 वर्ण) में से कोई एक अनिवार्य रूप से जमा करना होगा।">
+                For campus security and official database records, all normal volunteers must submit a clear portrait photograph and either an Aadhaar Card (12 digits) or PAN Card (10 alphanumeric). Profiles are professionally recorded and verified.
+              </p>
+            </div>
+            <button type="button" onclick="switchTab('volunteer')" class="px-4 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-sm transition-all whitespace-nowrap cursor-pointer shrink-0">
+              <span data-lang-en="Apply Online Now &rarr;" data-lang-hi="ऑनलाइन आवेदन करें &rarr;">Apply Online Now &rarr;</span>
+            </button>
+          </div>
+
+          <!-- 4 Seva Wings Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Wing 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200/90 hover:border-orange-400 shadow-sm hover:shadow-md transition-all space-y-3.5 flex flex-col justify-between group">
+              <div class="space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-xl group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                  🍲
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-orange-600">Daily Langar Wing</span>
+                  <h3 class="font-bold text-base text-stone-900 group-hover:text-orange-600 transition-colors" data-lang-en="Akhand Annapurna Langar" data-lang-hi="अखंड अन्नपूर्णा लंगर">Akhand Annapurna Langar</h3>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed" data-lang-en="Prepare, cook, and distribute hot satvik meals daily to over 1,500 sadhus, destitute pilgrims, and attendants outside hospitals." data-lang-hi="प्रतिदिन 1,500 से अधिक साधुओं, असहाय तीर्थयात्रियों और अस्पताल परिचारकों को गरम सात्विक भोजन तैयार कर वितरित करें।">
+                  Prepare, cook, and distribute hot satvik meals daily to over 1,500 sadhus, destitute pilgrims, and attendants outside hospitals.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-500 font-semibold">
+                <span>Bade Hanuman Mandir</span>
+                <span class="text-orange-700 font-bold">Daily 24/7</span>
+              </div>
+            </div>
+
+            <!-- Wing 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200/90 hover:border-blue-400 shadow-sm hover:shadow-md transition-all space-y-3.5 flex flex-col justify-between group">
+              <div class="space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  📚
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600">Education Mission</span>
+                  <h3 class="font-bold text-base text-stone-900 group-hover:text-blue-700 transition-colors" data-lang-en="Free Evening Pathshala" data-lang-hi="निःशुल्क संध्या पाठशाला">Free Evening Pathshala</h3>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed" data-lang-en="Mentor and tutor 85+ underprivileged children daily in basic reading, mathematics, digital literacy, and moral character building." data-lang-hi="85+ अभावग्रस्त बच्चों को प्रतिदिन बुनियादी पठन, गणित, डिजिटल साक्षरता और नैतिक शिक्षा में मार्गदर्शन प्रदान करें।">
+                  Mentor and tutor 85+ underprivileged children daily in basic reading, mathematics, digital literacy, and moral character building.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-500 font-semibold">
+                <span>Slum Learning Centers</span>
+                <span class="text-blue-700 font-bold">5:00 PM - 7:30 PM</span>
+              </div>
+            </div>
+
+            <!-- Wing 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200/90 hover:border-emerald-400 shadow-sm hover:shadow-md transition-all space-y-3.5 flex flex-col justify-between group">
+              <div class="space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                  🏥
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600">Health & Relief</span>
+                  <h3 class="font-bold text-base text-stone-900 group-hover:text-emerald-700 transition-colors" data-lang-en="Arogya Medical & Blankets" data-lang-hi="आरोग्य चिकित्सा व कंबल सेवा">Arogya Medical & Blankets</h3>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed" data-lang-en="Assist volunteer doctors in bi-weekly health camps, dispense free generic medicines, and distribute winter blankets to footpath dwellers." data-lang-hi="द्वि-साप्ताहिक स्वास्थ्य शिविरों में डॉक्टरों की सहायता करें, निःशुल्क दवाइयां वितरित करें और शीत ऋतु में कंबल बांटें।">
+                  Assist volunteer doctors in bi-weekly health camps, dispense free generic medicines, and distribute winter blankets to footpath dwellers.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-500 font-semibold">
+                <span>Mobile Health Unit</span>
+                <span class="text-emerald-700 font-bold">Bi-Weekly Camps</span>
+              </div>
+            </div>
+
+            <!-- Wing 4 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-200/90 hover:border-amber-400 shadow-sm hover:shadow-md transition-all space-y-3.5 flex flex-col justify-between group">
+              <div class="space-y-3">
+                <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                  🌱
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600">Heritage & Ecology</span>
+                  <h3 class="font-bold text-base text-stone-900 group-hover:text-amber-700 transition-colors" data-lang-en="Sangam Seva & Plantation" data-lang-hi="संगम सेवा एवं वृक्षारोपण">Sangam Seva & Plantation</h3>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed" data-lang-en="Cleanliness drives across holy Triveni Sangam Ghats, sacred tree sapling distribution, and crowd assistance during major Parvas." data-lang-hi="पवित्र त्रिवेणी संगम घाटों पर स्वच्छता अभियान, पर्यावरण संरक्षण हेतु पौधारोपण और प्रमुख पर्वों पर तीर्थयात्री सहायता।">
+                  Cleanliness drives across holy Triveni Sangam Ghats, sacred tree sapling distribution, and crowd assistance during major Parvas.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-500 font-semibold">
+                <span>Sangam Ghats Prayagraj</span>
+                <span class="text-amber-700 font-bold">Weekend Drives</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Action Buttons Row -->
+          <div class="pt-2 flex flex-wrap items-center justify-center gap-3.5">
+            <button type="button" onclick="switchTab('volunteer')" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition-transform hover:scale-102 flex items-center gap-2 cursor-pointer">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+              <span data-lang-en="Register as Volunteer &rarr;" data-lang-hi="स्वयंसेवक के रूप में पंजीकरण करें &rarr;">Register as Volunteer &rarr;</span>
+            </button>
+            <button type="button" onclick="scrollToFrontMembership()" class="px-5 py-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300 text-stone-800 font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer">
+              <span data-lang-en="Explore Trust Membership" data-lang-hi="ट्रस्ट सदस्यता देखें">Explore Trust Membership</span>
+              <svg class="w-4 h-4 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <button type="button" onclick="openVerifyModal()" class="px-5 py-3.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-stone-800 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span data-lang-en="Verify ID Card QR" data-lang-hi="आईडी कार्ड क्यूआर सत्यापित करें">Verify ID Card QR</span>
+            </button>
+          </div>
+
+          <!-- Trust Numbers Badge Strip -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t border-stone-200 text-center">
+            <div class="p-3 bg-white rounded-xl border border-stone-200">
+              <p class="font-extrabold text-lg sm:text-xl text-stone-900 font-mono">500+</p>
+              <p class="text-[11px] text-stone-500 font-semibold" data-lang-en="Registered Sevadars" data-lang-hi="पंजीकृत सेवादार">Registered Sevadars</p>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-stone-200">
+              <p class="font-extrabold text-lg sm:text-xl text-orange-600 font-mono">4</p>
+              <p class="text-[11px] text-stone-500 font-semibold" data-lang-en="Active Seva Wings" data-lang-hi="सक्रिय सेवा प्रकोष्ठ">Active Seva Wings</p>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-stone-200">
+              <p class="font-extrabold text-lg sm:text-xl text-emerald-600 font-mono">100%</p>
+              <p class="text-[11px] text-stone-500 font-semibold" data-lang-en="Free Volunteer Seva" data-lang-hi="निःस्वार्थ सेवा">Free Volunteer Seva</p>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-stone-200">
+              <p class="font-extrabold text-lg sm:text-xl text-stone-900 font-mono">24x7</p>
+              <p class="text-[11px] text-stone-500 font-semibold" data-lang-en="Sangam Ground Presence" data-lang-hi="संगम तट पर उपस्थिति">Sangam Ground Presence</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- ======================================================== -->
+      <!-- 2. FRONT SECTION: MEMBERSHIP & CORPORATE DIGITAL ID STUDIO -->
       <!-- ======================================================== -->
       <section id="section-front-membership" class="py-16 sm:py-24 bg-gradient-to-b from-orange-50/40 via-white to-stone-50/60 border-b border-stone-200/90 scroll-mt-20">
         <div class="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-12">
@@ -1046,7 +1205,7 @@
       </section>
 
       <!-- ======================================================== -->
-      <!-- 2. FRONT SECTION: ABOUT TRUST & LEADERSHIP               -->
+      <!-- 3. FRONT SECTION: ABOUT TRUST & LEADERSHIP               -->
       <!-- ======================================================== -->
       <section id="section-front-about" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-[1536px] mx-auto scroll-mt-20 border-b border-stone-200/80">
         <div class="space-y-14 sm:space-y-16">
@@ -7011,16 +7170,14 @@
               </div>
               <div>
                 <label class="block text-xs font-bold text-stone-700 mb-1">Government ID Proof <span class="text-red-500">*</span></label>
-                <select id="volIdType" required class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold focus:outline-none focus:border-orange-500">
-                  <option value="Aadhaar Card">Aadhaar Card</option>
-                  <option value="Voter ID Card">Voter ID Card</option>
-                  <option value="PAN Card">PAN Card</option>
-                  <option value="Driving License">Driving License</option>
+                <select id="volIdType" required onchange="onVolunteerIdTypeChange(this.value)" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold focus:outline-none focus:border-orange-500">
+                  <option value="Aadhaar Card" selected>Aadhaar Card (12 Digits)</option>
+                  <option value="PAN Card">PAN Card (10 Alphanumeric)</option>
                 </select>
               </div>
               <div>
-                <label class="block text-xs font-bold text-stone-700 mb-1">Govt ID Number <span class="text-red-500">*</span></label>
-                <input type="text" id="volIdNumber" required placeholder="Enter ID Number for verification" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold font-mono uppercase focus:outline-none focus:border-orange-500" />
+                <label id="volIdNumberLabel" class="block text-xs font-bold text-stone-700 mb-1">12-Digit Aadhaar Card Number <span class="text-red-500">*</span></label>
+                <input type="text" id="volIdNumber" required pattern="[0-9]{12}" maxlength="12" placeholder="Enter 12-digit Aadhaar Number (e.g. 548912345678)" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs font-semibold font-mono uppercase focus:outline-none focus:border-orange-500" />
               </div>
               <div>
                 <label class="block text-xs font-bold text-stone-700 mb-1">Emergency Contact Person <span class="text-red-500">*</span></label>
@@ -11260,6 +11417,26 @@
           <label class="block font-bold text-stone-700 mb-1">City / Residential Address</label>
           <input type="text" id="admDirMemAddress" placeholder="Prayagraj, Uttar Pradesh" class="w-full px-3 py-2 border border-stone-300 rounded-lg text-xs font-medium focus:ring-2 focus:ring-orange-500 focus:outline-none" />
         </div>
+        <!-- Mandatory PAN Card & Photo for Admin Direct Member Registration -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 p-3.5 bg-stone-50 rounded-xl border border-stone-200">
+          <div>
+            <label class="block font-bold text-stone-800 text-[11px] mb-1">
+              PAN Card Number <span class="text-red-600">*</span>
+            </label>
+            <input type="text" id="admDirMemPan" required pattern="^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$" maxlength="10" placeholder="e.g. ABCDE1234F" oninput="formatPanInput(this)" class="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg text-xs font-mono font-bold uppercase focus:ring-2 focus:ring-orange-500 focus:outline-none" />
+            <p class="text-[9.5px] text-stone-500 mt-0.5 font-medium">Mandatory for Form 10BD electronic records.</p>
+          </div>
+          <div>
+            <label class="block font-bold text-stone-800 text-[11px] mb-1">
+              Member Photograph <span class="text-red-600">*</span>
+            </label>
+            <input type="file" id="admDirMemPhotoFile" accept="image/*" required onchange="handleAdminDirectMemberPhotoUpload(this)" class="w-full text-xs text-stone-600 file:mr-2 file:py-1 file:px-2.5 file:rounded-md file:border-0 file:text-[10px] file:font-bold file:bg-orange-600 file:text-white cursor-pointer" />
+            <div class="flex items-center gap-2 mt-1">
+              <img id="admDirMemPhotoPreview" src="logo.jpg" class="w-8 h-8 rounded-full object-cover border border-orange-400 shrink-0 bg-white shadow-2xs" alt="Preview" />
+              <span class="text-[9.5px] text-stone-500">Auto-compressed for 0ms ID card rendering.</span>
+            </div>
+          </div>
+        </div>
 
         <div class="pt-3 flex items-center justify-end gap-2 border-t border-stone-100">
           <button type="button" onclick="closeAdminAddApprovedMemberModal()" class="px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold transition-all cursor-pointer">
@@ -11343,6 +11520,26 @@
         <div>
           <label class="block font-bold text-stone-700 uppercase text-[10px] mb-1">Residential Address &amp; City *</label>
           <input id="memAppAddress" type="text" required placeholder="House No., Street/Village, City, PIN Code" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-lg text-xs font-medium text-stone-900 focus:outline-none focus:border-orange-500" />
+        </div>
+        <!-- Mandatory PAN Card & Photograph for Official Membership -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 bg-orange-50/70 rounded-xl border border-orange-200">
+          <div>
+            <label class="block font-bold text-stone-800 uppercase text-[10px] mb-1">
+              PAN Card Number (Mandatory) <span class="text-red-600">*</span>
+            </label>
+            <input id="memAppPan" type="text" required pattern="^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$" maxlength="10" placeholder="e.g. ABCDE1234F" oninput="formatPanInput(this)" class="w-full px-3 py-2 bg-white border border-stone-300 rounded-lg text-xs font-mono font-bold text-stone-900 uppercase focus:outline-none focus:border-orange-500" />
+            <p class="text-[9.5px] text-stone-500 mt-1 font-medium">Legally mandatory for Section 80G Form 10BD IT exemption filing.</p>
+          </div>
+          <div>
+            <label class="block font-bold text-stone-800 uppercase text-[10px] mb-1">
+              Member Photograph (Mandatory) <span class="text-red-600">*</span>
+            </label>
+            <input id="memAppPhotoFile" type="file" accept="image/*" required onchange="handleMembershipPhotoUpload(this)" class="w-full text-xs text-stone-600 file:mr-2 file:py-1 file:px-2.5 file:rounded-md file:border-0 file:text-[10px] file:font-bold file:bg-orange-600 file:text-white cursor-pointer" />
+            <div class="flex items-center gap-2 mt-1.5">
+              <img id="memAppPhotoPreview" src="logo.jpg" class="w-8 h-8 rounded-full object-cover border border-orange-400 shrink-0 bg-stone-100 shadow-2xs" alt="Preview" />
+              <span class="text-[9.5px] text-stone-500">Printed directly on verified 300 DPI ID card.</span>
+            </div>
+          </div>
         </div>
 
         <div>
@@ -12867,7 +13064,26 @@
       }
 
       const appId = 'SSSS-VOL-APP-2026-' + Math.floor(1000 + Math.random() * 9000);
-      const photo = currentVolunteerPhotoDataUrl || 'logo.jpg';
+      // Strict Aadhaar (12 digits) or PAN (10 chars) validation
+      if (idType === 'PAN Card') {
+        if (!/^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/.test(idNumber)) {
+          alert('Security Verification Notice:\nPlease enter a valid 10-character PAN Card Number (format: ABCDE1234F).');
+          return;
+        }
+      } else {
+        const cleanAadhaar = idNumber.replace(/\s+/g, '');
+        if (!/^[0-9]{12}$/.test(cleanAadhaar)) {
+          alert('Security Verification Notice:\nPlease enter a valid 12-digit Aadhaar Card Number.');
+          return;
+        }
+      }
+
+      // Mandatory Photograph enforcement
+      if (!currentVolunteerPhotoDataUrl) {
+        alert('Security Verification Notice:\nA clear portrait photograph is strictly mandatory for campus security and official ID Card issuance. Please upload your photograph.');
+        return;
+      }
+      const photo = currentVolunteerPhotoDataUrl;
 
       const fullAddressStr = `${address}${city ? ', ' + city : ''}${state ? ', ' + state : ''}${pincode ? ' - ' + pincode : ''}`;
 
@@ -12952,6 +13168,183 @@
     const FAKE_PAYMENTS = ['UPI-AXIS-284910284', 'UPI-HDFC-918273645', 'UPI-SBI-772819203', 'UPI-ICICI-661920394', 'UPI-PNB-551029384'];
     const FAKE_MEMBER_IDS = ['APP-MEM-2026-001', 'APP-MEM-2026-002', 'APP-MEM-2026-003', 'APP-MEM-2026-004', 'APP-MEM-2026-005', 'SSSS-MEM-104928', 'SSSS-MEM-104929', 'SSSS-MEM-104930', 'SSSS-MEM-104931', 'SSSS-MEM-104932'];
 
+    // ========================================================
+    // ENHANCED IDENTITY, MEMBERSHIP & DATABASE PROFILE ENGINE
+    // ========================================================
+    let currentMembershipPhotoDataUrl = null;
+    function handleMembershipPhotoUpload(input) {
+      if (input && input.files && input.files[0]) {
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const maxDimension = 400;
+            let w = img.width;
+            let h = img.height;
+            if (w > maxDimension || h > maxDimension) {
+              const ratio = Math.min(maxDimension / w, maxDimension / h);
+              w = Math.round(w * ratio);
+              h = Math.round(h * ratio);
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            ctx.drawImage(img, 0, 0, w, h);
+            currentMembershipPhotoDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+            const preview = document.getElementById('memAppPhotoPreview');
+            if (preview) preview.src = currentMembershipPhotoDataUrl;
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    let currentAdminDirectMemberPhotoDataUrl = null;
+    function handleAdminDirectMemberPhotoUpload(input) {
+      if (input && input.files && input.files[0]) {
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const maxDimension = 400;
+            let w = img.width;
+            let h = img.height;
+            if (w > maxDimension || h > maxDimension) {
+              const ratio = Math.min(maxDimension / w, maxDimension / h);
+              w = Math.round(w * ratio);
+              h = Math.round(h * ratio);
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            ctx.drawImage(img, 0, 0, w, h);
+            currentAdminDirectMemberPhotoDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+            const preview = document.getElementById('admDirMemPhotoPreview');
+            if (preview) preview.src = currentAdminDirectMemberPhotoDataUrl;
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function formatPanInput(el) {
+      if (el) el.value = (el.value || '').toUpperCase();
+    }
+
+    function onVolunteerIdTypeChange(type) {
+      const lbl = document.getElementById('volIdNumberLabel');
+      const inp = document.getElementById('volIdNumber');
+      if (!lbl || !inp) return;
+      if (type === 'PAN Card') {
+        lbl.innerHTML = '10-Character PAN Card Number <span class="text-red-500">*</span>';
+        inp.pattern = '^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$';
+        inp.maxLength = 10;
+        inp.placeholder = 'Enter 10-char PAN (e.g. ABCDE1234F)';
+      } else {
+        lbl.innerHTML = '12-Digit Aadhaar Card Number <span class="text-red-500">*</span>';
+        inp.pattern = '[0-9]{12}';
+        inp.maxLength = 12;
+        inp.placeholder = 'Enter 12-digit Aadhaar Number (e.g. 548912345678)';
+      }
+    }
+
+    function scrollToFrontVolunteer() {
+      if (currentTab !== 'home') switchTab('home');
+      setTimeout(() => {
+        const el = document.getElementById('section-front-volunteer');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
+    function scrollToFrontMembership() {
+      if (currentTab !== 'home') switchTab('home');
+      setTimeout(() => {
+        const el = document.getElementById('section-front-membership');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
+    function syncAllDatabaseProfiles() {
+      try {
+        const memApps = getMembershipApplications();
+        memApps.filter(m => m && (m.status === 'APPROVED' || m.status === 'ACTIVE')).forEach(m => {
+          const memId = m.memberId || m.id || 'SSSS-MEM-VERIFIED';
+          const pKey = m.profileKey || ('mem_' + (m.id || '').toLowerCase().replace(/[^a-z0-9]/g, '_'));
+          if (typeof idCardProfiles !== 'undefined') {
+            idCardProfiles[pKey] = {
+              name: m.name,
+              hindiName: m.hindiName ? `${m.hindiName} (Member)` : `${m.name} (Member)`,
+              id: memId,
+              role: 'VERIFIED TRUST MEMBER (1101 PASS)',
+              dept: m.wing || 'Prayagraj Seva Mission',
+              email: m.email || '',
+              phone: m.phone || '',
+              pan: m.panNumber || '',
+              joinDate: m.date || 'Active 2026',
+              validity: '31-Mar-2028',
+              bloodGroup: m.bloodGroup || 'O+',
+              status: 'ACTIVE',
+              emergency: '09450858514',
+              photo: m.photo || 'logo.jpg',
+              fallbackPhoto: 'logo.jpg',
+              signatory: 'Authorized Trust Signatory'
+            };
+          }
+          const sel = document.getElementById('idCardSelector');
+          if (sel && !sel.querySelector(`option[value="${pKey}"]`)) {
+            const opt = document.createElement('option');
+            opt.value = pKey;
+            opt.innerText = `${m.name} (${memId}) - Verified Member`;
+            sel.appendChild(opt);
+          }
+        });
+
+        const volApps = getVolunteerApplications();
+        volApps.filter(v => v && (v.status === 'APPROVED' || v.status === 'ACTIVE')).forEach(v => {
+          const volId = v.ngoId || v.id || 'SSSS-VOL-VERIFIED';
+          const pKey = 'vol_' + (v.id || '').toLowerCase().replace(/[^a-z0-9]/g, '_');
+          if (typeof idCardProfiles !== 'undefined') {
+            idCardProfiles[pKey] = {
+              name: v.name,
+              hindiName: `${v.name} (Sevadar)`,
+              id: volId,
+              role: 'VERIFIED SEVADAR (VOLUNTEER)',
+              dept: v.wing || 'Prayagraj Seva Mission',
+              email: v.email || '',
+              phone: v.phone || '',
+              idProof: `${v.idType || 'ID'}: ${v.idNumber || 'N/A'}`,
+              joinDate: v.dateStr || 'Active 2026',
+              validity: '31-Mar-2028',
+              bloodGroup: v.bloodGroup || 'O+',
+              status: 'ACTIVE',
+              emergency: v.emergencyPhone || '09450858514',
+              photo: v.photo || 'logo.jpg',
+              fallbackPhoto: 'logo.jpg',
+              signatory: 'Authorized Trust Signatory'
+            };
+          }
+          const sel = document.getElementById('idCardSelector');
+          if (sel && !sel.querySelector(`option[value="${pKey}"]`)) {
+            const opt = document.createElement('option');
+            opt.value = pKey;
+            opt.innerText = `${v.name} (${volId}) - Verified Sevadar`;
+            sel.appendChild(opt);
+          }
+        });
+      } catch(e) {
+        console.warn('Profile synchronization notice:', e.message);
+      }
+    }
     function scrollToFrontAbout() {
       const el = document.getElementById('section-front-about');
       if (el) {
@@ -13143,6 +13536,17 @@
       const wing = document.getElementById('admDirMemWing')?.value || 'Prayagraj Seva Mission';
       const address = document.getElementById('admDirMemAddress')?.value.trim() || 'Prayagraj';
 
+      const pan = (document.getElementById('admDirMemPan') ? document.getElementById('admDirMemPan').value : '').trim().toUpperCase();
+      const photo = currentAdminDirectMemberPhotoDataUrl;
+
+      if (!pan || !/^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/.test(pan)) {
+        alert('PAN Card Number is strictly mandatory (format: ABCDE1234F).');
+        return;
+      }
+      if (!photo) {
+        alert('Member photograph is strictly mandatory to issue the verified ID card. Please select a photo.');
+        return;
+      }
       if (!name || !phone) {
         alert('कृपया कम से कम नाम एवं मोबाइल नंबर अवश्य भरें।');
         return;
@@ -13161,6 +13565,8 @@
         hindiName: hindiName,
         email: email,
         phone: phone,
+          pan: pan,
+        panNumber: pan,
         bloodGroup: bg,
         address: address,
         wing: wing,
@@ -13168,7 +13574,7 @@
         paymentRef: 'OFFLINE_ADMIN_REGISTERED',
         status: 'APPROVED',
         date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
-        photo: 'logo.jpg'
+        photo: photo
       };
 
       apps.unshift(newApp);
@@ -13188,7 +13594,7 @@
           bloodGroup: bg,
           status: 'ACTIVE',
           emergency: '09450858514',
-          photo: 'logo.jpg',
+          photo: photo,
           fallbackPhoto: 'logo.jpg',
           signatory: 'Authorized Trust Signatory'
         };
@@ -13197,6 +13603,7 @@
       closeAdminAddApprovedMemberModal();
       if (typeof renderAdminMembershipApplications === 'function') renderAdminMembershipApplications();
       renderAboutApprovedMembers();
+      syncAllDatabaseProfiles();
       alert(`✓ नया सदस्य सफलतापूर्वक पंजीकृत एवं स्वीकृत!\n\nनाम: ${name}\nअसाइन NGO ID: ${memberId}\nAbout अनुभाग में तुरंत प्रदर्शित हो गया है।`);
     }
 
@@ -13397,6 +13804,17 @@
       const wing = document.getElementById('memAppWing')?.value || 'Prayagraj Seva Mission';
       const utr = document.getElementById('memAppUtrInput')?.value.trim();
 
+      const pan = (document.getElementById('memAppPan') ? document.getElementById('memAppPan').value : '').trim().toUpperCase();
+      const photo = currentMembershipPhotoDataUrl;
+
+      if (!pan || !/^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/.test(pan)) {
+        alert('PAN Card Number is strictly mandatory for Section 80G Form 10BD IT exemption records (format: ABCDE1234F).');
+        return;
+      }
+      if (!photo) {
+        alert('Member photograph is strictly mandatory to issue your official Trust ID Card. Please upload a clear photo.');
+        return;
+      }
       if (!name || !phone || !email) {
         alert('कृपया सभी आवश्यक फ़ील्ड (नाम, मोबाइल, ईमेल) भरें।');
         return;
@@ -13427,16 +13845,16 @@
             if (causeEl) causeEl.value = 'वार्षिक ट्रस्ट सदस्यता (Annual Trust Membership ₹1101)';
           }, 300);
         }
-        recordPendingMembershipApp(name, email, phone, bg, addr, wing, 'ONLINE_CHECKOUT');
+        recordPendingMembershipApp(name, email, phone, bg, addr, wing, 'ONLINE_CHECKOUT', pan, photo);
         return;
       }
 
-      recordPendingMembershipApp(name, email, phone, bg, addr, wing, utr || 'UPI_TRANSFER');
+      recordPendingMembershipApp(name, email, phone, bg, addr, wing, utr || 'UPI_TRANSFER', pan, photo);
       closeMembershipModal();
       alert(`✓ सदस्यता आवेदन सबमिट!\n\nनाम: ${name}\nअंशदान: ₹ 1,101\nरेफरेंस: ${utr}\n\nआपका आवेदन प्रशासक (Admin) सत्यापन हेतु भेज दिया गया है। अनुमोदन के उपरांत आपका डिजिटल ID कार्ड सक्रिय हो जाएगा।`);
     }
 
-    function recordPendingMembershipApp(name, email, phone, bg, addr, wing, paymentRef) {
+    function recordPendingMembershipApp(name, email, phone, bg, addr, wing, paymentRef, pan, photo) {
       const apps = getMembershipApplications();
       const appId = 'APP-' + Date.now();
       const newApp = {
@@ -13444,6 +13862,7 @@
         name: name,
         email: email,
         phone: phone,
+        panNumber: pan || '',
         bloodGroup: bg,
         address: addr,
         wing: wing,
@@ -13451,7 +13870,7 @@
         paymentRef: paymentRef,
         status: 'PENDING',
         date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
-        photo: userProfile?.photo || 'logo.jpg'
+        photo: photo || userProfile?.photo || 'logo.jpg'
       };
 
       apps.unshift(newApp);
@@ -13546,10 +13965,10 @@
                   ✕
                 </button>
               ` : `
-                <button type="button" onclick="previewMemberId('')" class="px-2.5 py-1.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg text-[10px] shadow-2xs transition-all cursor-pointer inline-flex items-center gap-1">
+                <button type="button" onclick="previewMemberId('${app.profileKey || ('mem_' + app.id.toLowerCase().replace(/[^a-z0-9]/g, '_'))}')" class="px-2.5 py-1.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg text-[10px] shadow-2xs transition-all cursor-pointer inline-flex items-center gap-1">
                   <span>View ID Card</span>
                 </button>
-                <button type="button" onclick="adminRevokeApprovedMember('')" class="px-2 py-1.5 bg-stone-100 hover:bg-red-50 text-stone-600 hover:text-red-700 font-bold rounded-lg text-[10px] transition-all cursor-pointer" title="Revoke Membership">
+                <button type="button" onclick="adminRevokeApprovedMember('${app.id}')" class="px-2.5 py-1.5 bg-stone-100 hover:bg-red-50 text-stone-600 hover:text-red-700 font-bold rounded-lg text-[10px] transition-all cursor-pointer" title="Revoke Membership">
                   Revoke
                 </button>
               `}
@@ -13584,6 +14003,7 @@
         dept: app.wing || 'Prayagraj Seva Mission',
         email: app.email,
         phone: app.phone,
+        pan: app.panNumber || '',
         joinDate: app.date || new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
         validity: '31-Mar-2028',
         bloodGroup: app.bloodGroup || 'O+',
@@ -13616,6 +14036,8 @@
       } catch(e) {}
 
       renderAdminMembershipApplications();
+      renderAboutApprovedMembers();
+      syncAllDatabaseProfiles();
       alert(`सदस्यता सफलतापूर्वक स्वीकृत (Approved)!\n\nसदस्य: ${app.name}\nअसाइन NGO ID: ${memberId}\nस्टेटस: डिजिटल ID कार्ड सक्रिय हो गया है।`);
     }
 
@@ -18801,7 +19223,27 @@
         const file = fileInput.files[0];
         const reader = new FileReader();
         reader.onload = function(e) {
-          commitNewPhoto(e.target.result);
+          const img = new Image();
+          img.onload = function() {
+            const maxDim = 1000;
+            let w = img.width;
+            let h = img.height;
+            if (w > maxDim || h > maxDim) {
+              const ratio = Math.min(maxDim / w, maxDim / h);
+              w = Math.round(w * ratio);
+              h = Math.round(h * ratio);
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            ctx.drawImage(img, 0, 0, w, h);
+            const compressed = canvas.toDataURL('image/jpeg', 0.80);
+            commitNewPhoto(compressed);
+          };
+          img.src = e.target.result;
         };
         reader.readAsDataURL(file);
       } else if (urlInput && urlInput.value.trim()) {
@@ -20134,8 +20576,7 @@
     }
 
     function openAddMemberModal() {
-      openAuthModal();
-      switchAuthTab('signup');
+      openAdminAddApprovedMemberModal();
     }
 
     // ==========================================
